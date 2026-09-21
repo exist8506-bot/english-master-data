@@ -1,0 +1,12 @@
+english-master-data
+│
+├── data
+│   ├── version.json
+│   ├── vocabulary.json
+│   ├── sentences.json
+│   ├── grammar.json
+│   ├── communication.json
+│   ├── trilingual.json
+│   └── quiz.json
+│
+└── README.md
