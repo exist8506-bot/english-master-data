@@ -1,0 +1,519 @@
+[
+  {
+    "id": "comm500_ms7go9",
+    "title": "Gia đình — từ vựng thực tế",
+    "topic": "Gia đình",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"family\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"gia đình\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"family\" today."
+      ]
+    ],
+    "vocab": [
+      "family",
+      "parent",
+      "mother",
+      "father",
+      "sister",
+      "brother",
+      "daughter",
+      "son"
+    ]
+  },
+  {
+    "id": "comm500_187e2tl",
+    "title": "Trường học — từ vựng thực tế",
+    "topic": "Trường học",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"student\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"học sinh; sinh viên\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"student\" today."
+      ]
+    ],
+    "vocab": [
+      "student",
+      "teacher",
+      "class",
+      "classroom",
+      "lesson",
+      "subject",
+      "homework",
+      "exam"
+    ]
+  },
+  {
+    "id": "comm500_pexppc",
+    "title": "Công việc — từ vựng thực tế",
+    "topic": "Công việc",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"job\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"công việc\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"job\" today."
+      ]
+    ],
+    "vocab": [
+      "job",
+      "work",
+      "office",
+      "company",
+      "boss",
+      "worker",
+      "manager",
+      "meeting"
+    ]
+  },
+  {
+    "id": "comm500_ngat2n",
+    "title": "Công nghệ — từ vựng thực tế",
+    "topic": "Công nghệ",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"email\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"email; thư điện tử\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"email\" today."
+      ]
+    ],
+    "vocab": [
+      "email",
+      "computer",
+      "laptop",
+      "phone",
+      "mobile",
+      "screen",
+      "keyboard",
+      "mouse"
+    ]
+  },
+  {
+    "id": "comm500_1rx7im1",
+    "title": "Du lịch — từ vựng thực tế",
+    "topic": "Du lịch",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"trip\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"chuyến đi\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"trip\" today."
+      ]
+    ],
+    "vocab": [
+      "trip",
+      "travel",
+      "airport",
+      "station",
+      "train",
+      "bus",
+      "taxi",
+      "car"
+    ]
+  },
+  {
+    "id": "comm500_h0g8nd",
+    "title": "Đồ ăn — từ vựng thực tế",
+    "topic": "Đồ ăn",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"restaurant\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"nhà hàng\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"restaurant\" today."
+      ]
+    ],
+    "vocab": [
+      "restaurant",
+      "menu",
+      "food",
+      "meal",
+      "breakfast",
+      "lunch",
+      "dinner",
+      "bread"
+    ]
+  },
+  {
+    "id": "comm500_19r3b3x",
+    "title": "Mua sắm — từ vựng thực tế",
+    "topic": "Mua sắm",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"store\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"cửa hàng\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"store\" today."
+      ]
+    ],
+    "vocab": [
+      "store",
+      "shop",
+      "market",
+      "price",
+      "money",
+      "cash",
+      "card",
+      "receipt"
+    ]
+  },
+  {
+    "id": "comm500_m4bd6q",
+    "title": "Cảm xúc — từ vựng thực tế",
+    "topic": "Cảm xúc",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"happy\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"vui\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"happy\" today."
+      ]
+    ],
+    "vocab": [
+      "happy",
+      "sad",
+      "angry",
+      "afraid",
+      "worried",
+      "excited",
+      "surprised",
+      "bored"
+    ]
+  },
+  {
+    "id": "comm500_turd73",
+    "title": "Sức khỏe — từ vựng thực tế",
+    "topic": "Sức khỏe",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"healthy\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"khỏe mạnh\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"healthy\" today."
+      ]
+    ],
+    "vocab": [
+      "healthy",
+      "sick",
+      "pain",
+      "headache",
+      "fever",
+      "cold",
+      "cough",
+      "medicine"
+    ]
+  },
+  {
+    "id": "comm500_1y646n7",
+    "title": "Giao tiếp — từ vựng thực tế",
+    "topic": "Giao tiếp",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"message\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"tin nhắn\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"message\" today."
+      ]
+    ],
+    "vocab": [
+      "message",
+      "hello",
+      "hi",
+      "hey",
+      "goodbye",
+      "please",
+      "thanks",
+      "sorry"
+    ]
+  },
+  {
+    "id": "comm500_pvbdgk",
+    "title": "Thời gian — từ vựng thực tế",
+    "topic": "Thời gian",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"morning\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"buổi sáng\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"morning\" today."
+      ]
+    ],
+    "vocab": [
+      "morning",
+      "afternoon",
+      "evening",
+      "night",
+      "today",
+      "tomorrow",
+      "yesterday",
+      "week"
+    ]
+  },
+  {
+    "id": "comm500_1mhgqdq",
+    "title": "home — từ vựng thực tế",
+    "topic": "home",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"house\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"ngôi nhà\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"house\" today."
+      ]
+    ],
+    "vocab": [
+      "house",
+      "home",
+      "bedroom",
+      "bathroom",
+      "kitchen",
+      "garden",
+      "door",
+      "window"
+    ]
+  },
+  {
+    "id": "comm500_f1wd5f",
+    "title": "Thời tiết — từ vựng thực tế",
+    "topic": "Thời tiết",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"weather\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"thời tiết\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"weather\" today."
+      ]
+    ],
+    "vocab": [
+      "weather",
+      "sun",
+      "sunny",
+      "rain",
+      "rainy",
+      "cloud",
+      "cloudy",
+      "wind"
+    ]
+  },
+  {
+    "id": "comm500_1a5hqq2",
+    "title": "Thiên nhiên — từ vựng thực tế",
+    "topic": "Thiên nhiên",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"nature\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"thiên nhiên\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"nature\" today."
+      ]
+    ],
+    "vocab": [
+      "nature",
+      "tree",
+      "flower",
+      "grass",
+      "forest",
+      "lake",
+      "ocean",
+      "sea"
+    ]
+  },
+  {
+    "id": "comm500_15ob10u",
+    "title": "people — từ vựng thực tế",
+    "topic": "people",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"person\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"người\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"person\" today."
+      ]
+    ],
+    "vocab": [
+      "person",
+      "people",
+      "friend",
+      "neighbor",
+      "man",
+      "woman",
+      "boy",
+      "girl"
+    ]
+  },
+  {
+    "id": "comm500_1szs466",
+    "title": "Hằng ngày — từ vựng thực tế",
+    "topic": "Hằng ngày",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"start\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"bắt đầu\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"start\" today."
+      ]
+    ],
+    "vocab": [
+      "start",
+      "finish",
+      "open",
+      "close",
+      "sit",
+      "stand",
+      "walk",
+      "run"
+    ]
+  },
+  {
+    "id": "comm500_1u47ca6",
+    "title": "study — từ vựng thực tế",
+    "topic": "study",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"learn\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"học\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"learn\" today."
+      ]
+    ],
+    "vocab": [
+      "learn",
+      "study",
+      "teach"
+    ]
+  },
+  {
+    "id": "comm500_1qim4b3",
+    "title": "money — từ vựng thực tế",
+    "topic": "money",
+    "lines": [
+      [
+        "A",
+        "Do you know the word \"spend\"?"
+      ],
+      [
+        "B",
+        "Yes. It means \"tiêu; dành (thời gian)\"."
+      ],
+      [
+        "A",
+        "Let's practice it: I learned the word \"spend\" today."
+      ]
+    ],
+    "vocab": [
+      "spend",
+      "save",
+      "earn",
+      "cost",
+      "borrow",
+      "lend",
+      "rich",
+      "poor"
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "grammar_1kjmf9v",
+    "title": "Articles: a / an / the",
+    "level": "Beginner",
+    "formula": "a/an + singular noun • the + specific noun",
+    "explain": "Dùng a/an khi nói về một đối tượng chưa xác định; the khi người nghe biết đối tượng nào.",
+    "examples": [
+      "I have a book.",
+      "She is an engineer.",
+      "The book is on the table."
+    ],
+    "notes": "Chọn an trước âm nguyên âm."
+  },
+  {
+    "id": "grammar_1imiitv",
+    "title": "There is / There are",
+    "level": "Beginner",
+    "formula": "There is + singular • There are + plural",
+    "explain": "Dùng để nói có một hoặc nhiều thứ ở đâu đó.",
+    "examples": [
+      "There is a problem.",
+      "There are two students."
+    ],
+    "notes": "Động từ hòa hợp với danh từ phía sau."
+  },
+  {
+    "id": "grammar_117ju4k",
+    "title": "Can / Cannot",
+    "level": "Beginner",
+    "formula": "S + can + V",
+    "explain": "Dùng để nói khả năng, sự cho phép hoặc yêu cầu đơn giản.",
+    "examples": [
+      "I can speak English.",
+      "Can you help me?"
+    ],
+    "notes": "Sau can dùng động từ nguyên mẫu."
+  },
+  {
+    "id": "grammar_vw9yf4",
+    "title": "Past Simple questions",
+    "level": "Elementary",
+    "formula": "Did + S + V?",
+    "explain": "Dùng did để hỏi về hành động đã hoàn thành trong quá khứ.",
+    "examples": [
+      "Did you study yesterday?",
+      "Did she call you?"
+    ],
+    "notes": "Sau did, động từ trở về nguyên mẫu."
+  },
+  {
+    "id": "grammar_1k8wla2",
+    "title": "Future with will",
+    "level": "Elementary",
+    "formula": "S + will + V",
+    "explain": "Dùng will cho dự đoán, quyết định nhanh hoặc lời hứa.",
+    "examples": [
+      "I will practice tomorrow.",
+      "She will help you."
+    ],
+    "notes": "Sau will dùng động từ nguyên mẫu."
+  },
+  {
+    "id": "grammar_1ca0m37",
+    "title": "Comparatives",
+    "level": "Elementary",
+    "formula": "adj-er + than / more + adj + than",
+    "explain": "Dùng để so sánh hai đối tượng.",
+    "examples": [
+      "This book is easier than that one.",
+      "English is more useful for my work."
+    ],
+    "notes": "Tính từ dài thường dùng more."
+  },
+  {
+    "id": "grammar_wghr35",
+    "title": "Present Perfect",
+    "level": "Intermediate",
+    "formula": "S + have/has + V3",
+    "explain": "Dùng cho trải nghiệm hoặc hành động có liên hệ với hiện tại.",
+    "examples": [
+      "I have finished my homework.",
+      "She has learned many words."
+    ],
+    "notes": "He/she/it dùng has."
+  },
+  {
+    "id": "grammar_pgxd4p",
+    "title": "First Conditional",
+    "level": "Intermediate",
+    "formula": "If + present, will + V",
+    "explain": "Dùng cho điều kiện có khả năng xảy ra trong tương lai.",
+    "examples": [
+      "If you practice, you will improve."
+    ],
+    "notes": "Mệnh đề if dùng hiện tại đơn."
+  }
+]

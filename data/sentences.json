@@ -1,0 +1,4502 @@
+[
+  {
+    "id": "sent500_ms7go9",
+    "en": "I learned the word \"family\" today.",
+    "vi": "Hôm nay tôi học từ \"family\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "family",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1t5eby5",
+    "en": "I learned the word \"parent\" today.",
+    "vi": "Hôm nay tôi học từ \"parent\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "parent",
+    "favorite": false
+  },
+  {
+    "id": "sent500_9yhtsq",
+    "en": "I learned the word \"mother\" today.",
+    "vi": "Hôm nay tôi học từ \"mother\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "mother",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1d3ykbn",
+    "en": "I learned the word \"father\" today.",
+    "vi": "Hôm nay tôi học từ \"father\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "father",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1yl8gm9",
+    "en": "I learned the word \"sister\" today.",
+    "vi": "Hôm nay tôi học từ \"sister\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "sister",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ewqnlx",
+    "en": "I learned the word \"brother\" today.",
+    "vi": "Hôm nay tôi học từ \"brother\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "brother",
+    "favorite": false
+  },
+  {
+    "id": "sent500_38fm35",
+    "en": "I learned the word \"daughter\" today.",
+    "vi": "Hôm nay tôi học từ \"daughter\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "daughter",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1q7l7y3",
+    "en": "I learned the word \"son\" today.",
+    "vi": "Hôm nay tôi học từ \"son\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "son",
+    "favorite": false
+  },
+  {
+    "id": "sent500_17m258g",
+    "en": "I learned the word \"husband\" today.",
+    "vi": "Hôm nay tôi học từ \"husband\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "husband",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vjhfg",
+    "en": "I learned the word \"wife\" today.",
+    "vi": "Hôm nay tôi học từ \"wife\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "wife",
+    "favorite": false
+  },
+  {
+    "id": "sent500_qvrfhs",
+    "en": "I learned the word \"uncle\" today.",
+    "vi": "Hôm nay tôi học từ \"uncle\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "uncle",
+    "favorite": false
+  },
+  {
+    "id": "sent500_137h83l",
+    "en": "I learned the word \"aunt\" today.",
+    "vi": "Hôm nay tôi học từ \"aunt\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "aunt",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ffdthg",
+    "en": "I learned the word \"cousin\" today.",
+    "vi": "Hôm nay tôi học từ \"cousin\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "cousin",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1a8wezm",
+    "en": "I learned the word \"grandmother\" today.",
+    "vi": "Hôm nay tôi học từ \"grandmother\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "grandmother",
+    "favorite": false
+  },
+  {
+    "id": "sent500_x4qjrf",
+    "en": "I learned the word \"grandfather\" today.",
+    "vi": "Hôm nay tôi học từ \"grandfather\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "grandfather",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1rpnxwd",
+    "en": "I learned the word \"child\" today.",
+    "vi": "Hôm nay tôi học từ \"child\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "child",
+    "favorite": false
+  },
+  {
+    "id": "sent500_srgo9e",
+    "en": "I learned the word \"children\" today.",
+    "vi": "Hôm nay tôi học từ \"children\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "children",
+    "favorite": false
+  },
+  {
+    "id": "sent500_jc5nxl",
+    "en": "I learned the word \"baby\" today.",
+    "vi": "Hôm nay tôi học từ \"baby\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "baby",
+    "favorite": false
+  },
+  {
+    "id": "sent500_v1z8dl",
+    "en": "I learned the word \"family member\" today.",
+    "vi": "Hôm nay tôi học từ \"family member\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "family member",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1y292xp",
+    "en": "I learned the word \"relative\" today.",
+    "vi": "Hôm nay tôi học từ \"relative\".",
+    "topic": "family",
+    "grammar": "Simple Present",
+    "vocabWord": "relative",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1x3j4",
+    "en": "I learned the word \"student\" today.",
+    "vi": "Hôm nay tôi học từ \"student\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "student",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vhy1h",
+    "en": "I learned the word \"teacher\" today.",
+    "vi": "Hôm nay tôi học từ \"teacher\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "teacher",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1bihq0v",
+    "en": "I learned the word \"class\" today.",
+    "vi": "Hôm nay tôi học từ \"class\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "class",
+    "favorite": false
+  },
+  {
+    "id": "sent500_5weefs",
+    "en": "I learned the word \"classroom\" today.",
+    "vi": "Hôm nay tôi học từ \"classroom\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "classroom",
+    "favorite": false
+  },
+  {
+    "id": "sent500_7xc7sx",
+    "en": "I learned the word \"lesson\" today.",
+    "vi": "Hôm nay tôi học từ \"lesson\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "lesson",
+    "favorite": false
+  },
+  {
+    "id": "sent500_121l3kf",
+    "en": "I learned the word \"subject\" today.",
+    "vi": "Hôm nay tôi học từ \"subject\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "subject",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ub18vn",
+    "en": "I learned the word \"homework\" today.",
+    "vi": "Hôm nay tôi học từ \"homework\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "homework",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1inv18y",
+    "en": "I learned the word \"exam\" today.",
+    "vi": "Hôm nay tôi học từ \"exam\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "exam",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1cs5qlh",
+    "en": "I learned the word \"test\" today.",
+    "vi": "Hôm nay tôi học từ \"test\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "test",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1w9ohx",
+    "en": "I learned the word \"question\" today.",
+    "vi": "Hôm nay tôi học từ \"question\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "question",
+    "favorite": false
+  },
+  {
+    "id": "sent500_10ricbj",
+    "en": "I learned the word \"answer\" today.",
+    "vi": "Hôm nay tôi học từ \"answer\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "answer",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1hpma7s",
+    "en": "I learned the word \"book\" today.",
+    "vi": "Hôm nay tôi học từ \"book\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "book",
+    "favorite": false
+  },
+  {
+    "id": "sent500_lmcs2o",
+    "en": "I learned the word \"notebook\" today.",
+    "vi": "Hôm nay tôi học từ \"notebook\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "notebook",
+    "favorite": false
+  },
+  {
+    "id": "sent500_uvp3ao",
+    "en": "I learned the word \"pen\" today.",
+    "vi": "Hôm nay tôi học từ \"pen\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "pen",
+    "favorite": false
+  },
+  {
+    "id": "sent500_xehlok",
+    "en": "I learned the word \"pencil\" today.",
+    "vi": "Hôm nay tôi học từ \"pencil\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "pencil",
+    "favorite": false
+  },
+  {
+    "id": "sent500_109ec4l",
+    "en": "I learned the word \"eraser\" today.",
+    "vi": "Hôm nay tôi học từ \"eraser\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "eraser",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ez7oz9",
+    "en": "I learned the word \"dictionary\" today.",
+    "vi": "Hôm nay tôi học từ \"dictionary\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "dictionary",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1480gk0",
+    "en": "I learned the word \"library\" today.",
+    "vi": "Hôm nay tôi học từ \"library\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "library",
+    "favorite": false
+  },
+  {
+    "id": "sent500_84razt",
+    "en": "I learned the word \"university\" today.",
+    "vi": "Hôm nay tôi học từ \"university\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "university",
+    "favorite": false
+  },
+  {
+    "id": "sent500_13dzio2",
+    "en": "I learned the word \"college\" today.",
+    "vi": "Hôm nay tôi học từ \"college\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "college",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1m9bm1k",
+    "en": "I learned the word \"course\" today.",
+    "vi": "Hôm nay tôi học từ \"course\".",
+    "topic": "school",
+    "grammar": "Simple Present",
+    "vocabWord": "course",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1pjsbfg",
+    "en": "I learned the word \"job\" today.",
+    "vi": "Hôm nay tôi học từ \"job\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "job",
+    "favorite": false
+  },
+  {
+    "id": "sent500_pexppc",
+    "en": "I learned the word \"work\" today.",
+    "vi": "Hôm nay tôi học từ \"work\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "work",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1bbnghd",
+    "en": "I learned the word \"office\" today.",
+    "vi": "Hôm nay tôi học từ \"office\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "office",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1b9xwos",
+    "en": "I learned the word \"company\" today.",
+    "vi": "Hôm nay tôi học từ \"company\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "company",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1m513po",
+    "en": "I learned the word \"boss\" today.",
+    "vi": "Hôm nay tôi học từ \"boss\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "boss",
+    "favorite": false
+  },
+  {
+    "id": "sent500_15kd5xz",
+    "en": "I learned the word \"worker\" today.",
+    "vi": "Hôm nay tôi học từ \"worker\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "worker",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ge93gs",
+    "en": "I learned the word \"manager\" today.",
+    "vi": "Hôm nay tôi học từ \"manager\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "manager",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3raptm",
+    "en": "I learned the word \"meeting\" today.",
+    "vi": "Hôm nay tôi học từ \"meeting\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "meeting",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1vwn4ji",
+    "en": "I learned the word \"project\" today.",
+    "vi": "Hôm nay tôi học từ \"project\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "project",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1982ado",
+    "en": "I learned the word \"team\" today.",
+    "vi": "Hôm nay tôi học từ \"team\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "team",
+    "favorite": false
+  },
+  {
+    "id": "sent500_19pjtp5",
+    "en": "I learned the word \"customer\" today.",
+    "vi": "Hôm nay tôi học từ \"customer\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "customer",
+    "favorite": false
+  },
+  {
+    "id": "sent500_13u3vha",
+    "en": "I learned the word \"client\" today.",
+    "vi": "Hôm nay tôi học từ \"client\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "client",
+    "favorite": false
+  },
+  {
+    "id": "sent500_p9t0ec",
+    "en": "I learned the word \"colleague\" today.",
+    "vi": "Hôm nay tôi học từ \"colleague\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "colleague",
+    "favorite": false
+  },
+  {
+    "id": "sent500_r98q63",
+    "en": "I learned the word \"career\" today.",
+    "vi": "Hôm nay tôi học từ \"career\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "career",
+    "favorite": false
+  },
+  {
+    "id": "sent500_q5c5dv",
+    "en": "I learned the word \"salary\" today.",
+    "vi": "Hôm nay tôi học từ \"salary\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "salary",
+    "favorite": false
+  },
+  {
+    "id": "sent500_lxqs9g",
+    "en": "I learned the word \"interview\" today.",
+    "vi": "Hôm nay tôi học từ \"interview\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "interview",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1b7lhos",
+    "en": "I learned the word \"schedule\" today.",
+    "vi": "Hôm nay tôi học từ \"schedule\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "schedule",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1vs2t7w",
+    "en": "I learned the word \"task\" today.",
+    "vi": "Hôm nay tôi học từ \"task\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "task",
+    "favorite": false
+  },
+  {
+    "id": "sent500_jrjir9",
+    "en": "I learned the word \"deadline\" today.",
+    "vi": "Hôm nay tôi học từ \"deadline\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "deadline",
+    "favorite": false
+  },
+  {
+    "id": "sent500_12fq213",
+    "en": "I learned the word \"email\" today.",
+    "vi": "Hôm nay tôi học từ \"email\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "email",
+    "favorite": false
+  },
+  {
+    "id": "sent500_750t7v",
+    "en": "I learned the word \"report\" today.",
+    "vi": "Hôm nay tôi học từ \"report\".",
+    "topic": "work",
+    "grammar": "Simple Present",
+    "vocabWord": "report",
+    "favorite": false
+  },
+  {
+    "id": "sent500_v8ip62",
+    "en": "I learned the word \"trip\" today.",
+    "vi": "Hôm nay tôi học từ \"trip\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "trip",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1rx7im1",
+    "en": "I learned the word \"travel\" today.",
+    "vi": "Hôm nay tôi học từ \"travel\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "travel",
+    "favorite": false
+  },
+  {
+    "id": "sent500_15s7fzk",
+    "en": "I learned the word \"airport\" today.",
+    "vi": "Hôm nay tôi học từ \"airport\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "airport",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1cifleb",
+    "en": "I learned the word \"station\" today.",
+    "vi": "Hôm nay tôi học từ \"station\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "station",
+    "favorite": false
+  },
+  {
+    "id": "sent500_xdz9m1",
+    "en": "I learned the word \"train\" today.",
+    "vi": "Hôm nay tôi học từ \"train\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "train",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ql981l",
+    "en": "I learned the word \"bus\" today.",
+    "vi": "Hôm nay tôi học từ \"bus\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "bus",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3zj0dl",
+    "en": "I learned the word \"taxi\" today.",
+    "vi": "Hôm nay tôi học từ \"taxi\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "taxi",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18hsyp",
+    "en": "I learned the word \"car\" today.",
+    "vi": "Hôm nay tôi học từ \"car\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "car",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1vp5z73",
+    "en": "I learned the word \"motorbike\" today.",
+    "vi": "Hôm nay tôi học từ \"motorbike\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "motorbike",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1nusisa",
+    "en": "I learned the word \"bicycle\" today.",
+    "vi": "Hôm nay tôi học từ \"bicycle\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "bicycle",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1sqamrn",
+    "en": "I learned the word \"flight\" today.",
+    "vi": "Hôm nay tôi học từ \"flight\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "flight",
+    "favorite": false
+  },
+  {
+    "id": "sent500_s1sa91",
+    "en": "I learned the word \"ticket\" today.",
+    "vi": "Hôm nay tôi học từ \"ticket\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "ticket",
+    "favorite": false
+  },
+  {
+    "id": "sent500_qpq7dv",
+    "en": "I learned the word \"passport\" today.",
+    "vi": "Hôm nay tôi học từ \"passport\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "passport",
+    "favorite": false
+  },
+  {
+    "id": "sent500_yu2gnx",
+    "en": "I learned the word \"hotel\" today.",
+    "vi": "Hôm nay tôi học từ \"hotel\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "hotel",
+    "favorite": false
+  },
+  {
+    "id": "sent500_fj9bp6",
+    "en": "I learned the word \"room\" today.",
+    "vi": "Hôm nay tôi học từ \"room\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "room",
+    "favorite": false
+  },
+  {
+    "id": "sent500_a2rz23",
+    "en": "I learned the word \"luggage\" today.",
+    "vi": "Hôm nay tôi học từ \"luggage\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "luggage",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1q1ubox",
+    "en": "I learned the word \"map\" today.",
+    "vi": "Hôm nay tôi học từ \"map\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "map",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1vw8214",
+    "en": "I learned the word \"beach\" today.",
+    "vi": "Hôm nay tôi học từ \"beach\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "beach",
+    "favorite": false
+  },
+  {
+    "id": "sent500_kh4qle",
+    "en": "I learned the word \"mountain\" today.",
+    "vi": "Hôm nay tôi học từ \"mountain\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "mountain",
+    "favorite": false
+  },
+  {
+    "id": "sent500_jizlsh",
+    "en": "I learned the word \"river\" today.",
+    "vi": "Hôm nay tôi học từ \"river\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "river",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1t4jh8w",
+    "en": "I learned the word \"bridge\" today.",
+    "vi": "Hôm nay tôi học từ \"bridge\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "bridge",
+    "favorite": false
+  },
+  {
+    "id": "sent500_15z4g8m",
+    "en": "I learned the word \"restaurant\" today.",
+    "vi": "Hôm nay tôi học từ \"restaurant\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "restaurant",
+    "favorite": false
+  },
+  {
+    "id": "sent500_16p7cqi",
+    "en": "I learned the word \"menu\" today.",
+    "vi": "Hôm nay tôi học từ \"menu\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "menu",
+    "favorite": false
+  },
+  {
+    "id": "sent500_h0g8nd",
+    "en": "I learned the word \"food\" today.",
+    "vi": "Hôm nay tôi học từ \"food\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "food",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18mv43e",
+    "en": "I learned the word \"meal\" today.",
+    "vi": "Hôm nay tôi học từ \"meal\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "meal",
+    "favorite": false
+  },
+  {
+    "id": "sent500_16s92ee",
+    "en": "I learned the word \"breakfast\" today.",
+    "vi": "Hôm nay tôi học từ \"breakfast\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "breakfast",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1lgvfvj",
+    "en": "I learned the word \"lunch\" today.",
+    "vi": "Hôm nay tôi học từ \"lunch\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "lunch",
+    "favorite": false
+  },
+  {
+    "id": "sent500_obysfx",
+    "en": "I learned the word \"dinner\" today.",
+    "vi": "Hôm nay tôi học từ \"dinner\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "dinner",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1jlnylh",
+    "en": "I learned the word \"bread\" today.",
+    "vi": "Hôm nay tôi học từ \"bread\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "bread",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1h67xs",
+    "en": "I learned the word \"rice\" today.",
+    "vi": "Hôm nay tôi học từ \"rice\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "rice",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1rr79ie",
+    "en": "I learned the word \"noodle\" today.",
+    "vi": "Hôm nay tôi học từ \"noodle\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "noodle",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1wao1du",
+    "en": "I learned the word \"soup\" today.",
+    "vi": "Hôm nay tôi học từ \"soup\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "soup",
+    "favorite": false
+  },
+  {
+    "id": "sent500_11z4ng2",
+    "en": "I learned the word \"meat\" today.",
+    "vi": "Hôm nay tôi học từ \"meat\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "meat",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1uz3spo",
+    "en": "I learned the word \"chicken\" today.",
+    "vi": "Hôm nay tôi học từ \"chicken\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "chicken",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1cdlvff",
+    "en": "I learned the word \"beef\" today.",
+    "vi": "Hôm nay tôi học từ \"beef\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "beef",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1cqspcz",
+    "en": "I learned the word \"fish\" today.",
+    "vi": "Hôm nay tôi học từ \"fish\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "fish",
+    "favorite": false
+  },
+  {
+    "id": "sent500_otvjk6",
+    "en": "I learned the word \"egg\" today.",
+    "vi": "Hôm nay tôi học từ \"egg\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "egg",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1pb5ljc",
+    "en": "I learned the word \"vegetable\" today.",
+    "vi": "Hôm nay tôi học từ \"vegetable\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "vegetable",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1nrqe8h",
+    "en": "I learned the word \"fruit\" today.",
+    "vi": "Hôm nay tôi học từ \"fruit\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "fruit",
+    "favorite": false
+  },
+  {
+    "id": "sent500_4n5tbz",
+    "en": "I learned the word \"apple\" today.",
+    "vi": "Hôm nay tôi học từ \"apple\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "apple",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ocvsr4",
+    "en": "I learned the word \"banana\" today.",
+    "vi": "Hôm nay tôi học từ \"banana\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "banana",
+    "favorite": false
+  },
+  {
+    "id": "sent500_jc9giz",
+    "en": "I learned the word \"orange\" today.",
+    "vi": "Hôm nay tôi học từ \"orange\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "orange",
+    "favorite": false
+  },
+  {
+    "id": "sent500_13g4tk1",
+    "en": "I learned the word \"coffee\" today.",
+    "vi": "Hôm nay tôi học từ \"coffee\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "coffee",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1dy1kx5",
+    "en": "I learned the word \"tea\" today.",
+    "vi": "Hôm nay tôi học từ \"tea\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "tea",
+    "favorite": false
+  },
+  {
+    "id": "sent500_kgxbtc",
+    "en": "I learned the word \"water\" today.",
+    "vi": "Hôm nay tôi học từ \"water\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "water",
+    "favorite": false
+  },
+  {
+    "id": "sent500_11w0wwy",
+    "en": "I learned the word \"milk\" today.",
+    "vi": "Hôm nay tôi học từ \"milk\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "milk",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vfc9dx",
+    "en": "I learned the word \"sugar\" today.",
+    "vi": "Hôm nay tôi học từ \"sugar\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "sugar",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1hudjsx",
+    "en": "I learned the word \"salt\" today.",
+    "vi": "Hôm nay tôi học từ \"salt\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "salt",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1jgspim",
+    "en": "I learned the word \"store\" today.",
+    "vi": "Hôm nay tôi học từ \"store\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "store",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1aowqzt",
+    "en": "I learned the word \"shop\" today.",
+    "vi": "Hôm nay tôi học từ \"shop\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "shop",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ehn4a9",
+    "en": "I learned the word \"market\" today.",
+    "vi": "Hôm nay tôi học từ \"market\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "market",
+    "favorite": false
+  },
+  {
+    "id": "sent500_34jfhm",
+    "en": "I learned the word \"price\" today.",
+    "vi": "Hôm nay tôi học từ \"price\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "price",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1qim4b3",
+    "en": "I learned the word \"money\" today.",
+    "vi": "Hôm nay tôi học từ \"money\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "money",
+    "favorite": false
+  },
+  {
+    "id": "sent500_15nrc2a",
+    "en": "I learned the word \"cash\" today.",
+    "vi": "Hôm nay tôi học từ \"cash\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "cash",
+    "favorite": false
+  },
+  {
+    "id": "sent500_11s01un",
+    "en": "I learned the word \"card\" today.",
+    "vi": "Hôm nay tôi học từ \"card\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "card",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1t6d1dv",
+    "en": "I learned the word \"receipt\" today.",
+    "vi": "Hôm nay tôi học từ \"receipt\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "receipt",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ro1dm9",
+    "en": "I learned the word \"bag\" today.",
+    "vi": "Hôm nay tôi học từ \"bag\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "bag",
+    "favorite": false
+  },
+  {
+    "id": "sent500_9vvq70",
+    "en": "I learned the word \"size\" today.",
+    "vi": "Hôm nay tôi học từ \"size\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "size",
+    "favorite": false
+  },
+  {
+    "id": "sent500_h28rbs",
+    "en": "I learned the word \"color\" today.",
+    "vi": "Hôm nay tôi học từ \"color\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "color",
+    "favorite": false
+  },
+  {
+    "id": "sent500_142jlds",
+    "en": "I learned the word \"cheap\" today.",
+    "vi": "Hôm nay tôi học từ \"cheap\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "cheap",
+    "favorite": false
+  },
+  {
+    "id": "sent500_15ereke",
+    "en": "I learned the word \"expensive\" today.",
+    "vi": "Hôm nay tôi học từ \"expensive\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "expensive",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1eisxum",
+    "en": "I learned the word \"customer service\" today.",
+    "vi": "Hôm nay tôi học từ \"customer service\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "customer service",
+    "favorite": false
+  },
+  {
+    "id": "sent500_54q6ou",
+    "en": "I learned the word \"discount\" today.",
+    "vi": "Hôm nay tôi học từ \"discount\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "discount",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1d4kb0e",
+    "en": "I learned the word \"sale\" today.",
+    "vi": "Hôm nay tôi học từ \"sale\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "sale",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vsu94t",
+    "en": "I learned the word \"change\" today.",
+    "vi": "Hôm nay tôi học từ \"change\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "change",
+    "favorite": false
+  },
+  {
+    "id": "sent500_s96u7f",
+    "en": "I learned the word \"buy\" today.",
+    "vi": "Hôm nay tôi học từ \"buy\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "buy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_q6ihvp",
+    "en": "I learned the word \"sell\" today.",
+    "vi": "Hôm nay tôi học từ \"sell\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "sell",
+    "favorite": false
+  },
+  {
+    "id": "sent500_q6ao3t",
+    "en": "I learned the word \"pay\" today.",
+    "vi": "Hôm nay tôi học từ \"pay\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "pay",
+    "favorite": false
+  },
+  {
+    "id": "sent500_jp6mgw",
+    "en": "I learned the word \"choose\" today.",
+    "vi": "Hôm nay tôi học từ \"choose\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "choose",
+    "favorite": false
+  },
+  {
+    "id": "sent500_115sm2n",
+    "en": "I learned the word \"return\" today.",
+    "vi": "Hôm nay tôi học từ \"return\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "return",
+    "favorite": false
+  },
+  {
+    "id": "sent500_16lie6p",
+    "en": "I learned the word \"happy\" today.",
+    "vi": "Hôm nay tôi học từ \"happy\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "happy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ruivwn",
+    "en": "I learned the word \"sad\" today.",
+    "vi": "Hôm nay tôi học từ \"sad\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "sad",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1e8diim",
+    "en": "I learned the word \"angry\" today.",
+    "vi": "Hôm nay tôi học từ \"angry\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "angry",
+    "favorite": false
+  },
+  {
+    "id": "sent500_105bgk2",
+    "en": "I learned the word \"afraid\" today.",
+    "vi": "Hôm nay tôi học từ \"afraid\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "afraid",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18ow2dz",
+    "en": "I learned the word \"worried\" today.",
+    "vi": "Hôm nay tôi học từ \"worried\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "worried",
+    "favorite": false
+  },
+  {
+    "id": "sent500_am5zmt",
+    "en": "I learned the word \"excited\" today.",
+    "vi": "Hôm nay tôi học từ \"excited\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "excited",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1wld7mi",
+    "en": "I learned the word \"surprised\" today.",
+    "vi": "Hôm nay tôi học từ \"surprised\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "surprised",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1txmln9",
+    "en": "I learned the word \"bored\" today.",
+    "vi": "Hôm nay tôi học từ \"bored\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "bored",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vn6x1x",
+    "en": "I learned the word \"tired\" today.",
+    "vi": "Hôm nay tôi học từ \"tired\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "tired",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1dneyvq",
+    "en": "I learned the word \"calm\" today.",
+    "vi": "Hôm nay tôi học từ \"calm\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "calm",
+    "favorite": false
+  },
+  {
+    "id": "sent500_14ndid9",
+    "en": "I learned the word \"nervous\" today.",
+    "vi": "Hôm nay tôi học từ \"nervous\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "nervous",
+    "favorite": false
+  },
+  {
+    "id": "sent500_13lzhl5",
+    "en": "I learned the word \"proud\" today.",
+    "vi": "Hôm nay tôi học từ \"proud\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "proud",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1v5y4zm",
+    "en": "I learned the word \"lonely\" today.",
+    "vi": "Hôm nay tôi học từ \"lonely\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "lonely",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1o8btj7",
+    "en": "I learned the word \"kind\" today.",
+    "vi": "Hôm nay tôi học từ \"kind\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "kind",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1l3zvjy",
+    "en": "I learned the word \"friendly\" today.",
+    "vi": "Hôm nay tôi học từ \"friendly\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "friendly",
+    "favorite": false
+  },
+  {
+    "id": "sent500_qiv2q5",
+    "en": "I learned the word \"helpful\" today.",
+    "vi": "Hôm nay tôi học từ \"helpful\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "helpful",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1prieb6",
+    "en": "I learned the word \"honest\" today.",
+    "vi": "Hôm nay tôi học từ \"honest\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "honest",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1bqkef5",
+    "en": "I learned the word \"brave\" today.",
+    "vi": "Hôm nay tôi học từ \"brave\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "brave",
+    "favorite": false
+  },
+  {
+    "id": "sent500_tmro3z",
+    "en": "I learned the word \"lazy\" today.",
+    "vi": "Hôm nay tôi học từ \"lazy\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "lazy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_19p02jh",
+    "en": "I learned the word \"serious\" today.",
+    "vi": "Hôm nay tôi học từ \"serious\".",
+    "topic": "emotion",
+    "grammar": "Simple Present",
+    "vocabWord": "serious",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ocgeo2",
+    "en": "I learned the word \"healthy\" today.",
+    "vi": "Hôm nay tôi học từ \"healthy\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "healthy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_dseg07",
+    "en": "I learned the word \"sick\" today.",
+    "vi": "Hôm nay tôi học từ \"sick\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "sick",
+    "favorite": false
+  },
+  {
+    "id": "sent500_11t4wb9",
+    "en": "I learned the word \"pain\" today.",
+    "vi": "Hôm nay tôi học từ \"pain\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "pain",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1r9yw6o",
+    "en": "I learned the word \"headache\" today.",
+    "vi": "Hôm nay tôi học từ \"headache\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "headache",
+    "favorite": false
+  },
+  {
+    "id": "sent500_zoqb9t",
+    "en": "I learned the word \"fever\" today.",
+    "vi": "Hôm nay tôi học từ \"fever\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "fever",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1t01pu7",
+    "en": "I learned the word \"cold\" today.",
+    "vi": "Hôm nay tôi học từ \"cold\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "cold",
+    "favorite": false
+  },
+  {
+    "id": "sent500_9vv5td",
+    "en": "I learned the word \"cough\" today.",
+    "vi": "Hôm nay tôi học từ \"cough\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "cough",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18x5ijh",
+    "en": "I learned the word \"medicine\" today.",
+    "vi": "Hôm nay tôi học từ \"medicine\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "medicine",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18xjy8i",
+    "en": "I learned the word \"doctor\" today.",
+    "vi": "Hôm nay tôi học từ \"doctor\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "doctor",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1wpfd7u",
+    "en": "I learned the word \"nurse\" today.",
+    "vi": "Hôm nay tôi học từ \"nurse\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "nurse",
+    "favorite": false
+  },
+  {
+    "id": "sent500_m388fn",
+    "en": "I learned the word \"hospital\" today.",
+    "vi": "Hôm nay tôi học từ \"hospital\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "hospital",
+    "favorite": false
+  },
+  {
+    "id": "sent500_mlo6o5",
+    "en": "I learned the word \"clinic\" today.",
+    "vi": "Hôm nay tôi học từ \"clinic\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "clinic",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1w39ce3",
+    "en": "I learned the word \"exercise\" today.",
+    "vi": "Hôm nay tôi học từ \"exercise\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "exercise",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1t4qt1z",
+    "en": "I learned the word \"rest\" today.",
+    "vi": "Hôm nay tôi học từ \"rest\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "rest",
+    "favorite": false
+  },
+  {
+    "id": "sent500_129m39k",
+    "en": "I learned the word \"sleep\" today.",
+    "vi": "Hôm nay tôi học từ \"sleep\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "sleep",
+    "favorite": false
+  },
+  {
+    "id": "sent500_k16lz3",
+    "en": "I learned the word \"diet\" today.",
+    "vi": "Hôm nay tôi học từ \"diet\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "diet",
+    "favorite": false
+  },
+  {
+    "id": "sent500_blicgl",
+    "en": "I learned the word \"energy\" today.",
+    "vi": "Hôm nay tôi học từ \"energy\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "energy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ip02gq",
+    "en": "I learned the word \"strong\" today.",
+    "vi": "Hôm nay tôi học từ \"strong\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "strong",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1tyo3pl",
+    "en": "I learned the word \"weak\" today.",
+    "vi": "Hôm nay tôi học từ \"weak\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "weak",
+    "favorite": false
+  },
+  {
+    "id": "sent500_a2lc13",
+    "en": "I learned the word \"careful\" today.",
+    "vi": "Hôm nay tôi học từ \"careful\".",
+    "topic": "health",
+    "grammar": "Simple Present",
+    "vocabWord": "careful",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1d76ba0",
+    "en": "I learned the word \"computer\" today.",
+    "vi": "Hôm nay tôi học từ \"computer\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "computer",
+    "favorite": false
+  },
+  {
+    "id": "sent500_pf4pbh",
+    "en": "I learned the word \"laptop\" today.",
+    "vi": "Hôm nay tôi học từ \"laptop\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "laptop",
+    "favorite": false
+  },
+  {
+    "id": "sent500_x2rmpb",
+    "en": "I learned the word \"phone\" today.",
+    "vi": "Hôm nay tôi học từ \"phone\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "phone",
+    "favorite": false
+  },
+  {
+    "id": "sent500_temph3",
+    "en": "I learned the word \"mobile\" today.",
+    "vi": "Hôm nay tôi học từ \"mobile\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "mobile",
+    "favorite": false
+  },
+  {
+    "id": "sent500_nsqmfl",
+    "en": "I learned the word \"screen\" today.",
+    "vi": "Hôm nay tôi học từ \"screen\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "screen",
+    "favorite": false
+  },
+  {
+    "id": "sent500_kpqbjo",
+    "en": "I learned the word \"keyboard\" today.",
+    "vi": "Hôm nay tôi học từ \"keyboard\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "keyboard",
+    "favorite": false
+  },
+  {
+    "id": "sent500_oqd5tw",
+    "en": "I learned the word \"mouse\" today.",
+    "vi": "Hôm nay tôi học từ \"mouse\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "mouse",
+    "favorite": false
+  },
+  {
+    "id": "sent500_192k8qk",
+    "en": "I learned the word \"internet\" today.",
+    "vi": "Hôm nay tôi học từ \"internet\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "internet",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1y6iimi",
+    "en": "I learned the word \"website\" today.",
+    "vi": "Hôm nay tôi học từ \"website\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "website",
+    "favorite": false
+  },
+  {
+    "id": "sent500_8pt0z0",
+    "en": "I learned the word \"app\" today.",
+    "vi": "Hôm nay tôi học từ \"app\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "app",
+    "favorite": false
+  },
+  {
+    "id": "sent500_icsrkg",
+    "en": "I learned the word \"software\" today.",
+    "vi": "Hôm nay tôi học từ \"software\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "software",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1bf856r",
+    "en": "I learned the word \"file\" today.",
+    "vi": "Hôm nay tôi học từ \"file\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "file",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1obvefx",
+    "en": "I learned the word \"folder\" today.",
+    "vi": "Hôm nay tôi học từ \"folder\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "folder",
+    "favorite": false
+  },
+  {
+    "id": "sent500_f2by1k",
+    "en": "I learned the word \"password\" today.",
+    "vi": "Hôm nay tôi học từ \"password\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "password",
+    "favorite": false
+  },
+  {
+    "id": "sent500_bgnexo",
+    "en": "I learned the word \"account\" today.",
+    "vi": "Hôm nay tôi học từ \"account\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "account",
+    "favorite": false
+  },
+  {
+    "id": "sent500_a91cys",
+    "en": "I learned the word \"message\" today.",
+    "vi": "Hôm nay tôi học từ \"message\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "message",
+    "favorite": false
+  },
+  {
+    "id": "sent500_zu2j1f",
+    "en": "I learned the word \"photo\" today.",
+    "vi": "Hôm nay tôi học từ \"photo\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "photo",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1lfe6i4",
+    "en": "I learned the word \"video\" today.",
+    "vi": "Hôm nay tôi học từ \"video\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "video",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1q99m6x",
+    "en": "I learned the word \"audio\" today.",
+    "vi": "Hôm nay tôi học từ \"audio\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "audio",
+    "favorite": false
+  },
+  {
+    "id": "sent500_181nkge",
+    "en": "I learned the word \"camera\" today.",
+    "vi": "Hôm nay tôi học từ \"camera\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "camera",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1yba8i6",
+    "en": "I learned the word \"battery\" today.",
+    "vi": "Hôm nay tôi học từ \"battery\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "battery",
+    "favorite": false
+  },
+  {
+    "id": "sent500_zum8c9",
+    "en": "I learned the word \"charger\" today.",
+    "vi": "Hôm nay tôi học từ \"charger\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "charger",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ms15mt",
+    "en": "I learned the word \"network\" today.",
+    "vi": "Hôm nay tôi học từ \"network\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "network",
+    "favorite": false
+  },
+  {
+    "id": "sent500_13svqmi",
+    "en": "I learned the word \"online\" today.",
+    "vi": "Hôm nay tôi học từ \"online\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "online",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1tms9ig",
+    "en": "I learned the word \"offline\" today.",
+    "vi": "Hôm nay tôi học từ \"offline\".",
+    "topic": "technology",
+    "grammar": "Simple Present",
+    "vocabWord": "offline",
+    "favorite": false
+  },
+  {
+    "id": "sent500_yh2ur3",
+    "en": "I learned the word \"morning\" today.",
+    "vi": "Hôm nay tôi học từ \"morning\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "morning",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1brhct3",
+    "en": "I learned the word \"afternoon\" today.",
+    "vi": "Hôm nay tôi học từ \"afternoon\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "afternoon",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1iazkfj",
+    "en": "I learned the word \"evening\" today.",
+    "vi": "Hôm nay tôi học từ \"evening\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "evening",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1s23bkx",
+    "en": "I learned the word \"night\" today.",
+    "vi": "Hôm nay tôi học từ \"night\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "night",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ibe1mm",
+    "en": "I learned the word \"today\" today.",
+    "vi": "Hôm nay tôi học từ \"today\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "today",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1bseo86",
+    "en": "I learned the word \"tomorrow\" today.",
+    "vi": "Hôm nay tôi học từ \"tomorrow\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "tomorrow",
+    "favorite": false
+  },
+  {
+    "id": "sent500_rqsv8n",
+    "en": "I learned the word \"yesterday\" today.",
+    "vi": "Hôm nay tôi học từ \"yesterday\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "yesterday",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1nbcgnx",
+    "en": "I learned the word \"week\" today.",
+    "vi": "Hôm nay tôi học từ \"week\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "week",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1nicidh",
+    "en": "I learned the word \"month\" today.",
+    "vi": "Hôm nay tôi học từ \"month\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "month",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1cf05y4",
+    "en": "I learned the word \"year\" today.",
+    "vi": "Hôm nay tôi học từ \"year\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "year",
+    "favorite": false
+  },
+  {
+    "id": "sent500_fsdtnt",
+    "en": "I learned the word \"minute\" today.",
+    "vi": "Hôm nay tôi học từ \"minute\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "minute",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ei2k27",
+    "en": "I learned the word \"hour\" today.",
+    "vi": "Hôm nay tôi học từ \"hour\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "hour",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1bps3bx",
+    "en": "I learned the word \"second\" today.",
+    "vi": "Hôm nay tôi học từ \"second\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "second",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1rciku5",
+    "en": "I learned the word \"day\" today.",
+    "vi": "Hôm nay tôi học từ \"day\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "day",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1my39eh",
+    "en": "I learned the word \"date\" today.",
+    "vi": "Hôm nay tôi học từ \"date\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "date",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1kpjkuw",
+    "en": "I learned the word \"season\" today.",
+    "vi": "Hôm nay tôi học từ \"season\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "season",
+    "favorite": false
+  },
+  {
+    "id": "sent500_rqalws",
+    "en": "I learned the word \"spring\" today.",
+    "vi": "Hôm nay tôi học từ \"spring\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "spring",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1y60r3o",
+    "en": "I learned the word \"summer\" today.",
+    "vi": "Hôm nay tôi học từ \"summer\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "summer",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1iwkahf",
+    "en": "I learned the word \"autumn\" today.",
+    "vi": "Hôm nay tôi học từ \"autumn\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "autumn",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1il3mks",
+    "en": "I learned the word \"winter\" today.",
+    "vi": "Hôm nay tôi học từ \"winter\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "winter",
+    "favorite": false
+  },
+  {
+    "id": "sent500_eradng",
+    "en": "I learned the word \"early\" today.",
+    "vi": "Hôm nay tôi học từ \"early\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "early",
+    "favorite": false
+  },
+  {
+    "id": "sent500_10b39cx",
+    "en": "I learned the word \"late\" today.",
+    "vi": "Hôm nay tôi học từ \"late\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "late",
+    "favorite": false
+  },
+  {
+    "id": "sent500_smyztw",
+    "en": "I learned the word \"always\" today.",
+    "vi": "Hôm nay tôi học từ \"always\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "always",
+    "favorite": false
+  },
+  {
+    "id": "sent500_znms2",
+    "en": "I learned the word \"usually\" today.",
+    "vi": "Hôm nay tôi học từ \"usually\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "usually",
+    "favorite": false
+  },
+  {
+    "id": "sent500_16u4po7",
+    "en": "I learned the word \"often\" today.",
+    "vi": "Hôm nay tôi học từ \"often\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "often",
+    "favorite": false
+  },
+  {
+    "id": "sent500_px15b5",
+    "en": "I learned the word \"sometimes\" today.",
+    "vi": "Hôm nay tôi học từ \"sometimes\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "sometimes",
+    "favorite": false
+  },
+  {
+    "id": "sent500_2zqpvt",
+    "en": "I learned the word \"never\" today.",
+    "vi": "Hôm nay tôi học từ \"never\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "never",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3lo2u3",
+    "en": "I learned the word \"house\" today.",
+    "vi": "Hôm nay tôi học từ \"house\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "house",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1mhgqdq",
+    "en": "I learned the word \"home\" today.",
+    "vi": "Hôm nay tôi học từ \"home\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "home",
+    "favorite": false
+  },
+  {
+    "id": "sent500_6dkc53",
+    "en": "I learned the word \"bedroom\" today.",
+    "vi": "Hôm nay tôi học từ \"bedroom\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "bedroom",
+    "favorite": false
+  },
+  {
+    "id": "sent500_103aoyr",
+    "en": "I learned the word \"bathroom\" today.",
+    "vi": "Hôm nay tôi học từ \"bathroom\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "bathroom",
+    "favorite": false
+  },
+  {
+    "id": "sent500_eeeucv",
+    "en": "I learned the word \"kitchen\" today.",
+    "vi": "Hôm nay tôi học từ \"kitchen\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "kitchen",
+    "favorite": false
+  },
+  {
+    "id": "sent500_x420vo",
+    "en": "I learned the word \"garden\" today.",
+    "vi": "Hôm nay tôi học từ \"garden\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "garden",
+    "favorite": false
+  },
+  {
+    "id": "sent500_9f7qy1",
+    "en": "I learned the word \"door\" today.",
+    "vi": "Hôm nay tôi học từ \"door\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "door",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18snrod",
+    "en": "I learned the word \"window\" today.",
+    "vi": "Hôm nay tôi học từ \"window\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "window",
+    "favorite": false
+  },
+  {
+    "id": "sent500_pq0cju",
+    "en": "I learned the word \"chair\" today.",
+    "vi": "Hôm nay tôi học từ \"chair\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "chair",
+    "favorite": false
+  },
+  {
+    "id": "sent500_kp9xpb",
+    "en": "I learned the word \"table\" today.",
+    "vi": "Hôm nay tôi học từ \"table\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "table",
+    "favorite": false
+  },
+  {
+    "id": "sent500_mdwbfw",
+    "en": "I learned the word \"bed\" today.",
+    "vi": "Hôm nay tôi học từ \"bed\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "bed",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1adlted",
+    "en": "I learned the word \"wall\" today.",
+    "vi": "Hôm nay tôi học từ \"wall\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "wall",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1faxtzx",
+    "en": "I learned the word \"floor\" today.",
+    "vi": "Hôm nay tôi học từ \"floor\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "floor",
+    "favorite": false
+  },
+  {
+    "id": "sent500_d1cwgf",
+    "en": "I learned the word \"roof\" today.",
+    "vi": "Hôm nay tôi học từ \"roof\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "roof",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1qvkxm7",
+    "en": "I learned the word \"light\" today.",
+    "vi": "Hôm nay tôi học từ \"light\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "light",
+    "favorite": false
+  },
+  {
+    "id": "sent500_svodbg",
+    "en": "I learned the word \"key\" today.",
+    "vi": "Hôm nay tôi học từ \"key\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "key",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1pvvhqv",
+    "en": "I learned the word \"kitchen table\" today.",
+    "vi": "Hôm nay tôi học từ \"kitchen table\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "kitchen table",
+    "favorite": false
+  },
+  {
+    "id": "sent500_d9bm4i",
+    "en": "I learned the word \"mirror\" today.",
+    "vi": "Hôm nay tôi học từ \"mirror\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "mirror",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1x3os3v",
+    "en": "I learned the word \"shower\" today.",
+    "vi": "Hôm nay tôi học từ \"shower\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "shower",
+    "favorite": false
+  },
+  {
+    "id": "sent500_mbe0xq",
+    "en": "I learned the word \"clean\" today.",
+    "vi": "Hôm nay tôi học từ \"clean\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "clean",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1847iqj",
+    "en": "I learned the word \"dirty\" today.",
+    "vi": "Hôm nay tôi học từ \"dirty\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "dirty",
+    "favorite": false
+  },
+  {
+    "id": "sent500_f1wd5f",
+    "en": "I learned the word \"weather\" today.",
+    "vi": "Hôm nay tôi học từ \"weather\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "weather",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1q8iyjl",
+    "en": "I learned the word \"sun\" today.",
+    "vi": "Hôm nay tôi học từ \"sun\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "sun",
+    "favorite": false
+  },
+  {
+    "id": "sent500_kbt3os",
+    "en": "I learned the word \"sunny\" today.",
+    "vi": "Hôm nay tôi học từ \"sunny\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "sunny",
+    "favorite": false
+  },
+  {
+    "id": "sent500_126ubwz",
+    "en": "I learned the word \"rain\" today.",
+    "vi": "Hôm nay tôi học từ \"rain\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "rain",
+    "favorite": false
+  },
+  {
+    "id": "sent500_o263ry",
+    "en": "I learned the word \"rainy\" today.",
+    "vi": "Hôm nay tôi học từ \"rainy\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "rainy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_7fghvi",
+    "en": "I learned the word \"cloud\" today.",
+    "vi": "Hôm nay tôi học từ \"cloud\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "cloud",
+    "favorite": false
+  },
+  {
+    "id": "sent500_cotxc5",
+    "en": "I learned the word \"cloudy\" today.",
+    "vi": "Hôm nay tôi học từ \"cloudy\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "cloudy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_5klamf",
+    "en": "I learned the word \"wind\" today.",
+    "vi": "Hôm nay tôi học từ \"wind\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "wind",
+    "favorite": false
+  },
+  {
+    "id": "sent500_7he0yi",
+    "en": "I learned the word \"windy\" today.",
+    "vi": "Hôm nay tôi học từ \"windy\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "windy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1h8vvyu",
+    "en": "I learned the word \"storm\" today.",
+    "vi": "Hôm nay tôi học từ \"storm\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "storm",
+    "favorite": false
+  },
+  {
+    "id": "sent500_10rmjn6",
+    "en": "I learned the word \"snow\" today.",
+    "vi": "Hôm nay tôi học từ \"snow\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "snow",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ad93o1",
+    "en": "I learned the word \"snowy\" today.",
+    "vi": "Hôm nay tôi học từ \"snowy\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "snowy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1yorp3o",
+    "en": "I learned the word \"hot\" today.",
+    "vi": "Hôm nay tôi học từ \"hot\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "hot",
+    "favorite": false
+  },
+  {
+    "id": "sent500_p6qqa3",
+    "en": "I learned the word \"cold weather\" today.",
+    "vi": "Hôm nay tôi học từ \"cold weather\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "cold weather",
+    "favorite": false
+  },
+  {
+    "id": "sent500_102bcjc",
+    "en": "I learned the word \"warm\" today.",
+    "vi": "Hôm nay tôi học từ \"warm\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "warm",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1unpvi4",
+    "en": "I learned the word \"cool\" today.",
+    "vi": "Hôm nay tôi học từ \"cool\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "cool",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1swu911",
+    "en": "I learned the word \"temperature\" today.",
+    "vi": "Hôm nay tôi học từ \"temperature\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "temperature",
+    "favorite": false
+  },
+  {
+    "id": "sent500_s4yrio",
+    "en": "I learned the word \"forecast\" today.",
+    "vi": "Hôm nay tôi học từ \"forecast\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "forecast",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ulbib9",
+    "en": "I learned the word \"seasonal\" today.",
+    "vi": "Hôm nay tôi học từ \"seasonal\".",
+    "topic": "weather",
+    "grammar": "Simple Present",
+    "vocabWord": "seasonal",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1a5hqq2",
+    "en": "I learned the word \"nature\" today.",
+    "vi": "Hôm nay tôi học từ \"nature\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "nature",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ue7a39",
+    "en": "I learned the word \"tree\" today.",
+    "vi": "Hôm nay tôi học từ \"tree\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "tree",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1m8d2x2",
+    "en": "I learned the word \"flower\" today.",
+    "vi": "Hôm nay tôi học từ \"flower\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "flower",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1dicl8d",
+    "en": "I learned the word \"grass\" today.",
+    "vi": "Hôm nay tôi học từ \"grass\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "grass",
+    "favorite": false
+  },
+  {
+    "id": "sent500_lypqw0",
+    "en": "I learned the word \"forest\" today.",
+    "vi": "Hôm nay tôi học từ \"forest\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "forest",
+    "favorite": false
+  },
+  {
+    "id": "sent500_rggv9a",
+    "en": "I learned the word \"lake\" today.",
+    "vi": "Hôm nay tôi học từ \"lake\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "lake",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1mxzqfl",
+    "en": "I learned the word \"ocean\" today.",
+    "vi": "Hôm nay tôi học từ \"ocean\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "ocean",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1fdflak",
+    "en": "I learned the word \"sea\" today.",
+    "vi": "Hôm nay tôi học từ \"sea\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "sea",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1lji5f0",
+    "en": "I learned the word \"island\" today.",
+    "vi": "Hôm nay tôi học từ \"island\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "island",
+    "favorite": false
+  },
+  {
+    "id": "sent500_spxbon",
+    "en": "I learned the word \"field\" today.",
+    "vi": "Hôm nay tôi học từ \"field\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "field",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ycrrqx",
+    "en": "I learned the word \"farm\" today.",
+    "vi": "Hôm nay tôi học từ \"farm\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "farm",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1g3t2mq",
+    "en": "I learned the word \"plant\" today.",
+    "vi": "Hôm nay tôi học từ \"plant\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "plant",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1hw14d9",
+    "en": "I learned the word \"animal\" today.",
+    "vi": "Hôm nay tôi học từ \"animal\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "animal",
+    "favorite": false
+  },
+  {
+    "id": "sent500_160pn02",
+    "en": "I learned the word \"bird\" today.",
+    "vi": "Hôm nay tôi học từ \"bird\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "bird",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1rxhqfd",
+    "en": "I learned the word \"dog\" today.",
+    "vi": "Hôm nay tôi học từ \"dog\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "dog",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1sh0cn",
+    "en": "I learned the word \"cat\" today.",
+    "vi": "Hôm nay tôi học từ \"cat\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "cat",
+    "favorite": false
+  },
+  {
+    "id": "sent500_175ly92",
+    "en": "I learned the word \"horse\" today.",
+    "vi": "Hôm nay tôi học từ \"horse\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "horse",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1woqz4g",
+    "en": "I learned the word \"cow\" today.",
+    "vi": "Hôm nay tôi học từ \"cow\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "cow",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ktr8gx",
+    "en": "I learned the word \"insect\" today.",
+    "vi": "Hôm nay tôi học từ \"insect\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "insect",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1kxdy5y",
+    "en": "I learned the word \"sky\" today.",
+    "vi": "Hôm nay tôi học từ \"sky\".",
+    "topic": "nature",
+    "grammar": "Simple Present",
+    "vocabWord": "sky",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1mpjerk",
+    "en": "I learned the word \"person\" today.",
+    "vi": "Hôm nay tôi học từ \"person\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "person",
+    "favorite": false
+  },
+  {
+    "id": "sent500_15ob10u",
+    "en": "I learned the word \"people\" today.",
+    "vi": "Hôm nay tôi học từ \"people\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "people",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1khz72l",
+    "en": "I learned the word \"friend\" today.",
+    "vi": "Hôm nay tôi học từ \"friend\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "friend",
+    "favorite": false
+  },
+  {
+    "id": "sent500_dxddm3",
+    "en": "I learned the word \"neighbor\" today.",
+    "vi": "Hôm nay tôi học từ \"neighbor\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "neighbor",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1stqcmn",
+    "en": "I learned the word \"man\" today.",
+    "vi": "Hôm nay tôi học từ \"man\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "man",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1srgbf9",
+    "en": "I learned the word \"woman\" today.",
+    "vi": "Hôm nay tôi học từ \"woman\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "woman",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vkgxxh",
+    "en": "I learned the word \"boy\" today.",
+    "vi": "Hôm nay tôi học từ \"boy\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "boy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_191hwv7",
+    "en": "I learned the word \"girl\" today.",
+    "vi": "Hôm nay tôi học từ \"girl\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "girl",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1el4kcv",
+    "en": "I learned the word \"adult\" today.",
+    "vi": "Hôm nay tôi học từ \"adult\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "adult",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1d2chd0",
+    "en": "I learned the word \"leader\" today.",
+    "vi": "Hôm nay tôi học từ \"leader\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "leader",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18w1rnv",
+    "en": "I learned the word \"guide\" today.",
+    "vi": "Hôm nay tôi học từ \"guide\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "guide",
+    "favorite": false
+  },
+  {
+    "id": "sent500_c5one6",
+    "en": "I learned the word \"guard\" today.",
+    "vi": "Hôm nay tôi học từ \"guard\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "guard",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1qwzh8b",
+    "en": "I learned the word \"police\" today.",
+    "vi": "Hôm nay tôi học từ \"police\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "police",
+    "favorite": false
+  },
+  {
+    "id": "sent500_d4h1hq",
+    "en": "I learned the word \"firefighter\" today.",
+    "vi": "Hôm nay tôi học từ \"firefighter\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "firefighter",
+    "favorite": false
+  },
+  {
+    "id": "sent500_17cniu0",
+    "en": "I learned the word \"engineer\" today.",
+    "vi": "Hôm nay tôi học từ \"engineer\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "engineer",
+    "favorite": false
+  },
+  {
+    "id": "sent500_9h16n2",
+    "en": "I learned the word \"artist\" today.",
+    "vi": "Hôm nay tôi học từ \"artist\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "artist",
+    "favorite": false
+  },
+  {
+    "id": "sent500_10uhrvu",
+    "en": "I learned the word \"writer\" today.",
+    "vi": "Hôm nay tôi học từ \"writer\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "writer",
+    "favorite": false
+  },
+  {
+    "id": "sent500_th34mh",
+    "en": "I learned the word \"singer\" today.",
+    "vi": "Hôm nay tôi học từ \"singer\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "singer",
+    "favorite": false
+  },
+  {
+    "id": "sent500_41c5h6",
+    "en": "I learned the word \"actor\" today.",
+    "vi": "Hôm nay tôi học từ \"actor\".",
+    "topic": "people",
+    "grammar": "Simple Present",
+    "vocabWord": "actor",
+    "favorite": false
+  },
+  {
+    "id": "sent500_m3bicr",
+    "en": "I learned the word \"hello\" today.",
+    "vi": "Hôm nay tôi học từ \"hello\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "hello",
+    "favorite": false
+  },
+  {
+    "id": "sent500_sx4lga",
+    "en": "I learned the word \"hi\" today.",
+    "vi": "Hôm nay tôi học từ \"hi\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "hi",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1yy6671",
+    "en": "I learned the word \"hey\" today.",
+    "vi": "Hôm nay tôi học từ \"hey\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "hey",
+    "favorite": false
+  },
+  {
+    "id": "sent500_jnlu8g",
+    "en": "I learned the word \"goodbye\" today.",
+    "vi": "Hôm nay tôi học từ \"goodbye\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "goodbye",
+    "favorite": false
+  },
+  {
+    "id": "sent500_llgpcz",
+    "en": "I learned the word \"please\" today.",
+    "vi": "Hôm nay tôi học từ \"please\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "please",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1gz44a8",
+    "en": "I learned the word \"thanks\" today.",
+    "vi": "Hôm nay tôi học từ \"thanks\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "thanks",
+    "favorite": false
+  },
+  {
+    "id": "sent500_j4nj4a",
+    "en": "I learned the word \"sorry\" today.",
+    "vi": "Hôm nay tôi học từ \"sorry\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "sorry",
+    "favorite": false
+  },
+  {
+    "id": "sent500_b2cwkz",
+    "en": "I learned the word \"welcome\" today.",
+    "vi": "Hôm nay tôi học từ \"welcome\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "welcome",
+    "favorite": false
+  },
+  {
+    "id": "sent500_u0xggo",
+    "en": "I learned the word \"excuse\" today.",
+    "vi": "Hôm nay tôi học từ \"excuse\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "excuse",
+    "favorite": false
+  },
+  {
+    "id": "sent500_90d6pv",
+    "en": "I learned the word \"agree\" today.",
+    "vi": "Hôm nay tôi học từ \"agree\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "agree",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1sq449l",
+    "en": "I learned the word \"disagree\" today.",
+    "vi": "Hôm nay tôi học từ \"disagree\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "disagree",
+    "favorite": false
+  },
+  {
+    "id": "sent500_7c6olu",
+    "en": "I learned the word \"ask\" today.",
+    "vi": "Hôm nay tôi học từ \"ask\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "ask",
+    "favorite": false
+  },
+  {
+    "id": "sent500_bj9yjr",
+    "en": "I learned the word \"reply\" today.",
+    "vi": "Hôm nay tôi học từ \"reply\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "reply",
+    "favorite": false
+  },
+  {
+    "id": "sent500_548cws",
+    "en": "I learned the word \"explain\" today.",
+    "vi": "Hôm nay tôi học từ \"explain\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "explain",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1iyp9r6",
+    "en": "I learned the word \"tell\" today.",
+    "vi": "Hôm nay tôi học từ \"tell\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "tell",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1jsuesg",
+    "en": "I learned the word \"say\" today.",
+    "vi": "Hôm nay tôi học từ \"say\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "say",
+    "favorite": false
+  },
+  {
+    "id": "sent500_192uu89",
+    "en": "I learned the word \"speak\" today.",
+    "vi": "Hôm nay tôi học từ \"speak\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "speak",
+    "favorite": false
+  },
+  {
+    "id": "sent500_5lixqn",
+    "en": "I learned the word \"talk\" today.",
+    "vi": "Hôm nay tôi học từ \"talk\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "talk",
+    "favorite": false
+  },
+  {
+    "id": "sent500_gfnkiu",
+    "en": "I learned the word \"listen\" today.",
+    "vi": "Hôm nay tôi học từ \"listen\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "listen",
+    "favorite": false
+  },
+  {
+    "id": "sent500_b7nksl",
+    "en": "I learned the word \"hear\" today.",
+    "vi": "Hôm nay tôi học từ \"hear\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "hear",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1leehtx",
+    "en": "I learned the word \"read\" today.",
+    "vi": "Hôm nay tôi học từ \"read\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "read",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1grd3rw",
+    "en": "I learned the word \"write\" today.",
+    "vi": "Hôm nay tôi học từ \"write\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "write",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1odmjai",
+    "en": "I learned the word \"repeat\" today.",
+    "vi": "Hôm nay tôi học từ \"repeat\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "repeat",
+    "favorite": false
+  },
+  {
+    "id": "sent500_43kre3",
+    "en": "I learned the word \"understand\" today.",
+    "vi": "Hôm nay tôi học từ \"understand\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "understand",
+    "favorite": false
+  },
+  {
+    "id": "sent500_182vwpg",
+    "en": "I learned the word \"mean\" today.",
+    "vi": "Hôm nay tôi học từ \"mean\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "mean",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1c0mk7p",
+    "en": "I learned the word \"translate\" today.",
+    "vi": "Hôm nay tôi học từ \"translate\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "translate",
+    "favorite": false
+  },
+  {
+    "id": "sent500_r7bv87",
+    "en": "I learned the word \"practice conversation\" today.",
+    "vi": "Hôm nay tôi học từ \"practice conversation\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "practice conversation",
+    "favorite": false
+  },
+  {
+    "id": "sent500_s2jf1b",
+    "en": "I learned the word \"start\" today.",
+    "vi": "Hôm nay tôi học từ \"start\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "start",
+    "favorite": false
+  },
+  {
+    "id": "sent500_opveky",
+    "en": "I learned the word \"finish\" today.",
+    "vi": "Hôm nay tôi học từ \"finish\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "finish",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1mnbg09",
+    "en": "I learned the word \"open\" today.",
+    "vi": "Hôm nay tôi học từ \"open\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "open",
+    "favorite": false
+  },
+  {
+    "id": "sent500_b1hmw3",
+    "en": "I learned the word \"close\" today.",
+    "vi": "Hôm nay tôi học từ \"close\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "close",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1izn1b3",
+    "en": "I learned the word \"sit\" today.",
+    "vi": "Hôm nay tôi học từ \"sit\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "sit",
+    "favorite": false
+  },
+  {
+    "id": "sent500_wjjbc3",
+    "en": "I learned the word \"stand\" today.",
+    "vi": "Hôm nay tôi học từ \"stand\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "stand",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18foljk",
+    "en": "I learned the word \"walk\" today.",
+    "vi": "Hôm nay tôi học từ \"walk\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "walk",
+    "favorite": false
+  },
+  {
+    "id": "sent500_bvjc22",
+    "en": "I learned the word \"run\" today.",
+    "vi": "Hôm nay tôi học từ \"run\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "run",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1y9r0ip",
+    "en": "I learned the word \"come\" today.",
+    "vi": "Hôm nay tôi học từ \"come\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "come",
+    "favorite": false
+  },
+  {
+    "id": "sent500_iciszv",
+    "en": "I learned the word \"go\" today.",
+    "vi": "Hôm nay tôi học từ \"go\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "go",
+    "favorite": false
+  },
+  {
+    "id": "sent500_u32v51",
+    "en": "I learned the word \"eat\" today.",
+    "vi": "Hôm nay tôi học từ \"eat\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "eat",
+    "favorite": false
+  },
+  {
+    "id": "sent500_5yargx",
+    "en": "I learned the word \"drink\" today.",
+    "vi": "Hôm nay tôi học từ \"drink\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "drink",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1udq9t5",
+    "en": "I learned the word \"cook\" today.",
+    "vi": "Hôm nay tôi học từ \"cook\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "cook",
+    "favorite": false
+  },
+  {
+    "id": "sent500_18ntnxq",
+    "en": "I learned the word \"wash\" today.",
+    "vi": "Hôm nay tôi học từ \"wash\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "wash",
+    "favorite": false
+  },
+  {
+    "id": "sent500_fnsvzu",
+    "en": "I learned the word \"help\" today.",
+    "vi": "Hôm nay tôi học từ \"help\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "help",
+    "favorite": false
+  },
+  {
+    "id": "sent500_oapfjo",
+    "en": "I learned the word \"use\" today.",
+    "vi": "Hôm nay tôi học từ \"use\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "use",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1qkxrqn",
+    "en": "I learned the word \"make\" today.",
+    "vi": "Hôm nay tôi học từ \"make\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "make",
+    "favorite": false
+  },
+  {
+    "id": "sent500_r80q38",
+    "en": "I learned the word \"do\" today.",
+    "vi": "Hôm nay tôi học từ \"do\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "do",
+    "favorite": false
+  },
+  {
+    "id": "sent500_nbjo0n",
+    "en": "I learned the word \"get\" today.",
+    "vi": "Hôm nay tôi học từ \"get\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "get",
+    "favorite": false
+  },
+  {
+    "id": "sent500_16j8vmk",
+    "en": "I learned the word \"give\" today.",
+    "vi": "Hôm nay tôi học từ \"give\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "give",
+    "favorite": false
+  },
+  {
+    "id": "sent500_2twdau",
+    "en": "I learned the word \"take\" today.",
+    "vi": "Hôm nay tôi học từ \"take\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "take",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1uu0z2j",
+    "en": "I learned the word \"bring\" today.",
+    "vi": "Hôm nay tôi học từ \"bring\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "bring",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1u64y88",
+    "en": "I learned the word \"keep\" today.",
+    "vi": "Hôm nay tôi học từ \"keep\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "keep",
+    "favorite": false
+  },
+  {
+    "id": "sent500_t9acby",
+    "en": "I learned the word \"put\" today.",
+    "vi": "Hôm nay tôi học từ \"put\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "put",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1gp93yy",
+    "en": "I learned the word \"find\" today.",
+    "vi": "Hôm nay tôi học từ \"find\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "find",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1s2qsuu",
+    "en": "I learned the word \"look\" today.",
+    "vi": "Hôm nay tôi học từ \"look\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "look",
+    "favorite": false
+  },
+  {
+    "id": "sent500_qk3gh4",
+    "en": "I learned the word \"watch\" today.",
+    "vi": "Hôm nay tôi học từ \"watch\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "watch",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1229eow",
+    "en": "I learned the word \"wait\" today.",
+    "vi": "Hôm nay tôi học từ \"wait\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "wait",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vvv65p",
+    "en": "I learned the word \"need\" today.",
+    "vi": "Hôm nay tôi học từ \"need\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "need",
+    "favorite": false
+  },
+  {
+    "id": "sent500_12m5gkv",
+    "en": "I learned the word \"want\" today.",
+    "vi": "Hôm nay tôi học từ \"want\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "want",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3ax5bq",
+    "en": "I learned the word \"like\" today.",
+    "vi": "Hôm nay tôi học từ \"like\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "like",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1n553o1",
+    "en": "I learned the word \"love\" today.",
+    "vi": "Hôm nay tôi học từ \"love\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "love",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1jzxp0l",
+    "en": "I learned the word \"hate\" today.",
+    "vi": "Hôm nay tôi học từ \"hate\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "hate",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ji60fe",
+    "en": "I learned the word \"know\" today.",
+    "vi": "Hôm nay tôi học từ \"know\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "know",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ymeafv",
+    "en": "I learned the word \"think\" today.",
+    "vi": "Hôm nay tôi học từ \"think\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "think",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1dq2e9p",
+    "en": "I learned the word \"feel\" today.",
+    "vi": "Hôm nay tôi học từ \"feel\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "feel",
+    "favorite": false
+  },
+  {
+    "id": "sent500_b59u24",
+    "en": "I learned the word \"forget\" today.",
+    "vi": "Hôm nay tôi học từ \"forget\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "forget",
+    "favorite": false
+  },
+  {
+    "id": "sent500_zcokr9",
+    "en": "I learned the word \"learn\" today.",
+    "vi": "Hôm nay tôi học từ \"learn\".",
+    "topic": "study",
+    "grammar": "Simple Present",
+    "vocabWord": "learn",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1u47ca6",
+    "en": "I learned the word \"study\" today.",
+    "vi": "Hôm nay tôi học từ \"study\".",
+    "topic": "study",
+    "grammar": "Simple Present",
+    "vocabWord": "study",
+    "favorite": false
+  },
+  {
+    "id": "sent500_82ouxu",
+    "en": "I learned the word \"teach\" today.",
+    "vi": "Hôm nay tôi học từ \"teach\".",
+    "topic": "study",
+    "grammar": "Simple Present",
+    "vocabWord": "teach",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1aywcos",
+    "en": "I learned the word \"show\" today.",
+    "vi": "Hôm nay tôi học từ \"show\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "show",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1br7v2m",
+    "en": "I learned the word \"try\" today.",
+    "vi": "Hôm nay tôi học từ \"try\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "try",
+    "favorite": false
+  },
+  {
+    "id": "sent500_6qnlsk",
+    "en": "I learned the word \"move\" today.",
+    "vi": "Hôm nay tôi học từ \"move\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "move",
+    "favorite": false
+  },
+  {
+    "id": "sent500_14bbmnu",
+    "en": "I learned the word \"turn\" today.",
+    "vi": "Hôm nay tôi học từ \"turn\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "turn",
+    "favorite": false
+  },
+  {
+    "id": "sent500_v3idyo",
+    "en": "I learned the word \"carry\" today.",
+    "vi": "Hôm nay tôi học từ \"carry\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "carry",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1j02n8g",
+    "en": "I learned the word \"stay\" today.",
+    "vi": "Hôm nay tôi học từ \"stay\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "stay",
+    "favorite": false
+  },
+  {
+    "id": "sent500_nfkhj4",
+    "en": "I learned the word \"leave\" today.",
+    "vi": "Hôm nay tôi học từ \"leave\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "leave",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1efzzvi",
+    "en": "I learned the word \"arrive\" today.",
+    "vi": "Hôm nay tôi học từ \"arrive\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "arrive",
+    "favorite": false
+  },
+  {
+    "id": "sent500_enjee4",
+    "en": "I learned the word \"visit\" today.",
+    "vi": "Hôm nay tôi học từ \"visit\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "visit",
+    "favorite": false
+  },
+  {
+    "id": "sent500_av5wln",
+    "en": "I learned the word \"reserve\" today.",
+    "vi": "Hôm nay tôi học từ \"reserve\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "reserve",
+    "favorite": false
+  },
+  {
+    "id": "sent500_yt6e2b",
+    "en": "I learned the word \"spend\" today.",
+    "vi": "Hôm nay tôi học từ \"spend\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "spend",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1kvo1u0",
+    "en": "I learned the word \"save\" today.",
+    "vi": "Hôm nay tôi học từ \"save\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "save",
+    "favorite": false
+  },
+  {
+    "id": "sent500_7v18mf",
+    "en": "I learned the word \"earn\" today.",
+    "vi": "Hôm nay tôi học từ \"earn\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "earn",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1sgzb5k",
+    "en": "I learned the word \"cost\" today.",
+    "vi": "Hôm nay tôi học từ \"cost\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "cost",
+    "favorite": false
+  },
+  {
+    "id": "sent500_s6ocxs",
+    "en": "I learned the word \"borrow\" today.",
+    "vi": "Hôm nay tôi học từ \"borrow\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "borrow",
+    "favorite": false
+  },
+  {
+    "id": "sent500_51yi0o",
+    "en": "I learned the word \"lend\" today.",
+    "vi": "Hôm nay tôi học từ \"lend\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "lend",
+    "favorite": false
+  },
+  {
+    "id": "sent500_5311yf",
+    "en": "I learned the word \"rich\" today.",
+    "vi": "Hôm nay tôi học từ \"rich\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "rich",
+    "favorite": false
+  },
+  {
+    "id": "sent500_13x10m5",
+    "en": "I learned the word \"poor\" today.",
+    "vi": "Hôm nay tôi học từ \"poor\".",
+    "topic": "money",
+    "grammar": "Simple Present",
+    "vocabWord": "poor",
+    "favorite": false
+  },
+  {
+    "id": "sent500_16name3",
+    "en": "I learned the word \"free\" today.",
+    "vi": "Hôm nay tôi học từ \"free\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "free",
+    "favorite": false
+  },
+  {
+    "id": "sent500_psrqtc",
+    "en": "I learned the word \"busy\" today.",
+    "vi": "Hôm nay tôi học từ \"busy\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "busy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_sbfb3o",
+    "en": "I learned the word \"ready\" today.",
+    "vi": "Hôm nay tôi học từ \"ready\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "ready",
+    "favorite": false
+  },
+  {
+    "id": "sent500_8lh7r4",
+    "en": "I learned the word \"sure\" today.",
+    "vi": "Hôm nay tôi học từ \"sure\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "sure",
+    "favorite": false
+  },
+  {
+    "id": "sent500_xjidwl",
+    "en": "I learned the word \"right\" today.",
+    "vi": "Hôm nay tôi học từ \"right\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "right",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1s4ufli",
+    "en": "I learned the word \"wrong\" today.",
+    "vi": "Hôm nay tôi học từ \"wrong\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "wrong",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1h7863",
+    "en": "I learned the word \"easy\" today.",
+    "vi": "Hôm nay tôi học từ \"easy\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "easy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_xsjcbt",
+    "en": "I learned the word \"difficult\" today.",
+    "vi": "Hôm nay tôi học từ \"difficult\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "difficult",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1rh1u58",
+    "en": "I learned the word \"hard\" today.",
+    "vi": "Hôm nay tôi học từ \"hard\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "hard",
+    "favorite": false
+  },
+  {
+    "id": "sent500_67r1q7",
+    "en": "I learned the word \"simple\" today.",
+    "vi": "Hôm nay tôi học từ \"simple\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "simple",
+    "favorite": false
+  },
+  {
+    "id": "sent500_njcvqn",
+    "en": "I learned the word \"useful\" today.",
+    "vi": "Hôm nay tôi học từ \"useful\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "useful",
+    "favorite": false
+  },
+  {
+    "id": "sent500_11e7zc4",
+    "en": "I learned the word \"necessary\" today.",
+    "vi": "Hôm nay tôi học từ \"necessary\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "necessary",
+    "favorite": false
+  },
+  {
+    "id": "sent500_lgol10",
+    "en": "I learned the word \"common\" today.",
+    "vi": "Hôm nay tôi học từ \"common\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "common",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3pcbky",
+    "en": "I learned the word \"different\" today.",
+    "vi": "Hôm nay tôi học từ \"different\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "different",
+    "favorite": false
+  },
+  {
+    "id": "sent500_tzqb6u",
+    "en": "I learned the word \"similar\" today.",
+    "vi": "Hôm nay tôi học từ \"similar\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "similar",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1oa2yi8",
+    "en": "I learned the word \"special\" today.",
+    "vi": "Hôm nay tôi học từ \"special\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "special",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ryupua",
+    "en": "I learned the word \"normal\" today.",
+    "vi": "Hôm nay tôi học từ \"normal\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "normal",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1q2rndi",
+    "en": "I learned the word \"natural\" today.",
+    "vi": "Hôm nay tôi học từ \"natural\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "natural",
+    "favorite": false
+  },
+  {
+    "id": "sent500_17cvc3s",
+    "en": "I learned the word \"local\" today.",
+    "vi": "Hôm nay tôi học từ \"local\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "local",
+    "favorite": false
+  },
+  {
+    "id": "sent500_mz959v",
+    "en": "I learned the word \"foreign\" today.",
+    "vi": "Hôm nay tôi học từ \"foreign\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "foreign",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1krc8zk",
+    "en": "I learned the word \"public\" today.",
+    "vi": "Hôm nay tôi học từ \"public\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "public",
+    "favorite": false
+  },
+  {
+    "id": "sent500_retfd8",
+    "en": "I learned the word \"private\" today.",
+    "vi": "Hôm nay tôi học từ \"private\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "private",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3e4eq5",
+    "en": "I learned the word \"personal\" today.",
+    "vi": "Hôm nay tôi học từ \"personal\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "personal",
+    "favorite": false
+  },
+  {
+    "id": "sent500_8rgvro",
+    "en": "I learned the word \"beautiful\" today.",
+    "vi": "Hôm nay tôi học từ \"beautiful\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "beautiful",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1roh10m",
+    "en": "I learned the word \"ugly\" today.",
+    "vi": "Hôm nay tôi học từ \"ugly\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "ugly",
+    "favorite": false
+  },
+  {
+    "id": "sent500_n8z649",
+    "en": "I learned the word \"big\" today.",
+    "vi": "Hôm nay tôi học từ \"big\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "big",
+    "favorite": false
+  },
+  {
+    "id": "sent500_195uvm4",
+    "en": "I learned the word \"small\" today.",
+    "vi": "Hôm nay tôi học từ \"small\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "small",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1i31ydv",
+    "en": "I learned the word \"long\" today.",
+    "vi": "Hôm nay tôi học từ \"long\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "long",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1fn8tsl",
+    "en": "I learned the word \"short\" today.",
+    "vi": "Hôm nay tôi học từ \"short\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "short",
+    "favorite": false
+  },
+  {
+    "id": "sent500_h5yol9",
+    "en": "I learned the word \"high\" today.",
+    "vi": "Hôm nay tôi học từ \"high\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "high",
+    "favorite": false
+  },
+  {
+    "id": "sent500_m0aa9t",
+    "en": "I learned the word \"low\" today.",
+    "vi": "Hôm nay tôi học từ \"low\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "low",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ghkija",
+    "en": "I learned the word \"old\" today.",
+    "vi": "Hôm nay tôi học từ \"old\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "old",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ohocw3",
+    "en": "I learned the word \"young\" today.",
+    "vi": "Hôm nay tôi học từ \"young\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "young",
+    "favorite": false
+  },
+  {
+    "id": "sent500_b9jhu9",
+    "en": "I learned the word \"new\" today.",
+    "vi": "Hôm nay tôi học từ \"new\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "new",
+    "favorite": false
+  },
+  {
+    "id": "sent500_pr3cf",
+    "en": "I learned the word \"fast\" today.",
+    "vi": "Hôm nay tôi học từ \"fast\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "fast",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ueleig",
+    "en": "I learned the word \"slow\" today.",
+    "vi": "Hôm nay tôi học từ \"slow\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "slow",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1c1lufs",
+    "en": "I learned the word \"safe\" today.",
+    "vi": "Hôm nay tôi học từ \"safe\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "safe",
+    "favorite": false
+  },
+  {
+    "id": "sent500_jfcp2r",
+    "en": "I learned the word \"dangerous\" today.",
+    "vi": "Hôm nay tôi học từ \"dangerous\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "dangerous",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1c1n0vj",
+    "en": "I learned the word \"fresh\" today.",
+    "vi": "Hôm nay tôi học từ \"fresh\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "fresh",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ey0l8m",
+    "en": "I learned the word \"delicious\" today.",
+    "vi": "Hôm nay tôi học từ \"delicious\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "delicious",
+    "favorite": false
+  },
+  {
+    "id": "sent500_4peu0s",
+    "en": "I learned the word \"hungry\" today.",
+    "vi": "Hôm nay tôi học từ \"hungry\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "hungry",
+    "favorite": false
+  },
+  {
+    "id": "sent500_s2p94g",
+    "en": "I learned the word \"thirsty\" today.",
+    "vi": "Hôm nay tôi học từ \"thirsty\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "thirsty",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1yvvepo",
+    "en": "I learned the word \"full\" today.",
+    "vi": "Hôm nay tôi học từ \"full\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "full",
+    "favorite": false
+  },
+  {
+    "id": "sent500_nq77sf",
+    "en": "I learned the word \"sweet\" today.",
+    "vi": "Hôm nay tôi học từ \"sweet\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "sweet",
+    "favorite": false
+  },
+  {
+    "id": "sent500_weg86g",
+    "en": "I learned the word \"salty\" today.",
+    "vi": "Hôm nay tôi học từ \"salty\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "salty",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ct6wvd",
+    "en": "I learned the word \"spicy\" today.",
+    "vi": "Hôm nay tôi học từ \"spicy\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "spicy",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1eed58b",
+    "en": "I learned the word \"bitter\" today.",
+    "vi": "Hôm nay tôi học từ \"bitter\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "bitter",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1vqotzw",
+    "en": "I learned the word \"sour\" today.",
+    "vi": "Hôm nay tôi học từ \"sour\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "sour",
+    "favorite": false
+  },
+  {
+    "id": "sent500_r962ds",
+    "en": "I learned the word \"hot food\" today.",
+    "vi": "Hôm nay tôi học từ \"hot food\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "hot food",
+    "favorite": false
+  },
+  {
+    "id": "sent500_cdskwd",
+    "en": "I learned the word \"favorite\" today.",
+    "vi": "Hôm nay tôi học từ \"favorite\".",
+    "topic": "food",
+    "grammar": "Simple Present",
+    "vocabWord": "favorite",
+    "favorite": false
+  },
+  {
+    "id": "sent500_l19yus",
+    "en": "I learned the word \"large\" today.",
+    "vi": "Hôm nay tôi học từ \"large\".",
+    "topic": "shopping",
+    "grammar": "Simple Present",
+    "vocabWord": "large",
+    "favorite": false
+  },
+  {
+    "id": "sent500_qz0bqj",
+    "en": "I learned the word \"tiny\" today.",
+    "vi": "Hôm nay tôi học từ \"tiny\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "tiny",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1gn1n9f",
+    "en": "I learned the word \"beautifully\" today.",
+    "vi": "Hôm nay tôi học từ \"beautifully\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "beautifully",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1d5efnc",
+    "en": "I learned the word \"carefully\" today.",
+    "vi": "Hôm nay tôi học từ \"carefully\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "carefully",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1u7mn8r",
+    "en": "I learned the word \"quickly\" today.",
+    "vi": "Hôm nay tôi học từ \"quickly\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "quickly",
+    "favorite": false
+  },
+  {
+    "id": "sent500_7ey04f",
+    "en": "I learned the word \"slowly\" today.",
+    "vi": "Hôm nay tôi học từ \"slowly\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "slowly",
+    "favorite": false
+  },
+  {
+    "id": "sent500_16h8xim",
+    "en": "I learned the word \"really\" today.",
+    "vi": "Hôm nay tôi học từ \"really\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "really",
+    "favorite": false
+  },
+  {
+    "id": "sent500_106vake",
+    "en": "I learned the word \"probably\" today.",
+    "vi": "Hôm nay tôi học từ \"probably\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "probably",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1qhtwh7",
+    "en": "I learned the word \"maybe\" today.",
+    "vi": "Hôm nay tôi học từ \"maybe\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "maybe",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vtz3vz",
+    "en": "I learned the word \"almost\" today.",
+    "vi": "Hôm nay tôi học từ \"almost\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "almost",
+    "favorite": false
+  },
+  {
+    "id": "sent500_10qk6if",
+    "en": "I learned the word \"already\" today.",
+    "vi": "Hôm nay tôi học từ \"already\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "already",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1jhudht",
+    "en": "I learned the word \"still\" today.",
+    "vi": "Hôm nay tôi học từ \"still\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "still",
+    "favorite": false
+  },
+  {
+    "id": "sent500_13pus0v",
+    "en": "I learned the word \"just\" today.",
+    "vi": "Hôm nay tôi học từ \"just\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "just",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1dqh2kv",
+    "en": "I learned the word \"again\" today.",
+    "vi": "Hôm nay tôi học từ \"again\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "again",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ldgg9e",
+    "en": "I learned the word \"also\" today.",
+    "vi": "Hôm nay tôi học từ \"also\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "also",
+    "favorite": false
+  },
+  {
+    "id": "sent500_17qey2f",
+    "en": "I learned the word \"only\" today.",
+    "vi": "Hôm nay tôi học từ \"only\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "only",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ttel29",
+    "en": "I learned the word \"very\" today.",
+    "vi": "Hôm nay tôi học từ \"very\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "very",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1tuu8bt",
+    "en": "I learned the word \"quite\" today.",
+    "vi": "Hôm nay tôi học từ \"quite\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "quite",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1939c8f",
+    "en": "I learned the word \"together\" today.",
+    "vi": "Hôm nay tôi học từ \"together\".",
+    "topic": "communication",
+    "grammar": "Simple Present",
+    "vocabWord": "together",
+    "favorite": false
+  },
+  {
+    "id": "sent500_qnlxnt",
+    "en": "I learned the word \"apart\" today.",
+    "vi": "Hôm nay tôi học từ \"apart\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "apart",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1wm3gbx",
+    "en": "I learned the word \"inside\" today.",
+    "vi": "Hôm nay tôi học từ \"inside\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "inside",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1i9dl1g",
+    "en": "I learned the word \"outside\" today.",
+    "vi": "Hôm nay tôi học từ \"outside\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "outside",
+    "favorite": false
+  },
+  {
+    "id": "sent500_19jg3d6",
+    "en": "I learned the word \"above\" today.",
+    "vi": "Hôm nay tôi học từ \"above\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "above",
+    "favorite": false
+  },
+  {
+    "id": "sent500_14lmd4i",
+    "en": "I learned the word \"below\" today.",
+    "vi": "Hôm nay tôi học từ \"below\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "below",
+    "favorite": false
+  },
+  {
+    "id": "sent500_nkjpcf",
+    "en": "I learned the word \"near\" today.",
+    "vi": "Hôm nay tôi học từ \"near\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "near",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1gfk5wu",
+    "en": "I learned the word \"far\" today.",
+    "vi": "Hôm nay tôi học từ \"far\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "far",
+    "favorite": false
+  },
+  {
+    "id": "sent500_fm3l1a",
+    "en": "I learned the word \"before\" today.",
+    "vi": "Hôm nay tôi học từ \"before\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "before",
+    "favorite": false
+  },
+  {
+    "id": "sent500_7m08nd",
+    "en": "I learned the word \"after\" today.",
+    "vi": "Hôm nay tôi học từ \"after\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "after",
+    "favorite": false
+  },
+  {
+    "id": "sent500_19rfre7",
+    "en": "I learned the word \"between\" today.",
+    "vi": "Hôm nay tôi học từ \"between\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "between",
+    "favorite": false
+  },
+  {
+    "id": "sent500_9axlez",
+    "en": "I learned the word \"among\" today.",
+    "vi": "Hôm nay tôi học từ \"among\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "among",
+    "favorite": false
+  },
+  {
+    "id": "sent500_hqqig3",
+    "en": "I learned the word \"without\" today.",
+    "vi": "Hôm nay tôi học từ \"without\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "without",
+    "favorite": false
+  },
+  {
+    "id": "sent500_dtio16",
+    "en": "I learned the word \"within\" today.",
+    "vi": "Hôm nay tôi học từ \"within\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "within",
+    "favorite": false
+  },
+  {
+    "id": "sent500_ybnnns",
+    "en": "I learned the word \"during\" today.",
+    "vi": "Hôm nay tôi học từ \"during\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "during",
+    "favorite": false
+  },
+  {
+    "id": "sent500_f8k16o",
+    "en": "I learned the word \"against\" today.",
+    "vi": "Hôm nay tôi học từ \"against\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "against",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1wksm1a",
+    "en": "I learned the word \"toward\" today.",
+    "vi": "Hôm nay tôi học từ \"toward\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "toward",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ycr8my",
+    "en": "I learned the word \"through\" today.",
+    "vi": "Hôm nay tôi học từ \"through\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "through",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1gy1xfw",
+    "en": "I learned the word \"around\" today.",
+    "vi": "Hôm nay tôi học từ \"around\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "around",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1ec08x0",
+    "en": "I learned the word \"across\" today.",
+    "vi": "Hôm nay tôi học từ \"across\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "across",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1pasc21",
+    "en": "I learned the word \"behind\" today.",
+    "vi": "Hôm nay tôi học từ \"behind\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "behind",
+    "favorite": false
+  },
+  {
+    "id": "sent500_atsvrf",
+    "en": "I learned the word \"beside\" today.",
+    "vi": "Hôm nay tôi học từ \"beside\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "beside",
+    "favorite": false
+  },
+  {
+    "id": "sent500_121ft8t",
+    "en": "I learned the word \"under\" today.",
+    "vi": "Hôm nay tôi học từ \"under\".",
+    "topic": "home",
+    "grammar": "Simple Present",
+    "vocabWord": "under",
+    "favorite": false
+  },
+  {
+    "id": "sent500_dv23nz",
+    "en": "I learned the word \"over\" today.",
+    "vi": "Hôm nay tôi học từ \"over\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "over",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3esgvd",
+    "en": "I learned the word \"with\" today.",
+    "vi": "Hôm nay tôi học từ \"with\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "with",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1dpda9q",
+    "en": "I learned the word \"about\" today.",
+    "vi": "Hôm nay tôi học từ \"about\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "about",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1bzk7tc",
+    "en": "I learned the word \"for\" today.",
+    "vi": "Hôm nay tôi học từ \"for\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "for",
+    "favorite": false
+  },
+  {
+    "id": "sent500_15kc5th",
+    "en": "I learned the word \"from\" today.",
+    "vi": "Hôm nay tôi học từ \"from\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "from",
+    "favorite": false
+  },
+  {
+    "id": "sent500_idyip0",
+    "en": "I learned the word \"to\" today.",
+    "vi": "Hôm nay tôi học từ \"to\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "to",
+    "favorite": false
+  },
+  {
+    "id": "sent500_d75icj",
+    "en": "I learned the word \"into\" today.",
+    "vi": "Hôm nay tôi học từ \"into\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "into",
+    "favorite": false
+  },
+  {
+    "id": "sent500_12obss9",
+    "en": "I learned the word \"onto\" today.",
+    "vi": "Hôm nay tôi học từ \"onto\".",
+    "topic": "travel",
+    "grammar": "Simple Present",
+    "vocabWord": "onto",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1fsywjz",
+    "en": "I learned the word \"until\" today.",
+    "vi": "Hôm nay tôi học từ \"until\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "until",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1r1bja3",
+    "en": "I learned the word \"because\" today.",
+    "vi": "Hôm nay tôi học từ \"because\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "because",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1vg4rrn",
+    "en": "I learned the word \"although\" today.",
+    "vi": "Hôm nay tôi học từ \"although\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "although",
+    "favorite": false
+  },
+  {
+    "id": "sent500_fvk4cm",
+    "en": "I learned the word \"if\" today.",
+    "vi": "Hôm nay tôi học từ \"if\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "if",
+    "favorite": false
+  },
+  {
+    "id": "sent500_zd8bh5",
+    "en": "I learned the word \"when\" today.",
+    "vi": "Hôm nay tôi học từ \"when\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "when",
+    "favorite": false
+  },
+  {
+    "id": "sent500_3tl2ha",
+    "en": "I learned the word \"while\" today.",
+    "vi": "Hôm nay tôi học từ \"while\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "while",
+    "favorite": false
+  },
+  {
+    "id": "sent500_vm532b",
+    "en": "I learned the word \"beforehand\" today.",
+    "vi": "Hôm nay tôi học từ \"beforehand\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "beforehand",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1reb4qy",
+    "en": "I learned the word \"perhaps\" today.",
+    "vi": "Hôm nay tôi học từ \"perhaps\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "perhaps",
+    "favorite": false
+  },
+  {
+    "id": "sent500_wgi10d",
+    "en": "I learned the word \"however\" today.",
+    "vi": "Hôm nay tôi học từ \"however\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "however",
+    "favorite": false
+  },
+  {
+    "id": "sent500_1y2kcjb",
+    "en": "I learned the word \"therefore\" today.",
+    "vi": "Hôm nay tôi học từ \"therefore\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "therefore",
+    "favorite": false
+  },
+  {
+    "id": "sent500_j39mup",
+    "en": "I learned the word \"instead\" today.",
+    "vi": "Hôm nay tôi học từ \"instead\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "instead",
+    "favorite": false
+  },
+  {
+    "id": "sent500_75hjms",
+    "en": "I learned the word \"especially\" today.",
+    "vi": "Hôm nay tôi học từ \"especially\".",
+    "topic": "daily",
+    "grammar": "Simple Present",
+    "vocabWord": "especially",
+    "favorite": false
+  },
+  {
+    "id": "sent500_17apuaw",
+    "en": "I learned the word \"finally\" today.",
+    "vi": "Hôm nay tôi học từ \"finally\".",
+    "topic": "time",
+    "grammar": "Simple Present",
+    "vocabWord": "finally",
+    "favorite": false
+  }
+]
