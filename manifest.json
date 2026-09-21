@@ -1,0 +1,10 @@
+{
+  "name":"English Master",
+  "short_name":"English Master",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#f5f7fb",
+  "theme_color":"#5b5bd6",
+  "lang":"vi",
+  "icons":[]
+}
