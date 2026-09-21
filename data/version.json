@@ -1,5 +1,12 @@
 {
-  "version": 1,
-  "updated": "2026-09-21",
-  "message": "English Master initial data"
+  "version": 2,
+  "updatedAt": "2026-09-21",
+  "releaseNotes": "English Master V4: mở rộng bộ 500 từ sang học câu, trắc nghiệm, luyện nghe, phát âm và giao tiếp.",
+  "files": {
+    "vocabulary": "vocabulary.json",
+    "sentences": "sentences.json",
+    "questions": "questions.json",
+    "grammar": "grammar.json",
+    "communication": "communication.json"
+  }
 }
