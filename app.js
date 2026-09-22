@@ -45,34 +45,65 @@ function shuffle(arr){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
   return a;
 }
+let speechToken=0;
 function getVoice(lang){
   try{
     const vs=window.speechSynthesis?.getVoices?.()||[], p=String(lang||"en-US").toLowerCase();
     return vs.find(v=>String(v.lang||"").toLowerCase()===p)||vs.find(v=>String(v.lang||"").toLowerCase().startsWith(p.split("-")[0]))||null;
   }catch(e){return null}
 }
-function speak(text,rate,lang){
-  if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát âm thanh.");return}
-  const t=String(text??"").trim(); if(!t)return;
-  window.speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(t);
-  u.lang=lang||"en-US"; u.rate=Number(rate)||Number(db.profile.speechRate)||1;
-  const v=getVoice(u.lang); if(v)u.voice=v;
-  window.speechSynthesis.speak(u);
+function stopSpeech(){
+  speechToken++;
+  if("speechSynthesis" in window)window.speechSynthesis.cancel();
 }
-function guessLang(text){
-  const s=String(text??"");
-  if(/[\u4e00-\u9fff]/.test(s))return "zh-CN";
-  if(/[ăâđêôơưĂÂĐÊÔƠƯàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]/.test(s))return "vi-VN";
-  return "en-US";
+function speak(text,rate,lang,retry){
+  if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
+  const t=String(text??"").trim();if(!t)return;
+  const r=Number(rate)||Number(db.profile.speechRate)||1,l=lang||"en-US",attempt=Number(retry||0);
+  const run=function(){
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=r;
+    const v=getVoice(l);if(v)u.voice=v;
+    u.onend=function(){};
+    u.onerror=function(){
+      if(attempt<1)setTimeout(function(){speak(t,r,l,1)},180);
+      else toast("Âm thanh gặp lỗi. Bấm Nghe lại để thử tiếp.");
+    };
+    try{
+      window.speechSynthesis.resume();
+      window.speechSynthesis.speak(u);
+    }catch(e){if(attempt<1)setTimeout(function(){speak(t,r,l,1)},180);else toast("Không thể phát âm thanh.")}
+  };
+  const voices=window.speechSynthesis.getVoices?window.speechSynthesis.getVoices():[];
+  if(!voices.length&&"onvoiceschanged" in window){
+    let done=false;
+    const once=function(){if(done)return;done=true;window.speechSynthesis.onvoiceschanged=null;run()};
+    window.speechSynthesis.onvoiceschanged=once;
+    setTimeout(function(){if(!done){done=true;window.speechSynthesis.onvoiceschanged=null;run()}},180);
+  }else run();
+}
+function speakSequence(lines,rate,lang){
+  if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
+  const seq=(lines||[]).map(String).map(function(x){return x.trim()}).filter(Boolean),r=Number(rate)||0.92,l=lang||"en-US",token=++speechToken;
+  window.speechSynthesis.cancel();
+  let i=0;
+  function next(){
+    if(token!==speechToken)return;
+    if(i>=seq.length)return;
+    const u=new SpeechSynthesisUtterance(seq[i++]);u.lang=l;u.rate=r;const v=getVoice(l);if(v)u.voice=v;
+    u.onend=next;u.onerror=function(){setTimeout(next,120)};
+    window.speechSynthesis.resume();window.speechSynthesis.speak(u);
+  }
+  next();
 }
 function audioButton(text,label,lang,rate){
   const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1;
   return '<button class="btn btn-secondary" onclick="event.stopPropagation();speak(\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
 }
 function audioGroup(text,lang){
-  return '<div class="actions">'+audioButton(text,"🔊 Nghe",lang||"en-US",1)+audioButton(text,"🐢 0.75×",lang||"en-US",0.75)+audioButton(text,"🐇 1.25×",lang||"en-US",1.25)+'</div>'
+  return '<div class="actions">'+audioButton(text,"🔊 Nghe",lang||"en-US",1)+audioButton(text,"🐢 0.75×",lang||"en-US",0.75)+audioButton(text,"🐇 1.25×",lang||"en-US",1.25)+'</div>';
 }
+
 
 function mergeBy(arr,incoming,keyFn,shouldReplace){
   const target=Array.isArray(arr)?arr.slice():[], map=new Map();
@@ -96,10 +127,10 @@ async function getJSON(url){
 }
 async function updateOnline(force){
   try{
-    const m=await getJSON(DATA_URL), ver=String(m.version??"");
+    const m=await getJSON(DATA_URL),ver=String(m.version??"");
     if(!ver)throw new Error("version.json thiếu version");
-    const bland=db.vocab.some(v=>blandExample(v.example))||db.sentences.some(s=>blandExample(s.en));
-    if(!force&&db.lastRemoteVersion===ver&&!bland){toast("Dữ liệu đang mới nhất.");return}
+    const hasBland=db.vocab.some(function(v){return blandExample(v.example)})||db.sentences.some(function(s){return blandExample(s.en)});
+    if(!force&&db.lastRemoteVersion===ver&&!hasBland){toast("Dữ liệu đang mới nhất.");return}
     const files=m.files||{};
     const spec={
       vocab:{path:files.vocabulary||"vocabulary.json",key:x=>norm(x.word)},
@@ -112,24 +143,16 @@ async function updateOnline(force){
     let added=0,changed=0;
     for(const key of Object.keys(spec)){
       try{
-        const f=spec[key].path;
-        const url=/^https?:/i.test(f)?f:DATA_URL.replace(/\/[^/]+$/,"/"+f);
-        const raw=await getJSON(url);
+        const raw=await getJSON(DATA_URL.replace(/\/[^/]+$/,"/"+spec[key].path));
         const incoming=Array.isArray(raw)?raw:(Array.isArray(raw[key])?raw[key]:[]);
         if(key==="vocab"){
           for(const x of incoming){
             const i=db.vocab.findIndex(v=>norm(v.word)===norm(x.word));
-            if(i<0){
-              db.vocab.push({...x,source:"remote",sourceVersion:ver,favorite:false,status:"New",reviewDue:null,correct_count:0,wrong_count:0});
-              added++;
-            }else{
+            if(i<0){db.vocab.push({...x,source:"remote",sourceVersion:ver,favorite:false,status:"New",reviewDue:null,correct_count:0,wrong_count:0});added++}
+            else{
               const old=db.vocab[i];
               if(blandExample(old.example)||old.source==="remote"){
-                db.vocab[i]={...old,...x,source:"remote",sourceVersion:ver,
-                  favorite:old.favorite??false,status:old.status||"New",reviewDue:old.reviewDue??null,
-                  correct_count:old.correct_count||0,wrong_count:old.wrong_count||0,
-                  lastReviewed:old.lastReviewed||null};
-                changed++;
+                db.vocab[i]={...old,...x,source:"remote",sourceVersion:ver,favorite:old.favorite??false,status:old.status||"New",reviewDue:old.reviewDue??null,correct_count:old.correct_count||0,wrong_count:old.wrong_count||0,lastReviewed:old.lastReviewed||null};changed++;
               }
             }
           }
@@ -145,23 +168,23 @@ async function updateOnline(force){
         }else{
           if(!Array.isArray(db[key]))db[key]=[];
           const arr=db[key];
+          const keyFn=spec[key].key;
           for(const x of incoming){
-            const k=spec[key].key(x);
-            const i=arr.findIndex(y=>spec[key].key(y)===k);
+            const i=arr.findIndex(y=>keyFn(y)===keyFn(x));
             if(i<0){arr.push({...x,source:"remote",sourceVersion:ver});added++}
-            else if(arr[i].source==="remote"){
-              arr[i]={...arr[i],...x,source:"remote",sourceVersion:ver};changed++;
+            else{
+              const old=arr[i];
+              if(key==="communication"||key==="grammar"||key==="questions"||old.source==="remote"){
+                arr[i]={...old,...x,source:"remote",sourceVersion:ver};changed++;
+              }
             }
           }
+          db[key]=arr;
         }
-      }catch(e){
-        if(key==="vocab")throw e;
-      }
+      }catch(e){if(key==="vocab")throw e}
     }
-    db.lastRemoteVersion=ver;
-    save();
-    render();
-    toast("Đã đồng bộ GitHub: +"+added+" mới, cập nhật "+changed+" mục.");
+    db.lastRemoteVersion=ver;save();render();
+    toast("Đã đồng bộ GitHub: +"+added+" mục mới, cập nhật "+changed+" mục.");
   }catch(e){toast("Cập nhật lỗi: "+e.message)}
 }
 function render(){
@@ -224,11 +247,17 @@ function listenCheck(el,selected,correct){
 }
 
 function speaking(){renderSpeaking()}
+let autoNextSpeaking=true;
 function renderSpeaking(){
   if(!db.sentences.length){$("view").innerHTML=shell("Phát âm","Chưa có câu luyện.");return}
   const s=db.sentences[speakIndex%db.sentences.length],v=db.vocab.find(function(x){return norm(x.word)===norm(s.vocabWord)});
-  $("view").innerHTML=shell("Luyện phát âm","Mỗi câu đều có nghe mẫu, nghe chậm, nghe từ và nhận diện giọng nói.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span></div><h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p><div class="hint"><b>Từ trọng tâm:</b> '+esc(s.vocabWord||"")+' <span class="ipa">'+esc(v?.ipa||"")+'</span></div><div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button>'+audioButton(s.vocabWord||"","🔊 Nghe từ","en-US",1)+'<button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div><div id="speechResult" class="hint" style="margin-top:14px">Nói lại đúng câu mẫu.</div></div>');
+  $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → có thể tự chuyển sang câu kế tiếp.",
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span></div>'+
+    '<h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p><div class="hint"><b>Từ trọng tâm:</b> '+esc(s.vocabWord||"")+' <span class="ipa">'+esc(v?.ipa||"")+'</span></div>'+
+    '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button>'+audioButton(s.vocabWord||"","🔊 Nghe từ","en-US",1)+
+    '<button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
+    '<div class="actions" style="margin-top:10px"><button onclick="autoNextSpeaking=!autoNextSpeaking;renderSpeaking()">⏭️ Tự chuyển: '+(autoNextSpeaking?"BẬT":"TẮT")+'</button><span class="muted small">Phím → cũng chuyển câu</span></div>'+
+    '<div id="speechResult" class="hint" style="margin-top:14px">Nghe mẫu rồi nói lại.</div></div>');
 }
 function nextSpeak(){speakIndex=(speakIndex+1)%db.sentences.length;renderSpeaking()}
 function prevSpeak(){speakIndex=(speakIndex-1+db.sentences.length)%db.sentences.length;renderSpeaking()}
@@ -237,7 +266,12 @@ function startRecognition(){
   if(!SR){toast("Chrome/Edge thường hỗ trợ nhận diện microphone tốt hơn.");return}
   const target=db.sentences[speakIndex%db.sentences.length].en,r=new SR();r.lang="en-US";r.interimResults=false;r.maxAlternatives=1;
   const out=$("speechResult");if(out)out.textContent="🎙️ Đang nghe...";
-  r.onresult=function(e){const heard=e.results[0][0].transcript,score=similarityScore(heard,target);if(out)out.innerHTML="<b>Bạn nói:</b> "+esc(heard)+"<br><b>Mức khớp:</b> "+score+"%<br><span class=\"muted\">Đây là độ tương đồng văn bản, không phải chấm phát âm chuyên môn.</span>";if(score>=80){addXP(10);save()}};
+  r.onresult=function(e){
+    const heard=e.results[0][0].transcript,score=similarityScore(heard,target);
+    if(out)out.innerHTML="<b>Bạn nói:</b> "+esc(heard)+"<br><b>Mức khớp:</b> "+score+"%<br><span class=\"muted\">Đây là độ tương đồng văn bản, không phải chấm phát âm chuyên môn.</span>";
+    if(score>=80){addXP(10);save()}
+    if(autoNextSpeaking)setTimeout(function(){if(view==="speaking")nextSpeak()},1200);
+  };
   r.onerror=function(){toast("Không nhận được giọng nói. Hãy kiểm tra quyền microphone.")};r.start();
 }
 function similarityScore(a,b){
@@ -245,6 +279,7 @@ function similarityScore(a,b){
   if(!A.length||!B.length)return 0;let hit=0;const used=new Set();
   A.forEach(function(x){const i=B.findIndex(function(y,j){return !used.has(j)&&x===y});if(i>=0){hit++;used.add(i)}});return Math.round(hit/Math.max(A.length,B.length)*100);
 }
+
 
 function quiz(){  
   if(!db.questions.length){$("view").innerHTML=shell("Trắc nghiệm","Chưa có dữ liệu.");return}
@@ -265,9 +300,22 @@ function grammar(){
     '<div class="grid grid-2">'+db.grammar.map(function(g){return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3><div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div><p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+(g.examples||[]).map(function(e){return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1)+'</div>'}).join("")+'</div><p class="muted small">'+esc(g.notes||"")+'</p></div>'}).join("")+'</div>');
 }
 function communication(){
-  $("view").innerHTML=shell("Giao tiếp","Nghe từng câu hoặc cả đoạn hội thoại để luyện phản xạ.",
-    '<div class="grid grid-2">'+db.communication.map(function(c){return '<div class="card"><span class="badge">'+esc(c.topic||"")+'</span><h3>'+esc(c.title||"")+'</h3><div class="list">'+(c.lines||[]).map(function(l){return '<div class="item"><b>'+esc(l[0])+'</b> — '+esc(l[1])+'<div class="actions" style="margin-top:7px">'+audioButton(l[1],"🔊 Nghe","en-US",1)+'</div></div>'}).join("")+'</div><div class="actions" style="margin-top:12px"><button class="primary" onclick="speak(\''+escapeJs((c.lines||[]).map(function(l){return l[1]}).join(" "))+'\',0.92,\'en-US\')">▶ Nghe cả đoạn</button></div></div>'}).join("")+'</div>');
+  $("view").innerHTML=shell("Giao tiếp","Hội thoại dài hơn, có 8 lượt nói; nghe từng câu hoặc nghe cả đoạn.",
+    '<div class="grid grid-2">'+db.communication.map(function(d,i){
+      const lines=d.lines||[];
+      return '<div class="card"><div class="toolbar"><span class="badge">'+esc(d.topic||"")+'</span><span class="muted small">'+lines.length+' lượt</span></div><h3>'+esc(d.title||"")+'</h3>'+
+      '<div class="list">'+lines.map(function(l,j){
+        return '<div class="item"><div><b>'+esc(l[0])+'</b> — <span>'+esc(l[1])+'</span></div>'+(l[2]?'<div class="muted small" style="margin-top:5px">'+esc(l[2])+'</div>':'')+
+        '<div class="actions" style="margin-top:7px">'+audioButton(l[1],"🔊 Nghe","en-US",1)+'</div></div>';
+      }).join("")+'</div><div class="actions" style="margin-top:12px"><button class="primary" onclick="playDialogue('+i+')">▶ Nghe cả đoạn</button><button onclick="stopSpeech()">⏹ Dừng</button></div></div>';
+    }).join("")+'</div>');
 }
+function playDialogue(index){
+  const d=db.communication[index];if(!d)return;
+  stopSpeech();const lines=(d.lines||[]).map(function(l){return l[1]});speakSequence(lines,0.9,"en-US");
+}
+
+
 function trilingual(){
   $("view").innerHTML=shell("Tam ngữ Anh – Trung – Việt","Mỗi ngôn ngữ có giọng đọc riêng.",
     '<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>English</th><th>中文</th><th>Tiếng Việt</th><th>Nghe</th></tr></thead><tbody>'+
@@ -295,6 +343,10 @@ function settings(){
 function init(){
   load();
   if($("theme"))$("theme").onclick=function(){db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()};
+  document.addEventListener("keydown",function(e){
+    if(view==="speaking"&&e.key==="ArrowRight"&&e.target.tagName!=="INPUT"&&e.target.tagName!=="TEXTAREA"){nextSpeak()}
+    if(e.key==="Escape")stopSpeech();
+  });
   render();
   if(db.profile.autoUpdate!==false)setTimeout(function(){updateOnline(false)},800);
 }
