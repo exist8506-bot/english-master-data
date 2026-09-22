@@ -1,7 +1,7 @@
 {
-  "version": 2,
-  "updatedAt": "2026-09-21",
-  "releaseNotes": "English Master V4: mở rộng bộ 500 từ sang học câu, trắc nghiệm, luyện nghe, phát âm và giao tiếp.",
+  "version": 3,
+  "updatedAt": "2026-09-22",
+  "releaseNotes": "English Master V4.1: ví dụ từ vựng và câu luyện được làm đa dạng theo chủ đề/ngữ loại; nâng cấp nghe và phát âm trong toàn ứng dụng.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
