@@ -1019,5 +1019,1365 @@
         "Tôi nghĩ tiết kiệm giúp bạn cảm thấy chuẩn bị tốt hơn."
       ]
     ]
+  },
+  {
+    "id": "comm5_0",
+    "title": "Quần áo — hội thoại mở rộng",
+    "topic": "Quần áo",
+    "vocab": [
+      "shirt",
+      "pants",
+      "jacket",
+      "coat",
+      "dress",
+      "skirt"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing shirt and pants.",
+        "Tôi đang luyện áo sơ mi và quần."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use jacket in a sentence?",
+        "Bạn có thể dùng áo khoác trong một câu không?"
+      ],
+      [
+        "B",
+        "She chose a jacket for the party.",
+        "Cô ấy chọn áo khoác cho bữa tiệc."
+      ],
+      [
+        "A",
+        "What about coat?",
+        "Còn áo măng tô; áo khoác dài thì sao?"
+      ],
+      [
+        "B",
+        "I keep my coat in the closet.",
+        "Tôi để áo măng tô; áo khoác dài trong tủ."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing dress and skirt.",
+        "Tôi sẽ tiếp tục luyện váy đầm và chân váy."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_1",
+    "title": "Cơ thể — hội thoại mở rộng",
+    "topic": "Cơ thể",
+    "vocab": [
+      "head",
+      "face",
+      "eye",
+      "ear",
+      "nose",
+      "mouth"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing head and face.",
+        "Tôi đang luyện đầu và khuôn mặt."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use eye in a sentence?",
+        "Bạn có thể dùng mắt trong một câu không?"
+      ],
+      [
+        "B",
+        "She hurt her eye during practice.",
+        "Cô ấy làm đau mắt khi luyện tập."
+      ],
+      [
+        "A",
+        "What about ear?",
+        "Còn tai thì sao?"
+      ],
+      [
+        "B",
+        "He covered his ear because it was cold.",
+        "Anh ấy che tai vì trời lạnh."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing nose and mouth.",
+        "Tôi sẽ tiếp tục luyện mũi và miệng."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_2",
+    "title": "Gia đình — hội thoại mở rộng",
+    "topic": "Gia đình",
+    "vocab": [
+      "city",
+      "town",
+      "street",
+      "road",
+      "building",
+      "bank"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing city and town.",
+        "Tôi đang luyện thành phố và thị trấn."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use street in a sentence?",
+        "Bạn có thể dùng đường phố trong một câu không?"
+      ],
+      [
+        "B",
+        "We talked about the street after dinner.",
+        "Chúng tôi nói về đường phố sau bữa tối."
+      ],
+      [
+        "A",
+        "What about road?",
+        "Còn con đường thì sao?"
+      ],
+      [
+        "B",
+        "The road is useful in daily life.",
+        "Road hữu ích trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing building and bank.",
+        "Tôi sẽ tiếp tục luyện tòa nhà và ngân hàng."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_3",
+    "title": "Nhà cửa — hội thoại mở rộng",
+    "topic": "Nhà cửa",
+    "vocab": [
+      "bike",
+      "motorcycle",
+      "scooter",
+      "truck",
+      "van",
+      "ship"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing bike and motorcycle.",
+        "Tôi đang luyện xe đạp; xe và xe máy."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use scooter in a sentence?",
+        "Bạn có thể dùng xe tay ga trong một câu không?"
+      ],
+      [
+        "B",
+        "We checked the scooter before the trip.",
+        "Chúng tôi kiểm tra xe tay ga trước chuyến đi."
+      ],
+      [
+        "A",
+        "What about truck?",
+        "Còn xe tải thì sao?"
+      ],
+      [
+        "B",
+        "The truck was ready this morning.",
+        "Truck đã sẵn sàng sáng nay."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing van and ship.",
+        "Tôi sẽ tiếp tục luyện xe tải nhỏ; xe van và tàu thủy."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_4",
+    "title": "Du lịch — hội thoại mở rộng",
+    "topic": "Du lịch",
+    "vocab": [
+      "sofa",
+      "pillow",
+      "blanket",
+      "shelf",
+      "drawer",
+      "closet"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing sofa and pillow.",
+        "Tôi đang luyện ghế sofa và gối."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use blanket in a sentence?",
+        "Bạn có thể dùng chăn trong một câu không?"
+      ],
+      [
+        "B",
+        "I put the blanket beside the bed.",
+        "Tôi đặt chăn cạnh giường."
+      ],
+      [
+        "A",
+        "What about shelf?",
+        "Còn kệ thì sao?"
+      ],
+      [
+        "B",
+        "The shelf is near the kitchen.",
+        "Shelf ở gần bếp."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing drawer and closet.",
+        "Tôi sẽ tiếp tục luyện ngăn kéo và tủ quần áo."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_5",
+    "title": "Đồ ăn — hội thoại mở rộng",
+    "topic": "Đồ ăn",
+    "vocab": [
+      "bake",
+      "boil",
+      "fry",
+      "cut",
+      "taste",
+      "recipe"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing bake and boil.",
+        "Tôi đang luyện nướng bánh và luộc; đun sôi."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use fry in a sentence?",
+        "Bạn có thể dùng chiên trong một câu không?"
+      ],
+      [
+        "B",
+        "Please remember to fry carefully.",
+        "Hãy nhớ chiên cẩn thận."
+      ],
+      [
+        "A",
+        "What about cut?",
+        "Còn cắt thì sao?"
+      ],
+      [
+        "B",
+        "I usually cut after work.",
+        "Tôi thường cắt sau giờ làm."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing taste and recipe.",
+        "Tôi sẽ tiếp tục luyện nếm; có vị và công thức nấu ăn."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_6",
+    "title": "Sức khỏe — hội thoại mở rộng",
+    "topic": "Sức khỏe",
+    "vocab": [
+      "music",
+      "reading",
+      "painting",
+      "drawing",
+      "photography",
+      "guitar"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing music and reading.",
+        "Tôi đang luyện âm nhạc và đọc sách."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use painting in a sentence?",
+        "Bạn có thể dùng tranh; hội họa trong một câu không?"
+      ],
+      [
+        "B",
+        "Can you give me an example with painting?",
+        "Bạn có thể cho tôi một ví dụ với tranh; hội họa không?"
+      ],
+      [
+        "A",
+        "What about drawing?",
+        "Còn vẽ thì sao?"
+      ],
+      [
+        "B",
+        "I noticed the drawing this morning.",
+        "Tôi chú ý đến vẽ sáng nay."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing photography and guitar.",
+        "Tôi sẽ tiếp tục luyện nhiếp ảnh và đàn guitar."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_7",
+    "title": "Học tập — hội thoại mở rộng",
+    "topic": "Học tập",
+    "vocab": [
+      "football",
+      "basketball",
+      "tennis",
+      "volleyball",
+      "badminton",
+      "baseball"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing football and basketball.",
+        "Tôi đang luyện bóng đá và bóng rổ."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use tennis in a sentence?",
+        "Bạn có thể dùng quần vợt trong một câu không?"
+      ],
+      [
+        "B",
+        "The tennis is useful in daily life.",
+        "Tennis hữu ích trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "What about volleyball?",
+        "Còn bóng chuyền thì sao?"
+      ],
+      [
+        "B",
+        "I saw the volleyball on my way home.",
+        "Tôi thấy bóng chuyền trên đường về nhà."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing badminton and baseball.",
+        "Tôi sẽ tiếp tục luyện cầu lông và bóng chày."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_8",
+    "title": "Công việc — hội thoại mở rộng",
+    "topic": "Công việc",
+    "vocab": [
+      "concert",
+      "theater",
+      "actress",
+      "stage",
+      "audience",
+      "program"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing concert and theater.",
+        "Tôi đang luyện buổi hòa nhạc và nhà hát."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use actress in a sentence?",
+        "Bạn có thể dùng nữ diễn viên trong một câu không?"
+      ],
+      [
+        "B",
+        "I noticed the actress this morning.",
+        "Tôi chú ý đến nữ diễn viên sáng nay."
+      ],
+      [
+        "A",
+        "What about stage?",
+        "Còn sân khấu thì sao?"
+      ],
+      [
+        "B",
+        "We talked about the stage after dinner.",
+        "Chúng tôi nói về sân khấu sau bữa tối."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing audience and program.",
+        "Tôi sẽ tiếp tục luyện khán giả và chương trình."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_9",
+    "title": "Tiền bạc — hội thoại mở rộng",
+    "topic": "Tiền bạc",
+    "vocab": [
+      "hill",
+      "desert",
+      "air",
+      "earth",
+      "soil",
+      "stone"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing hill and desert.",
+        "Tôi đang luyện đồi và sa mạc."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use air in a sentence?",
+        "Bạn có thể dùng không khí trong một câu không?"
+      ],
+      [
+        "B",
+        "We saw the air during our walk.",
+        "Chúng tôi thấy không khí khi đi bộ."
+      ],
+      [
+        "A",
+        "What about earth?",
+        "Còn trái đất; đất thì sao?"
+      ],
+      [
+        "B",
+        "The earth looked beautiful after the rain.",
+        "Earth trông đẹp sau cơn mưa."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing soil and stone.",
+        "Tôi sẽ tiếp tục luyện đất trồng và đá; hòn đá."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_10",
+    "title": "Địa điểm — hội thoại mở rộng",
+    "topic": "Địa điểm",
+    "vocab": [
+      "couple",
+      "classmate",
+      "roommate",
+      "partner",
+      "guest",
+      "host"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing couple and classmate.",
+        "Tôi đang luyện cặp đôi và bạn cùng lớp."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use roommate in a sentence?",
+        "Bạn có thể dùng bạn cùng phòng trong một câu không?"
+      ],
+      [
+        "B",
+        "Can you give me an example with roommate?",
+        "Bạn có thể cho tôi một ví dụ với bạn cùng phòng không?"
+      ],
+      [
+        "A",
+        "What about partner?",
+        "Còn đối tác; người cùng cặp thì sao?"
+      ],
+      [
+        "B",
+        "I noticed the partner this morning.",
+        "Tôi chú ý đến đối tác; người cùng cặp sáng nay."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing guest and host.",
+        "Tôi sẽ tiếp tục luyện khách và chủ nhà; người tổ chức."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_11",
+    "title": "Cảm xúc — hội thoại mở rộng",
+    "topic": "Cảm xúc",
+    "vocab": [
+      "polite",
+      "quiet",
+      "active",
+      "funny",
+      "shy",
+      "smart"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing polite and quiet.",
+        "Tôi đang luyện lịch sự và yên lặng; ít nói."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use active in a sentence?",
+        "Bạn có thể dùng năng động trong một câu không?"
+      ],
+      [
+        "B",
+        "It is active to practice every day.",
+        "Luyện tập mỗi ngày là năng động."
+      ],
+      [
+        "A",
+        "What about funny?",
+        "Còn hài hước thì sao?"
+      ],
+      [
+        "B",
+        "The new plan is funny for us.",
+        "Kế hoạch mới khá hài hước với chúng tôi."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing shy and smart.",
+        "Tôi sẽ tiếp tục luyện nhút nhát và thông minh."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_12",
+    "title": "Động từ — hội thoại mở rộng",
+    "topic": "Động từ",
+    "vocab": [
+      "lose",
+      "remember",
+      "score",
+      "goal",
+      "ball",
+      "racket"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing lose and remember.",
+        "Tôi đang luyện mất; thua và nhớ."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use score in a sentence?",
+        "Bạn có thể dùng tỷ số; điểm trong một câu không?"
+      ],
+      [
+        "B",
+        "I saw the score on my way home.",
+        "Tôi thấy tỷ số; điểm trên đường về nhà."
+      ],
+      [
+        "A",
+        "What about goal?",
+        "Còn bàn thắng; mục tiêu thì sao?"
+      ],
+      [
+        "B",
+        "Can you give me an example with goal?",
+        "Bạn có thể cho tôi một ví dụ với bàn thắng; mục tiêu không?"
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing ball and racket.",
+        "Tôi sẽ tiếp tục luyện quả bóng và vợt."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_13",
+    "title": "Tính từ — hội thoại mở rộng",
+    "topic": "Tính từ",
+    "vocab": [
+      "meet",
+      "call",
+      "send",
+      "receive",
+      "stop",
+      "happen"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing meet and call.",
+        "Tôi đang luyện gặp và gọi."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use send in a sentence?",
+        "Bạn có thể dùng gửi trong một câu không?"
+      ],
+      [
+        "B",
+        "I usually send after work.",
+        "Tôi thường gửi sau giờ làm."
+      ],
+      [
+        "A",
+        "What about receive?",
+        "Còn nhận thì sao?"
+      ],
+      [
+        "B",
+        "I need to receive before dinner.",
+        "Tôi cần nhận trước bữa tối."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing stop and happen.",
+        "Tôi sẽ tiếp tục luyện dừng và xảy ra."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_14",
+    "title": "Môi trường — hội thoại mở rộng",
+    "topic": "Môi trường",
+    "vocab": [
+      "wear",
+      "build",
+      "break",
+      "fix",
+      "check",
+      "plan"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing wear and build.",
+        "Tôi đang luyện mặc; đeo và xây dựng."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use break in a sentence?",
+        "Bạn có thể dùng làm vỡ; phá trong một câu không?"
+      ],
+      [
+        "B",
+        "She decided to break today.",
+        "Cô ấy quyết định làm vỡ; phá hôm nay."
+      ],
+      [
+        "A",
+        "What about fix?",
+        "Còn sửa chữa thì sao?"
+      ],
+      [
+        "B",
+        "Please remember to fix carefully.",
+        "Hãy nhớ sửa chữa cẩn thận."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing check and plan.",
+        "Tôi sẽ tiếp tục luyện kiểm tra và lên kế hoạch."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_15",
+    "title": "Thể thao — hội thoại mở rộng",
+    "topic": "Thể thao",
+    "vocab": [
+      "tall",
+      "important",
+      "same",
+      "empty",
+      "seed",
+      "rabbit"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing tall and important.",
+        "Tôi đang luyện cao và quan trọng."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use same in a sentence?",
+        "Bạn có thể dùng giống nhau trong một câu không?"
+      ],
+      [
+        "B",
+        "The new plan is same for us.",
+        "Kế hoạch mới khá giống nhau với chúng tôi."
+      ],
+      [
+        "A",
+        "What about empty?",
+        "Còn trống thì sao?"
+      ],
+      [
+        "B",
+        "The room feels empty today.",
+        "Căn phòng hôm nay khá trống."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing seed and rabbit.",
+        "Tôi sẽ tiếp tục luyện hạt giống và thỏ."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_16",
+    "title": "Sở thích — hội thoại mở rộng",
+    "topic": "Sở thích",
+    "vocab": [
+      "heavy",
+      "dark",
+      "bright",
+      "dry",
+      "wet",
+      "possible"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing heavy and dark.",
+        "Tôi đang luyện nặng và tối."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use bright in a sentence?",
+        "Bạn có thể dùng sáng trong một câu không?"
+      ],
+      [
+        "B",
+        "It is bright to practice every day.",
+        "Luyện tập mỗi ngày là sáng."
+      ],
+      [
+        "A",
+        "What about dry?",
+        "Còn khô thì sao?"
+      ],
+      [
+        "B",
+        "The new plan is dry for us.",
+        "Kế hoạch mới khá khô với chúng tôi."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing wet and possible.",
+        "Tôi sẽ tiếp tục luyện ướt và có thể."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_17",
+    "title": "Giải trí — hội thoại mở rộng",
+    "topic": "Giải trí",
+    "vocab": [
+      "paper",
+      "ruler",
+      "backpack",
+      "grade",
+      "mark",
+      "research"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing paper and ruler.",
+        "Tôi đang luyện giấy và thước."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use backpack in a sentence?",
+        "Bạn có thể dùng ba lô trong một câu không?"
+      ],
+      [
+        "B",
+        "I used the backpack while studying.",
+        "Tôi dùng ba lô khi học."
+      ],
+      [
+        "A",
+        "What about grade?",
+        "Còn điểm; khối lớp thì sao?"
+      ],
+      [
+        "B",
+        "The teacher explained the grade clearly.",
+        "Giáo viên giải thích điểm; khối lớp rõ ràng."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing mark and research.",
+        "Tôi sẽ tiếp tục luyện điểm số; dấu và nghiên cứu."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_18",
+    "title": "Giao tiếp — hội thoại mở rộng",
+    "topic": "Giao tiếp",
+    "vocab": [
+      "employee",
+      "employer",
+      "business",
+      "service",
+      "factory",
+      "department"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing employee and employer.",
+        "Tôi đang luyện nhân viên và người sử dụng lao động."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use business in a sentence?",
+        "Bạn có thể dùng kinh doanh; doanh nghiệp trong một câu không?"
+      ],
+      [
+        "B",
+        "We discussed the business this morning.",
+        "Chúng tôi thảo luận về kinh doanh; doanh nghiệp sáng nay."
+      ],
+      [
+        "A",
+        "What about service?",
+        "Còn dịch vụ thì sao?"
+      ],
+      [
+        "B",
+        "The service is important this week.",
+        "Service quan trọng trong tuần này."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing factory and department.",
+        "Tôi sẽ tiếp tục luyện nhà máy và phòng ban."
+      ]
+    ]
+  },
+  {
+    "id": "comm5_19",
+    "title": "Đời sống — hội thoại mở rộng",
+    "topic": "Đời sống",
+    "vocab": [
+      "bill",
+      "coin",
+      "note",
+      "banknote",
+      "budget",
+      "credit"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "5",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing bill and coin.",
+        "Tôi đang luyện hóa đơn và đồng xu."
+      ],
+      [
+        "A",
+        "Why are you learning these words?",
+        "Tại sao bạn học những từ này?"
+      ],
+      [
+        "B",
+        "I want to use them naturally in daily conversations.",
+        "Tôi muốn dùng chúng tự nhiên trong giao tiếp hằng ngày."
+      ],
+      [
+        "A",
+        "Can you use note in a sentence?",
+        "Bạn có thể dùng tờ tiền; ghi chú trong một câu không?"
+      ],
+      [
+        "B",
+        "The note is within my budget.",
+        "Note nằm trong ngân sách của tôi."
+      ],
+      [
+        "A",
+        "What about banknote?",
+        "Còn tiền giấy thì sao?"
+      ],
+      [
+        "B",
+        "I checked the banknote before paying.",
+        "Tôi kiểm tra tiền giấy trước khi thanh toán."
+      ],
+      [
+        "A",
+        "Which new word is the easiest for you?",
+        "Từ mới nào dễ nhất với bạn?"
+      ],
+      [
+        "B",
+        "I'll keep practicing budget and credit.",
+        "Tôi sẽ tiếp tục luyện ngân sách và tín dụng."
+      ]
+    ]
   }
 ]
