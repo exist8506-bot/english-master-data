@@ -89,10 +89,10 @@ async function getJSON(url){
 }
 async function updateOnline(force){
   try{
-    const m=await getJSON(DATA_URL),ver=String(m.version??"");
+    const m=await getJSON(DATA_URL), ver=String(m.version??"");
     if(!ver)throw new Error("version.json thiếu version");
-    const hasBland=db.vocab.some(function(v){return blandExample(v.example)})||db.sentences.some(function(s){return blandExample(s.en)});
-    if(!force&&db.lastRemoteVersion===ver&&!hasBland){toast("Dữ liệu đang mới nhất.");return}
+    const bland=db.vocab.some(v=>blandExample(v.example))||db.sentences.some(s=>blandExample(s.en));
+    if(!force&&db.lastRemoteVersion===ver&&!bland){toast("Dữ liệu đang mới nhất.");return}
     const files=m.files||{};
     const spec={
       vocab:{path:files.vocabulary||"vocabulary.json",key:x=>norm(x.word)},
@@ -102,32 +102,61 @@ async function updateOnline(force){
       communication:{path:files.communication||"communication.json",key:x=>String(x.id||norm(x.title))},
       trilingual:{path:files.trilingual||"trilingual.json",key:x=>norm(x.en)+"|"+norm(x.zh||x.chinese)}
     };
-    let added=0,updated=0;
+    let added=0,changed=0;
     for(const key of Object.keys(spec)){
       try{
         const f=spec[key].path;
         const url=/^https?:/i.test(f)?f:DATA_URL.replace(/\/[^/]+$/,"/"+f);
         const raw=await getJSON(url);
         const incoming=Array.isArray(raw)?raw:(Array.isArray(raw[key])?raw[key]:[]);
-        const old=db[key]||[];
-        const before=old.length;
-        db[key]=mergeBy(old,incoming,spec[key].key,function(prev,next){
-          if(key==="vocab")return remoteReplaceAllowed(prev);
-          if(key==="sentences")return remoteReplaceAllowed(prev);
-          return prev?.source==="remote";
-        });
-        added+=db[key].length-before; updated+=Math.max(0,db[key].length-before===0?0:0);
+        if(key==="vocab"){
+          for(const x of incoming){
+            const i=db.vocab.findIndex(v=>norm(v.word)===norm(x.word));
+            if(i<0){
+              db.vocab.push({...x,source:"remote",sourceVersion:ver,favorite:false,status:"New",reviewDue:null,correct_count:0,wrong_count:0});
+              added++;
+            }else{
+              const old=db.vocab[i];
+              if(blandExample(old.example)||old.source==="remote"){
+                db.vocab[i]={...old,...x,source:"remote",sourceVersion:ver,
+                  favorite:old.favorite??false,status:old.status||"New",reviewDue:old.reviewDue??null,
+                  correct_count:old.correct_count||0,wrong_count:old.wrong_count||0,
+                  lastReviewed:old.lastReviewed||null};
+                changed++;
+              }
+            }
+          }
+        }else if(key==="sentences"){
+          if(!Array.isArray(db.sentences))db.sentences=[];
+          for(const x of incoming){
+            const i=db.sentences.findIndex(s=>String(s.id||"")===String(x.id||"")||(s.vocabWord&&x.vocabWord&&norm(s.vocabWord)===norm(x.vocabWord)));
+            if(i<0){db.sentences.push({...x,source:"remote",sourceVersion:ver,favorite:false});added++}
+            else if(blandExample(db.sentences[i].en)||db.sentences[i].source==="remote"){
+              const old=db.sentences[i];db.sentences[i]={...old,...x,source:"remote",sourceVersion:ver,favorite:old.favorite??false};changed++;
+            }
+          }
+        }else{
+          if(!Array.isArray(db[key]))db[key]=[];
+          const arr=db[key];
+          for(const x of incoming){
+            const k=spec[key].key(x);
+            const i=arr.findIndex(y=>spec[key].key(y)===k);
+            if(i<0){arr.push({...x,source:"remote",sourceVersion:ver});added++}
+            else if(arr[i].source==="remote"){
+              arr[i]={...arr[i],...x,source:"remote",sourceVersion:ver};changed++;
+            }
+          }
+        }
       }catch(e){
         if(key==="vocab")throw e;
       }
     }
-    for(const v of db.vocab){v.source="remote";v.sourceVersion=ver}
-    for(const s of db.sentences){if(s.id&&String(s.id).startsWith("sent500_"))s.source="remote"}
-    db.lastRemoteVersion=ver;save();render();
-    toast("Đã đồng bộ dữ liệu GitHub: "+added+" mục mới.");
+    db.lastRemoteVersion=ver;
+    save();
+    render();
+    toast("Đã đồng bộ GitHub: +"+added+" mới, cập nhật "+changed+" mục.");
   }catch(e){toast("Cập nhật lỗi: "+e.message)}
 }
-
 function render(){
   document.body.classList.toggle("dark",db.profile.theme==="dark");
   if($("streak"))$("streak").textContent=db.stats.streak||0;
