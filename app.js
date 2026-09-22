@@ -166,3 +166,17 @@ async function updateOnline(force=false){
 }
 window.startRecognitionEnhanced=startRecognitionEnhanced;window.nextSpeakEnhanced=nextSpeakEnhanced;window.prevSpeakEnhanced=prevSpeakEnhanced;window.listenCheck=listenCheck;window.answerQuizEnhanced=answerQuizEnhanced;window.playDialogue=playDialogue;
 setTimeout(()=>{try{render()}catch{}},50);
+
+
+// ===== V4.1 final polish =====
+function review(){
+  const due=db.vocab.filter(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date()), hard=db.vocab.filter(v=>v.status==="Review"||v.status==="Chưa nhớ"||v.status==="New");
+  document.getElementById("view").innerHTML=shell("Ôn tập thông minh","Ưu tiên từ đến hạn và từ bạn chưa nhớ; mọi mục đều có nút nghe.","<div class=\"grid\"><div class=\"card\"><div class=\"big\">"+due.length+"</div><div class=\"muted\">Đến hạn</div></div><div class=\"card\"><div class=\"big\">"+hard.length+"</div><div class=\"muted\">Cần củng cố</div></div><div class=\"card\"><div class=\"big\">"+db.vocab.filter(v=>v.status===\"Rất dễ\").length+"</div><div class=\"muted\">Đã nhớ tốt</div></div></div><div class=\"card\"><div class=\"actions\"><button class=\"primary\" onclick=\"setView('flashcards')\">🃏 Ôn bằng Flashcards</button></div><div class=\"list\" style=\"margin-top:14px\">"+[...due,...hard.filter(v=>!due.includes(v))].slice(0,20).map(v=>"<div class=\"item\"><div class=\"row\"><div style=\"flex:1\"><b>"+esc(v.word)+"</b> <span class=\"ipa\">"+esc(v.ipa||"")+"</span><div class=\"muted\">"+esc(v.meaning)+"</div></div>"+audioBtn(v.word,"🔊 Từ")+audioBtn(v.example||v.word,"🔊 Câu")+"</div></div>").join("")+"</div></div>");
+}
+function settings(){
+  document.getElementById("view").innerHTML=shell("Cài đặt","Tự động cập nhật, giọng đọc và dữ liệu cá nhân.")+
+  "<div class=\"card\"><h2>☁️ Cập nhật nội dung</h2><p class=\"muted\">Nguồn: <code>"+DATA_URL+"</code></p><p>Phiên bản nội dung đã nhận: <b>"+esc(db.lastRemoteVersion||"chưa có")+"</b></p><div class=\"actions\"><button class=\"btn primary\" onclick=\"updateOnline(true)\">🔄 Kiểm tra cập nhật</button><button class=\"btn\" onclick=\"speak('This is an audio test.',1,'en-US')\">🔊 Kiểm tra âm thanh</button></div><p class=\"small muted\" style=\"margin-top:12px\">Server hỗ trợ: vocabulary.json · sentences.json · questions.json · grammar.json · communication.json · trilingual.json</p></div>"+
+  "<div class=\"card\"><h2>🔊 Giọng đọc</h2><label>Tốc độ</label><select onchange=\"db.profile.speechRate=Number(this.value);save()\">"+[0.5,0.75,1,1.25,1.5].map(x=>"<option value=\""+x+"\" "+(Number(db.profile.speechRate||1)===x?"selected":"")+">"+x+"×</option>").join("")+"</select></div>"+
+  "<div class=\"card\"><h2>🌙 Giao diện</h2><button class=\"btn\" onclick=\"db.profile.theme=db.profile.theme==='dark'?'light':'dark';save();render()\">Đổi Light / Dark</button></div>";
+}
+setTimeout(()=>{try{render()}catch{}},80);
