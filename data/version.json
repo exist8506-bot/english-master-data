@@ -1,7 +1,7 @@
 {
-  "version": 3,
+  "version": 4,
   "updatedAt": "2026-09-22",
-  "releaseNotes": "English Master V4.1: ví dụ từ vựng và câu luyện được làm đa dạng theo chủ đề/ngữ loại; nâng cấp nghe và phát âm trong toàn ứng dụng.",
+  "releaseNotes": "English Master V4.2: sửa phát âm/âm thanh toàn ứng dụng, thêm phát audio hội thoại theo từng lượt, kéo dài 18 chủ đề giao tiếp lên 8 lượt, thêm tự chuyển câu khi luyện phát âm và phím →.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
