@@ -1,22 +1,8 @@
 [
   {
-    "id": "comm500_ms7go9",
-    "title": "Gia đình — từ vựng thực tế",
+    "id": "comm42_0",
+    "title": "Gia đình — hội thoại thực tế",
     "topic": "Gia đình",
-    "lines": [
-      [
-        "A",
-        "Do you know the word \"family\"?"
-      ],
-      [
-        "B",
-        "Yes. It means \"gia đình\"."
-      ],
-      [
-        "A",
-        "Let's practice it: I learned the word \"family\" today."
-      ]
-    ],
     "vocab": [
       "family",
       "parent",
@@ -26,26 +12,54 @@
       "brother",
       "daughter",
       "son"
-    ]
-  },
-  {
-    "id": "comm500_187e2tl",
-    "title": "Trường học — từ vựng thực tế",
-    "topic": "Trường học",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"student\"?"
+        "How many people are there in your family?",
+        "Gia đình bạn có bao nhiêu người?"
       ],
       [
         "B",
-        "Yes. It means \"học sinh; sinh viên\"."
+        "There are four people in my family.",
+        "Gia đình tôi có bốn người."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"student\" today."
+        "Do you live with your parents?",
+        "Bạn có sống cùng bố mẹ không?"
+      ],
+      [
+        "B",
+        "Yes. My mother and father live with me.",
+        "Có. Mẹ và bố tôi sống cùng tôi."
+      ],
+      [
+        "A",
+        "Do you have a brother or a sister?",
+        "Bạn có anh/em trai hoặc chị/em gái không?"
+      ],
+      [
+        "B",
+        "I have a younger sister and an older brother.",
+        "Tôi có một em gái và một anh trai."
+      ],
+      [
+        "A",
+        "What do you usually do together?",
+        "Mọi người thường làm gì cùng nhau?"
+      ],
+      [
+        "B",
+        "We have dinner together and talk about our day.",
+        "Chúng tôi ăn tối cùng nhau và nói về một ngày của mình."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_1",
+    "title": "Trường học — hội thoại thực tế",
+    "topic": "Trường học",
     "vocab": [
       "student",
       "teacher",
@@ -55,26 +69,54 @@
       "subject",
       "homework",
       "exam"
-    ]
-  },
-  {
-    "id": "comm500_pexppc",
-    "title": "Công việc — từ vựng thực tế",
-    "topic": "Công việc",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"job\"?"
+        "Which subject do you like most at school?",
+        "Bạn thích môn nào nhất ở trường?"
       ],
       [
         "B",
-        "Yes. It means \"công việc\"."
+        "I like English because the lessons are practical.",
+        "Tôi thích tiếng Anh vì các bài học thực tế."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"job\" today."
+        "Who is your English teacher?",
+        "Ai là giáo viên tiếng Anh của bạn?"
+      ],
+      [
+        "B",
+        "Ms. Lan is my teacher. She is very patient.",
+        "Cô Lan là giáo viên của tôi. Cô ấy rất kiên nhẫn."
+      ],
+      [
+        "A",
+        "Do you have much homework today?",
+        "Hôm nay bạn có nhiều bài tập về nhà không?"
+      ],
+      [
+        "B",
+        "Yes, I have some reading and writing homework.",
+        "Có, tôi có một ít bài tập đọc và viết."
+      ],
+      [
+        "A",
+        "When is your next exam?",
+        "Kỳ thi tiếp theo của bạn khi nào?"
+      ],
+      [
+        "B",
+        "It is next Friday, so I need to study tonight.",
+        "Là thứ Sáu tới, nên tối nay tôi cần học."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_2",
+    "title": "Công việc — hội thoại thực tế",
+    "topic": "Công việc",
     "vocab": [
       "job",
       "work",
@@ -84,26 +126,54 @@
       "worker",
       "manager",
       "meeting"
-    ]
-  },
-  {
-    "id": "comm500_ngat2n",
-    "title": "Công nghệ — từ vựng thực tế",
-    "topic": "Công nghệ",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"email\"?"
+        "How is work going this week?",
+        "Công việc tuần này thế nào?"
       ],
       [
         "B",
-        "Yes. It means \"email; thư điện tử\"."
+        "It is busy, but everything is under control.",
+        "Khá bận, nhưng mọi việc vẫn trong tầm kiểm soát."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"email\" today."
+        "Are you working at the office today?",
+        "Hôm nay bạn làm việc ở văn phòng à?"
+      ],
+      [
+        "B",
+        "Yes. I have a meeting with my manager this afternoon.",
+        "Có. Chiều nay tôi có cuộc họp với quản lý."
+      ],
+      [
+        "A",
+        "What is the meeting about?",
+        "Cuộc họp nói về việc gì?"
+      ],
+      [
+        "B",
+        "We are planning next month's work.",
+        "Chúng tôi đang lên kế hoạch cho công việc tháng tới."
+      ],
+      [
+        "A",
+        "Do you like your job?",
+        "Bạn có thích công việc của mình không?"
+      ],
+      [
+        "B",
+        "Yes. I learn something new from my team every day.",
+        "Có. Mỗi ngày tôi học được điều mới từ đội nhóm của mình."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_3",
+    "title": "Công nghệ — hội thoại thực tế",
+    "topic": "Công nghệ",
     "vocab": [
       "email",
       "computer",
@@ -113,26 +183,54 @@
       "screen",
       "keyboard",
       "mouse"
-    ]
-  },
-  {
-    "id": "comm500_1rx7im1",
-    "title": "Du lịch — từ vựng thực tế",
-    "topic": "Du lịch",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"trip\"?"
+        "Can I use your laptop for a minute?",
+        "Tôi có thể dùng laptop của bạn một chút không?"
       ],
       [
         "B",
-        "Yes. It means \"chuyến đi\"."
+        "Sure. Just be careful with the files on the computer.",
+        "Được. Chỉ cần cẩn thận với các tệp trên máy tính."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"trip\" today."
+        "Where did you save the report?",
+        "Bạn lưu báo cáo ở đâu?"
+      ],
+      [
+        "B",
+        "I sent it to you by email this morning.",
+        "Tôi đã gửi nó cho bạn qua email sáng nay."
+      ],
+      [
+        "A",
+        "My phone screen is too dark.",
+        "Màn hình điện thoại của tôi tối quá."
+      ],
+      [
+        "B",
+        "Try changing the brightness in the settings.",
+        "Hãy thử thay đổi độ sáng trong phần cài đặt."
+      ],
+      [
+        "A",
+        "Is your keyboard working now?",
+        "Bàn phím của bạn giờ hoạt động chưa?"
+      ],
+      [
+        "B",
+        "Yes. I cleaned it, and now everything works fine.",
+        "Rồi. Tôi đã vệ sinh nó và giờ mọi thứ hoạt động tốt."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_4",
+    "title": "Du lịch — hội thoại thực tế",
+    "topic": "Du lịch",
     "vocab": [
       "trip",
       "travel",
@@ -142,26 +240,54 @@
       "bus",
       "taxi",
       "car"
-    ]
-  },
-  {
-    "id": "comm500_h0g8nd",
-    "title": "Đồ ăn — từ vựng thực tế",
-    "topic": "Đồ ăn",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"restaurant\"?"
+        "Are you ready for the trip tomorrow?",
+        "Bạn sẵn sàng cho chuyến đi ngày mai chưa?"
       ],
       [
         "B",
-        "Yes. It means \"nhà hàng\"."
+        "Almost. I still need to pack my bag.",
+        "Gần xong. Tôi vẫn cần chuẩn bị túi."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"restaurant\" today."
+        "How are you getting to the airport?",
+        "Bạn đi đến sân bay bằng cách nào?"
+      ],
+      [
+        "B",
+        "I will take a taxi because it is early.",
+        "Tôi sẽ đi taxi vì lúc đó còn sớm."
+      ],
+      [
+        "A",
+        "What time is your flight?",
+        "Chuyến bay của bạn mấy giờ?"
+      ],
+      [
+        "B",
+        "It leaves at seven in the morning.",
+        "Nó khởi hành lúc bảy giờ sáng."
+      ],
+      [
+        "A",
+        "Will you travel alone?",
+        "Bạn sẽ đi một mình à?"
+      ],
+      [
+        "B",
+        "No. My friend is coming with me.",
+        "Không. Bạn tôi sẽ đi cùng."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_5",
+    "title": "Đồ ăn — hội thoại thực tế",
+    "topic": "Đồ ăn",
     "vocab": [
       "restaurant",
       "menu",
@@ -171,26 +297,54 @@
       "lunch",
       "dinner",
       "bread"
-    ]
-  },
-  {
-    "id": "comm500_19r3b3x",
-    "title": "Mua sắm — từ vựng thực tế",
-    "topic": "Mua sắm",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"store\"?"
+        "What would you like for dinner?",
+        "Bạn muốn ăn gì cho bữa tối?"
       ],
       [
         "B",
-        "Yes. It means \"cửa hàng\"."
+        "I would like some soup and bread.",
+        "Tôi muốn một ít súp và bánh mì."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"store\" today."
+        "Should we eat at this restaurant?",
+        "Chúng ta ăn ở nhà hàng này nhé?"
+      ],
+      [
+        "B",
+        "Yes. Let's look at the menu first.",
+        "Được. Hãy xem thực đơn trước."
+      ],
+      [
+        "A",
+        "Do they have a vegetarian meal?",
+        "Họ có món chay không?"
+      ],
+      [
+        "B",
+        "Yes, there are several choices.",
+        "Có, có vài lựa chọn."
+      ],
+      [
+        "A",
+        "What do you usually eat for breakfast?",
+        "Bạn thường ăn gì vào bữa sáng?"
+      ],
+      [
+        "B",
+        "I usually have bread, fruit, and coffee.",
+        "Tôi thường ăn bánh mì, trái cây và uống cà phê."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_6",
+    "title": "Mua sắm — hội thoại thực tế",
+    "topic": "Mua sắm",
     "vocab": [
       "store",
       "shop",
@@ -200,26 +354,54 @@
       "cash",
       "card",
       "receipt"
-    ]
-  },
-  {
-    "id": "comm500_m4bd6q",
-    "title": "Cảm xúc — từ vựng thực tế",
-    "topic": "Cảm xúc",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"happy\"?"
+        "How much is this shirt?",
+        "Chiếc áo này bao nhiêu tiền?"
       ],
       [
         "B",
-        "Yes. It means \"vui\"."
+        "The price is twenty dollars.",
+        "Giá là hai mươi đô la."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"happy\" today."
+        "Can I pay by card?",
+        "Tôi có thể thanh toán bằng thẻ không?"
+      ],
+      [
+        "B",
+        "Yes, or you can pay in cash.",
+        "Có, hoặc bạn có thể trả bằng tiền mặt."
+      ],
+      [
+        "A",
+        "Do you have this shirt in a larger size?",
+        "Bạn có chiếc áo này cỡ lớn hơn không?"
+      ],
+      [
+        "B",
+        "Let me check in the back of the store.",
+        "Để tôi kiểm tra ở phía sau cửa hàng."
+      ],
+      [
+        "A",
+        "Could I have the receipt, please?",
+        "Cho tôi xin hóa đơn nhé?"
+      ],
+      [
+        "B",
+        "Of course. Here you are.",
+        "Tất nhiên. Của bạn đây."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_7",
+    "title": "Cảm xúc — hội thoại thực tế",
+    "topic": "Cảm xúc",
     "vocab": [
       "happy",
       "sad",
@@ -229,26 +411,54 @@
       "excited",
       "surprised",
       "bored"
-    ]
-  },
-  {
-    "id": "comm500_turd73",
-    "title": "Sức khỏe — từ vựng thực tế",
-    "topic": "Sức khỏe",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"healthy\"?"
+        "You look worried today. Is everything okay?",
+        "Hôm nay bạn trông lo lắng. Mọi thứ ổn chứ?"
       ],
       [
         "B",
-        "Yes. It means \"khỏe mạnh\"."
+        "I have an important exam tomorrow.",
+        "Tôi có một kỳ thi quan trọng vào ngày mai."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"healthy\" today."
+        "Are you afraid of failing?",
+        "Bạn sợ mình trượt à?"
+      ],
+      [
+        "B",
+        "A little, but I am trying to stay calm.",
+        "Một chút, nhưng tôi đang cố giữ bình tĩnh."
+      ],
+      [
+        "A",
+        "You should be proud of your hard work.",
+        "Bạn nên tự hào về sự chăm chỉ của mình."
+      ],
+      [
+        "B",
+        "Thanks. That makes me feel better.",
+        "Cảm ơn. Điều đó khiến tôi thấy khá hơn."
+      ],
+      [
+        "A",
+        "Are you excited about the weekend?",
+        "Bạn có hào hứng về cuối tuần không?"
+      ],
+      [
+        "B",
+        "Yes. I am happy because I can rest.",
+        "Có. Tôi vui vì tôi có thể nghỉ ngơi."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_8",
+    "title": "Sức khỏe — hội thoại thực tế",
+    "topic": "Sức khỏe",
     "vocab": [
       "healthy",
       "sick",
@@ -258,26 +468,54 @@
       "cold",
       "cough",
       "medicine"
-    ]
-  },
-  {
-    "id": "comm500_1y646n7",
-    "title": "Giao tiếp — từ vựng thực tế",
-    "topic": "Giao tiếp",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"message\"?"
+        "How are you feeling today?",
+        "Hôm nay bạn cảm thấy thế nào?"
       ],
       [
         "B",
-        "Yes. It means \"tin nhắn\"."
+        "I do not feel well. I have a headache.",
+        "Tôi không khỏe. Tôi bị đau đầu."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"message\" today."
+        "Do you have a fever?",
+        "Bạn có bị sốt không?"
+      ],
+      [
+        "B",
+        "No, but I have a bad cough.",
+        "Không, nhưng tôi bị ho khá nặng."
+      ],
+      [
+        "A",
+        "Did you see a doctor?",
+        "Bạn đã đi khám bác sĩ chưa?"
+      ],
+      [
+        "B",
+        "Yes. The doctor told me to get more rest.",
+        "Rồi. Bác sĩ bảo tôi nghỉ ngơi nhiều hơn."
+      ],
+      [
+        "A",
+        "Are you taking any medicine?",
+        "Bạn có đang uống thuốc không?"
+      ],
+      [
+        "B",
+        "Yes, and I am drinking plenty of water.",
+        "Có, và tôi uống nhiều nước."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_9",
+    "title": "Giao tiếp — hội thoại thực tế",
+    "topic": "Giao tiếp",
     "vocab": [
       "message",
       "hello",
@@ -287,26 +525,54 @@
       "please",
       "thanks",
       "sorry"
-    ]
-  },
-  {
-    "id": "comm500_pvbdgk",
-    "title": "Thời gian — từ vựng thực tế",
-    "topic": "Thời gian",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"morning\"?"
+        "Hi! Did you get my message?",
+        "Chào! Bạn nhận được tin nhắn của tôi chưa?"
       ],
       [
         "B",
-        "Yes. It means \"buổi sáng\"."
+        "Yes, I just read it.",
+        "Rồi, tôi vừa đọc."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"morning\" today."
+        "Sorry I replied so late.",
+        "Xin lỗi vì tôi trả lời muộn."
+      ],
+      [
+        "B",
+        "That is okay. I was busy too.",
+        "Không sao. Tôi cũng bận."
+      ],
+      [
+        "A",
+        "Could you send me the address, please?",
+        "Bạn có thể gửi địa chỉ cho tôi được không?"
+      ],
+      [
+        "B",
+        "Sure. I will send it now.",
+        "Được. Tôi sẽ gửi ngay."
+      ],
+      [
+        "A",
+        "Thanks for your help.",
+        "Cảm ơn bạn đã giúp."
+      ],
+      [
+        "B",
+        "You're welcome. Goodbye for now!",
+        "Không có gì. Tạm biệt nhé!"
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_10",
+    "title": "Thời gian — hội thoại thực tế",
+    "topic": "Thời gian",
     "vocab": [
       "morning",
       "afternoon",
@@ -316,26 +582,54 @@
       "tomorrow",
       "yesterday",
       "week"
-    ]
-  },
-  {
-    "id": "comm500_1mhgqdq",
-    "title": "home — từ vựng thực tế",
-    "topic": "home",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"house\"?"
+        "What time do you usually wake up?",
+        "Bạn thường thức dậy lúc mấy giờ?"
       ],
       [
         "B",
-        "Yes. It means \"ngôi nhà\"."
+        "I get up at six every morning.",
+        "Tôi dậy lúc sáu giờ mỗi sáng."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"house\" today."
+        "What do you do in the afternoon?",
+        "Bạn làm gì vào buổi chiều?"
+      ],
+      [
+        "B",
+        "I usually work or study.",
+        "Tôi thường làm việc hoặc học."
+      ],
+      [
+        "A",
+        "Are you free this evening?",
+        "Tối nay bạn có rảnh không?"
+      ],
+      [
+        "B",
+        "Yes, I am free after seven.",
+        "Có, tôi rảnh sau bảy giờ."
+      ],
+      [
+        "A",
+        "What are you doing tomorrow?",
+        "Ngày mai bạn sẽ làm gì?"
+      ],
+      [
+        "B",
+        "I am meeting a friend, then I will rest at home.",
+        "Tôi gặp một người bạn, sau đó sẽ nghỉ ở nhà."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_11",
+    "title": "home — hội thoại thực tế",
+    "topic": "home",
     "vocab": [
       "house",
       "home",
@@ -345,26 +639,54 @@
       "garden",
       "door",
       "window"
-    ]
-  },
-  {
-    "id": "comm500_f1wd5f",
-    "title": "Thời tiết — từ vựng thực tế",
-    "topic": "Thời tiết",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"weather\"?"
+        "Where is everyone?",
+        "Mọi người đâu rồi?"
       ],
       [
         "B",
-        "Yes. It means \"thời tiết\"."
+        "My mother is in the kitchen, and my sister is in her bedroom.",
+        "Mẹ tôi ở trong bếp, còn em gái tôi ở phòng ngủ."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"weather\" today."
+        "Can you open the window?",
+        "Bạn mở cửa sổ giúp tôi được không?"
+      ],
+      [
+        "B",
+        "Sure. The room feels warm.",
+        "Được. Căn phòng hơi nóng."
+      ],
+      [
+        "A",
+        "Did you lock the front door?",
+        "Bạn đã khóa cửa trước chưa?"
+      ],
+      [
+        "B",
+        "Yes, I checked it before going upstairs.",
+        "Rồi, tôi đã kiểm tra trước khi lên lầu."
+      ],
+      [
+        "A",
+        "Do you have a garden?",
+        "Nhà bạn có vườn không?"
+      ],
+      [
+        "B",
+        "Yes. There are some flowers in it.",
+        "Có. Trong đó có vài bông hoa."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_12",
+    "title": "Thời tiết — hội thoại thực tế",
+    "topic": "Thời tiết",
     "vocab": [
       "weather",
       "sun",
@@ -374,26 +696,54 @@
       "cloud",
       "cloudy",
       "wind"
-    ]
-  },
-  {
-    "id": "comm500_1a5hqq2",
-    "title": "Thiên nhiên — từ vựng thực tế",
-    "topic": "Thiên nhiên",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"nature\"?"
+        "How is the weather this morning?",
+        "Thời tiết sáng nay thế nào?"
       ],
       [
         "B",
-        "Yes. It means \"thiên nhiên\"."
+        "It is cloudy, but it is not raining.",
+        "Trời nhiều mây nhưng không mưa."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"nature\" today."
+        "Do you think the sun will come out later?",
+        "Bạn nghĩ lát nữa trời có nắng không?"
+      ],
+      [
+        "B",
+        "Maybe. The wind is getting weaker.",
+        "Có thể. Gió đang yếu dần."
+      ],
+      [
+        "A",
+        "Should we take an umbrella?",
+        "Chúng ta có nên mang ô không?"
+      ],
+      [
+        "B",
+        "Yes, just in case it rains.",
+        "Có, phòng khi trời mưa."
+      ],
+      [
+        "A",
+        "I hope it will be sunny tomorrow.",
+        "Tôi hy vọng ngày mai trời sẽ nắng."
+      ],
+      [
+        "B",
+        "Me too. I want to go for a walk.",
+        "Tôi cũng vậy. Tôi muốn đi dạo."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_13",
+    "title": "Thiên nhiên — hội thoại thực tế",
+    "topic": "Thiên nhiên",
     "vocab": [
       "nature",
       "tree",
@@ -403,26 +753,54 @@
       "lake",
       "ocean",
       "sea"
-    ]
-  },
-  {
-    "id": "comm500_15ob10u",
-    "title": "people — từ vựng thực tế",
-    "topic": "people",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"person\"?"
+        "Do you like spending time in nature?",
+        "Bạn có thích dành thời gian ở thiên nhiên không?"
       ],
       [
         "B",
-        "Yes. It means \"người\"."
+        "Yes. I feel relaxed when I am outside.",
+        "Có. Tôi cảm thấy thư giãn khi ở bên ngoài."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"person\" today."
+        "Do you prefer the forest or the sea?",
+        "Bạn thích rừng hay biển hơn?"
+      ],
+      [
+        "B",
+        "I like the sea because I enjoy walking by the water.",
+        "Tôi thích biển vì tôi thích đi bộ bên bờ nước."
+      ],
+      [
+        "A",
+        "Look at that lake. It is beautiful.",
+        "Nhìn cái hồ kia kìa. Nó đẹp quá."
+      ],
+      [
+        "B",
+        "Yes, and the trees around it are wonderful.",
+        "Đúng, và những cái cây xung quanh rất đẹp."
+      ],
+      [
+        "A",
+        "Would you like to take a photo?",
+        "Bạn có muốn chụp ảnh không?"
+      ],
+      [
+        "B",
+        "Sure. Let's stand near those flowers.",
+        "Được. Hãy đứng gần những bông hoa kia."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_14",
+    "title": "people — hội thoại thực tế",
+    "topic": "people",
     "vocab": [
       "person",
       "people",
@@ -432,26 +810,54 @@
       "woman",
       "boy",
       "girl"
-    ]
-  },
-  {
-    "id": "comm500_1szs466",
-    "title": "Hằng ngày — từ vựng thực tế",
-    "topic": "Hằng ngày",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"start\"?"
+        "Did you meet anyone new today?",
+        "Hôm nay bạn có gặp ai mới không?"
       ],
       [
         "B",
-        "Yes. It means \"bắt đầu\"."
+        "Yes. I met a friendly person at the library.",
+        "Có. Tôi gặp một người thân thiện ở thư viện."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"start\" today."
+        "Was he a student?",
+        "Anh ấy là học sinh/sinh viên à?"
+      ],
+      [
+        "B",
+        "Yes, and his sister studies there too.",
+        "Đúng, và em/chị gái anh ấy cũng học ở đó."
+      ],
+      [
+        "A",
+        "Do you know your new neighbor?",
+        "Bạn biết người hàng xóm mới không?"
+      ],
+      [
+        "B",
+        "Not yet, but she smiled and said hello.",
+        "Chưa, nhưng cô ấy mỉm cười và chào tôi."
+      ],
+      [
+        "A",
+        "People can be very kind sometimes.",
+        "Đôi khi mọi người rất tốt bụng."
+      ],
+      [
+        "B",
+        "I agree. A small hello can make someone's day better.",
+        "Tôi đồng ý. Một lời chào nhỏ có thể khiến một ngày của ai đó tốt hơn."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_15",
+    "title": "Hằng ngày — hội thoại thực tế",
+    "topic": "Hằng ngày",
     "vocab": [
       "start",
       "finish",
@@ -461,50 +867,106 @@
       "stand",
       "walk",
       "run"
-    ]
-  },
-  {
-    "id": "comm500_1u47ca6",
-    "title": "study — từ vựng thực tế",
-    "topic": "study",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"learn\"?"
+        "What time do you start your day?",
+        "Bạn bắt đầu ngày mới lúc mấy giờ?"
       ],
       [
         "B",
-        "Yes. It means \"học\"."
+        "I start at six and make breakfast.",
+        "Tôi bắt đầu lúc sáu giờ và làm bữa sáng."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"learn\" today."
+        "Do you walk to work?",
+        "Bạn đi bộ đến chỗ làm à?"
+      ],
+      [
+        "B",
+        "Sometimes. It takes about twenty minutes.",
+        "Thỉnh thoảng. Mất khoảng hai mươi phút."
+      ],
+      [
+        "A",
+        "What do you do when you finish work?",
+        "Bạn làm gì khi tan làm?"
+      ],
+      [
+        "B",
+        "I usually walk home and take a short rest.",
+        "Tôi thường đi bộ về nhà và nghỉ một lát."
+      ],
+      [
+        "A",
+        "Do you close your laptop before dinner?",
+        "Bạn có đóng laptop trước bữa tối không?"
+      ],
+      [
+        "B",
+        "Yes, then I sit with my family.",
+        "Có, sau đó tôi ngồi cùng gia đình."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_16",
+    "title": "study — hội thoại thực tế",
+    "topic": "study",
     "vocab": [
       "learn",
       "study",
       "teach"
-    ]
-  },
-  {
-    "id": "comm500_1qim4b3",
-    "title": "money — từ vựng thực tế",
-    "topic": "money",
+    ],
     "lines": [
       [
         "A",
-        "Do you know the word \"spend\"?"
+        "What are you studying tonight?",
+        "Tối nay bạn học gì?"
       ],
       [
         "B",
-        "Yes. It means \"tiêu; dành (thời gian)\"."
+        "I am studying English for an hour.",
+        "Tôi học tiếng Anh trong một giờ."
       ],
       [
         "A",
-        "Let's practice it: I learned the word \"spend\" today."
+        "What helps you learn new words?",
+        "Điều gì giúp bạn học từ mới?"
+      ],
+      [
+        "B",
+        "I read the word, hear it, and use it in a sentence.",
+        "Tôi đọc từ, nghe từ và dùng nó trong một câu."
+      ],
+      [
+        "A",
+        "Do you study alone?",
+        "Bạn học một mình à?"
+      ],
+      [
+        "B",
+        "Usually, but sometimes I study with a friend.",
+        "Thường là vậy, nhưng đôi khi tôi học cùng bạn."
+      ],
+      [
+        "A",
+        "What would you like to teach others?",
+        "Bạn muốn dạy người khác điều gì?"
+      ],
+      [
+        "B",
+        "I would like to teach simple English conversation.",
+        "Tôi muốn dạy giao tiếp tiếng Anh đơn giản."
       ]
-    ],
+    ]
+  },
+  {
+    "id": "comm42_17",
+    "title": "money — hội thoại thực tế",
+    "topic": "money",
     "vocab": [
       "spend",
       "save",
@@ -514,6 +976,48 @@
       "lend",
       "rich",
       "poor"
+    ],
+    "lines": [
+      [
+        "A",
+        "Do you usually save or spend your money?",
+        "Bạn thường tiết kiệm hay tiêu tiền?"
+      ],
+      [
+        "B",
+        "I try to save a little every month.",
+        "Tôi cố gắng tiết kiệm một ít mỗi tháng."
+      ],
+      [
+        "A",
+        "How much does this phone cost?",
+        "Chiếc điện thoại này giá bao nhiêu?"
+      ],
+      [
+        "B",
+        "It costs more than I expected.",
+        "Nó đắt hơn tôi nghĩ."
+      ],
+      [
+        "A",
+        "Would you lend money to a close friend?",
+        "Bạn có cho bạn thân mượn tiền không?"
+      ],
+      [
+        "B",
+        "Maybe, but I would talk about the plan first.",
+        "Có thể, nhưng trước tiên tôi sẽ nói rõ kế hoạch."
+      ],
+      [
+        "A",
+        "Is it better to save money for the future?",
+        "Có tốt hơn không khi tiết kiệm tiền cho tương lai?"
+      ],
+      [
+        "B",
+        "I think saving helps you feel more prepared.",
+        "Tôi nghĩ tiết kiệm giúp bạn cảm thấy chuẩn bị tốt hơn."
+      ]
     ]
   }
 ]
