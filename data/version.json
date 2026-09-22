@@ -1,12 +1,13 @@
 {
-  "version": 4,
+  "version": 5,
   "updatedAt": "2026-09-22",
-  "releaseNotes": "English Master V4.2: sửa phát âm/âm thanh toàn ứng dụng, thêm phát audio hội thoại theo từng lượt, kéo dài 18 chủ đề giao tiếp lên 8 lượt, thêm tự chuyển câu khi luyện phát âm và phím →.",
+  "releaseNotes": "English Master V5: thêm đúng 500 từ mới không trùng; mỗi từ có TTS, câu ngữ cảnh, 1000 câu trắc nghiệm mới, 20 hội thoại dài, Tam ngữ và 12 bài ngữ pháp mới.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
     "questions": "questions.json",
     "grammar": "grammar.json",
-    "communication": "communication.json"
+    "communication": "communication.json",
+    "trilingual": "trilingual.json"
   }
 }
