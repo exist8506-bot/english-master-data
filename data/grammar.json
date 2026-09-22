@@ -94,5 +94,184 @@
       "If you practice, you will improve."
     ],
     "notes": "Mệnh đề if dùng hiện tại đơn."
+  },
+  {
+    "id": "g5_0",
+    "title": "Present Continuous",
+    "level": "Beginner",
+    "formula": "am/is/are + V-ing",
+    "explain": "Dùng cho hành động đang xảy ra ngay lúc nói.",
+    "examples": [
+      "I am practicing pronunciation.",
+      "She is preparing dinner.",
+      "They are waiting outside."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_1",
+    "title": "Past Simple",
+    "level": "Beginner",
+    "formula": "S + V2/ed",
+    "explain": "Dùng cho hành động đã hoàn thành trong quá khứ.",
+    "examples": [
+      "I visited the museum yesterday.",
+      "She bought a new jacket.",
+      "We arrived late."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_2",
+    "title": "Be going to",
+    "level": "Beginner",
+    "formula": "am/is/are going to + V",
+    "explain": "Dùng cho kế hoạch hoặc dự định.",
+    "examples": [
+      "I am going to study tonight.",
+      "She is going to buy a ticket.",
+      "We are going to travel tomorrow."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_3",
+    "title": "Wh- Questions",
+    "level": "Beginner",
+    "formula": "What/Where/When/Why/How + auxiliary + subject + verb?",
+    "explain": "Dùng để hỏi thông tin cụ thể.",
+    "examples": [
+      "Where is the library?",
+      "Why are you nervous?",
+      "How do you get there?"
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_4",
+    "title": "Countable & Uncountable Nouns",
+    "level": "Beginner",
+    "formula": "a/an + singular countable • some + plural/uncountable",
+    "explain": "Phân biệt danh từ đếm được và không đếm được.",
+    "examples": [
+      "I need a ticket.",
+      "We bought some rice.",
+      "She drank some milk."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_5",
+    "title": "Should / Shouldn't",
+    "level": "Beginner",
+    "formula": "should + V",
+    "explain": "Dùng để đưa lời khuyên.",
+    "examples": [
+      "You should get some rest.",
+      "You should check the address.",
+      "You shouldn't worry too much."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_6",
+    "title": "Must / Have to",
+    "level": "Beginner",
+    "formula": "must/have to + V",
+    "explain": "Dùng khi điều gì đó bắt buộc hoặc rất cần thiết.",
+    "examples": [
+      "You must wear a helmet.",
+      "I have to finish this task.",
+      "We have to leave early."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_7",
+    "title": "Comparatives",
+    "level": "Beginner",
+    "formula": "adjective-er than / more + adjective + than",
+    "explain": "Dùng để so sánh.",
+    "examples": [
+      "This bag is cheaper than that one.",
+      "The subway is faster than the bus.",
+      "This exercise is more difficult."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_8",
+    "title": "There was / There were",
+    "level": "Beginner",
+    "formula": "There was + singular • There were + plural",
+    "explain": "Dùng để nói đã có một hoặc nhiều thứ trong quá khứ.",
+    "examples": [
+      "There was a storm last night.",
+      "There were many people at the concert."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_9",
+    "title": "Want / Need + to",
+    "level": "Beginner",
+    "formula": "want/need + to + V",
+    "explain": "Dùng để nói mong muốn hoặc nhu cầu.",
+    "examples": [
+      "I want to improve.",
+      "She needs to prepare.",
+      "We want to learn more."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_10",
+    "title": "Enjoy + V-ing",
+    "level": "Beginner",
+    "formula": "enjoy + V-ing",
+    "explain": "Sau enjoy thường dùng động từ thêm -ing.",
+    "examples": [
+      "I enjoy reading.",
+      "She enjoys swimming.",
+      "We enjoy cooking together."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
+  },
+  {
+    "id": "g5_11",
+    "title": "Prepositions of Place",
+    "level": "Beginner",
+    "formula": "in/on/under/behind/beside + noun",
+    "explain": "Dùng để nói vị trí.",
+    "examples": [
+      "The keys are on the table.",
+      "The shoes are under the bed.",
+      "The bank is beside the library."
+    ],
+    "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
+    "source": "remote",
+    "sourceVersion": "5"
   }
 ]
