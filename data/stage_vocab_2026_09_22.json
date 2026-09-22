@@ -2630,5 +2630,13 @@
     "pinyin": "jī jīn",
     "pos": "noun",
     "topic": "money"
+  },
+  {
+    "word": "carriage",
+    "vi": "toa xe; toa tàu",
+    "zh": "车厢",
+    "pinyin": "chē xiāng",
+    "pos": "noun",
+    "topic": "transportextra"
   }
 ]
