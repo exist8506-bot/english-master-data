@@ -60,8 +60,15 @@ function speak(text,rate,lang){
   const v=getVoice(u.lang); if(v)u.voice=v;
   window.speechSynthesis.speak(u);
 }
+function guessLang(text){
+  const s=String(text??"");
+  if(/[\u4e00-\u9fff]/.test(s))return "zh-CN";
+  if(/[ăâđêôơưĂÂĐÊÔƠƯàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]/.test(s))return "vi-VN";
+  return "en-US";
+}
 function audioButton(text,label,lang,rate){
-  return '<button class="btn btn-secondary" onclick="event.stopPropagation();speak(\''+escapeJs(text)+'\','+(Number(rate)||1)+',\''+(lang||"en-US")+'\')">'+(label||"🔊 Nghe")+'</button>'
+  const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1;
+  return '<button class="btn btn-secondary" onclick="event.stopPropagation();speak(\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
 }
 function audioGroup(text,lang){
   return '<div class="actions">'+audioButton(text,"🔊 Nghe",lang||"en-US",1)+audioButton(text,"🐢 0.75×",lang||"en-US",0.75)+audioButton(text,"🐇 1.25×",lang||"en-US",1.25)+'</div>'
@@ -286,7 +293,9 @@ function settings(){
 }
 
 function init(){
-  load();render();
+  load();
+  if($("theme"))$("theme").onclick=function(){db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()};
+  render();
   if(db.profile.autoUpdate!==false)setTimeout(function(){updateOnline(false)},800);
 }
 init();
