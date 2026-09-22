@@ -1,0 +1,2634 @@
+[
+  {
+    "word": "shirt",
+    "vi": "áo sơ mi",
+    "zh": "衬衫",
+    "pinyin": "chèn shān",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "pants",
+    "vi": "quần",
+    "zh": "裤子",
+    "pinyin": "kù zi",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "jacket",
+    "vi": "áo khoác",
+    "zh": "夹克",
+    "pinyin": "jiā kè",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "coat",
+    "vi": "áo măng tô; áo khoác dài",
+    "zh": "外套",
+    "pinyin": "wài tào",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "dress",
+    "vi": "váy đầm",
+    "zh": "连衣裙",
+    "pinyin": "lián yī qún",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "skirt",
+    "vi": "chân váy",
+    "zh": "裙子",
+    "pinyin": "qún zi",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "jeans",
+    "vi": "quần jean",
+    "zh": "牛仔裤",
+    "pinyin": "niú zǎi kù",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "shoe",
+    "vi": "giày",
+    "zh": "鞋子",
+    "pinyin": "xié zi",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "sock",
+    "vi": "tất",
+    "zh": "袜子",
+    "pinyin": "wà zi",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "hat",
+    "vi": "mũ; nón",
+    "zh": "帽子",
+    "pinyin": "mào zi",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "cap",
+    "vi": "mũ lưỡi trai",
+    "zh": "鸭舌帽",
+    "pinyin": "yā shé mào",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "belt",
+    "vi": "thắt lưng",
+    "zh": "腰带",
+    "pinyin": "yāo dài",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "scarf",
+    "vi": "khăn quàng",
+    "zh": "围巾",
+    "pinyin": "wéi jīn",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "glove",
+    "vi": "găng tay",
+    "zh": "手套",
+    "pinyin": "shǒu tào",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "pocket",
+    "vi": "túi áo/quần",
+    "zh": "口袋",
+    "pinyin": "kǒu dài",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "button",
+    "vi": "nút áo",
+    "zh": "纽扣",
+    "pinyin": "niǔ kòu",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "zipper",
+    "vi": "khóa kéo",
+    "zh": "拉链",
+    "pinyin": "lā liàn",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "uniform",
+    "vi": "đồng phục",
+    "zh": "制服",
+    "pinyin": "zhì fú",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "style",
+    "vi": "phong cách",
+    "zh": "风格",
+    "pinyin": "fēng gé",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "cotton",
+    "vi": "bông; cotton",
+    "zh": "棉",
+    "pinyin": "mián",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "leather",
+    "vi": "da thuộc",
+    "zh": "皮革",
+    "pinyin": "pí gé",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "ring",
+    "vi": "nhẫn",
+    "zh": "戒指",
+    "pinyin": "jiè zhi",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "necklace",
+    "vi": "vòng cổ",
+    "zh": "项链",
+    "pinyin": "xiàng liàn",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "bracelet",
+    "vi": "vòng tay",
+    "zh": "手链",
+    "pinyin": "shǒu liàn",
+    "pos": "noun",
+    "topic": "clothing"
+  },
+  {
+    "word": "head",
+    "vi": "đầu",
+    "zh": "头",
+    "pinyin": "tóu",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "face",
+    "vi": "khuôn mặt",
+    "zh": "脸",
+    "pinyin": "liǎn",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "eye",
+    "vi": "mắt",
+    "zh": "眼睛",
+    "pinyin": "yǎn jing",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "ear",
+    "vi": "tai",
+    "zh": "耳朵",
+    "pinyin": "ěr duo",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "nose",
+    "vi": "mũi",
+    "zh": "鼻子",
+    "pinyin": "bí zi",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "mouth",
+    "vi": "miệng",
+    "zh": "嘴巴",
+    "pinyin": "zuǐ ba",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "tooth",
+    "vi": "răng",
+    "zh": "牙齿",
+    "pinyin": "yá chǐ",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "neck",
+    "vi": "cổ",
+    "zh": "脖子",
+    "pinyin": "bó zi",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "shoulder",
+    "vi": "vai",
+    "zh": "肩膀",
+    "pinyin": "jiān bǎng",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "arm",
+    "vi": "cánh tay",
+    "zh": "手臂",
+    "pinyin": "shǒu bì",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "elbow",
+    "vi": "khuỷu tay",
+    "zh": "肘部",
+    "pinyin": "zhǒu bù",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "hand",
+    "vi": "bàn tay",
+    "zh": "手",
+    "pinyin": "shǒu",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "finger",
+    "vi": "ngón tay",
+    "zh": "手指",
+    "pinyin": "shǒu zhǐ",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "thumb",
+    "vi": "ngón cái",
+    "zh": "拇指",
+    "pinyin": "mǔ zhǐ",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "chest",
+    "vi": "ngực",
+    "zh": "胸口",
+    "pinyin": "xiōng kǒu",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "back",
+    "vi": "lưng",
+    "zh": "背部",
+    "pinyin": "bèi bù",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "stomach",
+    "vi": "dạ dày; bụng",
+    "zh": "胃",
+    "pinyin": "wèi",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "leg",
+    "vi": "chân",
+    "zh": "腿",
+    "pinyin": "tuǐ",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "knee",
+    "vi": "đầu gối",
+    "zh": "膝盖",
+    "pinyin": "xī gài",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "foot",
+    "vi": "bàn chân",
+    "zh": "脚",
+    "pinyin": "jiǎo",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "toe",
+    "vi": "ngón chân",
+    "zh": "脚趾",
+    "pinyin": "jiǎo zhǐ",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "skin",
+    "vi": "da",
+    "zh": "皮肤",
+    "pinyin": "pí fū",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "hair",
+    "vi": "tóc",
+    "zh": "头发",
+    "pinyin": "tóu fa",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "blood",
+    "vi": "máu",
+    "zh": "血液",
+    "pinyin": "xuè yè",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "heart",
+    "vi": "tim",
+    "zh": "心脏",
+    "pinyin": "xīn zàng",
+    "pos": "noun",
+    "topic": "body"
+  },
+  {
+    "word": "city",
+    "vi": "thành phố",
+    "zh": "城市",
+    "pinyin": "chéng shì",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "town",
+    "vi": "thị trấn",
+    "zh": "城镇",
+    "pinyin": "chéng zhèn",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "street",
+    "vi": "đường phố",
+    "zh": "街道",
+    "pinyin": "jiē dào",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "road",
+    "vi": "con đường",
+    "zh": "道路",
+    "pinyin": "dào lù",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "building",
+    "vi": "tòa nhà",
+    "zh": "建筑物",
+    "pinyin": "jiàn zhù wù",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "bank",
+    "vi": "ngân hàng",
+    "zh": "银行",
+    "pinyin": "yín háng",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "museum",
+    "vi": "bảo tàng",
+    "zh": "博物馆",
+    "pinyin": "bó wù guǎn",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "park",
+    "vi": "công viên",
+    "zh": "公园",
+    "pinyin": "gōng yuán",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "square",
+    "vi": "quảng trường",
+    "zh": "广场",
+    "pinyin": "guǎng chǎng",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "subway",
+    "vi": "tàu điện ngầm",
+    "zh": "地铁",
+    "pinyin": "dì tiě",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "post",
+    "vi": "bưu điện; thư",
+    "zh": "邮局",
+    "pinyin": "yóu jú",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "supermarket",
+    "vi": "siêu thị",
+    "zh": "超市",
+    "pinyin": "chāo shì",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "bakery",
+    "vi": "tiệm bánh",
+    "zh": "面包店",
+    "pinyin": "miàn bāo diàn",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "pharmacy",
+    "vi": "nhà thuốc",
+    "zh": "药店",
+    "pinyin": "yào diàn",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "temple",
+    "vi": "đền; chùa",
+    "zh": "寺庙",
+    "pinyin": "sì miào",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "church",
+    "vi": "nhà thờ",
+    "zh": "教堂",
+    "pinyin": "jiào táng",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "village",
+    "vi": "ngôi làng",
+    "zh": "村庄",
+    "pinyin": "cūn zhuāng",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "neighborhood",
+    "vi": "khu phố; khu dân cư",
+    "zh": "社区",
+    "pinyin": "shè qū",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "playground",
+    "vi": "sân chơi",
+    "zh": "操场",
+    "pinyin": "cāo chǎng",
+    "pos": "noun",
+    "topic": "city"
+  },
+  {
+    "word": "bike",
+    "vi": "xe đạp; xe",
+    "zh": "单车",
+    "pinyin": "dān chē",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "motorcycle",
+    "vi": "xe máy",
+    "zh": "摩托车",
+    "pinyin": "mó tuō chē",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "scooter",
+    "vi": "xe tay ga",
+    "zh": "踏板车",
+    "pinyin": "tà bǎn chē",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "truck",
+    "vi": "xe tải",
+    "zh": "卡车",
+    "pinyin": "kǎ chē",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "van",
+    "vi": "xe tải nhỏ; xe van",
+    "zh": "面包车",
+    "pinyin": "miàn bāo chē",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "ship",
+    "vi": "tàu thủy",
+    "zh": "轮船",
+    "pinyin": "lún chuán",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "boat",
+    "vi": "thuyền",
+    "zh": "船",
+    "pinyin": "chuán",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "plane",
+    "vi": "máy bay",
+    "zh": "飞机",
+    "pinyin": "fēi jī",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "passenger",
+    "vi": "hành khách",
+    "zh": "乘客",
+    "pinyin": "chéng kè",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "driver",
+    "vi": "tài xế",
+    "zh": "司机",
+    "pinyin": "sī jī",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "journey",
+    "vi": "hành trình",
+    "zh": "旅程",
+    "pinyin": "lǚ chéng",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "route",
+    "vi": "tuyến đường",
+    "zh": "路线",
+    "pinyin": "lù xiàn",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "suitcase",
+    "vi": "va li",
+    "zh": "行李箱",
+    "pinyin": "xíng li xiāng",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "border",
+    "vi": "biên giới",
+    "zh": "边境",
+    "pinyin": "biān jìng",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "gate",
+    "vi": "cổng",
+    "zh": "登机口",
+    "pinyin": "dēng jī kǒu",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "platform",
+    "vi": "sân ga; bục",
+    "zh": "站台",
+    "pinyin": "zhàn tái",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "traffic",
+    "vi": "giao thông; xe cộ",
+    "zh": "交通",
+    "pinyin": "jiāo tōng",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "parking",
+    "vi": "chỗ đậu xe",
+    "zh": "停车场",
+    "pinyin": "tíng chē chǎng",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "fuel",
+    "vi": "nhiên liệu",
+    "zh": "燃料",
+    "pinyin": "rán liào",
+    "pos": "noun",
+    "topic": "transport"
+  },
+  {
+    "word": "sofa",
+    "vi": "ghế sofa",
+    "zh": "沙发",
+    "pinyin": "shā fā",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "pillow",
+    "vi": "gối",
+    "zh": "枕头",
+    "pinyin": "zhěn tou",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "blanket",
+    "vi": "chăn",
+    "zh": "毯子",
+    "pinyin": "tǎn zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "shelf",
+    "vi": "kệ",
+    "zh": "架子",
+    "pinyin": "jià zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "drawer",
+    "vi": "ngăn kéo",
+    "zh": "抽屉",
+    "pinyin": "chōu tì",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "closet",
+    "vi": "tủ quần áo",
+    "zh": "衣柜",
+    "pinyin": "yī guì",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "lamp",
+    "vi": "đèn bàn; đèn",
+    "zh": "台灯",
+    "pinyin": "tái dēng",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "clock",
+    "vi": "đồng hồ",
+    "zh": "时钟",
+    "pinyin": "shí zhōng",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "lock",
+    "vi": "ổ khóa; khóa",
+    "zh": "锁",
+    "pinyin": "suǒ",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "towel",
+    "vi": "khăn",
+    "zh": "毛巾",
+    "pinyin": "máo jīn",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "soap",
+    "vi": "xà phòng",
+    "zh": "肥皂",
+    "pinyin": "féi zào",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "brush",
+    "vi": "bàn chải",
+    "zh": "刷子",
+    "pinyin": "shuā zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "comb",
+    "vi": "lược",
+    "zh": "梳子",
+    "pinyin": "shū zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "basket",
+    "vi": "cái giỏ",
+    "zh": "篮子",
+    "pinyin": "lán zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "bottle",
+    "vi": "chai",
+    "zh": "瓶子",
+    "pinyin": "píng zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "cup",
+    "vi": "cốc; tách",
+    "zh": "杯子",
+    "pinyin": "bēi zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "plate",
+    "vi": "đĩa",
+    "zh": "盘子",
+    "pinyin": "pán zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "bowl",
+    "vi": "bát; tô",
+    "zh": "碗",
+    "pinyin": "wǎn",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "spoon",
+    "vi": "thìa; muỗng",
+    "zh": "勺子",
+    "pinyin": "sháo zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "fork",
+    "vi": "nĩa",
+    "zh": "叉子",
+    "pinyin": "chā zi",
+    "pos": "noun",
+    "topic": "home"
+  },
+  {
+    "word": "bake",
+    "vi": "nướng bánh",
+    "zh": "烘焙",
+    "pinyin": "hōng bèi",
+    "pos": "verb",
+    "topic": "kitchen"
+  },
+  {
+    "word": "boil",
+    "vi": "luộc; đun sôi",
+    "zh": "煮",
+    "pinyin": "zhǔ",
+    "pos": "verb",
+    "topic": "kitchen"
+  },
+  {
+    "word": "fry",
+    "vi": "chiên",
+    "zh": "炸",
+    "pinyin": "zhá",
+    "pos": "verb",
+    "topic": "kitchen"
+  },
+  {
+    "word": "cut",
+    "vi": "cắt",
+    "zh": "切",
+    "pinyin": "qiē",
+    "pos": "verb",
+    "topic": "kitchen"
+  },
+  {
+    "word": "taste",
+    "vi": "nếm; có vị",
+    "zh": "品尝",
+    "pinyin": "pǐn cháng",
+    "pos": "verb",
+    "topic": "kitchen"
+  },
+  {
+    "word": "recipe",
+    "vi": "công thức nấu ăn",
+    "zh": "食谱",
+    "pinyin": "shí pǔ",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "ingredient",
+    "vi": "nguyên liệu",
+    "zh": "食材",
+    "pinyin": "shí cái",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "stove",
+    "vi": "bếp",
+    "zh": "炉子",
+    "pinyin": "lú zi",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "oven",
+    "vi": "lò nướng",
+    "zh": "烤箱",
+    "pinyin": "kǎo xiāng",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "fridge",
+    "vi": "tủ lạnh",
+    "zh": "冰箱",
+    "pinyin": "bīng xiāng",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "freezer",
+    "vi": "ngăn đá; tủ đông",
+    "zh": "冰柜",
+    "pinyin": "bīng guì",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "pan",
+    "vi": "chảo",
+    "zh": "平底锅",
+    "pinyin": "píng dǐ guō",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "pot",
+    "vi": "nồi",
+    "zh": "锅",
+    "pinyin": "guō",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "knife",
+    "vi": "dao",
+    "zh": "刀",
+    "pinyin": "dāo",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "oil",
+    "vi": "dầu ăn",
+    "zh": "油",
+    "pinyin": "yóu",
+    "pos": "noun",
+    "topic": "kitchen"
+  },
+  {
+    "word": "music",
+    "vi": "âm nhạc",
+    "zh": "音乐",
+    "pinyin": "yīn yuè",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "reading",
+    "vi": "đọc sách",
+    "zh": "阅读",
+    "pinyin": "yuè dú",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "painting",
+    "vi": "tranh; hội họa",
+    "zh": "绘画",
+    "pinyin": "huì huà",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "drawing",
+    "vi": "vẽ",
+    "zh": "绘图",
+    "pinyin": "huì tú",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "photography",
+    "vi": "nhiếp ảnh",
+    "zh": "摄影",
+    "pinyin": "shè yǐng",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "guitar",
+    "vi": "đàn guitar",
+    "zh": "吉他",
+    "pinyin": "jí tā",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "piano",
+    "vi": "đàn piano",
+    "zh": "钢琴",
+    "pinyin": "gāng qín",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "song",
+    "vi": "bài hát",
+    "zh": "歌曲",
+    "pinyin": "gē qǔ",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "dance",
+    "vi": "điệu nhảy; nhảy",
+    "zh": "舞蹈",
+    "pinyin": "wǔ dǎo",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "singing",
+    "vi": "ca hát",
+    "zh": "唱歌",
+    "pinyin": "chàng gē",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "hobby",
+    "vi": "sở thích",
+    "zh": "爱好",
+    "pinyin": "ài hào",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "game",
+    "vi": "trò chơi",
+    "zh": "游戏",
+    "pinyin": "yóu xì",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "chess",
+    "vi": "cờ vua",
+    "zh": "国际象棋",
+    "pinyin": "guó jì xiàng qí",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "puzzle",
+    "vi": "câu đố; trò ghép hình",
+    "zh": "拼图",
+    "pinyin": "pīn tú",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "fishing",
+    "vi": "câu cá",
+    "zh": "钓鱼",
+    "pinyin": "diào yú",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "camping",
+    "vi": "cắm trại",
+    "zh": "露营",
+    "pinyin": "lù yíng",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "hiking",
+    "vi": "đi bộ đường dài",
+    "zh": "徒步",
+    "pinyin": "tú bù",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "swimming",
+    "vi": "bơi lội",
+    "zh": "游泳",
+    "pinyin": "yóu yǒng",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "cycling",
+    "vi": "đạp xe",
+    "zh": "骑自行车",
+    "pinyin": "qí zì xíng chē",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "collecting",
+    "vi": "sưu tầm",
+    "zh": "收藏",
+    "pinyin": "shōu cáng",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "writing",
+    "vi": "viết",
+    "zh": "写作",
+    "pinyin": "xiě zuò",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "craft",
+    "vi": "đồ thủ công",
+    "zh": "手工艺",
+    "pinyin": "shǒu gōng yì",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "gardening",
+    "vi": "làm vườn",
+    "zh": "园艺",
+    "pinyin": "yuán yì",
+    "pos": "noun",
+    "topic": "hobbies"
+  },
+  {
+    "word": "football",
+    "vi": "bóng đá",
+    "zh": "足球",
+    "pinyin": "zú qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "basketball",
+    "vi": "bóng rổ",
+    "zh": "篮球",
+    "pinyin": "lán qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "tennis",
+    "vi": "quần vợt",
+    "zh": "网球",
+    "pinyin": "wǎng qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "volleyball",
+    "vi": "bóng chuyền",
+    "zh": "排球",
+    "pinyin": "pái qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "badminton",
+    "vi": "cầu lông",
+    "zh": "羽毛球",
+    "pinyin": "yǔ máo qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "baseball",
+    "vi": "bóng chày",
+    "zh": "棒球",
+    "pinyin": "bàng qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "golf",
+    "vi": "gôn",
+    "zh": "高尔夫",
+    "pinyin": "gāo ěr fū",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "boxing",
+    "vi": "quyền anh",
+    "zh": "拳击",
+    "pinyin": "quán jī",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "skating",
+    "vi": "trượt băng",
+    "zh": "滑冰",
+    "pinyin": "huá bīng",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "skiing",
+    "vi": "trượt tuyết",
+    "zh": "滑雪",
+    "pinyin": "huá xuě",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "match",
+    "vi": "trận đấu",
+    "zh": "比赛",
+    "pinyin": "bǐ sài",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "player",
+    "vi": "cầu thủ; người chơi",
+    "zh": "运动员",
+    "pinyin": "yùn dòng yuán",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "coach",
+    "vi": "huấn luyện viên",
+    "zh": "教练",
+    "pinyin": "jiào liàn",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "score",
+    "vi": "tỷ số; điểm",
+    "zh": "比分",
+    "pinyin": "bǐ fēn",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "goal",
+    "vi": "bàn thắng; mục tiêu",
+    "zh": "进球",
+    "pinyin": "jìn qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "ball",
+    "vi": "quả bóng",
+    "zh": "球",
+    "pinyin": "qiú",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "racket",
+    "vi": "vợt",
+    "zh": "球拍",
+    "pinyin": "qiú pāi",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "court",
+    "vi": "sân thi đấu",
+    "zh": "球场",
+    "pinyin": "qiú chǎng",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "race",
+    "vi": "cuộc đua",
+    "zh": "比赛",
+    "pinyin": "bǐ sài",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "medal",
+    "vi": "huy chương",
+    "zh": "奖牌",
+    "pinyin": "jiǎng pái",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "winner",
+    "vi": "người chiến thắng",
+    "zh": "获胜者",
+    "pinyin": "huò shèng zhě",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "tournament",
+    "vi": "giải đấu",
+    "zh": "锦标赛",
+    "pinyin": "jǐn biāo sài",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "training",
+    "vi": "luyện tập",
+    "zh": "训练",
+    "pinyin": "xùn liàn",
+    "pos": "noun",
+    "topic": "sports"
+  },
+  {
+    "word": "concert",
+    "vi": "buổi hòa nhạc",
+    "zh": "音乐会",
+    "pinyin": "yīn yuè huì",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "theater",
+    "vi": "nhà hát",
+    "zh": "剧院",
+    "pinyin": "jù yuàn",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "actress",
+    "vi": "nữ diễn viên",
+    "zh": "女演员",
+    "pinyin": "nǚ yǎn yuán",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "stage",
+    "vi": "sân khấu",
+    "zh": "舞台",
+    "pinyin": "wǔ tái",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "audience",
+    "vi": "khán giả",
+    "zh": "观众",
+    "pinyin": "guān zhòng",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "program",
+    "vi": "chương trình",
+    "zh": "节目",
+    "pinyin": "jié mù",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "channel",
+    "vi": "kênh",
+    "zh": "频道",
+    "pinyin": "pín dào",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "series",
+    "vi": "loạt phim; chuỗi",
+    "zh": "系列",
+    "pinyin": "xì liè",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "episode",
+    "vi": "tập phim",
+    "zh": "剧集",
+    "pinyin": "jù jí",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "scene",
+    "vi": "cảnh",
+    "zh": "场景",
+    "pinyin": "chǎng jǐng",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "story",
+    "vi": "câu chuyện",
+    "zh": "故事",
+    "pinyin": "gù shi",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "character",
+    "vi": "nhân vật",
+    "zh": "角色",
+    "pinyin": "jué sè",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "comedy",
+    "vi": "hài kịch",
+    "zh": "喜剧",
+    "pinyin": "xǐ jù",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "drama",
+    "vi": "phim chính kịch; kịch",
+    "zh": "戏剧",
+    "pinyin": "xì jù",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "action",
+    "vi": "hành động",
+    "zh": "动作",
+    "pinyin": "dòng zuò",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "news",
+    "vi": "tin tức",
+    "zh": "新闻",
+    "pinyin": "xīn wén",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "radio",
+    "vi": "đài phát thanh",
+    "zh": "广播",
+    "pinyin": "guǎng bō",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "podcast",
+    "vi": "podcast; chương trình âm thanh",
+    "zh": "播客",
+    "pinyin": "bō kè",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "magazine",
+    "vi": "tạp chí",
+    "zh": "杂志",
+    "pinyin": "zá zhì",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "novel",
+    "vi": "tiểu thuyết",
+    "zh": "小说",
+    "pinyin": "xiǎo shuō",
+    "pos": "noun",
+    "topic": "entertainment"
+  },
+  {
+    "word": "hill",
+    "vi": "đồi",
+    "zh": "小山",
+    "pinyin": "xiǎo shān",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "desert",
+    "vi": "sa mạc",
+    "zh": "沙漠",
+    "pinyin": "shā mò",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "air",
+    "vi": "không khí",
+    "zh": "空气",
+    "pinyin": "kōng qì",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "earth",
+    "vi": "trái đất; đất",
+    "zh": "地球",
+    "pinyin": "dì qiú",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "soil",
+    "vi": "đất trồng",
+    "zh": "土壤",
+    "pinyin": "tǔ rǎng",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "stone",
+    "vi": "đá; hòn đá",
+    "zh": "石头",
+    "pinyin": "shí tou",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "rock",
+    "vi": "đá tảng",
+    "zh": "岩石",
+    "pinyin": "yán shí",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "sand",
+    "vi": "cát",
+    "zh": "沙子",
+    "pinyin": "shā zi",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "leaf",
+    "vi": "lá cây",
+    "zh": "叶子",
+    "pinyin": "yè zi",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "branch",
+    "vi": "cành cây",
+    "zh": "树枝",
+    "pinyin": "shù zhī",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "root",
+    "vi": "rễ",
+    "zh": "根",
+    "pinyin": "gēn",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "seed",
+    "vi": "hạt giống",
+    "zh": "种子",
+    "pinyin": "zhǒng zi",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "rabbit",
+    "vi": "thỏ",
+    "zh": "兔子",
+    "pinyin": "tù zi",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "butterfly",
+    "vi": "bướm",
+    "zh": "蝴蝶",
+    "pinyin": "hú dié",
+    "pos": "noun",
+    "topic": "nature"
+  },
+  {
+    "word": "couple",
+    "vi": "cặp đôi",
+    "zh": "情侣",
+    "pinyin": "qíng lǚ",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "classmate",
+    "vi": "bạn cùng lớp",
+    "zh": "同学",
+    "pinyin": "tóng xué",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "roommate",
+    "vi": "bạn cùng phòng",
+    "zh": "室友",
+    "pinyin": "shì yǒu",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "partner",
+    "vi": "đối tác; người cùng cặp",
+    "zh": "伙伴",
+    "pinyin": "huǒ bàn",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "guest",
+    "vi": "khách",
+    "zh": "客人",
+    "pinyin": "kè rén",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "host",
+    "vi": "chủ nhà; người tổ chức",
+    "zh": "主人",
+    "pinyin": "zhǔ rén",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "stranger",
+    "vi": "người lạ",
+    "zh": "陌生人",
+    "pinyin": "mò shēng rén",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "group",
+    "vi": "nhóm",
+    "zh": "小组",
+    "pinyin": "xiǎo zǔ",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "member",
+    "vi": "thành viên",
+    "zh": "成员",
+    "pinyin": "chéng yuán",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "party",
+    "vi": "bữa tiệc",
+    "zh": "聚会",
+    "pinyin": "jù huì",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "wedding",
+    "vi": "đám cưới",
+    "zh": "婚礼",
+    "pinyin": "hūn lǐ",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "birthday",
+    "vi": "sinh nhật",
+    "zh": "生日",
+    "pinyin": "shēng rì",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "gift",
+    "vi": "quà tặng",
+    "zh": "礼物",
+    "pinyin": "lǐ wù",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "invitation",
+    "vi": "lời mời",
+    "zh": "邀请",
+    "pinyin": "yāo qǐng",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "conversation",
+    "vi": "cuộc trò chuyện",
+    "zh": "谈话",
+    "pinyin": "tán huà",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "problem",
+    "vi": "vấn đề",
+    "zh": "问题",
+    "pinyin": "wèn tí",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "idea",
+    "vi": "ý tưởng",
+    "zh": "想法",
+    "pinyin": "xiǎng fa",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "advice",
+    "vi": "lời khuyên",
+    "zh": "建议",
+    "pinyin": "jiàn yì",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "friendship",
+    "vi": "tình bạn",
+    "zh": "友谊",
+    "pinyin": "yǒu yì",
+    "pos": "noun",
+    "topic": "social"
+  },
+  {
+    "word": "polite",
+    "vi": "lịch sự",
+    "zh": "有礼貌的",
+    "pinyin": "yǒu lǐ mào de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "quiet",
+    "vi": "yên lặng; ít nói",
+    "zh": "安静的",
+    "pinyin": "ān jìng de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "active",
+    "vi": "năng động",
+    "zh": "活跃的",
+    "pinyin": "huó yuè de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "funny",
+    "vi": "hài hước",
+    "zh": "有趣的",
+    "pinyin": "yǒu qù de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "shy",
+    "vi": "nhút nhát",
+    "zh": "害羞的",
+    "pinyin": "hài xiū de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "smart",
+    "vi": "thông minh",
+    "zh": "聪明的",
+    "pinyin": "cōng míng de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "clever",
+    "vi": "khéo léo; thông minh",
+    "zh": "机灵的",
+    "pinyin": "jī ling de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "patient",
+    "vi": "kiên nhẫn",
+    "zh": "有耐心的",
+    "pinyin": "yǒu nài xīn de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "gentle",
+    "vi": "dịu dàng",
+    "zh": "温柔的",
+    "pinyin": "wēn róu de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "rude",
+    "vi": "thô lỗ",
+    "zh": "粗鲁的",
+    "pinyin": "cū lǔ de",
+    "pos": "adjective",
+    "topic": "personality"
+  },
+  {
+    "word": "lose",
+    "vi": "mất; thua",
+    "zh": "失去",
+    "pinyin": "shī qù",
+    "pos": "verb",
+    "topic": "verb1"
+  },
+  {
+    "word": "remember",
+    "vi": "nhớ",
+    "zh": "记得",
+    "pinyin": "jì de",
+    "pos": "verb",
+    "topic": "verb1"
+  },
+  {
+    "word": "meet",
+    "vi": "gặp",
+    "zh": "见面",
+    "pinyin": "jiàn miàn",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "call",
+    "vi": "gọi",
+    "zh": "打电话",
+    "pinyin": "dǎ diàn huà",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "send",
+    "vi": "gửi",
+    "zh": "发送",
+    "pinyin": "fā sòng",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "receive",
+    "vi": "nhận",
+    "zh": "收到",
+    "pinyin": "shōu dào",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "stop",
+    "vi": "dừng",
+    "zh": "停止",
+    "pinyin": "tíng zhǐ",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "happen",
+    "vi": "xảy ra",
+    "zh": "发生",
+    "pinyin": "fā shēng",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "seem",
+    "vi": "có vẻ",
+    "zh": "似乎",
+    "pinyin": "sì hū",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "become",
+    "vi": "trở thành",
+    "zh": "成为",
+    "pinyin": "chéng wéi",
+    "pos": "verb",
+    "topic": "verb2"
+  },
+  {
+    "word": "wear",
+    "vi": "mặc; đeo",
+    "zh": "穿戴",
+    "pinyin": "chuān dài",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "build",
+    "vi": "xây dựng",
+    "zh": "建造",
+    "pinyin": "jiàn zào",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "break",
+    "vi": "làm vỡ; phá",
+    "zh": "打破",
+    "pinyin": "dǎ pò",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "fix",
+    "vi": "sửa chữa",
+    "zh": "修理",
+    "pinyin": "xiū lǐ",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "check",
+    "vi": "kiểm tra",
+    "zh": "检查",
+    "pinyin": "jiǎn chá",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "plan",
+    "vi": "lên kế hoạch",
+    "zh": "计划",
+    "pinyin": "jì huà",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "decide",
+    "vi": "quyết định",
+    "zh": "决定",
+    "pinyin": "jué dìng",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "hope",
+    "vi": "hy vọng",
+    "zh": "希望",
+    "pinyin": "xī wàng",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "join",
+    "vi": "tham gia",
+    "zh": "参加",
+    "pinyin": "cān jiā",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "follow",
+    "vi": "đi theo; làm theo",
+    "zh": "跟随",
+    "pinyin": "gēn suí",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "lead",
+    "vi": "dẫn dắt",
+    "zh": "带领",
+    "pinyin": "dài lǐng",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "win",
+    "vi": "thắng",
+    "zh": "赢",
+    "pinyin": "yíng",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "fail",
+    "vi": "thất bại; trượt",
+    "zh": "失败",
+    "pinyin": "shī bài",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "pass",
+    "vi": "đỗ; vượt qua",
+    "zh": "通过",
+    "pinyin": "tōng guò",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "enter",
+    "vi": "đi vào",
+    "zh": "进入",
+    "pinyin": "jìn rù",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "exit",
+    "vi": "đi ra",
+    "zh": "离开",
+    "pinyin": "lí kāi",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "prepare",
+    "vi": "chuẩn bị",
+    "zh": "准备",
+    "pinyin": "zhǔn bèi",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "share",
+    "vi": "chia sẻ",
+    "zh": "分享",
+    "pinyin": "fēn xiǎng",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "order",
+    "vi": "đặt hàng; gọi món",
+    "zh": "订购",
+    "pinyin": "dìng gòu",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "deliver",
+    "vi": "giao; chuyển",
+    "zh": "送达",
+    "pinyin": "sòng dá",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "collect",
+    "vi": "thu thập; lấy",
+    "zh": "收集",
+    "pinyin": "shōu jí",
+    "pos": "verb",
+    "topic": "verb3"
+  },
+  {
+    "word": "tall",
+    "vi": "cao",
+    "zh": "高的",
+    "pinyin": "gāo de",
+    "pos": "adjective",
+    "topic": "adjective1"
+  },
+  {
+    "word": "important",
+    "vi": "quan trọng",
+    "zh": "重要的",
+    "pinyin": "zhòng yào de",
+    "pos": "adjective",
+    "topic": "adjective1"
+  },
+  {
+    "word": "same",
+    "vi": "giống nhau",
+    "zh": "相同的",
+    "pinyin": "xiāng tóng de",
+    "pos": "adjective",
+    "topic": "adjective1"
+  },
+  {
+    "word": "empty",
+    "vi": "trống",
+    "zh": "空的",
+    "pinyin": "kōng de",
+    "pos": "adjective",
+    "topic": "adjective1"
+  },
+  {
+    "word": "heavy",
+    "vi": "nặng",
+    "zh": "重的",
+    "pinyin": "zhòng de",
+    "pos": "adjective",
+    "topic": "adjective2"
+  },
+  {
+    "word": "dark",
+    "vi": "tối",
+    "zh": "黑暗的",
+    "pinyin": "hēi àn de",
+    "pos": "adjective",
+    "topic": "adjective2"
+  },
+  {
+    "word": "bright",
+    "vi": "sáng",
+    "zh": "明亮的",
+    "pinyin": "míng liàng de",
+    "pos": "adjective",
+    "topic": "adjective2"
+  },
+  {
+    "word": "dry",
+    "vi": "khô",
+    "zh": "干燥的",
+    "pinyin": "gān zào de",
+    "pos": "adjective",
+    "topic": "adjective2"
+  },
+  {
+    "word": "wet",
+    "vi": "ướt",
+    "zh": "湿的",
+    "pinyin": "shī de",
+    "pos": "adjective",
+    "topic": "adjective2"
+  },
+  {
+    "word": "possible",
+    "vi": "có thể",
+    "zh": "可能的",
+    "pinyin": "kě néng de",
+    "pos": "adjective",
+    "topic": "adjective2"
+  },
+  {
+    "word": "certain",
+    "vi": "chắc chắn; nhất định",
+    "zh": "肯定的",
+    "pinyin": "kěn dìng de",
+    "pos": "adjective",
+    "topic": "adjective2"
+  },
+  {
+    "word": "paper",
+    "vi": "giấy",
+    "zh": "纸",
+    "pinyin": "zhǐ",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "ruler",
+    "vi": "thước",
+    "zh": "尺子",
+    "pinyin": "chǐ zi",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "backpack",
+    "vi": "ba lô",
+    "zh": "背包",
+    "pinyin": "bèi bāo",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "grade",
+    "vi": "điểm; khối lớp",
+    "zh": "成绩",
+    "pinyin": "chéng jì",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "mark",
+    "vi": "điểm số; dấu",
+    "zh": "分数",
+    "pinyin": "fēn shù",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "research",
+    "vi": "nghiên cứu",
+    "zh": "研究",
+    "pinyin": "yán jiū",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "degree",
+    "vi": "bằng cấp",
+    "zh": "学位",
+    "pinyin": "xué wèi",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "campus",
+    "vi": "khuôn viên trường",
+    "zh": "校园",
+    "pinyin": "xiào yuán",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "science",
+    "vi": "khoa học",
+    "zh": "科学",
+    "pinyin": "kē xué",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "math",
+    "vi": "toán",
+    "zh": "数学",
+    "pinyin": "shù xué",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "history",
+    "vi": "lịch sử",
+    "zh": "历史",
+    "pinyin": "lì shǐ",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "language",
+    "vi": "ngôn ngữ",
+    "zh": "语言",
+    "pinyin": "yǔ yán",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "lecture",
+    "vi": "bài giảng",
+    "zh": "讲座",
+    "pinyin": "jiǎng zuò",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "skill",
+    "vi": "kỹ năng",
+    "zh": "技能",
+    "pinyin": "jì néng",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "knowledge",
+    "vi": "kiến thức",
+    "zh": "知识",
+    "pinyin": "zhī shi",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "semester",
+    "vi": "học kỳ",
+    "zh": "学期",
+    "pinyin": "xué qī",
+    "pos": "noun",
+    "topic": "school"
+  },
+  {
+    "word": "employee",
+    "vi": "nhân viên",
+    "zh": "员工",
+    "pinyin": "yuán gōng",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "employer",
+    "vi": "người sử dụng lao động",
+    "zh": "雇主",
+    "pinyin": "gù zhǔ",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "business",
+    "vi": "kinh doanh; doanh nghiệp",
+    "zh": "生意",
+    "pinyin": "shēng yi",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "service",
+    "vi": "dịch vụ",
+    "zh": "服务",
+    "pinyin": "fú wù",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "factory",
+    "vi": "nhà máy",
+    "zh": "工厂",
+    "pinyin": "gōng chǎng",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "department",
+    "vi": "phòng ban",
+    "zh": "部门",
+    "pinyin": "bù mén",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "position",
+    "vi": "vị trí công việc",
+    "zh": "职位",
+    "pinyin": "zhí wèi",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "contract",
+    "vi": "hợp đồng",
+    "zh": "合同",
+    "pinyin": "hé tóng",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "product",
+    "vi": "sản phẩm",
+    "zh": "产品",
+    "pinyin": "chǎn pǐn",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "delivery",
+    "vi": "sự giao hàng",
+    "zh": "配送",
+    "pinyin": "pèi sòng",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "shift",
+    "vi": "ca làm việc",
+    "zh": "班次",
+    "pinyin": "bān cì",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "staff",
+    "vi": "nhân viên; đội ngũ",
+    "zh": "员工",
+    "pinyin": "yuán gōng",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "workplace",
+    "vi": "nơi làm việc",
+    "zh": "工作场所",
+    "pinyin": "gōng zuò chǎng suǒ",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "teamwork",
+    "vi": "làm việc nhóm",
+    "zh": "团队合作",
+    "pinyin": "tuán duì hé zuò",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "promotion",
+    "vi": "sự thăng chức",
+    "zh": "晋升",
+    "pinyin": "jìn shēng",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "profit",
+    "vi": "lợi nhuận",
+    "zh": "利润",
+    "pinyin": "lì rùn",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "income",
+    "vi": "thu nhập",
+    "zh": "收入",
+    "pinyin": "shōu rù",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "benefit",
+    "vi": "phúc lợi; lợi ích",
+    "zh": "福利",
+    "pinyin": "fú lì",
+    "pos": "noun",
+    "topic": "work"
+  },
+  {
+    "word": "bill",
+    "vi": "hóa đơn",
+    "zh": "账单",
+    "pinyin": "zhàng dān",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "coin",
+    "vi": "đồng xu",
+    "zh": "硬币",
+    "pinyin": "yìng bì",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "note",
+    "vi": "tờ tiền; ghi chú",
+    "zh": "钞票",
+    "pinyin": "chāo piào",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "banknote",
+    "vi": "tiền giấy",
+    "zh": "纸币",
+    "pinyin": "zhǐ bì",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "budget",
+    "vi": "ngân sách",
+    "zh": "预算",
+    "pinyin": "yù suàn",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "credit",
+    "vi": "tín dụng",
+    "zh": "信用",
+    "pinyin": "xìn yòng",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "debit",
+    "vi": "ghi nợ",
+    "zh": "借记",
+    "pinyin": "jiè jì",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "loan",
+    "vi": "khoản vay",
+    "zh": "贷款",
+    "pinyin": "dài kuǎn",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "rent",
+    "vi": "tiền thuê; thuê",
+    "zh": "租金",
+    "pinyin": "zū jīn",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "tax",
+    "vi": "thuế",
+    "zh": "税",
+    "pinyin": "shuì",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "fee",
+    "vi": "phí",
+    "zh": "费用",
+    "pinyin": "fèi yòng",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "payment",
+    "vi": "khoản thanh toán",
+    "zh": "付款",
+    "pinyin": "fù kuǎn",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "total",
+    "vi": "tổng số",
+    "zh": "总数",
+    "pinyin": "zǒng shù",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "amount",
+    "vi": "số lượng; số tiền",
+    "zh": "金额",
+    "pinyin": "jīn é",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "value",
+    "vi": "giá trị",
+    "zh": "价值",
+    "pinyin": "jià zhí",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "loss",
+    "vi": "khoản lỗ; mất mát",
+    "zh": "损失",
+    "pinyin": "sǔn shī",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "wealth",
+    "vi": "sự giàu có",
+    "zh": "财富",
+    "pinyin": "cái fù",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "wallet",
+    "vi": "ví tiền",
+    "zh": "钱包",
+    "pinyin": "qián bāo",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "expense",
+    "vi": "chi phí",
+    "zh": "开销",
+    "pinyin": "kāi xiāo",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "savings",
+    "vi": "tiền tiết kiệm",
+    "zh": "储蓄",
+    "pinyin": "chǔ xù",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "debt",
+    "vi": "nợ",
+    "zh": "债务",
+    "pinyin": "zhài wù",
+    "pos": "noun",
+    "topic": "money"
+  },
+  {
+    "word": "fund",
+    "vi": "quỹ",
+    "zh": "基金",
+    "pinyin": "jī jīn",
+    "pos": "noun",
+    "topic": "money"
+  }
+]
