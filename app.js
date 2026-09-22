@@ -1,4 +1,4 @@
-const APP_VERSION="4.1.0";
+const APP_VERSION="4.2.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 
@@ -59,6 +59,7 @@ function stopSpeech(){
 function speak(text,rate,lang,retry){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const t=String(text??"").trim();if(!t)return;
+  speechToken++;
   const r=Number(rate)||Number(db.profile.speechRate)||1,l=lang||"en-US",attempt=Number(retry||0);
   const run=function(){
     window.speechSynthesis.cancel();
