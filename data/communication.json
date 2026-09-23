@@ -3739,5 +3739,1565 @@
         "Công ty xuất bản một báo cáo hằng năm."
       ]
     ]
+  },
+  {
+    "id": "comm7_01",
+    "title": "Công việc — hội thoại mở rộng",
+    "topic": "Công việc",
+    "vocab": [
+      "telephone",
+      "remove",
+      "piece",
+      "broken",
+      "tape",
+      "hide"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing telephone and remove.",
+        "Tôi đang luyện điện thoại và loại bỏ; tháo ra."
+      ],
+      [
+        "A",
+        "Why is piece useful in real life?",
+        "Tại sao mảnh; miếng hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "We talked about piece yesterday.",
+        "Chúng tôi nói về mảnh; miếng hôm qua."
+      ],
+      [
+        "A",
+        "When would you use broken?",
+        "Khi nào bạn sẽ dùng bị hỏng; vỡ?"
+      ],
+      [
+        "B",
+        "She seems broken today.",
+        "Hôm nay cô ấy có vẻ bị hỏng; vỡ."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: tape or hide?",
+        "Từ nào dễ nhớ hơn: băng dính; băng hay giấu; trốn?"
+      ],
+      [
+        "B",
+        "I think tape is easier because I can use it often.",
+        "Tôi nghĩ băng dính; băng dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_02",
+    "title": "Du lịch — hội thoại mở rộng",
+    "topic": "Du lịch",
+    "vocab": [
+      "pool",
+      "amateur",
+      "league",
+      "fight",
+      "soccer",
+      "strike"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing pool and amateur.",
+        "Tôi đang luyện hồ bơi; bể và nghiệp dư."
+      ],
+      [
+        "A",
+        "Why is league useful in real life?",
+        "Tại sao giải đấu; liên đoàn hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "We watched league on television.",
+        "Chúng tôi xem giải đấu; liên đoàn trên tivi."
+      ],
+      [
+        "A",
+        "When would you use fight?",
+        "Khi nào bạn sẽ dùng đánh nhau; chiến đấu?"
+      ],
+      [
+        "B",
+        "The two teams fought hard for the final point.",
+        "Hai đội chiến đấu quyết liệt vì điểm cuối cùng."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: soccer or strike?",
+        "Từ nào dễ nhớ hơn: bóng đá hay đánh; đình công; cú đánh?"
+      ],
+      [
+        "B",
+        "I think soccer is easier because I can use it often.",
+        "Tôi nghĩ bóng đá dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_03",
+    "title": "Học tập — hội thoại mở rộng",
+    "topic": "Học tập",
+    "vocab": [
+      "output",
+      "panel",
+      "virtual",
+      "external",
+      "block",
+      "switch"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing output and panel.",
+        "Tôi đang luyện đầu ra; sản lượng và bảng; ban hội thẩm."
+      ],
+      [
+        "A",
+        "Why is virtual useful in real life?",
+        "Tại sao ảo; trực tuyến hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "She seems virtual today.",
+        "Hôm nay cô ấy có vẻ ảo; trực tuyến."
+      ],
+      [
+        "A",
+        "When would you use external?",
+        "Khi nào bạn sẽ dùng bên ngoài?"
+      ],
+      [
+        "B",
+        "The room is quite external.",
+        "Căn phòng khá bên ngoài."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: block or switch?",
+        "Từ nào dễ nhớ hơn: khối; chặn hay công tắc; chuyển đổi?"
+      ],
+      [
+        "B",
+        "I think block is easier because I can use it often.",
+        "Tôi nghĩ khối; chặn dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_04",
+    "title": "Công nghệ — hội thoại mở rộng",
+    "topic": "Công nghệ",
+    "vocab": [
+      "valid",
+      "grand",
+      "trial",
+      "entire",
+      "greater",
+      "medium"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing valid and grand.",
+        "Tôi đang luyện hợp lệ và lớn lao; tuyệt vời."
+      ],
+      [
+        "A",
+        "Why is trial useful in real life?",
+        "Tại sao thử nghiệm; phiên tòa hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "We talked about trial yesterday.",
+        "Chúng tôi nói về thử nghiệm; phiên tòa hôm qua."
+      ],
+      [
+        "A",
+        "When would you use entire?",
+        "Khi nào bạn sẽ dùng toàn bộ?"
+      ],
+      [
+        "B",
+        "She seems entire today.",
+        "Hôm nay cô ấy có vẻ toàn bộ."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: greater or medium?",
+        "Từ nào dễ nhớ hơn: lớn hơn; lớn hơn nữa hay trung bình?"
+      ],
+      [
+        "B",
+        "I think greater is easier because I can use it often.",
+        "Tôi nghĩ lớn hơn; lớn hơn nữa dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_05",
+    "title": "Mua sắm — hội thoại mở rộng",
+    "topic": "Mua sắm",
+    "vocab": [
+      "speaking",
+      "technique",
+      "difficulty",
+      "properly",
+      "awareness",
+      "definition"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing speaking and technique.",
+        "Tôi đang luyện việc nói; kỹ năng nói và kỹ thuật; phương pháp."
+      ],
+      [
+        "A",
+        "Why is difficulty useful in real life?",
+        "Tại sao khó khăn; độ khó hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "This difficulty is useful in everyday life.",
+        " Difficulty này hữu ích trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "When would you use properly?",
+        "Khi nào bạn sẽ dùng đúng cách; đầy đủ?"
+      ],
+      [
+        "B",
+        "They properly use the app.",
+        "Họ đúng cách; đầy đủ sử dụng ứng dụng."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: awareness or definition?",
+        "Từ nào dễ nhớ hơn: nhận thức; sự hiểu biết hay định nghĩa?"
+      ],
+      [
+        "B",
+        "I think awareness is easier because I can use it often.",
+        "Tôi nghĩ nhận thức; sự hiểu biết dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_06",
+    "title": "Gia đình — hội thoại mở rộng",
+    "topic": "Gia đình",
+    "vocab": [
+      "wild",
+      "marine",
+      "depth",
+      "moon",
+      "peak",
+      "wildlife"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing wild and marine.",
+        "Tôi đang luyện hoang dã; dữ và thuộc biển."
+      ],
+      [
+        "A",
+        "Why is depth useful in real life?",
+        "Tại sao độ sâu hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "We saw depth during our walk.",
+        "Chúng tôi thấy độ sâu khi đi bộ."
+      ],
+      [
+        "A",
+        "When would you use moon?",
+        "Khi nào bạn sẽ dùng mặt trăng?"
+      ],
+      [
+        "B",
+        "We saw moon during our walk.",
+        "Chúng tôi thấy mặt trăng khi đi bộ."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: peak or wildlife?",
+        "Từ nào dễ nhớ hơn: đỉnh; cao điểm hay động vật hoang dã?"
+      ],
+      [
+        "B",
+        "I think peak is easier because I can use it often.",
+        "Tôi nghĩ đỉnh; cao điểm dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_07",
+    "title": "Sức khỏe — hội thoại mở rộng",
+    "topic": "Sức khỏe",
+    "vocab": [
+      "manual",
+      "officer",
+      "grant",
+      "secretary",
+      "chief",
+      "procedure"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing manual and officer.",
+        "Tôi đang luyện hướng dẫn; thủ công và sĩ quan; cán bộ."
+      ],
+      [
+        "A",
+        "Why is grant useful in real life?",
+        "Tại sao trao; khoản cấp hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "The university granted her a scholarship.",
+        "Trường đại học trao cho cô ấy một học bổng."
+      ],
+      [
+        "A",
+        "When would you use secretary?",
+        "Khi nào bạn sẽ dùng thư ký?"
+      ],
+      [
+        "B",
+        "The team is working on secretary.",
+        "Nhóm đang làm về thư ký."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: chief or procedure?",
+        "Từ nào dễ nhớ hơn: người đứng đầu; chính hay thủ tục; quy trình?"
+      ],
+      [
+        "B",
+        "I think chief is easier because I can use it often.",
+        "Tôi nghĩ người đứng đầu; chính dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_08",
+    "title": "Bạn bè — hội thoại mở rộng",
+    "topic": "Bạn bè",
+    "vocab": [
+      "hole",
+      "location",
+      "hall",
+      "bottom",
+      "edge",
+      "upper"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing hole and location.",
+        "Tôi đang luyện lỗ; hố và vị trí; địa điểm."
+      ],
+      [
+        "A",
+        "Why is hall useful in real life?",
+        "Tại sao đại sảnh; hội trường hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "This hall is useful in everyday life.",
+        " Hall này hữu ích trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "When would you use bottom?",
+        "Khi nào bạn sẽ dùng đáy; phía dưới?"
+      ],
+      [
+        "B",
+        "This bottom is useful in everyday life.",
+        " Bottom này hữu ích trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: edge or upper?",
+        "Từ nào dễ nhớ hơn: cạnh; mép hay phía trên; cao hơn?"
+      ],
+      [
+        "B",
+        "I think edge is easier because I can use it often.",
+        "Tôi nghĩ cạnh; mép dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_09",
+    "title": "Cảm xúc — hội thoại mở rộng",
+    "topic": "Cảm xúc",
+    "vocab": [
+      "forward",
+      "roll",
+      "lift",
+      "lean",
+      "forward",
+      "roll"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing forward and roll.",
+        "Tôi đang luyện về phía trước và lăn; cuộn."
+      ],
+      [
+        "A",
+        "Why is lift useful in real life?",
+        "Tại sao nâng; thang máy hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "Can you lift this box for me?",
+        "Bạn có thể nhấc chiếc hộp này giúp tôi không?"
+      ],
+      [
+        "A",
+        "When would you use lean?",
+        "Khi nào bạn sẽ dùng nghiêng; gầy?"
+      ],
+      [
+        "B",
+        "I usually lean after work.",
+        "Tôi thường nghiêng; gầy sau giờ làm."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: forward or roll?",
+        "Từ nào dễ nhớ hơn: về phía trước hay lăn; cuộn?"
+      ],
+      [
+        "B",
+        "I think forward is easier because I can use it often.",
+        "Tôi nghĩ về phía trước dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_10",
+    "title": "Thành phố — hội thoại mở rộng",
+    "topic": "Thành phố",
+    "vocab": [
+      "chain",
+      "wholesale",
+      "sponsor",
+      "revenue",
+      "partnership",
+      "equity"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing chain and wholesale.",
+        "Tôi đang luyện chuỗi; dây chuyền và bán buôn."
+      ],
+      [
+        "A",
+        "Why is sponsor useful in real life?",
+        "Tại sao nhà tài trợ; tài trợ hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "I checked sponsor before deciding.",
+        "Tôi kiểm tra nhà tài trợ; tài trợ trước khi quyết định."
+      ],
+      [
+        "A",
+        "When would you use revenue?",
+        "Khi nào bạn sẽ dùng doanh thu?"
+      ],
+      [
+        "B",
+        "The company needs better revenue.",
+        "Công ty cần doanh thu tốt hơn."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: partnership or equity?",
+        "Từ nào dễ nhớ hơn: quan hệ đối tác hay vốn chủ sở hữu; sự công bằng?"
+      ],
+      [
+        "B",
+        "I think partnership is easier because I can use it often.",
+        "Tôi nghĩ quan hệ đối tác dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_11",
+    "title": "Thiên nhiên — hội thoại mở rộng",
+    "topic": "Thiên nhiên",
+    "vocab": [
+      "luxury",
+      "pair",
+      "purchase",
+      "refund",
+      "option",
+      "collection"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing luxury and pair.",
+        "Tôi đang luyện sự xa xỉ; đồ xa xỉ và cặp; đôi."
+      ],
+      [
+        "A",
+        "Why is purchase useful in real life?",
+        "Tại sao mua; việc mua hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "I purchased the ticket online.",
+        "Tôi đã mua vé trực tuyến."
+      ],
+      [
+        "A",
+        "When would you use refund?",
+        "Khi nào bạn sẽ dùng hoàn tiền; tiền hoàn?"
+      ],
+      [
+        "B",
+        "I saw refund at the store.",
+        "Tôi thấy hoàn tiền; tiền hoàn ở cửa hàng."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: option or collection?",
+        "Từ nào dễ nhớ hơn: lựa chọn hay bộ sưu tập; sự thu thập?"
+      ],
+      [
+        "B",
+        "I think option is easier because I can use it often.",
+        "Tôi nghĩ lựa chọn dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_12",
+    "title": "Thể thao — hội thoại mở rộng",
+    "topic": "Thể thao",
+    "vocab": [
+      "assignment",
+      "evaluation",
+      "presentation",
+      "educational",
+      "session",
+      "literature"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing assignment and evaluation.",
+        "Tôi đang luyện bài tập; nhiệm vụ và sự đánh giá."
+      ],
+      [
+        "A",
+        "Why is presentation useful in real life?",
+        "Tại sao bài thuyết trình hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "We practiced presentation after class.",
+        "Chúng tôi luyện bài thuyết trình sau giờ học."
+      ],
+      [
+        "A",
+        "When would you use educational?",
+        "Khi nào bạn sẽ dùng thuộc giáo dục?"
+      ],
+      [
+        "B",
+        "The room is quite educational.",
+        "Căn phòng khá thuộc giáo dục."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: session or literature?",
+        "Từ nào dễ nhớ hơn: buổi; phiên hay văn học?"
+      ],
+      [
+        "B",
+        "I think session is easier because I can use it often.",
+        "Tôi nghĩ buổi; phiên dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_13",
+    "title": "Thói quen — hội thoại mở rộng",
+    "topic": "Thói quen",
+    "vocab": [
+      "chemistry",
+      "researcher",
+      "element",
+      "biological",
+      "metal",
+      "surface"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing chemistry and researcher.",
+        "Tôi đang luyện hóa học và nhà nghiên cứu."
+      ],
+      [
+        "A",
+        "Why is element useful in real life?",
+        "Tại sao yếu tố; nguyên tố hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "Can you tell me more about element?",
+        "Bạn có thể nói thêm về yếu tố; nguyên tố không?"
+      ],
+      [
+        "A",
+        "When would you use biological?",
+        "Khi nào bạn sẽ dùng thuộc sinh học?"
+      ],
+      [
+        "B",
+        "The room is quite biological.",
+        "Căn phòng khá thuộc sinh học."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: metal or surface?",
+        "Từ nào dễ nhớ hơn: kim loại hay bề mặt?"
+      ],
+      [
+        "B",
+        "I think metal is easier because I can use it often.",
+        "Tôi nghĩ kim loại dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_14",
+    "title": "Giao tiếp — hội thoại mở rộng",
+    "topic": "Giao tiếp",
+    "vocab": [
+      "weekend",
+      "instant",
+      "immediate",
+      "beginning",
+      "twice",
+      "century"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing weekend and instant.",
+        "Tôi đang luyện cuối tuần và ngay lập tức; khoảnh khắc."
+      ],
+      [
+        "A",
+        "Why is immediate useful in real life?",
+        "Tại sao ngay lập tức; trực tiếp hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "This plan is immediate.",
+        "Kế hoạch này ngay lập tức; trực tiếp."
+      ],
+      [
+        "A",
+        "When would you use beginning?",
+        "Khi nào bạn sẽ dùng sự bắt đầu?"
+      ],
+      [
+        "B",
+        "We talked about beginning yesterday.",
+        "Chúng tôi nói về sự bắt đầu hôm qua."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: twice or century?",
+        "Từ nào dễ nhớ hơn: hai lần hay thế kỷ?"
+      ],
+      [
+        "B",
+        "I think twice is easier because I can use it often.",
+        "Tôi nghĩ hai lần dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_15",
+    "title": "Mục tiêu — hội thoại mở rộng",
+    "topic": "Mục tiêu",
+    "vocab": [
+      "manner",
+      "letter",
+      "insist",
+      "acknowledge",
+      "announcement",
+      "discussion"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing manner and letter.",
+        "Tôi đang luyện cách thức; thái độ và thư; chữ cái."
+      ],
+      [
+        "A",
+        "Why is insist useful in real life?",
+        "Tại sao khăng khăng; nhấn mạnh hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "I usually insist after work.",
+        "Tôi thường khăng khăng; nhấn mạnh sau giờ làm."
+      ],
+      [
+        "A",
+        "When would you use acknowledge?",
+        "Khi nào bạn sẽ dùng thừa nhận; xác nhận?"
+      ],
+      [
+        "B",
+        "I usually acknowledge after work.",
+        "Tôi thường thừa nhận; xác nhận sau giờ làm."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: announcement or discussion?",
+        "Từ nào dễ nhớ hơn: thông báo hay cuộc thảo luận?"
+      ],
+      [
+        "B",
+        "I think announcement is easier because I can use it often.",
+        "Tôi nghĩ thông báo dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_16",
+    "title": "Dịch vụ — hội thoại mở rộng",
+    "topic": "Dịch vụ",
+    "vocab": [
+      "youth",
+      "youth",
+      "youth",
+      "youth",
+      "youth",
+      "youth"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing youth and youth.",
+        "Tôi đang luyện tuổi trẻ; thanh niên và tuổi trẻ; thanh niên."
+      ],
+      [
+        "A",
+        "Why is youth useful in real life?",
+        "Tại sao tuổi trẻ; thanh niên hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "I noticed youth this morning.",
+        "Tôi chú ý đến tuổi trẻ; thanh niên sáng nay."
+      ],
+      [
+        "A",
+        "When would you use youth?",
+        "Khi nào bạn sẽ dùng tuổi trẻ; thanh niên?"
+      ],
+      [
+        "B",
+        "I noticed youth this morning.",
+        "Tôi chú ý đến tuổi trẻ; thanh niên sáng nay."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: youth or youth?",
+        "Từ nào dễ nhớ hơn: tuổi trẻ; thanh niên hay tuổi trẻ; thanh niên?"
+      ],
+      [
+        "B",
+        "I think youth is easier because I can use it often.",
+        "Tôi nghĩ tuổi trẻ; thanh niên dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_17",
+    "title": "Giải trí — hội thoại mở rộng",
+    "topic": "Giải trí",
+    "vocab": [
+      "documentary",
+      "headline",
+      "television",
+      "visual",
+      "coverage",
+      "poster"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing documentary and headline.",
+        "Tôi đang luyện phim tài liệu và tiêu đề chính."
+      ],
+      [
+        "A",
+        "Why is television useful in real life?",
+        "Tại sao tivi; truyền hình hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "Can you tell me more about television?",
+        "Bạn có thể nói thêm về tivi; truyền hình không?"
+      ],
+      [
+        "A",
+        "When would you use visual?",
+        "Khi nào bạn sẽ dùng thuộc thị giác; hình ảnh?"
+      ],
+      [
+        "B",
+        "She seems visual today.",
+        "Hôm nay cô ấy có vẻ thuộc thị giác; hình ảnh."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: coverage or poster?",
+        "Từ nào dễ nhớ hơn: phạm vi bao phủ; bảo hiểm hay áp phích?"
+      ],
+      [
+        "B",
+        "I think coverage is easier because I can use it often.",
+        "Tôi nghĩ phạm vi bao phủ; bảo hiểm dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_18",
+    "title": "Đời sống — hội thoại mở rộng",
+    "topic": "Đời sống",
+    "vocab": [
+      "figure",
+      "basis",
+      "aspect",
+      "conclude",
+      "outcome",
+      "contrast"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing figure and basis.",
+        "Tôi đang luyện con số; hình; hình dung và cơ sở; nền tảng."
+      ],
+      [
+        "A",
+        "Why is aspect useful in real life?",
+        "Tại sao khía cạnh hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "I saw aspect on my way home.",
+        "Tôi thấy khía cạnh trên đường về nhà."
+      ],
+      [
+        "A",
+        "When would you use conclude?",
+        "Khi nào bạn sẽ dùng kết luận; kết thúc?"
+      ],
+      [
+        "B",
+        "Can you conclude this for me?",
+        "Bạn có thể kết luận; kết thúc việc này giúp tôi không?"
+      ],
+      [
+        "A",
+        "Which word is easier to remember: outcome or contrast?",
+        "Từ nào dễ nhớ hơn: kết quả hay sự tương phản; tương phản?"
+      ],
+      [
+        "B",
+        "I think outcome is easier because I can use it often.",
+        "Tôi nghĩ kết quả dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_19",
+    "title": "Kỹ năng — hội thoại mở rộng",
+    "topic": "Kỹ năng",
+    "vocab": [
+      "criminal",
+      "gender",
+      "majority",
+      "civil",
+      "peace",
+      "justice"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing criminal and gender.",
+        "Tôi đang luyện tội phạm; thuộc tội phạm và giới tính."
+      ],
+      [
+        "A",
+        "Why is majority useful in real life?",
+        "Tại sao phần lớn; đa số hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "This majority is useful in everyday life.",
+        " Majority này hữu ích trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "When would you use civil?",
+        "Khi nào bạn sẽ dùng dân sự; thuộc công dân?"
+      ],
+      [
+        "B",
+        "This plan is civil.",
+        "Kế hoạch này dân sự; thuộc công dân."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: peace or justice?",
+        "Từ nào dễ nhớ hơn: hòa bình hay công lý?"
+      ],
+      [
+        "B",
+        "I think peace is easier because I can use it often.",
+        "Tôi nghĩ hòa bình dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
+  },
+  {
+    "id": "comm7_20",
+    "title": "Ôn tập — hội thoại mở rộng",
+    "topic": "Ôn tập",
+    "vocab": [
+      "iron",
+      "steel",
+      "iron",
+      "steel",
+      "iron",
+      "steel"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7",
+    "lines": [
+      [
+        "A",
+        "What are you practicing today?",
+        "Hôm nay bạn đang luyện gì?"
+      ],
+      [
+        "B",
+        "I'm practicing iron and steel.",
+        "Tôi đang luyện sắt; ủi và thép."
+      ],
+      [
+        "A",
+        "Why is iron useful in real life?",
+        "Tại sao sắt; ủi hữu ích trong thực tế?"
+      ],
+      [
+        "B",
+        "I noticed iron this morning.",
+        "Tôi chú ý đến sắt; ủi sáng nay."
+      ],
+      [
+        "A",
+        "When would you use steel?",
+        "Khi nào bạn sẽ dùng thép?"
+      ],
+      [
+        "B",
+        "I noticed steel this morning.",
+        "Tôi chú ý đến thép sáng nay."
+      ],
+      [
+        "A",
+        "Which word is easier to remember: iron or steel?",
+        "Từ nào dễ nhớ hơn: sắt; ủi hay thép?"
+      ],
+      [
+        "B",
+        "I think iron is easier because I can use it often.",
+        "Tôi nghĩ sắt; ủi dễ hơn vì tôi có thể dùng nó thường xuyên."
+      ],
+      [
+        "A",
+        "How will you practice these words after this lesson?",
+        "Sau bài này bạn sẽ luyện những từ này thế nào?"
+      ],
+      [
+        "B",
+        "I'll listen to them, say them aloud, and make my own sentences.",
+        "Tôi sẽ nghe, nói to và tự đặt câu với chúng."
+      ],
+      [
+        "A",
+        "Will you review them tomorrow?",
+        "Bạn sẽ ôn lại chúng vào ngày mai chứ?"
+      ],
+      [
+        "B",
+        "Yes. I want to remember them, not just recognize them.",
+        "Có. Tôi muốn nhớ và sử dụng được chúng, không chỉ nhận ra chúng."
+      ]
+    ]
   }
 ]
