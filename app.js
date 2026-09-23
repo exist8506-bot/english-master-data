@@ -1,4 +1,4 @@
-const APP_VERSION="6.0.1";
+const APP_VERSION="7.0.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 
@@ -201,7 +201,7 @@ function render(){
   fn();
 }
 function home(){
-  $("view").innerHTML=shell("English Master V6.0.1","Học • Luyện • Nhớ • Cải thiện",
+  $("view").innerHTML=shell("English Master V7.0.0","Học • Luyện • Nhớ • Cải thiện",
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
