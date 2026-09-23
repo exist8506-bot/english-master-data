@@ -1,4 +1,4 @@
-const APP_VERSION="5.0.0";
+const APP_VERSION="6.0.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 
@@ -195,7 +195,7 @@ function render(){
   fn();
 }
 function home(){
-  $("view").innerHTML=shell("English Master V4.1","Học • Luyện • Nhớ • Cải thiện",
+  $("view").innerHTML=shell("English Master V6","Học • Luyện • Nhớ • Cải thiện",
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
@@ -209,7 +209,7 @@ function vocab(){
     '</tbody></table></div></div>');
 }
 function sentences(){
-  $("view").innerHTML=shell("Học câu","500 câu luyện đã được viết lại để tránh mẫu lặp “I learned the word…”.",
+  $("view").innerHTML=shell("Học câu","toàn bộ câu luyện đã được viết lại để tránh mẫu lặp “I learned the word…”.",
     '<div class="grid grid-2">'+db.sentences.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US")+'</div>'}).join("")+'</div>');
 }
 function renderFlashcards(){flashcards()}
@@ -304,7 +304,7 @@ function grammar(){
     '<div class="grid grid-2">'+db.grammar.map(function(g){return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3><div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div><p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+(g.examples||[]).map(function(e){return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1)+'</div>'}).join("")+'</div><p class="muted small">'+esc(g.notes||"")+'</p></div>'}).join("")+'</div>');
 }
 function communication(){
-  $("view").innerHTML=shell("Giao tiếp","Hội thoại dài hơn, có 8 lượt nói; nghe từng câu hoặc nghe cả đoạn.",
+  $("view").innerHTML=shell("Giao tiếp","Hội thoại dài hơn, có 10 lượt nói hoặc hơn; nghe từng câu hoặc nghe cả đoạn.",
     '<div class="grid grid-2">'+db.communication.map(function(d,i){
       const lines=d.lines||[];
       return '<div class="card"><div class="toolbar"><span class="badge">'+esc(d.topic||"")+'</span><span class="muted small">'+lines.length+' lượt</span></div><h3>'+esc(d.title||"")+'</h3>'+
