@@ -2379,5 +2379,1365 @@
         "Tôi sẽ tiếp tục luyện ngân sách và tín dụng."
       ]
     ]
+  },
+  {
+    "id": "comm6_0",
+    "title": "Giao tiếp công việc",
+    "topic": "Giao tiếp công việc",
+    "vocab": [
+      "ability",
+      "ability",
+      "ability",
+      "ability",
+      "ability",
+      "ability"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing ability and ability.",
+        "Tôi đang luyện khả năng và khả năng."
+      ],
+      [
+        "A",
+        "Why do you need ability?",
+        "Tại sao bạn cần khả năng?"
+      ],
+      [
+        "B",
+        "I use ability in my daily life.",
+        "Tôi sử dụng khả năng trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "How do you use ability in real life?",
+        "Bạn dùng khả năng trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I use ability in my daily life.",
+        "Tôi sử dụng khả năng trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "Do you find ability easy or difficult?",
+        "Bạn thấy khả năng dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with ability next?",
+        "Tiếp theo bạn sẽ làm gì với khả năng?"
+      ],
+      [
+        "B",
+        "I use ability in my daily life.",
+        "Tôi sử dụng khả năng trong cuộc sống hằng ngày."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_1",
+    "title": "Du lịch",
+    "topic": "Du lịch",
+    "vocab": [
+      "accommodation",
+      "admission",
+      "adventure",
+      "distance",
+      "domestic",
+      "escape"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing accommodation and admission.",
+        "Tôi đang luyện chỗ ở và sự cho vào; vé vào cửa."
+      ],
+      [
+        "A",
+        "Why do you need adventure?",
+        "Tại sao bạn cần cuộc phiêu lưu?"
+      ],
+      [
+        "B",
+        "This adventure is useful in everyday situations.",
+        "Adventure này hữu ích trong những tình huống hằng ngày."
+      ],
+      [
+        "A",
+        "How do you use distance in real life?",
+        "Bạn dùng khoảng cách trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I noticed distance this morning.",
+        "Tôi chú ý đến khoảng cách sáng nay."
+      ],
+      [
+        "A",
+        "Do you find domestic easy or difficult?",
+        "Bạn thấy trong nước; nội địa dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with escape next?",
+        "Tiếp theo bạn sẽ làm gì với trốn thoát; thoát khỏi?"
+      ],
+      [
+        "B",
+        "I usually escape after work.",
+        "Tôi thường trốn thoát; thoát khỏi sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_2",
+    "title": "Học tập",
+    "topic": "Học tập",
+    "vocab": [
+      "charity",
+      "contribute",
+      "participate",
+      "support",
+      "treat",
+      "celebrate"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing charity and contribute.",
+        "Tôi đang luyện từ thiện; tổ chức từ thiện và đóng góp."
+      ],
+      [
+        "A",
+        "Why do you need participate?",
+        "Tại sao bạn cần tham gia?"
+      ],
+      [
+        "B",
+        "I usually participate after work.",
+        "Tôi thường tham gia sau giờ làm."
+      ],
+      [
+        "A",
+        "How do you use support in real life?",
+        "Bạn dùng hỗ trợ; ủng hộ trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I usually support after work.",
+        "Tôi thường hỗ trợ; ủng hộ sau giờ làm."
+      ],
+      [
+        "A",
+        "Do you find treat easy or difficult?",
+        "Bạn thấy đối xử; điều trị dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with celebrate next?",
+        "Tiếp theo bạn sẽ làm gì với ăn mừng?"
+      ],
+      [
+        "B",
+        "I usually celebrate after work.",
+        "Tôi thường ăn mừng sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_3",
+    "title": "Đời sống",
+    "topic": "Đời sống",
+    "vocab": [
+      "attend",
+      "absent",
+      "attend",
+      "absent",
+      "attend",
+      "absent"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing attend and absent.",
+        "Tôi đang luyện tham dự và vắng mặt."
+      ],
+      [
+        "A",
+        "Why do you need attend?",
+        "Tại sao bạn cần tham dự?"
+      ],
+      [
+        "B",
+        "I usually attend after work.",
+        "Tôi thường tham dự sau giờ làm."
+      ],
+      [
+        "A",
+        "How do you use absent in real life?",
+        "Bạn dùng vắng mặt trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "The new plan is absent for us.",
+        "Kế hoạch mới khá vắng mặt với chúng tôi."
+      ],
+      [
+        "A",
+        "Do you find attend easy or difficult?",
+        "Bạn thấy tham dự dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with absent next?",
+        "Tiếp theo bạn sẽ làm gì với vắng mặt?"
+      ],
+      [
+        "B",
+        "The new plan is absent for us.",
+        "Kế hoạch mới khá vắng mặt với chúng tôi."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_4",
+    "title": "Mua sắm",
+    "topic": "Mua sắm",
+    "vocab": [
+      "appropriate",
+      "arise",
+      "attract",
+      "average",
+      "aware",
+      "background"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing appropriate and arise.",
+        "Tôi đang luyện phù hợp và phát sinh; nảy sinh."
+      ],
+      [
+        "A",
+        "Why do you need attract?",
+        "Tại sao bạn cần thu hút?"
+      ],
+      [
+        "B",
+        "I usually attract after work.",
+        "Tôi thường thu hút sau giờ làm."
+      ],
+      [
+        "A",
+        "How do you use average in real life?",
+        "Bạn dùng trung bình trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "The new plan is average for us.",
+        "Kế hoạch mới khá trung bình với chúng tôi."
+      ],
+      [
+        "A",
+        "Do you find aware easy or difficult?",
+        "Bạn thấy nhận thức; biết rõ dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with background next?",
+        "Tiếp theo bạn sẽ làm gì với nền tảng; bối cảnh?"
+      ],
+      [
+        "B",
+        "I noticed background this morning.",
+        "Tôi chú ý đến nền tảng; bối cảnh sáng nay."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_5",
+    "title": "Gia đình",
+    "topic": "Gia đình",
+    "vocab": [
+      "instruction",
+      "motivate",
+      "continue",
+      "discover",
+      "acquire",
+      "confuse"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing instruction and motivate.",
+        "Tôi đang luyện hướng dẫn; chỉ dẫn và tạo động lực."
+      ],
+      [
+        "A",
+        "Why do you need continue?",
+        "Tại sao bạn cần tiếp tục?"
+      ],
+      [
+        "B",
+        "I usually continue after work.",
+        "Tôi thường tiếp tục sau giờ làm."
+      ],
+      [
+        "A",
+        "How do you use discover in real life?",
+        "Bạn dùng khám phá; phát hiện trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I usually discover after work.",
+        "Tôi thường khám phá; phát hiện sau giờ làm."
+      ],
+      [
+        "A",
+        "Do you find acquire easy or difficult?",
+        "Bạn thấy có được; đạt được dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with confuse next?",
+        "Tiếp theo bạn sẽ làm gì với làm bối rối; nhầm?"
+      ],
+      [
+        "B",
+        "I usually confuse after work.",
+        "Tôi thường làm bối rối; nhầm sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_6",
+    "title": "Sức khỏe",
+    "topic": "Sức khỏe",
+    "vocab": [
+      "academic",
+      "education",
+      "primary",
+      "educate",
+      "graduate",
+      "submit"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing academic and education.",
+        "Tôi đang luyện thuộc học thuật; học thuật và giáo dục."
+      ],
+      [
+        "A",
+        "Why do you need primary?",
+        "Tại sao bạn cần chính; chủ yếu?"
+      ],
+      [
+        "B",
+        "The new plan is primary for us.",
+        "Kế hoạch mới khá chính; chủ yếu với chúng tôi."
+      ],
+      [
+        "A",
+        "How do you use educate in real life?",
+        "Bạn dùng giáo dục trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I usually educate after work.",
+        "Tôi thường giáo dục sau giờ làm."
+      ],
+      [
+        "A",
+        "Do you find graduate easy or difficult?",
+        "Bạn thấy tốt nghiệp; sinh viên tốt nghiệp dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with submit next?",
+        "Tiếp theo bạn sẽ làm gì với nộp; đệ trình?"
+      ],
+      [
+        "B",
+        "I usually submit after work.",
+        "Tôi thường nộp; đệ trình sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_7",
+    "title": "Công nghệ",
+    "topic": "Công nghệ",
+    "vocab": [
+      "electric",
+      "electricity",
+      "equipment",
+      "feature",
+      "function",
+      "image"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing electric and electricity.",
+        "Tôi đang luyện điện và điện; điện năng."
+      ],
+      [
+        "A",
+        "Why do you need equipment?",
+        "Tại sao bạn cần thiết bị?"
+      ],
+      [
+        "B",
+        "I noticed equipment this morning.",
+        "Tôi chú ý đến thiết bị sáng nay."
+      ],
+      [
+        "A",
+        "How do you use feature in real life?",
+        "Bạn dùng đặc điểm; tính năng trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "Can you tell me more about feature?",
+        "Bạn có thể nói thêm về đặc điểm; tính năng không?"
+      ],
+      [
+        "A",
+        "Do you find function easy or difficult?",
+        "Bạn thấy chức năng; hoạt động dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with image next?",
+        "Tiếp theo bạn sẽ làm gì với hình ảnh?"
+      ],
+      [
+        "B",
+        "I use image in my daily life.",
+        "Tôi sử dụng hình ảnh trong cuộc sống hằng ngày."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_8",
+    "title": "Cảm xúc",
+    "topic": "Cảm xúc",
+    "vocab": [
+      "committee",
+      "efficient",
+      "expert",
+      "flexible",
+      "handle",
+      "manage"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing committee and efficient.",
+        "Tôi đang luyện ủy ban; ban và hiệu suất cao; hiệu quả."
+      ],
+      [
+        "A",
+        "Why do you need expert?",
+        "Tại sao bạn cần chuyên gia?"
+      ],
+      [
+        "B",
+        "I noticed expert this morning.",
+        "Tôi chú ý đến chuyên gia sáng nay."
+      ],
+      [
+        "A",
+        "How do you use flexible in real life?",
+        "Bạn dùng linh hoạt trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "The new plan is flexible for us.",
+        "Kế hoạch mới khá linh hoạt với chúng tôi."
+      ],
+      [
+        "A",
+        "Do you find handle easy or difficult?",
+        "Bạn thấy xử lý; tay cầm dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with manage next?",
+        "Tiếp theo bạn sẽ làm gì với quản lý; xoay xở?"
+      ],
+      [
+        "B",
+        "I usually manage after work.",
+        "Tôi thường quản lý; xoay xở sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_9",
+    "title": "Thành phố",
+    "topic": "Thành phố",
+    "vocab": [
+      "achievement",
+      "achievement",
+      "achievement",
+      "achievement",
+      "achievement",
+      "achievement"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing achievement and achievement.",
+        "Tôi đang luyện thành tích; thành tựu và thành tích; thành tựu."
+      ],
+      [
+        "A",
+        "Why do you need achievement?",
+        "Tại sao bạn cần thành tích; thành tựu?"
+      ],
+      [
+        "B",
+        "I noticed achievement this morning.",
+        "Tôi chú ý đến thành tích; thành tựu sáng nay."
+      ],
+      [
+        "A",
+        "How do you use achievement in real life?",
+        "Bạn dùng thành tích; thành tựu trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I noticed achievement this morning.",
+        "Tôi chú ý đến thành tích; thành tựu sáng nay."
+      ],
+      [
+        "A",
+        "Do you find achievement easy or difficult?",
+        "Bạn thấy thành tích; thành tựu dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with achievement next?",
+        "Tiếp theo bạn sẽ làm gì với thành tích; thành tựu?"
+      ],
+      [
+        "B",
+        "I noticed achievement this morning.",
+        "Tôi chú ý đến thành tích; thành tựu sáng nay."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_10",
+    "title": "Thiên nhiên",
+    "topic": "Thiên nhiên",
+    "vocab": [
+      "adapt",
+      "experience",
+      "freedom",
+      "movement",
+      "opportunity",
+      "survive"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing adapt and experience.",
+        "Tôi đang luyện thích nghi và kinh nghiệm; trải nghiệm."
+      ],
+      [
+        "A",
+        "Why do you need freedom?",
+        "Tại sao bạn cần tự do?"
+      ],
+      [
+        "B",
+        "I noticed freedom this morning.",
+        "Tôi chú ý đến tự do sáng nay."
+      ],
+      [
+        "A",
+        "How do you use movement in real life?",
+        "Bạn dùng sự chuyển động; phong trào trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I noticed movement this morning.",
+        "Tôi chú ý đến sự chuyển động; phong trào sáng nay."
+      ],
+      [
+        "A",
+        "Do you find opportunity easy or difficult?",
+        "Bạn thấy cơ hội dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with survive next?",
+        "Tiếp theo bạn sẽ làm gì với sống sót?"
+      ],
+      [
+        "B",
+        "I usually survive after work.",
+        "Tôi thường sống sót sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_11",
+    "title": "Phỏng vấn",
+    "topic": "Phỏng vấn",
+    "vocab": [
+      "source",
+      "specific",
+      "structure",
+      "survey",
+      "term",
+      "theory"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing source and specific.",
+        "Tôi đang luyện nguồn và cụ thể."
+      ],
+      [
+        "A",
+        "Why do you need structure?",
+        "Tại sao bạn cần cấu trúc?"
+      ],
+      [
+        "B",
+        "I noticed structure this morning.",
+        "Tôi chú ý đến cấu trúc sáng nay."
+      ],
+      [
+        "A",
+        "How do you use survey in real life?",
+        "Bạn dùng khảo sát; khảo sát bằng câu hỏi trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I use survey in my daily life.",
+        "Tôi sử dụng khảo sát; khảo sát bằng câu hỏi trong cuộc sống hằng ngày."
+      ],
+      [
+        "A",
+        "Do you find term easy or difficult?",
+        "Bạn thấy thuật ngữ; kỳ hạn dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with theory next?",
+        "Tiếp theo bạn sẽ làm gì với lý thuyết?"
+      ],
+      [
+        "B",
+        "I use theory in my daily life.",
+        "Tôi sử dụng lý thuyết trong cuộc sống hằng ngày."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_12",
+    "title": "Kế hoạch",
+    "topic": "Kế hoạch",
+    "vocab": [
+      "regular",
+      "replace",
+      "routine",
+      "steal",
+      "grab",
+      "rush"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing regular and replace.",
+        "Tôi đang luyện đều đặn; thường lệ và thay thế."
+      ],
+      [
+        "A",
+        "Why do you need routine?",
+        "Tại sao bạn cần thói quen; công việc thường ngày?"
+      ],
+      [
+        "B",
+        "Can you tell me more about routine?",
+        "Bạn có thể nói thêm về thói quen; công việc thường ngày không?"
+      ],
+      [
+        "A",
+        "How do you use steal in real life?",
+        "Bạn dùng ăn cắp trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I usually steal after work.",
+        "Tôi thường ăn cắp sau giờ làm."
+      ],
+      [
+        "A",
+        "Do you find grab easy or difficult?",
+        "Bạn thấy chộp; nắm lấy dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with rush next?",
+        "Tiếp theo bạn sẽ làm gì với vội vàng; lao nhanh?"
+      ],
+      [
+        "B",
+        "I usually rush after work.",
+        "Tôi thường vội vàng; lao nhanh sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_13",
+    "title": "Bạn bè",
+    "topic": "Bạn bè",
+    "vocab": [
+      "financial",
+      "fortune",
+      "insurance",
+      "investment",
+      "valuable",
+      "invest"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing financial and fortune.",
+        "Tôi đang luyện tài chính và vận may; tài sản."
+      ],
+      [
+        "A",
+        "Why do you need insurance?",
+        "Tại sao bạn cần bảo hiểm?"
+      ],
+      [
+        "B",
+        "We talked about insurance after dinner.",
+        "Chúng tôi nói về bảo hiểm sau bữa tối."
+      ],
+      [
+        "A",
+        "How do you use investment in real life?",
+        "Bạn dùng sự đầu tư trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "We talked about investment after dinner.",
+        "Chúng tôi nói về sự đầu tư sau bữa tối."
+      ],
+      [
+        "A",
+        "Do you find valuable easy or difficult?",
+        "Bạn thấy có giá trị dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with invest next?",
+        "Tiếp theo bạn sẽ làm gì với đầu tư?"
+      ],
+      [
+        "B",
+        "I usually invest after work.",
+        "Tôi thường đầu tư sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_14",
+    "title": "Dịch vụ",
+    "topic": "Dịch vụ",
+    "vocab": [
+      "resource",
+      "environmental",
+      "float",
+      "flow",
+      "freeze",
+      "surround"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing resource and environmental.",
+        "Tôi đang luyện tài nguyên; nguồn lực và thuộc môi trường."
+      ],
+      [
+        "A",
+        "Why do you need float?",
+        "Tại sao bạn cần nổi; trôi?"
+      ],
+      [
+        "B",
+        "I usually float after work.",
+        "Tôi thường nổi; trôi sau giờ làm."
+      ],
+      [
+        "A",
+        "How do you use flow in real life?",
+        "Bạn dùng chảy; dòng chảy trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I usually flow after work.",
+        "Tôi thường chảy; dòng chảy sau giờ làm."
+      ],
+      [
+        "A",
+        "Do you find freeze easy or difficult?",
+        "Bạn thấy đóng băng; đông lạnh dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with surround next?",
+        "Tiếp theo bạn sẽ làm gì với bao quanh?"
+      ],
+      [
+        "B",
+        "I usually surround after work.",
+        "Tôi thường bao quanh sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_15",
+    "title": "Thói quen",
+    "topic": "Thói quen",
+    "vocab": [
+      "advance",
+      "aim",
+      "challenge",
+      "succeed",
+      "advance",
+      "aim"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing advance and aim.",
+        "Tôi đang luyện tiến bộ; tiến lên và mục tiêu; nhắm tới."
+      ],
+      [
+        "A",
+        "Why do you need challenge?",
+        "Tại sao bạn cần thách thức?"
+      ],
+      [
+        "B",
+        "We talked about challenge after dinner.",
+        "Chúng tôi nói về thách thức sau bữa tối."
+      ],
+      [
+        "A",
+        "How do you use succeed in real life?",
+        "Bạn dùng thành công trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "I usually succeed after work.",
+        "Tôi thường thành công sau giờ làm."
+      ],
+      [
+        "A",
+        "Do you find advance easy or difficult?",
+        "Bạn thấy tiến bộ; tiến lên dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with aim next?",
+        "Tiếp theo bạn sẽ làm gì với mục tiêu; nhắm tới?"
+      ],
+      [
+        "B",
+        "I use aim in my daily life.",
+        "Tôi sử dụng mục tiêu; nhắm tới trong cuộc sống hằng ngày."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_16",
+    "title": "Giao tiếp hằng ngày",
+    "topic": "Giao tiếp hằng ngày",
+    "vocab": [
+      "regret",
+      "surprise",
+      "amaze",
+      "anxiety",
+      "anxious",
+      "desire"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing regret and surprise.",
+        "Tôi đang luyện hối tiếc; lấy làm tiếc và làm ngạc nhiên; bất ngờ."
+      ],
+      [
+        "A",
+        "Why do you need amaze?",
+        "Tại sao bạn cần làm kinh ngạc?"
+      ],
+      [
+        "B",
+        "I usually amaze after work.",
+        "Tôi thường làm kinh ngạc sau giờ làm."
+      ],
+      [
+        "A",
+        "How do you use anxiety in real life?",
+        "Bạn dùng sự lo âu trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "Can you tell me more about anxiety?",
+        "Bạn có thể nói thêm về sự lo âu không?"
+      ],
+      [
+        "A",
+        "Do you find anxious easy or difficult?",
+        "Bạn thấy lo lắng dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with desire next?",
+        "Tiếp theo bạn sẽ làm gì với mong muốn; khao khát?"
+      ],
+      [
+        "B",
+        "I use desire in my daily life.",
+        "Tôi sử dụng mong muốn; khao khát trong cuộc sống hằng ngày."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_17",
+    "title": "Sở thích",
+    "topic": "Sở thích",
+    "vocab": [
+      "ambition",
+      "ambitious",
+      "attitude",
+      "behavior",
+      "belief",
+      "confidence"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing ambition and ambitious.",
+        "Tôi đang luyện tham vọng và có tham vọng."
+      ],
+      [
+        "A",
+        "Why do you need attitude?",
+        "Tại sao bạn cần thái độ?"
+      ],
+      [
+        "B",
+        "We talked about attitude after dinner.",
+        "Chúng tôi nói về thái độ sau bữa tối."
+      ],
+      [
+        "A",
+        "How do you use behavior in real life?",
+        "Bạn dùng hành vi trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "This behavior is useful in everyday situations.",
+        "Behavior này hữu ích trong những tình huống hằng ngày."
+      ],
+      [
+        "A",
+        "Do you find belief easy or difficult?",
+        "Bạn thấy niềm tin dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with confidence next?",
+        "Tiếp theo bạn sẽ làm gì với sự tự tin?"
+      ],
+      [
+        "B",
+        "I use confidence in my daily life.",
+        "Tôi sử dụng sự tự tin trong cuộc sống hằng ngày."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_18",
+    "title": "Môi trường",
+    "topic": "Môi trường",
+    "vocab": [
+      "generation",
+      "marry",
+      "ancestor",
+      "elder",
+      "generation",
+      "marry"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing generation and marry.",
+        "Tôi đang luyện thế hệ và kết hôn."
+      ],
+      [
+        "A",
+        "Why do you need ancestor?",
+        "Tại sao bạn cần tổ tiên?"
+      ],
+      [
+        "B",
+        "We talked about ancestor after dinner.",
+        "Chúng tôi nói về tổ tiên sau bữa tối."
+      ],
+      [
+        "A",
+        "How do you use elder in real life?",
+        "Bạn dùng người lớn tuổi; lớn tuổi hơn trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "Can you tell me more about elder?",
+        "Bạn có thể nói thêm về người lớn tuổi; lớn tuổi hơn không?"
+      ],
+      [
+        "A",
+        "Do you find generation easy or difficult?",
+        "Bạn thấy thế hệ dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with marry next?",
+        "Tiếp theo bạn sẽ làm gì với kết hôn?"
+      ],
+      [
+        "B",
+        "I usually marry after work.",
+        "Tôi thường kết hôn sau giờ làm."
+      ]
+    ]
+  },
+  {
+    "id": "comm6_19",
+    "title": "Mục tiêu",
+    "topic": "Mục tiêu",
+    "vocab": [
+      "calendar",
+      "annual",
+      "former",
+      "temporary",
+      "calendar",
+      "annual"
+    ],
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "6",
+    "lines": [
+      [
+        "A",
+        "What are you working on today?",
+        "Hôm nay bạn đang làm gì?"
+      ],
+      [
+        "B",
+        "I'm practicing calendar and annual.",
+        "Tôi đang luyện lịch và hằng năm."
+      ],
+      [
+        "A",
+        "Why do you need former?",
+        "Tại sao bạn cần trước đây; cựu?"
+      ],
+      [
+        "B",
+        "The new plan is former for us.",
+        "Kế hoạch mới khá trước đây; cựu với chúng tôi."
+      ],
+      [
+        "A",
+        "How do you use temporary in real life?",
+        "Bạn dùng tạm thời trong thực tế như thế nào?"
+      ],
+      [
+        "B",
+        "The new plan is temporary for us.",
+        "Kế hoạch mới khá tạm thời với chúng tôi."
+      ],
+      [
+        "A",
+        "Do you find calendar easy or difficult?",
+        "Bạn thấy lịch dễ hay khó?"
+      ],
+      [
+        "B",
+        "It is getting easier because I practice every day.",
+        "Nó ngày càng dễ hơn vì tôi luyện tập mỗi ngày."
+      ],
+      [
+        "A",
+        "What will you do with annual next?",
+        "Tiếp theo bạn sẽ làm gì với hằng năm?"
+      ],
+      [
+        "B",
+        "The new plan is annual for us.",
+        "Kế hoạch mới khá hằng năm với chúng tôi."
+      ]
+    ]
   }
 ]
