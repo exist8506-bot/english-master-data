@@ -273,5 +273,145 @@
     "notes": "Ôn lại bằng cách nghe và nói ví dụ.",
     "source": "remote",
     "sourceVersion": "5"
+  },
+  {
+    "id": "g6_conditionals",
+    "title": "First Conditional",
+    "level": "Beginner",
+    "formula": "If + present, will + V",
+    "explain": "Dùng cho tình huống có thể xảy ra trong tương lai.",
+    "examples": [
+      "If I practice every day, I will improve.",
+      "If you prepare early, you will feel calmer."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_modals",
+    "title": "Can / Could for Requests",
+    "level": "Beginner",
+    "formula": "can/could + V",
+    "explain": "Dùng để đưa ra yêu cầu lịch sự.",
+    "examples": [
+      "Could you explain this word?",
+      "Can you repeat the sentence?"
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_advice",
+    "title": "Should / Shouldn't",
+    "level": "Beginner",
+    "formula": "should + V",
+    "explain": "Dùng để đưa lời khuyên.",
+    "examples": [
+      "You should check the address.",
+      "You shouldn't rush."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_past_cont",
+    "title": "Past Continuous",
+    "level": "Beginner",
+    "formula": "was/were + V-ing",
+    "explain": "Dùng cho hành động đang diễn ra tại một thời điểm trong quá khứ.",
+    "examples": [
+      "I was studying when you called.",
+      "They were waiting at the station."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_present_perfect",
+    "title": "Present Perfect",
+    "level": "Beginner",
+    "formula": "have/has + V3",
+    "explain": "Dùng cho trải nghiệm hoặc hành động có liên hệ hiện tại.",
+    "examples": [
+      "I have finished the assignment.",
+      "She has already arrived."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_passive",
+    "title": "Passive Voice",
+    "level": "Beginner",
+    "formula": "be + V3",
+    "explain": "Dùng khi nhấn mạnh hành động hoặc đối tượng chịu tác động.",
+    "examples": [
+      "The package was delivered today.",
+      "The results are published online."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_inf",
+    "title": "To-infinitive",
+    "level": "Beginner",
+    "formula": "to + V",
+    "explain": "Dùng sau nhiều động từ để nói mục đích hoặc mong muốn.",
+    "examples": [
+      "I want to learn.",
+      "We need to prepare."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_gerund",
+    "title": "Gerund",
+    "level": "Beginner",
+    "formula": "V-ing as noun",
+    "explain": "Một động từ thêm -ing có thể đóng vai trò danh từ.",
+    "examples": [
+      "Reading helps memory.",
+      "Swimming is good exercise."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_compar",
+    "title": "More Comparatives",
+    "level": "Beginner",
+    "formula": "more + adjective + than",
+    "explain": "Dùng với nhiều tính từ dài.",
+    "examples": [
+      "This method is more effective.",
+      "The new device is more convenient."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
+  },
+  {
+    "id": "g6_connect",
+    "title": "Because / So / Although",
+    "level": "Beginner",
+    "formula": "because / so / although",
+    "explain": "Dùng để nối ý và làm câu tự nhiên hơn.",
+    "examples": [
+      "I stayed home because I was tired.",
+      "Although it was late, we continued."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "source": "remote",
+    "sourceVersion": "6"
   }
 ]
