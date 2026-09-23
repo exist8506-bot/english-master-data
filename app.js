@@ -1,4 +1,4 @@
-const APP_VERSION="6.0.0";
+const APP_VERSION="6.0.1";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 
@@ -14,6 +14,12 @@ function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
 function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/\r?\n/g," ")}
 function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
+function guessLang(text){
+  const t=String(text??"");
+  if(/[\u3400-\u9fff]/.test(t))return "zh-CN";
+  if(/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ]/.test(t))return "vi-VN";
+  return "en-US";
+}
 function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(db))}
 function load(){
   try{
@@ -195,7 +201,7 @@ function render(){
   fn();
 }
 function home(){
-  $("view").innerHTML=shell("English Master V6","Học • Luyện • Nhớ • Cải thiện",
+  $("view").innerHTML=shell("English Master V6.0.1","Học • Luyện • Nhớ • Cải thiện",
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
