@@ -413,5 +413,155 @@
     "notes": "Nghe ví dụ rồi tự nói lại một lần.",
     "source": "remote",
     "sourceVersion": "6"
+  },
+  {
+    "id": "g7_1",
+    "title": "Present Perfect with already/yet",
+    "level": "Intermediate",
+    "formula": "have/has + V3",
+    "explain": "Diễn tả việc đã xảy ra hoặc chưa xảy ra và còn liên hệ với hiện tại.",
+    "examples": [
+      "I have already finished the task.",
+      "She hasn't arrived yet."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_2",
+    "title": "Past Simple vs Present Perfect",
+    "level": "Intermediate",
+    "formula": "V2/ed vs have/has + V3",
+    "explain": "Phân biệt hành động đã kết thúc tại một thời điểm trong quá khứ với trải nghiệm hoặc kết quả liên hệ hiện tại.",
+    "examples": [
+      "I visited Hue last year.",
+      "I have visited Hue three times."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_3",
+    "title": "First Conditional",
+    "level": "Intermediate",
+    "formula": "If + present, will + V",
+    "explain": "Dùng cho điều kiện có khả năng xảy ra trong tương lai.",
+    "examples": [
+      "If I practice, I will improve.",
+      "If it rains, we will stay home."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_4",
+    "title": "Because / Although",
+    "level": "Intermediate",
+    "formula": "because / although + clause",
+    "explain": "Nối nguyên nhân hoặc ý tương phản để câu tự nhiên hơn.",
+    "examples": [
+      "I stayed home because I was tired.",
+      "Although it was late, we continued."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_5",
+    "title": "Comparatives with more",
+    "level": "Intermediate",
+    "formula": "more + adjective + than",
+    "explain": "Dùng với nhiều tính từ dài khi so sánh.",
+    "examples": [
+      "This method is more effective than the old one.",
+      "The new device is more convenient."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_6",
+    "title": "Must / Have to",
+    "level": "Intermediate",
+    "formula": "must/have to + V",
+    "explain": "Diễn tả sự bắt buộc hoặc điều cần thiết.",
+    "examples": [
+      "You must check the address.",
+      "I have to finish today."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_7",
+    "title": "Should for Advice",
+    "level": "Intermediate",
+    "formula": "should + V",
+    "explain": "Dùng để đưa lời khuyên.",
+    "examples": [
+      "You should practice every day.",
+      "You shouldn't rush."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_8",
+    "title": "Question Forms",
+    "level": "Intermediate",
+    "formula": "Wh-word + auxiliary + subject + verb?",
+    "explain": "Tạo câu hỏi thông tin rõ ràng.",
+    "examples": [
+      "Why are you late?",
+      "How do you use this device?"
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_9",
+    "title": "Gerunds after enjoy",
+    "level": "Intermediate",
+    "formula": "enjoy + V-ing",
+    "explain": "Sau enjoy thường dùng động từ thêm -ing.",
+    "examples": [
+      "I enjoy reading.",
+      "We enjoy learning together."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
+  },
+  {
+    "id": "g7_10",
+    "title": "Purpose with to",
+    "level": "Intermediate",
+    "formula": "to + V",
+    "explain": "Dùng to + động từ để nói mục đích.",
+    "examples": [
+      "I study to improve my English.",
+      "She went out to buy food."
+    ],
+    "notes": "Nghe ví dụ rồi tự nói lại một lần.",
+    "audio": "tts",
+    "source": "remote",
+    "sourceVersion": "7"
   }
 ]
