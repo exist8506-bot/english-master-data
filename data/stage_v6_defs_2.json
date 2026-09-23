@@ -1,0 +1,902 @@
+[
+  {
+    "word": "control",
+    "vi": "kiểm soát; sự kiểm soát",
+    "zh": "控制",
+    "pinyin": "kòng zhì",
+    "pos": "verb",
+    "topic": "general",
+    "ipa": "kənˈtroʊl"
+  },
+  {
+    "word": "convenient",
+    "vi": "thuận tiện",
+    "zh": "方便的",
+    "pinyin": "fāng biàn de",
+    "pos": "adjective",
+    "topic": "daily",
+    "ipa": "kənˈviːniənt"
+  },
+  {
+    "word": "convert",
+    "vi": "chuyển đổi",
+    "zh": "转换",
+    "pinyin": "zhuǎn huàn",
+    "pos": "verb",
+    "topic": "technology",
+    "ipa": "kənˈvɜːrt"
+  },
+  {
+    "word": "convince",
+    "vi": "thuyết phục",
+    "zh": "说服",
+    "pinyin": "shuō fú",
+    "pos": "verb",
+    "topic": "communication",
+    "ipa": "kənˈvɪns"
+  },
+  {
+    "word": "create",
+    "vi": "tạo ra",
+    "zh": "创造",
+    "pinyin": "chuàng zào",
+    "pos": "verb",
+    "topic": "creative",
+    "ipa": "kriˈeɪt"
+  },
+  {
+    "word": "creative",
+    "vi": "sáng tạo",
+    "zh": "有创造力的",
+    "pinyin": "yǒu chuàng zào lì de",
+    "pos": "adjective",
+    "topic": "personality",
+    "ipa": "kriˈeɪtɪv"
+  },
+  {
+    "word": "crowd",
+    "vi": "đám đông",
+    "zh": "人群",
+    "pinyin": "rén qún",
+    "pos": "noun",
+    "topic": "society",
+    "ipa": "kraʊd"
+  },
+  {
+    "word": "culture",
+    "vi": "văn hóa",
+    "zh": "文化",
+    "pinyin": "wén huà",
+    "pos": "noun",
+    "topic": "culture",
+    "ipa": "ˈkʌltʃər"
+  },
+  {
+    "word": "curious",
+    "vi": "tò mò",
+    "zh": "好奇的",
+    "pinyin": "hào qí de",
+    "pos": "adjective",
+    "topic": "personality",
+    "ipa": "ˈkjʊriəs"
+  },
+  {
+    "word": "custom",
+    "vi": "phong tục; thói quen",
+    "zh": "习俗;习惯",
+    "pinyin": "xí sú; xí guàn",
+    "pos": "noun",
+    "topic": "culture",
+    "ipa": "ˈkʌstəm"
+  },
+  {
+    "word": "damage",
+    "vi": "thiệt hại; làm hỏng",
+    "zh": "损害;损坏",
+    "pinyin": "sǔn hài; sǔn huài",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "ˈdæmɪdʒ"
+  },
+  {
+    "word": "debate",
+    "vi": "cuộc tranh luận; tranh luận",
+    "zh": "辩论",
+    "pinyin": "biàn lùn",
+    "pos": "noun",
+    "topic": "communication",
+    "ipa": "dɪˈbeɪt"
+  },
+  {
+    "word": "decision",
+    "vi": "quyết định",
+    "zh": "决定",
+    "pinyin": "jué dìng",
+    "pos": "noun",
+    "topic": "thinking",
+    "ipa": "dɪˈsɪʒən"
+  },
+  {
+    "word": "decline",
+    "vi": "sự suy giảm; từ chối",
+    "zh": "下降;拒绝",
+    "pinyin": "xià jiàng; jù jué",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "dɪˈklaɪn"
+  },
+  {
+    "word": "decrease",
+    "vi": "giảm; sự giảm",
+    "zh": "减少",
+    "pinyin": "jiǎn shǎo",
+    "pos": "verb",
+    "topic": "general",
+    "ipa": "dɪˈkriːs"
+  },
+  {
+    "word": "defend",
+    "vi": "bảo vệ",
+    "zh": "保护;防守",
+    "pinyin": "bǎo hù; fáng shǒu",
+    "pos": "verb",
+    "topic": "general",
+    "ipa": "dɪˈfend"
+  },
+  {
+    "word": "define",
+    "vi": "định nghĩa; xác định",
+    "zh": "定义",
+    "pinyin": "dìng yì",
+    "pos": "verb",
+    "topic": "study",
+    "ipa": "dɪˈfaɪn"
+  },
+  {
+    "word": "demand",
+    "vi": "nhu cầu; yêu cầu",
+    "zh": "需求;要求",
+    "pinyin": "xū qiú; yāo qiú",
+    "pos": "noun",
+    "topic": "business",
+    "ipa": "dɪˈmænd"
+  },
+  {
+    "word": "depend",
+    "vi": "phụ thuộc",
+    "zh": "依靠;取决于",
+    "pinyin": "yǐ kào; qǔ jué yú",
+    "pos": "verb",
+    "topic": "general",
+    "ipa": "dɪˈpend"
+  },
+  {
+    "word": "design",
+    "vi": "thiết kế; bản thiết kế",
+    "zh": "设计",
+    "pinyin": "shè jì",
+    "pos": "noun",
+    "topic": "creative",
+    "ipa": "dɪˈzaɪn"
+  },
+  {
+    "word": "desire",
+    "vi": "mong muốn; khao khát",
+    "zh": "愿望;渴望",
+    "pinyin": "yuàn wàng; kě wàng",
+    "pos": "noun",
+    "topic": "emotion",
+    "ipa": "dɪˈzaɪər"
+  },
+  {
+    "word": "detail",
+    "vi": "chi tiết",
+    "zh": "细节",
+    "pinyin": "xì jié",
+    "pos": "noun",
+    "topic": "study",
+    "ipa": "ˈdiːteɪl"
+  },
+  {
+    "word": "determine",
+    "vi": "xác định; quyết định",
+    "zh": "确定;决定",
+    "pinyin": "què dìng; jué dìng",
+    "pos": "verb",
+    "topic": "thinking",
+    "ipa": "dɪˈtɜːrmɪn"
+  },
+  {
+    "word": "difference",
+    "vi": "sự khác biệt",
+    "zh": "差异",
+    "pinyin": "chā yì",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "ˈdɪfrəns"
+  },
+  {
+    "word": "direct",
+    "vi": "trực tiếp; chỉ dẫn",
+    "zh": "直接的;指导",
+    "pinyin": "zhí jiē de; zhǐ dǎo",
+    "pos": "adjective",
+    "topic": "general",
+    "ipa": "dəˈrekt"
+  },
+  {
+    "word": "disease",
+    "vi": "bệnh",
+    "zh": "疾病",
+    "pinyin": "jí bìng",
+    "pos": "noun",
+    "topic": "health",
+    "ipa": "dɪˈziːz"
+  },
+  {
+    "word": "distance",
+    "vi": "khoảng cách",
+    "zh": "距离",
+    "pinyin": "jù lí",
+    "pos": "noun",
+    "topic": "travel",
+    "ipa": "ˈdɪstəns"
+  },
+  {
+    "word": "document",
+    "vi": "tài liệu; ghi chép",
+    "zh": "文件;记录",
+    "pinyin": "wén jiàn; jì lù",
+    "pos": "noun",
+    "topic": "study",
+    "ipa": "ˈdɑːkjəmənt"
+  },
+  {
+    "word": "domestic",
+    "vi": "trong nước; nội địa",
+    "zh": "国内的",
+    "pinyin": "guó nèi de",
+    "pos": "adjective",
+    "topic": "travel",
+    "ipa": "dəˈmestɪk"
+  },
+  {
+    "word": "doubt",
+    "vi": "nghi ngờ; sự nghi ngờ",
+    "zh": "怀疑",
+    "pinyin": "huái yí",
+    "pos": "noun",
+    "topic": "thinking",
+    "ipa": "daʊt"
+  },
+  {
+    "word": "economy",
+    "vi": "nền kinh tế; tiết kiệm",
+    "zh": "经济",
+    "pinyin": "jīng jì",
+    "pos": "noun",
+    "topic": "business",
+    "ipa": "ɪˈkɑːnəmi"
+  },
+  {
+    "word": "education",
+    "vi": "giáo dục",
+    "zh": "教育",
+    "pinyin": "jiào yù",
+    "pos": "noun",
+    "topic": "education",
+    "ipa": "ˌedʒuˈkeɪʃən"
+  },
+  {
+    "word": "effective",
+    "vi": "hiệu quả",
+    "zh": "有效的",
+    "pinyin": "yǒu xiào de",
+    "pos": "adjective",
+    "topic": "general",
+    "ipa": "ɪˈfektɪv"
+  },
+  {
+    "word": "efficient",
+    "vi": "hiệu suất cao; hiệu quả",
+    "zh": "高效的",
+    "pinyin": "gāo xiào de",
+    "pos": "adjective",
+    "topic": "work",
+    "ipa": "ɪˈfɪʃənt"
+  },
+  {
+    "word": "elder",
+    "vi": "người lớn tuổi; lớn tuổi hơn",
+    "zh": "长者;年长的",
+    "pinyin": "zhǎng zhě; nián zhǎng de",
+    "pos": "noun",
+    "topic": "family",
+    "ipa": "ˈeldər"
+  },
+  {
+    "word": "electric",
+    "vi": "điện",
+    "zh": "电的",
+    "pinyin": "diàn de",
+    "pos": "adjective",
+    "topic": "technology",
+    "ipa": "ɪˈlektrɪk"
+  },
+  {
+    "word": "electricity",
+    "vi": "điện; điện năng",
+    "zh": "电",
+    "pinyin": "diàn",
+    "pos": "noun",
+    "topic": "technology",
+    "ipa": "ɪˌlekˈtrɪsəti"
+  },
+  {
+    "word": "emergency",
+    "vi": "tình huống khẩn cấp",
+    "zh": "紧急情况",
+    "pinyin": "jǐn jí qíng kuàng",
+    "pos": "noun",
+    "topic": "health",
+    "ipa": "ɪˈmɜːrdʒənsi"
+  },
+  {
+    "word": "emotion",
+    "vi": "cảm xúc",
+    "zh": "情绪",
+    "pinyin": "qíng xù",
+    "pos": "noun",
+    "topic": "emotion",
+    "ipa": "ɪˈmoʊʃən"
+  },
+  {
+    "word": "encourage",
+    "vi": "khuyến khích",
+    "zh": "鼓励",
+    "pinyin": "gǔ lì",
+    "pos": "verb",
+    "topic": "communication",
+    "ipa": "ɪnˈkɜːrɪdʒ"
+  },
+  {
+    "word": "environment",
+    "vi": "môi trường",
+    "zh": "环境",
+    "pinyin": "huán jìng",
+    "pos": "noun",
+    "topic": "nature",
+    "ipa": "ɪnˈvaɪrənmənt"
+  },
+  {
+    "word": "equipment",
+    "vi": "thiết bị",
+    "zh": "设备",
+    "pinyin": "shè bèi",
+    "pos": "noun",
+    "topic": "technology",
+    "ipa": "ɪˈkwɪpmənt"
+  },
+  {
+    "word": "escape",
+    "vi": "trốn thoát; thoát khỏi",
+    "zh": "逃脱;逃避",
+    "pinyin": "táo tuō; táo bì",
+    "pos": "verb",
+    "topic": "travel",
+    "ipa": "ɪˈskeɪp"
+  },
+  {
+    "word": "essential",
+    "vi": "thiết yếu",
+    "zh": "必需的",
+    "pinyin": "bì xū de",
+    "pos": "adjective",
+    "topic": "general",
+    "ipa": "ɪˈsenʃəl"
+  },
+  {
+    "word": "estimate",
+    "vi": "ước tính; sự ước tính",
+    "zh": "估计",
+    "pinyin": "gū jì",
+    "pos": "verb",
+    "topic": "study",
+    "ipa": "ˈestɪmeɪt"
+  },
+  {
+    "word": "event",
+    "vi": "sự kiện",
+    "zh": "事件",
+    "pinyin": "shì jiàn",
+    "pos": "noun",
+    "topic": "daily",
+    "ipa": "ɪˈvent"
+  },
+  {
+    "word": "evidence",
+    "vi": "bằng chứng",
+    "zh": "证据",
+    "pinyin": "zhèng jù",
+    "pos": "noun",
+    "topic": "thinking",
+    "ipa": "ˈevɪdəns"
+  },
+  {
+    "word": "exchange",
+    "vi": "trao đổi; sự trao đổi",
+    "zh": "交换",
+    "pinyin": "jiāo huàn",
+    "pos": "verb",
+    "topic": "communication",
+    "ipa": "ɪksˈtʃeɪndʒ"
+  },
+  {
+    "word": "exist",
+    "vi": "tồn tại",
+    "zh": "存在",
+    "pinyin": "cún zài",
+    "pos": "verb",
+    "topic": "general",
+    "ipa": "ɪɡˈzɪst"
+  },
+  {
+    "word": "experience",
+    "vi": "kinh nghiệm; trải nghiệm",
+    "zh": "经验;经历",
+    "pinyin": "jīng yàn; jīng lì",
+    "pos": "noun",
+    "topic": "life",
+    "ipa": "ɪkˈspɪriəns"
+  },
+  {
+    "word": "experiment",
+    "vi": "thí nghiệm",
+    "zh": "实验",
+    "pinyin": "shí yàn",
+    "pos": "noun",
+    "topic": "science",
+    "ipa": "ɪkˈsperɪmənt"
+  },
+  {
+    "word": "expert",
+    "vi": "chuyên gia",
+    "zh": "专家",
+    "pinyin": "zhuān jiā",
+    "pos": "noun",
+    "topic": "work",
+    "ipa": "ˈekspɜːrt"
+  },
+  {
+    "word": "expression",
+    "vi": "cách diễn đạt; biểu cảm",
+    "zh": "表达;表情",
+    "pinyin": "biǎo dá; biǎo qíng",
+    "pos": "noun",
+    "topic": "communication",
+    "ipa": "ɪkˈspreʃən"
+  },
+  {
+    "word": "facility",
+    "vi": "cơ sở; tiện nghi",
+    "zh": "设施",
+    "pinyin": "shè shī",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "fəˈsɪləti"
+  },
+  {
+    "word": "feature",
+    "vi": "đặc điểm; tính năng",
+    "zh": "特点;功能",
+    "pinyin": "tè diǎn; gōng néng",
+    "pos": "noun",
+    "topic": "technology",
+    "ipa": "ˈfiːtʃər"
+  },
+  {
+    "word": "financial",
+    "vi": "tài chính",
+    "zh": "金融的",
+    "pinyin": "jīn róng de",
+    "pos": "adjective",
+    "topic": "money",
+    "ipa": "faɪˈnænʃəl"
+  },
+  {
+    "word": "flexible",
+    "vi": "linh hoạt",
+    "zh": "灵活的",
+    "pinyin": "líng huó de",
+    "pos": "adjective",
+    "topic": "work",
+    "ipa": "ˈfleksəbəl"
+  },
+  {
+    "word": "force",
+    "vi": "lực; ép buộc",
+    "zh": "力量;迫使",
+    "pinyin": "lì liàng; pò shǐ",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "fɔːrs"
+  },
+  {
+    "word": "formal",
+    "vi": "trang trọng; chính thức",
+    "zh": "正式的",
+    "pinyin": "zhèng shì de",
+    "pos": "adjective",
+    "topic": "communication",
+    "ipa": "ˈfɔːrməl"
+  },
+  {
+    "word": "former",
+    "vi": "trước đây; cựu",
+    "zh": "以前的",
+    "pinyin": "yǐ qián de",
+    "pos": "adjective",
+    "topic": "time",
+    "ipa": "ˈfɔːrmər"
+  },
+  {
+    "word": "fortune",
+    "vi": "vận may; tài sản",
+    "zh": "运气;财富",
+    "pinyin": "yùn qì; cái fù",
+    "pos": "noun",
+    "topic": "money",
+    "ipa": "ˈfɔːrtʃən"
+  },
+  {
+    "word": "freedom",
+    "vi": "tự do",
+    "zh": "自由",
+    "pinyin": "zì yóu",
+    "pos": "noun",
+    "topic": "life",
+    "ipa": "ˈfriːdəm"
+  },
+  {
+    "word": "frequent",
+    "vi": "thường xuyên",
+    "zh": "频繁的",
+    "pinyin": "pín fán de",
+    "pos": "adjective",
+    "topic": "daily",
+    "ipa": "ˈfriːkwənt"
+  },
+  {
+    "word": "function",
+    "vi": "chức năng; hoạt động",
+    "zh": "功能;运作",
+    "pinyin": "gōng néng; yùn zuò",
+    "pos": "noun",
+    "topic": "technology",
+    "ipa": "ˈfʌŋkʃən"
+  },
+  {
+    "word": "generation",
+    "vi": "thế hệ",
+    "zh": "一代;世代",
+    "pinyin": "yí dài; shì dài",
+    "pos": "noun",
+    "topic": "family",
+    "ipa": "ˌdʒenəˈreɪʃən"
+  },
+  {
+    "word": "gradual",
+    "vi": "dần dần",
+    "zh": "逐渐的",
+    "pinyin": "zhú jiàn de",
+    "pos": "adjective",
+    "topic": "learning",
+    "ipa": "ˈɡrædʒuəl"
+  },
+  {
+    "word": "growth",
+    "vi": "sự tăng trưởng",
+    "zh": "增长",
+    "pinyin": "zēng zhǎng",
+    "pos": "noun",
+    "topic": "business",
+    "ipa": "ɡroʊθ"
+  },
+  {
+    "word": "guarantee",
+    "vi": "bảo đảm; đảm bảo",
+    "zh": "保证",
+    "pinyin": "bǎo zhèng",
+    "pos": "verb",
+    "topic": "business",
+    "ipa": "ˌɡærənˈtiː"
+  },
+  {
+    "word": "handle",
+    "vi": "xử lý; tay cầm",
+    "zh": "处理;把手",
+    "pinyin": "chǔ lǐ; bǎ shou",
+    "pos": "verb",
+    "topic": "work",
+    "ipa": "ˈhændəl"
+  },
+  {
+    "word": "harm",
+    "vi": "gây hại; tác hại",
+    "zh": "伤害",
+    "pinyin": "shāng hài",
+    "pos": "verb",
+    "topic": "health",
+    "ipa": "hɑːrm"
+  },
+  {
+    "word": "health",
+    "vi": "sức khỏe",
+    "zh": "健康",
+    "pinyin": "jiàn kāng",
+    "pos": "noun",
+    "topic": "health",
+    "ipa": "helθ"
+  },
+  {
+    "word": "heavily",
+    "vi": "nặng; rất nhiều",
+    "zh": "大量地;沉重地",
+    "pinyin": "dà liàng de; chén zhòng de",
+    "pos": "adverb",
+    "topic": "weather",
+    "ipa": "ˈhevɪli"
+  },
+  {
+    "word": "honor",
+    "vi": "danh dự; tôn trọng",
+    "zh": "荣誉;尊敬",
+    "pinyin": "róng yù; zūn jìng",
+    "pos": "noun",
+    "topic": "personality",
+    "ipa": "ˈɑːnər"
+  },
+  {
+    "word": "identity",
+    "vi": "danh tính; bản sắc",
+    "zh": "身份;认同",
+    "pinyin": "shēn fèn; rèn tóng",
+    "pos": "noun",
+    "topic": "society",
+    "ipa": "aɪˈdentəti"
+  },
+  {
+    "word": "ignore",
+    "vi": "phớt lờ",
+    "zh": "忽视",
+    "pinyin": "hū shì",
+    "pos": "verb",
+    "topic": "communication",
+    "ipa": "ɪɡˈnɔːr"
+  },
+  {
+    "word": "image",
+    "vi": "hình ảnh",
+    "zh": "图像;形象",
+    "pinyin": "tú xiàng; xíng xiàng",
+    "pos": "noun",
+    "topic": "technology",
+    "ipa": "ˈɪmɪdʒ"
+  },
+  {
+    "word": "impact",
+    "vi": "tác động; ảnh hưởng",
+    "zh": "影响",
+    "pinyin": "yǐng xiǎng",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "ˈɪmpækt"
+  },
+  {
+    "word": "independent",
+    "vi": "độc lập",
+    "zh": "独立的",
+    "pinyin": "dú lì de",
+    "pos": "adjective",
+    "topic": "personality",
+    "ipa": "ˌɪndɪˈpendənt"
+  },
+  {
+    "word": "industry",
+    "vi": "ngành công nghiệp",
+    "zh": "行业;工业",
+    "pinyin": "háng yè; gōng yè",
+    "pos": "noun",
+    "topic": "business",
+    "ipa": "ˈɪndəstri"
+  },
+  {
+    "word": "influence",
+    "vi": "ảnh hưởng; tác động",
+    "zh": "影响",
+    "pinyin": "yǐng xiǎng",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "ˈɪnfluəns"
+  },
+  {
+    "word": "inform",
+    "vi": "thông báo; cung cấp thông tin",
+    "zh": "通知;告知",
+    "pinyin": "tōng zhī; gào zhī",
+    "pos": "verb",
+    "topic": "communication",
+    "ipa": "ɪnˈfɔːrm"
+  },
+  {
+    "word": "instruction",
+    "vi": "hướng dẫn; chỉ dẫn",
+    "zh": "说明;指示",
+    "pinyin": "shuō míng; zhǐ shì",
+    "pos": "noun",
+    "topic": "learning",
+    "ipa": "ɪnˈstrʌkʃən"
+  },
+  {
+    "word": "insurance",
+    "vi": "bảo hiểm",
+    "zh": "保险",
+    "pinyin": "bǎo xiǎn",
+    "pos": "noun",
+    "topic": "money",
+    "ipa": "ɪnˈʃʊrəns"
+  },
+  {
+    "word": "intelligent",
+    "vi": "thông minh",
+    "zh": "聪明的",
+    "pinyin": "cōng míng de",
+    "pos": "adjective",
+    "topic": "personality",
+    "ipa": "ɪnˈtelɪdʒənt"
+  },
+  {
+    "word": "intention",
+    "vi": "ý định",
+    "zh": "意图",
+    "pinyin": "yì tú",
+    "pos": "noun",
+    "topic": "thinking",
+    "ipa": "ɪnˈtenʃən"
+  },
+  {
+    "word": "introduce",
+    "vi": "giới thiệu",
+    "zh": "介绍",
+    "pinyin": "jiè shào",
+    "pos": "verb",
+    "topic": "communication",
+    "ipa": "ˌɪntrəˈduːs"
+  },
+  {
+    "word": "invent",
+    "vi": "phát minh; sáng chế",
+    "zh": "发明",
+    "pinyin": "fā míng",
+    "pos": "verb",
+    "topic": "technology",
+    "ipa": "ɪnˈvent"
+  },
+  {
+    "word": "investment",
+    "vi": "sự đầu tư",
+    "zh": "投资",
+    "pinyin": "tóu zī",
+    "pos": "noun",
+    "topic": "money",
+    "ipa": "ɪnˈvestmənt"
+  },
+  {
+    "word": "involve",
+    "vi": "liên quan; bao gồm",
+    "zh": "涉及;包括",
+    "pinyin": "shè jí; bāo kuò",
+    "pos": "verb",
+    "topic": "general",
+    "ipa": "ɪnˈvɑːlv"
+  },
+  {
+    "word": "issue",
+    "vi": "vấn đề; phát hành",
+    "zh": "问题;发行",
+    "pinyin": "wèn tí; fā xíng",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "ˈɪʃuː"
+  },
+  {
+    "word": "judge",
+    "vi": "thẩm phán; đánh giá",
+    "zh": "法官;判断",
+    "pinyin": "fǎ guān; pàn duàn",
+    "pos": "noun",
+    "topic": "society",
+    "ipa": "dʒʌdʒ"
+  },
+  {
+    "word": "lack",
+    "vi": "thiếu; sự thiếu",
+    "zh": "缺乏",
+    "pinyin": "quē fá",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "læk"
+  },
+  {
+    "word": "legal",
+    "vi": "hợp pháp; thuộc pháp luật",
+    "zh": "合法的",
+    "pinyin": "hé fǎ de",
+    "pos": "adjective",
+    "topic": "society",
+    "ipa": "ˈliːɡəl"
+  },
+  {
+    "word": "limit",
+    "vi": "giới hạn; hạn chế",
+    "zh": "限制",
+    "pinyin": "xiàn zhì",
+    "pos": "noun",
+    "topic": "general",
+    "ipa": "ˈlɪmɪt"
+  },
+  {
+    "word": "manage",
+    "vi": "quản lý; xoay xở",
+    "zh": "管理;设法",
+    "pinyin": "guǎn lǐ; shè fǎ",
+    "pos": "verb",
+    "topic": "work",
+    "ipa": "ˈmænɪdʒ"
+  },
+  {
+    "word": "measure",
+    "vi": "đo; biện pháp",
+    "zh": "测量;措施",
+    "pinyin": "cè liáng; cuò shī",
+    "pos": "verb",
+    "topic": "study",
+    "ipa": "ˈmeʒər"
+  },
+  {
+    "word": "medical",
+    "vi": "thuộc y tế",
+    "zh": "医疗的",
+    "pinyin": "yī liáo de",
+    "pos": "adjective",
+    "topic": "health",
+    "ipa": "ˈmedɪkəl"
+  },
+  {
+    "word": "mental",
+    "vi": "thuộc tinh thần; tâm trí",
+    "zh": "精神的",
+    "pinyin": "jīng shén de",
+    "pos": "adjective",
+    "topic": "health",
+    "ipa": "ˈmentəl"
+  },
+  {
+    "word": "mention",
+    "vi": "đề cập",
+    "zh": "提到",
+    "pinyin": "tí dào",
+    "pos": "verb",
+    "topic": "communication",
+    "ipa": "ˈmenʃən"
+  },
+  {
+    "word": "monitor",
+    "vi": "theo dõi; màn hình",
+    "zh": "监控;显示器",
+    "pinyin": "jiān kòng; xiǎn shì qì",
+    "pos": "verb",
+    "topic": "technology",
+    "ipa": "ˈmɑːnɪtər"
+  }
+]
