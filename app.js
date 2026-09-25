@@ -11,6 +11,7 @@ let db={
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
+let reviewQueue=[],reviewIndex=0;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
 let legacyStorageLoaded=false;
@@ -446,23 +447,63 @@ function sentences(){
     '<div class="grid grid-2">'+items.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US")+'</div>'}).join("")+'</div>');
 }
 function renderFlashcards(){flashcards()}
+function toggleFavorite(word){
+  const key=norm(word),v=db.vocab.find(function(x){return norm(x.word)===key});
+  if(!v)return;
+  v.favorite=!v.favorite;save();render();
+}
+function startReview(){
+  const now=new Date();
+  const due=db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=now});
+  const need=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||v.status==="New"});
+  const seen=new Set(),queue=[];
+  due.concat(need).forEach(function(v){
+    const k=norm(v.word);if(k&&!seen.has(k)){seen.add(k);queue.push(v);}
+  });
+  if(!queue.length){toast("Hiện chưa có từ cần ôn.");return;}
+  reviewQueue=queue;reviewIndex=0;flashFlipped=false;show("flashcards");
+}
 function flashcards(){
   if(!db.vocab.length){$("view").innerHTML=shell("Flashcards","Chưa có dữ liệu.");return}
-  const v=db.vocab[flashIndex%db.vocab.length];
+  const reviewActive=reviewQueue.length>0;
+  const list=reviewActive?reviewQueue:db.vocab;
+  const idx=reviewActive?reviewIndex:flashIndex;
+  const v=list[idx%list.length];
   const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+audioGroup(v.word,"en-US")+'<p class="muted">Bấm vào thẻ để lật</p></div>';
   const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US")+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1)+'</div>';
-  $("view").innerHTML=shell("Flashcards","Lật thẻ, nghe từ/câu rồi tự đánh giá.",
-    '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(flashIndex%db.vocab.length+1)+' / '+db.vocab.length+'</b><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
+  $("view").innerHTML=shell(reviewActive?"Ôn tập bằng Flashcards":"Flashcards",reviewActive?"Đang ôn các từ đến hạn/chưa nhớ.":"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
+    '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
 }
 function rateFlash(status){
-  const v=db.vocab[flashIndex%db.vocab.length];
+  const reviewActive=reviewQueue.length>0;
+  const list=reviewActive?reviewQueue:db.vocab,idx=reviewActive?reviewIndex:flashIndex;
+  const v=list[idx%list.length];
+  if(!v)return;
   v.status=status;v.lastReviewed=new Date().toISOString();
   const dueDays=status==="Rất dễ"?7:status==="Đã nhớ"?2:0;
   v.reviewDue=new Date(Date.now()+dueDays*86400000).toISOString();
   if(status!=="Chưa nhớ")db.stats.learned++;
-  recordActivity();recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);addXP(5);flashIndex=(flashIndex+1)%db.vocab.length;flashFlipped=false;save();render();
+  recordActivity();recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);
+  flashFlipped=false;
+  if(reviewActive){
+    if(reviewIndex+1>=reviewQueue.length){
+      reviewQueue=[];reviewIndex=0;save();show("review");return;
+    }
+    reviewIndex++;
+  }else{
+    flashIndex=(flashIndex+1)%db.vocab.length;
+  }
+  save();render();
 }
-function shuffleFlash(){flashIndex=Math.floor(Math.random()*Math.max(1,db.vocab.length));flashFlipped=false;save();render()}
+function shuffleFlash(){
+  if(reviewQueue.length){
+    reviewIndex=Math.floor(Math.random()*reviewQueue.length);
+  }else{
+    flashIndex=Math.floor(Math.random()*Math.max(1,db.vocab.length));
+  }
+  flashFlipped=false;save();render();
+}
+
 
 function listening(){renderListening()}
 function renderListening(){
