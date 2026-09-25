@@ -23,7 +23,7 @@ function currentJson(file) {
 }
 
 function baselineJson(file) {
-  const raw = execFileSync("git", ["show", "origin/main:data/" + file], { encoding: "utf8" });
+  const raw = execFileSync("git", ["show", "origin/main:data/" + file], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
   return JSON.parse(raw);
 }
 
@@ -48,7 +48,7 @@ const results = {};
 
 for (const file of criticalFiles) {
   try {
-    execFileSync("git", ["cat-file", "-e", "origin/main:data/" + file]);
+    execFileSync("git", ["cat-file", "-e", "origin/main:data/" + file], { maxBuffer: 64 * 1024 * 1024 });
   } catch {
     throw new Error("Baseline file missing on origin/main: data/" + file);
   }
