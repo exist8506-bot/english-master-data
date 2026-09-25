@@ -1,14 +1,17 @@
 {
-  "version": "7.0.6",
+  "version": "8.0.0",
   "updatedAt": "2026-09-25",
-  "releaseNotes": "V7.0.6: thêm 500 mục mới và đồng bộ vào từ vựng, câu, trắc nghiệm, giao tiếp, nghe, phát âm/TTS và tam ngữ; giữ nguyên dữ liệu cũ.",
+  "releaseNotes": "V8.0.0: thêm đúng 500 từ mới; mỗi từ có nghĩa, phát âm, câu Anh-Việt, audio TTS và liên kết vào học từ, flashcards, đọc-hiểu, nghe, nói, quiz, ôn tập, tam ngữ, giao tiếp, ngữ pháp.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
     "questions": "questions.json",
     "grammar": "grammar.json",
     "communication": "communication.json",
-    "trilingual": "trilingual.json",
-    "extra500": "data/extra500_v8.json"
+    "trilingual": "trilingual.json"
+  },
+  "expansion": {
+    "package": "expansion500",
+    "count": 500
   }
 }

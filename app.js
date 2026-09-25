@@ -1,4 +1,4 @@
-const APP_VERSION="7.0.6";
+const APP_VERSION="8.0.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 
@@ -494,7 +494,7 @@ function render(){
   fn();
 }
 function home(){
-  $("view").innerHTML=shell("English Master V7.0.6","Học • Luyện • Nhớ • Cải thiện",
+  $("view").innerHTML=shell("English Master V8.0.0","Học • Luyện • Nhớ • Cải thiện",
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
@@ -771,3 +771,22 @@ function init(){
   registerServiceWorker();
 }
 init();
+
+function dataAudit(){
+  const exp=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
+  const N=s=>new Set((s||[]).filter(Boolean).map(norm));
+  const sw=N(db.sentences.map(x=>x.vocabWord)),qw=N(db.questions.map(x=>x.vocabWord));
+  const tw=N(db.trilingual.map(x=>x.en)),cw=N(db.communication.flatMap(x=>x.vocab||[]));
+  const gw=N(db.grammar.flatMap(x=>x.vocabWords||[]));
+  const result={
+    expansion500:exp.length,
+    duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
+    sentences:exp.filter(x=>sw.has(norm(x.word))).length,
+    questions:exp.filter(x=>qw.has(norm(x.word))).length,
+    trilingual:exp.filter(x=>tw.has(norm(x.word))).length,
+    communication:exp.filter(x=>cw.has(norm(x.word))).length,
+    grammar:exp.filter(x=>gw.has(norm(x.word))).length,
+    audio:exp.filter(x=>x.audio==="tts"&&x.audioEn).length
+  };
+  console.table(result); return result;
+}

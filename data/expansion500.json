@@ -1,0 +1,4507 @@
+{
+  "package": "expansion500",
+  "version": "8.0.0",
+  "count": 500,
+  "words": [
+    {
+      "word": "altogether",
+      "vocabId": "exp500_001_b1c34cb2",
+      "sentenceId": "exp500_sent_001_b1c34cb2",
+      "questionId": "exp500_q_001_b1c34cb2",
+      "trilingualId": "exp500_tri_001_b1c34cb2",
+      "communicationId": "exp500_comm_001",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "angle",
+      "vocabId": "exp500_002_ad544418",
+      "sentenceId": "exp500_sent_002_ad544418",
+      "questionId": "exp500_q_002_ad544418",
+      "trilingualId": "exp500_tri_002_ad544418",
+      "communicationId": "exp500_comm_001",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "band",
+      "vocabId": "exp500_003_30951d46",
+      "sentenceId": "exp500_sent_003_30951d46",
+      "questionId": "exp500_q_003_30951d46",
+      "trilingualId": "exp500_tri_003_30951d46",
+      "communicationId": "exp500_comm_001",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "bathe",
+      "vocabId": "exp500_004_f4e7cf3f",
+      "sentenceId": "exp500_sent_004_f4e7cf3f",
+      "questionId": "exp500_q_004_f4e7cf3f",
+      "trilingualId": "exp500_tri_004_f4e7cf3f",
+      "communicationId": "exp500_comm_001",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "beer",
+      "vocabId": "exp500_005_a25b6c77",
+      "sentenceId": "exp500_sent_005_a25b6c77",
+      "questionId": "exp500_q_005_a25b6c77",
+      "trilingualId": "exp500_tri_005_a25b6c77",
+      "communicationId": "exp500_comm_001",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "blue",
+      "vocabId": "exp500_006_82fbf5cd",
+      "sentenceId": "exp500_sent_006_82fbf5cd",
+      "questionId": "exp500_q_006_82fbf5cd",
+      "trilingualId": "exp500_tri_006_82fbf5cd",
+      "communicationId": "exp500_comm_002",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "cake",
+      "vocabId": "exp500_007_8aea8859",
+      "sentenceId": "exp500_sent_007_8aea8859",
+      "questionId": "exp500_q_007_8aea8859",
+      "trilingualId": "exp500_tri_007_8aea8859",
+      "communicationId": "exp500_comm_002",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "conscientious",
+      "vocabId": "exp500_008_7fa707a5",
+      "sentenceId": "exp500_sent_008_7fa707a5",
+      "questionId": "exp500_q_008_7fa707a5",
+      "trilingualId": "exp500_tri_008_7fa707a5",
+      "communicationId": "exp500_comm_002",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "cordial",
+      "vocabId": "exp500_009_ad658045",
+      "sentenceId": "exp500_sent_009_ad658045",
+      "questionId": "exp500_q_009_ad658045",
+      "trilingualId": "exp500_tri_009_ad658045",
+      "communicationId": "exp500_comm_002",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "country",
+      "vocabId": "exp500_010_a59115d1",
+      "sentenceId": "exp500_sent_010_a59115d1",
+      "questionId": "exp500_q_010_a59115d1",
+      "trilingualId": "exp500_tri_010_a59115d1",
+      "communicationId": "exp500_comm_002",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "dare",
+      "vocabId": "exp500_011_e0776c6b",
+      "sentenceId": "exp500_sent_011_e0776c6b",
+      "questionId": "exp500_q_011_e0776c6b",
+      "trilingualId": "exp500_tri_011_e0776c6b",
+      "communicationId": "exp500_comm_003",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "depart",
+      "vocabId": "exp500_012_dded643",
+      "sentenceId": "exp500_sent_012_dded643",
+      "questionId": "exp500_q_012_dded643",
+      "trilingualId": "exp500_tri_012_dded643",
+      "communicationId": "exp500_comm_003",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "east",
+      "vocabId": "exp500_013_53723c",
+      "sentenceId": "exp500_sent_013_53723c",
+      "questionId": "exp500_q_013_53723c",
+      "trilingualId": "exp500_tri_013_53723c",
+      "communicationId": "exp500_comm_003",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "fat",
+      "vocabId": "exp500_014_bef81d14",
+      "sentenceId": "exp500_sent_014_bef81d14",
+      "questionId": "exp500_q_014_bef81d14",
+      "trilingualId": "exp500_tri_014_bef81d14",
+      "communicationId": "exp500_comm_003",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "green",
+      "vocabId": "exp500_015_11decbc",
+      "sentenceId": "exp500_sent_015_11decbc",
+      "questionId": "exp500_q_015_11decbc",
+      "trilingualId": "exp500_tri_015_11decbc",
+      "communicationId": "exp500_comm_003",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "half",
+      "vocabId": "exp500_016_d6bec8a4",
+      "sentenceId": "exp500_sent_016_d6bec8a4",
+      "questionId": "exp500_q_016_d6bec8a4",
+      "trilingualId": "exp500_tri_016_d6bec8a4",
+      "communicationId": "exp500_comm_004",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "mathematics",
+      "vocabId": "exp500_017_c8e88d9d",
+      "sentenceId": "exp500_sent_017_c8e88d9d",
+      "questionId": "exp500_q_017_c8e88d9d",
+      "trilingualId": "exp500_tri_017_c8e88d9d",
+      "communicationId": "exp500_comm_004",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "more",
+      "vocabId": "exp500_018_e85541e0",
+      "sentenceId": "exp500_sent_018_e85541e0",
+      "questionId": "exp500_q_018_e85541e0",
+      "trilingualId": "exp500_tri_018_e85541e0",
+      "communicationId": "exp500_comm_004",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "north",
+      "vocabId": "exp500_019_daef9304",
+      "sentenceId": "exp500_sent_019_daef9304",
+      "questionId": "exp500_q_019_daef9304",
+      "trilingualId": "exp500_tri_019_daef9304",
+      "communicationId": "exp500_comm_004",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "oneself",
+      "vocabId": "exp500_020_e1b5a321",
+      "sentenceId": "exp500_sent_020_e1b5a321",
+      "questionId": "exp500_q_020_e1b5a321",
+      "trilingualId": "exp500_tri_020_e1b5a321",
+      "communicationId": "exp500_comm_004",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "recent",
+      "vocabId": "exp500_021_ad50ede",
+      "sentenceId": "exp500_sent_021_ad50ede",
+      "questionId": "exp500_q_021_ad50ede",
+      "trilingualId": "exp500_tri_021_ad50ede",
+      "communicationId": "exp500_comm_005",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "resemble",
+      "vocabId": "exp500_022_39dc0f0",
+      "sentenceId": "exp500_sent_022_39dc0f0",
+      "questionId": "exp500_q_022_39dc0f0",
+      "trilingualId": "exp500_tri_022_39dc0f0",
+      "communicationId": "exp500_comm_005",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "south",
+      "vocabId": "exp500_023_e272d7a",
+      "sentenceId": "exp500_sent_023_e272d7a",
+      "questionId": "exp500_q_023_e272d7a",
+      "trilingualId": "exp500_tri_023_e272d7a",
+      "communicationId": "exp500_comm_005",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "strip",
+      "vocabId": "exp500_024_fd1b18d1",
+      "sentenceId": "exp500_sent_024_fd1b18d1",
+      "questionId": "exp500_q_024_fd1b18d1",
+      "trilingualId": "exp500_tri_024_fd1b18d1",
+      "communicationId": "exp500_comm_005",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "sudden",
+      "vocabId": "exp500_025_c2bdf20a",
+      "sentenceId": "exp500_sent_025_c2bdf20a",
+      "questionId": "exp500_q_025_c2bdf20a",
+      "trilingualId": "exp500_tri_025_c2bdf20a",
+      "communicationId": "exp500_comm_005",
+      "grammarId": "exp500_grammar_01"
+    },
+    {
+      "word": "swing",
+      "vocabId": "exp500_026_b445ed49",
+      "sentenceId": "exp500_sent_026_b445ed49",
+      "questionId": "exp500_q_026_b445ed49",
+      "trilingualId": "exp500_tri_026_b445ed49",
+      "communicationId": "exp500_comm_006",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "termination",
+      "vocabId": "exp500_027_f4a5f289",
+      "sentenceId": "exp500_sent_027_f4a5f289",
+      "questionId": "exp500_q_027_f4a5f289",
+      "trilingualId": "exp500_tri_027_f4a5f289",
+      "communicationId": "exp500_comm_006",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "thin",
+      "vocabId": "exp500_028_c52bb172",
+      "sentenceId": "exp500_sent_028_c52bb172",
+      "questionId": "exp500_q_028_c52bb172",
+      "trilingualId": "exp500_tri_028_c52bb172",
+      "communicationId": "exp500_comm_006",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "toilet",
+      "vocabId": "exp500_029_a6ca5e08",
+      "sentenceId": "exp500_sent_029_a6ca5e08",
+      "questionId": "exp500_q_029_a6ca5e08",
+      "trilingualId": "exp500_tri_029_a6ca5e08",
+      "communicationId": "exp500_comm_006",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "two",
+      "vocabId": "exp500_030_be248829",
+      "sentenceId": "exp500_sent_030_be248829",
+      "questionId": "exp500_q_030_be248829",
+      "trilingualId": "exp500_tri_030_be248829",
+      "communicationId": "exp500_comm_006",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "umbrella",
+      "vocabId": "exp500_031_f590e1e5",
+      "sentenceId": "exp500_sent_031_f590e1e5",
+      "questionId": "exp500_q_031_f590e1e5",
+      "trilingualId": "exp500_tri_031_f590e1e5",
+      "communicationId": "exp500_comm_007",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "west",
+      "vocabId": "exp500_032_eae949ae",
+      "sentenceId": "exp500_sent_032_eae949ae",
+      "questionId": "exp500_q_032_eae949ae",
+      "trilingualId": "exp500_tri_032_eae949ae",
+      "communicationId": "exp500_comm_007",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "world",
+      "vocabId": "exp500_033_37a3e893",
+      "sentenceId": "exp500_sent_033_37a3e893",
+      "questionId": "exp500_q_033_37a3e893",
+      "trilingualId": "exp500_tri_033_37a3e893",
+      "communicationId": "exp500_comm_007",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "yellow",
+      "vocabId": "exp500_034_5bf6449",
+      "sentenceId": "exp500_sent_034_5bf6449",
+      "questionId": "exp500_q_034_5bf6449",
+      "trilingualId": "exp500_tri_034_5bf6449",
+      "communicationId": "exp500_comm_007",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "accumulate",
+      "vocabId": "exp500_035_585e0593",
+      "sentenceId": "exp500_sent_035_585e0593",
+      "questionId": "exp500_q_035_585e0593",
+      "trilingualId": "exp500_tri_035_585e0593",
+      "communicationId": "exp500_comm_007",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "and",
+      "vocabId": "exp500_036_f29c2a6",
+      "sentenceId": "exp500_sent_036_f29c2a6",
+      "questionId": "exp500_q_036_f29c2a6",
+      "trilingualId": "exp500_tri_036_f29c2a6",
+      "communicationId": "exp500_comm_008",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "apologize",
+      "vocabId": "exp500_037_5f10b735",
+      "sentenceId": "exp500_sent_037_5f10b735",
+      "questionId": "exp500_q_037_5f10b735",
+      "trilingualId": "exp500_tri_037_5f10b735",
+      "communicationId": "exp500_comm_008",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "applaud",
+      "vocabId": "exp500_038_b26111a2",
+      "sentenceId": "exp500_sent_038_b26111a2",
+      "questionId": "exp500_q_038_b26111a2",
+      "trilingualId": "exp500_tri_038_b26111a2",
+      "communicationId": "exp500_comm_008",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "array",
+      "vocabId": "exp500_039_8a58ad26",
+      "sentenceId": "exp500_sent_039_8a58ad26",
+      "questionId": "exp500_q_039_8a58ad26",
+      "trilingualId": "exp500_tri_039_8a58ad26",
+      "communicationId": "exp500_comm_008",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "belly",
+      "vocabId": "exp500_040_944d0853",
+      "sentenceId": "exp500_sent_040_944d0853",
+      "questionId": "exp500_q_040_944d0853",
+      "trilingualId": "exp500_tri_040_944d0853",
+      "communicationId": "exp500_comm_008",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "cheat",
+      "vocabId": "exp500_041_946adb4c",
+      "sentenceId": "exp500_sent_041_946adb4c",
+      "questionId": "exp500_q_041_946adb4c",
+      "trilingualId": "exp500_tri_041_946adb4c",
+      "communicationId": "exp500_comm_009",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "cheerful",
+      "vocabId": "exp500_042_2c18b95d",
+      "sentenceId": "exp500_sent_042_2c18b95d",
+      "questionId": "exp500_q_042_2c18b95d",
+      "trilingualId": "exp500_tri_042_2c18b95d",
+      "communicationId": "exp500_comm_009",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "companionship",
+      "vocabId": "exp500_043_eb6d55cf",
+      "sentenceId": "exp500_sent_043_eb6d55cf",
+      "questionId": "exp500_q_043_eb6d55cf",
+      "trilingualId": "exp500_tri_043_eb6d55cf",
+      "communicationId": "exp500_comm_009",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "compete",
+      "vocabId": "exp500_044_56e63d6a",
+      "sentenceId": "exp500_sent_044_56e63d6a",
+      "questionId": "exp500_q_044_56e63d6a",
+      "trilingualId": "exp500_tri_044_56e63d6a",
+      "communicationId": "exp500_comm_009",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "complicated",
+      "vocabId": "exp500_045_9de0d202",
+      "sentenceId": "exp500_sent_045_9de0d202",
+      "questionId": "exp500_q_045_9de0d202",
+      "trilingualId": "exp500_tri_045_9de0d202",
+      "communicationId": "exp500_comm_009",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "congratulate",
+      "vocabId": "exp500_046_8c41ac5a",
+      "sentenceId": "exp500_sent_046_8c41ac5a",
+      "questionId": "exp500_q_046_8c41ac5a",
+      "trilingualId": "exp500_tri_046_8c41ac5a",
+      "communicationId": "exp500_comm_010",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "consult",
+      "vocabId": "exp500_047_8666883f",
+      "sentenceId": "exp500_sent_047_8666883f",
+      "questionId": "exp500_q_047_8666883f",
+      "trilingualId": "exp500_tri_047_8666883f",
+      "communicationId": "exp500_comm_010",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "cultivate",
+      "vocabId": "exp500_048_ad50eeea",
+      "sentenceId": "exp500_sent_048_ad50eeea",
+      "questionId": "exp500_q_048_ad50eeea",
+      "trilingualId": "exp500_tri_048_ad50eeea",
+      "communicationId": "exp500_comm_010",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "echo",
+      "vocabId": "exp500_049_d49dd484",
+      "sentenceId": "exp500_sent_049_d49dd484",
+      "questionId": "exp500_q_049_d49dd484",
+      "trilingualId": "exp500_tri_049_d49dd484",
+      "communicationId": "exp500_comm_010",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "envy",
+      "vocabId": "exp500_050_956613b7",
+      "sentenceId": "exp500_sent_050_956613b7",
+      "questionId": "exp500_q_050_956613b7",
+      "trilingualId": "exp500_tri_050_956613b7",
+      "communicationId": "exp500_comm_010",
+      "grammarId": "exp500_grammar_02"
+    },
+    {
+      "word": "esteem",
+      "vocabId": "exp500_051_3f71ebc",
+      "sentenceId": "exp500_sent_051_3f71ebc",
+      "questionId": "exp500_q_051_3f71ebc",
+      "trilingualId": "exp500_tri_051_3f71ebc",
+      "communicationId": "exp500_comm_011",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "everything",
+      "vocabId": "exp500_052_bd022a20",
+      "sentenceId": "exp500_sent_052_bd022a20",
+      "questionId": "exp500_q_052_bd022a20",
+      "trilingualId": "exp500_tri_052_bd022a20",
+      "communicationId": "exp500_comm_011",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "genuine",
+      "vocabId": "exp500_053_ad6e844e",
+      "sentenceId": "exp500_sent_053_ad6e844e",
+      "questionId": "exp500_q_053_ad6e844e",
+      "trilingualId": "exp500_tri_053_ad6e844e",
+      "communicationId": "exp500_comm_011",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "grammar",
+      "vocabId": "exp500_054_4b536ffe",
+      "sentenceId": "exp500_sent_054_4b536ffe",
+      "questionId": "exp500_q_054_4b536ffe",
+      "trilingualId": "exp500_tri_054_4b536ffe",
+      "communicationId": "exp500_comm_011",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "grave",
+      "vocabId": "exp500_055_9068bb32",
+      "sentenceId": "exp500_sent_055_9068bb32",
+      "questionId": "exp500_q_055_9068bb32",
+      "trilingualId": "exp500_tri_055_9068bb32",
+      "communicationId": "exp500_comm_011",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "grieve",
+      "vocabId": "exp500_056_bd2a7ec7",
+      "sentenceId": "exp500_sent_056_bd2a7ec7",
+      "questionId": "exp500_q_056_bd2a7ec7",
+      "trilingualId": "exp500_tri_056_bd2a7ec7",
+      "communicationId": "exp500_comm_012",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "handsome",
+      "vocabId": "exp500_057_1dd8f4b8",
+      "sentenceId": "exp500_sent_057_1dd8f4b8",
+      "questionId": "exp500_q_057_1dd8f4b8",
+      "trilingualId": "exp500_tri_057_1dd8f4b8",
+      "communicationId": "exp500_comm_012",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "hire",
+      "vocabId": "exp500_058_5caa0f67",
+      "sentenceId": "exp500_sent_058_5caa0f67",
+      "questionId": "exp500_q_058_5caa0f67",
+      "trilingualId": "exp500_tri_058_5caa0f67",
+      "communicationId": "exp500_comm_012",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "impression",
+      "vocabId": "exp500_059_e42faa8c",
+      "sentenceId": "exp500_sent_059_e42faa8c",
+      "questionId": "exp500_q_059_e42faa8c",
+      "trilingualId": "exp500_tri_059_e42faa8c",
+      "communicationId": "exp500_comm_012",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "inconvenient",
+      "vocabId": "exp500_060_e6828c2f",
+      "sentenceId": "exp500_sent_060_e6828c2f",
+      "questionId": "exp500_q_060_e6828c2f",
+      "trilingualId": "exp500_tri_060_e6828c2f",
+      "communicationId": "exp500_comm_012",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "lessen",
+      "vocabId": "exp500_061_fc9fc7ab",
+      "sentenceId": "exp500_sent_061_fc9fc7ab",
+      "questionId": "exp500_q_061_fc9fc7ab",
+      "trilingualId": "exp500_tri_061_fc9fc7ab",
+      "communicationId": "exp500_comm_013",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "lively",
+      "vocabId": "exp500_062_5551ee80",
+      "sentenceId": "exp500_sent_062_5551ee80",
+      "questionId": "exp500_q_062_5551ee80",
+      "trilingualId": "exp500_tri_062_5551ee80",
+      "communicationId": "exp500_comm_013",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "manufacture",
+      "vocabId": "exp500_063_d972b4e2",
+      "sentenceId": "exp500_sent_063_d972b4e2",
+      "questionId": "exp500_q_063_d972b4e2",
+      "trilingualId": "exp500_tri_063_d972b4e2",
+      "communicationId": "exp500_comm_013",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "mature",
+      "vocabId": "exp500_064_34670561",
+      "sentenceId": "exp500_sent_064_34670561",
+      "questionId": "exp500_q_064_34670561",
+      "trilingualId": "exp500_tri_064_34670561",
+      "communicationId": "exp500_comm_013",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "merit",
+      "vocabId": "exp500_065_9c719b52",
+      "sentenceId": "exp500_sent_065_9c719b52",
+      "questionId": "exp500_q_065_9c719b52",
+      "trilingualId": "exp500_tri_065_9c719b52",
+      "communicationId": "exp500_comm_013",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "moist",
+      "vocabId": "exp500_066_430f1143",
+      "sentenceId": "exp500_sent_066_430f1143",
+      "questionId": "exp500_q_066_430f1143",
+      "trilingualId": "exp500_tri_066_430f1143",
+      "communicationId": "exp500_comm_014",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "mood",
+      "vocabId": "exp500_067_fb84bdfe",
+      "sentenceId": "exp500_sent_067_fb84bdfe",
+      "questionId": "exp500_q_067_fb84bdfe",
+      "trilingualId": "exp500_tri_067_fb84bdfe",
+      "communicationId": "exp500_comm_014",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "narrow",
+      "vocabId": "exp500_068_e6a879fa",
+      "sentenceId": "exp500_sent_068_e6a879fa",
+      "questionId": "exp500_q_068_e6a879fa",
+      "trilingualId": "exp500_tri_068_e6a879fa",
+      "communicationId": "exp500_comm_014",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "notify",
+      "vocabId": "exp500_069_a06d7e3c",
+      "sentenceId": "exp500_sent_069_a06d7e3c",
+      "questionId": "exp500_q_069_a06d7e3c",
+      "trilingualId": "exp500_tri_069_a06d7e3c",
+      "communicationId": "exp500_comm_014",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "orderly",
+      "vocabId": "exp500_070_d820eb88",
+      "sentenceId": "exp500_sent_070_d820eb88",
+      "questionId": "exp500_q_070_d820eb88",
+      "trilingualId": "exp500_tri_070_d820eb88",
+      "communicationId": "exp500_comm_014",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "perspiration",
+      "vocabId": "exp500_071_a4c23fdd",
+      "sentenceId": "exp500_sent_071_a4c23fdd",
+      "questionId": "exp500_q_071_a4c23fdd",
+      "trilingualId": "exp500_tri_071_a4c23fdd",
+      "communicationId": "exp500_comm_015",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "pitiful",
+      "vocabId": "exp500_072_924bbd94",
+      "sentenceId": "exp500_sent_072_924bbd94",
+      "questionId": "exp500_q_072_924bbd94",
+      "trilingualId": "exp500_tri_072_924bbd94",
+      "communicationId": "exp500_comm_015",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "postpone",
+      "vocabId": "exp500_073_933f531f",
+      "sentenceId": "exp500_sent_073_933f531f",
+      "questionId": "exp500_q_073_933f531f",
+      "trilingualId": "exp500_tri_073_933f531f",
+      "communicationId": "exp500_comm_015",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "praise",
+      "vocabId": "exp500_074_c3ac6729",
+      "sentenceId": "exp500_sent_074_c3ac6729",
+      "questionId": "exp500_q_074_c3ac6729",
+      "trilingualId": "exp500_tri_074_c3ac6729",
+      "communicationId": "exp500_comm_015",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "pride",
+      "vocabId": "exp500_075_b4f7e1d",
+      "sentenceId": "exp500_sent_075_b4f7e1d",
+      "questionId": "exp500_q_075_b4f7e1d",
+      "trilingualId": "exp500_tri_075_b4f7e1d",
+      "communicationId": "exp500_comm_015",
+      "grammarId": "exp500_grammar_03"
+    },
+    {
+      "word": "provision",
+      "vocabId": "exp500_076_4b3b42c0",
+      "sentenceId": "exp500_sent_076_4b3b42c0",
+      "questionId": "exp500_q_076_4b3b42c0",
+      "trilingualId": "exp500_tri_076_4b3b42c0",
+      "communicationId": "exp500_comm_016",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "quarrel",
+      "vocabId": "exp500_077_c92aeeeb",
+      "sentenceId": "exp500_sent_077_c92aeeeb",
+      "questionId": "exp500_q_077_c92aeeeb",
+      "trilingualId": "exp500_tri_077_c92aeeeb",
+      "communicationId": "exp500_comm_016",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "recall",
+      "vocabId": "exp500_078_5a81bdb0",
+      "sentenceId": "exp500_sent_078_5a81bdb0",
+      "questionId": "exp500_q_078_5a81bdb0",
+      "trilingualId": "exp500_tri_078_5a81bdb0",
+      "communicationId": "exp500_comm_016",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "renounce",
+      "vocabId": "exp500_079_72b14eb4",
+      "sentenceId": "exp500_sent_079_72b14eb4",
+      "questionId": "exp500_q_079_72b14eb4",
+      "trilingualId": "exp500_tri_079_72b14eb4",
+      "communicationId": "exp500_comm_016",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "restrict",
+      "vocabId": "exp500_080_fdd57ae5",
+      "sentenceId": "exp500_sent_080_fdd57ae5",
+      "questionId": "exp500_q_080_fdd57ae5",
+      "trilingualId": "exp500_tri_080_fdd57ae5",
+      "communicationId": "exp500_comm_016",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "romantic",
+      "vocabId": "exp500_081_19d1d206",
+      "sentenceId": "exp500_sent_081_19d1d206",
+      "questionId": "exp500_q_081_19d1d206",
+      "trilingualId": "exp500_tri_081_19d1d206",
+      "communicationId": "exp500_comm_017",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "roughly",
+      "vocabId": "exp500_082_28460b4d",
+      "sentenceId": "exp500_sent_082_28460b4d",
+      "questionId": "exp500_q_082_28460b4d",
+      "trilingualId": "exp500_tri_082_28460b4d",
+      "communicationId": "exp500_comm_017",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "scenery",
+      "vocabId": "exp500_083_eb9cc8fe",
+      "sentenceId": "exp500_sent_083_eb9cc8fe",
+      "questionId": "exp500_q_083_eb9cc8fe",
+      "trilingualId": "exp500_tri_083_eb9cc8fe",
+      "communicationId": "exp500_comm_017",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "since",
+      "vocabId": "exp500_084_b536a99d",
+      "sentenceId": "exp500_sent_084_b536a99d",
+      "questionId": "exp500_q_084_b536a99d",
+      "trilingualId": "exp500_tri_084_b536a99d",
+      "communicationId": "exp500_comm_017",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "sleepy",
+      "vocabId": "exp500_085_8d8512e3",
+      "sentenceId": "exp500_sent_085_8d8512e3",
+      "questionId": "exp500_q_085_8d8512e3",
+      "trilingualId": "exp500_tri_085_8d8512e3",
+      "communicationId": "exp500_comm_017",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "strict",
+      "vocabId": "exp500_086_24c83574",
+      "sentenceId": "exp500_sent_086_24c83574",
+      "questionId": "exp500_q_086_24c83574",
+      "trilingualId": "exp500_tri_086_24c83574",
+      "communicationId": "exp500_comm_018",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "stroll",
+      "vocabId": "exp500_087_c01ad86d",
+      "sentenceId": "exp500_sent_087_c01ad86d",
+      "questionId": "exp500_q_087_c01ad86d",
+      "trilingualId": "exp500_tri_087_c01ad86d",
+      "communicationId": "exp500_comm_018",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "sunshine",
+      "vocabId": "exp500_088_9cd9140",
+      "sentenceId": "exp500_sent_088_9cd9140",
+      "questionId": "exp500_q_088_9cd9140",
+      "trilingualId": "exp500_tri_088_9cd9140",
+      "communicationId": "exp500_comm_018",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "wipe",
+      "vocabId": "exp500_089_e7555186",
+      "sentenceId": "exp500_sent_089_e7555186",
+      "questionId": "exp500_q_089_e7555186",
+      "trilingualId": "exp500_tri_089_e7555186",
+      "communicationId": "exp500_comm_018",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "abstract",
+      "vocabId": "exp500_090_8a9e6b73",
+      "sentenceId": "exp500_sent_090_8a9e6b73",
+      "questionId": "exp500_q_090_8a9e6b73",
+      "trilingualId": "exp500_tri_090_8a9e6b73",
+      "communicationId": "exp500_comm_018",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "accomplishment",
+      "vocabId": "exp500_091_5346eb92",
+      "sentenceId": "exp500_sent_091_5346eb92",
+      "questionId": "exp500_q_091_5346eb92",
+      "trilingualId": "exp500_tri_091_5346eb92",
+      "communicationId": "exp500_comm_019",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "adolescent",
+      "vocabId": "exp500_092_2abd146d",
+      "sentenceId": "exp500_sent_092_2abd146d",
+      "questionId": "exp500_q_092_2abd146d",
+      "trilingualId": "exp500_tri_092_2abd146d",
+      "communicationId": "exp500_comm_019",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "alternate",
+      "vocabId": "exp500_093_43f6e25d",
+      "sentenceId": "exp500_sent_093_43f6e25d",
+      "questionId": "exp500_q_093_43f6e25d",
+      "trilingualId": "exp500_tri_093_43f6e25d",
+      "communicationId": "exp500_comm_019",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "amend",
+      "vocabId": "exp500_094_8306ad20",
+      "sentenceId": "exp500_sent_094_8306ad20",
+      "questionId": "exp500_q_094_8306ad20",
+      "trilingualId": "exp500_tri_094_8306ad20",
+      "communicationId": "exp500_comm_019",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "ample",
+      "vocabId": "exp500_095_82c4467e",
+      "sentenceId": "exp500_sent_095_82c4467e",
+      "questionId": "exp500_q_095_82c4467e",
+      "trilingualId": "exp500_tri_095_82c4467e",
+      "communicationId": "exp500_comm_019",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "apex",
+      "vocabId": "exp500_096_c6cd0dc1",
+      "sentenceId": "exp500_sent_096_c6cd0dc1",
+      "questionId": "exp500_q_096_c6cd0dc1",
+      "trilingualId": "exp500_tri_096_c6cd0dc1",
+      "communicationId": "exp500_comm_020",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "arduous",
+      "vocabId": "exp500_097_edd6bbbe",
+      "sentenceId": "exp500_sent_097_edd6bbbe",
+      "questionId": "exp500_q_097_edd6bbbe",
+      "trilingualId": "exp500_tri_097_edd6bbbe",
+      "communicationId": "exp500_comm_020",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "ascertain",
+      "vocabId": "exp500_098_d884e141",
+      "sentenceId": "exp500_sent_098_d884e141",
+      "questionId": "exp500_q_098_d884e141",
+      "trilingualId": "exp500_tri_098_d884e141",
+      "communicationId": "exp500_comm_020",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "ashamed",
+      "vocabId": "exp500_099_fa2ee8bc",
+      "sentenceId": "exp500_sent_099_fa2ee8bc",
+      "questionId": "exp500_q_099_fa2ee8bc",
+      "trilingualId": "exp500_tri_099_fa2ee8bc",
+      "communicationId": "exp500_comm_020",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "askew",
+      "vocabId": "exp500_100_997f7086",
+      "sentenceId": "exp500_sent_100_997f7086",
+      "questionId": "exp500_q_100_997f7086",
+      "trilingualId": "exp500_tri_100_997f7086",
+      "communicationId": "exp500_comm_020",
+      "grammarId": "exp500_grammar_04"
+    },
+    {
+      "word": "authentic",
+      "vocabId": "exp500_101_784aa734",
+      "sentenceId": "exp500_sent_101_784aa734",
+      "questionId": "exp500_q_101_784aa734",
+      "trilingualId": "exp500_tri_101_784aa734",
+      "communicationId": "exp500_comm_021",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "avert",
+      "vocabId": "exp500_102_7f6124d7",
+      "sentenceId": "exp500_sent_102_7f6124d7",
+      "questionId": "exp500_q_102_7f6124d7",
+      "trilingualId": "exp500_tri_102_7f6124d7",
+      "communicationId": "exp500_comm_021",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "awful",
+      "vocabId": "exp500_103_d85f8ed4",
+      "sentenceId": "exp500_sent_103_d85f8ed4",
+      "questionId": "exp500_q_103_d85f8ed4",
+      "trilingualId": "exp500_tri_103_d85f8ed4",
+      "communicationId": "exp500_comm_021",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "basin",
+      "vocabId": "exp500_104_f834edc6",
+      "sentenceId": "exp500_sent_104_f834edc6",
+      "questionId": "exp500_q_104_f834edc6",
+      "trilingualId": "exp500_tri_104_f834edc6",
+      "communicationId": "exp500_comm_021",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "bend",
+      "vocabId": "exp500_105_8e72a64a",
+      "sentenceId": "exp500_sent_105_8e72a64a",
+      "questionId": "exp500_q_105_8e72a64a",
+      "trilingualId": "exp500_tri_105_8e72a64a",
+      "communicationId": "exp500_comm_021",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "bite",
+      "vocabId": "exp500_106_b4624bcf",
+      "sentenceId": "exp500_sent_106_b4624bcf",
+      "questionId": "exp500_q_106_b4624bcf",
+      "trilingualId": "exp500_tri_106_b4624bcf",
+      "communicationId": "exp500_comm_022",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "bloom",
+      "vocabId": "exp500_107_e4ee9edc",
+      "sentenceId": "exp500_sent_107_e4ee9edc",
+      "questionId": "exp500_q_107_e4ee9edc",
+      "trilingualId": "exp500_tri_107_e4ee9edc",
+      "communicationId": "exp500_comm_022",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "blunt",
+      "vocabId": "exp500_108_e987f898",
+      "sentenceId": "exp500_sent_108_e987f898",
+      "questionId": "exp500_q_108_e987f898",
+      "trilingualId": "exp500_tri_108_e987f898",
+      "communicationId": "exp500_comm_022",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "boast",
+      "vocabId": "exp500_109_190dbea",
+      "sentenceId": "exp500_sent_109_190dbea",
+      "questionId": "exp500_q_109_190dbea",
+      "trilingualId": "exp500_tri_109_190dbea",
+      "communicationId": "exp500_comm_022",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "bone",
+      "vocabId": "exp500_110_db90e18f",
+      "sentenceId": "exp500_sent_110_db90e18f",
+      "questionId": "exp500_q_110_db90e18f",
+      "trilingualId": "exp500_tri_110_db90e18f",
+      "communicationId": "exp500_comm_022",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "breed",
+      "vocabId": "exp500_111_d86f2671",
+      "sentenceId": "exp500_sent_111_d86f2671",
+      "questionId": "exp500_q_111_d86f2671",
+      "trilingualId": "exp500_tri_111_d86f2671",
+      "communicationId": "exp500_comm_023",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "cancel",
+      "vocabId": "exp500_112_66e9c1b",
+      "sentenceId": "exp500_sent_112_66e9c1b",
+      "questionId": "exp500_q_112_66e9c1b",
+      "trilingualId": "exp500_tri_112_66e9c1b",
+      "communicationId": "exp500_comm_023",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "charm",
+      "vocabId": "exp500_113_5fa96950",
+      "sentenceId": "exp500_sent_113_5fa96950",
+      "questionId": "exp500_q_113_5fa96950",
+      "trilingualId": "exp500_tri_113_5fa96950",
+      "communicationId": "exp500_comm_023",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "cherish",
+      "vocabId": "exp500_114_df918243",
+      "sentenceId": "exp500_sent_114_df918243",
+      "questionId": "exp500_q_114_df918243",
+      "trilingualId": "exp500_tri_114_df918243",
+      "communicationId": "exp500_comm_023",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "chop",
+      "vocabId": "exp500_115_92294e39",
+      "sentenceId": "exp500_sent_115_92294e39",
+      "questionId": "exp500_q_115_92294e39",
+      "trilingualId": "exp500_tri_115_92294e39",
+      "communicationId": "exp500_comm_023",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "cloth",
+      "vocabId": "exp500_116_cc8d20b",
+      "sentenceId": "exp500_sent_116_cc8d20b",
+      "questionId": "exp500_q_116_cc8d20b",
+      "trilingualId": "exp500_tri_116_cc8d20b",
+      "communicationId": "exp500_comm_024",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "coal",
+      "vocabId": "exp500_117_f439b3da",
+      "sentenceId": "exp500_sent_117_f439b3da",
+      "questionId": "exp500_q_117_f439b3da",
+      "trilingualId": "exp500_tri_117_f439b3da",
+      "communicationId": "exp500_comm_024",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "commemorate",
+      "vocabId": "exp500_118_27da62be",
+      "sentenceId": "exp500_sent_118_27da62be",
+      "questionId": "exp500_q_118_27da62be",
+      "trilingualId": "exp500_tri_118_27da62be",
+      "communicationId": "exp500_comm_024",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "compassion",
+      "vocabId": "exp500_119_eb40562b",
+      "sentenceId": "exp500_sent_119_eb40562b",
+      "questionId": "exp500_q_119_eb40562b",
+      "trilingualId": "exp500_tri_119_eb40562b",
+      "communicationId": "exp500_comm_024",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "compensate",
+      "vocabId": "exp500_120_c73bff0a",
+      "sentenceId": "exp500_sent_120_c73bff0a",
+      "questionId": "exp500_q_120_c73bff0a",
+      "trilingualId": "exp500_tri_120_c73bff0a",
+      "communicationId": "exp500_comm_024",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "composition",
+      "vocabId": "exp500_121_31cf52f9",
+      "sentenceId": "exp500_sent_121_31cf52f9",
+      "questionId": "exp500_q_121_31cf52f9",
+      "trilingualId": "exp500_tri_121_31cf52f9",
+      "communicationId": "exp500_comm_025",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "concentrated",
+      "vocabId": "exp500_122_7eb0871",
+      "sentenceId": "exp500_sent_122_7eb0871",
+      "questionId": "exp500_q_122_7eb0871",
+      "trilingualId": "exp500_tri_122_7eb0871",
+      "communicationId": "exp500_comm_025",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "concrete",
+      "vocabId": "exp500_123_722143be",
+      "sentenceId": "exp500_sent_123_722143be",
+      "questionId": "exp500_q_123_722143be",
+      "trilingualId": "exp500_tri_123_722143be",
+      "communicationId": "exp500_comm_025",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "conserve",
+      "vocabId": "exp500_124_434f05ea",
+      "sentenceId": "exp500_sent_124_434f05ea",
+      "questionId": "exp500_q_124_434f05ea",
+      "trilingualId": "exp500_tri_124_434f05ea",
+      "communicationId": "exp500_comm_025",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "constitute",
+      "vocabId": "exp500_125_53ade63f",
+      "sentenceId": "exp500_sent_125_53ade63f",
+      "questionId": "exp500_q_125_53ade63f",
+      "trilingualId": "exp500_tri_125_53ade63f",
+      "communicationId": "exp500_comm_025",
+      "grammarId": "exp500_grammar_05"
+    },
+    {
+      "word": "consultation",
+      "vocabId": "exp500_126_bc719604",
+      "sentenceId": "exp500_sent_126_bc719604",
+      "questionId": "exp500_q_126_bc719604",
+      "trilingualId": "exp500_tri_126_bc719604",
+      "communicationId": "exp500_comm_026",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "contempt",
+      "vocabId": "exp500_127_31819f3b",
+      "sentenceId": "exp500_sent_127_31819f3b",
+      "questionId": "exp500_q_127_31819f3b",
+      "trilingualId": "exp500_tri_127_31819f3b",
+      "communicationId": "exp500_comm_026",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "contradictory",
+      "vocabId": "exp500_128_59ca60c0",
+      "sentenceId": "exp500_sent_128_59ca60c0",
+      "questionId": "exp500_q_128_59ca60c0",
+      "trilingualId": "exp500_tri_128_59ca60c0",
+      "communicationId": "exp500_comm_026",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "courage",
+      "vocabId": "exp500_129_dae0e2f",
+      "sentenceId": "exp500_sent_129_dae0e2f",
+      "questionId": "exp500_q_129_dae0e2f",
+      "trilingualId": "exp500_tri_129_dae0e2f",
+      "communicationId": "exp500_comm_026",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "curtail",
+      "vocabId": "exp500_130_1727acb3",
+      "sentenceId": "exp500_sent_130_1727acb3",
+      "questionId": "exp500_q_130_1727acb3",
+      "trilingualId": "exp500_tri_130_1727acb3",
+      "communicationId": "exp500_comm_026",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "deficient",
+      "vocabId": "exp500_131_f4948f24",
+      "sentenceId": "exp500_sent_131_f4948f24",
+      "questionId": "exp500_q_131_f4948f24",
+      "trilingualId": "exp500_tri_131_f4948f24",
+      "communicationId": "exp500_comm_027",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "definite",
+      "vocabId": "exp500_132_18f1afe1",
+      "sentenceId": "exp500_sent_132_18f1afe1",
+      "questionId": "exp500_q_132_18f1afe1",
+      "trilingualId": "exp500_tri_132_18f1afe1",
+      "communicationId": "exp500_comm_027",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "delay",
+      "vocabId": "exp500_133_4ed1f1d8",
+      "sentenceId": "exp500_sent_133_4ed1f1d8",
+      "questionId": "exp500_q_133_4ed1f1d8",
+      "trilingualId": "exp500_tri_133_4ed1f1d8",
+      "communicationId": "exp500_comm_027",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "delusion",
+      "vocabId": "exp500_134_cd73e414",
+      "sentenceId": "exp500_sent_134_cd73e414",
+      "questionId": "exp500_q_134_cd73e414",
+      "trilingualId": "exp500_tri_134_cd73e414",
+      "communicationId": "exp500_comm_027",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "determination",
+      "vocabId": "exp500_135_2bccf42c",
+      "sentenceId": "exp500_sent_135_2bccf42c",
+      "questionId": "exp500_q_135_2bccf42c",
+      "trilingualId": "exp500_tri_135_2bccf42c",
+      "communicationId": "exp500_comm_027",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "dew",
+      "vocabId": "exp500_136_d659994f",
+      "sentenceId": "exp500_sent_136_d659994f",
+      "questionId": "exp500_q_136_d659994f",
+      "trilingualId": "exp500_tri_136_d659994f",
+      "communicationId": "exp500_comm_028",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "digest",
+      "vocabId": "exp500_137_f92455dd",
+      "sentenceId": "exp500_sent_137_f92455dd",
+      "questionId": "exp500_q_137_f92455dd",
+      "trilingualId": "exp500_tri_137_f92455dd",
+      "communicationId": "exp500_comm_028",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "distribute",
+      "vocabId": "exp500_138_8f4f6b7e",
+      "sentenceId": "exp500_sent_138_8f4f6b7e",
+      "questionId": "exp500_q_138_8f4f6b7e",
+      "trilingualId": "exp500_tri_138_8f4f6b7e",
+      "communicationId": "exp500_comm_028",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "divorce",
+      "vocabId": "exp500_139_7f668e05",
+      "sentenceId": "exp500_sent_139_7f668e05",
+      "questionId": "exp500_q_139_7f668e05",
+      "trilingualId": "exp500_tri_139_7f668e05",
+      "communicationId": "exp500_comm_028",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "dust",
+      "vocabId": "exp500_140_ca0b3ba5",
+      "sentenceId": "exp500_sent_140_ca0b3ba5",
+      "questionId": "exp500_q_140_ca0b3ba5",
+      "trilingualId": "exp500_tri_140_ca0b3ba5",
+      "communicationId": "exp500_comm_028",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "efficiency",
+      "vocabId": "exp500_141_3e944e58",
+      "sentenceId": "exp500_sent_141_3e944e58",
+      "questionId": "exp500_q_141_3e944e58",
+      "trilingualId": "exp500_tri_141_3e944e58",
+      "communicationId": "exp500_comm_029",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "elephant",
+      "vocabId": "exp500_142_e5f12404",
+      "sentenceId": "exp500_sent_142_e5f12404",
+      "questionId": "exp500_q_142_e5f12404",
+      "trilingualId": "exp500_tri_142_e5f12404",
+      "communicationId": "exp500_comm_029",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "extend",
+      "vocabId": "exp500_143_aa7d7949",
+      "sentenceId": "exp500_sent_143_aa7d7949",
+      "questionId": "exp500_q_143_aa7d7949",
+      "trilingualId": "exp500_tri_143_aa7d7949",
+      "communicationId": "exp500_comm_029",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "feign",
+      "vocabId": "exp500_144_e6e9cfaa",
+      "sentenceId": "exp500_sent_144_e6e9cfaa",
+      "questionId": "exp500_q_144_e6e9cfaa",
+      "trilingualId": "exp500_tri_144_e6e9cfaa",
+      "communicationId": "exp500_comm_029",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "fog",
+      "vocabId": "exp500_145_a1f3723f",
+      "sentenceId": "exp500_sent_145_a1f3723f",
+      "questionId": "exp500_q_145_a1f3723f",
+      "trilingualId": "exp500_tri_145_a1f3723f",
+      "communicationId": "exp500_comm_029",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "fortunate",
+      "vocabId": "exp500_146_e1b801ad",
+      "sentenceId": "exp500_sent_146_e1b801ad",
+      "questionId": "exp500_q_146_e1b801ad",
+      "trilingualId": "exp500_tri_146_e1b801ad",
+      "communicationId": "exp500_comm_030",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "frighten",
+      "vocabId": "exp500_147_d7c2a846",
+      "sentenceId": "exp500_sent_147_d7c2a846",
+      "questionId": "exp500_q_147_d7c2a846",
+      "trilingualId": "exp500_tri_147_d7c2a846",
+      "communicationId": "exp500_comm_030",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "fundamental",
+      "vocabId": "exp500_148_2c25780",
+      "sentenceId": "exp500_sent_148_2c25780",
+      "questionId": "exp500_q_148_2c25780",
+      "trilingualId": "exp500_tri_148_2c25780",
+      "communicationId": "exp500_comm_030",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "generous",
+      "vocabId": "exp500_149_c0c4104b",
+      "sentenceId": "exp500_sent_149_c0c4104b",
+      "questionId": "exp500_q_149_c0c4104b",
+      "trilingualId": "exp500_tri_149_c0c4104b",
+      "communicationId": "exp500_comm_030",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "goods",
+      "vocabId": "exp500_150_d06e3031",
+      "sentenceId": "exp500_sent_150_d06e3031",
+      "questionId": "exp500_q_150_d06e3031",
+      "trilingualId": "exp500_tri_150_d06e3031",
+      "communicationId": "exp500_comm_030",
+      "grammarId": "exp500_grammar_06"
+    },
+    {
+      "word": "grain",
+      "vocabId": "exp500_151_9560744c",
+      "sentenceId": "exp500_sent_151_9560744c",
+      "questionId": "exp500_q_151_9560744c",
+      "trilingualId": "exp500_tri_151_9560744c",
+      "communicationId": "exp500_comm_031",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "hasty",
+      "vocabId": "exp500_152_30f97f24",
+      "sentenceId": "exp500_sent_152_30f97f24",
+      "questionId": "exp500_q_152_30f97f24",
+      "trilingualId": "exp500_tri_152_30f97f24",
+      "communicationId": "exp500_comm_031",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "helpless",
+      "vocabId": "exp500_153_c93363",
+      "sentenceId": "exp500_sent_153_c93363",
+      "questionId": "exp500_q_153_c93363",
+      "trilingualId": "exp500_tri_153_c93363",
+      "communicationId": "exp500_comm_031",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "hinder",
+      "vocabId": "exp500_154_c6a6aa5f",
+      "sentenceId": "exp500_sent_154_c6a6aa5f",
+      "questionId": "exp500_q_154_c6a6aa5f",
+      "trilingualId": "exp500_tri_154_c6a6aa5f",
+      "communicationId": "exp500_comm_031",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "horizontal",
+      "vocabId": "exp500_155_55358a69",
+      "sentenceId": "exp500_sent_155_55358a69",
+      "questionId": "exp500_q_155_55358a69",
+      "trilingualId": "exp500_tri_155_55358a69",
+      "communicationId": "exp500_comm_031",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "how",
+      "vocabId": "exp500_156_1c3ac8d",
+      "sentenceId": "exp500_sent_156_1c3ac8d",
+      "questionId": "exp500_q_156_1c3ac8d",
+      "trilingualId": "exp500_tri_156_1c3ac8d",
+      "communicationId": "exp500_comm_032",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "humanity",
+      "vocabId": "exp500_157_d5021bfa",
+      "sentenceId": "exp500_sent_157_d5021bfa",
+      "questionId": "exp500_q_157_d5021bfa",
+      "trilingualId": "exp500_tri_157_d5021bfa",
+      "communicationId": "exp500_comm_032",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "idle",
+      "vocabId": "exp500_158_c301cf93",
+      "sentenceId": "exp500_sent_158_c301cf93",
+      "questionId": "exp500_q_158_c301cf93",
+      "trilingualId": "exp500_tri_158_c301cf93",
+      "communicationId": "exp500_comm_032",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "imitate",
+      "vocabId": "exp500_159_91c5f742",
+      "sentenceId": "exp500_sent_159_91c5f742",
+      "questionId": "exp500_q_159_91c5f742",
+      "trilingualId": "exp500_tri_159_91c5f742",
+      "communicationId": "exp500_comm_032",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "impatience",
+      "vocabId": "exp500_160_50a6b0e4",
+      "sentenceId": "exp500_sent_160_50a6b0e4",
+      "questionId": "exp500_q_160_50a6b0e4",
+      "trilingualId": "exp500_tri_160_50a6b0e4",
+      "communicationId": "exp500_comm_032",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "individuality",
+      "vocabId": "exp500_161_79e85c96",
+      "sentenceId": "exp500_sent_161_79e85c96",
+      "questionId": "exp500_q_161_79e85c96",
+      "trilingualId": "exp500_tri_161_79e85c96",
+      "communicationId": "exp500_comm_033",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "induce",
+      "vocabId": "exp500_162_c9873339",
+      "sentenceId": "exp500_sent_162_c9873339",
+      "questionId": "exp500_q_162_c9873339",
+      "trilingualId": "exp500_tri_162_c9873339",
+      "communicationId": "exp500_comm_033",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "inevitable",
+      "vocabId": "exp500_163_ce4ad5a8",
+      "sentenceId": "exp500_sent_163_ce4ad5a8",
+      "questionId": "exp500_q_163_ce4ad5a8",
+      "trilingualId": "exp500_tri_163_ce4ad5a8",
+      "communicationId": "exp500_comm_033",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "infect",
+      "vocabId": "exp500_164_5aab6998",
+      "sentenceId": "exp500_sent_164_5aab6998",
+      "questionId": "exp500_q_164_5aab6998",
+      "trilingualId": "exp500_tri_164_5aab6998",
+      "communicationId": "exp500_comm_033",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "inquire",
+      "vocabId": "exp500_165_f83aed12",
+      "sentenceId": "exp500_sent_165_f83aed12",
+      "questionId": "exp500_q_165_f83aed12",
+      "trilingualId": "exp500_tri_165_f83aed12",
+      "communicationId": "exp500_comm_033",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "intense",
+      "vocabId": "exp500_166_92996e5d",
+      "sentenceId": "exp500_sent_166_92996e5d",
+      "questionId": "exp500_q_166_92996e5d",
+      "trilingualId": "exp500_tri_166_92996e5d",
+      "communicationId": "exp500_comm_034",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "laughter",
+      "vocabId": "exp500_167_e49b9a09",
+      "sentenceId": "exp500_sent_167_e49b9a09",
+      "questionId": "exp500_q_167_e49b9a09",
+      "trilingualId": "exp500_tri_167_e49b9a09",
+      "communicationId": "exp500_comm_034",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "lawful",
+      "vocabId": "exp500_168_a0054e9e",
+      "sentenceId": "exp500_sent_168_a0054e9e",
+      "questionId": "exp500_q_168_a0054e9e",
+      "trilingualId": "exp500_tri_168_a0054e9e",
+      "communicationId": "exp500_comm_034",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "leak",
+      "vocabId": "exp500_169_2948d20e",
+      "sentenceId": "exp500_sent_169_2948d20e",
+      "questionId": "exp500_q_169_2948d20e",
+      "trilingualId": "exp500_tri_169_2948d20e",
+      "communicationId": "exp500_comm_034",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "leisure",
+      "vocabId": "exp500_170_86bc0274",
+      "sentenceId": "exp500_sent_170_86bc0274",
+      "questionId": "exp500_q_170_86bc0274",
+      "trilingualId": "exp500_tri_170_86bc0274",
+      "communicationId": "exp500_comm_034",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "lightning",
+      "vocabId": "exp500_171_e812f405",
+      "sentenceId": "exp500_sent_171_e812f405",
+      "questionId": "exp500_q_171_e812f405",
+      "trilingualId": "exp500_tri_171_e812f405",
+      "communicationId": "exp500_comm_035",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "liquid",
+      "vocabId": "exp500_172_5e4daa9d",
+      "sentenceId": "exp500_sent_172_5e4daa9d",
+      "questionId": "exp500_q_172_5e4daa9d",
+      "trilingualId": "exp500_tri_172_5e4daa9d",
+      "communicationId": "exp500_comm_035",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "loosen",
+      "vocabId": "exp500_173_7c6fbbbd",
+      "sentenceId": "exp500_sent_173_7c6fbbbd",
+      "questionId": "exp500_q_173_7c6fbbbd",
+      "trilingualId": "exp500_tri_173_7c6fbbbd",
+      "communicationId": "exp500_comm_035",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "luxurious",
+      "vocabId": "exp500_174_fcd50229",
+      "sentenceId": "exp500_sent_174_fcd50229",
+      "questionId": "exp500_q_174_fcd50229",
+      "trilingualId": "exp500_tri_174_fcd50229",
+      "communicationId": "exp500_comm_035",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "miracle",
+      "vocabId": "exp500_175_14a99ec4",
+      "sentenceId": "exp500_sent_175_14a99ec4",
+      "questionId": "exp500_q_175_14a99ec4",
+      "trilingualId": "exp500_tri_175_14a99ec4",
+      "communicationId": "exp500_comm_035",
+      "grammarId": "exp500_grammar_07"
+    },
+    {
+      "word": "modest",
+      "vocabId": "exp500_176_b2a6145",
+      "sentenceId": "exp500_sent_176_b2a6145",
+      "questionId": "exp500_q_176_b2a6145",
+      "trilingualId": "exp500_tri_176_b2a6145",
+      "communicationId": "exp500_comm_036",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "monotonous",
+      "vocabId": "exp500_177_d3fbc140",
+      "sentenceId": "exp500_sent_177_d3fbc140",
+      "questionId": "exp500_q_177_d3fbc140",
+      "trilingualId": "exp500_tri_177_d3fbc140",
+      "communicationId": "exp500_comm_036",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "muscle",
+      "vocabId": "exp500_178_17c0fbd2",
+      "sentenceId": "exp500_sent_178_17c0fbd2",
+      "questionId": "exp500_q_178_17c0fbd2",
+      "trilingualId": "exp500_tri_178_17c0fbd2",
+      "communicationId": "exp500_comm_036",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "naughty",
+      "vocabId": "exp500_179_abc2333f",
+      "sentenceId": "exp500_sent_179_abc2333f",
+      "questionId": "exp500_q_179_abc2333f",
+      "trilingualId": "exp500_tri_179_abc2333f",
+      "communicationId": "exp500_comm_036",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "neglect",
+      "vocabId": "exp500_180_2f017e61",
+      "sentenceId": "exp500_sent_180_2f017e61",
+      "questionId": "exp500_q_180_2f017e61",
+      "trilingualId": "exp500_tri_180_2f017e61",
+      "communicationId": "exp500_comm_036",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "nod",
+      "vocabId": "exp500_181_39b1b5ba",
+      "sentenceId": "exp500_sent_181_39b1b5ba",
+      "questionId": "exp500_q_181_39b1b5ba",
+      "trilingualId": "exp500_tri_181_39b1b5ba",
+      "communicationId": "exp500_comm_037",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "nonsense",
+      "vocabId": "exp500_182_bad720c2",
+      "sentenceId": "exp500_sent_182_bad720c2",
+      "questionId": "exp500_q_182_bad720c2",
+      "trilingualId": "exp500_tri_182_bad720c2",
+      "communicationId": "exp500_comm_037",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "objective",
+      "vocabId": "exp500_183_9c15ac38",
+      "sentenceId": "exp500_sent_183_9c15ac38",
+      "questionId": "exp500_q_183_9c15ac38",
+      "trilingualId": "exp500_tri_183_9c15ac38",
+      "communicationId": "exp500_comm_037",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "pat",
+      "vocabId": "exp500_184_695617da",
+      "sentenceId": "exp500_sent_184_695617da",
+      "questionId": "exp500_q_184_695617da",
+      "trilingualId": "exp500_tri_184_695617da",
+      "communicationId": "exp500_comm_037",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "peanut",
+      "vocabId": "exp500_185_8edd7090",
+      "sentenceId": "exp500_sent_185_8edd7090",
+      "questionId": "exp500_q_185_8edd7090",
+      "trilingualId": "exp500_tri_185_8edd7090",
+      "communicationId": "exp500_comm_037",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "pigeon",
+      "vocabId": "exp500_186_76fb2937",
+      "sentenceId": "exp500_sent_186_76fb2937",
+      "questionId": "exp500_q_186_76fb2937",
+      "trilingualId": "exp500_tri_186_76fb2937",
+      "communicationId": "exp500_comm_038",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "plaything",
+      "vocabId": "exp500_187_cfc8f051",
+      "sentenceId": "exp500_sent_187_cfc8f051",
+      "questionId": "exp500_q_187_cfc8f051",
+      "trilingualId": "exp500_tri_187_cfc8f051",
+      "communicationId": "exp500_comm_038",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "poem",
+      "vocabId": "exp500_188_94c3e656",
+      "sentenceId": "exp500_sent_188_94c3e656",
+      "questionId": "exp500_q_188_94c3e656",
+      "trilingualId": "exp500_tri_188_94c3e656",
+      "communicationId": "exp500_comm_038",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "possess",
+      "vocabId": "exp500_189_45f7934f",
+      "sentenceId": "exp500_sent_189_45f7934f",
+      "questionId": "exp500_q_189_45f7934f",
+      "trilingualId": "exp500_tri_189_45f7934f",
+      "communicationId": "exp500_comm_038",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "posture",
+      "vocabId": "exp500_190_f0f686cb",
+      "sentenceId": "exp500_sent_190_f0f686cb",
+      "questionId": "exp500_q_190_f0f686cb",
+      "trilingualId": "exp500_tri_190_f0f686cb",
+      "communicationId": "exp500_comm_038",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "practical",
+      "vocabId": "exp500_191_b3e06f70",
+      "sentenceId": "exp500_sent_191_b3e06f70",
+      "questionId": "exp500_q_191_b3e06f70",
+      "trilingualId": "exp500_tri_191_b3e06f70",
+      "communicationId": "exp500_comm_039",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "preferential",
+      "vocabId": "exp500_192_b52cdb5a",
+      "sentenceId": "exp500_sent_192_b52cdb5a",
+      "questionId": "exp500_q_192_b52cdb5a",
+      "trilingualId": "exp500_tri_192_b52cdb5a",
+      "communicationId": "exp500_comm_039",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "profound",
+      "vocabId": "exp500_193_fd325c2c",
+      "sentenceId": "exp500_sent_193_fd325c2c",
+      "questionId": "exp500_q_193_fd325c2c",
+      "trilingualId": "exp500_tri_193_fd325c2c",
+      "communicationId": "exp500_comm_039",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "prolong",
+      "vocabId": "exp500_194_805b0ba6",
+      "sentenceId": "exp500_sent_194_805b0ba6",
+      "questionId": "exp500_q_194_805b0ba6",
+      "trilingualId": "exp500_tri_194_805b0ba6",
+      "communicationId": "exp500_comm_039",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "proportion",
+      "vocabId": "exp500_195_afdffa57",
+      "sentenceId": "exp500_sent_195_afdffa57",
+      "questionId": "exp500_q_195_afdffa57",
+      "trilingualId": "exp500_tri_195_afdffa57",
+      "communicationId": "exp500_comm_039",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "prosperous",
+      "vocabId": "exp500_196_c496ada1",
+      "sentenceId": "exp500_sent_196_c496ada1",
+      "questionId": "exp500_q_196_c496ada1",
+      "trilingualId": "exp500_tri_196_c496ada1",
+      "communicationId": "exp500_comm_040",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "protest",
+      "vocabId": "exp500_197_4899de1c",
+      "sentenceId": "exp500_sent_197_4899de1c",
+      "questionId": "exp500_q_197_4899de1c",
+      "trilingualId": "exp500_tri_197_4899de1c",
+      "communicationId": "exp500_comm_040",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "provoke",
+      "vocabId": "exp500_198_cb29a2bb",
+      "sentenceId": "exp500_sent_198_cb29a2bb",
+      "questionId": "exp500_q_198_cb29a2bb",
+      "trilingualId": "exp500_tri_198_cb29a2bb",
+      "communicationId": "exp500_comm_040",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "purple",
+      "vocabId": "exp500_199_9a6e02ff",
+      "sentenceId": "exp500_sent_199_9a6e02ff",
+      "questionId": "exp500_q_199_9a6e02ff",
+      "trilingualId": "exp500_tri_199_9a6e02ff",
+      "communicationId": "exp500_comm_040",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "rapid",
+      "vocabId": "exp500_200_90731809",
+      "sentenceId": "exp500_sent_200_90731809",
+      "questionId": "exp500_q_200_90731809",
+      "trilingualId": "exp500_tri_200_90731809",
+      "communicationId": "exp500_comm_040",
+      "grammarId": "exp500_grammar_08"
+    },
+    {
+      "word": "rational",
+      "vocabId": "exp500_201_27dbf953",
+      "sentenceId": "exp500_sent_201_27dbf953",
+      "questionId": "exp500_q_201_27dbf953",
+      "trilingualId": "exp500_tri_201_27dbf953",
+      "communicationId": "exp500_comm_041",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "rearing",
+      "vocabId": "exp500_202_d720f6d5",
+      "sentenceId": "exp500_sent_202_d720f6d5",
+      "questionId": "exp500_q_202_d720f6d5",
+      "trilingualId": "exp500_tri_202_d720f6d5",
+      "communicationId": "exp500_comm_041",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "recruit",
+      "vocabId": "exp500_203_ee4d7421",
+      "sentenceId": "exp500_sent_203_ee4d7421",
+      "questionId": "exp500_q_203_ee4d7421",
+      "trilingualId": "exp500_tri_203_ee4d7421",
+      "communicationId": "exp500_comm_041",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "regarding",
+      "vocabId": "exp500_204_d4a9fc36",
+      "sentenceId": "exp500_sent_204_d4a9fc36",
+      "questionId": "exp500_q_204_d4a9fc36",
+      "trilingualId": "exp500_tri_204_d4a9fc36",
+      "communicationId": "exp500_comm_041",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "reliable",
+      "vocabId": "exp500_205_59ea95e3",
+      "sentenceId": "exp500_sent_205_59ea95e3",
+      "questionId": "exp500_q_205_59ea95e3",
+      "trilingualId": "exp500_tri_205_59ea95e3",
+      "communicationId": "exp500_comm_041",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "replenish",
+      "vocabId": "exp500_206_18a1d8c9",
+      "sentenceId": "exp500_sent_206_18a1d8c9",
+      "questionId": "exp500_q_206_18a1d8c9",
+      "trilingualId": "exp500_tri_206_18a1d8c9",
+      "communicationId": "exp500_comm_042",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "resign",
+      "vocabId": "exp500_207_c89cff21",
+      "sentenceId": "exp500_sent_207_c89cff21",
+      "questionId": "exp500_q_207_c89cff21",
+      "trilingualId": "exp500_tri_207_c89cff21",
+      "communicationId": "exp500_comm_042",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "resist",
+      "vocabId": "exp500_208_be6b5297",
+      "sentenceId": "exp500_sent_208_be6b5297",
+      "questionId": "exp500_q_208_be6b5297",
+      "trilingualId": "exp500_tri_208_be6b5297",
+      "communicationId": "exp500_comm_042",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "retain",
+      "vocabId": "exp500_209_88bcc57c",
+      "sentenceId": "exp500_sent_209_88bcc57c",
+      "questionId": "exp500_q_209_88bcc57c",
+      "trilingualId": "exp500_tri_209_88bcc57c",
+      "communicationId": "exp500_comm_042",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "retire",
+      "vocabId": "exp500_210_1ce900f6",
+      "sentenceId": "exp500_sent_210_1ce900f6",
+      "questionId": "exp500_q_210_1ce900f6",
+      "trilingualId": "exp500_tri_210_1ce900f6",
+      "communicationId": "exp500_comm_042",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "retreat",
+      "vocabId": "exp500_211_499ee510",
+      "sentenceId": "exp500_sent_211_499ee510",
+      "questionId": "exp500_q_211_499ee510",
+      "trilingualId": "exp500_tri_211_499ee510",
+      "communicationId": "exp500_comm_043",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "rubber",
+      "vocabId": "exp500_212_32ffac7b",
+      "sentenceId": "exp500_sent_212_32ffac7b",
+      "questionId": "exp500_q_212_32ffac7b",
+      "trilingualId": "exp500_tri_212_32ffac7b",
+      "communicationId": "exp500_comm_043",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "rugged",
+      "vocabId": "exp500_213_b5df6287",
+      "sentenceId": "exp500_sent_213_b5df6287",
+      "questionId": "exp500_q_213_b5df6287",
+      "trilingualId": "exp500_tri_213_b5df6287",
+      "communicationId": "exp500_comm_043",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "shake",
+      "vocabId": "exp500_214_bd8bb2f5",
+      "sentenceId": "exp500_sent_214_bd8bb2f5",
+      "questionId": "exp500_q_214_bd8bb2f5",
+      "trilingualId": "exp500_tri_214_bd8bb2f5",
+      "communicationId": "exp500_comm_043",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "shallow",
+      "vocabId": "exp500_215_4c778643",
+      "sentenceId": "exp500_sent_215_4c778643",
+      "questionId": "exp500_q_215_4c778643",
+      "trilingualId": "exp500_tri_215_4c778643",
+      "communicationId": "exp500_comm_043",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "shortage",
+      "vocabId": "exp500_216_b1ca0fcc",
+      "sentenceId": "exp500_sent_216_b1ca0fcc",
+      "questionId": "exp500_q_216_b1ca0fcc",
+      "trilingualId": "exp500_tri_216_b1ca0fcc",
+      "communicationId": "exp500_comm_044",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "slim",
+      "vocabId": "exp500_217_738f3bfc",
+      "sentenceId": "exp500_sent_217_738f3bfc",
+      "questionId": "exp500_q_217_738f3bfc",
+      "trilingualId": "exp500_tri_217_738f3bfc",
+      "communicationId": "exp500_comm_044",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "soldier",
+      "vocabId": "exp500_218_9ccd1fb5",
+      "sentenceId": "exp500_sent_218_9ccd1fb5",
+      "questionId": "exp500_q_218_9ccd1fb5",
+      "trilingualId": "exp500_tri_218_9ccd1fb5",
+      "communicationId": "exp500_comm_044",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "solemn",
+      "vocabId": "exp500_219_f1ff0b67",
+      "sentenceId": "exp500_sent_219_f1ff0b67",
+      "questionId": "exp500_q_219_f1ff0b67",
+      "trilingualId": "exp500_tri_219_f1ff0b67",
+      "communicationId": "exp500_comm_044",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "solicit",
+      "vocabId": "exp500_220_7a2ff884",
+      "sentenceId": "exp500_sent_220_7a2ff884",
+      "questionId": "exp500_q_220_7a2ff884",
+      "trilingualId": "exp500_tri_220_7a2ff884",
+      "communicationId": "exp500_comm_044",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "sprinkle",
+      "vocabId": "exp500_221_a027ed9b",
+      "sentenceId": "exp500_sent_221_a027ed9b",
+      "questionId": "exp500_q_221_a027ed9b",
+      "trilingualId": "exp500_tri_221_a027ed9b",
+      "communicationId": "exp500_comm_045",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "stature",
+      "vocabId": "exp500_222_eacb1bbb",
+      "sentenceId": "exp500_sent_222_eacb1bbb",
+      "questionId": "exp500_q_222_eacb1bbb",
+      "trilingualId": "exp500_tri_222_eacb1bbb",
+      "communicationId": "exp500_comm_045",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "steady",
+      "vocabId": "exp500_223_a0cbfc13",
+      "sentenceId": "exp500_sent_223_a0cbfc13",
+      "questionId": "exp500_q_223_a0cbfc13",
+      "trilingualId": "exp500_tri_223_a0cbfc13",
+      "communicationId": "exp500_comm_045",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "stretch",
+      "vocabId": "exp500_224_d32ade2a",
+      "sentenceId": "exp500_sent_224_d32ade2a",
+      "questionId": "exp500_q_224_d32ade2a",
+      "trilingualId": "exp500_tri_224_d32ade2a",
+      "communicationId": "exp500_comm_045",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "strive",
+      "vocabId": "exp500_225_29ac66d6",
+      "sentenceId": "exp500_sent_225_29ac66d6",
+      "questionId": "exp500_q_225_29ac66d6",
+      "trilingualId": "exp500_tri_225_29ac66d6",
+      "communicationId": "exp500_comm_045",
+      "grammarId": "exp500_grammar_09"
+    },
+    {
+      "word": "superiority",
+      "vocabId": "exp500_226_a5c8051e",
+      "sentenceId": "exp500_sent_226_a5c8051e",
+      "questionId": "exp500_q_226_a5c8051e",
+      "trilingualId": "exp500_tri_226_a5c8051e",
+      "communicationId": "exp500_comm_046",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tail",
+      "vocabId": "exp500_227_f39a863",
+      "sentenceId": "exp500_sent_227_f39a863",
+      "questionId": "exp500_q_227_f39a863",
+      "trilingualId": "exp500_tri_227_f39a863",
+      "communicationId": "exp500_comm_046",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tender",
+      "vocabId": "exp500_228_ed6aade7",
+      "sentenceId": "exp500_sent_228_ed6aade7",
+      "questionId": "exp500_q_228_ed6aade7",
+      "trilingualId": "exp500_tri_228_ed6aade7",
+      "communicationId": "exp500_comm_046",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "thorough",
+      "vocabId": "exp500_229_66726af7",
+      "sentenceId": "exp500_sent_229_66726af7",
+      "questionId": "exp500_q_229_66726af7",
+      "trilingualId": "exp500_tri_229_66726af7",
+      "communicationId": "exp500_comm_046",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "thoroughfare",
+      "vocabId": "exp500_230_2d12d17b",
+      "sentenceId": "exp500_sent_230_2d12d17b",
+      "questionId": "exp500_q_230_2d12d17b",
+      "trilingualId": "exp500_tri_230_2d12d17b",
+      "communicationId": "exp500_comm_046",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "thoughtful",
+      "vocabId": "exp500_231_557c7c45",
+      "sentenceId": "exp500_sent_231_557c7c45",
+      "questionId": "exp500_q_231_557c7c45",
+      "trilingualId": "exp500_tri_231_557c7c45",
+      "communicationId": "exp500_comm_047",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "throat",
+      "vocabId": "exp500_232_22752b57",
+      "sentenceId": "exp500_sent_232_22752b57",
+      "questionId": "exp500_q_232_22752b57",
+      "trilingualId": "exp500_tri_232_22752b57",
+      "communicationId": "exp500_comm_047",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "thunder",
+      "vocabId": "exp500_233_931e8091",
+      "sentenceId": "exp500_sent_233_931e8091",
+      "questionId": "exp500_q_233_931e8091",
+      "trilingualId": "exp500_tri_233_931e8091",
+      "communicationId": "exp500_comm_047",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tin",
+      "vocabId": "exp500_234_bd0aeeb0",
+      "sentenceId": "exp500_sent_234_bd0aeeb0",
+      "questionId": "exp500_q_234_bd0aeeb0",
+      "trilingualId": "exp500_tri_234_bd0aeeb0",
+      "communicationId": "exp500_comm_047",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "ton",
+      "vocabId": "exp500_235_9d10cc7e",
+      "sentenceId": "exp500_sent_235_9d10cc7e",
+      "questionId": "exp500_q_235_9d10cc7e",
+      "trilingualId": "exp500_tri_235_9d10cc7e",
+      "communicationId": "exp500_comm_047",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tone",
+      "vocabId": "exp500_236_5c714e81",
+      "sentenceId": "exp500_sent_236_5c714e81",
+      "questionId": "exp500_q_236_5c714e81",
+      "trilingualId": "exp500_tri_236_5c714e81",
+      "communicationId": "exp500_comm_048",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tongue",
+      "vocabId": "exp500_237_25a7329d",
+      "sentenceId": "exp500_sent_237_25a7329d",
+      "questionId": "exp500_q_237_25a7329d",
+      "trilingualId": "exp500_tri_237_25a7329d",
+      "communicationId": "exp500_comm_048",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tranquil",
+      "vocabId": "exp500_238_29afd65f",
+      "sentenceId": "exp500_sent_238_29afd65f",
+      "questionId": "exp500_q_238_29afd65f",
+      "trilingualId": "exp500_tri_238_29afd65f",
+      "communicationId": "exp500_comm_048",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "transmit",
+      "vocabId": "exp500_239_94e70a9",
+      "sentenceId": "exp500_sent_239_94e70a9",
+      "questionId": "exp500_q_239_94e70a9",
+      "trilingualId": "exp500_tri_239_94e70a9",
+      "communicationId": "exp500_comm_048",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "transparent",
+      "vocabId": "exp500_240_afe34731",
+      "sentenceId": "exp500_sent_240_afe34731",
+      "questionId": "exp500_q_240_afe34731",
+      "trilingualId": "exp500_tri_240_afe34731",
+      "communicationId": "exp500_comm_048",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "treasure",
+      "vocabId": "exp500_241_cd7c1b24",
+      "sentenceId": "exp500_sent_241_cd7c1b24",
+      "questionId": "exp500_q_241_cd7c1b24",
+      "trilingualId": "exp500_tri_241_cd7c1b24",
+      "communicationId": "exp500_comm_049",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tremble",
+      "vocabId": "exp500_242_ff932472",
+      "sentenceId": "exp500_sent_242_ff932472",
+      "questionId": "exp500_q_242_ff932472",
+      "trilingualId": "exp500_tri_242_ff932472",
+      "communicationId": "exp500_comm_049",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "tube",
+      "vocabId": "exp500_243_6824827f",
+      "sentenceId": "exp500_sent_243_6824827f",
+      "questionId": "exp500_q_243_6824827f",
+      "trilingualId": "exp500_tri_243_6824827f",
+      "communicationId": "exp500_comm_049",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "undertake",
+      "vocabId": "exp500_244_9b15b20e",
+      "sentenceId": "exp500_sent_244_9b15b20e",
+      "questionId": "exp500_q_244_9b15b20e",
+      "trilingualId": "exp500_tri_244_9b15b20e",
+      "communicationId": "exp500_comm_049",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "unexpected",
+      "vocabId": "exp500_245_ea2367ce",
+      "sentenceId": "exp500_sent_245_ea2367ce",
+      "questionId": "exp500_q_245_ea2367ce",
+      "trilingualId": "exp500_tri_245_ea2367ce",
+      "communicationId": "exp500_comm_049",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "unfold",
+      "vocabId": "exp500_246_49f38209",
+      "sentenceId": "exp500_sent_246_49f38209",
+      "questionId": "exp500_q_246_49f38209",
+      "trilingualId": "exp500_tri_246_49f38209",
+      "communicationId": "exp500_comm_050",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "unilateral",
+      "vocabId": "exp500_247_3fc73fc8",
+      "sentenceId": "exp500_sent_247_3fc73fc8",
+      "questionId": "exp500_q_247_3fc73fc8",
+      "trilingualId": "exp500_tri_247_3fc73fc8",
+      "communicationId": "exp500_comm_050",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "urge",
+      "vocabId": "exp500_248_27df322",
+      "sentenceId": "exp500_sent_248_27df322",
+      "questionId": "exp500_q_248_27df322",
+      "trilingualId": "exp500_tri_248_27df322",
+      "communicationId": "exp500_comm_050",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "urgent",
+      "vocabId": "exp500_249_66334770",
+      "sentenceId": "exp500_sent_249_66334770",
+      "questionId": "exp500_q_249_66334770",
+      "trilingualId": "exp500_tri_249_66334770",
+      "communicationId": "exp500_comm_050",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "vague",
+      "vocabId": "exp500_250_ed317db7",
+      "sentenceId": "exp500_sent_250_ed317db7",
+      "questionId": "exp500_q_250_ed317db7",
+      "trilingualId": "exp500_tri_250_ed317db7",
+      "communicationId": "exp500_comm_050",
+      "grammarId": "exp500_grammar_10"
+    },
+    {
+      "word": "vibration",
+      "vocabId": "exp500_251_2ec95a29",
+      "sentenceId": "exp500_sent_251_2ec95a29",
+      "questionId": "exp500_q_251_2ec95a29",
+      "trilingualId": "exp500_tri_251_2ec95a29",
+      "communicationId": "exp500_comm_051",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "vile",
+      "vocabId": "exp500_252_b9b60893",
+      "sentenceId": "exp500_sent_252_b9b60893",
+      "questionId": "exp500_q_252_b9b60893",
+      "trilingualId": "exp500_tri_252_b9b60893",
+      "communicationId": "exp500_comm_051",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "vinegar",
+      "vocabId": "exp500_253_6b8ef7d",
+      "sentenceId": "exp500_sent_253_6b8ef7d",
+      "questionId": "exp500_q_253_6b8ef7d",
+      "trilingualId": "exp500_tri_253_6b8ef7d",
+      "communicationId": "exp500_comm_051",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "virtue",
+      "vocabId": "exp500_254_ce58b204",
+      "sentenceId": "exp500_sent_254_ce58b204",
+      "questionId": "exp500_q_254_ce58b204",
+      "trilingualId": "exp500_tri_254_ce58b204",
+      "communicationId": "exp500_comm_051",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "virus",
+      "vocabId": "exp500_255_d76f265e",
+      "sentenceId": "exp500_sent_255_d76f265e",
+      "questionId": "exp500_q_255_d76f265e",
+      "trilingualId": "exp500_tri_255_d76f265e",
+      "communicationId": "exp500_comm_051",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "vivid",
+      "vocabId": "exp500_256_8eee0f2f",
+      "sentenceId": "exp500_sent_256_8eee0f2f",
+      "questionId": "exp500_q_256_8eee0f2f",
+      "trilingualId": "exp500_tri_256_8eee0f2f",
+      "communicationId": "exp500_comm_052",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "voluntary",
+      "vocabId": "exp500_257_713147fb",
+      "sentenceId": "exp500_sent_257_713147fb",
+      "questionId": "exp500_q_257_713147fb",
+      "trilingualId": "exp500_tri_257_713147fb",
+      "communicationId": "exp500_comm_052",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "vomit",
+      "vocabId": "exp500_258_4f5b7fe8",
+      "sentenceId": "exp500_sent_258_4f5b7fe8",
+      "questionId": "exp500_q_258_4f5b7fe8",
+      "trilingualId": "exp500_tri_258_4f5b7fe8",
+      "communicationId": "exp500_comm_052",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "waist",
+      "vocabId": "exp500_259_c9f43e03",
+      "sentenceId": "exp500_sent_259_c9f43e03",
+      "questionId": "exp500_q_259_c9f43e03",
+      "trilingualId": "exp500_tri_259_c9f43e03",
+      "communicationId": "exp500_comm_052",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "wolf",
+      "vocabId": "exp500_260_78bb9249",
+      "sentenceId": "exp500_sent_260_78bb9249",
+      "questionId": "exp500_q_260_78bb9249",
+      "trilingualId": "exp500_tri_260_78bb9249",
+      "communicationId": "exp500_comm_052",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "yell",
+      "vocabId": "exp500_261_c29e2d43",
+      "sentenceId": "exp500_sent_261_c29e2d43",
+      "questionId": "exp500_q_261_c29e2d43",
+      "trilingualId": "exp500_tri_261_c29e2d43",
+      "communicationId": "exp500_comm_053",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "abolish",
+      "vocabId": "exp500_262_a875a273",
+      "sentenceId": "exp500_sent_262_a875a273",
+      "questionId": "exp500_q_262_a875a273",
+      "trilingualId": "exp500_tri_262_a875a273",
+      "communicationId": "exp500_comm_053",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "abundant",
+      "vocabId": "exp500_263_96c9d9e0",
+      "sentenceId": "exp500_sent_263_96c9d9e0",
+      "questionId": "exp500_q_263_96c9d9e0",
+      "trilingualId": "exp500_tri_263_96c9d9e0",
+      "communicationId": "exp500_comm_053",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "accord",
+      "vocabId": "exp500_264_b858da39",
+      "sentenceId": "exp500_sent_264_b858da39",
+      "questionId": "exp500_q_264_b858da39",
+      "trilingualId": "exp500_tri_264_b858da39",
+      "communicationId": "exp500_comm_053",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "accuracy",
+      "vocabId": "exp500_265_709aafa4",
+      "sentenceId": "exp500_sent_265_709aafa4",
+      "questionId": "exp500_q_265_709aafa4",
+      "trilingualId": "exp500_tri_265_709aafa4",
+      "communicationId": "exp500_comm_053",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "acrobatics",
+      "vocabId": "exp500_266_a14c78be",
+      "sentenceId": "exp500_sent_266_a14c78be",
+      "questionId": "exp500_q_266_a14c78be",
+      "trilingualId": "exp500_tri_266_a14c78be",
+      "communicationId": "exp500_comm_054",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "add",
+      "vocabId": "exp500_267_3b391274",
+      "sentenceId": "exp500_sent_267_3b391274",
+      "questionId": "exp500_q_267_3b391274",
+      "trilingualId": "exp500_tri_267_3b391274",
+      "communicationId": "exp500_comm_054",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "adjourn",
+      "vocabId": "exp500_268_31074b92",
+      "sentenceId": "exp500_sent_268_31074b92",
+      "questionId": "exp500_q_268_31074b92",
+      "trilingualId": "exp500_tri_268_31074b92",
+      "communicationId": "exp500_comm_054",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "administer",
+      "vocabId": "exp500_269_6622d7cf",
+      "sentenceId": "exp500_sent_269_6622d7cf",
+      "questionId": "exp500_q_269_6622d7cf",
+      "trilingualId": "exp500_tri_269_6622d7cf",
+      "communicationId": "exp500_comm_054",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "administrative",
+      "vocabId": "exp500_270_78a4e95f",
+      "sentenceId": "exp500_sent_270_78a4e95f",
+      "questionId": "exp500_q_270_78a4e95f",
+      "trilingualId": "exp500_tri_270_78a4e95f",
+      "communicationId": "exp500_comm_054",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "aloof",
+      "vocabId": "exp500_271_39a2f90",
+      "sentenceId": "exp500_sent_271_39a2f90",
+      "questionId": "exp500_q_271_39a2f90",
+      "trilingualId": "exp500_tri_271_39a2f90",
+      "communicationId": "exp500_comm_055",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "ambush",
+      "vocabId": "exp500_272_8767ea31",
+      "sentenceId": "exp500_sent_272_8767ea31",
+      "questionId": "exp500_q_272_8767ea31",
+      "trilingualId": "exp500_tri_272_8767ea31",
+      "communicationId": "exp500_comm_055",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "analogy",
+      "vocabId": "exp500_273_abe9dbb8",
+      "sentenceId": "exp500_sent_273_abe9dbb8",
+      "questionId": "exp500_q_273_abe9dbb8",
+      "trilingualId": "exp500_tri_273_abe9dbb8",
+      "communicationId": "exp500_comm_055",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "anchor",
+      "vocabId": "exp500_274_42edcab4",
+      "sentenceId": "exp500_sent_274_42edcab4",
+      "questionId": "exp500_q_274_42edcab4",
+      "trilingualId": "exp500_tri_274_42edcab4",
+      "communicationId": "exp500_comm_055",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "anniversary",
+      "vocabId": "exp500_275_501be1a9",
+      "sentenceId": "exp500_sent_275_501be1a9",
+      "questionId": "exp500_q_275_501be1a9",
+      "trilingualId": "exp500_tri_275_501be1a9",
+      "communicationId": "exp500_comm_055",
+      "grammarId": "exp500_grammar_11"
+    },
+    {
+      "word": "appetite",
+      "vocabId": "exp500_276_20827897",
+      "sentenceId": "exp500_sent_276_20827897",
+      "questionId": "exp500_q_276_20827897",
+      "trilingualId": "exp500_tri_276_20827897",
+      "communicationId": "exp500_comm_056",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "appoint",
+      "vocabId": "exp500_277_67b5ff8a",
+      "sentenceId": "exp500_sent_277_67b5ff8a",
+      "questionId": "exp500_q_277_67b5ff8a",
+      "trilingualId": "exp500_tri_277_67b5ff8a",
+      "communicationId": "exp500_comm_056",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "apprentice",
+      "vocabId": "exp500_278_5adeedfa",
+      "sentenceId": "exp500_sent_278_5adeedfa",
+      "questionId": "exp500_q_278_5adeedfa",
+      "trilingualId": "exp500_tri_278_5adeedfa",
+      "communicationId": "exp500_comm_056",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "arbitrary",
+      "vocabId": "exp500_279_dfb502e9",
+      "sentenceId": "exp500_sent_279_dfb502e9",
+      "questionId": "exp500_q_279_dfb502e9",
+      "trilingualId": "exp500_tri_279_dfb502e9",
+      "communicationId": "exp500_comm_056",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "arouse",
+      "vocabId": "exp500_280_c4197c86",
+      "sentenceId": "exp500_sent_280_c4197c86",
+      "questionId": "exp500_q_280_c4197c86",
+      "trilingualId": "exp500_tri_280_c4197c86",
+      "communicationId": "exp500_comm_056",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "association",
+      "vocabId": "exp500_281_6924fe9c",
+      "sentenceId": "exp500_sent_281_6924fe9c",
+      "questionId": "exp500_q_281_6924fe9c",
+      "trilingualId": "exp500_tri_281_6924fe9c",
+      "communicationId": "exp500_comm_057",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "astronomy",
+      "vocabId": "exp500_282_5f9854f1",
+      "sentenceId": "exp500_sent_282_5f9854f1",
+      "questionId": "exp500_q_282_5f9854f1",
+      "trilingualId": "exp500_tri_282_5f9854f1",
+      "communicationId": "exp500_comm_057",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "awaken",
+      "vocabId": "exp500_283_4082f436",
+      "sentenceId": "exp500_sent_283_4082f436",
+      "questionId": "exp500_q_283_4082f436",
+      "trilingualId": "exp500_tri_283_4082f436",
+      "communicationId": "exp500_comm_057",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "awkward",
+      "vocabId": "exp500_284_d3e5ce20",
+      "sentenceId": "exp500_sent_284_d3e5ce20",
+      "questionId": "exp500_q_284_d3e5ce20",
+      "trilingualId": "exp500_tri_284_d3e5ce20",
+      "communicationId": "exp500_comm_057",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "bald",
+      "vocabId": "exp500_285_2c8f06cc",
+      "sentenceId": "exp500_sent_285_2c8f06cc",
+      "questionId": "exp500_q_285_2c8f06cc",
+      "trilingualId": "exp500_tri_285_2c8f06cc",
+      "communicationId": "exp500_comm_057",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "beaten",
+      "vocabId": "exp500_286_87d2dd8a",
+      "sentenceId": "exp500_sent_286_87d2dd8a",
+      "questionId": "exp500_q_286_87d2dd8a",
+      "trilingualId": "exp500_tri_286_87d2dd8a",
+      "communicationId": "exp500_comm_058",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "beggar",
+      "vocabId": "exp500_287_c66a1e55",
+      "sentenceId": "exp500_sent_287_c66a1e55",
+      "questionId": "exp500_q_287_c66a1e55",
+      "trilingualId": "exp500_tri_287_c66a1e55",
+      "communicationId": "exp500_comm_058",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "bias",
+      "vocabId": "exp500_288_ba467ec4",
+      "sentenceId": "exp500_sent_288_ba467ec4",
+      "questionId": "exp500_q_288_ba467ec4",
+      "trilingualId": "exp500_tri_288_ba467ec4",
+      "communicationId": "exp500_comm_058",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "bind",
+      "vocabId": "exp500_289_c7535f2e",
+      "sentenceId": "exp500_sent_289_c7535f2e",
+      "questionId": "exp500_q_289_c7535f2e",
+      "trilingualId": "exp500_tri_289_c7535f2e",
+      "communicationId": "exp500_comm_058",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "blankly",
+      "vocabId": "exp500_290_115d6a",
+      "sentenceId": "exp500_sent_290_115d6a",
+      "questionId": "exp500_q_290_115d6a",
+      "trilingualId": "exp500_tri_290_115d6a",
+      "communicationId": "exp500_comm_058",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "blaze",
+      "vocabId": "exp500_291_5850e60b",
+      "sentenceId": "exp500_sent_291_5850e60b",
+      "questionId": "exp500_q_291_5850e60b",
+      "trilingualId": "exp500_tri_291_5850e60b",
+      "communicationId": "exp500_comm_059",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "blink",
+      "vocabId": "exp500_292_7617589",
+      "sentenceId": "exp500_sent_292_7617589",
+      "questionId": "exp500_q_292_7617589",
+      "trilingualId": "exp500_tri_292_7617589",
+      "communicationId": "exp500_comm_059",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "blockade",
+      "vocabId": "exp500_293_42ef10a6",
+      "sentenceId": "exp500_sent_293_42ef10a6",
+      "questionId": "exp500_q_293_42ef10a6",
+      "trilingualId": "exp500_tri_293_42ef10a6",
+      "communicationId": "exp500_comm_059",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "blooming",
+      "vocabId": "exp500_294_636f0d9c",
+      "sentenceId": "exp500_sent_294_636f0d9c",
+      "questionId": "exp500_q_294_636f0d9c",
+      "trilingualId": "exp500_tri_294_636f0d9c",
+      "communicationId": "exp500_comm_059",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "boiling",
+      "vocabId": "exp500_295_e86bf63d",
+      "sentenceId": "exp500_sent_295_e86bf63d",
+      "questionId": "exp500_q_295_e86bf63d",
+      "trilingualId": "exp500_tri_295_e86bf63d",
+      "communicationId": "exp500_comm_059",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "bold",
+      "vocabId": "exp500_296_de96f676",
+      "sentenceId": "exp500_sent_296_de96f676",
+      "questionId": "exp500_q_296_de96f676",
+      "trilingualId": "exp500_tri_296_de96f676",
+      "communicationId": "exp500_comm_060",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "bond",
+      "vocabId": "exp500_297_da90dffc",
+      "sentenceId": "exp500_sent_297_da90dffc",
+      "questionId": "exp500_q_297_da90dffc",
+      "trilingualId": "exp500_tri_297_da90dffc",
+      "communicationId": "exp500_comm_060",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "boundless",
+      "vocabId": "exp500_298_1c70006e",
+      "sentenceId": "exp500_sent_298_1c70006e",
+      "questionId": "exp500_q_298_1c70006e",
+      "trilingualId": "exp500_tri_298_1c70006e",
+      "communicationId": "exp500_comm_060",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "bow",
+      "vocabId": "exp500_299_73c682eb",
+      "sentenceId": "exp500_sent_299_73c682eb",
+      "questionId": "exp500_q_299_73c682eb",
+      "trilingualId": "exp500_tri_299_73c682eb",
+      "communicationId": "exp500_comm_060",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "bribe",
+      "vocabId": "exp500_300_e2d6c725",
+      "sentenceId": "exp500_sent_300_e2d6c725",
+      "questionId": "exp500_q_300_e2d6c725",
+      "trilingualId": "exp500_tri_300_e2d6c725",
+      "communicationId": "exp500_comm_060",
+      "grammarId": "exp500_grammar_12"
+    },
+    {
+      "word": "brown",
+      "vocabId": "exp500_301_30be372f",
+      "sentenceId": "exp500_sent_301_30be372f",
+      "questionId": "exp500_q_301_30be372f",
+      "trilingualId": "exp500_tri_301_30be372f",
+      "communicationId": "exp500_comm_061",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "bullet",
+      "vocabId": "exp500_302_e894a379",
+      "sentenceId": "exp500_sent_302_e894a379",
+      "questionId": "exp500_q_302_e894a379",
+      "trilingualId": "exp500_tri_302_e894a379",
+      "communicationId": "exp500_comm_061",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "bully",
+      "vocabId": "exp500_303_fc272483",
+      "sentenceId": "exp500_sent_303_fc272483",
+      "questionId": "exp500_q_303_fc272483",
+      "trilingualId": "exp500_tri_303_fc272483",
+      "communicationId": "exp500_comm_061",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "burden",
+      "vocabId": "exp500_304_751f4e35",
+      "sentenceId": "exp500_sent_304_751f4e35",
+      "questionId": "exp500_q_304_751f4e35",
+      "trilingualId": "exp500_tri_304_751f4e35",
+      "communicationId": "exp500_comm_061",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "captive",
+      "vocabId": "exp500_305_17fd96a1",
+      "sentenceId": "exp500_sent_305_17fd96a1",
+      "questionId": "exp500_q_305_17fd96a1",
+      "trilingualId": "exp500_tri_305_17fd96a1",
+      "communicationId": "exp500_comm_061",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "carve",
+      "vocabId": "exp500_306_7c1e7670",
+      "sentenceId": "exp500_sent_306_7c1e7670",
+      "questionId": "exp500_q_306_7c1e7670",
+      "trilingualId": "exp500_tri_306_7c1e7670",
+      "communicationId": "exp500_comm_062",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "cavity",
+      "vocabId": "exp500_307_99d79043",
+      "sentenceId": "exp500_sent_307_99d79043",
+      "questionId": "exp500_q_307_99d79043",
+      "trilingualId": "exp500_tri_307_99d79043",
+      "communicationId": "exp500_comm_062",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "cement",
+      "vocabId": "exp500_308_19b5efd",
+      "sentenceId": "exp500_sent_308_19b5efd",
+      "questionId": "exp500_q_308_19b5efd",
+      "trilingualId": "exp500_tri_308_19b5efd",
+      "communicationId": "exp500_comm_062",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "ceremony",
+      "vocabId": "exp500_309_b563891",
+      "sentenceId": "exp500_sent_309_b563891",
+      "questionId": "exp500_q_309_b563891",
+      "trilingualId": "exp500_tri_309_b563891",
+      "communicationId": "exp500_comm_062",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "cheek",
+      "vocabId": "exp500_310_b3759975",
+      "sentenceId": "exp500_sent_310_b3759975",
+      "questionId": "exp500_q_310_b3759975",
+      "trilingualId": "exp500_tri_310_b3759975",
+      "communicationId": "exp500_comm_062",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "chew",
+      "vocabId": "exp500_311_9342e7b2",
+      "sentenceId": "exp500_sent_311_9342e7b2",
+      "questionId": "exp500_q_311_9342e7b2",
+      "trilingualId": "exp500_tri_311_9342e7b2",
+      "communicationId": "exp500_comm_063",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "choke",
+      "vocabId": "exp500_312_533a03d7",
+      "sentenceId": "exp500_sent_312_533a03d7",
+      "questionId": "exp500_q_312_533a03d7",
+      "trilingualId": "exp500_tri_312_533a03d7",
+      "communicationId": "exp500_comm_063",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "circulate",
+      "vocabId": "exp500_313_716c2d95",
+      "sentenceId": "exp500_sent_313_716c2d95",
+      "questionId": "exp500_q_313_716c2d95",
+      "trilingualId": "exp500_tri_313_716c2d95",
+      "communicationId": "exp500_comm_063",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "clasp",
+      "vocabId": "exp500_314_ac3e0d92",
+      "sentenceId": "exp500_sent_314_ac3e0d92",
+      "questionId": "exp500_q_314_ac3e0d92",
+      "trilingualId": "exp500_tri_314_ac3e0d92",
+      "communicationId": "exp500_comm_063",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "cluster",
+      "vocabId": "exp500_315_bfc1474d",
+      "sentenceId": "exp500_sent_315_bfc1474d",
+      "questionId": "exp500_q_315_bfc1474d",
+      "trilingualId": "exp500_tri_315_bfc1474d",
+      "communicationId": "exp500_comm_063",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "colony",
+      "vocabId": "exp500_316_f7129b9f",
+      "sentenceId": "exp500_sent_316_f7129b9f",
+      "questionId": "exp500_q_316_f7129b9f",
+      "trilingualId": "exp500_tri_316_f7129b9f",
+      "communicationId": "exp500_comm_064",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "companion",
+      "vocabId": "exp500_317_995f3c95",
+      "sentenceId": "exp500_sent_317_995f3c95",
+      "questionId": "exp500_q_317_995f3c95",
+      "trilingualId": "exp500_tri_317_995f3c95",
+      "communicationId": "exp500_comm_064",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "compass",
+      "vocabId": "exp500_318_a41b7c2f",
+      "sentenceId": "exp500_sent_318_a41b7c2f",
+      "questionId": "exp500_q_318_a41b7c2f",
+      "trilingualId": "exp500_tri_318_a41b7c2f",
+      "communicationId": "exp500_comm_064",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "compel",
+      "vocabId": "exp500_319_2c4f63e3",
+      "sentenceId": "exp500_sent_319_2c4f63e3",
+      "questionId": "exp500_q_319_2c4f63e3",
+      "trilingualId": "exp500_tri_319_2c4f63e3",
+      "communicationId": "exp500_comm_064",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "complement",
+      "vocabId": "exp500_320_5282471d",
+      "sentenceId": "exp500_sent_320_5282471d",
+      "questionId": "exp500_q_320_5282471d",
+      "trilingualId": "exp500_tri_320_5282471d",
+      "communicationId": "exp500_comm_064",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "complexion",
+      "vocabId": "exp500_321_d6d028b3",
+      "sentenceId": "exp500_sent_321_d6d028b3",
+      "questionId": "exp500_q_321_d6d028b3",
+      "trilingualId": "exp500_tri_321_d6d028b3",
+      "communicationId": "exp500_comm_065",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "compromise",
+      "vocabId": "exp500_322_bac460cf",
+      "sentenceId": "exp500_sent_322_bac460cf",
+      "questionId": "exp500_q_322_bac460cf",
+      "trilingualId": "exp500_tri_322_bac460cf",
+      "communicationId": "exp500_comm_065",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "concede",
+      "vocabId": "exp500_323_c206d114",
+      "sentenceId": "exp500_sent_323_c206d114",
+      "questionId": "exp500_q_323_c206d114",
+      "trilingualId": "exp500_tri_323_c206d114",
+      "communicationId": "exp500_comm_065",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "confusion",
+      "vocabId": "exp500_324_5c65742b",
+      "sentenceId": "exp500_sent_324_5c65742b",
+      "questionId": "exp500_q_324_5c65742b",
+      "trilingualId": "exp500_tri_324_5c65742b",
+      "communicationId": "exp500_comm_065",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "conquer",
+      "vocabId": "exp500_325_6dda4e1a",
+      "sentenceId": "exp500_sent_325_6dda4e1a",
+      "questionId": "exp500_q_325_6dda4e1a",
+      "trilingualId": "exp500_tri_325_6dda4e1a",
+      "communicationId": "exp500_comm_065",
+      "grammarId": "exp500_grammar_13"
+    },
+    {
+      "word": "conscience",
+      "vocabId": "exp500_326_f11c45b7",
+      "sentenceId": "exp500_sent_326_f11c45b7",
+      "questionId": "exp500_q_326_f11c45b7",
+      "trilingualId": "exp500_tri_326_f11c45b7",
+      "communicationId": "exp500_comm_066",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "consciousness",
+      "vocabId": "exp500_327_65b79f9e",
+      "sentenceId": "exp500_sent_327_65b79f9e",
+      "questionId": "exp500_q_327_65b79f9e",
+      "trilingualId": "exp500_tri_327_65b79f9e",
+      "communicationId": "exp500_comm_066",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "consecrate",
+      "vocabId": "exp500_328_7b93128e",
+      "sentenceId": "exp500_sent_328_7b93128e",
+      "questionId": "exp500_q_328_7b93128e",
+      "trilingualId": "exp500_tri_328_7b93128e",
+      "communicationId": "exp500_comm_066",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "considerable",
+      "vocabId": "exp500_329_1f16e52a",
+      "sentenceId": "exp500_sent_329_1f16e52a",
+      "questionId": "exp500_q_329_1f16e52a",
+      "trilingualId": "exp500_tri_329_1f16e52a",
+      "communicationId": "exp500_comm_066",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "consistent",
+      "vocabId": "exp500_330_222d6e81",
+      "sentenceId": "exp500_sent_330_222d6e81",
+      "questionId": "exp500_q_330_222d6e81",
+      "trilingualId": "exp500_tri_330_222d6e81",
+      "communicationId": "exp500_comm_066",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "consolidate",
+      "vocabId": "exp500_331_7b8afd92",
+      "sentenceId": "exp500_sent_331_7b8afd92",
+      "questionId": "exp500_q_331_7b8afd92",
+      "trilingualId": "exp500_tri_331_7b8afd92",
+      "communicationId": "exp500_comm_067",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "consort",
+      "vocabId": "exp500_332_2b5528b3",
+      "sentenceId": "exp500_sent_332_2b5528b3",
+      "questionId": "exp500_q_332_2b5528b3",
+      "trilingualId": "exp500_tri_332_2b5528b3",
+      "communicationId": "exp500_comm_067",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "contemplate",
+      "vocabId": "exp500_333_c741c359",
+      "sentenceId": "exp500_sent_333_c741c359",
+      "questionId": "exp500_q_333_c741c359",
+      "trilingualId": "exp500_tri_333_c741c359",
+      "communicationId": "exp500_comm_067",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "cooking",
+      "vocabId": "exp500_334_1460a7f7",
+      "sentenceId": "exp500_sent_334_1460a7f7",
+      "questionId": "exp500_q_334_1460a7f7",
+      "trilingualId": "exp500_tri_334_1460a7f7",
+      "communicationId": "exp500_comm_067",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "correspond",
+      "vocabId": "exp500_335_541d19b4",
+      "sentenceId": "exp500_sent_335_541d19b4",
+      "questionId": "exp500_q_335_541d19b4",
+      "trilingualId": "exp500_tri_335_541d19b4",
+      "communicationId": "exp500_comm_067",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "crack",
+      "vocabId": "exp500_336_3d749c61",
+      "sentenceId": "exp500_sent_336_3d749c61",
+      "questionId": "exp500_q_336_3d749c61",
+      "trilingualId": "exp500_tri_336_3d749c61",
+      "communicationId": "exp500_comm_068",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "credentials",
+      "vocabId": "exp500_337_e8fd9bd1",
+      "sentenceId": "exp500_sent_337_e8fd9bd1",
+      "questionId": "exp500_q_337_e8fd9bd1",
+      "trilingualId": "exp500_tri_337_e8fd9bd1",
+      "communicationId": "exp500_comm_068",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "crude",
+      "vocabId": "exp500_338_b977b27c",
+      "sentenceId": "exp500_sent_338_b977b27c",
+      "questionId": "exp500_q_338_b977b27c",
+      "trilingualId": "exp500_tri_338_b977b27c",
+      "communicationId": "exp500_comm_068",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "cruel",
+      "vocabId": "exp500_339_c4758536",
+      "sentenceId": "exp500_sent_339_c4758536",
+      "questionId": "exp500_q_339_c4758536",
+      "trilingualId": "exp500_tri_339_c4758536",
+      "communicationId": "exp500_comm_068",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "crush",
+      "vocabId": "exp500_340_c4a2a4d4",
+      "sentenceId": "exp500_sent_340_c4a2a4d4",
+      "questionId": "exp500_q_340_c4a2a4d4",
+      "trilingualId": "exp500_tri_340_c4a2a4d4",
+      "communicationId": "exp500_comm_068",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "curb",
+      "vocabId": "exp500_341_92b91df5",
+      "sentenceId": "exp500_sent_341_92b91df5",
+      "questionId": "exp500_q_341_92b91df5",
+      "trilingualId": "exp500_tri_341_92b91df5",
+      "communicationId": "exp500_comm_069",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "dam",
+      "vocabId": "exp500_342_f04f34e1",
+      "sentenceId": "exp500_sent_342_f04f34e1",
+      "questionId": "exp500_q_342_f04f34e1",
+      "trilingualId": "exp500_tri_342_f04f34e1",
+      "communicationId": "exp500_comm_069",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "damp",
+      "vocabId": "exp500_343_ddafc043",
+      "sentenceId": "exp500_sent_343_ddafc043",
+      "questionId": "exp500_q_343_ddafc043",
+      "trilingualId": "exp500_tri_343_ddafc043",
+      "communicationId": "exp500_comm_069",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "dawn",
+      "vocabId": "exp500_344_fb6f4827",
+      "sentenceId": "exp500_sent_344_fb6f4827",
+      "questionId": "exp500_q_344_fb6f4827",
+      "trilingualId": "exp500_tri_344_fb6f4827",
+      "communicationId": "exp500_comm_069",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "deceive",
+      "vocabId": "exp500_345_22c648a0",
+      "sentenceId": "exp500_sent_345_22c648a0",
+      "questionId": "exp500_q_345_22c648a0",
+      "trilingualId": "exp500_tri_345_22c648a0",
+      "communicationId": "exp500_comm_069",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "decent",
+      "vocabId": "exp500_346_16dc43d0",
+      "sentenceId": "exp500_sent_346_16dc43d0",
+      "questionId": "exp500_q_346_16dc43d0",
+      "trilingualId": "exp500_tri_346_16dc43d0",
+      "communicationId": "exp500_comm_070",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "deed",
+      "vocabId": "exp500_347_85e96cf3",
+      "sentenceId": "exp500_sent_347_85e96cf3",
+      "questionId": "exp500_q_347_85e96cf3",
+      "trilingualId": "exp500_tri_347_85e96cf3",
+      "communicationId": "exp500_comm_070",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "defendant",
+      "vocabId": "exp500_348_4056e2da",
+      "sentenceId": "exp500_sent_348_4056e2da",
+      "questionId": "exp500_q_348_4056e2da",
+      "trilingualId": "exp500_tri_348_4056e2da",
+      "communicationId": "exp500_comm_070",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "deferential",
+      "vocabId": "exp500_349_543c30fe",
+      "sentenceId": "exp500_sent_349_543c30fe",
+      "questionId": "exp500_q_349_543c30fe",
+      "trilingualId": "exp500_tri_349_543c30fe",
+      "communicationId": "exp500_comm_070",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "deficit",
+      "vocabId": "exp500_350_b05487c9",
+      "sentenceId": "exp500_sent_350_b05487c9",
+      "questionId": "exp500_q_350_b05487c9",
+      "trilingualId": "exp500_tri_350_b05487c9",
+      "communicationId": "exp500_comm_070",
+      "grammarId": "exp500_grammar_14"
+    },
+    {
+      "word": "defraud",
+      "vocabId": "exp500_351_e42acbc8",
+      "sentenceId": "exp500_sent_351_e42acbc8",
+      "questionId": "exp500_q_351_e42acbc8",
+      "trilingualId": "exp500_tri_351_e42acbc8",
+      "communicationId": "exp500_comm_071",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "delicate",
+      "vocabId": "exp500_352_b3c2f90a",
+      "sentenceId": "exp500_sent_352_b3c2f90a",
+      "questionId": "exp500_q_352_b3c2f90a",
+      "trilingualId": "exp500_tri_352_b3c2f90a",
+      "communicationId": "exp500_comm_071",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "delight",
+      "vocabId": "exp500_353_1992bc66",
+      "sentenceId": "exp500_sent_353_1992bc66",
+      "questionId": "exp500_q_353_1992bc66",
+      "trilingualId": "exp500_tri_353_1992bc66",
+      "communicationId": "exp500_comm_071",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "deluge",
+      "vocabId": "exp500_354_5793fb81",
+      "sentenceId": "exp500_sent_354_5793fb81",
+      "questionId": "exp500_q_354_5793fb81",
+      "trilingualId": "exp500_tri_354_5793fb81",
+      "communicationId": "exp500_comm_071",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "denomination",
+      "vocabId": "exp500_355_1c378080",
+      "sentenceId": "exp500_sent_355_1c378080",
+      "questionId": "exp500_q_355_1c378080",
+      "trilingualId": "exp500_tri_355_1c378080",
+      "communicationId": "exp500_comm_071",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "denounce",
+      "vocabId": "exp500_356_88e37e8e",
+      "sentenceId": "exp500_sent_356_88e37e8e",
+      "questionId": "exp500_q_356_88e37e8e",
+      "trilingualId": "exp500_tri_356_88e37e8e",
+      "communicationId": "exp500_comm_072",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "dense",
+      "vocabId": "exp500_357_81cefdb0",
+      "sentenceId": "exp500_sent_357_81cefdb0",
+      "questionId": "exp500_q_357_81cefdb0",
+      "trilingualId": "exp500_tri_357_81cefdb0",
+      "communicationId": "exp500_comm_072",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "density",
+      "vocabId": "exp500_358_72b9059b",
+      "sentenceId": "exp500_sent_358_72b9059b",
+      "questionId": "exp500_q_358_72b9059b",
+      "trilingualId": "exp500_tri_358_72b9059b",
+      "communicationId": "exp500_comm_072",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "deposit",
+      "vocabId": "exp500_359_28a1b7b5",
+      "sentenceId": "exp500_sent_359_28a1b7b5",
+      "questionId": "exp500_q_359_28a1b7b5",
+      "trilingualId": "exp500_tri_359_28a1b7b5",
+      "communicationId": "exp500_comm_072",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "desperation",
+      "vocabId": "exp500_360_bedad693",
+      "sentenceId": "exp500_sent_360_bedad693",
+      "questionId": "exp500_q_360_bedad693",
+      "trilingualId": "exp500_tri_360_bedad693",
+      "communicationId": "exp500_comm_072",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "detain",
+      "vocabId": "exp500_361_62345bba",
+      "sentenceId": "exp500_sent_361_62345bba",
+      "questionId": "exp500_q_361_62345bba",
+      "trilingualId": "exp500_tri_361_62345bba",
+      "communicationId": "exp500_comm_073",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "detective",
+      "vocabId": "exp500_362_9d1e2db0",
+      "sentenceId": "exp500_sent_362_9d1e2db0",
+      "questionId": "exp500_q_362_9d1e2db0",
+      "trilingualId": "exp500_tri_362_9d1e2db0",
+      "communicationId": "exp500_comm_073",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "devil",
+      "vocabId": "exp500_363_d5c48319",
+      "sentenceId": "exp500_sent_363_d5c48319",
+      "questionId": "exp500_q_363_d5c48319",
+      "trilingualId": "exp500_tri_363_d5c48319",
+      "communicationId": "exp500_comm_073",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "devoted",
+      "vocabId": "exp500_364_23764de6",
+      "sentenceId": "exp500_sent_364_23764de6",
+      "questionId": "exp500_q_364_23764de6",
+      "trilingualId": "exp500_tri_364_23764de6",
+      "communicationId": "exp500_comm_073",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "dictatorship",
+      "vocabId": "exp500_365_a7204543",
+      "sentenceId": "exp500_sent_365_a7204543",
+      "questionId": "exp500_q_365_a7204543",
+      "trilingualId": "exp500_tri_365_a7204543",
+      "communicationId": "exp500_comm_073",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "differ",
+      "vocabId": "exp500_366_c1406a8d",
+      "sentenceId": "exp500_sent_366_c1406a8d",
+      "questionId": "exp500_q_366_c1406a8d",
+      "trilingualId": "exp500_tri_366_c1406a8d",
+      "communicationId": "exp500_comm_074",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "differentiate",
+      "vocabId": "exp500_367_9b4bb8eb",
+      "sentenceId": "exp500_sent_367_9b4bb8eb",
+      "questionId": "exp500_q_367_9b4bb8eb",
+      "trilingualId": "exp500_tri_367_9b4bb8eb",
+      "communicationId": "exp500_comm_074",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "dignity",
+      "vocabId": "exp500_368_860f3b21",
+      "sentenceId": "exp500_sent_368_860f3b21",
+      "questionId": "exp500_q_368_860f3b21",
+      "trilingualId": "exp500_tri_368_860f3b21",
+      "communicationId": "exp500_comm_074",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "disaster",
+      "vocabId": "exp500_369_55884176",
+      "sentenceId": "exp500_sent_369_55884176",
+      "questionId": "exp500_q_369_55884176",
+      "trilingualId": "exp500_tri_369_55884176",
+      "communicationId": "exp500_comm_074",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "disparity",
+      "vocabId": "exp500_370_594e20ea",
+      "sentenceId": "exp500_sent_370_594e20ea",
+      "questionId": "exp500_q_370_594e20ea",
+      "trilingualId": "exp500_tri_370_594e20ea",
+      "communicationId": "exp500_comm_074",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "dispute",
+      "vocabId": "exp500_371_b4546a7b",
+      "sentenceId": "exp500_sent_371_b4546a7b",
+      "questionId": "exp500_q_371_b4546a7b",
+      "trilingualId": "exp500_tri_371_b4546a7b",
+      "communicationId": "exp500_comm_075",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "distant",
+      "vocabId": "exp500_372_a28f8042",
+      "sentenceId": "exp500_sent_372_a28f8042",
+      "questionId": "exp500_q_372_a28f8042",
+      "trilingualId": "exp500_tri_372_a28f8042",
+      "communicationId": "exp500_comm_075",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "distinguish",
+      "vocabId": "exp500_373_47d78b26",
+      "sentenceId": "exp500_sent_373_47d78b26",
+      "questionId": "exp500_q_373_47d78b26",
+      "trilingualId": "exp500_tri_373_47d78b26",
+      "communicationId": "exp500_comm_075",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "dither",
+      "vocabId": "exp500_374_2619c6c5",
+      "sentenceId": "exp500_sent_374_2619c6c5",
+      "questionId": "exp500_q_374_2619c6c5",
+      "trilingualId": "exp500_tri_374_2619c6c5",
+      "communicationId": "exp500_comm_075",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "dive",
+      "vocabId": "exp500_375_475377d7",
+      "sentenceId": "exp500_sent_375_475377d7",
+      "questionId": "exp500_q_375_475377d7",
+      "trilingualId": "exp500_tri_375_475377d7",
+      "communicationId": "exp500_comm_075",
+      "grammarId": "exp500_grammar_15"
+    },
+    {
+      "word": "divine",
+      "vocabId": "exp500_376_456140e6",
+      "sentenceId": "exp500_sent_376_456140e6",
+      "questionId": "exp500_q_376_456140e6",
+      "trilingualId": "exp500_tri_376_456140e6",
+      "communicationId": "exp500_comm_076",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "dock",
+      "vocabId": "exp500_377_40eb5a9a",
+      "sentenceId": "exp500_sent_377_40eb5a9a",
+      "questionId": "exp500_q_377_40eb5a9a",
+      "trilingualId": "exp500_tri_377_40eb5a9a",
+      "communicationId": "exp500_comm_076",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "drain",
+      "vocabId": "exp500_378_b19b5019",
+      "sentenceId": "exp500_sent_378_b19b5019",
+      "questionId": "exp500_q_378_b19b5019",
+      "trilingualId": "exp500_tri_378_b19b5019",
+      "communicationId": "exp500_comm_076",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "drill",
+      "vocabId": "exp500_379_1a78c49e",
+      "sentenceId": "exp500_sent_379_1a78c49e",
+      "questionId": "exp500_q_379_1a78c49e",
+      "trilingualId": "exp500_tri_379_1a78c49e",
+      "communicationId": "exp500_comm_076",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "dye",
+      "vocabId": "exp500_380_f83bb9c1",
+      "sentenceId": "exp500_sent_380_f83bb9c1",
+      "questionId": "exp500_q_380_f83bb9c1",
+      "trilingualId": "exp500_tri_380_f83bb9c1",
+      "communicationId": "exp500_comm_076",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "eager",
+      "vocabId": "exp500_381_4dc7bdab",
+      "sentenceId": "exp500_sent_381_4dc7bdab",
+      "questionId": "exp500_q_381_4dc7bdab",
+      "trilingualId": "exp500_tri_381_4dc7bdab",
+      "communicationId": "exp500_comm_077",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "earnest",
+      "vocabId": "exp500_382_d596d9e1",
+      "sentenceId": "exp500_sent_382_d596d9e1",
+      "questionId": "exp500_q_382_d596d9e1",
+      "trilingualId": "exp500_tri_382_d596d9e1",
+      "communicationId": "exp500_comm_077",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "enforce",
+      "vocabId": "exp500_383_2c526191",
+      "sentenceId": "exp500_sent_383_2c526191",
+      "questionId": "exp500_q_383_2c526191",
+      "trilingualId": "exp500_tri_383_2c526191",
+      "communicationId": "exp500_comm_077",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "eternal",
+      "vocabId": "exp500_384_a3242ee2",
+      "sentenceId": "exp500_sent_384_a3242ee2",
+      "questionId": "exp500_q_384_a3242ee2",
+      "trilingualId": "exp500_tri_384_a3242ee2",
+      "communicationId": "exp500_comm_077",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "etiquette",
+      "vocabId": "exp500_385_54ea4d7f",
+      "sentenceId": "exp500_sent_385_54ea4d7f",
+      "questionId": "exp500_q_385_54ea4d7f",
+      "trilingualId": "exp500_tri_385_54ea4d7f",
+      "communicationId": "exp500_comm_077",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "evolution",
+      "vocabId": "exp500_386_8f22dc9e",
+      "sentenceId": "exp500_sent_386_8f22dc9e",
+      "questionId": "exp500_q_386_8f22dc9e",
+      "trilingualId": "exp500_tri_386_8f22dc9e",
+      "communicationId": "exp500_comm_078",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "excavate",
+      "vocabId": "exp500_387_a5a651e6",
+      "sentenceId": "exp500_sent_387_a5a651e6",
+      "questionId": "exp500_q_387_a5a651e6",
+      "trilingualId": "exp500_tri_387_a5a651e6",
+      "communicationId": "exp500_comm_078",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "expansion",
+      "vocabId": "exp500_388_b5401db2",
+      "sentenceId": "exp500_sent_388_b5401db2",
+      "questionId": "exp500_q_388_b5401db2",
+      "trilingualId": "exp500_tri_388_b5401db2",
+      "communicationId": "exp500_comm_078",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "explosion",
+      "vocabId": "exp500_389_2bb1fe0",
+      "sentenceId": "exp500_sent_389_2bb1fe0",
+      "questionId": "exp500_q_389_2bb1fe0",
+      "trilingualId": "exp500_tri_389_2bb1fe0",
+      "communicationId": "exp500_comm_078",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "expose",
+      "vocabId": "exp500_390_ee05b9a5",
+      "sentenceId": "exp500_sent_390_ee05b9a5",
+      "questionId": "exp500_q_390_ee05b9a5",
+      "trilingualId": "exp500_tri_390_ee05b9a5",
+      "communicationId": "exp500_comm_078",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "extra",
+      "vocabId": "exp500_391_a8901de9",
+      "sentenceId": "exp500_sent_391_a8901de9",
+      "questionId": "exp500_q_391_a8901de9",
+      "trilingualId": "exp500_tri_391_a8901de9",
+      "communicationId": "exp500_comm_079",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "faithful",
+      "vocabId": "exp500_392_326204ea",
+      "sentenceId": "exp500_sent_392_326204ea",
+      "questionId": "exp500_q_392_326204ea",
+      "trilingualId": "exp500_tri_392_326204ea",
+      "communicationId": "exp500_comm_079",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "fame",
+      "vocabId": "exp500_393_255c8cce",
+      "sentenceId": "exp500_sent_393_255c8cce",
+      "questionId": "exp500_q_393_255c8cce",
+      "trilingualId": "exp500_tri_393_255c8cce",
+      "communicationId": "exp500_comm_079",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "fantastic",
+      "vocabId": "exp500_394_3ff6612",
+      "sentenceId": "exp500_sent_394_3ff6612",
+      "questionId": "exp500_q_394_3ff6612",
+      "trilingualId": "exp500_tri_394_3ff6612",
+      "communicationId": "exp500_comm_079",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "feasible",
+      "vocabId": "exp500_395_b670c204",
+      "sentenceId": "exp500_sent_395_b670c204",
+      "questionId": "exp500_q_395_b670c204",
+      "trilingualId": "exp500_tri_395_b670c204",
+      "communicationId": "exp500_comm_079",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "fierce",
+      "vocabId": "exp500_396_f9e574b",
+      "sentenceId": "exp500_sent_396_f9e574b",
+      "questionId": "exp500_q_396_f9e574b",
+      "trilingualId": "exp500_tri_396_f9e574b",
+      "communicationId": "exp500_comm_080",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "filthy",
+      "vocabId": "exp500_397_b4e99953",
+      "sentenceId": "exp500_sent_397_b4e99953",
+      "questionId": "exp500_q_397_b4e99953",
+      "trilingualId": "exp500_tri_397_b4e99953",
+      "communicationId": "exp500_comm_080",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "fist",
+      "vocabId": "exp500_398_abad8317",
+      "sentenceId": "exp500_sent_398_abad8317",
+      "questionId": "exp500_q_398_abad8317",
+      "trilingualId": "exp500_tri_398_abad8317",
+      "communicationId": "exp500_comm_080",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "fly",
+      "vocabId": "exp500_399_bff162e2",
+      "sentenceId": "exp500_sent_399_bff162e2",
+      "questionId": "exp500_q_399_bff162e2",
+      "trilingualId": "exp500_tri_399_bff162e2",
+      "communicationId": "exp500_comm_080",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "foam",
+      "vocabId": "exp500_400_4038739c",
+      "sentenceId": "exp500_sent_400_4038739c",
+      "questionId": "exp500_q_400_4038739c",
+      "trilingualId": "exp500_tri_400_4038739c",
+      "communicationId": "exp500_comm_080",
+      "grammarId": "exp500_grammar_16"
+    },
+    {
+      "word": "foreground",
+      "vocabId": "exp500_401_83a85c0",
+      "sentenceId": "exp500_sent_401_83a85c0",
+      "questionId": "exp500_q_401_83a85c0",
+      "trilingualId": "exp500_tri_401_83a85c0",
+      "communicationId": "exp500_comm_081",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "forge",
+      "vocabId": "exp500_402_89b29c10",
+      "sentenceId": "exp500_sent_402_89b29c10",
+      "questionId": "exp500_q_402_89b29c10",
+      "trilingualId": "exp500_tri_402_89b29c10",
+      "communicationId": "exp500_comm_081",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "forgetful",
+      "vocabId": "exp500_403_80593d47",
+      "sentenceId": "exp500_sent_403_80593d47",
+      "questionId": "exp500_q_403_80593d47",
+      "trilingualId": "exp500_tri_403_80593d47",
+      "communicationId": "exp500_comm_081",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "formula",
+      "vocabId": "exp500_404_798fbc5d",
+      "sentenceId": "exp500_sent_404_798fbc5d",
+      "questionId": "exp500_q_404_798fbc5d",
+      "trilingualId": "exp500_tri_404_798fbc5d",
+      "communicationId": "exp500_comm_081",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "fossil",
+      "vocabId": "exp500_405_53972c15",
+      "sentenceId": "exp500_sent_405_53972c15",
+      "questionId": "exp500_q_405_53972c15",
+      "trilingualId": "exp500_tri_405_53972c15",
+      "communicationId": "exp500_comm_081",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "foster",
+      "vocabId": "exp500_406_2dc3b666",
+      "sentenceId": "exp500_sent_406_2dc3b666",
+      "questionId": "exp500_q_406_2dc3b666",
+      "trilingualId": "exp500_tri_406_2dc3b666",
+      "communicationId": "exp500_comm_082",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "fragmentary",
+      "vocabId": "exp500_407_7d4b66d1",
+      "sentenceId": "exp500_sent_407_7d4b66d1",
+      "questionId": "exp500_q_407_7d4b66d1",
+      "trilingualId": "exp500_tri_407_7d4b66d1",
+      "communicationId": "exp500_comm_082",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "frontier",
+      "vocabId": "exp500_408_c2acf240",
+      "sentenceId": "exp500_sent_408_c2acf240",
+      "questionId": "exp500_q_408_c2acf240",
+      "trilingualId": "exp500_tri_408_c2acf240",
+      "communicationId": "exp500_comm_082",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "gaze",
+      "vocabId": "exp500_409_22839038",
+      "sentenceId": "exp500_sent_409_22839038",
+      "questionId": "exp500_q_409_22839038",
+      "trilingualId": "exp500_tri_409_22839038",
+      "communicationId": "exp500_comm_082",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "gentleman",
+      "vocabId": "exp500_410_96cc9c4c",
+      "sentenceId": "exp500_sent_410_96cc9c4c",
+      "questionId": "exp500_q_410_96cc9c4c",
+      "trilingualId": "exp500_tri_410_96cc9c4c",
+      "communicationId": "exp500_comm_082",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "gesture",
+      "vocabId": "exp500_411_655cb894",
+      "sentenceId": "exp500_sent_411_655cb894",
+      "questionId": "exp500_q_411_655cb894",
+      "trilingualId": "exp500_tri_411_655cb894",
+      "communicationId": "exp500_comm_083",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "gnaw",
+      "vocabId": "exp500_412_a12c3f84",
+      "sentenceId": "exp500_sent_412_a12c3f84",
+      "questionId": "exp500_q_412_a12c3f84",
+      "trilingualId": "exp500_tri_412_a12c3f84",
+      "communicationId": "exp500_comm_083",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "gorgeous",
+      "vocabId": "exp500_413_aa6f7d50",
+      "sentenceId": "exp500_sent_413_aa6f7d50",
+      "questionId": "exp500_q_413_aa6f7d50",
+      "trilingualId": "exp500_tri_413_aa6f7d50",
+      "communicationId": "exp500_comm_083",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "govern",
+      "vocabId": "exp500_414_75d0cc36",
+      "sentenceId": "exp500_sent_414_75d0cc36",
+      "questionId": "exp500_q_414_75d0cc36",
+      "trilingualId": "exp500_tri_414_75d0cc36",
+      "communicationId": "exp500_comm_083",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "grease",
+      "vocabId": "exp500_415_ba77df66",
+      "sentenceId": "exp500_sent_415_ba77df66",
+      "questionId": "exp500_q_415_ba77df66",
+      "trilingualId": "exp500_tri_415_ba77df66",
+      "communicationId": "exp500_comm_083",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "grim",
+      "vocabId": "exp500_416_a6870c66",
+      "sentenceId": "exp500_sent_416_a6870c66",
+      "questionId": "exp500_q_416_a6870c66",
+      "trilingualId": "exp500_tri_416_a6870c66",
+      "communicationId": "exp500_comm_084",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "hack",
+      "vocabId": "exp500_417_eb9e9608",
+      "sentenceId": "exp500_sent_417_eb9e9608",
+      "questionId": "exp500_q_417_eb9e9608",
+      "trilingualId": "exp500_tri_417_eb9e9608",
+      "communicationId": "exp500_comm_084",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "hail",
+      "vocabId": "exp500_418_eeb69fa7",
+      "sentenceId": "exp500_sent_418_eeb69fa7",
+      "questionId": "exp500_q_418_eeb69fa7",
+      "trilingualId": "exp500_tri_418_eeb69fa7",
+      "communicationId": "exp500_comm_084",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "halt",
+      "vocabId": "exp500_419_e8bee4fa",
+      "sentenceId": "exp500_sent_419_e8bee4fa",
+      "questionId": "exp500_q_419_e8bee4fa",
+      "trilingualId": "exp500_tri_419_e8bee4fa",
+      "communicationId": "exp500_comm_084",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "hammer",
+      "vocabId": "exp500_420_74ed5ac7",
+      "sentenceId": "exp500_sent_420_74ed5ac7",
+      "questionId": "exp500_q_420_74ed5ac7",
+      "trilingualId": "exp500_tri_420_74ed5ac7",
+      "communicationId": "exp500_comm_084",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "harmonious",
+      "vocabId": "exp500_421_9089424a",
+      "sentenceId": "exp500_sent_421_9089424a",
+      "questionId": "exp500_q_421_9089424a",
+      "trilingualId": "exp500_tri_421_9089424a",
+      "communicationId": "exp500_comm_085",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "heal",
+      "vocabId": "exp500_422_3a69585b",
+      "sentenceId": "exp500_sent_422_3a69585b",
+      "questionId": "exp500_q_422_3a69585b",
+      "trilingualId": "exp500_tri_422_3a69585b",
+      "communicationId": "exp500_comm_085",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "heartfelt",
+      "vocabId": "exp500_423_a79feef6",
+      "sentenceId": "exp500_sent_423_a79feef6",
+      "questionId": "exp500_q_423_a79feef6",
+      "trilingualId": "exp500_tri_423_a79feef6",
+      "communicationId": "exp500_comm_085",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "heed",
+      "vocabId": "exp500_424_22603837",
+      "sentenceId": "exp500_sent_424_22603837",
+      "questionId": "exp500_q_424_22603837",
+      "trilingualId": "exp500_tri_424_22603837",
+      "communicationId": "exp500_comm_085",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "hint",
+      "vocabId": "exp500_425_4bc809b8",
+      "sentenceId": "exp500_sent_425_4bc809b8",
+      "questionId": "exp500_q_425_4bc809b8",
+      "trilingualId": "exp500_tri_425_4bc809b8",
+      "communicationId": "exp500_comm_085",
+      "grammarId": "exp500_grammar_17"
+    },
+    {
+      "word": "hollow",
+      "vocabId": "exp500_426_79247b1e",
+      "sentenceId": "exp500_sent_426_79247b1e",
+      "questionId": "exp500_q_426_79247b1e",
+      "trilingualId": "exp500_tri_426_79247b1e",
+      "communicationId": "exp500_comm_086",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "hostage",
+      "vocabId": "exp500_427_598d0af6",
+      "sentenceId": "exp500_sent_427_598d0af6",
+      "questionId": "exp500_q_427_598d0af6",
+      "trilingualId": "exp500_tri_427_598d0af6",
+      "communicationId": "exp500_comm_086",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "hug",
+      "vocabId": "exp500_428_e18d6033",
+      "sentenceId": "exp500_sent_428_e18d6033",
+      "questionId": "exp500_q_428_e18d6033",
+      "trilingualId": "exp500_tri_428_e18d6033",
+      "communicationId": "exp500_comm_086",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "humble",
+      "vocabId": "exp500_429_c18d6dce",
+      "sentenceId": "exp500_sent_429_c18d6dce",
+      "questionId": "exp500_q_429_c18d6dce",
+      "trilingualId": "exp500_tri_429_c18d6dce",
+      "communicationId": "exp500_comm_086",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "hunger",
+      "vocabId": "exp500_430_11bd817e",
+      "sentenceId": "exp500_sent_430_11bd817e",
+      "questionId": "exp500_q_430_11bd817e",
+      "trilingualId": "exp500_tri_430_11bd817e",
+      "communicationId": "exp500_comm_086",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "ignorant",
+      "vocabId": "exp500_431_385d03c5",
+      "sentenceId": "exp500_sent_431_385d03c5",
+      "questionId": "exp500_q_431_385d03c5",
+      "trilingualId": "exp500_tri_431_385d03c5",
+      "communicationId": "exp500_comm_087",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "illegal",
+      "vocabId": "exp500_432_911e3dd9",
+      "sentenceId": "exp500_sent_432_911e3dd9",
+      "questionId": "exp500_q_432_911e3dd9",
+      "trilingualId": "exp500_tri_432_911e3dd9",
+      "communicationId": "exp500_comm_087",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "impart",
+      "vocabId": "exp500_433_10966d66",
+      "sentenceId": "exp500_sent_433_10966d66",
+      "questionId": "exp500_q_433_10966d66",
+      "trilingualId": "exp500_tri_433_10966d66",
+      "communicationId": "exp500_comm_087",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "incline",
+      "vocabId": "exp500_434_eb64d5d5",
+      "sentenceId": "exp500_sent_434_eb64d5d5",
+      "questionId": "exp500_q_434_eb64d5d5",
+      "trilingualId": "exp500_tri_434_eb64d5d5",
+      "communicationId": "exp500_comm_087",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "incomparable",
+      "vocabId": "exp500_435_e44dca76",
+      "sentenceId": "exp500_sent_435_e44dca76",
+      "questionId": "exp500_q_435_e44dca76",
+      "trilingualId": "exp500_tri_435_e44dca76",
+      "communicationId": "exp500_comm_087",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "indirect",
+      "vocabId": "exp500_436_a9b768e7",
+      "sentenceId": "exp500_sent_436_a9b768e7",
+      "questionId": "exp500_q_436_a9b768e7",
+      "trilingualId": "exp500_tri_436_a9b768e7",
+      "communicationId": "exp500_comm_088",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "inspiration",
+      "vocabId": "exp500_437_c83c9433",
+      "sentenceId": "exp500_sent_437_c83c9433",
+      "questionId": "exp500_q_437_c83c9433",
+      "trilingualId": "exp500_tri_437_c83c9433",
+      "communicationId": "exp500_comm_088",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "instinct",
+      "vocabId": "exp500_438_629dd1dd",
+      "sentenceId": "exp500_sent_438_629dd1dd",
+      "questionId": "exp500_q_438_629dd1dd",
+      "trilingualId": "exp500_tri_438_629dd1dd",
+      "communicationId": "exp500_comm_088",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "interfere",
+      "vocabId": "exp500_439_c4377ed1",
+      "sentenceId": "exp500_sent_439_c4377ed1",
+      "questionId": "exp500_q_439_c4377ed1",
+      "trilingualId": "exp500_tri_439_c4377ed1",
+      "communicationId": "exp500_comm_088",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "intrinsic",
+      "vocabId": "exp500_440_1393f8c0",
+      "sentenceId": "exp500_sent_440_1393f8c0",
+      "questionId": "exp500_q_440_1393f8c0",
+      "trilingualId": "exp500_tri_440_1393f8c0",
+      "communicationId": "exp500_comm_088",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "judgment",
+      "vocabId": "exp500_441_80720411",
+      "sentenceId": "exp500_sent_441_80720411",
+      "questionId": "exp500_q_441_80720411",
+      "trilingualId": "exp500_tri_441_80720411",
+      "communicationId": "exp500_comm_089",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "judicial",
+      "vocabId": "exp500_442_2ce9a2a2",
+      "sentenceId": "exp500_sent_442_2ce9a2a2",
+      "questionId": "exp500_q_442_2ce9a2a2",
+      "trilingualId": "exp500_tri_442_2ce9a2a2",
+      "communicationId": "exp500_comm_089",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "keen",
+      "vocabId": "exp500_443_dc7b77f2",
+      "sentenceId": "exp500_sent_443_dc7b77f2",
+      "questionId": "exp500_q_443_dc7b77f2",
+      "trilingualId": "exp500_tri_443_dc7b77f2",
+      "communicationId": "exp500_comm_089",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "kindly",
+      "vocabId": "exp500_444_c84f6ccc",
+      "sentenceId": "exp500_sent_444_c84f6ccc",
+      "questionId": "exp500_q_444_c84f6ccc",
+      "trilingualId": "exp500_tri_444_c84f6ccc",
+      "communicationId": "exp500_comm_089",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "kneel",
+      "vocabId": "exp500_445_fcd33c32",
+      "sentenceId": "exp500_sent_445_fcd33c32",
+      "questionId": "exp500_q_445_fcd33c32",
+      "trilingualId": "exp500_tri_445_fcd33c32",
+      "communicationId": "exp500_comm_089",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "lame",
+      "vocabId": "exp500_446_5ef0dac4",
+      "sentenceId": "exp500_sent_446_5ef0dac4",
+      "questionId": "exp500_q_446_5ef0dac4",
+      "trilingualId": "exp500_tri_446_5ef0dac4",
+      "communicationId": "exp500_comm_090",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "lapse",
+      "vocabId": "exp500_447_2925d71a",
+      "sentenceId": "exp500_sent_447_2925d71a",
+      "questionId": "exp500_q_447_2925d71a",
+      "trilingualId": "exp500_tri_447_2925d71a",
+      "communicationId": "exp500_comm_090",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "lasting",
+      "vocabId": "exp500_448_78f4b947",
+      "sentenceId": "exp500_sent_448_78f4b947",
+      "questionId": "exp500_q_448_78f4b947",
+      "trilingualId": "exp500_tri_448_78f4b947",
+      "communicationId": "exp500_comm_090",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "lawsuit",
+      "vocabId": "exp500_449_3ba611a",
+      "sentenceId": "exp500_sent_449_3ba611a",
+      "questionId": "exp500_q_449_3ba611a",
+      "trilingualId": "exp500_tri_449_3ba611a",
+      "communicationId": "exp500_comm_090",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "leap",
+      "vocabId": "exp500_450_1048aab3",
+      "sentenceId": "exp500_sent_450_1048aab3",
+      "questionId": "exp500_q_450_1048aab3",
+      "trilingualId": "exp500_tri_450_1048aab3",
+      "communicationId": "exp500_comm_090",
+      "grammarId": "exp500_grammar_18"
+    },
+    {
+      "word": "lip",
+      "vocabId": "exp500_451_444cdc02",
+      "sentenceId": "exp500_sent_451_444cdc02",
+      "questionId": "exp500_q_451_444cdc02",
+      "trilingualId": "exp500_tri_451_444cdc02",
+      "communicationId": "exp500_comm_091",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "locomotive",
+      "vocabId": "exp500_452_d2d3aa78",
+      "sentenceId": "exp500_sent_452_d2d3aa78",
+      "questionId": "exp500_q_452_d2d3aa78",
+      "trilingualId": "exp500_tri_452_d2d3aa78",
+      "communicationId": "exp500_comm_091",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "mechanism",
+      "vocabId": "exp500_453_4f23c9f6",
+      "sentenceId": "exp500_sent_453_4f23c9f6",
+      "questionId": "exp500_q_453_4f23c9f6",
+      "trilingualId": "exp500_tri_453_4f23c9f6",
+      "communicationId": "exp500_comm_091",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "meddle",
+      "vocabId": "exp500_454_b18c379c",
+      "sentenceId": "exp500_sent_454_b18c379c",
+      "questionId": "exp500_q_454_b18c379c",
+      "trilingualId": "exp500_tri_454_b18c379c",
+      "communicationId": "exp500_comm_091",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "mediate",
+      "vocabId": "exp500_455_adf22390",
+      "sentenceId": "exp500_sent_455_adf22390",
+      "questionId": "exp500_q_455_adf22390",
+      "trilingualId": "exp500_tri_455_adf22390",
+      "communicationId": "exp500_comm_091",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "membrane",
+      "vocabId": "exp500_456_74b84bc0",
+      "sentenceId": "exp500_sent_456_74b84bc0",
+      "questionId": "exp500_q_456_74b84bc0",
+      "trilingualId": "exp500_tri_456_74b84bc0",
+      "communicationId": "exp500_comm_092",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "might",
+      "vocabId": "exp500_457_2d9cbce8",
+      "sentenceId": "exp500_sent_457_2d9cbce8",
+      "questionId": "exp500_q_457_2d9cbce8",
+      "trilingualId": "exp500_tri_457_2d9cbce8",
+      "communicationId": "exp500_comm_092",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "mild",
+      "vocabId": "exp500_458_8b8e7f5b",
+      "sentenceId": "exp500_sent_458_8b8e7f5b",
+      "questionId": "exp500_q_458_8b8e7f5b",
+      "trilingualId": "exp500_tri_458_8b8e7f5b",
+      "communicationId": "exp500_comm_092",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "miserable",
+      "vocabId": "exp500_459_bf767ea3",
+      "sentenceId": "exp500_sent_459_bf767ea3",
+      "questionId": "exp500_q_459_bf767ea3",
+      "trilingualId": "exp500_tri_459_bf767ea3",
+      "communicationId": "exp500_comm_092",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "mobilize",
+      "vocabId": "exp500_460_d10fdcea",
+      "sentenceId": "exp500_sent_460_d10fdcea",
+      "questionId": "exp500_q_460_d10fdcea",
+      "trilingualId": "exp500_tri_460_d10fdcea",
+      "communicationId": "exp500_comm_092",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "mourn",
+      "vocabId": "exp500_461_72210188",
+      "sentenceId": "exp500_sent_461_72210188",
+      "questionId": "exp500_q_461_72210188",
+      "trilingualId": "exp500_tri_461_72210188",
+      "communicationId": "exp500_comm_093",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "navigation",
+      "vocabId": "exp500_462_2cd52ea3",
+      "sentenceId": "exp500_sent_462_2cd52ea3",
+      "questionId": "exp500_q_462_2cd52ea3",
+      "trilingualId": "exp500_tri_462_2cd52ea3",
+      "communicationId": "exp500_comm_093",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "negligible",
+      "vocabId": "exp500_463_d3213afb",
+      "sentenceId": "exp500_sent_463_d3213afb",
+      "questionId": "exp500_q_463_d3213afb",
+      "trilingualId": "exp500_tri_463_d3213afb",
+      "communicationId": "exp500_comm_093",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "nest",
+      "vocabId": "exp500_464_5ed0d48b",
+      "sentenceId": "exp500_sent_464_5ed0d48b",
+      "questionId": "exp500_q_464_5ed0d48b",
+      "trilingualId": "exp500_tri_464_5ed0d48b",
+      "communicationId": "exp500_comm_093",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "neutral",
+      "vocabId": "exp500_465_8c4b1ad8",
+      "sentenceId": "exp500_sent_465_8c4b1ad8",
+      "questionId": "exp500_q_465_8c4b1ad8",
+      "trilingualId": "exp500_tri_465_8c4b1ad8",
+      "communicationId": "exp500_comm_093",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "noble",
+      "vocabId": "exp500_466_ad30f06b",
+      "sentenceId": "exp500_sent_466_ad30f06b",
+      "questionId": "exp500_q_466_ad30f06b",
+      "trilingualId": "exp500_tri_466_ad30f06b",
+      "communicationId": "exp500_comm_094",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "numb",
+      "vocabId": "exp500_467_8f09b003",
+      "sentenceId": "exp500_sent_467_8f09b003",
+      "questionId": "exp500_q_467_8f09b003",
+      "trilingualId": "exp500_tri_467_8f09b003",
+      "communicationId": "exp500_comm_094",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "obscure",
+      "vocabId": "exp500_468_e7482c70",
+      "sentenceId": "exp500_sent_468_e7482c70",
+      "questionId": "exp500_q_468_e7482c70",
+      "trilingualId": "exp500_tri_468_e7482c70",
+      "communicationId": "exp500_comm_094",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "obstinate",
+      "vocabId": "exp500_469_3bedcd10",
+      "sentenceId": "exp500_sent_469_3bedcd10",
+      "questionId": "exp500_q_469_3bedcd10",
+      "trilingualId": "exp500_tri_469_3bedcd10",
+      "communicationId": "exp500_comm_094",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "obstruct",
+      "vocabId": "exp500_470_8687c785",
+      "sentenceId": "exp500_sent_470_8687c785",
+      "questionId": "exp500_q_470_8687c785",
+      "trilingualId": "exp500_tri_470_8687c785",
+      "communicationId": "exp500_comm_094",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "occupy",
+      "vocabId": "exp500_471_aac08218",
+      "sentenceId": "exp500_sent_471_aac08218",
+      "questionId": "exp500_q_471_aac08218",
+      "trilingualId": "exp500_tri_471_aac08218",
+      "communicationId": "exp500_comm_095",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "offend",
+      "vocabId": "exp500_472_c2e2e937",
+      "sentenceId": "exp500_sent_472_c2e2e937",
+      "questionId": "exp500_q_472_c2e2e937",
+      "trilingualId": "exp500_tri_472_c2e2e937",
+      "communicationId": "exp500_comm_095",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "omen",
+      "vocabId": "exp500_473_d27acd5e",
+      "sentenceId": "exp500_sent_473_d27acd5e",
+      "questionId": "exp500_q_473_d27acd5e",
+      "trilingualId": "exp500_tri_473_d27acd5e",
+      "communicationId": "exp500_comm_095",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "oppose",
+      "vocabId": "exp500_474_bc98fcdf",
+      "sentenceId": "exp500_sent_474_bc98fcdf",
+      "questionId": "exp500_q_474_bc98fcdf",
+      "trilingualId": "exp500_tri_474_bc98fcdf",
+      "communicationId": "exp500_comm_095",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "outline",
+      "vocabId": "exp500_475_361ad8bd",
+      "sentenceId": "exp500_sent_475_361ad8bd",
+      "questionId": "exp500_q_475_361ad8bd",
+      "trilingualId": "exp500_tri_475_361ad8bd",
+      "communicationId": "exp500_comm_095",
+      "grammarId": "exp500_grammar_19"
+    },
+    {
+      "word": "outlook",
+      "vocabId": "exp500_476_be1a3784",
+      "sentenceId": "exp500_sent_476_be1a3784",
+      "questionId": "exp500_q_476_be1a3784",
+      "trilingualId": "exp500_tri_476_be1a3784",
+      "communicationId": "exp500_comm_096",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "pace",
+      "vocabId": "exp500_477_715353ea",
+      "sentenceId": "exp500_sent_477_715353ea",
+      "questionId": "exp500_q_477_715353ea",
+      "trilingualId": "exp500_tri_477_715353ea",
+      "communicationId": "exp500_comm_096",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "pad",
+      "vocabId": "exp500_478_5955feaa",
+      "sentenceId": "exp500_sent_478_5955feaa",
+      "questionId": "exp500_q_478_5955feaa",
+      "trilingualId": "exp500_tri_478_5955feaa",
+      "communicationId": "exp500_comm_096",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "parallel",
+      "vocabId": "exp500_479_d8e0fc32",
+      "sentenceId": "exp500_sent_479_d8e0fc32",
+      "questionId": "exp500_q_479_d8e0fc32",
+      "trilingualId": "exp500_tri_479_d8e0fc32",
+      "communicationId": "exp500_comm_096",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "passion",
+      "vocabId": "exp500_480_9c45adbe",
+      "sentenceId": "exp500_sent_480_9c45adbe",
+      "questionId": "exp500_q_480_9c45adbe",
+      "trilingualId": "exp500_tri_480_9c45adbe",
+      "communicationId": "exp500_comm_096",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "passive",
+      "vocabId": "exp500_481_a75d185e",
+      "sentenceId": "exp500_sent_481_a75d185e",
+      "questionId": "exp500_q_481_a75d185e",
+      "trilingualId": "exp500_tri_481_a75d185e",
+      "communicationId": "exp500_comm_097",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "patent",
+      "vocabId": "exp500_482_7ea35cf7",
+      "sentenceId": "exp500_sent_482_7ea35cf7",
+      "questionId": "exp500_q_482_7ea35cf7",
+      "trilingualId": "exp500_tri_482_7ea35cf7",
+      "communicationId": "exp500_comm_097",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "peaceful",
+      "vocabId": "exp500_483_cd96ca30",
+      "sentenceId": "exp500_sent_483_cd96ca30",
+      "questionId": "exp500_q_483_cd96ca30",
+      "trilingualId": "exp500_tri_483_cd96ca30",
+      "communicationId": "exp500_comm_097",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "penalty",
+      "vocabId": "exp500_484_ae1c3f96",
+      "sentenceId": "exp500_sent_484_ae1c3f96",
+      "questionId": "exp500_q_484_ae1c3f96",
+      "trilingualId": "exp500_tri_484_ae1c3f96",
+      "communicationId": "exp500_comm_097",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "perpendicular",
+      "vocabId": "exp500_485_1e10d013",
+      "sentenceId": "exp500_sent_485_1e10d013",
+      "questionId": "exp500_q_485_1e10d013",
+      "trilingualId": "exp500_tri_485_1e10d013",
+      "communicationId": "exp500_comm_097",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "persecute",
+      "vocabId": "exp500_486_893c01df",
+      "sentenceId": "exp500_sent_486_893c01df",
+      "questionId": "exp500_q_486_893c01df",
+      "trilingualId": "exp500_tri_486_893c01df",
+      "communicationId": "exp500_comm_098",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "pill",
+      "vocabId": "exp500_487_1f627be2",
+      "sentenceId": "exp500_sent_487_1f627be2",
+      "questionId": "exp500_q_487_1f627be2",
+      "trilingualId": "exp500_tri_487_1f627be2",
+      "communicationId": "exp500_comm_098",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "pinch",
+      "vocabId": "exp500_488_3eeb6b87",
+      "sentenceId": "exp500_sent_488_3eeb6b87",
+      "questionId": "exp500_q_488_3eeb6b87",
+      "trilingualId": "exp500_tri_488_3eeb6b87",
+      "communicationId": "exp500_comm_098",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "plight",
+      "vocabId": "exp500_489_ddadb369",
+      "sentenceId": "exp500_sent_489_ddadb369",
+      "questionId": "exp500_q_489_ddadb369",
+      "trilingualId": "exp500_tri_489_ddadb369",
+      "communicationId": "exp500_comm_098",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "port",
+      "vocabId": "exp500_490_7be412a6",
+      "sentenceId": "exp500_sent_490_7be412a6",
+      "questionId": "exp500_q_490_7be412a6",
+      "trilingualId": "exp500_tri_490_7be412a6",
+      "communicationId": "exp500_comm_098",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "pragmatic",
+      "vocabId": "exp500_491_90424907",
+      "sentenceId": "exp500_sent_491_90424907",
+      "questionId": "exp500_q_491_90424907",
+      "trilingualId": "exp500_tri_491_90424907",
+      "communicationId": "exp500_comm_099",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "precious",
+      "vocabId": "exp500_492_5f3345ef",
+      "sentenceId": "exp500_sent_492_5f3345ef",
+      "questionId": "exp500_q_492_5f3345ef",
+      "trilingualId": "exp500_tri_492_5f3345ef",
+      "communicationId": "exp500_comm_099",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "pregnant",
+      "vocabId": "exp500_493_1de35300",
+      "sentenceId": "exp500_sent_493_1de35300",
+      "questionId": "exp500_q_493_1de35300",
+      "trilingualId": "exp500_tri_493_1de35300",
+      "communicationId": "exp500_comm_099",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "prejudice",
+      "vocabId": "exp500_494_9ac33320",
+      "sentenceId": "exp500_sent_494_9ac33320",
+      "questionId": "exp500_q_494_9ac33320",
+      "trilingualId": "exp500_tri_494_9ac33320",
+      "communicationId": "exp500_comm_099",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "premise",
+      "vocabId": "exp500_495_722c182c",
+      "sentenceId": "exp500_sent_495_722c182c",
+      "questionId": "exp500_q_495_722c182c",
+      "trilingualId": "exp500_tri_495_722c182c",
+      "communicationId": "exp500_comm_099",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "pressing",
+      "vocabId": "exp500_496_a677fc24",
+      "sentenceId": "exp500_sent_496_a677fc24",
+      "questionId": "exp500_q_496_a677fc24",
+      "trilingualId": "exp500_tri_496_a677fc24",
+      "communicationId": "exp500_comm_100",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "prick",
+      "vocabId": "exp500_497_fd442f20",
+      "sentenceId": "exp500_sent_497_fd442f20",
+      "questionId": "exp500_q_497_fd442f20",
+      "trilingualId": "exp500_tri_497_fd442f20",
+      "communicationId": "exp500_comm_100",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "prison",
+      "vocabId": "exp500_498_ee2cd616",
+      "sentenceId": "exp500_sent_498_ee2cd616",
+      "questionId": "exp500_q_498_ee2cd616",
+      "trilingualId": "exp500_tri_498_ee2cd616",
+      "communicationId": "exp500_comm_100",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "probe",
+      "vocabId": "exp500_499_7de2adb1",
+      "sentenceId": "exp500_sent_499_7de2adb1",
+      "questionId": "exp500_q_499_7de2adb1",
+      "trilingualId": "exp500_tri_499_7de2adb1",
+      "communicationId": "exp500_comm_100",
+      "grammarId": "exp500_grammar_20"
+    },
+    {
+      "word": "procession",
+      "vocabId": "exp500_500_e959ff94",
+      "sentenceId": "exp500_sent_500_e959ff94",
+      "questionId": "exp500_q_500_e959ff94",
+      "trilingualId": "exp500_tri_500_e959ff94",
+      "communicationId": "exp500_comm_100",
+      "grammarId": "exp500_grammar_20"
+    }
+  ]
+}

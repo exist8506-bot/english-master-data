@@ -11349,5 +11349,6605 @@
     ],
     "source": "extra500_v8",
     "sourceVersion": "7.0.6"
+  },
+  {
+    "id": "exp500_comm_001",
+    "title": "Luyện giao tiếp 01 — daily",
+    "topic": "daily",
+    "vocab": [
+      "altogether",
+      "angle",
+      "band",
+      "bathe",
+      "beer"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"altogether\" mean in everyday English?",
+        "Từ \"altogether\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "taken altogether",
+        "nhìn chung, đại thể"
+      ],
+      [
+        "A",
+        "How can I use \"angle\" in a sentence?",
+        "Từ \"angle\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "acute angle",
+        "góc nhọn"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"band\"?",
+        "Từ \"band\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "frequency band",
+        "dải tần số"
+      ],
+      [
+        "A",
+        "Where might I see the word \"bathe\"?",
+        "Từ \"bathe\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to go for a bathe",
+        "đi tắm (ở sông, biển...)"
+      ],
+      [
+        "A",
+        "How would you use \"beer\" in daily conversation?",
+        "Từ \"beer\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "life is not all beer and skittles",
+        "đời không phải lúc nào cũng chỉ giải trí vui chơi"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_002",
+    "title": "Luyện giao tiếp 02 — daily",
+    "topic": "daily",
+    "vocab": [
+      "blue",
+      "cake",
+      "conscientious",
+      "cordial",
+      "country"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"blue\" mean in everyday English?",
+        "Từ \"blue\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "dark blue",
+        "xanh sẫm"
+      ],
+      [
+        "A",
+        "How can I use \"cake\" in a sentence?",
+        "Từ \"cake\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "fish cake",
+        "cá đóng bánh"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"conscientious\"?",
+        "Từ \"conscientious\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a conscientious worker",
+        "người công nhân tận tâm"
+      ],
+      [
+        "A",
+        "Where might I see the word \"cordial\"?",
+        "Từ \"cordial\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "cordial smile",
+        "nụ cười thân mật"
+      ],
+      [
+        "A",
+        "How would you use \"country\" in daily conversation?",
+        "Từ \"country\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "densely wooded country",
+        "vùng cây cối rậm rạp"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_003",
+    "title": "Luyện giao tiếp 03 — daily",
+    "topic": "daily",
+    "vocab": [
+      "dare",
+      "depart",
+      "east",
+      "fat",
+      "green"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"dare\" mean in everyday English?",
+        "Từ \"dare\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to take a dare",
+        "nhận lời thách"
+      ],
+      [
+        "A",
+        "How can I use \"depart\" in a sentence?",
+        "Từ \"depart\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the train will depart at 6",
+        "xe lửa sẽ khởi hành lúc 6 giờ"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"east\"?",
+        "Từ \"east\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to the east of",
+        "về phía đông của"
+      ],
+      [
+        "A",
+        "Where might I see the word \"fat\"?",
+        "Từ \"fat\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "fat lands",
+        "đất màu mỡ"
+      ],
+      [
+        "A",
+        "How would you use \"green\" in daily conversation?",
+        "Từ \"green\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "green fruit",
+        "quả xanh"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_004",
+    "title": "Luyện giao tiếp 04 — daily",
+    "topic": "daily",
+    "vocab": [
+      "half",
+      "mathematics",
+      "more",
+      "north",
+      "oneself"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"half\" mean in everyday English?",
+        "Từ \"half\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "half an hour",
+        "nửa giờ"
+      ],
+      [
+        "A",
+        "How can I use \"mathematics\" in a sentence?",
+        "Từ \"mathematics\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "pure mathematics",
+        "toán học thuần tuý"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"more\"?",
+        "Từ \"more\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "there are more people than usual",
+        "có nhiều người hơn thường lệ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"north\"?",
+        "Từ \"north\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in the north",
+        "ở phương bắc"
+      ],
+      [
+        "A",
+        "How would you use \"oneself\" in daily conversation?",
+        "Từ \"oneself\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to speak of oneself",
+        "nói về bản thân mình"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_005",
+    "title": "Luyện giao tiếp 05 — daily",
+    "topic": "daily",
+    "vocab": [
+      "recent",
+      "resemble",
+      "south",
+      "strip",
+      "sudden"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"recent\" mean in everyday English?",
+        "Từ \"recent\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "recent news",
+        "tin tức mới đây"
+      ],
+      [
+        "A",
+        "How can I use \"resemble\" in a sentence?",
+        "Từ \"resemble\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to resemble one another",
+        "giống nhau"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"south\"?",
+        "Từ \"south\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "South Vietnam",
+        "miền Nam Việt nam"
+      ],
+      [
+        "A",
+        "Where might I see the word \"strip\"?",
+        "Từ \"strip\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a strip of cloth",
+        "một mảnh vải"
+      ],
+      [
+        "A",
+        "How would you use \"sudden\" in daily conversation?",
+        "Từ \"sudden\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a sudden change",
+        "sự thay đổi đột ngột"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_006",
+    "title": "Luyện giao tiếp 06 — daily",
+    "topic": "daily",
+    "vocab": [
+      "swing",
+      "termination",
+      "thin",
+      "toilet",
+      "two"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"swing\" mean in everyday English?",
+        "Từ \"swing\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to walk with a swing",
+        "đi nhún nhảy"
+      ],
+      [
+        "A",
+        "How can I use \"termination\" in a sentence?",
+        "Từ \"termination\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to put a termination to something",
+        "làm xong việc gì"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"thin\"?",
+        "Từ \"thin\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a thin sheet of paper",
+        "tờ giấy mỏng"
+      ],
+      [
+        "A",
+        "Where might I see the word \"toilet\"?",
+        "Từ \"toilet\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to make one's toilet",
+        "trang điểm"
+      ],
+      [
+        "A",
+        "How would you use \"two\" in daily conversation?",
+        "Từ \"two\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "he is two",
+        "nó lên hai"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_007",
+    "title": "Luyện giao tiếp 07 — daily",
+    "topic": "daily",
+    "vocab": [
+      "umbrella",
+      "west",
+      "world",
+      "yellow",
+      "accumulate"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"umbrella\" mean in everyday English?",
+        "Từ \"umbrella\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to put up one's umbrella",
+        "gương dù lên"
+      ],
+      [
+        "A",
+        "How can I use \"west\" in a sentence?",
+        "Từ \"west\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "west longitude",
+        "độ kinh tây"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"world\"?",
+        "Từ \"world\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to go round the world",
+        "đi vòng quanh thế giới"
+      ],
+      [
+        "A",
+        "Where might I see the word \"yellow\"?",
+        "Từ \"yellow\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to grow (turn, get, become) yellow",
+        "vàng ra, hoá vàng; úa vàng (lá)"
+      ],
+      [
+        "A",
+        "How would you use \"accumulate\" in daily conversation?",
+        "Từ \"accumulate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to accumulate capital",
+        "tích luỹ vốn"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_008",
+    "title": "Luyện giao tiếp 08 — daily",
+    "topic": "daily",
+    "vocab": [
+      "and",
+      "apologize",
+      "applaud",
+      "array",
+      "belly"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"and\" mean in everyday English?",
+        "Từ \"and\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to buy and sell",
+        "mua và bán"
+      ],
+      [
+        "A",
+        "How can I use \"apologize\" in a sentence?",
+        "Từ \"apologize\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to apologize to someone for something",
+        "xin lỗi ai về việc gì"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"applaud\"?",
+        "Từ \"applaud\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to applaud to the echo",
+        "vỗ tay vang lên"
+      ],
+      [
+        "A",
+        "Where might I see the word \"array\"?",
+        "Từ \"array\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an array of bottles and glasses",
+        "một dãy những chai cốc sắp xếp ngăn nắp"
+      ],
+      [
+        "A",
+        "How would you use \"belly\" in daily conversation?",
+        "Từ \"belly\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "with an empty belly",
+        "bụng đói"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_009",
+    "title": "Luyện giao tiếp 09 — daily",
+    "topic": "daily",
+    "vocab": [
+      "cheat",
+      "cheerful",
+      "companionship",
+      "compete",
+      "complicated"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"cheat\" mean in everyday English?",
+        "Từ \"cheat\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cheat someone [out] of something",
+        "lừa ai để lấy vật gì"
+      ],
+      [
+        "A",
+        "How can I use \"cheerful\" in a sentence?",
+        "Từ \"cheerful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a cheerful face",
+        "bộ mặt hớn hở"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"companionship\"?",
+        "Từ \"companionship\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a companionship of many years",
+        "tình bè bạn trong nhiều năm"
+      ],
+      [
+        "A",
+        "Where might I see the word \"compete\"?",
+        "Từ \"compete\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to compete with someone in talent",
+        "đua tài với người nào"
+      ],
+      [
+        "A",
+        "How would you use \"complicated\" in daily conversation?",
+        "Từ \"complicated\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a complicated piece of machinery",
+        "bộ phận máy móc phức tạp"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_010",
+    "title": "Luyện giao tiếp 10 — daily",
+    "topic": "daily",
+    "vocab": [
+      "congratulate",
+      "consult",
+      "cultivate",
+      "echo",
+      "envy"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"congratulate\" mean in everyday English?",
+        "Từ \"congratulate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to congratulate someone on something",
+        "mừng ai về việc gì"
+      ],
+      [
+        "A",
+        "How can I use \"consult\" in a sentence?",
+        "Từ \"consult\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to consult a lawyer",
+        "hỏi ý kiến luật sư"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"cultivate\"?",
+        "Từ \"cultivate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cultivate the mind",
+        "trau dồi trí tuệ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"echo\"?",
+        "Từ \"echo\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cheer someone to the echo",
+        "vỗ tay vang dậy hoan hô ai"
+      ],
+      [
+        "A",
+        "How would you use \"envy\" in daily conversation?",
+        "Từ \"envy\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "his strength is the envy of the school",
+        "sức khoẻ của anh ta là cái mà trong trường ai cũng thèm muốn"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_011",
+    "title": "Luyện giao tiếp 11 — daily",
+    "topic": "daily",
+    "vocab": [
+      "esteem",
+      "everything",
+      "genuine",
+      "grammar",
+      "grave"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"esteem\" mean in everyday English?",
+        "Từ \"esteem\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to hold someone in high esteem",
+        "kính mến ai, quý trọng ai"
+      ],
+      [
+        "A",
+        "How can I use \"everything\" in a sentence?",
+        "Từ \"everything\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "money is everything to some people",
+        "đối với người tiền là cái quan trọng bậc nhất"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"genuine\"?",
+        "Từ \"genuine\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a genuine pearl",
+        "viên ngọc trai thật"
+      ],
+      [
+        "A",
+        "Where might I see the word \"grammar\"?",
+        "Từ \"grammar\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "general (philosophical, universal) grammar",
+        "ngữ pháp phổ thông"
+      ],
+      [
+        "A",
+        "How would you use \"grave\" in daily conversation?",
+        "Từ \"grave\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "grave of homour",
+        "nơi chôn vùi danh dự"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_012",
+    "title": "Luyện giao tiếp 12 — daily",
+    "topic": "daily",
+    "vocab": [
+      "grieve",
+      "handsome",
+      "hire",
+      "impression",
+      "inconvenient"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"grieve\" mean in everyday English?",
+        "Từ \"grieve\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to grieve one's parents",
+        "làm cho cha mẹ đau lòng"
+      ],
+      [
+        "A",
+        "How can I use \"handsome\" in a sentence?",
+        "Từ \"handsome\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a handsome man",
+        "người đẹp trai"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"hire\"?",
+        "Từ \"hire\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "for hire",
+        "để cho thuê"
+      ],
+      [
+        "A",
+        "Where might I see the word \"impression\"?",
+        "Từ \"impression\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to make a strong impression on someone",
+        "gây một ấn tượng mạnh mẽ đối với ai"
+      ],
+      [
+        "A",
+        "How would you use \"inconvenient\" in daily conversation?",
+        "Từ \"inconvenient\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "of not inconvenient to you",
+        "nếu không có gì phiền anh, nếu không có gì bất tiện cho anh"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_013",
+    "title": "Luyện giao tiếp 13 — daily",
+    "topic": "daily",
+    "vocab": [
+      "lessen",
+      "lively",
+      "manufacture",
+      "mature",
+      "merit"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"lessen\" mean in everyday English?",
+        "Từ \"lessen\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to lessen the strain",
+        "giảm sự căng thẳng"
+      ],
+      [
+        "A",
+        "How can I use \"lively\" in a sentence?",
+        "Từ \"lively\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a lively portrait",
+        "một bức chân dung giống như thật"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"manufacture\"?",
+        "Từ \"manufacture\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "of Vietnam manufacture",
+        "do Việt-nam sản xuất"
+      ],
+      [
+        "A",
+        "Where might I see the word \"mature\"?",
+        "Từ \"mature\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "mature years",
+        "tuổi trưởng thành, tuổi thành niên"
+      ],
+      [
+        "A",
+        "How would you use \"merit\" in daily conversation?",
+        "Từ \"merit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a man of merit",
+        "người có giá trị; người có tài"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_014",
+    "title": "Luyện giao tiếp 14 — daily",
+    "topic": "daily",
+    "vocab": [
+      "moist",
+      "mood",
+      "narrow",
+      "notify",
+      "orderly"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"moist\" mean in everyday English?",
+        "Từ \"moist\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "moist season",
+        "mùa ẩm"
+      ],
+      [
+        "A",
+        "How can I use \"mood\" in a sentence?",
+        "Từ \"mood\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "imperatives mood",
+        "lối mệnh lệnh"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"narrow\"?",
+        "Từ \"narrow\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a narrow strêt",
+        "một phố hẹp"
+      ],
+      [
+        "A",
+        "Where might I see the word \"notify\"?",
+        "Từ \"notify\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to notify someone of something",
+        "báo cho ai biết việc gì"
+      ],
+      [
+        "A",
+        "How would you use \"orderly\" in daily conversation?",
+        "Từ \"orderly\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "orderly book",
+        "sổ nhật lệnh"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_015",
+    "title": "Luyện giao tiếp 15 — daily",
+    "topic": "daily",
+    "vocab": [
+      "perspiration",
+      "pitiful",
+      "postpone",
+      "praise",
+      "pride"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"perspiration\" mean in everyday English?",
+        "Từ \"perspiration\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to break into perspiration",
+        "toát mồ hôi"
+      ],
+      [
+        "A",
+        "How can I use \"pitiful\" in a sentence?",
+        "Từ \"pitiful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a pitiful amount",
+        "số lượng không đáng kể"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"postpone\"?",
+        "Từ \"postpone\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to postpone the meeting",
+        "hoãn cuộc họp"
+      ],
+      [
+        "A",
+        "Where might I see the word \"praise\"?",
+        "Từ \"praise\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to win praise",
+        "được ca ngợi, được ca tụng"
+      ],
+      [
+        "A",
+        "How would you use \"pride\" in daily conversation?",
+        "Từ \"pride\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "false pride",
+        "tính tự ái; tính kiêu căng ngạo mạn; tính hư danh, tính hiếu danh"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_016",
+    "title": "Luyện giao tiếp 16 — daily",
+    "topic": "daily",
+    "vocab": [
+      "provision",
+      "quarrel",
+      "recall",
+      "renounce",
+      "restrict"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"provision\" mean in everyday English?",
+        "Từ \"provision\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to make provision",
+        "chuẩn bị đầy đủ, dự phòng"
+      ],
+      [
+        "A",
+        "How can I use \"quarrel\" in a sentence?",
+        "Từ \"quarrel\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to pick (seek) a quarrel with somebody",
+        "gây chuyện cãi nhau với ai"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"recall\"?",
+        "Từ \"recall\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "letters of recall",
+        "thư triệu hồi"
+      ],
+      [
+        "A",
+        "Where might I see the word \"renounce\"?",
+        "Từ \"renounce\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to renounce the right of succession",
+        "từ bỏ quyền kế thừa"
+      ],
+      [
+        "A",
+        "How would you use \"restrict\" in daily conversation?",
+        "Từ \"restrict\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to restrict the use of alcohol",
+        "hạn chế việc dùng rượu"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_017",
+    "title": "Luyện giao tiếp 17 — daily",
+    "topic": "daily",
+    "vocab": [
+      "romantic",
+      "roughly",
+      "scenery",
+      "since",
+      "sleepy"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"romantic\" mean in everyday English?",
+        "Từ \"romantic\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a romantic girl",
+        "cô gái mơ mộng"
+      ],
+      [
+        "A",
+        "How can I use \"roughly\" in a sentence?",
+        "Từ \"roughly\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to answer roughly",
+        "trả lời cộc cằn"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"scenery\"?",
+        "Từ \"scenery\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the scenery is imposing",
+        "phong cảnh thật là hùng vĩ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"since\"?",
+        "Từ \"since\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "I have not seen him since",
+        "từ lâu tôi không gặp anh ta"
+      ],
+      [
+        "A",
+        "How would you use \"sleepy\" in daily conversation?",
+        "Từ \"sleepy\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "sleepy little town",
+        "thành phố nhỏ không nhộn nhịp"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_018",
+    "title": "Luyện giao tiếp 18 — daily",
+    "topic": "daily",
+    "vocab": [
+      "strict",
+      "stroll",
+      "sunshine",
+      "wipe",
+      "abstract"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"strict\" mean in everyday English?",
+        "Từ \"strict\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in the strict sense of the word",
+        "theo đúng nghĩa của từ"
+      ],
+      [
+        "A",
+        "How can I use \"stroll\" in a sentence?",
+        "Từ \"stroll\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to take a stroll; to go for a stroll",
+        "đi dạo, đi tản bộ"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"sunshine\"?",
+        "Từ \"sunshine\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in the sunshine",
+        "trong ánh nắng"
+      ],
+      [
+        "A",
+        "Where might I see the word \"wipe\"?",
+        "Từ \"wipe\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to wipe one's face",
+        "lau mặt"
+      ],
+      [
+        "A",
+        "How would you use \"abstract\" in daily conversation?",
+        "Từ \"abstract\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in the abstract",
+        "trừu tượng, lý thuyết"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_019",
+    "title": "Luyện giao tiếp 19 — daily",
+    "topic": "daily",
+    "vocab": [
+      "accomplishment",
+      "adolescent",
+      "alternate",
+      "amend",
+      "ample"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"accomplishment\" mean in everyday English?",
+        "Từ \"accomplishment\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the accomplishment of the prophecy",
+        "sự thực hiện lời tiên đoán"
+      ],
+      [
+        "A",
+        "How can I use \"adolescent\" in a sentence?",
+        "Từ \"adolescent\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "adolescent river",
+        "sông trẻ"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"alternate\"?",
+        "Từ \"alternate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to serve alternate shifts",
+        "làm luân phiên, làm theo ca kíp"
+      ],
+      [
+        "A",
+        "Where might I see the word \"amend\"?",
+        "Từ \"amend\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to amend one's way of living",
+        "sửa đổi lối sống"
+      ],
+      [
+        "A",
+        "How would you use \"ample\" in daily conversation?",
+        "Từ \"ample\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "ample garments",
+        "quần áo lụng thụng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_020",
+    "title": "Luyện giao tiếp 20 — daily",
+    "topic": "daily",
+    "vocab": [
+      "apex",
+      "arduous",
+      "ascertain",
+      "ashamed",
+      "askew"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"apex\" mean in everyday English?",
+        "Từ \"apex\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the apex of a triangle",
+        "đỉnh của một tam giác"
+      ],
+      [
+        "A",
+        "How can I use \"arduous\" in a sentence?",
+        "Từ \"arduous\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an arduous task",
+        "một công việc khó khăn gian khổ"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"ascertain\"?",
+        "Từ \"ascertain\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to ascertain a situation",
+        "tìm hiểu rõ ràng tình hình"
+      ],
+      [
+        "A",
+        "Where might I see the word \"ashamed\"?",
+        "Từ \"ashamed\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to feel ashamed",
+        "lấy làm xấu hổ"
+      ],
+      [
+        "A",
+        "How would you use \"askew\" in daily conversation?",
+        "Từ \"askew\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to look askew at somebody",
+        "liếc nhìn ai, lé nhìn ai"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_021",
+    "title": "Luyện giao tiếp 21 — daily",
+    "topic": "daily",
+    "vocab": [
+      "authentic",
+      "avert",
+      "awful",
+      "basin",
+      "bend"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"authentic\" mean in everyday English?",
+        "Từ \"authentic\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "authentic signature",
+        "chữ ký thật"
+      ],
+      [
+        "A",
+        "How can I use \"avert\" in a sentence?",
+        "Từ \"avert\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to avert one's eyes from a terrible sight",
+        "ngoảnh đi trước một cảnh tượng ghê người"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"awful\"?",
+        "Từ \"awful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an awful thunderstorm",
+        "cơn bão khủng khiếp"
+      ],
+      [
+        "A",
+        "Where might I see the word \"basin\"?",
+        "Từ \"basin\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "river basin",
+        "lưu vực sộng"
+      ],
+      [
+        "A",
+        "How would you use \"bend\" in daily conversation?",
+        "Từ \"bend\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a bend in the road",
+        "chỗ đường cong"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_022",
+    "title": "Luyện giao tiếp 22 — daily",
+    "topic": "daily",
+    "vocab": [
+      "bite",
+      "bloom",
+      "blunt",
+      "boast",
+      "bone"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"bite\" mean in everyday English?",
+        "Từ \"bite\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a bite of food",
+        "một miếng ăn"
+      ],
+      [
+        "A",
+        "How can I use \"bloom\" in a sentence?",
+        "Từ \"bloom\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in bloom",
+        "đang ra hoa"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"blunt\"?",
+        "Từ \"blunt\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "blunt angle",
+        "góc tù"
+      ],
+      [
+        "A",
+        "Where might I see the word \"boast\"?",
+        "Từ \"boast\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to make boast of something",
+        "khoe khoang cái gì"
+      ],
+      [
+        "A",
+        "How would you use \"bone\" in daily conversation?",
+        "Từ \"bone\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "frozen to the bone",
+        "rét thấu xương"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_023",
+    "title": "Luyện giao tiếp 23 — daily",
+    "topic": "daily",
+    "vocab": [
+      "breed",
+      "cancel",
+      "charm",
+      "cherish",
+      "chop"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"breed\" mean in everyday English?",
+        "Từ \"breed\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to breed horses",
+        "gây giống ngựa, chăn nuôi ngựa"
+      ],
+      [
+        "A",
+        "How can I use \"cancel\" in a sentence?",
+        "Từ \"cancel\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cancel an order for the goods",
+        "bỏ đơn đặt hàng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"charm\"?",
+        "Từ \"charm\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to charm a secret out of somebody",
+        "dụ ai để bắt thổ lộ điều bí mật"
+      ],
+      [
+        "A",
+        "Where might I see the word \"cherish\"?",
+        "Từ \"cherish\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cherish one's children",
+        "thương yêu con cái"
+      ],
+      [
+        "A",
+        "How would you use \"chop\" in daily conversation?",
+        "Từ \"chop\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to chop wood",
+        "bổ củi"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_024",
+    "title": "Luyện giao tiếp 24 — daily",
+    "topic": "daily",
+    "vocab": [
+      "cloth",
+      "coal",
+      "commemorate",
+      "compassion",
+      "compensate"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"cloth\" mean in everyday English?",
+        "Từ \"cloth\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "american cloth; oil cloth",
+        "vải sơn, vải dầu"
+      ],
+      [
+        "A",
+        "How can I use \"coal\" in a sentence?",
+        "Từ \"coal\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to coal a ship",
+        "cho tàu ăn than"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"commemorate\"?",
+        "Từ \"commemorate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to commemorate a victory",
+        "kỷ niệm chiến thắng"
+      ],
+      [
+        "A",
+        "Where might I see the word \"compassion\"?",
+        "Từ \"compassion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to have (take) compassion on (upon somebody)",
+        "thương hại ai"
+      ],
+      [
+        "A",
+        "How would you use \"compensate\" in daily conversation?",
+        "Từ \"compensate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to compensate someone for something",
+        "đền bù (bồi thường) cho ai về cái gì"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_025",
+    "title": "Luyện giao tiếp 25 — daily",
+    "topic": "daily",
+    "vocab": [
+      "composition",
+      "concentrated",
+      "concrete",
+      "conserve",
+      "constitute"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"composition\" mean in everyday English?",
+        "Từ \"composition\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to study the composition of the soil",
+        "nghiên cứu thành phần của đất"
+      ],
+      [
+        "A",
+        "How can I use \"concentrated\" in a sentence?",
+        "Từ \"concentrated\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "concentrated fire",
+        "hoả lực tập trung"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"concrete\"?",
+        "Từ \"concrete\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "concrete noun",
+        "danh từ cụ thể"
+      ],
+      [
+        "A",
+        "Where might I see the word \"conserve\"?",
+        "Từ \"conserve\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to conserve one's strength",
+        "giữ gìn sức khoẻ; bảo toàn lực lượng"
+      ],
+      [
+        "A",
+        "How would you use \"constitute\" in daily conversation?",
+        "Từ \"constitute\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to constitute someone's happiness",
+        "tạo hạnh phúc cho ai"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_026",
+    "title": "Luyện giao tiếp 26 — daily",
+    "topic": "daily",
+    "vocab": [
+      "consultation",
+      "contempt",
+      "contradictory",
+      "courage",
+      "curtail"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"consultation\" mean in everyday English?",
+        "Từ \"consultation\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to hold a consultation",
+        "bàn bạc, thảo luận, hội đàm, hội ý"
+      ],
+      [
+        "A",
+        "How can I use \"contempt\" in a sentence?",
+        "Từ \"contempt\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "he rushed forward in contempt of danger",
+        "anh ta xông lên phía trước coi thường cả nguy hiểm"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"contradictory\"?",
+        "Từ \"contradictory\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "contradictory statements",
+        "những lời tuyên bố mâu thuẫn"
+      ],
+      [
+        "A",
+        "Where might I see the word \"courage\"?",
+        "Từ \"courage\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to keep up one's courage",
+        "giữ vững can đảm, không nản lòng"
+      ],
+      [
+        "A",
+        "How would you use \"curtail\" in daily conversation?",
+        "Từ \"curtail\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to curtail expenses",
+        "cắt bớt các khoản chi tiêu"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_027",
+    "title": "Luyện giao tiếp 27 — daily",
+    "topic": "daily",
+    "vocab": [
+      "deficient",
+      "definite",
+      "delay",
+      "delusion",
+      "determination"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"deficient\" mean in everyday English?",
+        "Từ \"deficient\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be deficient in courage",
+        "thiếu can đảm"
+      ],
+      [
+        "A",
+        "How can I use \"definite\" in a sentence?",
+        "Từ \"definite\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a definite time",
+        "thời điểm xác định"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"delay\"?",
+        "Từ \"delay\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to act without delay",
+        "hành động không chậm trễ (không trì hoãn)"
+      ],
+      [
+        "A",
+        "Where might I see the word \"delusion\"?",
+        "Từ \"delusion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be (labour) under a delusion",
+        "bị một ảo tưởng ám ảnh"
+      ],
+      [
+        "A",
+        "How would you use \"determination\" in daily conversation?",
+        "Từ \"determination\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to come to a determination",
+        "đi tới chỗ quyết định; quyết định"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_028",
+    "title": "Luyện giao tiếp 28 — daily",
+    "topic": "daily",
+    "vocab": [
+      "dew",
+      "digest",
+      "distribute",
+      "divorce",
+      "dust"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"dew\" mean in everyday English?",
+        "Từ \"dew\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "evening dew",
+        "sương chiều"
+      ],
+      [
+        "A",
+        "How can I use \"digest\" in a sentence?",
+        "Từ \"digest\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to digest an insult",
+        "nuốt nhục, chịu nhục"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"distribute\"?",
+        "Từ \"distribute\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to distribute letters",
+        "phát thư"
+      ],
+      [
+        "A",
+        "Where might I see the word \"divorce\"?",
+        "Từ \"divorce\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to divorce one thing from another",
+        "tách một vật này ra khỏi vật khác"
+      ],
+      [
+        "A",
+        "How would you use \"dust\" in daily conversation?",
+        "Từ \"dust\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "gold dust",
+        "bụi vàng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_029",
+    "title": "Luyện giao tiếp 29 — daily",
+    "topic": "daily",
+    "vocab": [
+      "efficiency",
+      "elephant",
+      "extend",
+      "feign",
+      "fog"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"efficiency\" mean in everyday English?",
+        "Từ \"efficiency\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "labour efficiency",
+        "năng suất lao động"
+      ],
+      [
+        "A",
+        "How can I use \"elephant\" in a sentence?",
+        "Từ \"elephant\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "double elephant",
+        "khổ giấy 1 m x 77 cm"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"extend\"?",
+        "Từ \"extend\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to extend the arm",
+        "duỗi cánh tay"
+      ],
+      [
+        "A",
+        "Where might I see the word \"feign\"?",
+        "Từ \"feign\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to feign madness",
+        "giả vờ điên"
+      ],
+      [
+        "A",
+        "How would you use \"fog\" in daily conversation?",
+        "Từ \"fog\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be in a fog",
+        "bối rối hoang mang"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_030",
+    "title": "Luyện giao tiếp 30 — daily",
+    "topic": "daily",
+    "vocab": [
+      "fortunate",
+      "frighten",
+      "fundamental",
+      "generous",
+      "goods"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"fortunate\" mean in everyday English?",
+        "Từ \"fortunate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a fortunate omen",
+        "điểm tốt"
+      ],
+      [
+        "A",
+        "How can I use \"frighten\" in a sentence?",
+        "Từ \"frighten\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to frighten somebody into during something",
+        "làm cho ai sợ mà phải làm việc gì"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"fundamental\"?",
+        "Từ \"fundamental\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "fundamental rules",
+        "những quy tắc cơ bản"
+      ],
+      [
+        "A",
+        "Where might I see the word \"generous\"?",
+        "Từ \"generous\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a generous meal",
+        "bữa ăn thịnh soạn"
+      ],
+      [
+        "A",
+        "How would you use \"goods\" in daily conversation?",
+        "Từ \"goods\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "production of goods",
+        "sự sản xuất hàng hoá"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_031",
+    "title": "Luyện giao tiếp 31 — weather",
+    "topic": "weather",
+    "vocab": [
+      "grain",
+      "hasty",
+      "helpless",
+      "hinder",
+      "horizontal"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"grain\" mean in everyday English?",
+        "Từ \"grain\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a grain of rice",
+        "hạt gạo"
+      ],
+      [
+        "A",
+        "How can I use \"hasty\" in a sentence?",
+        "Từ \"hasty\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "hasty preparation",
+        "những sự chuẩn bị vội vàng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"helpless\"?",
+        "Từ \"helpless\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a helpless invalid",
+        "một người tàn phế không tự lực được"
+      ],
+      [
+        "A",
+        "Where might I see the word \"hinder\"?",
+        "Từ \"hinder\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to hinder someone's work",
+        "cản trở công việc của ai"
+      ],
+      [
+        "A",
+        "How would you use \"horizontal\" in daily conversation?",
+        "Từ \"horizontal\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "horizontal plane",
+        "mặt phẳng nằm ngang"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_032",
+    "title": "Luyện giao tiếp 32 — daily",
+    "topic": "daily",
+    "vocab": [
+      "how",
+      "humanity",
+      "idle",
+      "imitate",
+      "impatience"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"how\" mean in everyday English?",
+        "Từ \"how\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "he doesn't know how to behave",
+        "hắn không biết xử sự thế nào"
+      ],
+      [
+        "A",
+        "How can I use \"humanity\" in a sentence?",
+        "Từ \"humanity\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a crime against humanity",
+        "một tội ác đối với toàn thể loài người"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"idle\"?",
+        "Từ \"idle\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in an idle hour",
+        "trong lúc ngồi rồi"
+      ],
+      [
+        "A",
+        "Where might I see the word \"imitate\"?",
+        "Từ \"imitate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to imitate the virtues of great men",
+        "theo gương đạo đức của những người vĩ đại"
+      ],
+      [
+        "A",
+        "How would you use \"impatience\" in daily conversation?",
+        "Từ \"impatience\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "unable to restrain one's impatience",
+        "không kìm được sự nôn nóng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_033",
+    "title": "Luyện giao tiếp 33 — daily",
+    "topic": "daily",
+    "vocab": [
+      "individuality",
+      "induce",
+      "inevitable",
+      "infect",
+      "inquire"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"individuality\" mean in everyday English?",
+        "Từ \"individuality\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a man of marked individuality",
+        "một người có cá tính rõ rệt"
+      ],
+      [
+        "A",
+        "How can I use \"induce\" in a sentence?",
+        "Từ \"induce\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to induce someone to do something",
+        "xui ai làm việc gì"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"inevitable\"?",
+        "Từ \"inevitable\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a tourist with his inevitable camera",
+        "nhà du lịch với chiếc máy ảnh quen thuộc"
+      ],
+      [
+        "A",
+        "Where might I see the word \"infect\"?",
+        "Từ \"infect\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to infect someone with pernicious ideas",
+        "tiêm nhiễm cho ai những ý nghĩ độc hại"
+      ],
+      [
+        "A",
+        "How would you use \"inquire\" in daily conversation?",
+        "Từ \"inquire\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to inquire into something",
+        "điều tra việc gì"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_034",
+    "title": "Luyện giao tiếp 34 — daily",
+    "topic": "daily",
+    "vocab": [
+      "intense",
+      "laughter",
+      "lawful",
+      "leak",
+      "leisure"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"intense\" mean in everyday English?",
+        "Từ \"intense\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "intense heart",
+        "nóng gắt"
+      ],
+      [
+        "A",
+        "How can I use \"laughter\" in a sentence?",
+        "Từ \"laughter\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to burst (break) into laughter",
+        "cười phá lên"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"lawful\"?",
+        "Từ \"lawful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to come of lawful age",
+        "đến tuổi công dân"
+      ],
+      [
+        "A",
+        "Where might I see the word \"leak\"?",
+        "Từ \"leak\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to spring (start) a leak",
+        "bị rò"
+      ],
+      [
+        "A",
+        "How would you use \"leisure\" in daily conversation?",
+        "Từ \"leisure\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "at leisure",
+        "rỗi việc, có thì giờ rảnh, nhàn nhã; ung dung, không vội vàng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_035",
+    "title": "Luyện giao tiếp 35 — daily",
+    "topic": "daily",
+    "vocab": [
+      "lightning",
+      "liquid",
+      "loosen",
+      "luxurious",
+      "miracle"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"lightning\" mean in everyday English?",
+        "Từ \"lightning\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "as quick as lightning; like lightning; with lightning speed",
+        "nhanh như chớp, trong nháy mắt"
+      ],
+      [
+        "A",
+        "How can I use \"liquid\" in a sentence?",
+        "Từ \"liquid\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "liquid voice",
+        "tiếng nói dịu dàng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"loosen\"?",
+        "Từ \"loosen\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to loosen a screw",
+        "nới lỏng một cái đinh ốc"
+      ],
+      [
+        "A",
+        "Where might I see the word \"luxurious\"?",
+        "Từ \"luxurious\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "luxurious life",
+        "đời sống xa hoa"
+      ],
+      [
+        "A",
+        "How would you use \"miracle\" in daily conversation?",
+        "Từ \"miracle\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a miracle of ingenuity",
+        "một sự khéo léo kỳ lạ"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_036",
+    "title": "Luyện giao tiếp 36 — daily",
+    "topic": "daily",
+    "vocab": [
+      "modest",
+      "monotonous",
+      "muscle",
+      "naughty",
+      "neglect"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"modest\" mean in everyday English?",
+        "Từ \"modest\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the hero was very modest about his great deals",
+        "người anh hùng rất khiêm tốn về những chiến công to lớn của mình"
+      ],
+      [
+        "A",
+        "How can I use \"monotonous\" in a sentence?",
+        "Từ \"monotonous\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a monotonous voice",
+        "giọng đều đều"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"muscle\"?",
+        "Từ \"muscle\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a man of muscle",
+        "một người có sức lực, một người vạm vỡ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"naughty\"?",
+        "Từ \"naughty\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a naughty boy",
+        "thằng bé hư"
+      ],
+      [
+        "A",
+        "How would you use \"neglect\" in daily conversation?",
+        "Từ \"neglect\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "neglect of duty",
+        "sự sao lãng bổn phận"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_037",
+    "title": "Luyện giao tiếp 37 — daily",
+    "topic": "daily",
+    "vocab": [
+      "nod",
+      "nonsense",
+      "objective",
+      "pat",
+      "peanut"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"nod\" mean in everyday English?",
+        "Từ \"nod\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to give a nod of assent",
+        "gật đầu bằng lòng (tán thành)"
+      ],
+      [
+        "A",
+        "How can I use \"nonsense\" in a sentence?",
+        "Từ \"nonsense\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to talk nonsense",
+        "nói càn, nói bậy; nói chuyện vô lý"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"objective\"?",
+        "Từ \"objective\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "objective opinion",
+        "ý kiến khách quan"
+      ],
+      [
+        "A",
+        "Where might I see the word \"pat\"?",
+        "Từ \"pat\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to pat someone on the back",
+        "vỗ nhẹ vào lưng ai"
+      ],
+      [
+        "A",
+        "How would you use \"peanut\" in daily conversation?",
+        "Từ \"peanut\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "peanut politician",
+        "nhà chính trị nhãi nhép"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_038",
+    "title": "Luyện giao tiếp 38 — daily",
+    "topic": "daily",
+    "vocab": [
+      "pigeon",
+      "plaything",
+      "poem",
+      "possess",
+      "posture"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"pigeon\" mean in everyday English?",
+        "Từ \"pigeon\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to pluck a pigeon",
+        "\"vặt lông\" một anh ngốc"
+      ],
+      [
+        "A",
+        "How can I use \"plaything\" in a sentence?",
+        "Từ \"plaything\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be treated as a plaything",
+        "bị coi như một đồ chơi"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"poem\"?",
+        "Từ \"poem\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the chalet is a poem in wood",
+        "ngôi nhà ván ấy là một kiến trúc bằng gỗ rất nên thơ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"possess\"?",
+        "Từ \"possess\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to possess good qualities",
+        "có những đức tính tốt"
+      ],
+      [
+        "A",
+        "How would you use \"posture\" in daily conversation?",
+        "Từ \"posture\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the present posture of affairs",
+        "tình hình sự việc hiện nay"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_039",
+    "title": "Luyện giao tiếp 39 — daily",
+    "topic": "daily",
+    "vocab": [
+      "practical",
+      "preferential",
+      "profound",
+      "prolong",
+      "proportion"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"practical\" mean in everyday English?",
+        "Từ \"practical\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "practical agriculture",
+        "nông nghiệp thực hành"
+      ],
+      [
+        "A",
+        "How can I use \"preferential\" in a sentence?",
+        "Từ \"preferential\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "preferential right",
+        "quyền ưu tiên"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"profound\"?",
+        "Từ \"profound\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "profound depths of the ocean",
+        "đáy sâu thẳm của đại dương"
+      ],
+      [
+        "A",
+        "Where might I see the word \"prolong\"?",
+        "Từ \"prolong\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to prolong a straigh line",
+        "kéo dài một đường thẳng"
+      ],
+      [
+        "A",
+        "How would you use \"proportion\" in daily conversation?",
+        "Từ \"proportion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in proportion to",
+        "cân xứng với"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_040",
+    "title": "Luyện giao tiếp 40 — daily",
+    "topic": "daily",
+    "vocab": [
+      "prosperous",
+      "protest",
+      "provoke",
+      "purple",
+      "rapid"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"prosperous\" mean in everyday English?",
+        "Từ \"prosperous\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "prosperous winds",
+        "gió thuận"
+      ],
+      [
+        "A",
+        "How can I use \"protest\" in a sentence?",
+        "Từ \"protest\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "under protest",
+        "phản đối lại, kháng lại, vùng vằng; miễn cưỡng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"provoke\"?",
+        "Từ \"provoke\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to provoke someone to anger",
+        "chọc tức ai"
+      ],
+      [
+        "A",
+        "Where might I see the word \"purple\"?",
+        "Từ \"purple\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be born of the purple",
+        "là dòng dõi vương giả"
+      ],
+      [
+        "A",
+        "How would you use \"rapid\" in daily conversation?",
+        "Từ \"rapid\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a rapid decline in health",
+        "sự giảm sút sức khoẻ nhanh chóng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_041",
+    "title": "Luyện giao tiếp 41 — daily",
+    "topic": "daily",
+    "vocab": [
+      "rational",
+      "rearing",
+      "recruit",
+      "regarding",
+      "reliable"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"rational\" mean in everyday English?",
+        "Từ \"rational\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a rational being",
+        "một sinh vật có lý trí"
+      ],
+      [
+        "A",
+        "How can I use \"rearing\" in a sentence?",
+        "Từ \"rearing\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the rearing of children",
+        "cách nuôi dạy con"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"recruit\"?",
+        "Từ \"recruit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to recruit one's health",
+        "phục hồi sức khoẻ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"regarding\"?",
+        "Từ \"regarding\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "policy regarding various natinalities",
+        "chính sách đối với các dân tộc"
+      ],
+      [
+        "A",
+        "How would you use \"reliable\" in daily conversation?",
+        "Từ \"reliable\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a reliable man",
+        "một người đáng tin cậy"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_042",
+    "title": "Luyện giao tiếp 42 — daily",
+    "topic": "daily",
+    "vocab": [
+      "replenish",
+      "resign",
+      "resist",
+      "retain",
+      "retire"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"replenish\" mean in everyday English?",
+        "Từ \"replenish\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to replenish a lamp",
+        "lại đổ đầy dầu vào đèn"
+      ],
+      [
+        "A",
+        "How can I use \"resign\" in a sentence?",
+        "Từ \"resign\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to resign the property to the right claimant",
+        "trao lại tài sản cho người được hưởng chính đáng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"resist\"?",
+        "Từ \"resist\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to resist an attack",
+        "chống lại một cuộc tấn công"
+      ],
+      [
+        "A",
+        "Where might I see the word \"retain\"?",
+        "Từ \"retain\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "dykes retain the river water",
+        "đê điều ngăn giữ nước sông"
+      ],
+      [
+        "A",
+        "How would you use \"retire\" in daily conversation?",
+        "Từ \"retire\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to retire from the room",
+        "ra khỏi căn phòng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_043",
+    "title": "Luyện giao tiếp 43 — daily",
+    "topic": "daily",
+    "vocab": [
+      "retreat",
+      "rubber",
+      "rugged",
+      "shake",
+      "shallow"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"retreat\" mean in everyday English?",
+        "Từ \"retreat\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to sound the retreat",
+        "thổi hiệu lệnh rút lui"
+      ],
+      [
+        "A",
+        "How can I use \"rubber\" in a sentence?",
+        "Từ \"rubber\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "hard rubber",
+        "cao su cứng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"rugged\"?",
+        "Từ \"rugged\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "rugged ground",
+        "đất gồ ghề"
+      ],
+      [
+        "A",
+        "Where might I see the word \"shake\"?",
+        "Từ \"shake\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a shake of the head",
+        "cái lắc đầu"
+      ],
+      [
+        "A",
+        "How would you use \"shallow\" in daily conversation?",
+        "Từ \"shallow\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "shallow water",
+        "nước nông"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_044",
+    "title": "Luyện giao tiếp 44 — daily",
+    "topic": "daily",
+    "vocab": [
+      "shortage",
+      "slim",
+      "soldier",
+      "solemn",
+      "solicit"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"shortage\" mean in everyday English?",
+        "Từ \"shortage\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a shortage of staff",
+        "sự thiếu biến chế"
+      ],
+      [
+        "A",
+        "How can I use \"slim\" in a sentence?",
+        "Từ \"slim\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "slim fingers",
+        "ngón tay thon búp măng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"soldier\"?",
+        "Từ \"soldier\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a soldier of fortune",
+        "lính đánh thuê"
+      ],
+      [
+        "A",
+        "Where might I see the word \"solemn\"?",
+        "Từ \"solemn\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a solemn occasion",
+        "một dịp trang nghiêm"
+      ],
+      [
+        "A",
+        "How would you use \"solicit\" in daily conversation?",
+        "Từ \"solicit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to solicit favours",
+        "nài xin ân huệ"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_045",
+    "title": "Luyện giao tiếp 45 — daily",
+    "topic": "daily",
+    "vocab": [
+      "sprinkle",
+      "stature",
+      "steady",
+      "stretch",
+      "strive"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"sprinkle\" mean in everyday English?",
+        "Từ \"sprinkle\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a sprinkle of rain",
+        "vài hạt mưa lắc rắc"
+      ],
+      [
+        "A",
+        "How can I use \"stature\" in a sentence?",
+        "Từ \"stature\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to increase in stature",
+        "cao lên"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"steady\"?",
+        "Từ \"steady\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "steady as a rock",
+        "vững như bàn thạch"
+      ],
+      [
+        "A",
+        "Where might I see the word \"stretch\"?",
+        "Từ \"stretch\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "stretch of the arm",
+        "sự duỗi tay ra"
+      ],
+      [
+        "A",
+        "How would you use \"strive\" in daily conversation?",
+        "Từ \"strive\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to strive for (after) something",
+        "cố gắng để đạt điều gì"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_046",
+    "title": "Luyện giao tiếp 46 — daily",
+    "topic": "daily",
+    "vocab": [
+      "superiority",
+      "tail",
+      "tender",
+      "thorough",
+      "thoroughfare"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"superiority\" mean in everyday English?",
+        "Từ \"superiority\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the superiority of socialism over capitalism",
+        "tính hơn hẳn của chủ nghĩa xã hội đối với chủ nghĩa tư bản"
+      ],
+      [
+        "A",
+        "How can I use \"tail\" in a sentence?",
+        "Từ \"tail\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to wag the tail",
+        "vẫy đuôi"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"tender\"?",
+        "Từ \"tender\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "tender meat",
+        "thịt mềm"
+      ],
+      [
+        "A",
+        "Where might I see the word \"thorough\"?",
+        "Từ \"thorough\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to take a thorough rest",
+        "hoàn toàn nghỉ ngơi"
+      ],
+      [
+        "A",
+        "How would you use \"thoroughfare\" in daily conversation?",
+        "Từ \"thoroughfare\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "busy thoroughfare",
+        "đường phố đông người"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_047",
+    "title": "Luyện giao tiếp 47 — daily",
+    "topic": "daily",
+    "vocab": [
+      "thoughtful",
+      "throat",
+      "thunder",
+      "tin",
+      "ton"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"thoughtful\" mean in everyday English?",
+        "Từ \"thoughtful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a thoughtful book",
+        "một cuốn sách sâu sắc"
+      ],
+      [
+        "A",
+        "How can I use \"throat\" in a sentence?",
+        "Từ \"throat\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to grip someone by the throat",
+        "bóp cổ ai"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"thunder\"?",
+        "Từ \"thunder\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a clap of thunder",
+        "tiếng sét ổn"
+      ],
+      [
+        "A",
+        "Where might I see the word \"tin\"?",
+        "Từ \"tin\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a tin of sardine",
+        "hộp cá trích"
+      ],
+      [
+        "A",
+        "How would you use \"ton\" in daily conversation?",
+        "Từ \"ton\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "long ton; gross ton",
+        "tấn Anh (1016 kg)"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_048",
+    "title": "Luyện giao tiếp 48 — daily",
+    "topic": "daily",
+    "vocab": [
+      "tone",
+      "tongue",
+      "tranquil",
+      "transmit",
+      "transparent"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"tone\" mean in everyday English?",
+        "Từ \"tone\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the sweet tone of the violin",
+        "tiếng viôlông êm dịu"
+      ],
+      [
+        "A",
+        "How can I use \"tongue\" in a sentence?",
+        "Từ \"tongue\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "one's mother tongue",
+        "tiếng mẹ đẻ"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"tranquil\"?",
+        "Từ \"tranquil\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "tranquil sea",
+        "biển lặng"
+      ],
+      [
+        "A",
+        "Where might I see the word \"transmit\"?",
+        "Từ \"transmit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to transmit a letter",
+        "chuyển một bức thư"
+      ],
+      [
+        "A",
+        "How would you use \"transparent\" in daily conversation?",
+        "Từ \"transparent\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a transparent style",
+        "lối hành văn trong sáng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_049",
+    "title": "Luyện giao tiếp 49 — daily",
+    "topic": "daily",
+    "vocab": [
+      "treasure",
+      "tremble",
+      "tube",
+      "undertake",
+      "unexpected"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"treasure\" mean in everyday English?",
+        "Từ \"treasure\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to amass a treasure",
+        "tích luỹ của cải"
+      ],
+      [
+        "A",
+        "How can I use \"tremble\" in a sentence?",
+        "Từ \"tremble\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to tremble with fear",
+        "sợ run"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"tube\"?",
+        "Từ \"tube\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "steel tube",
+        "ống thép"
+      ],
+      [
+        "A",
+        "Where might I see the word \"undertake\"?",
+        "Từ \"undertake\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "I can't undertake to do that",
+        "tôi không thể nhận làm điều đó"
+      ],
+      [
+        "A",
+        "How would you use \"unexpected\" in daily conversation?",
+        "Từ \"unexpected\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an unexpected piece of luck",
+        "một sự may mắn không ngờ"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_050",
+    "title": "Luyện giao tiếp 50 — daily",
+    "topic": "daily",
+    "vocab": [
+      "unfold",
+      "unilateral",
+      "urge",
+      "urgent",
+      "vague"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"unfold\" mean in everyday English?",
+        "Từ \"unfold\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to unfold a newpaper",
+        "mở một tờ báo ra"
+      ],
+      [
+        "A",
+        "How can I use \"unilateral\" in a sentence?",
+        "Từ \"unilateral\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "unilateral contract",
+        "hợp đồng ràng buộc một bên"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"urge\"?",
+        "Từ \"urge\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to urge the horse onward",
+        "thúc ngựa tiến lên"
+      ],
+      [
+        "A",
+        "Where might I see the word \"urgent\"?",
+        "Từ \"urgent\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "urgent need",
+        "nhu cầu cấp bách"
+      ],
+      [
+        "A",
+        "How would you use \"vague\" in daily conversation?",
+        "Từ \"vague\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a vague idea",
+        "ý nghĩ mơ hồ"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_051",
+    "title": "Luyện giao tiếp 51 — daily",
+    "topic": "daily",
+    "vocab": [
+      "vibration",
+      "vile",
+      "vinegar",
+      "virtue",
+      "virus"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"vibration\" mean in everyday English?",
+        "Từ \"vibration\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "amplitude of vibration",
+        "độ biến chấn động"
+      ],
+      [
+        "A",
+        "How can I use \"vile\" in a sentence?",
+        "Từ \"vile\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "vile language",
+        "giọng lưỡi hèn hạ"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"vinegar\"?",
+        "Từ \"vinegar\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a vinegar tongue",
+        "miệng lưỡi chua như giấm"
+      ],
+      [
+        "A",
+        "Where might I see the word \"virtue\"?",
+        "Từ \"virtue\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to follow virtue",
+        "ăn ở có đức"
+      ],
+      [
+        "A",
+        "How would you use \"virus\" in daily conversation?",
+        "Từ \"virus\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "filterable virus",
+        "virut qua lọc"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_052",
+    "title": "Luyện giao tiếp 52 — daily",
+    "topic": "daily",
+    "vocab": [
+      "vivid",
+      "voluntary",
+      "vomit",
+      "waist",
+      "wolf"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"vivid\" mean in everyday English?",
+        "Từ \"vivid\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "vivid light",
+        "ánh sáng chói lọi"
+      ],
+      [
+        "A",
+        "How can I use \"voluntary\" in a sentence?",
+        "Từ \"voluntary\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a voluntary contribution",
+        "sự đóng góp tự nguyện"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"vomit\"?",
+        "Từ \"vomit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to vomit blood",
+        "nôn ra máu"
+      ],
+      [
+        "A",
+        "Where might I see the word \"waist\"?",
+        "Từ \"waist\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "up (down) to the waist",
+        "đến thắt lưng"
+      ],
+      [
+        "A",
+        "How would you use \"wolf\" in daily conversation?",
+        "Từ \"wolf\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to wolf [down] one's food",
+        "nuốt ngấu nghiến đồ ăn"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_053",
+    "title": "Luyện giao tiếp 53 — daily",
+    "topic": "daily",
+    "vocab": [
+      "yell",
+      "abolish",
+      "abundant",
+      "accord",
+      "accuracy"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"yell\" mean in everyday English?",
+        "Từ \"yell\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to yell with pain",
+        "kêu la vì đau đớn"
+      ],
+      [
+        "A",
+        "How can I use \"abolish\" in a sentence?",
+        "Từ \"abolish\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to abolish the exploitation of man by man",
+        "thủ tiêu chế độ người bóc lột người"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"abundant\"?",
+        "Từ \"abundant\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be abundant in something",
+        "có nhiều cái gì"
+      ],
+      [
+        "A",
+        "Where might I see the word \"accord\"?",
+        "Từ \"accord\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "with one accord; of one accord",
+        "đồng lòng, nhất trí"
+      ],
+      [
+        "A",
+        "How would you use \"accuracy\" in daily conversation?",
+        "Từ \"accuracy\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "accuracy of fire",
+        "sự bắn chính xác"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_054",
+    "title": "Luyện giao tiếp 54 — daily",
+    "topic": "daily",
+    "vocab": [
+      "acrobatics",
+      "add",
+      "adjourn",
+      "administer",
+      "administrative"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"acrobatics\" mean in everyday English?",
+        "Từ \"acrobatics\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "aerial acrobatics",
+        "(hàng không) thuật nhào lộn trên không"
+      ],
+      [
+        "A",
+        "How can I use \"add\" in a sentence?",
+        "Từ \"add\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "add some more hot water to your tea",
+        "cho thêm ít nước nóng nữa vào tách trà của anh"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"adjourn\"?",
+        "Từ \"adjourn\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to adjourn the meeting until tomorrow",
+        "hoãn cuộc họp đến ngày mai"
+      ],
+      [
+        "A",
+        "Where might I see the word \"administer\"?",
+        "Từ \"administer\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to administer the affairs of the state",
+        "quản lý công việc nhà nước"
+      ],
+      [
+        "A",
+        "How would you use \"administrative\" in daily conversation?",
+        "Từ \"administrative\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "administrative affairs",
+        "công việc nhà nước, công việc quản lý"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_055",
+    "title": "Luyện giao tiếp 55 — daily",
+    "topic": "daily",
+    "vocab": [
+      "aloof",
+      "ambush",
+      "analogy",
+      "anchor",
+      "anniversary"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"aloof\" mean in everyday English?",
+        "Từ \"aloof\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to stand (keep, hold) aloof",
+        "đứng tách rời, lánh xa; không dính vào, đứng ngoài vòng, bàng quan"
+      ],
+      [
+        "A",
+        "How can I use \"ambush\" in a sentence?",
+        "Từ \"ambush\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to fall into an ambush",
+        "rơi vào một trận địa phục kích"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"analogy\"?",
+        "Từ \"analogy\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an analogy to (with)",
+        "sự tương tự với"
+      ],
+      [
+        "A",
+        "Where might I see the word \"anchor\"?",
+        "Từ \"anchor\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cast anchor; to drop anchor",
+        "thả neo"
+      ],
+      [
+        "A",
+        "How would you use \"anniversary\" in daily conversation?",
+        "Từ \"anniversary\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "anniversary of one's birth",
+        "kỷ niệm ngày sinh"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_056",
+    "title": "Luyện giao tiếp 56 — daily",
+    "topic": "daily",
+    "vocab": [
+      "appetite",
+      "appoint",
+      "apprentice",
+      "arbitrary",
+      "arouse"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"appetite\" mean in everyday English?",
+        "Từ \"appetite\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to give an appetite",
+        "làm thèm ăn, làm cho ăn ngon miệng"
+      ],
+      [
+        "A",
+        "How can I use \"appoint\" in a sentence?",
+        "Từ \"appoint\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to appoint someone [to be] director",
+        "bổ nhiệm ai làm giám đốc"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"apprentice\"?",
+        "Từ \"apprentice\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to bind somebody apprentice",
+        "nhận cho ai học việc"
+      ],
+      [
+        "A",
+        "Where might I see the word \"arbitrary\"?",
+        "Từ \"arbitrary\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "arbitrary function",
+        "hàm tuỳ ý"
+      ],
+      [
+        "A",
+        "How would you use \"arouse\" in daily conversation?",
+        "Từ \"arouse\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to arouse harred",
+        "gợi lòng căm thù"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_057",
+    "title": "Luyện giao tiếp 57 — daily",
+    "topic": "daily",
+    "vocab": [
+      "association",
+      "astronomy",
+      "awaken",
+      "awkward",
+      "bald"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"association\" mean in everyday English?",
+        "Từ \"association\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "deed of association",
+        "điều lệ của một công ty trách nhiệm có hạn"
+      ],
+      [
+        "A",
+        "How can I use \"astronomy\" in a sentence?",
+        "Từ \"astronomy\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "nautical astronomy",
+        "thiên văn học hàng hải"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"awaken\"?",
+        "Từ \"awaken\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to lie awaken",
+        "nằm thức, nằm không ngủ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"awkward\"?",
+        "Từ \"awkward\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to feel awkward",
+        "cảm thấy lúng túng ngượng ngịu"
+      ],
+      [
+        "A",
+        "How would you use \"bald\" in daily conversation?",
+        "Từ \"bald\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "bald hill",
+        "đồi trọc"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_058",
+    "title": "Luyện giao tiếp 58 — daily",
+    "topic": "daily",
+    "vocab": [
+      "beaten",
+      "beggar",
+      "bias",
+      "bind",
+      "blankly"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"beaten\" mean in everyday English?",
+        "Từ \"beaten\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "ornaments are sometimes made of beaten silver and beaten gold",
+        "những đồ trang sức đôi khi làm bằng bạc, vàng gò thành hình"
+      ],
+      [
+        "A",
+        "How can I use \"beggar\" in a sentence?",
+        "Từ \"beggar\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "you little beggar!",
+        "a, thằng ranh con"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"bias\"?",
+        "Từ \"bias\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cut on the bias",
+        "cắt chéo (vải)"
+      ],
+      [
+        "A",
+        "Where might I see the word \"bind\"?",
+        "Từ \"bind\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to bind hand and foot",
+        "trói tay, trói chân"
+      ],
+      [
+        "A",
+        "How would you use \"blankly\" in daily conversation?",
+        "Từ \"blankly\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to look blankly",
+        "nhìn ngây ra, nhìn đi đâu"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_059",
+    "title": "Luyện giao tiếp 59 — daily",
+    "topic": "daily",
+    "vocab": [
+      "blaze",
+      "blink",
+      "blockade",
+      "blooming",
+      "boiling"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"blaze\" mean in everyday English?",
+        "Từ \"blaze\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the flowers make a blaze of colour in the garden",
+        "trong vườn hoa đua nở phô màu rực rỡ"
+      ],
+      [
+        "A",
+        "How can I use \"blink\" in a sentence?",
+        "Từ \"blink\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to blink at someone's fault",
+        "nhắm mắt làm ngơ trước lỗi lầm của ai"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"blockade\"?",
+        "Từ \"blockade\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to raise a blockade",
+        "rút bỏ một phong toả"
+      ],
+      [
+        "A",
+        "Where might I see the word \"blooming\"?",
+        "Từ \"blooming\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a blooming beauty",
+        "sắc đẹp đang thì"
+      ],
+      [
+        "A",
+        "How would you use \"boiling\" in daily conversation?",
+        "Từ \"boiling\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the whole boiling",
+        "(từ lóng) cả bọn, cả lũ"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_060",
+    "title": "Luyện giao tiếp 60 — daily",
+    "topic": "daily",
+    "vocab": [
+      "bold",
+      "bond",
+      "boundless",
+      "bow",
+      "bribe"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"bold\" mean in everyday English?",
+        "Từ \"bold\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the bold outline of the mountain",
+        "đường nét rất rõ của quả núi"
+      ],
+      [
+        "A",
+        "How can I use \"bond\" in a sentence?",
+        "Từ \"bond\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to enter in to a bond to",
+        "ký giao kèo, cam kết (làm gì)"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"boundless\"?",
+        "Từ \"boundless\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "boundless ocean",
+        "đại dương bao la"
+      ],
+      [
+        "A",
+        "Where might I see the word \"bow\"?",
+        "Từ \"bow\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "ro draw (bend) the bow",
+        "giương cung"
+      ],
+      [
+        "A",
+        "How would you use \"bribe\" in daily conversation?",
+        "Từ \"bribe\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to take bribe",
+        "ăn hối lộ"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_061",
+    "title": "Luyện giao tiếp 61 — daily",
+    "topic": "daily",
+    "vocab": [
+      "brown",
+      "bullet",
+      "bully",
+      "burden",
+      "captive"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"brown\" mean in everyday English?",
+        "Từ \"brown\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "brown paper",
+        "giấy nâu gói hàng"
+      ],
+      [
+        "A",
+        "How can I use \"bullet\" in a sentence?",
+        "Từ \"bullet\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "dumdum bullet",
+        "đạn đum đum"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"bully\"?",
+        "Từ \"bully\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to play the bully",
+        "bắt nạt"
+      ],
+      [
+        "A",
+        "Where might I see the word \"burden\"?",
+        "Từ \"burden\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to bend beneath the burden",
+        "còng xuống vì gánh nặng"
+      ],
+      [
+        "A",
+        "How would you use \"captive\" in daily conversation?",
+        "Từ \"captive\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be in a captive state",
+        "trong tình trạng bị giam cầm"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_062",
+    "title": "Luyện giao tiếp 62 — city",
+    "topic": "city",
+    "vocab": [
+      "carve",
+      "cavity",
+      "cement",
+      "ceremony",
+      "cheek"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"carve\" mean in everyday English?",
+        "Từ \"carve\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to carve a statue out of wood",
+        "tạc gỗ thành tượng"
+      ],
+      [
+        "A",
+        "How can I use \"cavity\" in a sentence?",
+        "Từ \"cavity\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "nasal cavity",
+        "ổ mũi"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"cement\"?",
+        "Từ \"cement\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cement the friendship",
+        "thắt chặt tình hữu nghị"
+      ],
+      [
+        "A",
+        "Where might I see the word \"ceremony\"?",
+        "Từ \"ceremony\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "there is no need for ceremony between friends",
+        "giữa bạn bè với nhau không cần phải khách sáo"
+      ],
+      [
+        "A",
+        "How would you use \"cheek\" in daily conversation?",
+        "Từ \"cheek\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a rosy cheek",
+        "má hồng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_063",
+    "title": "Luyện giao tiếp 63 — daily",
+    "topic": "daily",
+    "vocab": [
+      "chew",
+      "choke",
+      "circulate",
+      "clasp",
+      "cluster"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"chew\" mean in everyday English?",
+        "Từ \"chew\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to have a chew at something",
+        "nhai vật gì"
+      ],
+      [
+        "A",
+        "How can I use \"choke\" in a sentence?",
+        "Từ \"choke\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "high-frequency choke",
+        "cuộn cảm kháng cao tần"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"circulate\"?",
+        "Từ \"circulate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to circulate news",
+        "truyền tin"
+      ],
+      [
+        "A",
+        "Where might I see the word \"clasp\"?",
+        "Từ \"clasp\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to clasp a bracelet round one's wrist",
+        "cái vòng vào cổ tay"
+      ],
+      [
+        "A",
+        "How would you use \"cluster\" in daily conversation?",
+        "Từ \"cluster\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a cluster of people",
+        "đám người"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_064",
+    "title": "Luyện giao tiếp 64 — daily",
+    "topic": "daily",
+    "vocab": [
+      "colony",
+      "companion",
+      "compass",
+      "compel",
+      "complement"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"colony\" mean in everyday English?",
+        "Từ \"colony\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a colony of ants",
+        "đàn kiến"
+      ],
+      [
+        "A",
+        "How can I use \"companion\" in a sentence?",
+        "Từ \"companion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "faithful companion",
+        "người bạn trung thành"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"compass\"?",
+        "Từ \"compass\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "mariner's compass",
+        "la bàn đi biển"
+      ],
+      [
+        "A",
+        "Where might I see the word \"compel\"?",
+        "Từ \"compel\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to compel respect",
+        "buộc phải kính trọng"
+      ],
+      [
+        "A",
+        "How would you use \"complement\" in daily conversation?",
+        "Từ \"complement\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "ship's complement",
+        "quân số đầy đủ cần cho công tác trên tàu"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_065",
+    "title": "Luyện giao tiếp 65 — daily",
+    "topic": "daily",
+    "vocab": [
+      "complexion",
+      "compromise",
+      "concede",
+      "confusion",
+      "conquer"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"complexion\" mean in everyday English?",
+        "Từ \"complexion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a fair complexion",
+        "nước da đẹp"
+      ],
+      [
+        "A",
+        "How can I use \"compromise\" in a sentence?",
+        "Từ \"compromise\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a arrive at a compromise",
+        "đi đến chỗ thoả hiệp"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"concede\"?",
+        "Từ \"concede\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to concede a point in an argument",
+        "thừa nhận một điểm trong cuộc tranh luận"
+      ],
+      [
+        "A",
+        "Where might I see the word \"confusion\"?",
+        "Từ \"confusion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "everything was in confusion",
+        "tất cả đều lộn xộn hỗn loạn"
+      ],
+      [
+        "A",
+        "How would you use \"conquer\" in daily conversation?",
+        "Từ \"conquer\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to conquer an enemy",
+        "chiến thắng quân thù"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_066",
+    "title": "Luyện giao tiếp 66 — daily",
+    "topic": "daily",
+    "vocab": [
+      "conscience",
+      "consciousness",
+      "consecrate",
+      "considerable",
+      "consistent"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"conscience\" mean in everyday English?",
+        "Từ \"conscience\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "bad (evil, guiltry) conscience",
+        "lương tâm tốt, lương tâm trong sạch"
+      ],
+      [
+        "A",
+        "How can I use \"consciousness\" in a sentence?",
+        "Từ \"consciousness\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "men have no consciousness during sleep",
+        "trong lúc ngủ người ta không (hiểu) biết gì cả"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"consecrate\"?",
+        "Từ \"consecrate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to consecrate one's life to the service of the country",
+        "hiến dâng đời mình cho đất nước"
+      ],
+      [
+        "A",
+        "Where might I see the word \"considerable\"?",
+        "Từ \"considerable\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a considerable distance",
+        "khoảng cách đáng kể"
+      ],
+      [
+        "A",
+        "How would you use \"consistent\" in daily conversation?",
+        "Từ \"consistent\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "action consistent with the law",
+        "hành động phù hợp với luật pháp"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_067",
+    "title": "Luyện giao tiếp 67 — daily",
+    "topic": "daily",
+    "vocab": [
+      "consolidate",
+      "consort",
+      "contemplate",
+      "cooking",
+      "correspond"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"consolidate\" mean in everyday English?",
+        "Từ \"consolidate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to consolidate the road surface",
+        "làm chắc mặt đường (bằng cách cán đầm...)"
+      ],
+      [
+        "A",
+        "How can I use \"consort\" in a sentence?",
+        "Từ \"consort\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "king (prince) consort",
+        "chồng nữ hoàng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"contemplate\"?",
+        "Từ \"contemplate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to contemplate doing something",
+        "dự định làm gì"
+      ],
+      [
+        "A",
+        "Where might I see the word \"cooking\"?",
+        "Từ \"cooking\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be the cooking",
+        "nấu ăn, làm cơm"
+      ],
+      [
+        "A",
+        "How would you use \"correspond\" in daily conversation?",
+        "Từ \"correspond\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "expenses do not correspond to income",
+        "chi tiêu không phù hợp với thu nhập"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_068",
+    "title": "Luyện giao tiếp 68 — daily",
+    "topic": "daily",
+    "vocab": [
+      "crack",
+      "credentials",
+      "crude",
+      "cruel",
+      "crush"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"crack\" mean in everyday English?",
+        "Từ \"crack\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a crack oar",
+        "tay chèo cừ"
+      ],
+      [
+        "A",
+        "How can I use \"credentials\" in a sentence?",
+        "Từ \"credentials\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to present one's credentials",
+        "trình quốc thư"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"crude\"?",
+        "Từ \"crude\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "crude oil",
+        "dầu thô"
+      ],
+      [
+        "A",
+        "Where might I see the word \"cruel\"?",
+        "Từ \"cruel\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "cruel fate",
+        "số phận phũ phàng"
+      ],
+      [
+        "A",
+        "How would you use \"crush\" in daily conversation?",
+        "Từ \"crush\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to have a crush on someone",
+        "phải lòng ai, mê ai"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_069",
+    "title": "Luyện giao tiếp 69 — daily",
+    "topic": "daily",
+    "vocab": [
+      "curb",
+      "dam",
+      "damp",
+      "dawn",
+      "deceive"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"curb\" mean in everyday English?",
+        "Từ \"curb\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to put (keep) a curb on one's anger",
+        "kiềm chế cơn giận"
+      ],
+      [
+        "A",
+        "How can I use \"dam\" in a sentence?",
+        "Từ \"dam\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to dam up one's emotion",
+        "kiềm chế nỗi xúc động"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"damp\"?",
+        "Từ \"damp\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to cast a damp over somebody",
+        "làm cho ai nản lòng, giội một gáo nước lạnh vào ai"
+      ],
+      [
+        "A",
+        "Where might I see the word \"dawn\"?",
+        "Từ \"dawn\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "from dawn till dark",
+        "từ lúc sáng tinh mơ cho đến lúc tối trời"
+      ],
+      [
+        "A",
+        "How would you use \"deceive\" in daily conversation?",
+        "Từ \"deceive\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to deceive oneself",
+        "tự lừa dối mình; làm sai"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_070",
+    "title": "Luyện giao tiếp 70 — daily",
+    "topic": "daily",
+    "vocab": [
+      "decent",
+      "deed",
+      "defendant",
+      "deferential",
+      "deficit"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"decent\" mean in everyday English?",
+        "Từ \"decent\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a decent dinner",
+        "bữa ăn tươm tất"
+      ],
+      [
+        "A",
+        "How can I use \"deed\" in a sentence?",
+        "Từ \"deed\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a good deed",
+        "hành động tốt, việc làm tốt"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"defendant\"?",
+        "Từ \"defendant\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "defendant firm",
+        "hãng kinh doanh bị kiện"
+      ],
+      [
+        "A",
+        "Where might I see the word \"deferential\"?",
+        "Từ \"deferential\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be deferential to someone",
+        "tôn kính ai"
+      ],
+      [
+        "A",
+        "How would you use \"deficit\" in daily conversation?",
+        "Từ \"deficit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to make up a deficit; to meet a deficit",
+        "bù lại số tiền thiếu hụt"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_071",
+    "title": "Luyện giao tiếp 71 — daily",
+    "topic": "daily",
+    "vocab": [
+      "defraud",
+      "delicate",
+      "delight",
+      "deluge",
+      "denomination"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"defraud\" mean in everyday English?",
+        "Từ \"defraud\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to defraud someone of something",
+        "lừa gạt ai để lấy cái gì"
+      ],
+      [
+        "A",
+        "How can I use \"delicate\" in a sentence?",
+        "Từ \"delicate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "delicate features",
+        "nét mặt thanh tú"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"delight\"?",
+        "Từ \"delight\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to give delight to",
+        "đem lại thích thú cho"
+      ],
+      [
+        "A",
+        "Where might I see the word \"deluge\"?",
+        "Từ \"deluge\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a deluge of questions",
+        "câu hỏi dồn dập"
+      ],
+      [
+        "A",
+        "How would you use \"denomination\" in daily conversation?",
+        "Từ \"denomination\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to fall under a denomination",
+        "đứng vào loại, xếp vào loại"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_072",
+    "title": "Luyện giao tiếp 72 — daily",
+    "topic": "daily",
+    "vocab": [
+      "denounce",
+      "dense",
+      "density",
+      "deposit",
+      "desperation"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"denounce\" mean in everyday English?",
+        "Từ \"denounce\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to denounce a treaty",
+        "tuyên bố bãi bỏ một hiệp ước"
+      ],
+      [
+        "A",
+        "How can I use \"dense\" in a sentence?",
+        "Từ \"dense\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a dense forest",
+        "rừng rậm"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"density\"?",
+        "Từ \"density\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "molecular density",
+        "mật độ phân tử"
+      ],
+      [
+        "A",
+        "Where might I see the word \"deposit\"?",
+        "Từ \"deposit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "money on deposit",
+        "tiền gửi ngân hàng có lãi"
+      ],
+      [
+        "A",
+        "How would you use \"desperation\" in daily conversation?",
+        "Từ \"desperation\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to drive someone to desperation",
+        "(thông tục) dồn ai vào cảnh tuyệt vọng, dồn ai vào thế cùng"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_073",
+    "title": "Luyện giao tiếp 73 — daily",
+    "topic": "daily",
+    "vocab": [
+      "detain",
+      "detective",
+      "devil",
+      "devoted",
+      "dictatorship"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"detain\" mean in everyday English?",
+        "Từ \"detain\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to detain somebody in during something",
+        "ngăn cản ai làm việc gì"
+      ],
+      [
+        "A",
+        "How can I use \"detective\" in a sentence?",
+        "Từ \"detective\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a detective novel",
+        "tiểu thuyết trinh thám"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"devil\"?",
+        "Từ \"devil\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "devil take it!",
+        "ma bắt nó đi"
+      ],
+      [
+        "A",
+        "Where might I see the word \"devoted\"?",
+        "Từ \"devoted\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be devoted to someone (something)",
+        "tận tuỵ nhiệt tình với ai (với công việc gì)"
+      ],
+      [
+        "A",
+        "How would you use \"dictatorship\" in daily conversation?",
+        "Từ \"dictatorship\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "dictatorship of the prolerarian",
+        "nền chuyên chính vô sản"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_074",
+    "title": "Luyện giao tiếp 74 — daily",
+    "topic": "daily",
+    "vocab": [
+      "differ",
+      "differentiate",
+      "dignity",
+      "disaster",
+      "disparity"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"differ\" mean in everyday English?",
+        "Từ \"differ\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to differ from someone in age",
+        "khác tuổi ai"
+      ],
+      [
+        "A",
+        "How can I use \"differentiate\" in a sentence?",
+        "Từ \"differentiate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to differentiate something from another",
+        "phân biệt cái này với cái khác"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"dignity\"?",
+        "Từ \"dignity\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the dignity of labour",
+        "chân giá trị của lao động"
+      ],
+      [
+        "A",
+        "Where might I see the word \"disaster\"?",
+        "Từ \"disaster\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to court (invite) disaster",
+        "chuốc lấy tai hoạ"
+      ],
+      [
+        "A",
+        "How would you use \"disparity\" in daily conversation?",
+        "Từ \"disparity\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a disparity in years",
+        "sự chênh lệch về tuổi tác"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_075",
+    "title": "Luyện giao tiếp 75 — daily",
+    "topic": "daily",
+    "vocab": [
+      "dispute",
+      "distant",
+      "distinguish",
+      "dither",
+      "dive"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"dispute\" mean in everyday English?",
+        "Từ \"dispute\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "beyond (past, without) dispute",
+        "không cần bàn cãi gì nữa"
+      ],
+      [
+        "A",
+        "How can I use \"distant\" in a sentence?",
+        "Từ \"distant\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "five miles distant",
+        "cách năm dặm, xa năm dặm"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"distinguish\"?",
+        "Từ \"distinguish\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to distinguish one thing from another",
+        "phân biệt vật này với vật khác"
+      ],
+      [
+        "A",
+        "Where might I see the word \"dither\"?",
+        "Từ \"dither\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be all of a dither",
+        "run lập cập"
+      ],
+      [
+        "A",
+        "How would you use \"dive\" in daily conversation?",
+        "Từ \"dive\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an oyster dive",
+        "cửa hàng bán sò ở tầng hầm"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_076",
+    "title": "Luyện giao tiếp 76 — daily",
+    "topic": "daily",
+    "vocab": [
+      "divine",
+      "dock",
+      "drain",
+      "drill",
+      "dye"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"divine\" mean in everyday English?",
+        "Từ \"divine\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "divine worship",
+        "sự thờ cúng thần thánh"
+      ],
+      [
+        "A",
+        "How can I use \"dock\" in a sentence?",
+        "Từ \"dock\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to dock wages",
+        "cắt bớt lương"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"drain\"?",
+        "Từ \"drain\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a drain on someone's purse",
+        "sự bòn rút tiền của ai"
+      ],
+      [
+        "A",
+        "Where might I see the word \"drill\"?",
+        "Từ \"drill\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to drill in grammar",
+        "rèn luyện về môn ngữ pháp"
+      ],
+      [
+        "A",
+        "How would you use \"dye\" in daily conversation?",
+        "Từ \"dye\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a deep dye",
+        "màu thẫm"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_077",
+    "title": "Luyện giao tiếp 77 — daily",
+    "topic": "daily",
+    "vocab": [
+      "eager",
+      "earnest",
+      "enforce",
+      "eternal",
+      "etiquette"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"eager\" mean in everyday English?",
+        "Từ \"eager\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "eager for learning",
+        "ham học"
+      ],
+      [
+        "A",
+        "How can I use \"earnest\" in a sentence?",
+        "Từ \"earnest\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in earnest",
+        "đứng đắn, nghiêm chỉnh"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"enforce\"?",
+        "Từ \"enforce\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to enforce something upon someone",
+        "ép ai phải làm một việc gì"
+      ],
+      [
+        "A",
+        "Where might I see the word \"eternal\"?",
+        "Từ \"eternal\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "eternal disputes",
+        "những sự cãi cọ không ngừng"
+      ],
+      [
+        "A",
+        "How would you use \"etiquette\" in daily conversation?",
+        "Từ \"etiquette\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "medical etiquette",
+        "quy ước mặc nhận trong giới y"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_078",
+    "title": "Luyện giao tiếp 78 — daily",
+    "topic": "daily",
+    "vocab": [
+      "evolution",
+      "excavate",
+      "expansion",
+      "explosion",
+      "expose"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"evolution\" mean in everyday English?",
+        "Từ \"evolution\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "Theory of Evolution",
+        "thuyết tiến hoá"
+      ],
+      [
+        "A",
+        "How can I use \"excavate\" in a sentence?",
+        "Từ \"excavate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to excavate a hole",
+        "đào một cái hố"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"expansion\"?",
+        "Từ \"expansion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "expansion in series",
+        "khai triển thành chuỗi"
+      ],
+      [
+        "A",
+        "Where might I see the word \"explosion\"?",
+        "Từ \"explosion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "population explosion",
+        "sự tăng số dân ồ ạt và nhanh chóng"
+      ],
+      [
+        "A",
+        "How would you use \"expose\" in daily conversation?",
+        "Từ \"expose\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to expose crime",
+        "vạch trần tội ác"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_079",
+    "title": "Luyện giao tiếp 79 — daily",
+    "topic": "daily",
+    "vocab": [
+      "extra",
+      "faithful",
+      "fame",
+      "fantastic",
+      "feasible"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"extra\" mean in everyday English?",
+        "Từ \"extra\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to work extra",
+        "làm việc thêm ngoài"
+      ],
+      [
+        "A",
+        "How can I use \"faithful\" in a sentence?",
+        "Từ \"faithful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a faithful report",
+        "báo cáo trung thực, báo cáo chính xác"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"fame\"?",
+        "Từ \"fame\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to win fame",
+        "nổi tiếng, lừng danh"
+      ],
+      [
+        "A",
+        "Where might I see the word \"fantastic\"?",
+        "Từ \"fantastic\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a fantastic sum of money",
+        "một món tiền vô cùng to lớn"
+      ],
+      [
+        "A",
+        "How would you use \"feasible\" in daily conversation?",
+        "Từ \"feasible\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a feasible scheme",
+        "kế hoạch có thể thực hiện được"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_080",
+    "title": "Luyện giao tiếp 80 — daily",
+    "topic": "daily",
+    "vocab": [
+      "fierce",
+      "filthy",
+      "fist",
+      "fly",
+      "foam"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"fierce\" mean in everyday English?",
+        "Từ \"fierce\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a fierce dog",
+        "con chó dữ"
+      ],
+      [
+        "A",
+        "How can I use \"filthy\" in a sentence?",
+        "Từ \"filthy\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "filthy lucre",
+        "của bất nhân;(đùa cợt) tiền"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"fist\"?",
+        "Từ \"fist\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to clenth one's fist",
+        "nắm chặt tay lại"
+      ],
+      [
+        "A",
+        "Where might I see the word \"fly\"?",
+        "Từ \"fly\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "on the fly",
+        "đang bay"
+      ],
+      [
+        "A",
+        "How would you use \"foam\" in daily conversation?",
+        "Từ \"foam\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to foam at the mouth",
+        "sùi bọt mép; tức sùi bọt mép"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_081",
+    "title": "Luyện giao tiếp 81 — daily",
+    "topic": "daily",
+    "vocab": [
+      "foreground",
+      "forge",
+      "forgetful",
+      "formula",
+      "fossil"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"foreground\" mean in everyday English?",
+        "Từ \"foreground\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to keep oneself in the foreground",
+        "chiếm địa vị nổi bật"
+      ],
+      [
+        "A",
+        "How can I use \"forge\" in a sentence?",
+        "Từ \"forge\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to forge a signature",
+        "giả mạo chữ ký"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"forgetful\"?",
+        "Từ \"forgetful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a forgetful sleep",
+        "giấc ngủ làm cho quên"
+      ],
+      [
+        "A",
+        "Where might I see the word \"formula\"?",
+        "Từ \"formula\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a mathematical formula",
+        "công thức toán"
+      ],
+      [
+        "A",
+        "How would you use \"fossil\" in daily conversation?",
+        "Từ \"fossil\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "fossil bones",
+        "xương hoá thạch"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_082",
+    "title": "Luyện giao tiếp 82 — daily",
+    "topic": "daily",
+    "vocab": [
+      "foster",
+      "fragmentary",
+      "frontier",
+      "gaze",
+      "gentleman"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"foster\" mean in everyday English?",
+        "Từ \"foster\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to foster a child",
+        "nuôi nấng một đứa trẻ"
+      ],
+      [
+        "A",
+        "How can I use \"fragmentary\" in a sentence?",
+        "Từ \"fragmentary\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a fragmentary report",
+        "bản báo cáo chấp vá"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"frontier\"?",
+        "Từ \"frontier\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a frontier post",
+        "đồn biên phòng"
+      ],
+      [
+        "A",
+        "Where might I see the word \"gaze\"?",
+        "Từ \"gaze\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to stand at gaze",
+        "nhìn chằm chằm"
+      ],
+      [
+        "A",
+        "How would you use \"gentleman\" in daily conversation?",
+        "Từ \"gentleman\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to behave like a gentleman",
+        "cư xử ra người hào hoa phong nhã"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_083",
+    "title": "Luyện giao tiếp 83 — daily",
+    "topic": "daily",
+    "vocab": [
+      "gesture",
+      "gnaw",
+      "gorgeous",
+      "govern",
+      "grease"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"gesture\" mean in everyday English?",
+        "Từ \"gesture\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "his speech is a gesture of friendship",
+        "lời nói của anh ta là một biểu hiện của tình hữu nghị"
+      ],
+      [
+        "A",
+        "How can I use \"gnaw\" in a sentence?",
+        "Từ \"gnaw\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to gnaw [at, into] something",
+        "gặm cái gì"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"gorgeous\"?",
+        "Từ \"gorgeous\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a gorgeous woman",
+        "một người đàn bà tuyệt đẹp"
+      ],
+      [
+        "A",
+        "Where might I see the word \"govern\"?",
+        "Từ \"govern\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to govern oneself",
+        "tự chủ được"
+      ],
+      [
+        "A",
+        "How would you use \"grease\" in daily conversation?",
+        "Từ \"grease\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "wood in the grease",
+        "lông cừu chưa tẩy nhờn"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_084",
+    "title": "Luyện giao tiếp 84 — daily",
+    "topic": "daily",
+    "vocab": [
+      "grim",
+      "hack",
+      "hail",
+      "halt",
+      "hammer"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"grim\" mean in everyday English?",
+        "Từ \"grim\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a grim face",
+        "nét mặt dữ tợn đầy sát khí"
+      ],
+      [
+        "A",
+        "How can I use \"hack\" in a sentence?",
+        "Từ \"hack\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to hack at something",
+        "chặt mạnh cái gì"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"hail\"?",
+        "Từ \"hail\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a hail of questions",
+        "một loạt câu hỏi dồn dập"
+      ],
+      [
+        "A",
+        "Where might I see the word \"halt\"?",
+        "Từ \"halt\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to come to a halt",
+        "tạm dừng lại"
+      ],
+      [
+        "A",
+        "How would you use \"hammer\" in daily conversation?",
+        "Từ \"hammer\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "pneumatic hammer",
+        "búa hơi, búa gió"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_085",
+    "title": "Luyện giao tiếp 85 — daily",
+    "topic": "daily",
+    "vocab": [
+      "harmonious",
+      "heal",
+      "heartfelt",
+      "heed",
+      "hint"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"harmonious\" mean in everyday English?",
+        "Từ \"harmonious\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a harmonious group of building",
+        "một khu toà nhà bố trí cân đối"
+      ],
+      [
+        "A",
+        "How can I use \"heal\" in a sentence?",
+        "Từ \"heal\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to heal someone of a disease",
+        "chữa cho ai khỏi bệnh gì"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"heartfelt\"?",
+        "Từ \"heartfelt\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "heartfelt condolences",
+        "lời chia buồn chân thành"
+      ],
+      [
+        "A",
+        "Where might I see the word \"heed\"?",
+        "Từ \"heed\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to give (pay, take) heed to",
+        "chú ý đến, lưu ý đến"
+      ],
+      [
+        "A",
+        "How would you use \"hint\" in daily conversation?",
+        "Từ \"hint\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to drop (give) a hint",
+        "gợi ý, nói bóng gió"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_086",
+    "title": "Luyện giao tiếp 86 — daily",
+    "topic": "daily",
+    "vocab": [
+      "hollow",
+      "hostage",
+      "hug",
+      "humble",
+      "hunger"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"hollow\" mean in everyday English?",
+        "Từ \"hollow\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "hollow cheeks",
+        "má hõm"
+      ],
+      [
+        "A",
+        "How can I use \"hostage\" in a sentence?",
+        "Từ \"hostage\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to keep somebody as a hostage",
+        "giữ ai làm con tin"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"hug\"?",
+        "Từ \"hug\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to hug an idea",
+        "ôm ấp một ý kiến, bám lấy một ý kiến"
+      ],
+      [
+        "A",
+        "Where might I see the word \"humble\"?",
+        "Từ \"humble\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a humble attiude",
+        "thái độ khiêm tốn"
+      ],
+      [
+        "A",
+        "How would you use \"hunger\" in daily conversation?",
+        "Từ \"hunger\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to die of hunger",
+        "chết đói"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_087",
+    "title": "Luyện giao tiếp 87 — daily",
+    "topic": "daily",
+    "vocab": [
+      "ignorant",
+      "illegal",
+      "impart",
+      "incline",
+      "incomparable"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"ignorant\" mean in everyday English?",
+        "Từ \"ignorant\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be ignorant of (in)...",
+        "không biết gì về..."
+      ],
+      [
+        "A",
+        "How can I use \"illegal\" in a sentence?",
+        "Từ \"illegal\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an illegal marriage",
+        "một đám cưới không hợp pháp"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"impart\"?",
+        "Từ \"impart\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to impart news",
+        "phổ biến tin tức"
+      ],
+      [
+        "A",
+        "Where might I see the word \"incline\"?",
+        "Từ \"incline\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "this result will incline them to try again",
+        "kết quả đó khiến cho họ có ý muốn thử lại một lần nữa"
+      ],
+      [
+        "A",
+        "How would you use \"incomparable\" in daily conversation?",
+        "Từ \"incomparable\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "incomparable beauty",
+        "sắc đẹp vô song"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_088",
+    "title": "Luyện giao tiếp 88 — daily",
+    "topic": "daily",
+    "vocab": [
+      "indirect",
+      "inspiration",
+      "instinct",
+      "interfere",
+      "intrinsic"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"indirect\" mean in everyday English?",
+        "Từ \"indirect\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an indirect reply",
+        "câu trả lời gián tiếp"
+      ],
+      [
+        "A",
+        "How can I use \"inspiration\" in a sentence?",
+        "Từ \"inspiration\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "poetic inspiration",
+        "hứng thơ, thi hứng"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"instinct\"?",
+        "Từ \"instinct\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "by (from) instinct",
+        "theo bản năng"
+      ],
+      [
+        "A",
+        "Where might I see the word \"interfere\"?",
+        "Từ \"interfere\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "these goings and coming interfere with the work",
+        "sự đi đi lại lại đó gây trở ngại cho công việc"
+      ],
+      [
+        "A",
+        "How would you use \"intrinsic\" in daily conversation?",
+        "Từ \"intrinsic\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "intrinsic value",
+        "giá trị bên trong; giá trị thực chất"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_089",
+    "title": "Luyện giao tiếp 89 — daily",
+    "topic": "daily",
+    "vocab": [
+      "judgment",
+      "judicial",
+      "keen",
+      "kindly",
+      "kneel"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"judgment\" mean in everyday English?",
+        "Từ \"judgment\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to pass (give, render) judgment on someone",
+        "xét xử ai"
+      ],
+      [
+        "A",
+        "How can I use \"judicial\" in a sentence?",
+        "Từ \"judicial\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the judicial bench",
+        "các quan toà"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"keen\"?",
+        "Từ \"keen\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "keen wind",
+        "gió rét buốt"
+      ],
+      [
+        "A",
+        "Where might I see the word \"kindly\"?",
+        "Từ \"kindly\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a kindly hear",
+        "một tấm lòng tốt"
+      ],
+      [
+        "A",
+        "How would you use \"kneel\" in daily conversation?",
+        "Từ \"kneel\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to kneel to somebody",
+        "quỳ gối trước ai, quỳ lạy ai"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_090",
+    "title": "Luyện giao tiếp 90 — daily",
+    "topic": "daily",
+    "vocab": [
+      "lame",
+      "lapse",
+      "lasting",
+      "lawsuit",
+      "leap"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"lame\" mean in everyday English?",
+        "Từ \"lame\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be lame of (in) one leg",
+        "què một chân"
+      ],
+      [
+        "A",
+        "How can I use \"lapse\" in a sentence?",
+        "Từ \"lapse\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a lapse of memory",
+        "sự nhâng trí; sự nhớ lắm"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"lasting\"?",
+        "Từ \"lasting\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "lasting peace",
+        "nền hoà bình bền vững"
+      ],
+      [
+        "A",
+        "Where might I see the word \"lawsuit\"?",
+        "Từ \"lawsuit\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to enter (bring in) a lawsuit against somebody",
+        "đệ đơn kiện ai"
+      ],
+      [
+        "A",
+        "How would you use \"leap\" in daily conversation?",
+        "Từ \"leap\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to leap a wall",
+        "nhảy qua một bức tường"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_091",
+    "title": "Luyện giao tiếp 91 — daily",
+    "topic": "daily",
+    "vocab": [
+      "lip",
+      "locomotive",
+      "mechanism",
+      "meddle",
+      "mediate"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"lip\" mean in everyday English?",
+        "Từ \"lip\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "upper lip",
+        "môi trên"
+      ],
+      [
+        "A",
+        "How can I use \"locomotive\" in a sentence?",
+        "Từ \"locomotive\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "in our locomotive time",
+        "trong cái thời đại hay đi đây đi đó này"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"mechanism\"?",
+        "Từ \"mechanism\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the mechanism of government",
+        "cơ cấu chính quyền"
+      ],
+      [
+        "A",
+        "Where might I see the word \"meddle\"?",
+        "Từ \"meddle\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to meddle in someone's affrais",
+        "can thiệp vào việc của ai"
+      ],
+      [
+        "A",
+        "How would you use \"mediate\" in daily conversation?",
+        "Từ \"mediate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to mediate between two warring nations",
+        "làm trung gian để điều đình giữa hai nước đang đánh nhau"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_092",
+    "title": "Luyện giao tiếp 92 — daily",
+    "topic": "daily",
+    "vocab": [
+      "membrane",
+      "might",
+      "mild",
+      "miserable",
+      "mobilize"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"membrane\" mean in everyday English?",
+        "Từ \"membrane\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "nucous membrane",
+        "màng nhầy"
+      ],
+      [
+        "A",
+        "How can I use \"might\" in a sentence?",
+        "Từ \"might\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "by might",
+        "bằng sức mạnh, bằng vũ lực"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"mild\"?",
+        "Từ \"mild\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a mild punishment",
+        "một sự trừng phạt nhẹ"
+      ],
+      [
+        "A",
+        "Where might I see the word \"miserable\"?",
+        "Từ \"miserable\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a miserable house",
+        "căn nhà tồi tàn"
+      ],
+      [
+        "A",
+        "How would you use \"mobilize\" in daily conversation?",
+        "Từ \"mobilize\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to mobilize the army",
+        "động viên quân đội"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_093",
+    "title": "Luyện giao tiếp 93 — daily",
+    "topic": "daily",
+    "vocab": [
+      "mourn",
+      "navigation",
+      "negligible",
+      "nest",
+      "neutral"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"mourn\" mean in everyday English?",
+        "Từ \"mourn\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to mourn for (over) the dead",
+        "thương tiếc những người đã mất"
+      ],
+      [
+        "A",
+        "How can I use \"navigation\" in a sentence?",
+        "Từ \"navigation\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "aerial navigation",
+        "hàng không"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"negligible\"?",
+        "Từ \"negligible\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a negligible quantity",
+        "một số lượng không đáng kể"
+      ],
+      [
+        "A",
+        "Where might I see the word \"nest\"?",
+        "Từ \"nest\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a bird's nest",
+        "tổ chim"
+      ],
+      [
+        "A",
+        "How would you use \"neutral\" in daily conversation?",
+        "Từ \"neutral\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "neutral zone",
+        "khu vực trung lập"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_094",
+    "title": "Luyện giao tiếp 94 — daily",
+    "topic": "daily",
+    "vocab": [
+      "noble",
+      "numb",
+      "obscure",
+      "obstinate",
+      "obstruct"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"noble\" mean in everyday English?",
+        "Từ \"noble\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be of noble birth",
+        "(thuộc) dòng dõi quý tộc"
+      ],
+      [
+        "A",
+        "How can I use \"numb\" in a sentence?",
+        "Từ \"numb\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "numb with cold",
+        "tê cóng đi vì lạnh"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"obscure\"?",
+        "Từ \"obscure\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "obscure style",
+        "văn tối nghĩa"
+      ],
+      [
+        "A",
+        "Where might I see the word \"obstinate\"?",
+        "Từ \"obstinate\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "an obstinate disease",
+        "bệnh khó chữa"
+      ],
+      [
+        "A",
+        "How would you use \"obstruct\" in daily conversation?",
+        "Từ \"obstruct\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to obstruct truffic",
+        "làm nghẽn giao thông"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_095",
+    "title": "Luyện giao tiếp 95 — daily",
+    "topic": "daily",
+    "vocab": [
+      "occupy",
+      "offend",
+      "omen",
+      "oppose",
+      "outline"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"occupy\" mean in everyday English?",
+        "Từ \"occupy\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to occupy an important pasition in the government",
+        "giữ một địa vị quan trọng trong chính phủ"
+      ],
+      [
+        "A",
+        "How can I use \"offend\" in a sentence?",
+        "Từ \"offend\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to offend someone",
+        "xúc phạm đến ai"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"omen\"?",
+        "Từ \"omen\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a good omen",
+        "điềm tốt"
+      ],
+      [
+        "A",
+        "Where might I see the word \"oppose\"?",
+        "Từ \"oppose\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to fury let us oppose patience",
+        "chúng ta hây lấy sự kiên nhẫn để đối lại với sự giận dữ"
+      ],
+      [
+        "A",
+        "How would you use \"outline\" in daily conversation?",
+        "Từ \"outline\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "the outline of a church",
+        "hình bóng của một toà nhà thờ"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_096",
+    "title": "Luyện giao tiếp 96 — daily",
+    "topic": "daily",
+    "vocab": [
+      "outlook",
+      "pace",
+      "pad",
+      "parallel",
+      "passion"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"outlook\" mean in everyday English?",
+        "Từ \"outlook\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "outlook on file",
+        "cách nhìn cuộc sống, nhân sinh quan"
+      ],
+      [
+        "A",
+        "How can I use \"pace\" in a sentence?",
+        "Từ \"pace\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to go at a foat's (walking) pace",
+        "đi từng bước"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"pad\"?",
+        "Từ \"pad\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "gentleman (knight, squire) of the pad",
+        "kẻ cướp đường"
+      ],
+      [
+        "A",
+        "Where might I see the word \"parallel\"?",
+        "Từ \"parallel\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "parallel to (with)",
+        "song song với"
+      ],
+      [
+        "A",
+        "How would you use \"passion\" in daily conversation?",
+        "Từ \"passion\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to fly (fall, get) into a passion",
+        "nổi giận, nổi tam bành"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_097",
+    "title": "Luyện giao tiếp 97 — daily",
+    "topic": "daily",
+    "vocab": [
+      "passive",
+      "patent",
+      "peaceful",
+      "penalty",
+      "perpendicular"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"passive\" mean in everyday English?",
+        "Từ \"passive\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to remain passive",
+        "ở trong thế bị động"
+      ],
+      [
+        "A",
+        "How can I use \"patent\" in a sentence?",
+        "Từ \"patent\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a patent device",
+        "một phương sách tài tình"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"peaceful\"?",
+        "Từ \"peaceful\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "peaceful coexistence",
+        "sự chung sống hoà bình"
+      ],
+      [
+        "A",
+        "Where might I see the word \"penalty\"?",
+        "Từ \"penalty\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "dealth penalty",
+        "án tử hình"
+      ],
+      [
+        "A",
+        "How would you use \"perpendicular\" in daily conversation?",
+        "Từ \"perpendicular\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "perpendicular to a line",
+        "vuông góc với một đường"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_098",
+    "title": "Luyện giao tiếp 98 — daily",
+    "topic": "daily",
+    "vocab": [
+      "persecute",
+      "pill",
+      "pinch",
+      "plight",
+      "port"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"persecute\" mean in everyday English?",
+        "Từ \"persecute\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to persecute someone with questions",
+        "làm khổ ai bằng những câu hỏi"
+      ],
+      [
+        "A",
+        "How can I use \"pill\" in a sentence?",
+        "Từ \"pill\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "a bitter pill",
+        "điều cay đắng, điều tủi nhục"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"pinch\"?",
+        "Từ \"pinch\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to give someone a pinch",
+        "véo ai một cái"
+      ],
+      [
+        "A",
+        "Where might I see the word \"plight\"?",
+        "Từ \"plight\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to be in a sad (sorry) plight",
+        "ở trong hoàn cảnh đáng buồn"
+      ],
+      [
+        "A",
+        "How would you use \"port\" in daily conversation?",
+        "Từ \"port\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "close port",
+        "cảng ở cửa sông"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_099",
+    "title": "Luyện giao tiếp 99 — daily",
+    "topic": "daily",
+    "vocab": [
+      "pragmatic",
+      "precious",
+      "pregnant",
+      "prejudice",
+      "premise"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"pragmatic\" mean in everyday English?",
+        "Từ \"pragmatic\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "pragmatic history",
+        "sử căn cứ vào sự thực"
+      ],
+      [
+        "A",
+        "How can I use \"precious\" in a sentence?",
+        "Từ \"precious\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "precious metals",
+        "kim loại quý"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"pregnant\"?",
+        "Từ \"pregnant\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to make pregnant",
+        "làm cho có mang"
+      ],
+      [
+        "A",
+        "Where might I see the word \"prejudice\"?",
+        "Từ \"prejudice\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to have a prejudice against someone",
+        "có thành kiến đối với ai"
+      ],
+      [
+        "A",
+        "How would you use \"premise\" in daily conversation?",
+        "Từ \"premise\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to premise that...",
+        "đặt thành tiền đề là..."
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
+  },
+  {
+    "id": "exp500_comm_100",
+    "title": "Luyện giao tiếp 100 — daily",
+    "topic": "daily",
+    "vocab": [
+      "pressing",
+      "prick",
+      "prison",
+      "probe",
+      "procession"
+    ],
+    "lines": [
+      [
+        "A",
+        "What does \"pressing\" mean in everyday English?",
+        "Từ \"pressing\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "pressing need",
+        "điều cần gấp"
+      ],
+      [
+        "A",
+        "How can I use \"prick\" in a sentence?",
+        "Từ \"prick\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to have got a prick in one's finger",
+        "bị một cái gai đâm vào ngón tay"
+      ],
+      [
+        "A",
+        "Can you give me an example with \"prison\"?",
+        "Từ \"prison\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to send someone to prison; to put (throw) someone in prison",
+        "bỏ ai vào tù"
+      ],
+      [
+        "A",
+        "Where might I see the word \"probe\"?",
+        "Từ \"probe\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "sound probe",
+        "máy dò âm"
+      ],
+      [
+        "A",
+        "How would you use \"procession\" in daily conversation?",
+        "Từ \"procession\" được dùng thế nào?"
+      ],
+      [
+        "B",
+        "to go (walk) in procession",
+        "đi diễu"
+      ]
+    ],
+    "source": "expansion500",
+    "sourceVersion": "8.0.0"
   }
 ]
