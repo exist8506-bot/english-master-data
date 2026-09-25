@@ -497,11 +497,22 @@ function setLayoutMode(mode){
   const m=["auto","phone","desktop"].includes(String(mode))?String(mode):"auto";
   db.profile.layout=m;save();render();
 }
+function toggleLayoutQuick(){
+  const phone=document.body.classList.contains("layout-phone");
+  setLayoutMode(phone?"desktop":"phone");
+}
 function isPhoneViewport(){
   try{
     if(window.matchMedia)return window.matchMedia("(max-width: 800px)").matches;
   }catch(e){}
   return false;
+}
+function updateLayoutQuickButton(phone){
+  const b=$("layoutQuick");if(!b)return;
+  const nextPhone=!phone;
+  const label=nextPhone?"📱":"🖥️";
+  const title=nextPhone?"Chuyển sang giao diện điện thoại":"Chuyển sang giao diện máy tính";
+  b.textContent=label;b.title=title;b.setAttribute("aria-label",title);
 }
 function applyLayoutMode(){
   const m=["auto","phone","desktop"].includes(String(db.profile.layout))?db.profile.layout:"auto";
@@ -509,6 +520,7 @@ function applyLayoutMode(){
   const phone=m==="phone"||(m==="auto"&&isPhoneViewport());
   if(phone)document.body.classList.add("layout-phone");
   else document.body.classList.add("layout-desktop");
+  updateLayoutQuickButton(phone);
 }
 function handleViewportChange(){
   if(String(db.profile.layout)==="auto")applyLayoutMode();
