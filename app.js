@@ -10,7 +10,7 @@ let db={
 };
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
-let vocabPage=1,sentencePage=1,trilingualPage=1,lastVocabQuery="";
+let vocabPage=1,sentencePage=1,trilingualPage=1,lastVocabQuery="",pendingUserState=null;
 
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
@@ -36,11 +36,43 @@ function recordActivity(){
   }else db.stats.streak=1;
   db.stats.lastActivityDate=today;
 }
+function userSnapshot(source){
+  const d=source||db,stats={...(d.stats||{})},profile={...(d.profile||{})};
+  const states=Array.isArray(d.vocab)?d.vocab.map(function(v){return {
+    word:v.word,status:v.status||"New",favorite:!!v.favorite,reviewDue:v.reviewDue||null,
+    correct_count:Number(v.correct_count)||0,wrong_count:Number(v.wrong_count)||0,lastReviewed:v.lastReviewed||null
+  }}):[];
+  return {schemaVersion:2,stats,profile,positions:{flashIndex,listenIndex,speakIndex,quizIndex},vocabState:states};
+}
+function applyUserSnapshot(snapshot){
+  if(!snapshot)return;
+  db.stats={...db.stats,...(snapshot.stats||{})};
+  db.profile={...db.profile,...(snapshot.profile||{})};
+  const p=snapshot.positions||{};
+  flashIndex=Number.isFinite(Number(p.flashIndex))?Number(p.flashIndex):flashIndex;
+  listenIndex=Number.isFinite(Number(p.listenIndex))?Number(p.listenIndex):listenIndex;
+  speakIndex=Number.isFinite(Number(p.speakIndex))?Number(p.speakIndex):speakIndex;
+  quizIndex=Number.isFinite(Number(p.quizIndex))?Number(p.quizIndex):quizIndex;
+  const states=Array.isArray(snapshot.vocabState)?snapshot.vocabState:[];
+  if(!Array.isArray(db.vocab)||!db.vocab.length){pendingUserState=states;return;}
+  const map=new Map(states.map(function(s){return [norm(s.word),s]}));
+  db.vocab.forEach(function(v){
+    const s=map.get(norm(v.word));if(!s)return;
+    v.status=s.status||v.status||"New";v.favorite=!!s.favorite;v.reviewDue=s.reviewDue??v.reviewDue??null;
+    v.correct_count=Number(s.correct_count)||0;v.wrong_count=Number(s.wrong_count)||0;v.lastReviewed=s.lastReviewed||v.lastReviewed||null;
+  });
+  pendingUserState=null;
+}
 function save(){
   try{
     db.positions={flashIndex,listenIndex,speakIndex,quizIndex};
     const serialized=JSON.stringify(db),previous=localStorage.getItem(STORAGE_KEY);
-    if(previous)localStorage.setItem(STORAGE_KEY+"_backup",previous);
+    if(previous){
+      try{
+        const prevParsed=JSON.parse(previous);
+        localStorage.setItem(STORAGE_KEY+"_backup",JSON.stringify(userSnapshot(prevParsed)));
+      }catch(e){}
+    }
     localStorage.setItem(STORAGE_KEY,serialized);
   }catch(e){
     toast("Không thể lưu tiến độ. Dữ liệu hiện tại vẫn còn trên màn hình.");
@@ -48,12 +80,16 @@ function save(){
 }
 function load(){
   let parsed=null;
-  const current=localStorage.getItem(STORAGE_KEY);
-  try{parsed=current?JSON.parse(current):null}catch(e){}
+  try{
+    const current=localStorage.getItem(STORAGE_KEY);
+    try{parsed=current?JSON.parse(current):null}catch(e){}
+  }catch(e){}
   if(!parsed){
-    const backup=localStorage.getItem(STORAGE_KEY+"_backup");
-    try{parsed=backup?JSON.parse(backup):null}catch(e){}
-    if(parsed)toast("Đã khôi phục tiến độ từ bản sao lưu cục bộ.");
+    try{
+      const backup=localStorage.getItem(STORAGE_KEY+"_backup");
+      try{parsed=backup?JSON.parse(backup):null}catch(e){}
+      if(parsed)toast("Đã khôi phục tiến độ từ bản sao lưu cục bộ.");
+    }catch(e){}
   }
   if(parsed) db={
     ...db,...parsed,
@@ -67,11 +103,7 @@ function load(){
     stats:{...db.stats,...(parsed.stats||{})},
     profile:{...db.profile,...(parsed.profile||{})}
   };
-  const pos=parsed?.positions||{};
-  flashIndex=Number.isFinite(Number(pos.flashIndex))?Number(pos.flashIndex):0;
-  listenIndex=Number.isFinite(Number(pos.listenIndex))?Number(pos.listenIndex):0;
-  speakIndex=Number.isFinite(Number(pos.speakIndex))?Number(pos.speakIndex):0;
-  quizIndex=Number.isFinite(Number(pos.quizIndex))?Number(pos.quizIndex):0;
+  applyUserSnapshot(parsed);
 }
 function toast(msg){
   const el=$("toast"); if(!el)return;
@@ -267,6 +299,7 @@ async function updateOnline(force){
     }
 
     db={...db,...next,lastRemoteVersion:ver};
+    if(pendingUserState){applyUserSnapshot({vocabState:pendingUserState});pendingUserState=null;}
     save();render();
     toast("Đã đồng bộ GitHub: +"+added+" mục mới, cập nhật "+changed+" mục.");
   }catch(e){
