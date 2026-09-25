@@ -9,3 +9,19 @@ body.layout-desktop aside{width:220px;padding:14px}body.layout-desktop aside but
 body.layout-phone{overflow-x:hidden}body.layout-phone .top{height:58px;padding:0 10px}body.layout-phone .brand>b{width:36px;height:36px;border-radius:10px;font-size:19px}body.layout-phone .brand strong{font-size:15px}body.layout-phone .brand span{display:none}body.layout-phone .top-actions{gap:6px}body.layout-phone .top-actions button{padding:7px 9px}
 body.layout-phone .layout{display:block;min-height:calc(100vh - 58px)}body.layout-phone #side{position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;height:auto;z-index:20;display:flex;gap:4px;padding:7px 6px;overflow-x:auto;overflow-y:hidden;background:var(--card);border-right:0;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08)}body.layout-phone #side button{flex:0 0 58px;width:58px;height:46px;margin:0;padding:4px 2px;border-radius:10px;text-align:center;font-size:0;white-space:nowrap}body.layout-phone #side button:first-letter{font-size:19px}body.layout-phone main{max-width:none;width:100%;padding:13px 12px 76px;margin:0}body.layout-phone .card{border-radius:13px;padding:15px;margin-bottom:12px}body.layout-phone .hero{padding:19px 16px}body.layout-phone .title{font-size:23px}body.layout-phone .grid,body.layout-phone .grid2,body.layout-phone .grid-2{grid-template-columns:1fr!important;gap:12px}body.layout-phone .options{grid-template-columns:1fr!important;gap:9px}body.layout-phone .option{padding:13px}body.layout-phone .actions{gap:7px}body.layout-phone .actions button{min-height:42px}body.layout-phone .row{align-items:stretch;flex-wrap:wrap}body.layout-phone .row>input{flex:1 1 180px}body.layout-phone .table-wrap{margin:0 -3px}body.layout-phone .table th,body.layout-phone .table td{min-width:125px;padding:9px}body.layout-phone .jump-control{width:100%;padding-top:5px}body.layout-phone .jump-input{width:78px!important;flex-basis:78px}body.layout-phone .flash{min-height:280px;padding:20px;margin:13px 0}body.layout-phone .flash .big{font-size:34px}body.layout-phone .word{font-size:25px}
 body.layout-desktop .jump-control{width:auto}
+
+/* Mobile robustness: touch targets, safe areas, and long-content containment. */
+body.layout-phone{min-width:0;overscroll-behavior-x:none}
+body.layout-phone button,body.layout-phone input,body.layout-phone select{min-height:42px}
+body.layout-phone #side{padding-bottom:calc(7px + env(safe-area-inset-bottom));padding-left:calc(6px + env(safe-area-inset-left));padding-right:calc(6px + env(safe-area-inset-right))}
+body.layout-phone #side button{touch-action:manipulation}
+body.layout-phone .toolbar{align-items:stretch}
+body.layout-phone .toolbar>.jump-control{flex:1 1 100%;order:3}
+body.layout-phone .actions{max-width:100%}
+body.layout-phone .actions button{max-width:100%;white-space:normal}
+body.layout-phone .item,body.layout-phone .card{overflow-wrap:anywhere}
+body.layout-phone h1,body.layout-phone h2,body.layout-phone h3,body.layout-phone p{overflow-wrap:anywhere}
+body.layout-phone .table-wrap{-webkit-overflow-scrolling:touch}
+body.layout-phone .table{min-width:620px}
+body.layout-phone .rating button{flex:1 1 100%;min-width:0}
+body.layout-phone .jump-input{max-width:88px}

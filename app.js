@@ -497,11 +497,21 @@ function setLayoutMode(mode){
   const m=["auto","phone","desktop"].includes(String(mode))?String(mode):"auto";
   db.profile.layout=m;save();render();
 }
+function isPhoneViewport(){
+  try{
+    if(window.matchMedia)return window.matchMedia("(max-width: 800px)").matches;
+  }catch(e){}
+  return false;
+}
 function applyLayoutMode(){
   const m=["auto","phone","desktop"].includes(String(db.profile.layout))?db.profile.layout:"auto";
   document.body.classList.remove("layout-phone","layout-desktop");
-  if(m==="phone")document.body.classList.add("layout-phone");
-  else if(m==="desktop")document.body.classList.add("layout-desktop");
+  const phone=m==="phone"||(m==="auto"&&isPhoneViewport());
+  if(phone)document.body.classList.add("layout-phone");
+  else document.body.classList.add("layout-desktop");
+}
+function handleViewportChange(){
+  if(String(db.profile.layout)==="auto")applyLayoutMode();
 }
 function render(){
   db.vocab=Array.isArray(db.vocab)?db.vocab:[];db.sentences=Array.isArray(db.sentences)?db.sentences:[];
@@ -820,6 +830,14 @@ function init(){
     if(e.key==="Escape")stopSpeech();
   });
   render();
+  try{
+    if(window.matchMedia){
+      const mq=window.matchMedia("(max-width: 800px)");
+      if(mq.addEventListener)mq.addEventListener("change",handleViewportChange);
+      else if(mq.addListener)mq.addListener(handleViewportChange);
+    }
+    window.addEventListener("resize",handleViewportChange);
+  }catch(e){}
   hydrateContent();
   registerServiceWorker();
 }
