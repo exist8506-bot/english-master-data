@@ -1,9 +1,6 @@
 name: English Master - Data Integrity Guard
 
 on:
-  push:
-    branches:
-      - qa/data-integrity
   pull_request:
     branches:
       - main
@@ -16,29 +13,13 @@ jobs:
   data-integrity:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout exact test branch
+      - name: Checkout exact PR
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Protect application data and source files
-        shell: bash
-        run: |
-          set -euo pipefail
-          changed="$(git diff --name-only origin/main...HEAD)"
-          bad=0
-          while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            case "$file" in
-              .github/workflows/data-integrity.yml|scripts/qa-data-integrity.mjs)
-                ;;
-              *)
-                echo "BLOCKED unexpected changed file: $file"
-                bad=1
-                ;;
-            esac
-          done <<< "$changed"
-          test "$bad" -eq 0
+      - name: Fetch base branch
+        run: git fetch origin main --depth=1
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -47,6 +28,9 @@ jobs:
 
       - name: JavaScript syntax check
         run: node --check app.js
+
+      - name: Data preservation audit
+        run: node scripts/qa-preserve-main.mjs
 
       - name: Data integrity audit
         run: node scripts/qa-data-integrity.mjs
