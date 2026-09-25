@@ -10818,8 +10818,8 @@
     "topic": "kitchen",
     "id": "v5_1wcl60z",
     "meaning": "cắt",
-    "example": "I usually cut after work.",
-    "exampleVi": "Tôi thường cắt sau giờ làm.",
+    "example": "I usually cut vegetables after work.",
+    "exampleVi": "Tôi thường cắt rau sau giờ làm.",
     "ipa": "/kˈʌt/",
     "level": "Beginner",
     "favorite": false,
@@ -10828,7 +10828,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually cut after work.",
+    "legacyExampleVi": "Tôi thường cắt sau giờ làm."
   },
   {
     "word": "taste",
@@ -13212,8 +13214,8 @@
     "topic": "personality",
     "id": "v5_ihyeob",
     "meaning": "hài hước",
-    "example": "The new plan is funny for us.",
-    "exampleVi": "Kế hoạch mới khá hài hước với chúng tôi.",
+    "example": "He is funny when he tells stories.",
+    "exampleVi": "Anh ấy hài hước khi kể chuyện.",
     "ipa": "/fˈʌni/",
     "level": "Beginner",
     "favorite": false,
@@ -13222,7 +13224,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "The new plan is funny for us.",
+    "legacyExampleVi": "Kế hoạch mới khá hài hước với chúng tôi."
   },
   {
     "word": "shy",
@@ -13317,8 +13321,8 @@
     "topic": "personality",
     "id": "v5_157kc6w",
     "meaning": "dịu dàng",
-    "example": "The new plan is gentle for us.",
-    "exampleVi": "Kế hoạch mới khá dịu dàng với chúng tôi.",
+    "example": "She is gentle with the baby.",
+    "exampleVi": "Cô ấy dịu dàng với em bé.",
     "ipa": "/dʒˈɛntəl/",
     "level": "Beginner",
     "favorite": false,
@@ -13327,7 +13331,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "The new plan is gentle for us.",
+    "legacyExampleVi": "Kế hoạch mới khá dịu dàng với chúng tôi."
   },
   {
     "word": "rude",
@@ -13443,8 +13449,8 @@
     "topic": "verb2",
     "id": "v5_vqj2cv",
     "meaning": "gửi",
-    "example": "I usually send after work.",
-    "exampleVi": "Tôi thường gửi sau giờ làm.",
+    "example": "I usually send messages after work.",
+    "exampleVi": "Tôi thường gửi tin nhắn sau giờ làm.",
     "ipa": "/sˈɛnd/",
     "level": "Beginner",
     "favorite": false,
@@ -13453,7 +13459,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually send after work.",
+    "legacyExampleVi": "Tôi thường gửi sau giờ làm."
   },
   {
     "word": "receive",
@@ -13548,8 +13556,8 @@
     "topic": "verb2",
     "id": "v5_1h01x54",
     "meaning": "trở thành",
-    "example": "I usually become after work.",
-    "exampleVi": "Tôi thường trở thành sau giờ làm.",
+    "example": "I usually become tired after work.",
+    "exampleVi": "Tôi thường cảm thấy mệt sau giờ làm.",
     "ipa": "/bɪkˈʌm/",
     "level": "Beginner",
     "favorite": false,
@@ -13558,7 +13566,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually become after work.",
+    "legacyExampleVi": "Tôi thường trở thành sau giờ làm."
   },
   {
     "word": "wear",
@@ -13653,8 +13663,8 @@
     "topic": "verb3",
     "id": "v5_1dse79j",
     "meaning": "kiểm tra",
-    "example": "I usually check after work.",
-    "exampleVi": "Tôi thường kiểm tra sau giờ làm.",
+    "example": "I usually check my email after work.",
+    "exampleVi": "Tôi thường kiểm tra email sau giờ làm.",
     "ipa": "/tʃˈɛk/",
     "level": "Beginner",
     "favorite": false,
@@ -13663,7 +13673,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually check after work.",
+    "legacyExampleVi": "Tôi thường kiểm tra sau giờ làm."
   },
   {
     "word": "plan",
@@ -13758,8 +13770,8 @@
     "topic": "verb3",
     "id": "v5_pd76uo",
     "meaning": "đi theo; làm theo",
-    "example": "I usually follow after work.",
-    "exampleVi": "Tôi thường đi theo; làm theo sau giờ làm.",
+    "example": "I usually follow the news after work.",
+    "exampleVi": "Tôi thường theo dõi tin tức sau giờ làm.",
     "ipa": "/fˈɑloʊ/",
     "level": "Beginner",
     "favorite": false,
@@ -13768,7 +13780,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually follow after work.",
+    "legacyExampleVi": "Tôi thường đi theo; làm theo sau giờ làm."
   },
   {
     "word": "lead",
@@ -13863,8 +13877,8 @@
     "topic": "verb3",
     "id": "v5_1plevpp",
     "meaning": "đi vào",
-    "example": "I usually enter after work.",
-    "exampleVi": "Tôi thường đi vào sau giờ làm.",
+    "example": "I usually enter data after work.",
+    "exampleVi": "Tôi thường nhập dữ liệu sau giờ làm.",
     "ipa": "/ˈɛntɝ/",
     "level": "Beginner",
     "favorite": false,
@@ -13873,7 +13887,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually enter after work.",
+    "legacyExampleVi": "Tôi thường đi vào sau giờ làm."
   },
   {
     "word": "exit",
@@ -13968,8 +13984,8 @@
     "topic": "verb3",
     "id": "v5_1i0vbpq",
     "meaning": "giao; chuyển",
-    "example": "I usually deliver after work.",
-    "exampleVi": "Tôi thường giao; chuyển sau giờ làm.",
+    "example": "I usually deliver packages after work.",
+    "exampleVi": "Tôi thường giao các gói hàng sau giờ làm.",
     "ipa": "/dɪlˈɪvɝ/",
     "level": "Beginner",
     "favorite": false,
@@ -13978,7 +13994,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually deliver after work.",
+    "legacyExampleVi": "Tôi thường giao; chuyển sau giờ làm."
   },
   {
     "word": "collect",
@@ -14052,8 +14070,8 @@
     "topic": "adjective1",
     "id": "v5_1kw60xn",
     "meaning": "giống nhau",
-    "example": "The new plan is same for us.",
-    "exampleVi": "Kế hoạch mới khá giống nhau với chúng tôi.",
+    "example": "We chose the same option.",
+    "exampleVi": "Chúng tôi chọn cùng một lựa chọn.",
     "ipa": "/sˈeɪm/",
     "level": "Beginner",
     "favorite": false,
@@ -14062,7 +14080,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "The new plan is same for us.",
+    "legacyExampleVi": "Kế hoạch mới khá giống nhau với chúng tôi."
   },
   {
     "word": "empty",
@@ -14157,8 +14177,8 @@
     "topic": "adjective2",
     "id": "v5_1p2zqla",
     "meaning": "khô",
-    "example": "The new plan is dry for us.",
-    "exampleVi": "Kế hoạch mới khá khô với chúng tôi.",
+    "example": "Please keep the clothes dry.",
+    "exampleVi": "Hãy giữ quần áo khô.",
     "ipa": "/drˈaɪ/",
     "level": "Beginner",
     "favorite": false,
@@ -14167,7 +14187,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "The new plan is dry for us.",
+    "legacyExampleVi": "Kế hoạch mới khá khô với chúng tôi."
   },
   {
     "word": "wet",
@@ -17937,8 +17959,8 @@
     "topic": "feelingsextra",
     "id": "v5_17zfs32",
     "meaning": "bối rối",
-    "example": "The new plan is confused for us.",
-    "exampleVi": "Kế hoạch mới khá bối rối với chúng tôi.",
+    "example": "I felt confused by the instructions.",
+    "exampleVi": "Tôi cảm thấy bối rối vì hướng dẫn.",
     "ipa": "/kənfjˈuzd/",
     "level": "Beginner",
     "favorite": false,
@@ -17947,7 +17969,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "The new plan is confused for us.",
+    "legacyExampleVi": "Kế hoạch mới khá bối rối với chúng tôi."
   },
   {
     "word": "interested",
@@ -18042,8 +18066,8 @@
     "topic": "placesextra",
     "id": "v5_rlka2n",
     "meaning": "cổ xưa",
-    "example": "The new plan is ancient for us.",
-    "exampleVi": "Kế hoạch mới khá cổ xưa với chúng tôi.",
+    "example": "We visited an ancient temple.",
+    "exampleVi": "Chúng tôi đã thăm một ngôi đền cổ.",
     "ipa": "/ˈeɪntʃənt/",
     "level": "Beginner",
     "favorite": false,
@@ -18052,7 +18076,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "The new plan is ancient for us.",
+    "legacyExampleVi": "Kế hoạch mới khá cổ xưa với chúng tôi."
   },
   {
     "word": "modern",
@@ -18147,8 +18173,8 @@
     "topic": "generalextra",
     "id": "v5_1mefazo",
     "meaning": "nổi tiếng",
-    "example": "The new plan is famous for us.",
-    "exampleVi": "Kế hoạch mới khá nổi tiếng với chúng tôi.",
+    "example": "The city is famous for its food.",
+    "exampleVi": "Thành phố nổi tiếng với đồ ăn.",
     "ipa": "/fˈeɪməs/",
     "level": "Beginner",
     "favorite": false,
@@ -18157,7 +18183,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "The new plan is famous for us.",
+    "legacyExampleVi": "Kế hoạch mới khá nổi tiếng với chúng tôi."
   },
   {
     "word": "popular",
@@ -18273,8 +18301,8 @@
     "topic": "verbextra",
     "id": "v5_bgqlkk",
     "meaning": "sửa chữa",
-    "example": "I usually repair after work.",
-    "exampleVi": "Tôi thường sửa chữa sau giờ làm.",
+    "example": "I usually repair computers after work.",
+    "exampleVi": "Tôi thường sửa máy tính sau giờ làm.",
     "ipa": "/rɪpˈɛr/",
     "level": "Beginner",
     "favorite": false,
@@ -18283,7 +18311,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually repair after work.",
+    "legacyExampleVi": "Tôi thường sửa chữa sau giờ làm."
   },
   {
     "word": "throw",
@@ -18378,8 +18408,8 @@
     "topic": "verbextra",
     "id": "v5_1ael6vh",
     "meaning": "nhảy",
-    "example": "I usually jump after work.",
-    "exampleVi": "Tôi thường nhảy sau giờ làm.",
+    "example": "I usually jump for exercise after work.",
+    "exampleVi": "Tôi thường nhảy để tập thể dục sau giờ làm.",
     "ipa": "/dʒˈʌmp/",
     "level": "Beginner",
     "favorite": false,
@@ -18388,7 +18418,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually jump after work.",
+    "legacyExampleVi": "Tôi thường nhảy sau giờ làm."
   },
   {
     "word": "drive",
@@ -18483,8 +18515,8 @@
     "topic": "verbextra",
     "id": "v5_1ensipq",
     "meaning": "cười",
-    "example": "I usually laugh after work.",
-    "exampleVi": "Tôi thường cười sau giờ làm.",
+    "example": "I usually laugh with my friends after work.",
+    "exampleVi": "Tôi thường cười cùng bạn bè sau giờ làm.",
     "ipa": "/lˈæf/",
     "level": "Beginner",
     "favorite": false,
@@ -18493,7 +18525,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually laugh after work.",
+    "legacyExampleVi": "Tôi thường cười sau giờ làm."
   },
   {
     "word": "cry",
@@ -18588,8 +18622,8 @@
     "topic": "verbextra",
     "id": "v5_c0qjnu",
     "meaning": "gấp",
-    "example": "I usually fold after work.",
-    "exampleVi": "Tôi thường gấp sau giờ làm.",
+    "example": "I usually fold the clothes after work.",
+    "exampleVi": "Tôi thường gấp quần áo sau giờ làm.",
     "ipa": "/fˈoʊld/",
     "level": "Beginner",
     "favorite": false,
@@ -18598,7 +18632,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually fold after work.",
+    "legacyExampleVi": "Tôi thường gấp sau giờ làm."
   },
   {
     "word": "fill",
@@ -18693,8 +18729,8 @@
     "topic": "verbextra",
     "id": "v5_1bi5kpx",
     "meaning": "cho ăn",
-    "example": "I usually feed after work.",
-    "exampleVi": "Tôi thường cho ăn sau giờ làm.",
+    "example": "I usually feed the cat after work.",
+    "exampleVi": "Tôi thường cho mèo ăn sau giờ làm.",
     "ipa": "/fˈid/",
     "level": "Beginner",
     "favorite": false,
@@ -18703,7 +18739,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually feed after work.",
+    "legacyExampleVi": "Tôi thường cho ăn sau giờ làm."
   },
   {
     "word": "enjoy",
@@ -18798,8 +18836,8 @@
     "topic": "verbextra",
     "id": "v5_128xoh4",
     "meaning": "quan trọng; vấn đề",
-    "example": "I usually matter after work.",
-    "exampleVi": "Tôi thường quan trọng; vấn đề sau giờ làm.",
+    "example": "Small details matter after work, too.",
+    "exampleVi": "Những chi tiết nhỏ cũng quan trọng sau giờ làm.",
     "ipa": "/mˈætɝ/",
     "level": "Beginner",
     "favorite": false,
@@ -18808,7 +18846,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually matter after work.",
+    "legacyExampleVi": "Tôi thường quan trọng; vấn đề sau giờ làm."
   },
   {
     "word": "sound",
@@ -18903,8 +18943,8 @@
     "topic": "verbextra",
     "id": "v5_1hsbjz1",
     "meaning": "đề nghị; cung cấp",
-    "example": "I usually offer after work.",
-    "exampleVi": "Tôi thường đề nghị; cung cấp sau giờ làm.",
+    "example": "I usually offer help after work.",
+    "exampleVi": "Tôi thường đề nghị giúp đỡ sau giờ làm.",
     "ipa": "/ˈɔfɝ/",
     "level": "Beginner",
     "favorite": false,
@@ -18913,7 +18953,9 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "legacyExample": "I usually offer after work.",
+    "legacyExampleVi": "Tôi thường đề nghị; cung cấp sau giờ làm."
   },
   {
     "word": "include",
@@ -19121,15 +19163,17 @@
     "pos": "verb",
     "topic": "learning",
     "level": "Beginner",
-    "example": "I plan to absorb tomorrow.",
-    "exampleVi": "Tôi dự định hấp thụ; tiếp thu vào ngày mai.",
+    "example": "I plan to absorb the new material tomorrow.",
+    "exampleVi": "Tôi dự định tiếp thu tài liệu mới vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to absorb tomorrow.",
+    "legacyExampleVi": "Tôi dự định hấp thụ; tiếp thu vào ngày mai."
   },
   {
     "id": "v6_1obvo8q",
@@ -19231,15 +19275,17 @@
     "pos": "verb",
     "topic": "work",
     "level": "Beginner",
-    "example": "I plan to accomplish tomorrow.",
-    "exampleVi": "Tôi dự định hoàn thành; đạt được vào ngày mai.",
+    "example": "I plan to accomplish this task tomorrow.",
+    "exampleVi": "Tôi dự định hoàn thành nhiệm vụ này vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to accomplish tomorrow.",
+    "legacyExampleVi": "Tôi dự định hoàn thành; đạt được vào ngày mai."
   },
   {
     "id": "v6_1fc02fs",
@@ -19319,15 +19365,17 @@
     "pos": "adjective",
     "topic": "general",
     "level": "Beginner",
-    "example": "The answer is additional in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là thêm; bổ sung.",
+    "example": "We need an additional example in this case.",
+    "exampleVi": "Chúng ta cần thêm một ví dụ trong trường hợp này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is additional in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là thêm; bổ sung."
   },
   {
     "id": "v6_cbn977",
@@ -19341,15 +19389,17 @@
     "pos": "noun",
     "topic": "daily",
     "level": "Beginner",
-    "example": "I learned more about address this week.",
-    "exampleVi": "Tôi biết thêm về địa chỉ; giải quyết trong tuần này.",
+    "example": "I learned more about the address this week.",
+    "exampleVi": "Tôi biết thêm về địa chỉ trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about address this week.",
+    "legacyExampleVi": "Tôi biết thêm về địa chỉ; giải quyết trong tuần này."
   },
   {
     "id": "v6_16mu0zq",
@@ -19561,15 +19611,17 @@
     "pos": "noun",
     "topic": "goal",
     "level": "Beginner",
-    "example": "I learned more about aim this week.",
-    "exampleVi": "Tôi biết thêm về mục tiêu; nhắm tới trong tuần này.",
+    "example": "I learned more about the aim of the project this week.",
+    "exampleVi": "Tôi biết thêm về mục tiêu của dự án trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about aim this week.",
+    "legacyExampleVi": "Tôi biết thêm về mục tiêu; nhắm tới trong tuần này."
   },
   {
     "id": "v6_76x8t6",
@@ -19627,15 +19679,17 @@
     "pos": "verb",
     "topic": "emotion",
     "level": "Beginner",
-    "example": "He wants to amaze this week.",
-    "exampleVi": "Anh ấy muốn làm kinh ngạc trong tuần này.",
+    "example": "He wants to amaze his audience this week.",
+    "exampleVi": "Anh ấy muốn làm khán giả ngạc nhiên trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to amaze this week.",
+    "legacyExampleVi": "Anh ấy muốn làm kinh ngạc trong tuần này."
   },
   {
     "id": "v6_1y738g0",
@@ -19869,15 +19923,17 @@
     "pos": "adjective",
     "topic": "general",
     "level": "Beginner",
-    "example": "The answer is appropriate in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là phù hợp.",
+    "example": "This response is appropriate in this case.",
+    "exampleVi": "Câu trả lời này phù hợp trong trường hợp này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is appropriate in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là phù hợp."
   },
   {
     "id": "v6_wqsxeu",
@@ -19957,15 +20013,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Beginner",
-    "example": "He wants to argue this week.",
-    "exampleVi": "Anh ấy muốn tranh luận; cãi trong tuần này.",
+    "example": "He wants to argue about the proposal this week.",
+    "exampleVi": "Anh ấy muốn tranh luận về đề xuất trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to argue this week.",
+    "legacyExampleVi": "Anh ấy muốn tranh luận; cãi trong tuần này."
   },
   {
     "id": "v6_1suceuu",
@@ -20177,15 +20235,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Beginner",
-    "example": "He wants to attract this week.",
-    "exampleVi": "Anh ấy muốn thu hút trong tuần này.",
+    "example": "He wants to attract more customers this week.",
+    "exampleVi": "Anh ấy muốn thu hút thêm khách hàng trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to attract this week.",
+    "legacyExampleVi": "Anh ấy muốn thu hút trong tuần này."
   },
   {
     "id": "v6_6hfodk",
@@ -20551,15 +20611,17 @@
     "pos": "noun",
     "topic": "decision",
     "level": "Beginner",
-    "example": "I learned more about choice this week.",
-    "exampleVi": "Tôi biết thêm về lựa chọn trong tuần này.",
+    "example": "I learned more about my choice this week.",
+    "exampleVi": "Tôi biết thêm về lựa chọn của mình trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about choice this week.",
+    "legacyExampleVi": "Tôi biết thêm về lựa chọn trong tuần này."
   },
   {
     "id": "v6_yjrgjw",
@@ -20639,15 +20701,17 @@
     "pos": "adjective",
     "topic": "culture",
     "level": "Beginner",
-    "example": "The answer is classic in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là kinh điển.",
+    "example": "This is a classic example of the problem.",
+    "exampleVi": "Đây là một ví dụ kinh điển của vấn đề này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is classic in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là kinh điển."
   },
   {
     "id": "v6_1ou5sr8",
@@ -20991,15 +21055,17 @@
     "pos": "noun",
     "topic": "personality",
     "level": "Beginner",
-    "example": "I learned more about confidence this week.",
-    "exampleVi": "Tôi biết thêm về sự tự tin trong tuần này.",
+    "example": "I learned more about building confidence this week.",
+    "exampleVi": "Tôi biết thêm về cách xây dựng sự tự tin trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about confidence this week.",
+    "legacyExampleVi": "Tôi biết thêm về sự tự tin trong tuần này."
   },
   {
     "id": "v6_vba1qn",
@@ -21101,15 +21167,17 @@
     "pos": "noun",
     "topic": "communication",
     "level": "Beginner",
-    "example": "We talked about contact after dinner.",
-    "exampleVi": "Chúng tôi nói về liên hệ; sự tiếp xúc sau bữa tối.",
+    "example": "I stayed in contact with my friend after dinner.",
+    "exampleVi": "Tôi giữ liên lạc với bạn sau bữa tối.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "We talked about contact after dinner.",
+    "legacyExampleVi": "Chúng tôi nói về liên hệ; sự tiếp xúc sau bữa tối."
   },
   {
     "id": "v6_ptotjv",
@@ -21211,15 +21279,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Beginner",
-    "example": "I plan to control tomorrow.",
-    "exampleVi": "Tôi dự định kiểm soát; sự kiểm soát vào ngày mai.",
+    "example": "I plan to control my spending tomorrow.",
+    "exampleVi": "Tôi dự định kiểm soát chi tiêu của mình vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to control tomorrow.",
+    "legacyExampleVi": "Tôi dự định kiểm soát; sự kiểm soát vào ngày mai."
   },
   {
     "id": "v6_300ao",
@@ -21431,15 +21501,17 @@
     "pos": "noun",
     "topic": "general",
     "level": "Beginner",
-    "example": "I learned more about damage this week.",
-    "exampleVi": "Tôi biết thêm về thiệt hại; làm hỏng trong tuần này.",
+    "example": "We learned more about the damage this week.",
+    "exampleVi": "Chúng tôi biết thêm về thiệt hại trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about damage this week.",
+    "legacyExampleVi": "Tôi biết thêm về thiệt hại; làm hỏng trong tuần này."
   },
   {
     "id": "v6_vkujs0",
@@ -21541,15 +21613,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Beginner",
-    "example": "I plan to defend tomorrow.",
-    "exampleVi": "Tôi dự định bảo vệ vào ngày mai.",
+    "example": "I plan to defend my idea tomorrow.",
+    "exampleVi": "Tôi dự định bảo vệ ý tưởng của mình vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to defend tomorrow.",
+    "legacyExampleVi": "Tôi dự định bảo vệ vào ngày mai."
   },
   {
     "id": "v6_tl1176",
@@ -21651,15 +21725,17 @@
     "pos": "noun",
     "topic": "emotion",
     "level": "Beginner",
-    "example": "I learned more about desire this week.",
-    "exampleVi": "Tôi biết thêm về mong muốn; khao khát trong tuần này.",
+    "example": "I learned more about his desire to improve this week.",
+    "exampleVi": "Tôi biết thêm về mong muốn tiến bộ của anh ấy trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about desire this week.",
+    "legacyExampleVi": "Tôi biết thêm về mong muốn; khao khát trong tuần này."
   },
   {
     "id": "v6_qoyjro",
@@ -21739,15 +21815,17 @@
     "pos": "adjective",
     "topic": "general",
     "level": "Beginner",
-    "example": "The answer is direct in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là trực tiếp; chỉ dẫn.",
+    "example": "He gave a direct answer.",
+    "exampleVi": "Anh ấy đưa ra một câu trả lời trực tiếp.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is direct in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là trực tiếp; chỉ dẫn."
   },
   {
     "id": "v6_17z5i79",
@@ -22201,7 +22279,7 @@
     "pos": "noun",
     "topic": "daily",
     "level": "Beginner",
-    "example": "I learned more about event this week.",
+    "example": "I learned more about the event this week.",
     "exampleVi": "Tôi biết thêm về sự kiện trong tuần này.",
     "favorite": false,
     "status": "New",
@@ -22209,7 +22287,9 @@
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about event this week.",
+    "legacyExampleVi": "Tôi biết thêm về sự kiện trong tuần này."
   },
   {
     "id": "v6_1hv0y78",
@@ -22971,15 +23051,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Beginner",
-    "example": "I plan to inform tomorrow.",
-    "exampleVi": "Tôi dự định thông báo; cung cấp thông tin vào ngày mai.",
+    "example": "I plan to inform the team tomorrow.",
+    "exampleVi": "Tôi dự định thông báo cho nhóm vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to inform tomorrow.",
+    "legacyExampleVi": "Tôi dự định thông báo; cung cấp thông tin vào ngày mai."
   },
   {
     "id": "v6_10ve6an",
@@ -23081,15 +23163,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Beginner",
-    "example": "I plan to introduce tomorrow.",
-    "exampleVi": "Tôi dự định giới thiệu vào ngày mai.",
+    "example": "I plan to introduce the new member tomorrow.",
+    "exampleVi": "Tôi dự định giới thiệu thành viên mới vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to introduce tomorrow.",
+    "legacyExampleVi": "Tôi dự định giới thiệu vào ngày mai."
   },
   {
     "id": "v6_doiff1",
@@ -23147,15 +23231,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Beginner",
-    "example": "He wants to involve this week.",
-    "exampleVi": "Anh ấy muốn liên quan; bao gồm trong tuần này.",
+    "example": "He wants to involve the whole team this week.",
+    "exampleVi": "Anh ấy muốn cả nhóm cùng tham gia trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to involve this week.",
+    "legacyExampleVi": "Anh ấy muốn liên quan; bao gồm trong tuần này."
   },
   {
     "id": "v6_1fowu2o",
@@ -23191,15 +23277,17 @@
     "pos": "noun",
     "topic": "society",
     "level": "Beginner",
-    "example": "I learned more about judge this week.",
-    "exampleVi": "Tôi biết thêm về thẩm phán; đánh giá trong tuần này.",
+    "example": "I learned more about the judge's decision this week.",
+    "exampleVi": "Tôi biết thêm về quyết định của thẩm phán trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about judge this week.",
+    "legacyExampleVi": "Tôi biết thêm về thẩm phán; đánh giá trong tuần này."
   },
   {
     "id": "v6_ptcwas",
@@ -23411,15 +23499,17 @@
     "pos": "verb",
     "topic": "learning",
     "level": "Beginner",
-    "example": "I plan to motivate tomorrow.",
-    "exampleVi": "Tôi dự định tạo động lực vào ngày mai.",
+    "example": "I plan to motivate the team tomorrow.",
+    "exampleVi": "Tôi dự định tạo động lực cho nhóm vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to motivate tomorrow.",
+    "legacyExampleVi": "Tôi dự định tạo động lực vào ngày mai."
   },
   {
     "id": "v6_1hb0wo",
@@ -23741,15 +23831,17 @@
     "pos": "verb",
     "topic": "social",
     "level": "Beginner",
-    "example": "I plan to participate tomorrow.",
-    "exampleVi": "Tôi dự định tham gia vào ngày mai.",
+    "example": "I plan to participate in the meeting tomorrow.",
+    "exampleVi": "Tôi dự định tham gia cuộc họp vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to participate tomorrow.",
+    "legacyExampleVi": "Tôi dự định tham gia vào ngày mai."
   },
   {
     "id": "v6_aojbai",
@@ -23829,15 +23921,17 @@
     "pos": "adjective",
     "topic": "health",
     "level": "Beginner",
-    "example": "The answer is physical in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là thuộc thể chất; vật lý.",
+    "example": "We need physical evidence in this case.",
+    "exampleVi": "Chúng ta cần bằng chứng vật chất trong trường hợp này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is physical in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là thuộc thể chất; vật lý."
   },
   {
     "id": "v6_1dwnxde",
@@ -24049,15 +24143,17 @@
     "pos": "adjective",
     "topic": "general",
     "level": "Beginner",
-    "example": "The answer is proper in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là đúng; phù hợp.",
+    "example": "Use the proper form in this case.",
+    "exampleVi": "Hãy dùng dạng thích hợp trong trường hợp này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is proper in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là đúng; phù hợp."
   },
   {
     "id": "v6_1iyzzxi",
@@ -24071,15 +24167,17 @@
     "pos": "verb",
     "topic": "work",
     "level": "Beginner",
-    "example": "I plan to provide tomorrow.",
-    "exampleVi": "Tôi dự định cung cấp vào ngày mai.",
+    "example": "I plan to provide more details tomorrow.",
+    "exampleVi": "Tôi dự định cung cấp thêm chi tiết vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to provide tomorrow.",
+    "legacyExampleVi": "Tôi dự định cung cấp vào ngày mai."
   },
   {
     "id": "v6_4dbqiw",
@@ -24291,15 +24389,17 @@
     "pos": "verb",
     "topic": "study",
     "level": "Beginner",
-    "example": "I plan to refer tomorrow.",
-    "exampleVi": "Tôi dự định đề cập; tham khảo vào ngày mai.",
+    "example": "I plan to refer to the report tomorrow.",
+    "exampleVi": "Tôi dự định tham khảo báo cáo vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to refer tomorrow.",
+    "legacyExampleVi": "Tôi dự định đề cập; tham khảo vào ngày mai."
   },
   {
     "id": "v6_14q4wq2",
@@ -24357,15 +24457,17 @@
     "pos": "verb",
     "topic": "daily",
     "level": "Beginner",
-    "example": "He wants to replace this week.",
-    "exampleVi": "Anh ấy muốn thay thế trong tuần này.",
+    "example": "He wants to replace the old chair this week.",
+    "exampleVi": "Anh ấy muốn thay chiếc ghế cũ trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to replace this week.",
+    "legacyExampleVi": "Anh ấy muốn thay thế trong tuần này."
   },
   {
     "id": "v6_1undzpg",
@@ -24511,15 +24613,17 @@
     "pos": "verb",
     "topic": "emotion",
     "level": "Beginner",
-    "example": "I plan to satisfy tomorrow.",
-    "exampleVi": "Tôi dự định làm hài lòng; đáp ứng vào ngày mai.",
+    "example": "I plan to satisfy the requirements tomorrow.",
+    "exampleVi": "Tôi dự định đáp ứng các yêu cầu vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to satisfy tomorrow.",
+    "legacyExampleVi": "Tôi dự định làm hài lòng; đáp ứng vào ngày mai."
   },
   {
     "id": "v6_1jtharf",
@@ -24599,15 +24703,17 @@
     "pos": "adjective",
     "topic": "general",
     "level": "Beginner",
-    "example": "The answer is separate in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là riêng biệt; tách.",
+    "example": "Keep the two files separate.",
+    "exampleVi": "Hãy giữ hai tệp riêng biệt.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is separate in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là riêng biệt; tách."
   },
   {
     "id": "v6_4qoiv2",
@@ -24621,15 +24727,17 @@
     "pos": "noun",
     "topic": "thinking",
     "level": "Beginner",
-    "example": "I learned more about solution this week.",
-    "exampleVi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này.",
+    "example": "I learned more about the solution this week.",
+    "exampleVi": "Tôi biết thêm về giải pháp trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I learned more about solution this week.",
+    "legacyExampleVi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này."
   },
   {
     "id": "v6_7ps15k",
@@ -24797,15 +24905,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Beginner",
-    "example": "He wants to suggest this week.",
-    "exampleVi": "Anh ấy muốn gợi ý; đề xuất trong tuần này.",
+    "example": "He wants to suggest a new idea this week.",
+    "exampleVi": "Anh ấy muốn đề xuất một ý tưởng mới trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to suggest this week.",
+    "legacyExampleVi": "Anh ấy muốn gợi ý; đề xuất trong tuần này."
   },
   {
     "id": "v6_gfr9pk",
@@ -25017,15 +25127,17 @@
     "pos": "verb",
     "topic": "social",
     "level": "Beginner",
-    "example": "He wants to treat this week.",
-    "exampleVi": "Anh ấy muốn đối xử; điều trị trong tuần này.",
+    "example": "He wants to treat his friends to dinner this week.",
+    "exampleVi": "Anh ấy muốn mời bạn bè ăn tối trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to treat this week.",
+    "legacyExampleVi": "Anh ấy muốn đối xử; điều trị trong tuần này."
   },
   {
     "id": "v6_97j1ww",
@@ -25281,15 +25393,17 @@
     "pos": "verb",
     "topic": "emotion",
     "level": "Beginner",
-    "example": "I plan to admire tomorrow.",
-    "exampleVi": "Tôi dự định ngưỡng mộ vào ngày mai.",
+    "example": "I plan to admire the view tomorrow.",
+    "exampleVi": "Tôi dự định ngắm cảnh vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to admire tomorrow.",
+    "legacyExampleVi": "Tôi dự định ngưỡng mộ vào ngày mai."
   },
   {
     "id": "v6_1o8glr2",
@@ -25347,15 +25461,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Beginner",
-    "example": "He wants to announce this week.",
-    "exampleVi": "Anh ấy muốn thông báo trong tuần này.",
+    "example": "He wants to announce the result this week.",
+    "exampleVi": "Anh ấy muốn công bố kết quả trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to announce this week.",
+    "legacyExampleVi": "Anh ấy muốn thông báo trong tuần này."
   },
   {
     "id": "v6_gqa0eb",
@@ -25391,15 +25507,17 @@
     "pos": "verb",
     "topic": "work",
     "level": "Beginner",
-    "example": "I plan to approve tomorrow.",
-    "exampleVi": "Tôi dự định chấp thuận vào ngày mai.",
+    "example": "I plan to approve the request tomorrow.",
+    "exampleVi": "Tôi dự định phê duyệt yêu cầu vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to approve tomorrow.",
+    "legacyExampleVi": "Tôi dự định chấp thuận vào ngày mai."
   },
   {
     "id": "v6_lqyeiu",
@@ -25457,15 +25575,17 @@
     "pos": "verb",
     "topic": "study",
     "level": "Beginner",
-    "example": "He wants to compare this week.",
-    "exampleVi": "Anh ấy muốn so sánh trong tuần này.",
+    "example": "He wants to compare the two options this week.",
+    "exampleVi": "Anh ấy muốn so sánh hai lựa chọn trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to compare this week.",
+    "legacyExampleVi": "Anh ấy muốn so sánh trong tuần này."
   },
   {
     "id": "v6_1d8gyf8",
@@ -25721,15 +25841,17 @@
     "pos": "verb",
     "topic": "thinking",
     "level": "Beginner",
-    "example": "I plan to guess tomorrow.",
-    "exampleVi": "Tôi dự định đoán vào ngày mai.",
+    "example": "I plan to guess the answer tomorrow.",
+    "exampleVi": "Tôi dự định đoán câu trả lời vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to guess tomorrow.",
+    "legacyExampleVi": "Tôi dự định đoán vào ngày mai."
   },
   {
     "id": "v6_1z3jlj",
@@ -27811,15 +27933,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Beginner",
-    "example": "I plan to destroy tomorrow.",
-    "exampleVi": "Tôi dự định phá hủy vào ngày mai.",
+    "example": "I plan to destroy the old files tomorrow.",
+    "exampleVi": "Tôi dự định xóa hủy các tệp cũ vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to destroy tomorrow.",
+    "legacyExampleVi": "Tôi dự định phá hủy vào ngày mai."
   },
   {
     "id": "v6_5af82",
@@ -27921,15 +28045,17 @@
     "pos": "verb",
     "topic": "education",
     "level": "Beginner",
-    "example": "I plan to educate tomorrow.",
-    "exampleVi": "Tôi dự định giáo dục vào ngày mai.",
+    "example": "I plan to educate students tomorrow.",
+    "exampleVi": "Tôi dự định dạy học sinh vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to educate tomorrow.",
+    "legacyExampleVi": "Tôi dự định giáo dục vào ngày mai."
   },
   {
     "id": "v6_1pc1dt8",
@@ -27987,15 +28113,17 @@
     "pos": "verb",
     "topic": "technology",
     "level": "Beginner",
-    "example": "He wants to enable this week.",
-    "exampleVi": "Anh ấy muốn cho phép; làm cho có thể trong tuần này.",
+    "example": "He wants to enable notifications this week.",
+    "exampleVi": "Anh ấy muốn bật thông báo trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to enable this week.",
+    "legacyExampleVi": "Anh ấy muốn cho phép; làm cho có thể trong tuần này."
   },
   {
     "id": "v6_436nsh",
@@ -28097,15 +28225,17 @@
     "pos": "verb",
     "topic": "business",
     "level": "Beginner",
-    "example": "He wants to export this week.",
-    "exampleVi": "Anh ấy muốn xuất khẩu trong tuần này.",
+    "example": "He wants to export the report this week.",
+    "exampleVi": "Anh ấy muốn xuất báo cáo trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to export this week.",
+    "legacyExampleVi": "Anh ấy muốn xuất khẩu trong tuần này."
   },
   {
     "id": "v6_4xcaun",
@@ -28207,15 +28337,17 @@
     "pos": "verb",
     "topic": "nature",
     "level": "Beginner",
-    "example": "He wants to flow this week.",
-    "exampleVi": "Anh ấy muốn chảy; dòng chảy trong tuần này.",
+    "example": "He wants the water to flow smoothly this week.",
+    "exampleVi": "Anh ấy muốn nước chảy đều trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to flow this week.",
+    "legacyExampleVi": "Anh ấy muốn chảy; dòng chảy trong tuần này."
   },
   {
     "id": "v6_dj82w2",
@@ -28251,15 +28383,17 @@
     "pos": "verb",
     "topic": "technology",
     "level": "Beginner",
-    "example": "I plan to generate tomorrow.",
-    "exampleVi": "Tôi dự định tạo ra; phát sinh vào ngày mai.",
+    "example": "I plan to generate a report tomorrow.",
+    "exampleVi": "Tôi dự định tạo một báo cáo vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to generate tomorrow.",
+    "legacyExampleVi": "Tôi dự định tạo ra; phát sinh vào ngày mai."
   },
   {
     "id": "v6_18u7prz",
@@ -28317,15 +28451,17 @@
     "pos": "verb",
     "topic": "study",
     "level": "Beginner",
-    "example": "He wants to identify this week.",
-    "exampleVi": "Anh ấy muốn nhận dạng; xác định trong tuần này.",
+    "example": "He wants to identify the problem this week.",
+    "exampleVi": "Anh ấy muốn xác định vấn đề trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to identify this week.",
+    "legacyExampleVi": "Anh ấy muốn nhận dạng; xác định trong tuần này."
   },
   {
     "id": "v6_tydyjq",
@@ -28361,15 +28497,17 @@
     "pos": "verb",
     "topic": "emotion",
     "level": "Beginner",
-    "example": "I plan to impress tomorrow.",
-    "exampleVi": "Tôi dự định gây ấn tượng vào ngày mai.",
+    "example": "I plan to impress the clients tomorrow.",
+    "exampleVi": "Tôi dự định gây ấn tượng với khách hàng vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to impress tomorrow.",
+    "legacyExampleVi": "Tôi dự định gây ấn tượng vào ngày mai."
   },
   {
     "id": "v6_diewiu",
@@ -28427,15 +28565,17 @@
     "pos": "verb",
     "topic": "thinking",
     "level": "Beginner",
-    "example": "He wants to intend this week.",
-    "exampleVi": "Anh ấy muốn dự định trong tuần này.",
+    "example": "He intends to finish the project this week.",
+    "exampleVi": "Anh ấy dự định hoàn thành dự án trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to intend this week.",
+    "legacyExampleVi": "Anh ấy muốn dự định trong tuần này."
   },
   {
     "id": "v6_1cyjlg0",
@@ -28471,15 +28611,17 @@
     "pos": "verb",
     "topic": "study",
     "level": "Beginner",
-    "example": "I plan to investigate tomorrow.",
-    "exampleVi": "Tôi dự định điều tra; tìm hiểu vào ngày mai.",
+    "example": "I plan to investigate the issue tomorrow.",
+    "exampleVi": "Tôi dự định điều tra vấn đề vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to investigate tomorrow.",
+    "legacyExampleVi": "Tôi dự định điều tra; tìm hiểu vào ngày mai."
   },
   {
     "id": "v6_1v2gwva",
@@ -28537,15 +28679,17 @@
     "pos": "verb",
     "topic": "family",
     "level": "Beginner",
-    "example": "He wants to marry this week.",
-    "exampleVi": "Anh ấy muốn kết hôn trong tuần này.",
+    "example": "He wants to marry his partner someday.",
+    "exampleVi": "Anh ấy muốn kết hôn với người bạn đời của mình một ngày nào đó.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to marry this week.",
+    "legacyExampleVi": "Anh ấy muốn kết hôn trong tuần này."
   },
   {
     "id": "v6_129bn2j",
@@ -28581,15 +28725,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Beginner",
-    "example": "I plan to obtain tomorrow.",
-    "exampleVi": "Tôi dự định có được vào ngày mai.",
+    "example": "I plan to obtain the information tomorrow.",
+    "exampleVi": "Tôi dự định lấy thông tin vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to obtain tomorrow.",
+    "legacyExampleVi": "Tôi dự định có được vào ngày mai."
   },
   {
     "id": "v6_1hr7avf",
@@ -28647,15 +28793,17 @@
     "pos": "verb",
     "topic": "work",
     "level": "Beginner",
-    "example": "He wants to promote this week.",
-    "exampleVi": "Anh ấy muốn thúc đẩy; thăng chức trong tuần này.",
+    "example": "He wants to promote the new service this week.",
+    "exampleVi": "Anh ấy muốn quảng bá dịch vụ mới trong tuần này.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to promote this week.",
+    "legacyExampleVi": "Anh ấy muốn thúc đẩy; thăng chức trong tuần này."
   },
   {
     "id": "v6_66vkhh",
@@ -28691,15 +28839,17 @@
     "pos": "verb",
     "topic": "study",
     "level": "Beginner",
-    "example": "I plan to prove tomorrow.",
-    "exampleVi": "Tôi dự định chứng minh vào ngày mai.",
+    "example": "I plan to prove my point tomorrow.",
+    "exampleVi": "Tôi dự định chứng minh quan điểm của mình vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to prove tomorrow.",
+    "legacyExampleVi": "Tôi dự định chứng minh vào ngày mai."
   },
   {
     "id": "v6_oow6zg",
@@ -28757,15 +28907,17 @@
     "pos": "verb",
     "topic": "emotion",
     "level": "Beginner",
-    "example": "He wants to regret this week.",
-    "exampleVi": "Anh ấy muốn hối tiếc; lấy làm tiếc trong tuần này.",
+    "example": "He doesn't want to regret his decision.",
+    "exampleVi": "Anh ấy không muốn hối tiếc về quyết định của mình.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to regret this week.",
+    "legacyExampleVi": "Anh ấy muốn hối tiếc; lấy làm tiếc trong tuần này."
   },
   {
     "id": "v6_4hyb9a",
@@ -28801,15 +28953,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Beginner",
-    "example": "I plan to remind tomorrow.",
-    "exampleVi": "Tôi dự định nhắc nhở vào ngày mai.",
+    "example": "I plan to remind the team tomorrow.",
+    "exampleVi": "Tôi dự định nhắc nhóm vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to remind tomorrow.",
+    "legacyExampleVi": "Tôi dự định nhắc nhở vào ngày mai."
   },
   {
     "id": "v6_1hrkcqj",
@@ -28867,15 +29021,17 @@
     "pos": "verb",
     "topic": "safety",
     "level": "Beginner",
-    "example": "He wants to rescue this week.",
-    "exampleVi": "Anh ấy muốn cứu hộ; giải cứu trong tuần này.",
+    "example": "He wants to rescue the injured animal.",
+    "exampleVi": "Anh ấy muốn cứu con vật bị thương.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to rescue this week.",
+    "legacyExampleVi": "Anh ấy muốn cứu hộ; giải cứu trong tuần này."
   },
   {
     "id": "v6_1cjiu77",
@@ -28911,15 +29067,17 @@
     "pos": "verb",
     "topic": "technology",
     "level": "Beginner",
-    "example": "I plan to restore tomorrow.",
-    "exampleVi": "Tôi dự định khôi phục vào ngày mai.",
+    "example": "I plan to restore the old file tomorrow.",
+    "exampleVi": "Tôi dự định khôi phục tệp cũ vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to restore tomorrow.",
+    "legacyExampleVi": "Tôi dự định khôi phục vào ngày mai."
   },
   {
     "id": "v6_wm9l8w",
@@ -28977,15 +29135,17 @@
     "pos": "verb",
     "topic": "daily",
     "level": "Beginner",
-    "example": "He wants to rush this week.",
-    "exampleVi": "Anh ấy muốn vội vàng; lao nhanh trong tuần này.",
+    "example": "He doesn't want to rush the decision.",
+    "exampleVi": "Anh ấy không muốn quyết định vội vàng.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to rush this week.",
+    "legacyExampleVi": "Anh ấy muốn vội vàng; lao nhanh trong tuần này."
   },
   {
     "id": "v6_42lmc4",
@@ -29021,15 +29181,17 @@
     "pos": "verb",
     "topic": "life",
     "level": "Beginner",
-    "example": "I plan to settle tomorrow.",
-    "exampleVi": "Tôi dự định giải quyết; định cư vào ngày mai.",
+    "example": "I plan to settle the issue tomorrow.",
+    "exampleVi": "Tôi dự định giải quyết vấn đề vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to settle tomorrow.",
+    "legacyExampleVi": "Tôi dự định giải quyết; định cư vào ngày mai."
   },
   {
     "id": "v6_3j7yxw",
@@ -29131,15 +29293,17 @@
     "pos": "verb",
     "topic": "business",
     "level": "Beginner",
-    "example": "I plan to supply tomorrow.",
-    "exampleVi": "Tôi dự định cung cấp; nguồn cung vào ngày mai.",
+    "example": "I plan to supply the store tomorrow.",
+    "exampleVi": "Tôi dự định cung cấp hàng cho cửa hàng vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to supply tomorrow.",
+    "legacyExampleVi": "Tôi dự định cung cấp; nguồn cung vào ngày mai."
   },
   {
     "id": "v6_1kxbue2",
@@ -29197,15 +29361,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Beginner",
-    "example": "He wants to tend this week.",
-    "exampleVi": "Anh ấy muốn có xu hướng; chăm sóc trong tuần này.",
+    "example": "He tends to help new staff at work.",
+    "exampleVi": "Anh ấy có xu hướng giúp nhân viên mới ở nơi làm việc.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "He wants to tend this week.",
+    "legacyExampleVi": "Anh ấy muốn có xu hướng; chăm sóc trong tuần này."
   },
   {
     "id": "v6_678ter",
@@ -29241,15 +29407,17 @@
     "pos": "verb",
     "topic": "safety",
     "level": "Beginner",
-    "example": "I plan to threaten tomorrow.",
-    "exampleVi": "Tôi dự định đe dọa vào ngày mai.",
+    "example": "The storm may threaten the coast tomorrow.",
+    "exampleVi": "Cơn bão có thể đe dọa vùng ven biển vào ngày mai.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "I plan to threaten tomorrow.",
+    "legacyExampleVi": "Tôi dự định đe dọa vào ngày mai."
   },
   {
     "id": "v6_1k1dya9",
@@ -29879,15 +30047,17 @@
     "pos": "adjective",
     "topic": "society",
     "level": "Beginner",
-    "example": "The answer is global in this case.",
-    "exampleVi": "Trong trường hợp này, câu trả lời là toàn cầu.",
+    "example": "This is a global issue.",
+    "exampleVi": "Đây là một vấn đề toàn cầu.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "legacyExample": "The answer is global in this case.",
+    "legacyExampleVi": "Trong trường hợp này, câu trả lời là toàn cầu."
   },
   {
     "id": "v6_r4dx02",
@@ -33909,15 +34079,17 @@
     "pos": "verb",
     "topic": "work",
     "level": "Intermediate",
-    "example": "I usually associate after work.",
-    "exampleVi": "Tôi thường liên kết; cộng sự sau giờ làm.",
+    "example": "I associate this smell with home.",
+    "exampleVi": "Tôi liên tưởng mùi này với nhà.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "legacyExample": "I usually associate after work.",
+    "legacyExampleVi": "Tôi thường liên kết; cộng sự sau giờ làm."
   },
   {
     "id": "v7_0197_1lj9cpn",
@@ -35409,15 +35581,17 @@
     "pos": "verb",
     "topic": "goal",
     "level": "Intermediate",
-    "example": "I usually achieve after work.",
-    "exampleVi": "Tôi thường đạt được sau giờ làm.",
+    "example": "I usually achieve my goals through steady practice.",
+    "exampleVi": "Tôi thường đạt mục tiêu nhờ luyện tập đều đặn.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "legacyExample": "I usually achieve after work.",
+    "legacyExampleVi": "Tôi thường đạt được sau giờ làm."
   },
   {
     "id": "v7_0272_u9i9tw",
@@ -38009,15 +38183,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Intermediate",
-    "example": "I usually insist after work.",
-    "exampleVi": "Tôi thường khăng khăng; nhấn mạnh sau giờ làm.",
+    "example": "I usually insist on checking the details.",
+    "exampleVi": "Tôi thường nhất quyết kiểm tra các chi tiết.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "legacyExample": "I usually insist after work.",
+    "legacyExampleVi": "Tôi thường khăng khăng; nhấn mạnh sau giờ làm."
   },
   {
     "id": "v7_0402_1233d24",
@@ -38109,15 +38285,17 @@
     "pos": "verb",
     "topic": "movement",
     "level": "Intermediate",
-    "example": "I usually lean after work.",
-    "exampleVi": "Tôi thường nghiêng; gầy sau giờ làm.",
+    "example": "I usually lean against the wall after work.",
+    "exampleVi": "Tôi thường dựa vào tường sau giờ làm.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "legacyExample": "I usually lean after work.",
+    "legacyExampleVi": "Tôi thường nghiêng; gầy sau giờ làm."
   },
   {
     "id": "v7_0407_1lhkbd8",
@@ -38209,15 +38387,17 @@
     "pos": "verb",
     "topic": "general",
     "level": "Intermediate",
-    "example": "I usually disappear after work.",
-    "exampleVi": "Tôi thường biến mất sau giờ làm.",
+    "example": "The crowds usually disappear after work.",
+    "exampleVi": "Đám đông thường tan đi sau giờ làm.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "legacyExample": "I usually disappear after work.",
+    "legacyExampleVi": "Tôi thường biến mất sau giờ làm."
   },
   {
     "id": "v7_0412_1c6ahu7",
@@ -38409,15 +38589,17 @@
     "pos": "verb",
     "topic": "communication",
     "level": "Intermediate",
-    "example": "I usually acknowledge after work.",
-    "exampleVi": "Tôi thường thừa nhận; xác nhận sau giờ làm.",
+    "example": "I usually acknowledge messages after work.",
+    "exampleVi": "Tôi thường xác nhận tin nhắn sau giờ làm.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "legacyExample": "I usually acknowledge after work.",
+    "legacyExampleVi": "Tôi thường thừa nhận; xác nhận sau giờ làm."
   },
   {
     "id": "v7_0422_g5zn8h",
