@@ -52,7 +52,7 @@ function gitInitWithBase(files) {
 
 function commitCandidate(repo, message) {
   run("git", ["add", "."], repo);
-  const result = run("git", ["commit", "-m", message], repo);
+  const result = run("git", ["commit", "--allow-empty", "-m", message], repo);
   if (result.code !== 0) throw new Error("Fixture commit failed: " + result.stderr);
 }
 
