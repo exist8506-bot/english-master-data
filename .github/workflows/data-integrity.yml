@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - qa/data-preservation
+      - qa/chaos-data-protection-20260925
   pull_request:
     branches:
       - main
@@ -34,9 +35,13 @@ jobs:
           node --check app.js
           node --check scripts/qa-data-integrity.mjs
           node --check scripts/qa-preserve-main.mjs
+          node --check scripts/qa-chaos-data-protection.mjs
 
       - name: Data preservation audit
         run: node scripts/qa-preserve-main.mjs
 
       - name: Data integrity audit
         run: node scripts/qa-data-integrity.mjs
+
+      - name: Chaos data-protection self-test
+        run: node scripts/qa-chaos-data-protection.mjs
