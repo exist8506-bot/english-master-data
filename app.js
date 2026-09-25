@@ -818,7 +818,7 @@ function voiceAvailability(){
 function settings(){
   const layout=String(db.profile.layout||"auto");
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
-    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div></div>'+
+    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra liên kết 500 từ</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra sẽ xác nhận từng từ mới có đủ câu, quiz, tam ngữ, giao tiếp, ngữ pháp và audio.</div></div>'+
     '<div class="card"><h2>🔊 Âm thanh & ngôn ngữ</h2><p class="muted">Giọng trình duyệt: '+esc(voiceAvailability())+'</p><p class="small muted">Nếu không có file audio riêng, app sẽ dùng giọng đọc TTS phù hợp với ngôn ngữ.</p></div>'+
     '<div class="card"><h2>🔊 Tốc độ mặc định</h2><select onchange="db.profile.speechRate=Number(this.value);save()">'+[0.5,0.75,1,1.25,1.5].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.speechRate||1)===x?"selected":"")+'>'+x+'×</option>'}).join("")+'</select></div>'+
     '<div class="card"><h2>📱💻 Bố cục thiết bị</h2><p class="small muted">“Tự động” bám theo kích thước màn hình. Có thể khóa bố cục Điện thoại hoặc Máy tính để thao tác thuận tiện hơn.</p><select id="layoutMode" onchange="setLayoutMode(this.value)">'+
@@ -854,6 +854,20 @@ function init(){
   registerServiceWorker();
 }
 init();
+
+function runContentAudit(){
+  const r=dataAudit();
+  const missing=Object.entries(r.missing||{}).filter(([,items])=>items.length);
+  const el=$("contentAuditResult");
+  if(!el)return;
+  if(!r.expansion500){el.textContent="Chưa tải gói expansion500.";return;}
+  if(r.duplicateWords||missing.length){
+    el.innerHTML="⚠️ Còn thiếu liên kết: "+missing.map(([k,items])=>esc(k)+" ("+items.length+")").join(", ")+
+      (r.duplicateWords?" · trùng từ: "+r.duplicateWords:"");
+    return;
+  }
+  el.textContent="✓ 500/500 từ đã được nối đầy đủ vào tất cả module kiểm tra.";
+}
 
 function dataAudit(){
   const exp=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
