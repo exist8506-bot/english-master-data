@@ -602,7 +602,10 @@ function listening(){renderListening()}
 function renderListening(){
   if(!db.sentences.length){$("view").innerHTML=shell("Luyện nghe","Chưa có dữ liệu.");return}
   const s=db.sentences[listenIndex%db.sentences.length];
-  const wrong=shuffle(db.sentences.filter(function(x){return x.id!==s.id&&x.vi})).slice(0,3).map(function(x){return x.vi});
+  const seen=new Set([norm(s.vi||"")]),sameTopic=shuffle(db.sentences.filter(function(x){return x.id!==s.id&&x.vi&&norm(x.topic||"")===norm(s.topic||"")}));
+  const fallback=shuffle(db.sentences.filter(function(x){return x.id!==s.id&&x.vi&&!seen.has(norm(x.vi))}));
+  const wrong=[];
+  sameTopic.concat(fallback).forEach(function(x){const k=norm(x.vi);if(k&&!seen.has(k)&&wrong.length<3){seen.add(k);wrong.push(x.vi);}});
   const choices=shuffle([s.vi,...wrong]);
   const showText=window.__showListeningText===true;
   $("view").innerHTML=shell("Luyện nghe","Nghe câu ở nhiều tốc độ, nghe lại và chọn đúng nghĩa.",
