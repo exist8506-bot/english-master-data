@@ -295,11 +295,16 @@ function speakSequence(lines,rate,lang){
   }
   next();
 }
-function playAudio(url){
-  const u=String(url||"").trim();if(!u)return;
+function playAudio(url,fallbackText,rate,lang){
+  const u=String(url||"").trim(),t=String(fallbackText||"").trim(),r=Number(rate)||1,l=lang||guessLang(t);
+  if(!u){if(t)speak(t,r,l);return;}
   try{
-    const a=new Audio(u);a.preload="auto";a.play().catch(function(){toast("Không phát được file âm thanh. Đang dùng giọng đọc trình duyệt.");});
-  }catch(e){toast("Không thể phát file âm thanh.");}
+    const a=new Audio(u);a.preload="auto";
+    a.play().catch(function(){toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");if(t)speak(t,r,l);});
+  }catch(e){
+    toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");
+    if(t)speak(t,r,l);
+  }
 }
 function audioUrl(item,lang){
   if(!item||typeof item!=="object")return "";
@@ -310,7 +315,7 @@ function audioUrl(item,lang){
 }
 function audioButton(text,label,lang,rate,item){
   const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1,url=audioUrl(item,useLang);
-  if(url)return '<button class="btn btn-secondary" onclick="event.stopPropagation();playAudio(\''+escapeJs(url)+'\')">'+(label||"🔊 Nghe")+'</button>';
+  if(url)return '<button class="btn btn-secondary" onclick="event.stopPropagation();playAudio(\''+escapeJs(url)+'\',\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
   return '<button class="btn btn-secondary" onclick="event.stopPropagation();speak(\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
 }
 function audioGroup(text,lang,item){
