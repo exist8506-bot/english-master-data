@@ -217,6 +217,7 @@ function recordVocabOutcome(word,correct,dueDays){
     v.status="Chưa nhớ";
     v.reviewDue=new Date().toISOString();
   }
+  db.stats.learned=db.vocab.filter(function(x){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(x.status)}).length;
 }
 
 function stopRecognition(){
@@ -575,6 +576,7 @@ function rateFlash(status){
   recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);
   v.status=status;
   v.reviewDue=new Date(Date.now()+dueDays*86400000).toISOString();
+  db.stats.learned=db.vocab.filter(function(x){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(x.status)}).length;
   flashFlipped=false;
   if(reviewActive){
     if(reviewIndex+1>=reviewQueue.length){
