@@ -512,7 +512,7 @@ function updateLayoutQuickButton(phone){
   const nextPhone=!phone;
   const label=nextPhone?"📱":"🖥️";
   const title=nextPhone?"Chuyển sang giao diện điện thoại":"Chuyển sang giao diện máy tính";
-  b.textContent=label;b.title=title;b.setAttribute("aria-label",title);
+  b.textContent=label;b.title=title;if(b.setAttribute)b.setAttribute("aria-label",title);
 }
 function applyLayoutMode(){
   const m=["auto","phone","desktop"].includes(String(db.profile.layout))?db.profile.layout:"auto";
