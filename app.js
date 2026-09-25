@@ -10,6 +10,7 @@ let db={
 };
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
+let vocabPage=1,sentencePage=1,trilingualPage=1,lastVocabQuery="";
 
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
@@ -268,18 +269,42 @@ function home(){
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
+function pageControls(page,total,size,kind){
+  const pages=Math.max(1,Math.ceil(total/size)),p=Math.min(Math.max(1,Number(page)||1),pages);
+  if(pages<=1)return "";
+  return '<div class="actions" style="margin:12px 0;justify-content:center">'+
+    '<button onclick="goPage(\''+kind+'\','+(p-1)+')" '+(p<=1?"disabled":"")+'">← Trước</button>'+
+    '<span class="muted" style="padding:9px 4px">Trang '+p+' / '+pages+'</span>'+
+    '<button onclick="goPage(\''+kind+'\','+(p+1)+')" '+(p>=pages?"disabled":"")+'">Sau →</button></div>';
+}
+function goPage(kind,page){
+  const p=Math.max(1,Number(page)||1);
+  if(kind==="vocab")vocabPage=p;
+  else if(kind==="sentences")sentencePage=p;
+  else if(kind==="trilingual")trilingualPage=p;
+  render();
+}
+
 function vocab(){
   const q=norm((document.getElementById("vSearch")||{}).value||"");
+  if(q!==lastVocabQuery){lastVocabQuery=q;vocabPage=1;}
   const list=q?db.vocab.filter(function(v){return norm(v.word).includes(q)||norm(v.meaning).includes(q)||norm(v.example).includes(q)}):db.vocab;
-  $("view").innerHTML=shell("Học từ vựng","Mỗi từ có IPA, nghĩa, ví dụ đa dạng và nghe từ/câu.",
-    '<div class="card"><div class="row"><input id="vSearch" placeholder="Tìm từ, nghĩa hoặc ví dụ..." value="'+esc(q)+'" onkeydown="if(event.key===\'Enter\')vocab()"><button class="primary" onclick="vocab()">🔎 Tìm</button><button onclick="show(\'flashcards\')">🃏 Flashcards</button></div></div>'+
+  const size=50,pages=Math.max(1,Math.ceil(list.length/size));
+  if(vocabPage>pages)vocabPage=pages;
+  const start=(vocabPage-1)*size,items=list.slice(start,start+size);
+  $("view").innerHTML=shell("Học từ vựng","Mỗi từ có IPA, nghĩa, ví dụ và nghe từ/câu.",
+    '<div class="card"><div class="row"><input id="vSearch" placeholder="Tìm từ, nghĩa hoặc ví dụ..." value="'+esc(q)+'" onkeydown="if(event.key===\'Enter\')vocab()"><button class="primary" onclick="vocab()">🔎 Tìm</button><button onclick="show(\'flashcards\')">🃏 Flashcards</button></div><div class="muted small" style="margin-top:8px">Hiển thị '+(list.length?start+1:0)+'–'+Math.min(start+size,list.length)+' / '+list.length+' từ</div>'+pageControls(vocabPage,list.length,size,"vocab")+'</div>'+
     '<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Từ</th><th>Nghĩa</th><th>Ví dụ</th><th>Nghe</th></tr></thead><tbody>'+
-    list.map(function(v){return '<tr><td><div class="word">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div></td><td>'+esc(v.meaning)+'<div class="small muted">'+esc(v.pos||"")+'</div></td><td>'+esc(v.example||"")+'<div class="small muted">'+esc(v.exampleVi||"")+'</div></td><td><div class="actions">'+audioButton(v.word,"🔊 Từ")+audioButton(v.example||v.word,"🔊 Câu")+'</div></td></tr>'}).join("")+
-    '</tbody></table></div></div>');
+    items.map(function(v){return '<tr><td><div class="word">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div></td><td>'+esc(v.meaning)+'<div class="small muted">'+esc(v.pos||"")+'</div></td><td>'+esc(v.example||"")+'<div class="small muted">'+esc(v.exampleVi||"")+'</div></td><td><div class="actions">'+audioButton(v.word,"🔊 Từ")+audioButton(v.example||v.word,"🔊 Câu")+'</div></td></tr>'}).join("")+
+    '</tbody></table></div>'+pageControls(vocabPage,list.length,size,"vocab")+'</div>');
 }
 function sentences(){
-  $("view").innerHTML=shell("Học câu","toàn bộ câu luyện đã được viết lại để tránh mẫu lặp “I learned the word…”.",
-    '<div class="grid grid-2">'+db.sentences.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US")+'</div>'}).join("")+'</div>');
+  const size=40,pages=Math.max(1,Math.ceil(db.sentences.length/size));
+  if(sentencePage>pages)sentencePage=pages;
+  const start=(sentencePage-1)*size,items=db.sentences.slice(start,start+size);
+  $("view").innerHTML=shell("Học câu","Hiển thị theo trang để app nhẹ hơn trên điện thoại.",
+    '<div class="card"><div class="muted small">Hiển thị '+(db.sentences.length?start+1:0)+'–'+Math.min(start+size,db.sentences.length)+' / '+db.sentences.length+' câu</div>'+pageControls(sentencePage,db.sentences.length,size,"sentences")+'</div>'+
+    '<div class="grid grid-2">'+items.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US")+'</div>'}).join("")+'</div>');
 }
 function renderFlashcards(){flashcards()}
 function flashcards(){
@@ -406,10 +431,14 @@ function playDialogue(index){
 
 
 function trilingual(){
-  $("view").innerHTML=shell("Tam ngữ Anh – Trung – Việt","Mỗi ngôn ngữ có giọng đọc riêng.",
-    '<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>English</th><th>中文</th><th>Tiếng Việt</th><th>Nghe</th></tr></thead><tbody>'+
-    db.trilingual.map(function(x){return '<tr><td>'+esc(x.en||"")+'</td><td>'+esc(x.zh||x.chinese||"")+'</td><td>'+esc(x.vi||x.vietnamese||"")+'</td><td><div class="actions">'+audioButton(x.en,"🇺🇸","en-US")+audioButton(x.zh||x.chinese,"🇨🇳","zh-CN")+audioButton(x.vi||x.vietnamese,"🇻🇳","vi-VN")+'</div></td></tr>'}).join("")+
-    '</tbody></table></div></div>');
+  const size=60,pages=Math.max(1,Math.ceil(db.trilingual.length/size));
+  if(trilingualPage>pages)trilingualPage=pages;
+  const start=(trilingualPage-1)*size,items=db.trilingual.slice(start,start+size);
+  $("view").innerHTML=shell("Tam ngữ Anh – Trung – Việt","English • 中文 • Pinyin • Tiếng Việt; mỗi ngôn ngữ có giọng đọc riêng.",
+    '<div class="card"><div class="muted small">Hiển thị '+(db.trilingual.length?start+1:0)+'–'+Math.min(start+size,db.trilingual.length)+' / '+db.trilingual.length+' mục</div>'+pageControls(trilingualPage,db.trilingual.length,size,"trilingual")+'</div>'+
+    '<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>English</th><th>中文</th><th>Pinyin</th><th>Tiếng Việt</th><th>Nghe</th></tr></thead><tbody>'+
+    items.map(function(x){return '<tr><td>'+esc(x.en||"")+'</td><td>'+esc(x.zh||x.chinese||"")+'</td><td>'+esc(x.pinyin||"")+'</td><td>'+esc(x.vi||x.vietnamese||"")+'</td><td><div class="actions">'+audioButton(x.en,"🇺🇸","en-US")+audioButton(x.zh||x.chinese,"🇨🇳","zh-CN")+audioButton(x.vi||x.vietnamese,"🇻🇳","vi-VN")+'</div></td></tr>'}).join("")+
+    '</tbody></table></div>'+pageControls(trilingualPage,db.trilingual.length,size,"trilingual")+'</div>');
 }
 function review(){
   const due=db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=new Date()});
