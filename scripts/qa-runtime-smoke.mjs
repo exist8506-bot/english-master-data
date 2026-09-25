@@ -135,7 +135,7 @@ window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   review, stats, settings, dataAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode,
-  listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline,
+  listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
 };
@@ -273,6 +273,10 @@ T.show("settings");
 check("settings exposes device layout selector", document.getElementById("view").innerHTML.includes('id="layoutMode"') && document.getElementById("view").innerHTML.includes("Điện thoại") && document.getElementById("view").innerHTML.includes("Máy tính"));
 T.setLayoutMode("phone");
 check("phone layout mode applies", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
+T.toggleLayoutQuick();
+check("quick layout button switches to desktop", T.snap().db.profile.layout === "desktop" && document.body.classList._set.has("layout-desktop") && document.getElementById("layoutQuick").textContent === "📱");
+T.toggleLayoutQuick();
+check("quick layout button switches to phone", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && document.getElementById("layoutQuick").textContent === "🖥️");
 T.setLayoutMode("desktop");
 check("desktop layout mode applies", T.snap().db.profile.layout === "desktop" && document.body.classList._set.has("layout-desktop") && !document.body.classList._set.has("layout-phone"));
 T.setLayoutMode("auto");
@@ -357,6 +361,7 @@ check("content storage key exists", !!storage.get("englishMaster_v1"));
 check("backup storage key exists", !!storage.get("englishMaster_v1_backup"));
 
 const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
+check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 const sw = fs.readFileSync(path.join(root, "sw.js"), "utf8");
 check("index references app/style/manifest", index.includes('src="app.js"') && index.includes('href="styles.css"') && index.includes('href="manifest.json"'));
