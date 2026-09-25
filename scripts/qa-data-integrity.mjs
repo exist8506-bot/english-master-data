@@ -64,6 +64,13 @@ must(new Set(expNorm).size === 500, "The 500 expansion words contain duplicates"
 const expVocab = vocab.filter(
   (x) => x && x.source === "expansion500" && String(x.sourceVersion ?? "") === "8.0.0"
 );
+const byId = (rows) => new Map(rows.map((x) => [String(x?.id ?? ""), x]).filter(([k]) => k));
+const vocabById = byId(vocab);
+const sentenceById = byId(sentences);
+const questionById = byId(questions);
+const trilingualById = byId(trilingual);
+const communicationById = byId(communication);
+const grammarById = byId(grammar);
 must(expVocab.length === 500, "Expected 500 expansion vocab rows in vocabulary.json, got " + expVocab.length);
 
 const vocabByWord = new Map();
@@ -106,7 +113,7 @@ for (const row of expWords) {
   if (!trilingualByEn.has(word)) missingTrilingual++;
   if (!communicationByVocab.has(word)) missingCommunication++;
   if (!grammarByVocab.has(word)) missingGrammar++;
-  if (row.audio === "tts" && !String(v?.audioEn ?? "").trim()) missingAudio++;
+  if (!v || !String(v.audioEn ?? "").trim()) missingAudio++;
 }
 
 must(missingVocab === 0, "Missing/incorrect expansion vocabulary rows: " + missingVocab);
@@ -116,6 +123,28 @@ must(missingTrilingual === 0, "Expansion words without trilingual rows: " + miss
 must(missingCommunication === 0, "Expansion words without communication links: " + missingCommunication);
 must(missingGrammar === 0, "Expansion words without grammar links: " + missingGrammar);
 must(missingAudio === 0, "Expansion TTS words without audioEn: " + missingAudio);
+
+let badMappings = 0;
+for (const row of expWords) {
+  const word = norm(row.word);
+  const v = vocabById.get(String(row.vocabId ?? ""));
+  const s = sentenceById.get(String(row.sentenceId ?? ""));
+  const q = questionById.get(String(row.questionId ?? ""));
+  const t = trilingualById.get(String(row.trilingualId ?? ""));
+  const c = communicationById.get(String(row.communicationId ?? ""));
+  const g = grammarById.get(String(row.grammarId ?? ""));
+  const cWords = Array.isArray(c?.vocab) ? c.vocab.map(norm) : [];
+  const gWords = Array.isArray(g?.vocabWords) ? g.vocabWords.map(norm) : [];
+  const ok =
+    norm(v?.word) === word &&
+    norm(s?.vocabWord) === word &&
+    norm(q?.vocabWord) === word &&
+    norm(t?.en) === word &&
+    cWords.includes(word) &&
+    gWords.includes(word);
+  if (!ok) badMappings++;
+}
+must(badMappings === 0, "Broken expansion500 ID mappings: " + badMappings);
 
 let badQuiz = 0;
 for (const q of questions) {
@@ -169,5 +198,6 @@ console.log(JSON.stringify({
   trilingual: trilingual.length,
   expansion500: expWords.length,
   globalDuplicateWordKeys: globalWordDuplicates,
+  brokenExpansionMappings: badMappings,
   checks: "PASS"
 }, null, 2));
