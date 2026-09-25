@@ -11,6 +11,9 @@ let db={
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,lastVocabQuery="",pendingUserState=null;
+const CONTENT_DB_NAME="englishMasterContent_v1";
+const CONTENT_STORE="snapshot";
+let legacyStorageLoaded=false;
 
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
@@ -36,13 +39,26 @@ function recordActivity(){
   }else db.stats.streak=1;
   db.stats.lastActivityDate=today;
 }
+function contentSnapshot(source){
+  const d=source||db;
+  return {
+    vocab:Array.isArray(d.vocab)?d.vocab:[],
+    sentences:Array.isArray(d.sentences)?d.sentences:[],
+    questions:Array.isArray(d.questions)?d.questions:[],
+    grammar:Array.isArray(d.grammar)?d.grammar:[],
+    communication:Array.isArray(d.communication)?d.communication:[],
+    trilingual:Array.isArray(d.trilingual)?d.trilingual:[],
+    lastRemoteVersion:String(d.lastRemoteVersion||"")
+  };
+}
 function userSnapshot(source){
   const d=source||db,stats={...(d.stats||{})},profile={...(d.profile||{})};
   const states=Array.isArray(d.vocab)?d.vocab.map(function(v){return {
     word:v.word,status:v.status||"New",favorite:!!v.favorite,reviewDue:v.reviewDue||null,
     correct_count:Number(v.correct_count)||0,wrong_count:Number(v.wrong_count)||0,lastReviewed:v.lastReviewed||null
   }}):[];
-  return {schemaVersion:2,stats,profile,positions:{flashIndex,listenIndex,speakIndex,quizIndex},vocabState:states};
+  const p=d.positions||{flashIndex,listenIndex,speakIndex,quizIndex};
+  return {schemaVersion:2,stats,profile,positions:p,vocabState:states};
 }
 function applyUserSnapshot(snapshot){
   if(!snapshot)return;
@@ -63,10 +79,52 @@ function applyUserSnapshot(snapshot){
   });
   pendingUserState=null;
 }
+function openContentDB(){
+  if(!window.indexedDB)return Promise.resolve(null);
+  return new Promise(function(resolve){
+    try{
+      const req=window.indexedDB.open(CONTENT_DB_NAME,1);
+      req.onupgradeneeded=function(e){
+        const database=e.target.result;
+        if(!database.objectStoreNames.contains(CONTENT_STORE))database.createObjectStore(CONTENT_STORE,{keyPath:"id"});
+      };
+      req.onsuccess=function(){resolve(req.result)};
+      req.onerror=function(){resolve(null)};
+    }catch(e){resolve(null)}
+  });
+}
+function cacheContent(source){
+  const payload={id:"main",savedAt:new Date().toISOString(),...contentSnapshot(source)};
+  return openContentDB().then(function(database){
+    if(!database)return false;
+    return new Promise(function(resolve){
+      try{
+        const tx=database.transaction(CONTENT_STORE,"readwrite"),store=tx.objectStore(CONTENT_STORE);
+        store.put(payload);
+        tx.oncomplete=function(){database.close();resolve(true)};
+        tx.onerror=function(){database.close();resolve(false)};
+        tx.onabort=function(){database.close();resolve(false)};
+      }catch(e){try{database.close()}catch(_e){}resolve(false)}
+    });
+  });
+}
+function readCachedContent(){
+  return openContentDB().then(function(database){
+    if(!database)return null;
+    return new Promise(function(resolve){
+      try{
+        const tx=database.transaction(CONTENT_STORE,"readonly"),req=tx.objectStore(CONTENT_STORE).get("main");
+        req.onsuccess=function(){const value=req.result||null;database.close();resolve(value)};
+        req.onerror=function(){database.close();resolve(null)};
+      }catch(e){try{database.close()}catch(_e){}resolve(null)}
+    });
+  });
+}
 function save(){
   try{
     db.positions={flashIndex,listenIndex,speakIndex,quizIndex};
-    const serialized=JSON.stringify(db),previous=localStorage.getItem(STORAGE_KEY);
+    const serialized=JSON.stringify(userSnapshot());
+    const previous=localStorage.getItem(STORAGE_KEY);
     if(previous){
       try{
         const prevParsed=JSON.parse(previous);
@@ -74,14 +132,16 @@ function save(){
       }catch(e){}
     }
     localStorage.setItem(STORAGE_KEY,serialized);
+    return true;
   }catch(e){
-    toast("Không thể lưu tiến độ. Dữ liệu hiện tại vẫn còn trên màn hình.");
+    toast("Không thể lưu tiến độ. Hãy giải phóng bộ nhớ trình duyệt rồi thử lại.");
+    return false;
   }
 }
 function load(){
-  let parsed=null;
+  let parsed=null,current=null;
   try{
-    const current=localStorage.getItem(STORAGE_KEY);
+    current=localStorage.getItem(STORAGE_KEY);
     try{parsed=current?JSON.parse(current):null}catch(e){}
   }catch(e){}
   if(!parsed){
@@ -91,19 +151,43 @@ function load(){
       if(parsed)toast("Đã khôi phục tiến độ từ bản sao lưu cục bộ.");
     }catch(e){}
   }
-  if(parsed) db={
-    ...db,...parsed,
-    schemaVersion:2,
-    vocab:Array.isArray(parsed.vocab)?parsed.vocab:[],
-    sentences:Array.isArray(parsed.sentences)?parsed.sentences:[],
-    questions:Array.isArray(parsed.questions)?parsed.questions:[],
-    grammar:Array.isArray(parsed.grammar)?parsed.grammar:[],
-    communication:Array.isArray(parsed.communication)?parsed.communication:[],
-    trilingual:Array.isArray(parsed.trilingual)?parsed.trilingual:[],
-    stats:{...db.stats,...(parsed.stats||{})},
-    profile:{...db.profile,...(parsed.profile||{})}
-  };
+  if(parsed&&Array.isArray(parsed.vocab)){
+    legacyStorageLoaded=true;
+    db={
+      ...db,...parsed,
+      schemaVersion:2,
+      vocab:Array.isArray(parsed.vocab)?parsed.vocab:[],
+      sentences:Array.isArray(parsed.sentences)?parsed.sentences:[],
+      questions:Array.isArray(parsed.questions)?parsed.questions:[],
+      grammar:Array.isArray(parsed.grammar)?parsed.grammar:[],
+      communication:Array.isArray(parsed.communication)?parsed.communication:[],
+      trilingual:Array.isArray(parsed.trilingual)?parsed.trilingual:[],
+      stats:{...db.stats,...(parsed.stats||{})},
+      profile:{...db.profile,...(parsed.profile||{})}
+    };
+  }
   applyUserSnapshot(parsed);
+}
+async function hydrateContent(){
+  if(legacyStorageLoaded&&db.vocab.length){
+    const cached=await cacheContent(db);
+    if(cached){
+      legacyStorageLoaded=false;
+      save();
+    }
+  }
+  const cached=await readCachedContent();
+  if(cached){
+    db={...db,...contentSnapshot(cached)};
+    if(pendingUserState)applyUserSnapshot({vocabState:pendingUserState});
+    render();
+  }
+  const hasContent=db.vocab.length&&db.sentences.length&&db.questions.length&&db.trilingual.length;
+  if(!hasContent){
+    await updateOnline(true);
+  }else if(db.profile.autoUpdate!==false){
+    setTimeout(function(){updateOnline(false)},500);
+  }
 }
 function toast(msg){
   const el=$("toast"); if(!el)return;
@@ -298,8 +382,11 @@ async function updateOnline(force){
       }
     }
 
-    db={...db,...next,lastRemoteVersion:ver};
+    const remoteContent={...next,lastRemoteVersion:ver};
+    db={...db,...remoteContent};
     if(pendingUserState){applyUserSnapshot({vocabState:pendingUserState});pendingUserState=null;}
+    const cached=await cacheContent(db);
+    if(!cached&&"indexedDB" in window)toast("Nội dung đã cập nhật nhưng chưa tạo được bản cache offline.");
     save();render();
     toast("Đã đồng bộ GitHub: +"+added+" mục mới, cập nhật "+changed+" mục.");
   }catch(e){
@@ -520,6 +607,6 @@ function init(){
     if(e.key==="Escape")stopSpeech();
   });
   render();
-  if(db.profile.autoUpdate!==false)setTimeout(function(){updateOnline(false)},800);
+  hydrateContent();
 }
 init();
