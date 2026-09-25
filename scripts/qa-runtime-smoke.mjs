@@ -110,7 +110,7 @@ let fetchImpl = async (url) => {
 const seed = {
   schemaVersion: 2,
   stats: { xp: 123, streak: 4, learned: 7, answered: 8, correct: 6 },
-  profile: { theme: "dark", autoUpdate: false, speechRate: 0.75 },
+  profile: { theme: "dark", autoUpdate: false, speechRate: 0.75, layout: "auto" },
   positions: { flashIndex: 17, listenIndex: 19, speakIndex: 23, quizIndex: 29 },
   vocabState: [{
     word: "altogether",
@@ -134,7 +134,7 @@ const hooks = `
 window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
-  review, stats, settings, dataAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz,
+  review, stats, settings, dataAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode,
   listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -241,6 +241,31 @@ snap = T.snap();
 const currentSentence = snap.db.sentences[snap.listenIndex % snap.db.sentences.length];
 T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
 check("listening interaction", T.snap().db.stats.answered >= answeredBefore + 2);
+
+T.show("listening");
+let html=document.getElementById("view").innerHTML;
+check("listening has direct jump control", html.includes("id="listeningJump"") && html.includes("Tới câu"));
+check("listening jump changes exact sentence", T.jumpToItem("listening", 100) && T.snap().listenIndex === 99 && document.getElementById("view").innerHTML.includes("Câu 100 / 3250"));
+check("listening rejects out-of-range jump", T.jumpToItem("listening", 999999) === false && T.snap().listenIndex === 99);
+
+T.show("speaking");
+html=document.getElementById("view").innerHTML;
+check("speaking has direct jump control", html.includes("id="speakingJump"") && html.includes("Tới câu"));
+check("speaking jump changes exact sentence", T.jumpToItem("speaking", 200) && T.snap().speakIndex === 199 && document.getElementById("view").innerHTML.includes("Câu 200 / 3250"));
+
+T.show("quiz");
+html=document.getElementById("view").innerHTML;
+check("quiz has direct jump control", html.includes("id="quizJump"") && html.includes("Tới câu"));
+check("quiz jump changes exact question", T.jumpToItem("quiz", 300) && T.snap().quizIndex === 299 && document.getElementById("view").innerHTML.includes("Câu 300 / 5000"));
+
+T.show("settings");
+check("settings exposes device layout selector", document.getElementById("view").innerHTML.includes("id="layoutMode"") && document.getElementById("view").innerHTML.includes("Điện thoại") && document.getElementById("view").innerHTML.includes("Máy tính"));
+T.setLayoutMode("phone");
+check("phone layout mode applies", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
+T.setLayoutMode("desktop");
+check("desktop layout mode applies", T.snap().db.profile.layout === "desktop" && document.body.classList._set.has("layout-desktop") && !document.body.classList._set.has("layout-phone"));
+T.setLayoutMode("auto");
+check("auto layout mode restores", T.snap().db.profile.layout === "auto" && !document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
 
 T.show("speaking");
 check("speaking UI and microphone fallback", document.getElementById("view").innerHTML.includes("Bắt đầu nói"));
