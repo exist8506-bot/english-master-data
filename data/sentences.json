@@ -10501,1003 +10501,2502 @@
   },
   {
     "en": "I plan to satisfy tomorrow.",
-    "vi": "Tôi dự định làm hài lòng; đáp ứng vào ngày mai."
+    "vi": "Tôi dự định làm hài lòng; đáp ứng vào ngày mai.",
+    "id": "sentLegacy_2uum04",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Use a strong password for better security.",
-    "vi": "Hãy dùng mật khẩu mạnh để bảo mật tốt hơn."
+    "vi": "Hãy dùng mật khẩu mạnh để bảo mật tốt hơn.",
+    "id": "sentLegacy_2yep19",
+    "vocabWord": "password",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to select before the meeting.",
-    "vi": "Chúng ta cần lựa chọn trước cuộc họp."
+    "vi": "Chúng ta cần lựa chọn trước cuộc họp.",
+    "id": "sentLegacy_iurqn7",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I had a sense that something was wrong.",
-    "vi": "Tôi có cảm giác rằng có điều gì đó không ổn."
+    "vi": "Tôi có cảm giác rằng có điều gì đó không ổn.",
+    "id": "sentLegacy_1pmtrfp",
+    "vocabWord": "wrong",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The answer is separate in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là riêng biệt; tách."
+    "vi": "Trong trường hợp này, câu trả lời là riêng biệt; tách.",
+    "id": "sentLegacy_btq5io",
+    "vocabWord": "separate",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I learned more about solution this week.",
-    "vi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này."
+    "vi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này.",
+    "id": "sentLegacy_q97i86",
+    "vocabWord": "solution",
+    "topic": "thinking",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We checked the source of the information.",
-    "vi": "Chúng tôi kiểm tra nguồn của thông tin."
+    "vi": "Chúng tôi kiểm tra nguồn của thông tin.",
+    "id": "sentLegacy_pc4rw2",
+    "vocabWord": "source",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The new method is specific for beginners.",
-    "vi": "Phương pháp mới cụ thể với người mới."
+    "vi": "Phương pháp mới cụ thể với người mới.",
+    "id": "sentLegacy_1n99gv6",
+    "vocabWord": "specific",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She gave a short speech at the event.",
-    "vi": "Cô ấy có một bài phát biểu ngắn tại sự kiện."
+    "vi": "Cô ấy có một bài phát biểu ngắn tại sự kiện.",
+    "id": "sentLegacy_1kwrhn2",
+    "vocabWord": "speech",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I prepared the standard before lunch.",
-    "vi": "Tôi chuẩn bị tiêu chuẩn trước bữa trưa."
+    "vi": "Tôi chuẩn bị tiêu chuẩn trước bữa trưa.",
+    "id": "sentLegacy_jzgezr",
+    "vocabWord": "standard",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Patience is one of his strengths.",
-    "vi": "Kiên nhẫn là một trong những điểm mạnh của anh ấy."
+    "vi": "Kiên nhẫn là một trong những điểm mạnh của anh ấy.",
+    "id": "sentLegacy_1qvw2ey",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The teacher explained the structure of the sentence.",
-    "vi": "Giáo viên giải thích cấu trúc của câu."
+    "vi": "Giáo viên giải thích cấu trúc của câu.",
+    "id": "sentLegacy_dskgft",
+    "vocabWord": "structure",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to succeed before the meeting.",
-    "vi": "Chúng ta cần thành công trước cuộc họp."
+    "vi": "Chúng ta cần thành công trước cuộc họp.",
+    "id": "sentLegacy_cv1npf",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to suggest this week.",
-    "vi": "Anh ấy muốn gợi ý; đề xuất trong tuần này."
+    "vi": "Anh ấy muốn gợi ý; đề xuất trong tuần này.",
+    "id": "sentLegacy_1lt4rwk",
+    "vocabWord": "suggest",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to support carefully.",
-    "vi": "Họ cố gắng hỗ trợ; ủng hộ một cách cẩn thận."
+    "vi": "Họ cố gắng hỗ trợ; ủng hộ một cách cẩn thận.",
+    "id": "sentLegacy_11yagi4",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We completed a short survey after the lesson.",
-    "vi": "Chúng tôi hoàn thành một khảo sát ngắn sau bài học."
+    "vi": "Chúng tôi hoàn thành một khảo sát ngắn sau bài học.",
+    "id": "sentLegacy_fy8wfb",
+    "vocabWord": "lesson",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I learned how system works.",
-    "vi": "Tôi học cách hệ thống hoạt động."
+    "vi": "Tôi học cách hệ thống hoạt động.",
+    "id": "sentLegacy_1l3v9jy",
+    "vocabWord": "system",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The system uses technology every day.",
-    "vi": "Hệ thống sử dụng công nghệ mỗi ngày."
+    "vi": "Hệ thống sử dụng công nghệ mỗi ngày.",
+    "id": "sentLegacy_ti8rga",
+    "vocabWord": "technology",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "It is important to stay temporary.",
-    "vi": "Điều quan trọng là giữ được sự tạm thời."
+    "vi": "Điều quan trọng là giữ được sự tạm thời.",
+    "id": "sentLegacy_1ncxo5b",
+    "vocabWord": "important",
+    "topic": "adjective1",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I use term when I study.",
-    "vi": "Tôi dùng thuật ngữ; kỳ hạn khi học."
+    "vi": "Tôi dùng thuật ngữ; kỳ hạn khi học.",
+    "id": "sentLegacy_1tjy754",
+    "vocabWord": "study",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The teacher explained the theory with an example.",
-    "vi": "Giáo viên giải thích lý thuyết bằng một ví dụ."
+    "vi": "Giáo viên giải thích lý thuyết bằng một ví dụ.",
+    "id": "sentLegacy_wrixh2",
+    "vocabWord": "teacher",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This tradition has continued for generations.",
-    "vi": "Truyền thống này đã được duy trì qua nhiều thế hệ."
+    "vi": "Truyền thống này đã được duy trì qua nhiều thế hệ.",
+    "id": "sentLegacy_8zqiq7",
+    "vocabWord": "tradition",
+    "topic": "culture",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The transport was busy today.",
-    "vi": "Hôm nay vận chuyển; giao thông khá đông."
+    "vi": "Hôm nay vận chuyển; giao thông khá đông.",
+    "id": "sentLegacy_80mhum",
+    "vocabWord": "transport",
+    "topic": "transport",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to treat this week.",
-    "vi": "Anh ấy muốn đối xử; điều trị trong tuần này."
+    "vi": "Anh ấy muốn đối xử; điều trị trong tuần này.",
+    "id": "sentLegacy_1aist95",
+    "vocabWord": "treat",
+    "topic": "social",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Online learning is a growing trend.",
-    "vi": "Học trực tuyến là một xu hướng đang phát triển."
+    "vi": "Học trực tuyến là một xu hướng đang phát triển.",
+    "id": "sentLegacy_wnshvf",
+    "vocabWord": "online",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is typical right now.",
-    "vi": "Tình hình hiện tại khá điển hình."
+    "vi": "Tình hình hiện tại khá điển hình.",
+    "id": "sentLegacy_h6l0jd",
+    "vocabWord": "typical",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This idea seems unique.",
-    "vi": "Ý tưởng này có vẻ độc nhất; độc đáo."
+    "vi": "Ý tưởng này có vẻ độc nhất; độc đáo.",
+    "id": "sentLegacy_1d1zws0",
+    "vocabWord": "unique",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Please update the app before using it.",
-    "vi": "Hãy cập nhật ứng dụng trước khi sử dụng."
+    "vi": "Hãy cập nhật ứng dụng trước khi sử dụng.",
+    "id": "sentLegacy_12s5tvt",
+    "vocabWord": "please",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "It is important to stay urban.",
-    "vi": "Điều quan trọng là giữ được sự đô thị."
+    "vi": "Điều quan trọng là giữ được sự đô thị.",
+    "id": "sentLegacy_19yttyw",
+    "vocabWord": "important",
+    "topic": "adjective1",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Can you explain variety to me?",
-    "vi": "Bạn có thể giải thích sự đa dạng; nhiều loại cho tôi không?"
+    "vi": "Bạn có thể giải thích sự đa dạng; nhiều loại cho tôi không?",
+    "id": "sentLegacy_1vk966q",
+    "vocabWord": "explain",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This vehicle can carry six passengers.",
-    "vi": "Phương tiện này có thể chở sáu hành khách."
+    "vi": "Phương tiện này có thể chở sáu hành khách.",
+    "id": "sentLegacy_1y6cvbd",
+    "vocabWord": "vehicle",
+    "topic": "transport",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The hotel has a beautiful view of the city.",
-    "vi": "Khách sạn có tầm nhìn đẹp ra thành phố."
+    "vi": "Khách sạn có tầm nhìn đẹp ra thành phố.",
+    "id": "sentLegacy_de8r11",
+    "vocabWord": "beautiful",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The new method is valuable for beginners.",
-    "vi": "Phương pháp mới có giá trị với người mới."
+    "vi": "Phương pháp mới có giá trị với người mới.",
+    "id": "sentLegacy_1bje3f5",
+    "vocabWord": "valuable",
+    "topic": "money",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We should reduce food waste.",
-    "vi": "Chúng ta nên giảm lãng phí thực phẩm."
+    "vi": "Chúng ta nên giảm lãng phí thực phẩm.",
+    "id": "sentLegacy_6q5wwi",
+    "vocabWord": "waste",
+    "topic": "environment",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Try not to worry about small mistakes.",
-    "vi": "Cố đừng lo lắng về những lỗi nhỏ."
+    "vi": "Cố đừng lo lắng về những lỗi nhỏ.",
+    "id": "sentLegacy_ubdp84",
+    "vocabWord": "small",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to admire tomorrow.",
-    "vi": "Tôi dự định ngưỡng mộ vào ngày mai."
+    "vi": "Tôi dự định ngưỡng mộ vào ngày mai.",
+    "id": "sentLegacy_3nsezk",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to advertise after lunch.",
-    "vi": "Cô ấy quyết định quảng cáo sau bữa trưa."
+    "vi": "Cô ấy quyết định quảng cáo sau bữa trưa.",
+    "id": "sentLegacy_s39kwf",
+    "vocabWord": "advertise",
+    "topic": "business",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to advise before the meeting.",
-    "vi": "Chúng ta cần khuyên trước cuộc họp."
+    "vi": "Chúng ta cần khuyên trước cuộc họp.",
+    "id": "sentLegacy_1yi59v8",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to announce this week.",
-    "vi": "Anh ấy muốn thông báo trong tuần này."
+    "vi": "Anh ấy muốn thông báo trong tuần này.",
+    "id": "sentLegacy_2hd7vh",
+    "vocabWord": "announce",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I really appreciate your help.",
-    "vi": "Tôi thật sự trân trọng sự giúp đỡ của bạn."
+    "vi": "Tôi thật sự trân trọng sự giúp đỡ của bạn.",
+    "id": "sentLegacy_yjt0p1",
+    "vocabWord": "appreciate",
+    "topic": "emotion",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to approve tomorrow.",
-    "vi": "Tôi dự định chấp thuận vào ngày mai."
+    "vi": "Tôi dự định chấp thuận vào ngày mai.",
+    "id": "sentLegacy_ygdkue",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Breathe slowly and relax your shoulders.",
-    "vi": "Hãy thở chậm và thả lỏng vai."
+    "vi": "Hãy thở chậm và thả lỏng vai.",
+    "id": "sentLegacy_1kcwova",
+    "vocabWord": "breathe",
+    "topic": "health",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We will celebrate her graduation tonight.",
-    "vi": "Tối nay chúng tôi sẽ chúc mừng lễ tốt nghiệp của cô ấy."
+    "vi": "Tối nay chúng tôi sẽ chúc mừng lễ tốt nghiệp của cô ấy.",
+    "id": "sentLegacy_1b0evon",
+    "vocabWord": "celebrate",
+    "topic": "social",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to compare this week.",
-    "vi": "Anh ấy muốn so sánh trong tuần này."
+    "vi": "Anh ấy muốn so sánh trong tuần này.",
+    "id": "sentLegacy_swk3po",
+    "vocabWord": "compare",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to continue carefully.",
-    "vi": "Họ cố gắng tiếp tục một cách cẩn thận."
+    "vi": "Họ cố gắng tiếp tục một cách cẩn thận.",
+    "id": "sentLegacy_vofy72",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He denied making that mistake.",
-    "vi": "Anh ấy phủ nhận đã mắc lỗi đó."
+    "vi": "Anh ấy phủ nhận đã mắc lỗi đó.",
+    "id": "sentLegacy_i02sqt",
+    "vocabWord": "mistake",
+    "topic": "studyextra",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to discover after lunch.",
-    "vi": "Cô ấy quyết định khám phá; phát hiện sau bữa trưa."
+    "vi": "Cô ấy quyết định khám phá; phát hiện sau bữa trưa.",
+    "id": "sentLegacy_huae82",
+    "vocabWord": "discover",
+    "topic": "learning",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Let's divide the work into three parts.",
-    "vi": "Hãy chia công việc thành ba phần."
+    "vi": "Hãy chia công việc thành ba phần.",
+    "id": "sentLegacy_1tx9e1h",
+    "vocabWord": "divide",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Please check the details to ensure everything is correct.",
-    "vi": "Hãy kiểm tra chi tiết để đảm bảo mọi thứ đúng."
+    "vi": "Hãy kiểm tra chi tiết để đảm bảo mọi thứ đúng.",
+    "id": "sentLegacy_t339pc",
+    "vocabWord": "correct",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to establish carefully.",
-    "vi": "Họ cố gắng thiết lập; thành lập một cách cẩn thận."
+    "vi": "Họ cố gắng thiết lập; thành lập một cách cẩn thận.",
+    "id": "sentLegacy_e0erbb",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The teacher will evaluate the final project.",
-    "vi": "Giáo viên sẽ đánh giá dự án cuối cùng."
+    "vi": "Giáo viên sẽ đánh giá dự án cuối cùng.",
+    "id": "sentLegacy_1jefdvk",
+    "vocabWord": "evaluate",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to expect after lunch.",
-    "vi": "Cô ấy quyết định mong đợi; kỳ vọng sau bữa trưa."
+    "vi": "Cô ấy quyết định mong đợi; kỳ vọng sau bữa trưa.",
+    "id": "sentLegacy_ov8f77",
+    "vocabWord": "expect",
+    "topic": "thinking",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to fear before the meeting.",
-    "vi": "Chúng ta cần sợ; nỗi sợ trước cuộc họp."
+    "vi": "Chúng ta cần sợ; nỗi sợ trước cuộc họp.",
+    "id": "sentLegacy_gx40ve",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I hope you can forgive my mistake.",
-    "vi": "Tôi hy vọng bạn có thể tha thứ cho lỗi của tôi."
+    "vi": "Tôi hy vọng bạn có thể tha thứ cho lỗi của tôi.",
+    "id": "sentLegacy_1c1mjm9",
+    "vocabWord": "mistake",
+    "topic": "studyextra",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We gathered all the information before deciding.",
-    "vi": "Chúng tôi tập hợp mọi thông tin trước khi quyết định."
+    "vi": "Chúng tôi tập hợp mọi thông tin trước khi quyết định.",
+    "id": "sentLegacy_10kbm41",
+    "vocabWord": "before",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to guess tomorrow.",
-    "vi": "Tôi dự định đoán vào ngày mai."
+    "vi": "Tôi dự định đoán vào ngày mai.",
+    "id": "sentLegacy_elkyyv",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to imagine after lunch.",
-    "vi": "Cô ấy quyết định tưởng tượng sau bữa trưa."
+    "vi": "Cô ấy quyết định tưởng tượng sau bữa trưa.",
+    "id": "sentLegacy_pak1o3",
+    "vocabWord": "imagine",
+    "topic": "thinking",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to invest before the meeting.",
-    "vi": "Chúng ta cần đầu tư trước cuộc họp."
+    "vi": "Chúng ta cần đầu tư trước cuộc họp.",
+    "id": "sentLegacy_cwtbnh",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "It is important to maintain good study habits.",
-    "vi": "Điều quan trọng là duy trì thói quen học tập tốt."
+    "vi": "Điều quan trọng là duy trì thói quen học tập tốt.",
+    "id": "sentLegacy_1st06bi",
+    "vocabWord": "important",
+    "topic": "adjective1",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Students observed the experiment carefully.",
-    "vi": "Học sinh quan sát thí nghiệm cẩn thận."
+    "vi": "Học sinh quan sát thí nghiệm cẩn thận.",
+    "id": "sentLegacy_1aeszmj",
+    "vocabWord": "experiment",
+    "topic": "science",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The students performed a short play.",
-    "vi": "Học sinh biểu diễn một vở kịch ngắn."
+    "vi": "Học sinh biểu diễn một vở kịch ngắn.",
+    "id": "sentLegacy_1ywl8",
+    "vocabWord": "short",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Please respond to the message today.",
-    "vi": "Hãy trả lời tin nhắn hôm nay."
+    "vi": "Hãy trả lời tin nhắn hôm nay.",
+    "id": "sentLegacy_5vrz5c",
+    "vocabWord": "message",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to search before the meeting.",
-    "vi": "Chúng ta cần tìm kiếm trước cuộc họp."
+    "vi": "Chúng ta cần tìm kiếm trước cuộc họp.",
+    "id": "sentLegacy_1og2f64",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to solve this problem together.",
-    "vi": "Chúng ta cần giải quyết vấn đề này cùng nhau."
+    "vi": "Chúng ta cần giải quyết vấn đề này cùng nhau.",
+    "id": "sentLegacy_1ksyo4g",
+    "vocabWord": "together",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The news spread quickly online.",
-    "vi": "Tin tức lan truyền nhanh trên mạng."
+    "vi": "Tin tức lan truyền nhanh trên mạng.",
+    "id": "sentLegacy_1lqhnrq",
+    "vocabWord": "quickly",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Someone tried to steal my bag.",
-    "vi": "Ai đó đã cố lấy trộm túi của tôi."
+    "vi": "Ai đó đã cố lấy trộm túi của tôi.",
+    "id": "sentLegacy_123hwfy",
+    "vocabWord": "steal",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Many people suffer from stress at work.",
-    "vi": "Nhiều người chịu căng thẳng trong công việc."
+    "vi": "Nhiều người chịu căng thẳng trong công việc.",
+    "id": "sentLegacy_1sqbzkh",
+    "vocabWord": "people",
+    "topic": "people",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The plants survived the dry season.",
-    "vi": "Những cây này sống sót qua mùa khô."
+    "vi": "Những cây này sống sót qua mùa khô.",
+    "id": "sentLegacy_1todhdg",
+    "vocabWord": "season",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The sign warns drivers about the sharp turn.",
-    "vi": "Biển báo cảnh báo tài xế về khúc cua gấp."
+    "vi": "Biển báo cảnh báo tài xế về khúc cua gấp.",
+    "id": "sentLegacy_1oksbi0",
+    "vocabWord": "about",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to wonder carefully.",
-    "vi": "Họ cố gắng tự hỏi; điều kỳ thú một cách cẩn thận."
+    "vi": "Họ cố gắng tự hỏi; điều kỳ thú một cách cẩn thận.",
+    "id": "sentLegacy_h7wjaw",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She bought a small accessory for her phone.",
-    "vi": "Cô ấy mua một phụ kiện nhỏ cho điện thoại."
+    "vi": "Cô ấy mua một phụ kiện nhỏ cho điện thoại.",
+    "id": "sentLegacy_7l5gw9",
+    "vocabWord": "accessory",
+    "topic": "shopping",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The accountant checked the monthly report.",
-    "vi": "Kế toán kiểm tra báo cáo hằng tháng."
+    "vi": "Kế toán kiểm tra báo cáo hằng tháng.",
+    "id": "sentLegacy_d2up1p",
+    "vocabWord": "accountant",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The adviser gave me useful career advice.",
-    "vi": "Cố vấn cho tôi lời khuyên nghề nghiệp hữu ích."
+    "vi": "Cố vấn cho tôi lời khuyên nghề nghiệp hữu ích.",
+    "id": "sentLegacy_1g9rj6j",
+    "vocabWord": "adviser",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Both sides signed the agreement yesterday.",
-    "vi": "Hai bên đã ký thỏa thuận hôm qua."
+    "vi": "Hai bên đã ký thỏa thuận hôm qua.",
+    "id": "sentLegacy_1blpr0l",
+    "vocabWord": "yesterday",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We walked through a narrow alley.",
-    "vi": "Chúng tôi đi qua một con hẻm hẹp."
+    "vi": "Chúng tôi đi qua một con hẻm hẹp.",
+    "id": "sentLegacy_u1tckk",
+    "vocabWord": "through",
+    "topic": "travel",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She moved into a new apartment last month.",
-    "vi": "Cô ấy chuyển vào một căn hộ mới tháng trước."
+    "vi": "Cô ấy chuyển vào một căn hộ mới tháng trước.",
+    "id": "sentLegacy_cctkgv",
+    "vocabWord": "apartment",
+    "topic": "home",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We passed the area this morning.",
-    "vi": "Sáng nay chúng tôi đi qua khu vực; diện tích."
+    "vi": "Sáng nay chúng tôi đi qua khu vực; diện tích.",
+    "id": "sentLegacy_1ciijm3",
+    "vocabWord": "morning",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The hotel is on a busy avenue.",
-    "vi": "Khách sạn nằm trên một đại lộ đông đúc."
+    "vi": "Khách sạn nằm trên một đại lộ đông đúc.",
+    "id": "sentLegacy_1q3rzru",
+    "vocabWord": "avenue",
+    "topic": "city",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She received an award for her project.",
-    "vi": "Cô ấy nhận một giải thưởng cho dự án."
+    "vi": "Cô ấy nhận một giải thưởng cho dự án.",
+    "id": "sentLegacy_13nerpj",
+    "vocabWord": "project",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The boxes are stored in the basement.",
-    "vi": "Những chiếc hộp được cất ở tầng hầm."
+    "vi": "Những chiếc hộp được cất ở tầng hầm.",
+    "id": "sentLegacy_1hmn6ps",
+    "vocabWord": "basement",
+    "topic": "home",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I found the book at a small bookstore.",
-    "vi": "Tôi tìm thấy cuốn sách ở một nhà sách nhỏ."
+    "vi": "Tôi tìm thấy cuốn sách ở một nhà sách nhỏ.",
+    "id": "sentLegacy_11il9hi",
+    "vocabWord": "bookstore",
+    "topic": "city",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The fence marks the boundary of the garden.",
-    "vi": "Hàng rào đánh dấu ranh giới khu vườn."
+    "vi": "Hàng rào đánh dấu ranh giới khu vườn.",
+    "id": "sentLegacy_2o45qx",
+    "vocabWord": "boundary",
+    "topic": "city",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I wrote the meeting on my calendar.",
-    "vi": "Tôi ghi cuộc họp vào lịch."
+    "vi": "Tôi ghi cuộc họp vào lịch.",
+    "id": "sentLegacy_11jce6f",
+    "vocabWord": "calendar",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Hanoi is the capital of Vietnam.",
-    "vi": "Hà Nội là thủ đô của Việt Nam."
+    "vi": "Hà Nội là thủ đô của Việt Nam.",
+    "id": "sentLegacy_1o8uhdt",
+    "vocabWord": "capital",
+    "topic": "city",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The room has a soft carpet.",
-    "vi": "Căn phòng có một tấm thảm mềm."
+    "vi": "Căn phòng có một tấm thảm mềm.",
+    "id": "sentLegacy_rtat4d",
+    "vocabWord": "carpet",
+    "topic": "home",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Put the words into the correct category.",
-    "vi": "Hãy xếp các từ vào đúng danh mục."
+    "vi": "Hãy xếp các từ vào đúng danh mục.",
+    "id": "sentLegacy_139ojjl",
+    "vocabWord": "category",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The lamp hangs from the ceiling.",
-    "vi": "Chiếc đèn treo từ trần nhà."
+    "vi": "Chiếc đèn treo từ trần nhà.",
+    "id": "sentLegacy_gzvfuq",
+    "vocabWord": "ceiling",
+    "topic": "home",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Warm clothing is useful in cold weather.",
-    "vi": "Quần áo ấm hữu ích khi thời tiết lạnh."
+    "vi": "Quần áo ấm hữu ích khi thời tiết lạnh.",
+    "id": "sentLegacy_x71nib",
+    "vocabWord": "cold weather",
+    "topic": "weather",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Put the rice in an airtight container.",
-    "vi": "Hãy cho gạo vào một hộp kín."
+    "vi": "Hãy cho gạo vào một hộp kín.",
+    "id": "sentLegacy_aupdi",
+    "vocabWord": "container",
+    "topic": "home",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This device connects to Wi-Fi easily.",
-    "vi": "Thiết bị này kết nối Wi-Fi dễ dàng."
+    "vi": "Thiết bị này kết nối Wi-Fi dễ dàng.",
+    "id": "sentLegacy_1rr1qvw",
+    "vocabWord": "easily",
+    "topic": "generalextra",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The display shows the current temperature.",
-    "vi": "Màn hình hiển thị nhiệt độ hiện tại."
+    "vi": "Màn hình hiển thị nhiệt độ hiện tại.",
+    "id": "sentLegacy_1mivdt8",
+    "vocabWord": "temperature",
+    "topic": "weather",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The editor corrected a few mistakes.",
-    "vi": "Biên tập viên sửa một vài lỗi."
+    "vi": "Biên tập viên sửa một vài lỗi.",
+    "id": "sentLegacy_1bx8n53",
+    "vocabWord": "editor",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We met at the main entrance.",
-    "vi": "Chúng tôi gặp nhau ở lối vào chính."
+    "vi": "Chúng tôi gặp nhau ở lối vào chính.",
+    "id": "sentLegacy_18hfdc3",
+    "vocabWord": "entrance",
+    "topic": "city",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The town holds a music festival every summer.",
-    "vi": "Thị trấn tổ chức một lễ hội âm nhạc mỗi mùa hè."
+    "vi": "Thị trấn tổ chức một lễ hội âm nhạc mỗi mùa hè.",
+    "id": "sentLegacy_16joxy6",
+    "vocabWord": "festival",
+    "topic": "culture",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Use a filter to remove unwanted messages.",
-    "vi": "Hãy dùng bộ lọc để loại tin nhắn không mong muốn."
+    "vi": "Hãy dùng bộ lọc để loại tin nhắn không mong muốn.",
+    "id": "sentLegacy_1feioeu",
+    "vocabWord": "filter",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The car is parked in the garage.",
-    "vi": "Xe được đỗ trong ga ra."
+    "vi": "Xe được đỗ trong ga ra.",
+    "id": "sentLegacy_1o8x9v7",
+    "vocabWord": "garage",
+    "topic": "home",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The car needs more gasoline.",
-    "vi": "Chiếc xe cần thêm xăng."
+    "vi": "Chiếc xe cần thêm xăng.",
+    "id": "sentLegacy_5dz6xq",
+    "vocabWord": "gasoline",
+    "topic": "transport",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She poured water into a glass.",
-    "vi": "Cô ấy rót nước vào một chiếc cốc."
+    "vi": "Cô ấy rót nước vào một chiếc cốc.",
+    "id": "sentLegacy_z7n7u2",
+    "vocabWord": "water",
+    "topic": "food",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Please leave your shoes in the hallway.",
-    "vi": "Hãy để giày ở hành lang."
+    "vi": "Hãy để giày ở hành lang.",
+    "id": "sentLegacy_1rds377",
+    "vocabWord": "hallway",
+    "topic": "home",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We took the highway to the city.",
-    "vi": "Chúng tôi đi đường cao tốc vào thành phố."
+    "vi": "Chúng tôi đi đường cao tốc vào thành phố.",
+    "id": "sentLegacy_1ixquuy",
+    "vocabWord": "highway",
+    "topic": "transport",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "You need a valid license to drive.",
-    "vi": "Bạn cần bằng lái hợp lệ để lái xe."
+    "vi": "Bạn cần bằng lái hợp lệ để lái xe.",
+    "id": "sentLegacy_5he16j",
+    "vocabWord": "license",
+    "topic": "travel",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The machine stopped during the test.",
-    "vi": "Máy dừng lại trong lúc kiểm tra."
+    "vi": "Máy dừng lại trong lúc kiểm tra.",
+    "id": "sentLegacy_1m1j0xl",
+    "vocabWord": "machine",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The online marketplace connects buyers and sellers.",
-    "vi": "Chợ trực tuyến kết nối người mua và người bán."
+    "vi": "Chợ trực tuyến kết nối người mua và người bán.",
+    "id": "sentLegacy_n4bsod",
+    "vocabWord": "marketplace",
+    "topic": "business",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Your membership is valid for one year.",
-    "vi": "Thẻ thành viên của bạn có hiệu lực một năm."
+    "vi": "Thẻ thành viên của bạn có hiệu lực một năm.",
+    "id": "sentLegacy_1rju5q3",
+    "vocabWord": "membership",
+    "topic": "social",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The package arrived this morning.",
-    "vi": "Gói hàng đến sáng nay."
+    "vi": "Gói hàng đến sáng nay.",
+    "id": "sentLegacy_1gukkwo",
+    "vocabWord": "morning",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The printer is out of paper.",
-    "vi": "Máy in hết giấy."
+    "vi": "Máy in hết giấy.",
+    "id": "sentLegacy_10ywk62",
+    "vocabWord": "printer",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I lost the remote for the television.",
-    "vi": "Tôi làm mất điều khiển tivi."
+    "vi": "Tôi làm mất điều khiển tivi.",
+    "id": "sentLegacy_z49pgc",
+    "vocabWord": "television",
+    "topic": "media",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The phone has a weak signal here.",
-    "vi": "Điện thoại ở đây có tín hiệu yếu."
+    "vi": "Điện thoại ở đây có tín hiệu yếu.",
+    "id": "sentLegacy_1jnw97y",
+    "vocabWord": "signal",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "My phone needs more storage space.",
-    "vi": "Điện thoại của tôi cần thêm bộ nhớ."
+    "vi": "Điện thoại của tôi cần thêm bộ nhớ.",
+    "id": "sentLegacy_1l4mkby",
+    "vocabWord": "storage",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She reads on her tablet before bed.",
-    "vi": "Cô ấy đọc sách trên máy tính bảng trước khi ngủ."
+    "vi": "Cô ấy đọc sách trên máy tính bảng trước khi ngủ.",
+    "id": "sentLegacy_1bate3",
+    "vocabWord": "before",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is able right now.",
-    "vi": "Tình hình hiện tại khá có khả năng."
+    "vi": "Tình hình hiện tại khá có khả năng.",
+    "id": "sentLegacy_pzj1fe",
+    "vocabWord": "right",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They had to abandon the plan.",
-    "vi": "Họ phải từ bỏ kế hoạch."
+    "vi": "Họ phải từ bỏ kế hoạch.",
+    "id": "sentLegacy_1jsobfe",
+    "vocabWord": "abandon",
+    "topic": "life",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Everyone was already aboard the train.",
-    "vi": "Mọi người đã ở trên tàu."
+    "vi": "Mọi người đã ở trên tàu.",
+    "id": "sentLegacy_1oiwelz",
+    "vocabWord": "already",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He absolutely arrives before class.",
-    "vi": "Anh ấy hoàn toàn; chắc chắn đến trước giờ học."
+    "vi": "Anh ấy hoàn toàn; chắc chắn đến trước giờ học.",
+    "id": "sentLegacy_q1qetb",
+    "vocabWord": "absolutely",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She acquired useful skills during the course.",
-    "vi": "Cô ấy có được những kỹ năng hữu ích trong khóa học."
+    "vi": "Cô ấy có được những kỹ năng hữu ích trong khóa học.",
+    "id": "sentLegacy_1gw330b",
+    "vocabWord": "course",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We have adequate time to finish.",
-    "vi": "Chúng ta có đủ thời gian để hoàn thành."
+    "vi": "Chúng ta có đủ thời gian để hoàn thành.",
+    "id": "sentLegacy_1axurt9",
+    "vocabWord": "adequate",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He admitted that he was wrong.",
-    "vi": "Anh ấy thừa nhận mình đã sai."
+    "vi": "Anh ấy thừa nhận mình đã sai.",
+    "id": "sentLegacy_14hf436",
+    "vocabWord": "wrong",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The team adopted a simpler method.",
-    "vi": "Nhóm áp dụng một phương pháp đơn giản hơn."
+    "vi": "Nhóm áp dụng một phương pháp đơn giản hơn.",
+    "id": "sentLegacy_1vtskqu",
+    "vocabWord": "method",
+    "topic": "learning",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The project made good progress in advance.",
-    "vi": "Dự án đã có tiến triển tốt trước thời hạn."
+    "vi": "Dự án đã có tiến triển tốt trước thời hạn.",
+    "id": "sentLegacy_11wy62j",
+    "vocabWord": "progress",
+    "topic": "studyextra",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Many teachers advocate daily reading.",
-    "vi": "Nhiều giáo viên ủng hộ việc đọc hằng ngày."
+    "vi": "Nhiều giáo viên ủng hộ việc đọc hằng ngày.",
+    "id": "sentLegacy_bju3v0",
+    "vocabWord": "advocate",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We had to alter the schedule.",
-    "vi": "Chúng tôi phải thay đổi lịch trình."
+    "vi": "Chúng tôi phải thay đổi lịch trình.",
+    "id": "sentLegacy_1u5gkln",
+    "vocabWord": "schedule",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need an alternative plan.",
-    "vi": "Chúng ta cần một phương án thay thế."
+    "vi": "Chúng ta cần một phương án thay thế.",
+    "id": "sentLegacy_1n6qoqr",
+    "vocabWord": "alternative",
+    "topic": "decision",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The view from the mountain was amazing.",
-    "vi": "Khung cảnh từ trên núi thật đáng kinh ngạc."
+    "vi": "Khung cảnh từ trên núi thật đáng kinh ngạc.",
+    "id": "sentLegacy_bpcj5p",
+    "vocabWord": "mountain",
+    "topic": "travel",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We anticipate a busy weekend.",
-    "vi": "Chúng tôi dự đoán cuối tuần sẽ bận rộn."
+    "vi": "Chúng tôi dự đoán cuối tuần sẽ bận rộn.",
+    "id": "sentLegacy_wjla8x",
+    "vocabWord": "anticipate",
+    "topic": "thinking",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "It became apparent that we were late.",
-    "vi": "Rõ ràng là chúng tôi đã muộn."
+    "vi": "Rõ ràng là chúng tôi đã muộn.",
+    "id": "sentLegacy_1hqfx54",
+    "vocabWord": "apparent",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The simple design has wide appeal.",
-    "vi": "Thiết kế đơn giản có sức hấp dẫn rộng rãi."
+    "vi": "Thiết kế đơn giản có sức hấp dẫn rộng rãi.",
+    "id": "sentLegacy_1tdbpw",
+    "vocabWord": "simple",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She applied for a part-time job.",
-    "vi": "Cô ấy nộp đơn xin một công việc bán thời gian."
+    "vi": "Cô ấy nộp đơn xin một công việc bán thời gian.",
+    "id": "sentLegacy_5yaxgw",
+    "vocabWord": "job",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "A staff member assisted me at the desk.",
-    "vi": "Một nhân viên hỗ trợ tôi tại quầy."
+    "vi": "Một nhân viên hỗ trợ tôi tại quầy.",
+    "id": "sentLegacy_15fzuc1",
+    "vocabWord": "member",
+    "topic": "social",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Don't assume that everyone knows the answer.",
-    "vi": "Đừng cho rằng ai cũng biết câu trả lời."
+    "vi": "Đừng cho rằng ai cũng biết câu trả lời.",
+    "id": "sentLegacy_1npyvmu",
+    "vocabWord": "answer",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The door has an automatic lock.",
-    "vi": "Cánh cửa có khóa tự động."
+    "vi": "Cánh cửa có khóa tự động.",
+    "id": "sentLegacy_1d9hhtp",
+    "vocabWord": "automatic",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Children should behave politely in public.",
-    "vi": "Trẻ em nên cư xử lịch sự nơi công cộng."
+    "vi": "Trẻ em nên cư xử lịch sự nơi công cộng.",
+    "id": "sentLegacy_84q3h4",
+    "vocabWord": "children",
+    "topic": "family",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This camera can capture clear photos at night.",
-    "vi": "Chiếc máy ảnh này có thể chụp ảnh rõ vào ban đêm."
+    "vi": "Chiếc máy ảnh này có thể chụp ảnh rõ vào ban đêm.",
+    "id": "sentLegacy_ad5aun",
+    "vocabWord": "capture",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I need to charge my phone before leaving.",
-    "vi": "Tôi cần sạc điện thoại trước khi đi."
+    "vi": "Tôi cần sạc điện thoại trước khi đi.",
+    "id": "sentLegacy_fif51c",
+    "vocabWord": "before",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We can combine the two ideas.",
-    "vi": "Chúng ta có thể kết hợp hai ý tưởng."
+    "vi": "Chúng ta có thể kết hợp hai ý tưởng.",
+    "id": "sentLegacy_1osk47f",
+    "vocabWord": "combine",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She composed a short message to the manager.",
-    "vi": "Cô ấy soạn một tin nhắn ngắn cho quản lý."
+    "vi": "Cô ấy soạn một tin nhắn ngắn cho quản lý.",
+    "id": "sentLegacy_5jruh2",
+    "vocabWord": "manager",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "His main concern is the cost.",
-    "vi": "Mối quan tâm chính của anh ấy là chi phí."
+    "vi": "Mối quan tâm chính của anh ấy là chi phí.",
+    "id": "sentLegacy_mt7id8",
+    "vocabWord": "concern",
+    "topic": "emotion",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The university will conduct a survey next week.",
-    "vi": "Trường đại học sẽ tiến hành một cuộc khảo sát vào tuần tới."
+    "vi": "Trường đại học sẽ tiến hành một cuộc khảo sát vào tuần tới.",
+    "id": "sentLegacy_1t0aywj",
+    "vocabWord": "university",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The conflict made communication difficult.",
-    "vi": "Xung đột khiến việc giao tiếp khó khăn."
+    "vi": "Xung đột khiến việc giao tiếp khó khăn.",
+    "id": "sentLegacy_15aimfl",
+    "vocabWord": "communication",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The similar words sometimes confuse me.",
-    "vi": "Những từ giống nhau đôi khi làm tôi nhầm."
+    "vi": "Những từ giống nhau đôi khi làm tôi nhầm.",
+    "id": "sentLegacy_1wlo61i",
+    "vocabWord": "sometimes",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The course consists of ten lessons.",
-    "vi": "Khóa học gồm mười bài."
+    "vi": "Khóa học gồm mười bài.",
+    "id": "sentLegacy_1imignu",
+    "vocabWord": "course",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The machine needs constant attention.",
-    "vi": "Máy cần được theo dõi liên tục."
+    "vi": "Máy cần được theo dõi liên tục.",
+    "id": "sentLegacy_dtsnkx",
+    "vocabWord": "attention",
+    "topic": "studyextra",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This car consumes less fuel than the old one.",
-    "vi": "Chiếc xe này tiêu thụ ít nhiên liệu hơn chiếc cũ."
+    "vi": "Chiếc xe này tiêu thụ ít nhiên liệu hơn chiếc cũ.",
+    "id": "sentLegacy_14cizl",
+    "vocabWord": "fuel",
+    "topic": "transport",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to cooperate to finish the project.",
-    "vi": "Chúng ta cần hợp tác để hoàn thành dự án."
+    "vi": "Chúng ta cần hợp tác để hoàn thành dự án.",
+    "id": "sentLegacy_1vkexup",
+    "vocabWord": "cooperate",
+    "topic": "social",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Please correct the sentence.",
-    "vi": "Hãy sửa câu này."
+    "vi": "Hãy sửa câu này.",
+    "id": "sentLegacy_2qzkyt",
+    "vocabWord": "sentence",
+    "topic": "studyextra",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The local council approved the new library.",
-    "vi": "Hội đồng địa phương chấp thuận thư viện mới."
+    "vi": "Hội đồng địa phương chấp thuận thư viện mới.",
+    "id": "sentLegacy_vnl97k",
+    "vocabWord": "library",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The computer crashed during the update.",
-    "vi": "Máy tính bị sập trong lúc cập nhật."
+    "vi": "Máy tính bị sập trong lúc cập nhật.",
+    "id": "sentLegacy_1crwmab",
+    "vocabWord": "computer",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The company declared the result this morning.",
-    "vi": "Công ty công bố kết quả sáng nay."
+    "vi": "Công ty công bố kết quả sáng nay.",
+    "id": "sentLegacy_1nasdmf",
+    "vocabWord": "company",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We decorated the room for the party.",
-    "vi": "Chúng tôi trang trí căn phòng cho bữa tiệc."
+    "vi": "Chúng tôi trang trí căn phòng cho bữa tiệc.",
+    "id": "sentLegacy_yybcqa",
+    "vocabWord": "party",
+    "topic": "social",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The teacher demonstrated the new method.",
-    "vi": "Giáo viên minh họa phương pháp mới."
+    "vi": "Giáo viên minh họa phương pháp mới.",
+    "id": "sentLegacy_oxandr",
+    "vocabWord": "teacher",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "You deserve a break after that long day.",
-    "vi": "Bạn xứng đáng được nghỉ sau ngày dài đó."
+    "vi": "Bạn xứng đáng được nghỉ sau ngày dài đó.",
+    "id": "sentLegacy_18qigbu",
+    "vocabWord": "deserve",
+    "topic": "personality",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to destroy tomorrow.",
-    "vi": "Tôi dự định phá hủy vào ngày mai."
+    "vi": "Tôi dự định phá hủy vào ngày mai.",
+    "id": "sentLegacy_7wk5n8",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to detect after lunch.",
-    "vi": "Cô ấy quyết định phát hiện sau bữa trưa."
+    "vi": "Cô ấy quyết định phát hiện sau bữa trưa.",
+    "id": "sentLegacy_1syknwl",
+    "vocabWord": "detect",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to disappoint before the meeting.",
-    "vi": "Chúng ta cần làm thất vọng trước cuộc họp."
+    "vi": "Chúng ta cần làm thất vọng trước cuộc họp.",
+    "id": "sentLegacy_n0boj4",
+    "vocabWord": "disappoint",
+    "topic": "emotion",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This lesson includes discipline.",
-    "vi": "Bài học này có kỷ luật; môn học."
+    "vi": "Bài học này có kỷ luật; môn học.",
+    "id": "sentLegacy_1m6ufyo",
+    "vocabWord": "discipline",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to disturb carefully.",
-    "vi": "Họ cố gắng làm phiền; quấy rầy một cách cẩn thận."
+    "vi": "Họ cố gắng làm phiền; quấy rầy một cách cẩn thận.",
+    "id": "sentLegacy_1ak34r6",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to educate tomorrow.",
-    "vi": "Tôi dự định giáo dục vào ngày mai."
+    "vi": "Tôi dự định giáo dục vào ngày mai.",
+    "id": "sentLegacy_a1qirq",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to elect after lunch.",
-    "vi": "Cô ấy quyết định bầu chọn; chọn sau bữa trưa."
+    "vi": "Cô ấy quyết định bầu chọn; chọn sau bữa trưa.",
+    "id": "sentLegacy_12u07up",
+    "vocabWord": "lunch",
+    "topic": "food",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to employ before the meeting.",
-    "vi": "Chúng ta cần thuê; sử dụng trước cuộc họp."
+    "vi": "Chúng ta cần thuê; sử dụng trước cuộc họp.",
+    "id": "sentLegacy_sn3u7",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to enable this week.",
-    "vi": "Anh ấy muốn cho phép; làm cho có thể trong tuần này."
+    "vi": "Anh ấy muốn cho phép; làm cho có thể trong tuần này.",
+    "id": "sentLegacy_110alwm",
+    "vocabWord": "enable",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to entertain carefully.",
-    "vi": "Họ cố gắng giải trí; tiếp đãi một cách cẩn thận."
+    "vi": "Họ cố gắng giải trí; tiếp đãi một cách cẩn thận.",
+    "id": "sentLegacy_cuojmq",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is environmental right now.",
-    "vi": "Tình hình hiện tại khá thuộc môi trường."
+    "vi": "Tình hình hiện tại khá thuộc môi trường.",
+    "id": "sentLegacy_16j206d",
+    "vocabWord": "environmental",
+    "topic": "nature",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to examine after lunch.",
-    "vi": "Cô ấy quyết định kiểm tra; xem xét sau bữa trưa."
+    "vi": "Cô ấy quyết định kiểm tra; xem xét sau bữa trưa.",
+    "id": "sentLegacy_h7ls7t",
+    "vocabWord": "examine",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to expand before the meeting.",
-    "vi": "Chúng ta cần mở rộng trước cuộc họp."
+    "vi": "Chúng ta cần mở rộng trước cuộc họp.",
+    "id": "sentLegacy_1ihx4o3",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to export this week.",
-    "vi": "Anh ấy muốn xuất khẩu trong tuần này."
+    "vi": "Anh ấy muốn xuất khẩu trong tuần này.",
+    "id": "sentLegacy_i0ggog",
+    "vocabWord": "export",
+    "topic": "business",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to express carefully.",
-    "vi": "Họ cố gắng bày tỏ; nhanh một cách cẩn thận."
+    "vi": "Họ cố gắng bày tỏ; nhanh một cách cẩn thận.",
+    "id": "sentLegacy_1yghqd5",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is fair right now.",
-    "vi": "Tình hình hiện tại khá công bằng; hội chợ."
+    "vi": "Tình hình hiện tại khá công bằng; hội chợ.",
+    "id": "sentLegacy_yqkjwd",
+    "vocabWord": "right",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We talked about fashion yesterday.",
-    "vi": "Chúng tôi nói về thời trang; phong cách hôm qua."
+    "vi": "Chúng tôi nói về thời trang; phong cách hôm qua.",
+    "id": "sentLegacy_16bh8j7",
+    "vocabWord": "yesterday",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to float before the meeting.",
-    "vi": "Chúng ta cần nổi; trôi trước cuộc họp."
+    "vi": "Chúng ta cần nổi; trôi trước cuộc họp.",
+    "id": "sentLegacy_gvuzc5",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to flow this week.",
-    "vi": "Anh ấy muốn chảy; dòng chảy trong tuần này."
+    "vi": "Anh ấy muốn chảy; dòng chảy trong tuần này.",
+    "id": "sentLegacy_198lhsx",
+    "vocabWord": "week",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to freeze carefully.",
-    "vi": "Họ cố gắng đóng băng; đông lạnh một cách cẩn thận."
+    "vi": "Họ cố gắng đóng băng; đông lạnh một cách cẩn thận.",
+    "id": "sentLegacy_1tvlpev",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to generate tomorrow.",
-    "vi": "Tôi dự định tạo ra; phát sinh vào ngày mai."
+    "vi": "Tôi dự định tạo ra; phát sinh vào ngày mai.",
+    "id": "sentLegacy_iicxt9",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to grab after lunch.",
-    "vi": "Cô ấy quyết định chộp; nắm lấy sau bữa trưa."
+    "vi": "Cô ấy quyết định chộp; nắm lấy sau bữa trưa.",
+    "id": "sentLegacy_14sm0jy",
+    "vocabWord": "lunch",
+    "topic": "food",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to graduate before the meeting.",
-    "vi": "Chúng ta cần tốt nghiệp; sinh viên tốt nghiệp trước cuộc họp."
+    "vi": "Chúng ta cần tốt nghiệp; sinh viên tốt nghiệp trước cuộc họp.",
+    "id": "sentLegacy_1k8mnou",
+    "vocabWord": "graduate",
+    "topic": "education",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to identify this week.",
-    "vi": "Anh ấy muốn nhận dạng; xác định trong tuần này."
+    "vi": "Anh ấy muốn nhận dạng; xác định trong tuần này.",
+    "id": "sentLegacy_1pw3elf",
+    "vocabWord": "identify",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to illustrate carefully.",
-    "vi": "Họ cố gắng minh họa một cách cẩn thận."
+    "vi": "Họ cố gắng minh họa một cách cẩn thận.",
+    "id": "sentLegacy_dytz8y",
+    "vocabWord": "illustrate",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to impress tomorrow.",
-    "vi": "Tôi dự định gây ấn tượng vào ngày mai."
+    "vi": "Tôi dự định gây ấn tượng vào ngày mai.",
+    "id": "sentLegacy_1rtclup",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to indicate after lunch.",
-    "vi": "Cô ấy quyết định chỉ ra; cho thấy sau bữa trưa."
+    "vi": "Cô ấy quyết định chỉ ra; cho thấy sau bữa trưa.",
+    "id": "sentLegacy_10x14p2",
+    "vocabWord": "indicate",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to install before the meeting.",
-    "vi": "Chúng ta cần cài đặt trước cuộc họp."
+    "vi": "Chúng ta cần cài đặt trước cuộc họp.",
+    "id": "sentLegacy_r5whe",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to intend this week.",
-    "vi": "Anh ấy muốn dự định trong tuần này."
+    "vi": "Anh ấy muốn dự định trong tuần này.",
+    "id": "sentLegacy_4je9l0",
+    "vocabWord": "intend",
+    "topic": "thinking",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to interrupt carefully.",
-    "vi": "Họ cố gắng ngắt lời; làm gián đoạn một cách cẩn thận."
+    "vi": "Họ cố gắng ngắt lời; làm gián đoạn một cách cẩn thận.",
+    "id": "sentLegacy_aj8k2m",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to investigate tomorrow.",
-    "vi": "Tôi dự định điều tra; tìm hiểu vào ngày mai."
+    "vi": "Tôi dự định điều tra; tìm hiểu vào ngày mai.",
+    "id": "sentLegacy_2mt4ci",
+    "vocabWord": "investigate",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to launch after lunch.",
-    "vi": "Cô ấy quyết định ra mắt; phóng; khởi động sau bữa trưa."
+    "vi": "Cô ấy quyết định ra mắt; phóng; khởi động sau bữa trưa.",
+    "id": "sentLegacy_p64jmt",
+    "vocabWord": "launch",
+    "topic": "business",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to locate before the meeting.",
-    "vi": "Chúng ta cần xác định vị trí; tìm thấy trước cuộc họp."
+    "vi": "Chúng ta cần xác định vị trí; tìm thấy trước cuộc họp.",
+    "id": "sentLegacy_dkb0ir",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to marry this week.",
-    "vi": "Anh ấy muốn kết hôn trong tuần này."
+    "vi": "Anh ấy muốn kết hôn trong tuần này.",
+    "id": "sentLegacy_1fmheua",
+    "vocabWord": "marry",
+    "topic": "family",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to memorize carefully.",
-    "vi": "Họ cố gắng ghi nhớ một cách cẩn thận."
+    "vi": "Họ cố gắng ghi nhớ một cách cẩn thận.",
+    "id": "sentLegacy_a8s3gs",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to obtain tomorrow.",
-    "vi": "Tôi dự định có được vào ngày mai."
+    "vi": "Tôi dự định có được vào ngày mai.",
+    "id": "sentLegacy_1k8nt1d",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to occur after lunch.",
-    "vi": "Cô ấy quyết định xảy ra sau bữa trưa."
+    "vi": "Cô ấy quyết định xảy ra sau bữa trưa.",
+    "id": "sentLegacy_132gh80",
+    "vocabWord": "lunch",
+    "topic": "food",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to persuade before the meeting.",
-    "vi": "Chúng ta cần thuyết phục trước cuộc họp."
+    "vi": "Chúng ta cần thuyết phục trước cuộc họp.",
+    "id": "sentLegacy_p8fhp5",
+    "vocabWord": "persuade",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to promote this week.",
-    "vi": "Anh ấy muốn thúc đẩy; thăng chức trong tuần này."
+    "vi": "Anh ấy muốn thúc đẩy; thăng chức trong tuần này.",
+    "id": "sentLegacy_1qmcc6x",
+    "vocabWord": "promote",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to propose carefully.",
-    "vi": "Họ cố gắng đề xuất; cầu hôn một cách cẩn thận."
+    "vi": "Họ cố gắng đề xuất; cầu hôn một cách cẩn thận.",
+    "id": "sentLegacy_1ijml1f",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to prove tomorrow.",
-    "vi": "Tôi dự định chứng minh vào ngày mai."
+    "vi": "Tôi dự định chứng minh vào ngày mai.",
+    "id": "sentLegacy_2wrkc2",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to react after lunch.",
-    "vi": "Cô ấy quyết định phản ứng sau bữa trưa."
+    "vi": "Cô ấy quyết định phản ứng sau bữa trưa.",
+    "id": "sentLegacy_1uc7hgh",
+    "vocabWord": "lunch",
+    "topic": "food",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to recover before the meeting.",
-    "vi": "Chúng ta cần hồi phục; lấy lại trước cuộc họp."
+    "vi": "Chúng ta cần hồi phục; lấy lại trước cuộc họp.",
+    "id": "sentLegacy_1dwh510",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to regret this week.",
-    "vi": "Anh ấy muốn hối tiếc; lấy làm tiếc trong tuần này."
+    "vi": "Anh ấy muốn hối tiếc; lấy làm tiếc trong tuần này.",
+    "id": "sentLegacy_1y6uqia",
+    "vocabWord": "regret",
+    "topic": "emotion",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to release carefully.",
-    "vi": "Họ cố gắng thả; phát hành một cách cẩn thận."
+    "vi": "Họ cố gắng thả; phát hành một cách cẩn thận.",
+    "id": "sentLegacy_gkes7j",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to remind tomorrow.",
-    "vi": "Tôi dự định nhắc nhở vào ngày mai."
+    "vi": "Tôi dự định nhắc nhở vào ngày mai.",
+    "id": "sentLegacy_14ot5oz",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to represent after lunch.",
-    "vi": "Cô ấy quyết định đại diện; biểu thị sau bữa trưa."
+    "vi": "Cô ấy quyết định đại diện; biểu thị sau bữa trưa.",
+    "id": "sentLegacy_t11bhz",
+    "vocabWord": "represent",
+    "topic": "society",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I learned more about request from my friend.",
-    "vi": "Tôi biết thêm về yêu cầu; lời yêu cầu từ bạn mình."
+    "vi": "Tôi biết thêm về yêu cầu; lời yêu cầu từ bạn mình.",
+    "id": "sentLegacy_1b53xi9",
+    "vocabWord": "request",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to rescue this week.",
-    "vi": "Anh ấy muốn cứu hộ; giải cứu trong tuần này."
+    "vi": "Anh ấy muốn cứu hộ; giải cứu trong tuần này.",
+    "id": "sentLegacy_1elwpx2",
+    "vocabWord": "rescue",
+    "topic": "safety",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to resolve carefully.",
-    "vi": "Họ cố gắng giải quyết; quyết tâm một cách cẩn thận."
+    "vi": "Họ cố gắng giải quyết; quyết tâm một cách cẩn thận.",
+    "id": "sentLegacy_c5aym1",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to restore tomorrow.",
-    "vi": "Tôi dự định khôi phục vào ngày mai."
+    "vi": "Tôi dự định khôi phục vào ngày mai.",
+    "id": "sentLegacy_13n5k9f",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to reveal after lunch.",
-    "vi": "Cô ấy quyết định tiết lộ sau bữa trưa."
+    "vi": "Cô ấy quyết định tiết lộ sau bữa trưa.",
+    "id": "sentLegacy_187idql",
+    "vocabWord": "reveal",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The reward is important in this situation.",
-    "vi": " Reward quan trọng trong tình huống này."
+    "vi": " Reward quan trọng trong tình huống này.",
+    "id": "sentLegacy_4hbb76",
+    "vocabWord": "important",
+    "topic": "adjective1",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to rush this week.",
-    "vi": "Anh ấy muốn vội vàng; lao nhanh trong tuần này."
+    "vi": "Anh ấy muốn vội vàng; lao nhanh trong tuần này.",
+    "id": "sentLegacy_6ox74e",
+    "vocabWord": "week",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to serve carefully.",
-    "vi": "Họ cố gắng phục vụ; giao bóng một cách cẩn thận."
+    "vi": "Họ cố gắng phục vụ; giao bóng một cách cẩn thận.",
+    "id": "sentLegacy_ve2vei",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to settle tomorrow.",
-    "vi": "Tôi dự định giải quyết; định cư vào ngày mai."
+    "vi": "Tôi dự định giải quyết; định cư vào ngày mai.",
+    "id": "sentLegacy_rjwbm4",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to sign after lunch.",
-    "vi": "Cô ấy quyết định ký; dấu hiệu sau bữa trưa."
+    "vi": "Cô ấy quyết định ký; dấu hiệu sau bữa trưa.",
+    "id": "sentLegacy_z3tg2g",
+    "vocabWord": "lunch",
+    "topic": "food",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to sort before the meeting.",
-    "vi": "Chúng ta cần phân loại; loại trước cuộc họp."
+    "vi": "Chúng ta cần phân loại; loại trước cuộc họp.",
+    "id": "sentLegacy_1tiwxd6",
+    "vocabWord": "meeting",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "It is important to stay spare.",
-    "vi": "Điều quan trọng là giữ được sự dư; dành ra."
+    "vi": "Điều quan trọng là giữ được sự dư; dành ra.",
+    "id": "sentLegacy_s1a7dn",
+    "vocabWord": "important",
+    "topic": "adjective1",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to submit carefully.",
-    "vi": "Họ cố gắng nộp; đệ trình một cách cẩn thận."
+    "vi": "Họ cố gắng nộp; đệ trình một cách cẩn thận.",
+    "id": "sentLegacy_yris41",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to supply tomorrow.",
-    "vi": "Tôi dự định cung cấp; nguồn cung vào ngày mai."
+    "vi": "Tôi dự định cung cấp; nguồn cung vào ngày mai.",
+    "id": "sentLegacy_141rky4",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to surprise after lunch.",
-    "vi": "Cô ấy quyết định làm ngạc nhiên; bất ngờ sau bữa trưa."
+    "vi": "Cô ấy quyết định làm ngạc nhiên; bất ngờ sau bữa trưa.",
+    "id": "sentLegacy_k7ksgx",
+    "vocabWord": "surprise",
+    "topic": "emotion",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need to surround before the meeting.",
-    "vi": "Chúng ta cần bao quanh trước cuộc họp."
+    "vi": "Chúng ta cần bao quanh trước cuộc họp.",
+    "id": "sentLegacy_1u0foiu",
+    "vocabWord": "surround",
+    "topic": "nature",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He wants to tend this week.",
-    "vi": "Anh ấy muốn có xu hướng; chăm sóc trong tuần này."
+    "vi": "Anh ấy muốn có xu hướng; chăm sóc trong tuần này.",
+    "id": "sentLegacy_74coz6",
+    "vocabWord": "week",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They tried to thank carefully.",
-    "vi": "Họ cố gắng cảm ơn một cách cẩn thận."
+    "vi": "Họ cố gắng cảm ơn một cách cẩn thận.",
+    "id": "sentLegacy_85nbfb",
+    "vocabWord": "carefully",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I plan to threaten tomorrow.",
-    "vi": "Tôi dự định đe dọa vào ngày mai."
+    "vi": "Tôi dự định đe dọa vào ngày mai.",
+    "id": "sentLegacy_c7m2iq",
+    "vocabWord": "tomorrow",
+    "topic": "time",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She mentioned volunteer during the conversation.",
-    "vi": "Cô ấy nhắc đến tình nguyện viên; tình nguyện trong cuộc trò chuyện."
+    "vi": "Cô ấy nhắc đến tình nguyện viên; tình nguyện trong cuộc trò chuyện.",
+    "id": "sentLegacy_6rk8vg",
+    "vocabWord": "conversation",
+    "topic": "social",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We wandered around the old town for an hour.",
-    "vi": "Chúng tôi đi lang thang quanh phố cổ một giờ."
+    "vi": "Chúng tôi đi lang thang quanh phố cổ một giờ.",
+    "id": "sentLegacy_eqf5os",
+    "vocabWord": "around",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The package weighs two kilograms.",
-    "vi": "Gói hàng nặng hai kilôgam."
+    "vi": "Gói hàng nặng hai kilôgam.",
+    "id": "sentLegacy_1g0ql3n",
+    "vocabWord": "package",
+    "topic": "shopping",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Several people witnessed the accident.",
-    "vi": "Một số người đã chứng kiến tai nạn."
+    "vi": "Một số người đã chứng kiến tai nạn.",
+    "id": "sentLegacy_1fgzyk4",
+    "vocabWord": "accident",
+    "topic": "healthextra",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is accurate right now.",
-    "vi": "Tình hình hiện tại khá chính xác."
+    "vi": "Tình hình hiện tại khá chính xác.",
+    "id": "sentLegacy_i9zxge",
+    "vocabWord": "accurate",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This idea seems actual.",
-    "vi": "Ý tưởng này có vẻ thực tế."
+    "vi": "Ý tưởng này có vẻ thực tế.",
+    "id": "sentLegacy_1n40ohb",
+    "vocabWord": "actual",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We actually study together.",
-    "vi": "Chúng tôi thực ra học cùng nhau."
+    "vi": "Chúng tôi thực ra học cùng nhau.",
+    "id": "sentLegacy_1hnbnoy",
+    "vocabWord": "together",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "It is important to stay affordable.",
-    "vi": "Điều quan trọng là giữ được sự có giá phải chăng."
+    "vi": "Điều quan trọng là giữ được sự có giá phải chăng.",
+    "id": "sentLegacy_1tev1x6",
+    "vocabWord": "affordable",
+    "topic": "money",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He remained aggressive during the discussion.",
-    "vi": "Anh ấy vẫn hung hăng; quyết liệt trong cuộc thảo luận."
+    "vi": "Anh ấy vẫn hung hăng; quyết liệt trong cuộc thảo luận.",
+    "id": "sentLegacy_582mb4",
+    "vocabWord": "aggressive",
+    "topic": "personality",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is alive right now.",
-    "vi": "Tình hình hiện tại khá còn sống."
+    "vi": "Tình hình hiện tại khá còn sống.",
+    "id": "sentLegacy_r94aft",
+    "vocabWord": "right",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He seems attractive today.",
-    "vi": "Hôm nay anh ấy có vẻ hấp dẫn."
+    "vi": "Hôm nay anh ấy có vẻ hấp dẫn.",
+    "id": "sentLegacy_kvtfw2",
+    "vocabWord": "attractive",
+    "topic": "personality",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The new method is basic for beginners.",
-    "vi": "Phương pháp mới cơ bản với người mới."
+    "vi": "Phương pháp mới cơ bản với người mới.",
+    "id": "sentLegacy_1gqbsbg",
+    "vocabWord": "method",
+    "topic": "learning",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "A brilliant person can work well with others.",
-    "vi": "Một người tuyệt vời; xuất sắc có thể làm việc tốt với người khác."
+    "vi": "Một người tuyệt vời; xuất sắc có thể làm việc tốt với người khác.",
+    "id": "sentLegacy_opuvvq",
+    "vocabWord": "brilliant",
+    "topic": "personality",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He remained careless during the discussion.",
-    "vi": "Anh ấy vẫn bất cẩn trong cuộc thảo luận."
+    "vi": "Anh ấy vẫn bất cẩn trong cuộc thảo luận.",
+    "id": "sentLegacy_1xdd5n6",
+    "vocabWord": "discussion",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is central right now.",
-    "vi": "Tình hình hiện tại khá trung tâm; chính."
+    "vi": "Tình hình hiện tại khá trung tâm; chính.",
+    "id": "sentLegacy_1q1i5d5",
+    "vocabWord": "central",
+    "topic": "city",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She certainly checks her work.",
-    "vi": "Cô ấy chắc chắn; tất nhiên kiểm tra bài của mình."
+    "vi": "Cô ấy chắc chắn; tất nhiên kiểm tra bài của mình.",
+    "id": "sentLegacy_1074qkw",
+    "vocabWord": "certainly",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "Her work is very competitive.",
-    "vi": "Công việc của cô ấy rất cạnh tranh; có tính cạnh tranh."
+    "vi": "Công việc của cô ấy rất cạnh tranh; có tính cạnh tranh.",
+    "id": "sentLegacy_u8z73a",
+    "vocabWord": "competitive",
+    "topic": "work",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "It is important to stay conscious.",
-    "vi": "Điều quan trọng là giữ được sự có ý thức; tỉnh táo."
+    "vi": "Điều quan trọng là giữ được sự có ý thức; tỉnh táo.",
+    "id": "sentLegacy_4m5865",
+    "vocabWord": "important",
+    "topic": "adjective1",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "They correctly use the app.",
-    "vi": "Họ một cách chính xác sử dụng ứng dụng."
+    "vi": "Họ một cách chính xác sử dụng ứng dụng.",
+    "id": "sentLegacy_xgppw3",
+    "vocabWord": "correctly",
+    "topic": "study",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is daily right now.",
-    "vi": "Tình hình hiện tại khá hằng ngày."
+    "vi": "Tình hình hiện tại khá hằng ngày.",
+    "id": "sentLegacy_rf73j7",
+    "vocabWord": "right",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She directly checks her work.",
-    "vi": "Cô ấy trực tiếp kiểm tra bài của mình."
+    "vi": "Cô ấy trực tiếp kiểm tra bài của mình.",
+    "id": "sentLegacy_1f4cmqd",
+    "vocabWord": "directly",
+    "topic": "communication",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The new method is dramatic for beginners.",
-    "vi": "Phương pháp mới kịch tính; đáng kể với người mới."
+    "vi": "Phương pháp mới kịch tính; đáng kể với người mới.",
+    "id": "sentLegacy_1vfpiz0",
+    "vocabWord": "dramatic",
+    "topic": "media",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The company wants to stay economic.",
-    "vi": "Công ty muốn duy trì sự thuộc kinh tế."
+    "vi": "Công ty muốn duy trì sự thuộc kinh tế.",
+    "id": "sentLegacy_1p68jgj",
+    "vocabWord": "economic",
+    "topic": "business",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The app should be more electronic.",
-    "vi": "Ứng dụng nên điện tử hơn."
+    "vi": "Ứng dụng nên điện tử hơn.",
+    "id": "sentLegacy_12fwsgs",
+    "vocabWord": "electronic",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The situation is equal right now.",
-    "vi": "Tình hình hiện tại khá bằng nhau; bình đẳng."
+    "vi": "Tình hình hiện tại khá bằng nhau; bình đẳng.",
+    "id": "sentLegacy_1boigu8",
+    "vocabWord": "right",
+    "topic": "daily",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "This idea seems familiar.",
-    "vi": "Ý tưởng này có vẻ quen thuộc."
+    "vi": "Ý tưởng này có vẻ quen thuộc.",
+    "id": "sentLegacy_171qval",
+    "vocabWord": "familiar",
+    "topic": "learning",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The new method is federal for beginners.",
-    "vi": "Phương pháp mới liên bang với người mới."
+    "vi": "Phương pháp mới liên bang với người mới.",
+    "id": "sentLegacy_1bthxr1",
+    "vocabWord": "federal",
+    "topic": "society",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "He generally arrives before class.",
-    "vi": "Anh ấy nói chung; nhìn chung đến trước giờ học."
+    "vi": "Anh ấy nói chung; nhìn chung đến trước giờ học.",
+    "id": "sentLegacy_1blit07",
+    "vocabWord": "generally",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The answer is global in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là toàn cầu."
+    "vi": "Trong trường hợp này, câu trả lời là toàn cầu.",
+    "id": "sentLegacy_k1wy25",
+    "vocabWord": "answer",
+    "topic": "school",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "I gradually practice in the evening.",
-    "vi": "Tôi dần dần luyện tập vào buổi tối."
+    "vi": "Tôi dần dần luyện tập vào buổi tối.",
+    "id": "sentLegacy_1c99ean",
+    "vocabWord": "gradually",
+    "topic": "learning",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "She decided to adjust after lunch.",
-    "vi": "Cô ấy quyết định điều chỉnh sau bữa trưa."
+    "vi": "Cô ấy quyết định điều chỉnh sau bữa trưa.",
+    "id": "sentLegacy_1nwyqx0",
+    "vocabWord": "adjust",
+    "topic": "general",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need a artificial solution.",
-    "vi": "Chúng ta cần một giải pháp nhân tạo."
+    "vi": "Chúng ta cần một giải pháp nhân tạo.",
+    "id": "sentLegacy_e82k4d",
+    "vocabWord": "artificial",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "We need browser for this feature.",
-    "vi": "Chúng ta cần trình duyệt cho tính năng này."
+    "vi": "Chúng ta cần trình duyệt cho tính năng này.",
+    "id": "sentLegacy_1kjc2rq",
+    "vocabWord": "feature",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "en": "The new version supports database.",
-    "vi": "Phiên bản mới hỗ trợ cơ sở dữ liệu."
+    "vi": "Phiên bản mới hỗ trợ cơ sở dữ liệu.",
+    "id": "sentLegacy_1eg03ny",
+    "vocabWord": "database",
+    "topic": "technology",
+    "source": "legacy",
+    "sourceVersion": "legacy",
+    "favorite": false
   },
   {
     "id": "sent7_0001",
