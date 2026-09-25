@@ -75131,7 +75131,7 @@
       "tiếc rằng; tiếc là",
       "phải thừa nhận là, đúng là",
       "rộng",
-      "rộng"
+      "sự kéo; lực kéo"
     ],
     "answer": 0,
     "explain": "unfortunately = tiếc rằng; tiếc là.",
@@ -75148,8 +75148,8 @@
     "options": [
       "phải thừa nhận là, đúng là",
       "rộng",
-      "rộng",
-      "sự kéo; lực kéo"
+      "sự kéo; lực kéo",
+      "kết quả hòa; trận hòa"
     ],
     "answer": 0,
     "explain": "to be sure = phải thừa nhận là, đúng là.",
@@ -76211,7 +76211,7 @@
       "trì hoãn; dời lại",
       "(máy bay) cất cánh",
       "hoàn toàn",
-      "hoàn toàn"
+      "quá khứ; trước đây"
     ],
     "answer": 0,
     "explain": "put off = trì hoãn; dời lại.",
@@ -76228,8 +76228,8 @@
     "options": [
       "(máy bay) cất cánh",
       "hoàn toàn",
-      "hoàn toàn",
-      "quá khứ; trước đây"
+      "quá khứ; trước đây",
+      "trước; trước đó"
     ],
     "answer": 0,
     "explain": "take off = (máy bay) cất cánh.",
@@ -76967,7 +76967,7 @@
       "chính xác; đúng",
       "tốt nhất; hay nhất",
       "cuối cùng, sau cùng",
-      "cuối cùng, sau cùng"
+      "tác giả, nhà văn"
     ],
     "answer": 0,
     "explain": "exact = chính xác; đúng.",
@@ -76984,8 +76984,8 @@
     "options": [
       "tốt nhất; hay nhất",
       "cuối cùng, sau cùng",
-      "cuối cùng, sau cùng",
-      "tác giả, nhà văn"
+      "tác giả, nhà văn",
+      "bối cảnh"
     ],
     "answer": 0,
     "explain": "best = tốt nhất; hay nhất.",
@@ -81089,7 +81089,7 @@
       "chiến tranh",
       "thuyết phục; giành được sự đồng tình",
       "chính trị",
-      "chính trị"
+      "thẳng thắn; chân thành"
     ],
     "answer": 0,
     "explain": "war = chiến tranh.",
@@ -81106,8 +81106,8 @@
     "options": [
       "thuyết phục; giành được sự đồng tình",
       "chính trị",
-      "chính trị",
-      "thẳng thắn; chân thành"
+      "thẳng thắn; chân thành",
+      "cho đến nay, từ trước đến giờ"
     ],
     "answer": 0,
     "explain": "win over = thuyết phục; giành được sự đồng tình.",
@@ -81773,7 +81773,7 @@
       "xấp xỉ, gần đúng",
       "không thể bỏ qua, nhất định phải (xem, đọc, thử)",
       "thỉnh thoảng; đôi khi",
-      "thỉnh thoảng; đôi khi"
+      "nhiều hơn; hơn"
     ],
     "answer": 0,
     "explain": "close to = xấp xỉ, gần đúng.",
@@ -81790,8 +81790,8 @@
     "options": [
       "không thể bỏ qua, nhất định phải (xem, đọc, thử)",
       "thỉnh thoảng; đôi khi",
-      "thỉnh thoảng; đôi khi",
-      "nhiều hơn; hơn"
+      "nhiều hơn; hơn",
+      "tháng Ba"
     ],
     "answer": 0,
     "explain": "must = không thể bỏ qua, nhất định phải (xem, đọc, thử).",
