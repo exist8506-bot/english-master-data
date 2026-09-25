@@ -23,7 +23,7 @@ function currentJson(file) {
 }
 
 function baselineJson(file) {
-  const raw = execFileSync("git", ["show", "origin/main:data/" + file], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+  const raw = execFileSync("git", ["show", "origin/main:data/" + file], { encoding: "utf8", maxBuffer: 256 * 1024 * 1024 });
   return JSON.parse(raw);
 }
 
@@ -48,13 +48,20 @@ const results = {};
 
 for (const file of criticalFiles) {
   try {
-    execFileSync("git", ["cat-file", "-e", "origin/main:data/" + file], { maxBuffer: 64 * 1024 * 1024 });
+    execFileSync("git", ["cat-file", "-e", "origin/main:data/" + file], { maxBuffer: 256 * 1024 * 1024 });
   } catch {
     throw new Error("Baseline file missing on origin/main: data/" + file);
   }
 
-  const base = list(baselineJson(file), file + " (main)");
-  const cur = list(currentJson(file), file + " (PR)");
+  let base;
+  let cur;
+  try {
+    base = list(baselineJson(file), file + " (main)");
+    cur = list(currentJson(file), file + " (PR)");
+  } catch (err) {
+    console.error("PRESERVATION READ ERROR:", file, err.message);
+    throw err;
+  }
 
   const baseKeys = new Set(base.map((x) => keyFor(file, x)).filter(Boolean));
   const curKeys = new Set(cur.map((x) => keyFor(file, x)).filter(Boolean));
@@ -76,8 +83,15 @@ for (const file of criticalFiles) {
   }
 }
 
-const baseExp = baselineJson("expansion500.json");
-const curExp = currentJson("expansion500.json");
+let baseExp;
+let curExp;
+try {
+  baseExp = baselineJson("expansion500.json");
+  curExp = currentJson("expansion500.json");
+} catch (err) {
+  console.error("PRESERVATION READ ERROR: expansion500.json", err.message);
+  throw err;
+}
 if (!baseExp || typeof baseExp !== "object" || !Array.isArray(baseExp.words)) {
   throw new Error("Baseline expansion500.json has invalid shape");
 }
