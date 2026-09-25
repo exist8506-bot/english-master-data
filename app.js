@@ -5,7 +5,7 @@ const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version
 let db={
   vocab:[],sentences:[],questions:[],grammar:[],communication:[],trilingual:[],
   stats:{xp:0,streak:0,learned:0,answered:0,correct:0},
-  profile:{theme:"light",autoUpdate:true,speechRate:1},
+  profile:{theme:"light",autoUpdate:true,speechRate:1,layout:"auto"},
   lastRemoteVersion:""
 };
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
@@ -493,11 +493,22 @@ function validateContent(force){
   if(issues.length)console.warn("[English Master] Data validation:",issues.join("; "));
   return issues;
 }
+function setLayoutMode(mode){
+  const m=["auto","phone","desktop"].includes(String(mode))?String(mode):"auto";
+  db.profile.layout=m;save();render();
+}
+function applyLayoutMode(){
+  const m=["auto","phone","desktop"].includes(String(db.profile.layout))?db.profile.layout:"auto";
+  document.body.classList.remove("layout-phone","layout-desktop");
+  if(m==="phone")document.body.classList.add("layout-phone");
+  else if(m==="desktop")document.body.classList.add("layout-desktop");
+}
 function render(){
   db.vocab=Array.isArray(db.vocab)?db.vocab:[];db.sentences=Array.isArray(db.sentences)?db.sentences:[];
   db.questions=Array.isArray(db.questions)?db.questions:[];db.grammar=Array.isArray(db.grammar)?db.grammar:[];
   db.communication=Array.isArray(db.communication)?db.communication:[];db.trilingual=Array.isArray(db.trilingual)?db.trilingual:[];
   document.body.classList.toggle("dark",db.profile.theme==="dark");
+  applyLayoutMode();
   if($("streak"))$("streak").textContent=db.stats.streak||0;
   const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,stats:stats,settings:settings}[view]||home;
   fn();
@@ -522,6 +533,34 @@ function goPage(kind,page){
   else if(kind==="trilingual")trilingualPage=p;
   else if(kind==="communication")communicationPage=p;
   render();
+}
+function jumpToItem(kind,raw){
+  const n=Math.trunc(Number(raw));
+  let total=0;
+  if(kind==="listening")total=db.sentences.length;
+  else if(kind==="speaking")total=db.sentences.length;
+  else if(kind==="quiz")total=db.questions.length;
+  else return false;
+  if(!Number.isFinite(n)||n<1||n>total){
+    toast("Nhập số từ 1 đến "+total+".");
+    return false;
+  }
+  if(kind==="listening"){
+    if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0}
+    window.__showListeningText=false;
+    listenIndex=n-1;
+  }else if(kind==="speaking"){
+    stopRecognition();
+    speakIndex=n-1;
+  }else{
+    quizIndex=n-1;
+    quizAnswered=false;
+  }
+  save();render();
+  return true;
+}
+function jumpControl(kind,current,total){
+  return '<div class="jump-control"><span class="muted small">Tới câu</span><input class="jump-input" id="'+kind+'Jump" type="number" min="1" max="'+total+'" value="'+(current+1)+'" aria-label="Tới câu" onkeydown="if(event.key===\'Enter\')jumpToItem(\''+kind+'\',this.value)"><button onclick="jumpToItem(\''+kind+'\',document.getElementById(\''+kind+'Jump\').value)">Đi</button></div>';
 }
 
 function vocab(){
@@ -618,7 +657,7 @@ function renderListening(){
   const choices=shuffle([s.vi,...wrong]);
   const showText=window.__showListeningText===true;
   $("view").innerHTML=shell("Luyện nghe","Nghe câu ở nhiều tốc độ, nghe lại và chọn đúng nghĩa.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(listenIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span></div>'+
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(listenIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span>'+jumpControl("listening",listenIndex%db.sentences.length,db.sentences.length)+'</div>'+
     '<div class="actions" style="margin:14px 0"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 0.75×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">▶ 1×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1.25,\'en-US\')">🐇 1.25×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔁 Nghe lại</button><button onclick="window.__showListeningText=!window.__showListeningText;renderListening()">👁 '+(showText?"Ẩn câu":"Hiện câu")+'</button></div>'+
     (showText?'<div class="hint"><b>'+esc(s.en)+'</b><br><span class="muted">'+esc(s.vi||"")+'</span></div>':'')+
     '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){return '<button class="option" onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>'}).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">Hãy nghe rồi chọn.</div></div>');
@@ -639,7 +678,7 @@ function renderSpeaking(){
   if(!db.sentences.length){$("view").innerHTML=shell("Phát âm","Chưa có câu luyện.");return}
   const s=db.sentences[speakIndex%db.sentences.length],v=db.vocab.find(function(x){return norm(x.word)===norm(s.vocabWord)});
   $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → có thể tự chuyển sang câu kế tiếp.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span></div>'+
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span>'+jumpControl("speaking",speakIndex%db.sentences.length,db.sentences.length)+'</div>'+
     '<h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p><div class="hint"><b>Từ trọng tâm:</b> '+esc(s.vocabWord||"")+' <span class="ipa">'+esc(v?.ipa||"")+'</span></div>'+
     '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button>'+audioButton(s.vocabWord||"","🔊 Nghe từ","en-US",1,v)+
     '<button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
@@ -684,7 +723,7 @@ function quiz(){
   if(!db.questions.length){$("view").innerHTML=shell("Trắc nghiệm","Chưa có dữ liệu.");return}
   const q=db.questions[quizIndex%db.questions.length],opts=q.options||[];
   $("view").innerHTML=shell("Trắc nghiệm","Nghe câu hỏi và từng đáp án trước khi chọn.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(q.topic||"daily")+'</span><span class="muted">Câu '+(quizIndex%db.questions.length+1)+' / '+db.questions.length+'</span></div>'+
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(q.topic||"daily")+'</span><span class="muted">Câu '+(quizIndex%db.questions.length+1)+' / '+db.questions.length+'</span>'+jumpControl("quiz",quizIndex%db.questions.length,db.questions.length)+'</div>'+
     '<div class="actions" style="margin:14px 0">'+audioButton(q.prompt,"🔊 Đọc câu hỏi",guessLang(q.prompt),1,q)+'</div><h2>'+esc(q.prompt)+'</h2><div class="options">'+
     opts.map(function(o,i){return '<div class="row"><button class="option" style="flex:1" onclick="answerQuiz('+i+','+Number(q.answer)+')">'+String.fromCharCode(65+i)+". "+esc(o)+'</button>'+audioButton(o,"🔊",guessLang(o),1)+'</div>'}).join("")+
     '</div><div id="qres" class="hint" style="margin-top:14px">Chọn đáp án.</div></div>');
@@ -755,13 +794,18 @@ function voiceAvailability(){
   }catch(e){return "Không kiểm tra được giọng đọc";}
 }
 function settings(){
+  const layout=String(db.profile.layout||"auto");
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
     '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div></div>'+
     '<div class="card"><h2>🔊 Âm thanh & ngôn ngữ</h2><p class="muted">Giọng trình duyệt: '+esc(voiceAvailability())+'</p><p class="small muted">Nếu không có file audio riêng, app sẽ dùng giọng đọc TTS phù hợp với ngôn ngữ.</p></div>'+
     '<div class="card"><h2>🔊 Tốc độ mặc định</h2><select onchange="db.profile.speechRate=Number(this.value);save()">'+[0.5,0.75,1,1.25,1.5].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.speechRate||1)===x?"selected":"")+'>'+x+'×</option>'}).join("")+'</select></div>'+
+    '<div class="card"><h2>📱💻 Bố cục thiết bị</h2><p class="small muted">“Tự động” bám theo kích thước màn hình. Có thể khóa bố cục Điện thoại hoặc Máy tính để thao tác thuận tiện hơn.</p><select id="layoutMode" onchange="setLayoutMode(this.value)">'+
+      '<option value="auto" '+(layout==="auto"?"selected":"")+'>Tự động theo màn hình</option>'+
+      '<option value="phone" '+(layout==="phone"?"selected":"")+'>Điện thoại</option>'+
+      '<option value="desktop" '+(layout==="desktop"?"selected":"")+'>Máy tính</option>'+
+    '</select></div>'+
     '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>');
 }
-
 function registerServiceWorker(){
   if("serviceWorker" in navigator){
     window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){})});
