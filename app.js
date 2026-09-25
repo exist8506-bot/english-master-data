@@ -310,7 +310,7 @@ function playAudio(url,fallbackText,rate,lang){
     a.play().catch(function(){toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");if(t)speak(t,r,l,0,true);});
   }catch(e){
     toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");
-    if(t)speak(t,r,l);
+    if(t)speak(t,r,l,0,true);
   }
 }
 function audioUrl(item,lang){
