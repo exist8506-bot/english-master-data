@@ -19074,8 +19074,8 @@
   },
   {
     "id": "sent6_1ellvnc",
-    "en": "I plan to absorb tomorrow.",
-    "vi": "Tôi dự định hấp thụ; tiếp thu vào ngày mai.",
+    "en": "I plan to absorb the new material tomorrow.",
+    "vi": "Tôi dự định tiếp thu tài liệu mới vào ngày mai.",
     "topic": "learning",
     "grammar": "Simple Present",
     "vocabWord": "absorb",
@@ -19083,8 +19083,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually absorb after work.",
-    "legacyVi": "Tôi thường hấp thụ; tiếp thu sau giờ làm."
+    "legacyEn": "I plan to absorb tomorrow.",
+    "legacyVi": "Tôi dự định hấp thụ; tiếp thu vào ngày mai."
   },
   {
     "id": "sent6_1obvo8q",
@@ -19144,8 +19144,8 @@
   },
   {
     "id": "sent6_shabuq",
-    "en": "I plan to accomplish tomorrow.",
-    "vi": "Tôi dự định hoàn thành; đạt được vào ngày mai.",
+    "en": "I plan to accomplish this task tomorrow.",
+    "vi": "Tôi dự định hoàn thành nhiệm vụ này vào ngày mai.",
     "topic": "work",
     "grammar": "Simple Present",
     "vocabWord": "accomplish",
@@ -19153,8 +19153,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually accomplish after work.",
-    "legacyVi": "Tôi thường hoàn thành; đạt được sau giờ làm."
+    "legacyEn": "I plan to accomplish tomorrow.",
+    "legacyVi": "Tôi dự định hoàn thành; đạt được vào ngày mai."
   },
   {
     "id": "sent6_1fc02fs",
@@ -19200,8 +19200,8 @@
   },
   {
     "id": "sent6_1jwq6xo",
-    "en": "The answer is additional in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là thêm; bổ sung.",
+    "en": "We need an additional example in this case.",
+    "vi": "Chúng ta cần thêm một ví dụ trong trường hợp này.",
     "topic": "general",
     "grammar": "Adjective in context",
     "vocabWord": "additional",
@@ -19209,13 +19209,13 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is additional for us.",
-    "legacyVi": "Kế hoạch mới khá thêm; bổ sung với chúng tôi."
+    "legacyEn": "The answer is additional in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là thêm; bổ sung."
   },
   {
     "id": "sent6_cbn977",
-    "en": "I learned more about address this week.",
-    "vi": "Tôi biết thêm về địa chỉ; giải quyết trong tuần này.",
+    "en": "I learned more about the address this week.",
+    "vi": "Tôi biết thêm về địa chỉ trong tuần này.",
     "topic": "daily",
     "grammar": "Everyday English",
     "vocabWord": "address",
@@ -19223,8 +19223,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use address in my daily life.",
-    "legacyVi": "Tôi sử dụng địa chỉ; giải quyết trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about address this week.",
+    "legacyVi": "Tôi biết thêm về địa chỉ; giải quyết trong tuần này."
   },
   {
     "id": "sent6_16mu0zq",
@@ -19354,8 +19354,8 @@
   },
   {
     "id": "sent6_flby0m",
-    "en": "I learned more about aim this week.",
-    "vi": "Tôi biết thêm về mục tiêu; nhắm tới trong tuần này.",
+    "en": "I learned more about the aim of the project this week.",
+    "vi": "Tôi biết thêm về mục tiêu của dự án trong tuần này.",
     "topic": "goal",
     "grammar": "Everyday English",
     "vocabWord": "aim",
@@ -19363,8 +19363,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use aim in my daily life.",
-    "legacyVi": "Tôi sử dụng mục tiêu; nhắm tới trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about aim this week.",
+    "legacyVi": "Tôi biết thêm về mục tiêu; nhắm tới trong tuần này."
   },
   {
     "id": "sent6_76x8t6",
@@ -19396,8 +19396,8 @@
   },
   {
     "id": "sent6_1llq4ib",
-    "en": "He wants to amaze this week.",
-    "vi": "Anh ấy muốn làm kinh ngạc trong tuần này.",
+    "en": "He wants to amaze his audience this week.",
+    "vi": "Anh ấy muốn làm khán giả ngạc nhiên trong tuần này.",
     "topic": "emotion",
     "grammar": "Simple Present",
     "vocabWord": "amaze",
@@ -19405,8 +19405,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually amaze after work.",
-    "legacyVi": "Tôi thường làm kinh ngạc sau giờ làm."
+    "legacyEn": "He wants to amaze this week.",
+    "legacyVi": "Anh ấy muốn làm kinh ngạc trong tuần này."
   },
   {
     "id": "sent6_1y738g0",
@@ -19550,8 +19550,8 @@
   },
   {
     "id": "sent6_t33gus",
-    "en": "The answer is appropriate in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là phù hợp.",
+    "en": "This response is appropriate in this case.",
+    "vi": "Câu trả lời này phù hợp trong trường hợp này.",
     "topic": "general",
     "grammar": "Adjective in context",
     "vocabWord": "appropriate",
@@ -19559,8 +19559,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is appropriate for us.",
-    "legacyVi": "Kế hoạch mới khá phù hợp với chúng tôi."
+    "legacyEn": "The answer is appropriate in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là phù hợp."
   },
   {
     "id": "sent6_wqsxeu",
@@ -19606,8 +19606,8 @@
   },
   {
     "id": "sent6_10u1c09",
-    "en": "He wants to argue this week.",
-    "vi": "Anh ấy muốn tranh luận; cãi trong tuần này.",
+    "en": "He wants to argue about the proposal this week.",
+    "vi": "Anh ấy muốn tranh luận về đề xuất trong tuần này.",
     "topic": "communication",
     "grammar": "Simple Present",
     "vocabWord": "argue",
@@ -19615,8 +19615,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually argue after work.",
-    "legacyVi": "Tôi thường tranh luận; cãi sau giờ làm."
+    "legacyEn": "He wants to argue this week.",
+    "legacyVi": "Anh ấy muốn tranh luận; cãi trong tuần này."
   },
   {
     "id": "sent6_1suceuu",
@@ -19746,8 +19746,8 @@
   },
   {
     "id": "sent6_7gq9q6",
-    "en": "He wants to attract this week.",
-    "vi": "Anh ấy muốn thu hút trong tuần này.",
+    "en": "He wants to attract more customers this week.",
+    "vi": "Anh ấy muốn thu hút thêm khách hàng trong tuần này.",
     "topic": "general",
     "grammar": "Simple Present",
     "vocabWord": "attract",
@@ -19755,8 +19755,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually attract after work.",
-    "legacyVi": "Tôi thường thu hút sau giờ làm."
+    "legacyEn": "He wants to attract this week.",
+    "legacyVi": "Anh ấy muốn thu hút trong tuần này."
   },
   {
     "id": "sent6_6hfodk",
@@ -19984,8 +19984,8 @@
   },
   {
     "id": "sent6_13svyvq",
-    "en": "I learned more about choice this week.",
-    "vi": "Tôi biết thêm về lựa chọn trong tuần này.",
+    "en": "I learned more about my choice this week.",
+    "vi": "Tôi biết thêm về lựa chọn của mình trong tuần này.",
     "topic": "decision",
     "grammar": "Everyday English",
     "vocabWord": "choice",
@@ -19993,8 +19993,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use choice in my daily life.",
-    "legacyVi": "Tôi sử dụng lựa chọn trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about choice this week.",
+    "legacyVi": "Tôi biết thêm về lựa chọn trong tuần này."
   },
   {
     "id": "sent6_yjrgjw",
@@ -20040,8 +20040,8 @@
   },
   {
     "id": "sent6_k0lxlf",
-    "en": "The answer is classic in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là kinh điển.",
+    "en": "This is a classic example of the problem.",
+    "vi": "Đây là một ví dụ kinh điển của vấn đề này.",
     "topic": "culture",
     "grammar": "Adjective in context",
     "vocabWord": "classic",
@@ -20049,8 +20049,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is classic for us.",
-    "legacyVi": "Kế hoạch mới khá kinh điển với chúng tôi."
+    "legacyEn": "The answer is classic in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là kinh điển."
   },
   {
     "id": "sent6_1ou5sr8",
@@ -20264,8 +20264,8 @@
   },
   {
     "id": "sent6_1mx2nkh",
-    "en": "I learned more about confidence this week.",
-    "vi": "Tôi biết thêm về sự tự tin trong tuần này.",
+    "en": "I learned more about building confidence this week.",
+    "vi": "Tôi biết thêm về cách xây dựng sự tự tin trong tuần này.",
     "topic": "personality",
     "grammar": "Everyday English",
     "vocabWord": "confidence",
@@ -20273,8 +20273,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use confidence in my daily life.",
-    "legacyVi": "Tôi sử dụng sự tự tin trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about confidence this week.",
+    "legacyVi": "Tôi biết thêm về sự tự tin trong tuần này."
   },
   {
     "id": "sent6_vba1qn",
@@ -20334,8 +20334,8 @@
   },
   {
     "id": "sent6_ile0wz",
-    "en": "We talked about contact after dinner.",
-    "vi": "Chúng tôi nói về liên hệ; sự tiếp xúc sau bữa tối.",
+    "en": "I stayed in contact with my friend after dinner.",
+    "vi": "Tôi giữ liên lạc với bạn sau bữa tối.",
     "topic": "communication",
     "grammar": "Everyday English",
     "vocabWord": "contact",
@@ -20343,8 +20343,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use contact in my daily life.",
-    "legacyVi": "Tôi sử dụng liên hệ; sự tiếp xúc trong cuộc sống hằng ngày."
+    "legacyEn": "We talked about contact after dinner.",
+    "legacyVi": "Chúng tôi nói về liên hệ; sự tiếp xúc sau bữa tối."
   },
   {
     "id": "sent6_ptotjv",
@@ -20404,8 +20404,8 @@
   },
   {
     "id": "sent6_mx9w2m",
-    "en": "I plan to control tomorrow.",
-    "vi": "Tôi dự định kiểm soát; sự kiểm soát vào ngày mai.",
+    "en": "I plan to control my spending tomorrow.",
+    "vi": "Tôi dự định kiểm soát chi tiêu của mình vào ngày mai.",
     "topic": "general",
     "grammar": "Simple Present",
     "vocabWord": "control",
@@ -20413,8 +20413,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually control after work.",
-    "legacyVi": "Tôi thường kiểm soát; sự kiểm soát sau giờ làm."
+    "legacyEn": "I plan to control tomorrow.",
+    "legacyVi": "Tôi dự định kiểm soát; sự kiểm soát vào ngày mai."
   },
   {
     "id": "sent6_300ao",
@@ -20544,8 +20544,8 @@
   },
   {
     "id": "sent6_oy3kg0",
-    "en": "I learned more about damage this week.",
-    "vi": "Tôi biết thêm về thiệt hại; làm hỏng trong tuần này.",
+    "en": "We learned more about the damage this week.",
+    "vi": "Chúng tôi biết thêm về thiệt hại trong tuần này.",
     "topic": "general",
     "grammar": "Everyday English",
     "vocabWord": "damage",
@@ -20553,8 +20553,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use damage in my daily life.",
-    "legacyVi": "Tôi sử dụng thiệt hại; làm hỏng trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about damage this week.",
+    "legacyVi": "Tôi biết thêm về thiệt hại; làm hỏng trong tuần này."
   },
   {
     "id": "sent6_vkujs0",
@@ -20614,8 +20614,8 @@
   },
   {
     "id": "sent6_m6cywx",
-    "en": "I plan to defend tomorrow.",
-    "vi": "Tôi dự định bảo vệ vào ngày mai.",
+    "en": "I plan to defend my idea tomorrow.",
+    "vi": "Tôi dự định bảo vệ ý tưởng của mình vào ngày mai.",
     "topic": "general",
     "grammar": "Simple Present",
     "vocabWord": "defend",
@@ -20623,8 +20623,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually defend after work.",
-    "legacyVi": "Tôi thường bảo vệ sau giờ làm."
+    "legacyEn": "I plan to defend tomorrow.",
+    "legacyVi": "Tôi dự định bảo vệ vào ngày mai."
   },
   {
     "id": "sent6_tl1176",
@@ -20684,8 +20684,8 @@
   },
   {
     "id": "sent6_1lqbofn",
-    "en": "I learned more about desire this week.",
-    "vi": "Tôi biết thêm về mong muốn; khao khát trong tuần này.",
+    "en": "I learned more about his desire to improve this week.",
+    "vi": "Tôi biết thêm về mong muốn tiến bộ của anh ấy trong tuần này.",
     "topic": "emotion",
     "grammar": "Everyday English",
     "vocabWord": "desire",
@@ -20693,8 +20693,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use desire in my daily life.",
-    "legacyVi": "Tôi sử dụng mong muốn; khao khát trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about desire this week.",
+    "legacyVi": "Tôi biết thêm về mong muốn; khao khát trong tuần này."
   },
   {
     "id": "sent6_qoyjro",
@@ -20740,8 +20740,8 @@
   },
   {
     "id": "sent6_qlxxgc",
-    "en": "The answer is direct in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là trực tiếp; chỉ dẫn.",
+    "en": "He gave a direct answer.",
+    "vi": "Anh ấy đưa ra một câu trả lời trực tiếp.",
     "topic": "general",
     "grammar": "Adjective in context",
     "vocabWord": "direct",
@@ -20749,8 +20749,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is direct for us.",
-    "legacyVi": "Kế hoạch mới khá trực tiếp; chỉ dẫn với chúng tôi."
+    "legacyEn": "The answer is direct in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là trực tiếp; chỉ dẫn."
   },
   {
     "id": "sent6_17z5i79",
@@ -21034,7 +21034,7 @@
   },
   {
     "id": "sent6_1yj1fof",
-    "en": "I learned more about event this week.",
+    "en": "I learned more about the event this week.",
     "vi": "Tôi biết thêm về sự kiện trong tuần này.",
     "topic": "daily",
     "grammar": "Everyday English",
@@ -21043,8 +21043,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use event in my daily life.",
-    "legacyVi": "Tôi sử dụng sự kiện trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about event this week.",
+    "legacyVi": "Tôi biết thêm về sự kiện trong tuần này."
   },
   {
     "id": "sent6_1hv0y78",
@@ -21524,8 +21524,8 @@
   },
   {
     "id": "sent6_1o0tpuw",
-    "en": "I plan to inform tomorrow.",
-    "vi": "Tôi dự định thông báo; cung cấp thông tin vào ngày mai.",
+    "en": "I plan to inform the team tomorrow.",
+    "vi": "Tôi dự định thông báo cho nhóm vào ngày mai.",
     "topic": "communication",
     "grammar": "Simple Present",
     "vocabWord": "inform",
@@ -21533,8 +21533,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually inform after work.",
-    "legacyVi": "Tôi thường thông báo; cung cấp thông tin sau giờ làm."
+    "legacyEn": "I plan to inform tomorrow.",
+    "legacyVi": "Tôi dự định thông báo; cung cấp thông tin vào ngày mai."
   },
   {
     "id": "sent6_10ve6an",
@@ -21594,8 +21594,8 @@
   },
   {
     "id": "sent6_xll16e",
-    "en": "I plan to introduce tomorrow.",
-    "vi": "Tôi dự định giới thiệu vào ngày mai.",
+    "en": "I plan to introduce the new member tomorrow.",
+    "vi": "Tôi dự định giới thiệu thành viên mới vào ngày mai.",
     "topic": "communication",
     "grammar": "Simple Present",
     "vocabWord": "introduce",
@@ -21603,8 +21603,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually introduce after work.",
-    "legacyVi": "Tôi thường giới thiệu sau giờ làm."
+    "legacyEn": "I plan to introduce tomorrow.",
+    "legacyVi": "Tôi dự định giới thiệu vào ngày mai."
   },
   {
     "id": "sent6_doiff1",
@@ -21636,8 +21636,8 @@
   },
   {
     "id": "sent6_68bc1i",
-    "en": "He wants to involve this week.",
-    "vi": "Anh ấy muốn liên quan; bao gồm trong tuần này.",
+    "en": "He wants to involve the whole team this week.",
+    "vi": "Anh ấy muốn cả nhóm cùng tham gia trong tuần này.",
     "topic": "general",
     "grammar": "Simple Present",
     "vocabWord": "involve",
@@ -21645,8 +21645,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually involve after work.",
-    "legacyVi": "Tôi thường liên quan; bao gồm sau giờ làm."
+    "legacyEn": "He wants to involve this week.",
+    "legacyVi": "Anh ấy muốn liên quan; bao gồm trong tuần này."
   },
   {
     "id": "sent6_1fowu2o",
@@ -21664,8 +21664,8 @@
   },
   {
     "id": "sent6_1bexoro",
-    "en": "I learned more about judge this week.",
-    "vi": "Tôi biết thêm về thẩm phán; đánh giá trong tuần này.",
+    "en": "I learned more about the judge's decision this week.",
+    "vi": "Tôi biết thêm về quyết định của thẩm phán trong tuần này.",
     "topic": "society",
     "grammar": "Everyday English",
     "vocabWord": "judge",
@@ -21673,8 +21673,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use judge in my daily life.",
-    "legacyVi": "Tôi sử dụng thẩm phán; đánh giá trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about judge this week.",
+    "legacyVi": "Tôi biết thêm về thẩm phán; đánh giá trong tuần này."
   },
   {
     "id": "sent6_ptcwas",
@@ -21804,8 +21804,8 @@
   },
   {
     "id": "sent6_1tbc3qw",
-    "en": "I plan to motivate tomorrow.",
-    "vi": "Tôi dự định tạo động lực vào ngày mai.",
+    "en": "I plan to motivate the team tomorrow.",
+    "vi": "Tôi dự định tạo động lực cho nhóm vào ngày mai.",
     "topic": "learning",
     "grammar": "Simple Present",
     "vocabWord": "motivate",
@@ -21813,8 +21813,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually motivate after work.",
-    "legacyVi": "Tôi thường tạo động lực sau giờ làm."
+    "legacyEn": "I plan to motivate tomorrow.",
+    "legacyVi": "Tôi dự định tạo động lực vào ngày mai."
   },
   {
     "id": "sent6_1hb0wo",
@@ -22014,8 +22014,8 @@
   },
   {
     "id": "sent6_1ezu2cf",
-    "en": "I plan to participate tomorrow.",
-    "vi": "Tôi dự định tham gia vào ngày mai.",
+    "en": "I plan to participate in the meeting tomorrow.",
+    "vi": "Tôi dự định tham gia cuộc họp vào ngày mai.",
     "topic": "social",
     "grammar": "Simple Present",
     "vocabWord": "participate",
@@ -22023,8 +22023,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually participate after work.",
-    "legacyVi": "Tôi thường tham gia sau giờ làm."
+    "legacyEn": "I plan to participate tomorrow.",
+    "legacyVi": "Tôi dự định tham gia vào ngày mai."
   },
   {
     "id": "sent6_aojbai",
@@ -22070,8 +22070,8 @@
   },
   {
     "id": "sent6_117gzfk",
-    "en": "The answer is physical in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là thuộc thể chất; vật lý.",
+    "en": "We need physical evidence in this case.",
+    "vi": "Chúng ta cần bằng chứng vật chất trong trường hợp này.",
     "topic": "health",
     "grammar": "Adjective in context",
     "vocabWord": "physical",
@@ -22079,8 +22079,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is physical for us.",
-    "legacyVi": "Kế hoạch mới khá thuộc thể chất; vật lý với chúng tôi."
+    "legacyEn": "The answer is physical in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là thuộc thể chất; vật lý."
   },
   {
     "id": "sent6_1dwnxde",
@@ -22210,8 +22210,8 @@
   },
   {
     "id": "sent6_lnwvrj",
-    "en": "The answer is proper in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là đúng; phù hợp.",
+    "en": "Use the proper form in this case.",
+    "vi": "Hãy dùng dạng thích hợp trong trường hợp này.",
     "topic": "general",
     "grammar": "Adjective in context",
     "vocabWord": "proper",
@@ -22219,13 +22219,13 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is proper for us.",
-    "legacyVi": "Kế hoạch mới khá đúng; phù hợp với chúng tôi."
+    "legacyEn": "The answer is proper in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là đúng; phù hợp."
   },
   {
     "id": "sent6_1iyzzxi",
-    "en": "I plan to provide tomorrow.",
-    "vi": "Tôi dự định cung cấp vào ngày mai.",
+    "en": "I plan to provide more details tomorrow.",
+    "vi": "Tôi dự định cung cấp thêm chi tiết vào ngày mai.",
     "topic": "work",
     "grammar": "Simple Present",
     "vocabWord": "provide",
@@ -22233,8 +22233,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually provide after work.",
-    "legacyVi": "Tôi thường cung cấp sau giờ làm."
+    "legacyEn": "I plan to provide tomorrow.",
+    "legacyVi": "Tôi dự định cung cấp vào ngày mai."
   },
   {
     "id": "sent6_4dbqiw",
@@ -22364,8 +22364,8 @@
   },
   {
     "id": "sent6_104h0xh",
-    "en": "I plan to refer tomorrow.",
-    "vi": "Tôi dự định đề cập; tham khảo vào ngày mai.",
+    "en": "I plan to refer to the report tomorrow.",
+    "vi": "Tôi dự định tham khảo báo cáo vào ngày mai.",
     "topic": "study",
     "grammar": "Simple Present",
     "vocabWord": "refer",
@@ -22373,8 +22373,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually refer after work.",
-    "legacyVi": "Tôi thường đề cập; tham khảo sau giờ làm."
+    "legacyEn": "I plan to refer tomorrow.",
+    "legacyVi": "Tôi dự định đề cập; tham khảo vào ngày mai."
   },
   {
     "id": "sent6_14q4wq2",
@@ -22406,8 +22406,8 @@
   },
   {
     "id": "sent6_18qe0n7",
-    "en": "He wants to replace this week.",
-    "vi": "Anh ấy muốn thay thế trong tuần này.",
+    "en": "He wants to replace the old chair this week.",
+    "vi": "Anh ấy muốn thay chiếc ghế cũ trong tuần này.",
     "topic": "daily",
     "grammar": "Simple Present",
     "vocabWord": "replace",
@@ -22415,8 +22415,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually replace after work.",
-    "legacyVi": "Tôi thường thay thế sau giờ làm."
+    "legacyEn": "He wants to replace this week.",
+    "legacyVi": "Anh ấy muốn thay thế trong tuần này."
   },
   {
     "id": "sent6_1undzpg",
@@ -22504,8 +22504,8 @@
   },
   {
     "id": "sent6_19ntey2",
-    "en": "I plan to satisfy tomorrow.",
-    "vi": "Tôi dự định làm hài lòng; đáp ứng vào ngày mai.",
+    "en": "I plan to satisfy the requirements tomorrow.",
+    "vi": "Tôi dự định đáp ứng các yêu cầu vào ngày mai.",
     "topic": "emotion",
     "grammar": "Simple Present",
     "vocabWord": "satisfy",
@@ -22513,8 +22513,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually satisfy after work.",
-    "legacyVi": "Tôi thường làm hài lòng; đáp ứng sau giờ làm."
+    "legacyEn": "I plan to satisfy tomorrow.",
+    "legacyVi": "Tôi dự định làm hài lòng; đáp ứng vào ngày mai."
   },
   {
     "id": "sent6_1jtharf",
@@ -22560,8 +22560,8 @@
   },
   {
     "id": "sent6_110pbmg",
-    "en": "The answer is separate in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là riêng biệt; tách.",
+    "en": "Keep the two files separate.",
+    "vi": "Hãy giữ hai tệp riêng biệt.",
     "topic": "general",
     "grammar": "Adjective in context",
     "vocabWord": "separate",
@@ -22569,13 +22569,13 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is separate for us.",
-    "legacyVi": "Kế hoạch mới khá riêng biệt; tách với chúng tôi."
+    "legacyEn": "The answer is separate in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là riêng biệt; tách."
   },
   {
     "id": "sent6_4qoiv2",
-    "en": "I learned more about solution this week.",
-    "vi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này.",
+    "en": "I learned more about the solution this week.",
+    "vi": "Tôi biết thêm về giải pháp trong tuần này.",
     "topic": "thinking",
     "grammar": "Everyday English",
     "vocabWord": "solution",
@@ -22583,8 +22583,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I use solution in my daily life.",
-    "legacyVi": "Tôi sử dụng giải pháp; dung dịch trong cuộc sống hằng ngày."
+    "legacyEn": "I learned more about solution this week.",
+    "legacyVi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này."
   },
   {
     "id": "sent6_7ps15k",
@@ -22686,8 +22686,8 @@
   },
   {
     "id": "sent6_wszl1h",
-    "en": "He wants to suggest this week.",
-    "vi": "Anh ấy muốn gợi ý; đề xuất trong tuần này.",
+    "en": "He wants to suggest a new idea this week.",
+    "vi": "Anh ấy muốn đề xuất một ý tưởng mới trong tuần này.",
     "topic": "communication",
     "grammar": "Simple Present",
     "vocabWord": "suggest",
@@ -22695,8 +22695,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually suggest after work.",
-    "legacyVi": "Tôi thường gợi ý; đề xuất sau giờ làm."
+    "legacyEn": "He wants to suggest this week.",
+    "legacyVi": "Anh ấy muốn gợi ý; đề xuất trong tuần này."
   },
   {
     "id": "sent6_gfr9pk",
@@ -22826,8 +22826,8 @@
   },
   {
     "id": "sent6_9qno7b",
-    "en": "He wants to treat this week.",
-    "vi": "Anh ấy muốn đối xử; điều trị trong tuần này.",
+    "en": "He wants to treat his friends to dinner this week.",
+    "vi": "Anh ấy muốn mời bạn bè ăn tối trong tuần này.",
     "topic": "social",
     "grammar": "Simple Present",
     "vocabWord": "treat",
@@ -22835,8 +22835,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually treat after work.",
-    "legacyVi": "Tôi thường đối xử; điều trị sau giờ làm."
+    "legacyEn": "He wants to treat this week.",
+    "legacyVi": "Anh ấy muốn đối xử; điều trị trong tuần này."
   },
   {
     "id": "sent6_97j1ww",
@@ -22994,8 +22994,8 @@
   },
   {
     "id": "sent6_stwkjj",
-    "en": "I plan to admire tomorrow.",
-    "vi": "Tôi dự định ngưỡng mộ vào ngày mai.",
+    "en": "I plan to admire the view tomorrow.",
+    "vi": "Tôi dự định ngắm cảnh vào ngày mai.",
     "topic": "emotion",
     "grammar": "Simple Present",
     "vocabWord": "admire",
@@ -23003,8 +23003,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually admire after work.",
-    "legacyVi": "Tôi thường ngưỡng mộ sau giờ làm."
+    "legacyEn": "I plan to admire tomorrow.",
+    "legacyVi": "Tôi dự định ngưỡng mộ vào ngày mai."
   },
   {
     "id": "sent6_1o8glr2",
@@ -23036,8 +23036,8 @@
   },
   {
     "id": "sent6_1qftzze",
-    "en": "He wants to announce this week.",
-    "vi": "Anh ấy muốn thông báo trong tuần này.",
+    "en": "He wants to announce the result this week.",
+    "vi": "Anh ấy muốn công bố kết quả trong tuần này.",
     "topic": "communication",
     "grammar": "Simple Present",
     "vocabWord": "announce",
@@ -23045,8 +23045,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually announce after work.",
-    "legacyVi": "Tôi thường thông báo sau giờ làm."
+    "legacyEn": "He wants to announce this week.",
+    "legacyVi": "Anh ấy muốn thông báo trong tuần này."
   },
   {
     "id": "sent6_gqa0eb",
@@ -23064,8 +23064,8 @@
   },
   {
     "id": "sent6_1llajsq",
-    "en": "I plan to approve tomorrow.",
-    "vi": "Tôi dự định chấp thuận vào ngày mai.",
+    "en": "I plan to approve the request tomorrow.",
+    "vi": "Tôi dự định phê duyệt yêu cầu vào ngày mai.",
     "topic": "work",
     "grammar": "Simple Present",
     "vocabWord": "approve",
@@ -23073,8 +23073,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually approve after work.",
-    "legacyVi": "Tôi thường chấp thuận sau giờ làm."
+    "legacyEn": "I plan to approve tomorrow.",
+    "legacyVi": "Tôi dự định chấp thuận vào ngày mai."
   },
   {
     "id": "sent6_lqyeiu",
@@ -23106,8 +23106,8 @@
   },
   {
     "id": "sent6_1gr0u5w",
-    "en": "He wants to compare this week.",
-    "vi": "Anh ấy muốn so sánh trong tuần này.",
+    "en": "He wants to compare the two options this week.",
+    "vi": "Anh ấy muốn so sánh hai lựa chọn trong tuần này.",
     "topic": "study",
     "grammar": "Simple Present",
     "vocabWord": "compare",
@@ -23115,8 +23115,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually compare after work.",
-    "legacyVi": "Tôi thường so sánh sau giờ làm."
+    "legacyEn": "He wants to compare this week.",
+    "legacyVi": "Anh ấy muốn so sánh trong tuần này."
   },
   {
     "id": "sent6_1d8gyf8",
@@ -23274,8 +23274,8 @@
   },
   {
     "id": "sent6_1i7favm",
-    "en": "I plan to guess tomorrow.",
-    "vi": "Tôi dự định đoán vào ngày mai.",
+    "en": "I plan to guess the answer tomorrow.",
+    "vi": "Tôi dự định đoán câu trả lời vào ngày mai.",
     "topic": "thinking",
     "grammar": "Simple Present",
     "vocabWord": "guess",
@@ -23283,8 +23283,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually guess after work.",
-    "legacyVi": "Tôi thường đoán sau giờ làm."
+    "legacyEn": "I plan to guess tomorrow.",
+    "legacyVi": "Tôi dự định đoán vào ngày mai."
   },
   {
     "id": "sent6_1z3jlj",
@@ -24604,8 +24604,8 @@
   },
   {
     "id": "sent6_1ihct39",
-    "en": "I plan to destroy tomorrow.",
-    "vi": "Tôi dự định phá hủy vào ngày mai.",
+    "en": "I plan to destroy the old files tomorrow.",
+    "vi": "Tôi dự định xóa hủy các tệp cũ vào ngày mai.",
     "topic": "general",
     "grammar": "Simple Present",
     "vocabWord": "destroy",
@@ -24613,8 +24613,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually destroy after work.",
-    "legacyVi": "Tôi thường phá hủy sau giờ làm."
+    "legacyEn": "I plan to destroy tomorrow.",
+    "legacyVi": "Tôi dự định phá hủy vào ngày mai."
   },
   {
     "id": "sent6_5af82",
@@ -24674,8 +24674,8 @@
   },
   {
     "id": "sent6_1m7x08",
-    "en": "I plan to educate tomorrow.",
-    "vi": "Tôi dự định giáo dục vào ngày mai.",
+    "en": "I plan to educate students tomorrow.",
+    "vi": "Tôi dự định dạy học sinh vào ngày mai.",
     "topic": "education",
     "grammar": "Simple Present",
     "vocabWord": "educate",
@@ -24683,8 +24683,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually educate after work.",
-    "legacyVi": "Tôi thường giáo dục sau giờ làm."
+    "legacyEn": "I plan to educate tomorrow.",
+    "legacyVi": "Tôi dự định giáo dục vào ngày mai."
   },
   {
     "id": "sent6_1pc1dt8",
@@ -24716,8 +24716,8 @@
   },
   {
     "id": "sent6_1cph7f2",
-    "en": "He wants to enable this week.",
-    "vi": "Anh ấy muốn cho phép; làm cho có thể trong tuần này.",
+    "en": "He wants to enable notifications this week.",
+    "vi": "Anh ấy muốn bật thông báo trong tuần này.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "enable",
@@ -24725,8 +24725,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually enable after work.",
-    "legacyVi": "Tôi thường cho phép; làm cho có thể sau giờ làm."
+    "legacyEn": "He wants to enable this week.",
+    "legacyVi": "Anh ấy muốn cho phép; làm cho có thể trong tuần này."
   },
   {
     "id": "sent6_436nsh",
@@ -24786,8 +24786,8 @@
   },
   {
     "id": "sent6_1xnhe43",
-    "en": "He wants to export this week.",
-    "vi": "Anh ấy muốn xuất khẩu trong tuần này.",
+    "en": "He wants to export the report this week.",
+    "vi": "Anh ấy muốn xuất báo cáo trong tuần này.",
     "topic": "business",
     "grammar": "Simple Present",
     "vocabWord": "export",
@@ -24795,8 +24795,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually export after work.",
-    "legacyVi": "Tôi thường xuất khẩu sau giờ làm."
+    "legacyEn": "He wants to export this week.",
+    "legacyVi": "Anh ấy muốn xuất khẩu trong tuần này."
   },
   {
     "id": "sent6_4xcaun",
@@ -24856,8 +24856,8 @@
   },
   {
     "id": "sent6_1gnobdh",
-    "en": "He wants to flow this week.",
-    "vi": "Anh ấy muốn chảy; dòng chảy trong tuần này.",
+    "en": "He wants the water to flow smoothly this week.",
+    "vi": "Anh ấy muốn nước chảy đều trong tuần này.",
     "topic": "nature",
     "grammar": "Simple Present",
     "vocabWord": "flow",
@@ -24865,8 +24865,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually flow after work.",
-    "legacyVi": "Tôi thường chảy; dòng chảy sau giờ làm."
+    "legacyEn": "He wants to flow this week.",
+    "legacyVi": "Anh ấy muốn chảy; dòng chảy trong tuần này."
   },
   {
     "id": "sent6_dj82w2",
@@ -24884,8 +24884,8 @@
   },
   {
     "id": "sent6_1l0u8ia",
-    "en": "I plan to generate tomorrow.",
-    "vi": "Tôi dự định tạo ra; phát sinh vào ngày mai.",
+    "en": "I plan to generate a report tomorrow.",
+    "vi": "Tôi dự định tạo một báo cáo vào ngày mai.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "generate",
@@ -24893,8 +24893,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually generate after work.",
-    "legacyVi": "Tôi thường tạo ra; phát sinh sau giờ làm."
+    "legacyEn": "I plan to generate tomorrow.",
+    "legacyVi": "Tôi dự định tạo ra; phát sinh vào ngày mai."
   },
   {
     "id": "sent6_18u7prz",
@@ -24926,8 +24926,8 @@
   },
   {
     "id": "sent6_1ecczrx",
-    "en": "He wants to identify this week.",
-    "vi": "Anh ấy muốn nhận dạng; xác định trong tuần này.",
+    "en": "He wants to identify the problem this week.",
+    "vi": "Anh ấy muốn xác định vấn đề trong tuần này.",
     "topic": "study",
     "grammar": "Simple Present",
     "vocabWord": "identify",
@@ -24935,8 +24935,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually identify after work.",
-    "legacyVi": "Tôi thường nhận dạng; xác định sau giờ làm."
+    "legacyEn": "He wants to identify this week.",
+    "legacyVi": "Anh ấy muốn nhận dạng; xác định trong tuần này."
   },
   {
     "id": "sent6_tydyjq",
@@ -24954,8 +24954,8 @@
   },
   {
     "id": "sent6_1oxqoaa",
-    "en": "I plan to impress tomorrow.",
-    "vi": "Tôi dự định gây ấn tượng vào ngày mai.",
+    "en": "I plan to impress the clients tomorrow.",
+    "vi": "Tôi dự định gây ấn tượng với khách hàng vào ngày mai.",
     "topic": "emotion",
     "grammar": "Simple Present",
     "vocabWord": "impress",
@@ -24963,8 +24963,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually impress after work.",
-    "legacyVi": "Tôi thường gây ấn tượng sau giờ làm."
+    "legacyEn": "I plan to impress tomorrow.",
+    "legacyVi": "Tôi dự định gây ấn tượng vào ngày mai."
   },
   {
     "id": "sent6_diewiu",
@@ -24996,8 +24996,8 @@
   },
   {
     "id": "sent6_4onse3",
-    "en": "He wants to intend this week.",
-    "vi": "Anh ấy muốn dự định trong tuần này.",
+    "en": "He intends to finish the project this week.",
+    "vi": "Anh ấy dự định hoàn thành dự án trong tuần này.",
     "topic": "thinking",
     "grammar": "Simple Present",
     "vocabWord": "intend",
@@ -25005,8 +25005,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually intend after work.",
-    "legacyVi": "Tôi thường dự định sau giờ làm."
+    "legacyEn": "He wants to intend this week.",
+    "legacyVi": "Anh ấy muốn dự định trong tuần này."
   },
   {
     "id": "sent6_1cyjlg0",
@@ -25024,8 +25024,8 @@
   },
   {
     "id": "sent6_1k9jlbo",
-    "en": "I plan to investigate tomorrow.",
-    "vi": "Tôi dự định điều tra; tìm hiểu vào ngày mai.",
+    "en": "I plan to investigate the issue tomorrow.",
+    "vi": "Tôi dự định điều tra vấn đề vào ngày mai.",
     "topic": "study",
     "grammar": "Simple Present",
     "vocabWord": "investigate",
@@ -25033,8 +25033,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually investigate after work.",
-    "legacyVi": "Tôi thường điều tra; tìm hiểu sau giờ làm."
+    "legacyEn": "I plan to investigate tomorrow.",
+    "legacyVi": "Tôi dự định điều tra; tìm hiểu vào ngày mai."
   },
   {
     "id": "sent6_1v2gwva",
@@ -25066,8 +25066,8 @@
   },
   {
     "id": "sent6_1r6ffdy",
-    "en": "He wants to marry this week.",
-    "vi": "Anh ấy muốn kết hôn trong tuần này.",
+    "en": "He wants to marry his partner someday.",
+    "vi": "Anh ấy muốn kết hôn với người bạn đời của mình một ngày nào đó.",
     "topic": "family",
     "grammar": "Simple Present",
     "vocabWord": "marry",
@@ -25075,8 +25075,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually marry after work.",
-    "legacyVi": "Tôi thường kết hôn sau giờ làm."
+    "legacyEn": "He wants to marry this week.",
+    "legacyVi": "Anh ấy muốn kết hôn trong tuần này."
   },
   {
     "id": "sent6_129bn2j",
@@ -25094,8 +25094,8 @@
   },
   {
     "id": "sent6_n211q8",
-    "en": "I plan to obtain tomorrow.",
-    "vi": "Tôi dự định có được vào ngày mai.",
+    "en": "I plan to obtain the information tomorrow.",
+    "vi": "Tôi dự định lấy thông tin vào ngày mai.",
     "topic": "general",
     "grammar": "Simple Present",
     "vocabWord": "obtain",
@@ -25103,8 +25103,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually obtain after work.",
-    "legacyVi": "Tôi thường có được sau giờ làm."
+    "legacyEn": "I plan to obtain tomorrow.",
+    "legacyVi": "Tôi dự định có được vào ngày mai."
   },
   {
     "id": "sent6_1hr7avf",
@@ -25136,8 +25136,8 @@
   },
   {
     "id": "sent6_1976xvf",
-    "en": "He wants to promote this week.",
-    "vi": "Anh ấy muốn thúc đẩy; thăng chức trong tuần này.",
+    "en": "He wants to promote the new service this week.",
+    "vi": "Anh ấy muốn quảng bá dịch vụ mới trong tuần này.",
     "topic": "work",
     "grammar": "Simple Present",
     "vocabWord": "promote",
@@ -25145,8 +25145,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually promote after work.",
-    "legacyVi": "Tôi thường thúc đẩy; thăng chức sau giờ làm."
+    "legacyEn": "He wants to promote this week.",
+    "legacyVi": "Anh ấy muốn thúc đẩy; thăng chức trong tuần này."
   },
   {
     "id": "sent6_66vkhh",
@@ -25164,8 +25164,8 @@
   },
   {
     "id": "sent6_yw9eal",
-    "en": "I plan to prove tomorrow.",
-    "vi": "Tôi dự định chứng minh vào ngày mai.",
+    "en": "I plan to prove my point tomorrow.",
+    "vi": "Tôi dự định chứng minh quan điểm của mình vào ngày mai.",
     "topic": "study",
     "grammar": "Simple Present",
     "vocabWord": "prove",
@@ -25173,8 +25173,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually prove after work.",
-    "legacyVi": "Tôi thường chứng minh sau giờ làm."
+    "legacyEn": "I plan to prove tomorrow.",
+    "legacyVi": "Tôi dự định chứng minh vào ngày mai."
   },
   {
     "id": "sent6_oow6zg",
@@ -25206,8 +25206,8 @@
   },
   {
     "id": "sent6_6odjvg",
-    "en": "He wants to regret this week.",
-    "vi": "Anh ấy muốn hối tiếc; lấy làm tiếc trong tuần này.",
+    "en": "He doesn't want to regret his decision.",
+    "vi": "Anh ấy không muốn hối tiếc về quyết định của mình.",
     "topic": "emotion",
     "grammar": "Simple Present",
     "vocabWord": "regret",
@@ -25215,8 +25215,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually regret after work.",
-    "legacyVi": "Tôi thường hối tiếc; lấy làm tiếc sau giờ làm."
+    "legacyEn": "He wants to regret this week.",
+    "legacyVi": "Anh ấy muốn hối tiếc; lấy làm tiếc trong tuần này."
   },
   {
     "id": "sent6_4hyb9a",
@@ -25234,8 +25234,8 @@
   },
   {
     "id": "sent6_rr2bp4",
-    "en": "I plan to remind tomorrow.",
-    "vi": "Tôi dự định nhắc nhở vào ngày mai.",
+    "en": "I plan to remind the team tomorrow.",
+    "vi": "Tôi dự định nhắc nhóm vào ngày mai.",
     "topic": "communication",
     "grammar": "Simple Present",
     "vocabWord": "remind",
@@ -25243,8 +25243,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually remind after work.",
-    "legacyVi": "Tôi thường nhắc nhở sau giờ làm."
+    "legacyEn": "I plan to remind tomorrow.",
+    "legacyVi": "Tôi dự định nhắc nhở vào ngày mai."
   },
   {
     "id": "sent6_1hrkcqj",
@@ -25276,8 +25276,8 @@
   },
   {
     "id": "sent6_1q4ohak",
-    "en": "He wants to rescue this week.",
-    "vi": "Anh ấy muốn cứu hộ; giải cứu trong tuần này.",
+    "en": "He wants to rescue the injured animal.",
+    "vi": "Anh ấy muốn cứu con vật bị thương.",
     "topic": "safety",
     "grammar": "Simple Present",
     "vocabWord": "rescue",
@@ -25285,8 +25285,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually rescue after work.",
-    "legacyVi": "Tôi thường cứu hộ; giải cứu sau giờ làm."
+    "legacyEn": "He wants to rescue this week.",
+    "legacyVi": "Anh ấy muốn cứu hộ; giải cứu trong tuần này."
   },
   {
     "id": "sent6_1cjiu77",
@@ -25304,8 +25304,8 @@
   },
   {
     "id": "sent6_1p9rz69",
-    "en": "I plan to restore tomorrow.",
-    "vi": "Tôi dự định khôi phục vào ngày mai.",
+    "en": "I plan to restore the old file tomorrow.",
+    "vi": "Tôi dự định khôi phục tệp cũ vào ngày mai.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "restore",
@@ -25313,8 +25313,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually restore after work.",
-    "legacyVi": "Tôi thường khôi phục sau giờ làm."
+    "legacyEn": "I plan to restore tomorrow.",
+    "legacyVi": "Tôi dự định khôi phục vào ngày mai."
   },
   {
     "id": "sent6_wm9l8w",
@@ -25346,8 +25346,8 @@
   },
   {
     "id": "sent6_cgvyr",
-    "en": "He wants to rush this week.",
-    "vi": "Anh ấy muốn vội vàng; lao nhanh trong tuần này.",
+    "en": "He doesn't want to rush the decision.",
+    "vi": "Anh ấy không muốn quyết định vội vàng.",
     "topic": "daily",
     "grammar": "Simple Present",
     "vocabWord": "rush",
@@ -25355,8 +25355,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually rush after work.",
-    "legacyVi": "Tôi thường vội vàng; lao nhanh sau giờ làm."
+    "legacyEn": "He wants to rush this week.",
+    "legacyVi": "Anh ấy muốn vội vàng; lao nhanh trong tuần này."
   },
   {
     "id": "sent6_42lmc4",
@@ -25374,8 +25374,8 @@
   },
   {
     "id": "sent6_1oaiyd6",
-    "en": "I plan to settle tomorrow.",
-    "vi": "Tôi dự định giải quyết; định cư vào ngày mai.",
+    "en": "I plan to settle the issue tomorrow.",
+    "vi": "Tôi dự định giải quyết vấn đề vào ngày mai.",
     "topic": "life",
     "grammar": "Simple Present",
     "vocabWord": "settle",
@@ -25383,8 +25383,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually settle after work.",
-    "legacyVi": "Tôi thường giải quyết; định cư sau giờ làm."
+    "legacyEn": "I plan to settle tomorrow.",
+    "legacyVi": "Tôi dự định giải quyết; định cư vào ngày mai."
   },
   {
     "id": "sent6_3j7yxw",
@@ -25444,8 +25444,8 @@
   },
   {
     "id": "sent6_15i427i",
-    "en": "I plan to supply tomorrow.",
-    "vi": "Tôi dự định cung cấp; nguồn cung vào ngày mai.",
+    "en": "I plan to supply the store tomorrow.",
+    "vi": "Tôi dự định cung cấp hàng cho cửa hàng vào ngày mai.",
     "topic": "business",
     "grammar": "Simple Present",
     "vocabWord": "supply",
@@ -25453,8 +25453,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually supply after work.",
-    "legacyVi": "Tôi thường cung cấp; nguồn cung sau giờ làm."
+    "legacyEn": "I plan to supply tomorrow.",
+    "legacyVi": "Tôi dự định cung cấp; nguồn cung vào ngày mai."
   },
   {
     "id": "sent6_1kxbue2",
@@ -25486,8 +25486,8 @@
   },
   {
     "id": "sent6_1fmnqfk",
-    "en": "He wants to tend this week.",
-    "vi": "Anh ấy muốn có xu hướng; chăm sóc trong tuần này.",
+    "en": "He tends to help new staff at work.",
+    "vi": "Anh ấy có xu hướng giúp nhân viên mới ở nơi làm việc.",
     "topic": "general",
     "grammar": "Simple Present",
     "vocabWord": "tend",
@@ -25495,8 +25495,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually tend after work.",
-    "legacyVi": "Tôi thường có xu hướng; chăm sóc sau giờ làm."
+    "legacyEn": "He wants to tend this week.",
+    "legacyVi": "Anh ấy muốn có xu hướng; chăm sóc trong tuần này."
   },
   {
     "id": "sent6_678ter",
@@ -25514,8 +25514,8 @@
   },
   {
     "id": "sent6_18sn8hy",
-    "en": "I plan to threaten tomorrow.",
-    "vi": "Tôi dự định đe dọa vào ngày mai.",
+    "en": "The storm may threaten the coast tomorrow.",
+    "vi": "Cơn bão có thể đe dọa vùng ven biển vào ngày mai.",
     "topic": "safety",
     "grammar": "Simple Present",
     "vocabWord": "threaten",
@@ -25523,8 +25523,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "I usually threaten after work.",
-    "legacyVi": "Tôi thường đe dọa sau giờ làm."
+    "legacyEn": "I plan to threaten tomorrow.",
+    "legacyVi": "Tôi dự định đe dọa vào ngày mai."
   },
   {
     "id": "sent6_1k1dya9",
@@ -25920,8 +25920,8 @@
   },
   {
     "id": "sent6_8bmg8e",
-    "en": "The answer is global in this case.",
-    "vi": "Trong trường hợp này, câu trả lời là toàn cầu.",
+    "en": "This is a global issue.",
+    "vi": "Đây là một vấn đề toàn cầu.",
     "topic": "society",
     "grammar": "Adjective in context",
     "vocabWord": "global",
@@ -25929,8 +25929,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is global for us.",
-    "legacyVi": "Kế hoạch mới khá toàn cầu với chúng tôi."
+    "legacyEn": "The answer is global in this case.",
+    "legacyVi": "Trong trường hợp này, câu trả lời là toàn cầu."
   },
   {
     "id": "sent6_r4dx02",
