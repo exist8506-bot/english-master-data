@@ -857,19 +857,37 @@ init();
 
 function dataAudit(){
   const exp=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
-  const N=s=>new Set((s||[]).filter(Boolean).map(norm));
-  const sw=N(db.sentences.map(x=>x.vocabWord)),qw=N(db.questions.map(x=>x.vocabWord));
-  const tw=N(db.trilingual.map(x=>x.en)),cw=N(db.communication.flatMap(x=>x.vocab||[]));
-  const gw=N(db.grammar.flatMap(x=>x.vocabWords||[]));
+  const normSet=arr=>new Set((arr||[]).filter(Boolean).map(norm));
+  const sw=normSet(db.sentences.map(x=>x.vocabWord));
+  const qw=normSet(db.questions.map(x=>x.vocabWord));
+  const tw=normSet(db.trilingual.map(x=>x.en));
+  const cw=normSet(db.communication.flatMap(x=>x.vocab||[]));
+  const gw=normSet(db.grammar.flatMap(x=>x.vocabWords||[]));
+  const missing={sentences:[],questions:[],trilingual:[],communication:[],grammar:[],audio:[]};
+  exp.forEach(v=>{
+    const w=norm(v.word);
+    if(!sw.has(w))missing.sentences.push(v.word);
+    if(!qw.has(w))missing.questions.push(v.word);
+    if(!tw.has(w))missing.trilingual.push(v.word);
+    if(!cw.has(w))missing.communication.push(v.word);
+    if(!gw.has(w))missing.grammar.push(v.word);
+    if(!(v.audio==="tts"&&v.audioEn))missing.audio.push(v.word);
+  });
   const result={
     expansion500:exp.length,
     duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
-    sentences:exp.filter(x=>sw.has(norm(x.word))).length,
-    questions:exp.filter(x=>qw.has(norm(x.word))).length,
-    trilingual:exp.filter(x=>tw.has(norm(x.word))).length,
-    communication:exp.filter(x=>cw.has(norm(x.word))).length,
-    grammar:exp.filter(x=>gw.has(norm(x.word))).length,
-    audio:exp.filter(x=>x.audio==="tts"&&x.audioEn).length
+    sentences:exp.length-missing.sentences.length,
+    questions:exp.length-missing.questions.length,
+    trilingual:exp.length-missing.trilingual.length,
+    communication:exp.length-missing.communication.length,
+    grammar:exp.length-missing.grammar.length,
+    audio:exp.length-missing.audio.length,
+    missing
   };
-  console.table(result); return result;
+  console.table({
+    expansion500:result.expansion500,duplicateWords:result.duplicateWords,
+    sentences:result.sentences,questions:result.questions,trilingual:result.trilingual,
+    communication:result.communication,grammar:result.grammar,audio:result.audio
+  });
+  return result;
 }
