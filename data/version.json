@@ -1,7 +1,7 @@
 {
-  "version": "7.0.1",
+  "version": "7.0.2",
   "updatedAt": "2026-09-25",
-  "releaseNotes": "V7.0.1 bugfix: phục hồi toàn bộ 500 câu V6; sửa lưu/khôi phục tiến độ, quiz, nhận diện giọng nói, TTS và đồng bộ cập nhật.",
+  "releaseNotes": "V7.0.2: sửa liên kết câu V6, bổ sung IPA/audio metadata, sửa TTS đa ngôn ngữ, quiz, microphone, lưu/khôi phục tiến độ, IndexedDB cache, pagination, Ôn tập và thống kê từ đã học.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
