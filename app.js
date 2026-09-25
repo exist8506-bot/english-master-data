@@ -291,8 +291,19 @@ function speakSequence(lines,rate,lang){
   }
   next();
 }
-function audioButton(text,label,lang,rate){
-  const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1;
+function playAudio(url){
+  const u=String(url||"").trim();if(!u)return;
+  try{
+    const a=new Audio(u);a.preload="auto";a.play().catch(function(){toast("Không phát được file âm thanh. Đang dùng giọng đọc trình duyệt.");});
+  }catch(e){toast("Không thể phát file âm thanh.");}
+}
+function audioUrl(item){
+  if(!item||typeof item!=="object")return "";
+  return String(item.audio||item.audioUrl||item.audio_url||"").trim();
+}
+function audioButton(text,label,lang,rate,item){
+  const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1,url=audioUrl(item);
+  if(url)return '<button class="btn btn-secondary" onclick="event.stopPropagation();playAudio(\''+escapeJs(url)+'\')">'+(label||"🔊 Nghe")+'</button>';
   return '<button class="btn btn-secondary" onclick="event.stopPropagation();speak(\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
 }
 function audioGroup(text,lang){
@@ -395,17 +406,42 @@ async function updateOnline(force){
     toast("Cập nhật lỗi — chưa thay đổi dữ liệu hiện tại: "+e.message);
   }
 }
+function validateContent(){
+  const checks=[
+    ["vocab",db.vocab,v=>norm(v.word)],
+    ["sentences",db.sentences,v=>String(v.id||"")],
+    ["questions",db.questions,v=>String(v.id||"")],
+    ["grammar",db.grammar,v=>String(v.id||v.title||"")],
+    ["communication",db.communication,v=>String(v.id||v.title||"")],
+    ["trilingual",db.trilingual,v=>String(v.id||"")+"|"+norm(v.en)+"|"+norm(v.zh||v.chinese)]
+  ];
+  const issues=[];
+  checks.forEach(function(item){
+    const seen=new Set(),dup=new Set(),bad=[];
+    (item[1]||[]).forEach(function(x){
+      const k=item[2](x||{});
+      if(!k)bad.push(x);
+      else if(seen.has(k))dup.add(k);
+      else seen.add(k);
+    });
+    if(dup.size)issues.push(item[0]+" trùng "+dup.size);
+    if(bad.length)issues.push(item[0]+" thiếu ID/từ khóa "+bad.length);
+  });
+  if(issues.length)console.warn("[English Master] Data validation:",issues.join("; "));
+  return issues;
+}
 function render(){
   db.vocab=Array.isArray(db.vocab)?db.vocab:[];db.sentences=Array.isArray(db.sentences)?db.sentences:[];
   db.questions=Array.isArray(db.questions)?db.questions:[];db.grammar=Array.isArray(db.grammar)?db.grammar:[];
   db.communication=Array.isArray(db.communication)?db.communication:[];db.trilingual=Array.isArray(db.trilingual)?db.trilingual:[];
   document.body.classList.toggle("dark",db.profile.theme==="dark");
   if($("streak"))$("streak").textContent=db.stats.streak||0;
+  validateContent();
   const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,stats:stats,settings:settings}[view]||home;
   fn();
 }
 function home(){
-  $("view").innerHTML=shell("English Master V7.0.2","Học • Luyện • Nhớ • Cải thiện",
+  $("view").innerHTML=shell("English Master V7.0.3","Học • Luyện • Nhớ • Cải thiện",
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
