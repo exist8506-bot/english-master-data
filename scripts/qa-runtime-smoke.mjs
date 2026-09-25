@@ -31,6 +31,8 @@ class El {
     this.textContent = "";
     this.disabled = false;
     this.className = "";
+    this.attributes = {};
+    this.setAttribute = (name, value) => { this.attributes[name] = String(value); };
     this.classList = {
       _set: new Set(),
       add: (...xs) => xs.forEach((x) => this.classList._set.add(x)),
@@ -68,11 +70,17 @@ function SpeechSynthesisUtterance(text) {
   this.onerror = null;
 }
 
+const windowListeners = new Map();
 const window = {
   indexedDB: undefined,
   __showListeningText: false,
   addEventListener(name, fn) {
+    if (!windowListeners.has(name)) windowListeners.set(name, []);
+    windowListeners.get(name).push(fn);
     if (name === "load") fn();
+  },
+  __emit(name, payload) {
+    for (const fn of windowListeners.get(name) || []) fn(payload);
   },
   speechSynthesis: {
     getVoices() {
@@ -284,19 +292,37 @@ check("one-click 500-word audit passes", document.getElementById("contentAuditRe
 check("settings exposes device layout selector", document.getElementById("view").innerHTML.includes('id="layoutMode"') && document.getElementById("view").innerHTML.includes("Điện thoại") && document.getElementById("view").innerHTML.includes("Máy tính"));
 T.setLayoutMode("phone");
 check("phone layout mode applies", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
+check("quick button is desktop-targeting in phone mode",
+  document.getElementById("layoutQuick").textContent === "🖥️" &&
+  document.getElementById("layoutQuick").attributes.title === "Chuyển sang giao diện máy tính" &&
+  document.getElementById("layoutQuick").attributes["aria-label"] === "Chuyển sang giao diện máy tính"
+);
 T.toggleLayoutQuick();
 check("quick layout button switches to desktop", T.snap().db.profile.layout === "desktop" && document.body.classList._set.has("layout-desktop") && document.getElementById("layoutQuick").textContent === "📱");
 T.toggleLayoutQuick();
 check("quick layout button switches to phone", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && document.getElementById("layoutQuick").textContent === "🖥️");
+check("quick button is mutually exclusive",
+  document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop")
+);
+check("quick layout choice is persisted",
+  JSON.parse(storage.get("englishMaster_v1")).profile.layout === "phone"
+);
 T.setLayoutMode("desktop");
 check("desktop layout mode applies", T.snap().db.profile.layout === "desktop" && document.body.classList._set.has("layout-desktop") && !document.body.classList._set.has("layout-phone"));
 T.setLayoutMode("auto");
 check("auto layout mode restores", T.snap().db.profile.layout === "auto" && document.body.classList._set.has("layout-desktop"));
 
 const originalMatchMedia = window.matchMedia;
-window.matchMedia = (query) => ({ matches: query.includes("max-width: 800px"), addEventListener() {}, addListener() {} });
+let simulatedPhone = true;
+window.matchMedia = (query) => ({ matches: query.includes("max-width: 800px") ? simulatedPhone : false, addEventListener() {}, addListener() {} });
 T.setLayoutMode("auto");
 check("auto layout detects phone viewport", document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
+simulatedPhone = false;
+window.__emit("resize");
+check("auto layout follows viewport change to desktop", document.body.classList._set.has("layout-desktop") && !document.body.classList._set.has("layout-phone"));
+simulatedPhone = true;
+window.__emit("resize");
+check("auto layout follows viewport change back to phone", document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
 window.matchMedia = originalMatchMedia;
 T.setLayoutMode("desktop");
 check("desktop layout remains isolated", !document.body.classList._set.has("layout-phone") && document.body.classList._set.has("layout-desktop"));
