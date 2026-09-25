@@ -342,6 +342,10 @@ check("index references app/style/manifest", index.includes('src="app.js"') && i
 check("service worker caches app assets", sw.includes("app.js") && sw.includes("styles.css") && sw.includes("manifest.json"));
 check("manifest is installable", manifest.display === "standalone" && manifest.start_url === "./" && manifest.icons?.length >= 2);
 check("version signals align", /APP_VERSION="8\.0\.0"/.test(app) && /application-version" content="8\.0\.0"/.test(index) && /English Master V8\.0\.0/.test(index) && /english-master-v8\.0\.0/.test(sw));
+const styles=fs.readFileSync(path.join(root,"styles.css"),"utf8");
+check("phone layout is scoped only to phone class", styles.includes("body.layout-phone") && styles.includes("body.layout-phone #side") && styles.includes("body.layout-phone main"));
+check("phone layout uses bottom navigation", styles.includes("body.layout-phone #side{position:fixed") && styles.includes("body.layout-phone #side button"));
+
 
 if (failures.length) {
   console.error("\nRUNTIME SMOKE FAILED");
