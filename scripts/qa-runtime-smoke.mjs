@@ -411,6 +411,7 @@ check("phone layout uses bottom navigation", styles.includes("body.layout-phone 
 check("phone layout has safe-area support", styles.includes("env(safe-area-inset-bottom)"));
 check("phone layout hardens long tables", styles.includes("body.layout-phone .table{min-width:620px}"));
 check("phone layout keeps touch targets usable", styles.includes("body.layout-phone button,body.layout-phone input,body.layout-phone select{min-height:42px}"));
+check("quick layout button has stable touch size", styles.includes(".layout-quick{min-width:42px;min-height:42px") && styles.includes("body.layout-phone .layout-quick,body.layout-desktop .layout-quick"));
 
 
 if (failures.length) {
