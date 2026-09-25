@@ -529,7 +529,7 @@ function flashcards(){
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):list[idx%list.length];
   if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
   const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
-  const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US")+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
+  const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US",v)+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
   $("view").innerHTML=shell(reviewActive?"Ôn tập bằng Flashcards":"Flashcards",reviewActive?"Đang ôn các từ đến hạn/chưa nhớ.":"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
     '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
 }
@@ -595,7 +595,7 @@ function renderSpeaking(){
   $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → có thể tự chuyển sang câu kế tiếp.",
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span></div>'+
     '<h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p><div class="hint"><b>Từ trọng tâm:</b> '+esc(s.vocabWord||"")+' <span class="ipa">'+esc(v?.ipa||"")+'</span></div>'+
-    '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button>'+audioButton(s.vocabWord||"","🔊 Nghe từ","en-US",1)+
+    '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button>'+audioButton(s.vocabWord||"","🔊 Nghe từ","en-US",1,v)+
     '<button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
     '<div class="actions" style="margin-top:10px"><button onclick="autoNextSpeaking=!autoNextSpeaking;renderSpeaking()">⏭️ Tự chuyển: '+(autoNextSpeaking?"BẬT":"TẮT")+'</button><span class="muted small">Phím → cũng chuyển câu</span></div>'+
     '<div id="speechResult" class="hint" style="margin-top:14px">Nghe mẫu rồi nói lại.</div></div>');
