@@ -1,7 +1,7 @@
 {
-  "version": "7.0.3",
+  "version": "7.0.4",
   "updatedAt": "2026-09-25",
-  "releaseNotes": "V7.0.3: bảo toàn tiến độ khi nạp cache, cải thiện audio/TTS đa ngôn ngữ, hỗ trợ audio URL, kiểm tra dữ liệu runtime, sửa trạng thái Ôn tập.",
+  "releaseNotes": "V7.0.4: bảo toàn tiến độ khi nạp cache, cải thiện audio/TTS đa ngôn ngữ, hỗ trợ audio URL, kiểm tra dữ liệu runtime, sửa trạng thái Ôn tập, khóa đồng bộ song song và chặn dữ liệu remote không hợp lệ.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
