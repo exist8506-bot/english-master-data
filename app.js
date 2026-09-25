@@ -11,7 +11,7 @@ let db={
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
-let reviewQueue=[],reviewIndex=0;
+let reviewQueue=[],reviewIndex=0,validatedContentSignature="";
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
 let legacyStorageLoaded=false;
@@ -184,6 +184,7 @@ async function hydrateContent(){
     db={...db,...contentSnapshot(cached)};
     applyUserSnapshot(liveUserState);
     if(pendingUserState)applyUserSnapshot({vocabState:pendingUserState});
+    validateContent(true);
     render();
   }
   const hasContent=db.vocab.length&&db.sentences.length&&db.questions.length&&db.trilingual.length;
@@ -400,6 +401,7 @@ async function updateOnline(force){
 
     const remoteContent={...next,lastRemoteVersion:ver};
     db={...db,...remoteContent};
+    validateContent(true);
     if(pendingUserState){applyUserSnapshot({vocabState:pendingUserState});pendingUserState=null;}
     const cached=await cacheContent(db);
     if(!cached&&"indexedDB" in window)toast("Nội dung đã cập nhật nhưng chưa tạo được bản cache offline.");
@@ -409,7 +411,9 @@ async function updateOnline(force){
     toast("Cập nhật lỗi — chưa thay đổi dữ liệu hiện tại: "+e.message);
   }
 }
-function validateContent(){
+function validateContent(force){
+  const signature=[db.lastRemoteVersion,db.vocab.length,db.sentences.length,db.questions.length,db.grammar.length,db.communication.length,db.trilingual.length].join("|");
+  if(!force&&validatedContentSignature===signature)return [];
   const checks=[
     ["vocab",db.vocab,v=>norm(v.word)],
     ["sentences",db.sentences,v=>String(v.id||"")],
@@ -430,6 +434,7 @@ function validateContent(){
     if(dup.size)issues.push(item[0]+" trùng "+dup.size);
     if(bad.length)issues.push(item[0]+" thiếu ID/từ khóa "+bad.length);
   });
+  validatedContentSignature=signature;
   if(issues.length)console.warn("[English Master] Data validation:",issues.join("; "));
   return issues;
 }
@@ -439,7 +444,6 @@ function render(){
   db.communication=Array.isArray(db.communication)?db.communication:[];db.trilingual=Array.isArray(db.trilingual)?db.trilingual:[];
   document.body.classList.toggle("dark",db.profile.theme==="dark");
   if($("streak"))$("streak").textContent=db.stats.streak||0;
-  validateContent();
   const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,stats:stats,settings:settings}[view]||home;
   fn();
 }
