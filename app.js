@@ -358,7 +358,8 @@ function listenCheck(el,selected,correct){
   document.querySelectorAll(".option").forEach(function(b){b.disabled=true});
   const ok=norm(selected)===norm(correct);el.classList.add(ok?"correct":"wrong");
   $("listenResult").innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(correct)+"</b>";
-  db.stats.answered++;recordActivity();recordVocabOutcome(s.vocabWord,ok);if(ok){db.stats.correct++;addXP(10)}save();
+  const currentSentence=db.sentences[listenIndex%db.sentences.length];
+  db.stats.answered++;recordActivity();recordVocabOutcome(currentSentence?.vocabWord,ok);if(ok){db.stats.correct++;addXP(10)}save();
   if(listenAdvanceTimer)clearTimeout(listenAdvanceTimer);
   listenAdvanceTimer=setTimeout(function(){listenAdvanceTimer=0;listenIndex=(listenIndex+1)%db.sentences.length;window.__showListeningText=false;save();renderListening()},700);
 }
