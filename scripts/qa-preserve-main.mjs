@@ -76,8 +76,14 @@ for (const file of criticalFiles) {
   }
 }
 
-const baseExp = list(baselineJson("expansion500.json"), "expansion500.json (main)");
-const curExp = list(currentJson("expansion500.json"), "expansion500.json (PR)");
+const baseExp = baselineJson("expansion500.json");
+const curExp = currentJson("expansion500.json");
+if (!baseExp || typeof baseExp !== "object" || !Array.isArray(baseExp.words)) {
+  throw new Error("Baseline expansion500.json has invalid shape");
+}
+if (!curExp || typeof curExp !== "object" || !Array.isArray(curExp.words)) {
+  throw new Error("Current expansion500.json has invalid shape");
+}
 const baseWords = new Set(baseExp.words.map((x) => norm(x?.word)).filter(Boolean));
 const curWords = new Set(curExp.words.map((x) => norm(x?.word)).filter(Boolean));
 const missingExpansionWords = [...baseWords].filter((w) => !curWords.has(w));
