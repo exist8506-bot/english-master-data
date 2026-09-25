@@ -51,10 +51,18 @@ function detect(name,fn){
     for(const f of files)save(f,clone(base[f]));
     try{
       fn();
-      const x=load("vocabulary.json");
-      if(Array.isArray(x)&&x.length!==3)detected=true;
-      const exp=load("expansion500.json");
-      if(exp.count!==3||!Array.isArray(exp.words)||exp.words.length!==3)detected=true;
+      for(const f of files){
+        if(f==="expansion500.json"){
+          const exp=load(f);
+          if(exp.count!==3||!Array.isArray(exp.words)||exp.words.length!==3)detected=true;
+          continue;
+        }
+        const before=recordMap(f,base[f]),after=recordMap(f,load(f));
+        for(const [k,v] of before){
+          if(!after.has(k)||after.get(k)!==v){detected=true;break}
+        }
+        if(detected)break;
+      }
     }catch{detected=true}
   }
   if(!detected)throw Error(name+" was not detected");
