@@ -387,16 +387,24 @@ async function updateOnline(force){
       vocab:db.vocab.slice(),sentences:db.sentences.slice(),questions:db.questions.slice(),
       grammar:db.grammar.slice(),communication:db.communication.slice(),trilingual:db.trilingual.slice()
     };
+    function provenance(incomingItem,oldItem){
+      const xs=String(incomingItem?.source||"").trim(),xsv=String(incomingItem?.sourceVersion||"").trim();
+      const os=String(oldItem?.source||"").trim(),osv=String(oldItem?.sourceVersion||"").trim();
+      return {
+        source:xs&&xs!=="remote"?xs:(os||xs||"remote"),
+        sourceVersion:xsv&&xsv!=="remote"?xsv:(osv||xsv||ver)
+      };
+    }
     let added=0,changed=0;
 
     for(const x of incoming.vocab){
       const i=next.vocab.findIndex(v=>norm(v.word)===norm(x.word));
       if(i<0){
-        next.vocab.push({...x,source:"remote",sourceVersion:ver,favorite:false,status:"New",reviewDue:null,correct_count:0,wrong_count:0});
+        next.vocab.push({...x,...provenance(x,null),favorite:false,status:"New",reviewDue:null,correct_count:0,wrong_count:0});
         added++;
       }else{
         const oldV=next.vocab[i];
-        next.vocab[i]={...oldV,...x,source:"remote",sourceVersion:ver,
+        next.vocab[i]={...oldV,...x,...provenance(x,oldV),
           favorite:oldV.favorite??false,status:oldV.status||"New",reviewDue:oldV.reviewDue??null,
           correct_count:oldV.correct_count||0,wrong_count:oldV.wrong_count||0,lastReviewed:oldV.lastReviewed||null};
         changed++;
@@ -405,11 +413,11 @@ async function updateOnline(force){
     for(const x of incoming.sentences){
       const i=next.sentences.findIndex(s=>String(s.id||"")===String(x.id||""));
       if(i<0){
-        next.sentences.push({...x,source:"remote",sourceVersion:ver,favorite:false});
+        next.sentences.push({...x,...provenance(x,null),favorite:false});
         added++;
       }else{
         const oldS=next.sentences[i];
-        next.sentences[i]={...oldS,...x,source:"remote",sourceVersion:ver,favorite:oldS.favorite??false};
+        next.sentences[i]={...oldS,...x,...provenance(x,oldS),favorite:oldS.favorite??false};
         changed++;
       }
     }
@@ -417,9 +425,10 @@ async function updateOnline(force){
       const arr=next[key],keyFn=spec[key].key;
       for(const x of incoming[key]){
         const k=keyFn(x),i=arr.findIndex(y=>keyFn(y)===k);
-        if(i<0){arr.push({...x,source:"remote",sourceVersion:ver});added++;}
+        if(i<0){arr.push({...x,...provenance(x,null)});added++;}
         else if(arr[i].source==="remote"||key==="communication"||key==="grammar"||key==="questions"){
-          arr[i]={...arr[i],...x,source:"remote",sourceVersion:ver};changed++;
+          const oldItem=arr[i];
+          arr[i]={...oldItem,...x,...provenance(x,oldItem)};changed++;
         }
       }
     }
