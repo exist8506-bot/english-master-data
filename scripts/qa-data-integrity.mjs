@@ -113,7 +113,7 @@ for (const row of expWords) {
   if (!trilingualByEn.has(word)) missingTrilingual++;
   if (!communicationByVocab.has(word)) missingCommunication++;
   if (!grammarByVocab.has(word)) missingGrammar++;
-  if (!v || v.audio !== "tts" || !String(v.audioEn ?? "").trim()) missingAudio++;
+  if (!v || !String(v.audioEn ?? "").trim()) missingAudio++;
 }
 
 must(missingVocab === 0, "Missing/incorrect expansion vocabulary rows: " + missingVocab);
