@@ -19,7 +19,7 @@ body.layout-phone .toolbar{align-items:stretch}
 body.layout-phone .toolbar>.jump-control{flex:1 1 100%;order:3}
 body.layout-phone .actions{max-width:100%}
 body.layout-phone .actions button{max-width:100%;white-space:normal}
-body.layout-phone .item,.body.layout-phone .card{overflow-wrap:anywhere}
+body.layout-phone .item,body.layout-phone .card{overflow-wrap:anywhere}
 body.layout-phone h1,body.layout-phone h2,body.layout-phone h3,body.layout-phone p{overflow-wrap:anywhere}
 body.layout-phone .table-wrap{-webkit-overflow-scrolling:touch}
 body.layout-phone .table{min-width:620px}
