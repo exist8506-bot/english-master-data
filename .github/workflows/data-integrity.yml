@@ -18,11 +18,34 @@ jobs:
     steps:
       - name: Checkout exact test branch
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Protect application data and source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          changed="$(git diff --name-only origin/main...HEAD)"
+          allowed=
+        run: node --check app.js
+
+      - name: Data integrity audit
+        run: node scripts/qa-data-integrity.mjs
+\\.github/workflows/data-integrity.yml\\nscripts/qa-data-integrity.mjs'
+          bad=0
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            if ! printf '%s\\n' "$allowed" | grep -Fxq "$file"; then
+              echo "BLOCKED unexpected changed file: $file"
+              bad=1
+            fi
+          done <<< "$changed"
+          test "$bad" -eq 0
 
       - name: JavaScript syntax check
         run: node --check app.js
