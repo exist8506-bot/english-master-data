@@ -187,7 +187,7 @@ async function hydrateContent(){
     validateContent(true);
     render();
   }
-  const hasContent=db.vocab.length&&db.sentences.length&&db.questions.length&&db.trilingual.length;
+  const hasContent=[db.vocab,db.sentences,db.questions,db.grammar,db.communication,db.trilingual].every(function(arr){return Array.isArray(arr)&&arr.length>0});
   if(!hasContent){
     await updateOnline(true);
   }else if(db.profile.autoUpdate!==false){
@@ -380,6 +380,7 @@ async function updateOnline(force){
       if(!Array.isArray(arr))throw new Error(key+" không trả về mảng dữ liệu");
       incoming[key]=arr;
     }
+    validateIncomingContent(incoming);
 
     const next={
       vocab:db.vocab.slice(),sentences:db.sentences.slice(),questions:db.questions.slice(),
@@ -435,6 +436,25 @@ async function updateOnline(force){
   }finally{
     updateInProgress=false;
   }
+}
+function validateIncomingContent(incoming){
+  const rules={
+    vocab:function(x){return x&&String(x.word||"").trim()&&String(x.meaning||"").trim()},
+    sentences:function(x){return x&&String(x.id||"").trim()&&String(x.en||"").trim()&&String(x.vi||"").trim()},
+    questions:function(x){return x&&String(x.id||"").trim()&&String(x.prompt||"").trim()&&Array.isArray(x.options)&&x.options.length>=2&&Number.isInteger(Number(x.answer))&&Number(x.answer)>=0&&Number(x.answer)<x.options.length},
+    grammar:function(x){return x&&String(x.title||"").trim()&&String(x.formula||"").trim()},
+    communication:function(x){return x&&String(x.title||"").trim()&&Array.isArray(x.lines)&&x.lines.length>0},
+    trilingual:function(x){return x&&String(x.en||"").trim()&&String(x.zh||x.chinese||"").trim()&&String(x.pinyin||"").trim()&&String(x.vi||x.vietnamese||"").trim()}
+  };
+  const bad=[];
+  Object.keys(rules).forEach(function(key){
+    const arr=Array.isArray(incoming[key])?incoming[key]:[];
+    if(!arr.length){bad.push(key+" rỗng");return}
+    const invalid=arr.reduce(function(n,x){return n+(rules[key](x)?0:1)},0);
+    if(invalid>0)bad.push(key+" có "+invalid+"/"+arr.length+" mục không hợp lệ");
+  });
+  if(bad.length)throw new Error("Dữ liệu từ xa không an toàn: "+bad.join("; "));
+  return true;
 }
 function validateContent(force){
   const signature=[db.lastRemoteVersion,db.vocab.length,db.sentences.length,db.questions.length,db.grammar.length,db.communication.length,db.trilingual.length].join("|");
