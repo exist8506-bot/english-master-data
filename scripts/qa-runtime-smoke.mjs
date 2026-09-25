@@ -399,6 +399,9 @@ check("backup storage key exists", !!storage.get("englishMaster_v1_backup"));
 
 const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
+check("index cache-busts latest app.js", index.includes('src="app.js?v=8.0.1"'));
+const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
+check("app version manifest is current", appVersion.version === "8.0.1");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 const sw = fs.readFileSync(path.join(root, "sw.js"), "utf8");
 check("index references app/style/manifest", index.includes('src="app.js"') && index.includes('href="styles.css"') && index.includes('href="manifest.json"'));
