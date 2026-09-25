@@ -34,9 +34,21 @@ jobs:
           node --check app.js
           node --check scripts/qa-data-integrity.mjs
           node --check scripts/qa-preserve-main.mjs
+          node --check scripts/qa-chaos-data-protection.mjs
+          node --check scripts/qa-chaos-data-protection-2.mjs
+          node --check scripts/qa-runtime-smoke.mjs
 
       - name: Data preservation audit
         run: node scripts/qa-preserve-main.mjs
 
       - name: Data integrity audit
         run: node scripts/qa-data-integrity.mjs
+
+      - name: First-wave chaos audit
+        run: node scripts/qa-chaos-data-protection.mjs
+
+      - name: Second-wave chaos audit
+        run: node scripts/qa-chaos-data-protection-2.mjs
+
+      - name: Runtime smoke audit
+        run: node scripts/qa-runtime-smoke.mjs
