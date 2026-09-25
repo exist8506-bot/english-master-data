@@ -26,8 +26,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: JavaScript syntax check
-        run: node --check app.js
+      - name: JavaScript syntax checks
+        run: |
+          node --check app.js
+          node --check scripts/qa-data-integrity.mjs
+          node --check scripts/qa-preserve-main.mjs
 
       - name: Data preservation audit
         run: node scripts/qa-preserve-main.mjs
