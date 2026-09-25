@@ -426,7 +426,8 @@ function goPage(kind,page){
 }
 
 function vocab(){
-  const q=norm((document.getElementById("vSearch")||{}).value||"");
+  const inputValue=(document.getElementById("vSearch")||{}).value;
+  const q=norm(inputValue!==undefined?inputValue:lastVocabQuery);
   if(q!==lastVocabQuery){lastVocabQuery=q;vocabPage=1;}
   const list=q?db.vocab.filter(function(v){return norm(v.word).includes(q)||norm(v.meaning).includes(q)||norm(v.example).includes(q)}):db.vocab;
   const size=50,pages=Math.max(1,Math.ceil(list.length/size));
@@ -458,7 +459,7 @@ function startReview(){
   const need=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||v.status==="New"});
   const seen=new Set(),queue=[];
   due.concat(need).forEach(function(v){
-    const k=norm(v.word);if(k&&!seen.has(k)){seen.add(k);queue.push(v);}
+    const k=norm(v.word);if(k&&!seen.has(k)){seen.add(k);queue.push(k);}
   });
   if(!queue.length){toast("Hiện chưa có từ cần ôn.");return;}
   reviewQueue=queue;reviewIndex=0;flashFlipped=false;show("flashcards");
@@ -468,7 +469,8 @@ function flashcards(){
   const reviewActive=reviewQueue.length>0;
   const list=reviewActive?reviewQueue:db.vocab;
   const idx=reviewActive?reviewIndex:flashIndex;
-  const v=list[idx%list.length];
+  const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):list[idx%list.length];
+  if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
   const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+audioGroup(v.word,"en-US")+'<p class="muted">Bấm vào thẻ để lật</p></div>';
   const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US")+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1)+'</div>';
   $("view").innerHTML=shell(reviewActive?"Ôn tập bằng Flashcards":"Flashcards",reviewActive?"Đang ôn các từ đến hạn/chưa nhớ.":"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
@@ -476,8 +478,8 @@ function flashcards(){
 }
 function rateFlash(status){
   const reviewActive=reviewQueue.length>0;
-  const list=reviewActive?reviewQueue:db.vocab,idx=reviewActive?reviewIndex:flashIndex;
-  const v=list[idx%list.length];
+  const idx=reviewActive?reviewIndex:flashIndex;
+  const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):db.vocab[idx%db.vocab.length];
   if(!v)return;
   v.status=status;v.lastReviewed=new Date().toISOString();
   const dueDays=status==="Rất dễ"?7:status==="Đã nhớ"?2:0;
