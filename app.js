@@ -10,7 +10,7 @@ let db={
 };
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
-let vocabPage=1,sentencePage=1,trilingualPage=1,lastVocabQuery="",pendingUserState=null;
+let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
 let legacyStorageLoaded=false;
@@ -420,6 +420,7 @@ function goPage(kind,page){
   if(kind==="vocab")vocabPage=p;
   else if(kind==="sentences")sentencePage=p;
   else if(kind==="trilingual")trilingualPage=p;
+  else if(kind==="communication")communicationPage=p;
   render();
 }
 
@@ -555,15 +556,19 @@ function grammar(){
     '<div class="grid grid-2">'+db.grammar.map(function(g){return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3><div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div><p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+(g.examples||[]).map(function(e){return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1)+'</div>'}).join("")+'</div><p class="muted small">'+esc(g.notes||"")+'</p></div>'}).join("")+'</div>');
 }
 function communication(){
-  $("view").innerHTML=shell("Giao tiếp","Hội thoại dài hơn, có 10 lượt nói hoặc hơn; nghe từng câu hoặc nghe cả đoạn.",
-    '<div class="grid grid-2">'+db.communication.map(function(d,i){
-      const lines=d.lines||[];
+  const size=12,pages=Math.max(1,Math.ceil(db.communication.length/size));
+  if(communicationPage>pages)communicationPage=pages;
+  const start=(communicationPage-1)*size,items=db.communication.slice(start,start+size);
+  $("view").innerHTML=shell("Giao tiếp","Hội thoại thực tế; mỗi đoạn có 8–12 lượt nói và có thể nghe từng câu hoặc cả đoạn.",
+    '<div class="card"><div class="muted small">Hiển thị '+(db.communication.length?start+1:0)+'–'+Math.min(start+size,db.communication.length)+' / '+db.communication.length+' hội thoại</div>'+pageControls(communicationPage,db.communication.length,size,"communication")+'</div>'+
+    '<div class="grid grid-2">'+items.map(function(d,j){
+      const i=start+j,lines=d.lines||[];
       return '<div class="card"><div class="toolbar"><span class="badge">'+esc(d.topic||"")+'</span><span class="muted small">'+lines.length+' lượt</span></div><h3>'+esc(d.title||"")+'</h3>'+
-      '<div class="list">'+lines.map(function(l,j){
+      '<div class="list">'+lines.map(function(l){
         return '<div class="item"><div><b>'+esc(l[0])+'</b> — <span>'+esc(l[1])+'</span></div>'+(l[2]?'<div class="muted small" style="margin-top:5px">'+esc(l[2])+'</div>':'')+
         '<div class="actions" style="margin-top:7px">'+audioButton(l[1],"🔊 Nghe","en-US",1)+'</div></div>';
       }).join("")+'</div><div class="actions" style="margin-top:12px"><button class="primary" onclick="playDialogue('+i+')">▶ Nghe cả đoạn</button><button onclick="stopSpeech()">⏹ Dừng</button></div></div>';
-    }).join("")+'</div>');
+    }).join("")+'</div>'+pageControls(communicationPage,db.communication.length,size,"communication"));
 }
 function playDialogue(index){
   const d=db.communication[index];if(!d)return;
