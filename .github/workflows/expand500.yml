@@ -22,15 +22,18 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate, validate and test
+      - name: Build and validate V8
         env:
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
-          DICT_BASE: https://raw.githubusercontent.com/samuraitruong/open-vn-en-dict/master/data
+          DICT_DB_URL: https://raw.githubusercontent.com/chuongmep/vi-en-dictionary/main/vi_en_dict.db
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
+          set -e
+          python3 -m pip install --disable-pip-version-check -q cmudict
+          curl -L --fail --retry 3 --retry-delay 1 "$DICT_DB_URL" -o /tmp/vi_en_dict.db
+          test -s /tmp/vi_en_dict.db
           python3 - <<'PY'
-          import csv, html, json, os, re, urllib.parse, urllib.request
-          from concurrent.futures import ThreadPoolExecutor, as_completed
+          import csv, html, json, os, re, sqlite3, urllib.parse, urllib.request
           from pathlib import Path
 
           ROOT = Path.cwd()
@@ -38,9 +41,9 @@ jobs:
           VERSION = "8.0.0"
           NEED = 500
           HSK_BASE = os.environ["HSK_BASE"]
-          DICT_BASE = os.environ["DICT_BASE"]
+          DB_PATH = "/tmp/vi_en_dict.db"
           TTS_BASE = os.environ["TTS_BASE"]
-          UA = "English-Master-V8-DataBuilder/1.0"
+          UA = "English-Master-V8-DataBuilder/2.0"
 
           def readj(name):
               with open(DATA / name, "r", encoding="utf-8") as f:
@@ -61,7 +64,7 @@ jobs:
                   h = (h * 16777619) & 0xffffffff
               return format(h, "x")
 
-          def get(url, tries=3):
+          def get_text(url, tries=3):
               last = None
               for attempt in range(1, tries + 1):
                   try:
@@ -75,34 +78,20 @@ jobs:
                           time.sleep(0.4 * attempt)
               raise last
 
-          def clean(s):
-              s = html.unescape(re.sub(r"<br\s*/?>", " ", str(s or ""), flags=re.I))
-              s = re.sub(r"<[^>]+>", " ", s)
-              return re.sub(r"\s+", " ", s).strip()
-
           def parse_hsk(raw, level):
               out = []
               for row in csv.reader(raw.splitlines()):
                   if len(row) < 3:
                       continue
-                  zh = row[0].strip()
-                  py = row[1].strip()
+                  zh, py = row[0].strip(), row[1].strip()
                   raw_en = ",".join(row[2:]).strip()
                   word = re.sub(r"^to\s+", "", raw_en, flags=re.I)
                   word = re.sub(r"^(a|an)\s+", "", word, flags=re.I).strip().lower()
-                  if not zh or not py or not word:
-                      continue
-                  if not re.fullmatch(r"[a-z]+", word):
-                      continue
-                  if not (3 <= len(word) <= 14):
-                      continue
-                  if re.search(r"\b(variant|abbr|surname|dialect|obsolete|archaic|chemical|mathematical|biological|technical)\b", raw_en, re.I):
-                      continue
-                  out.append({"zh": zh, "pinyin": py, "word": word, "rawEn": raw_en, "hsk": level})
+                  if zh and py and re.fullmatch(r"[a-z]+", word) and 3 <= len(word) <= 14:
+                      out.append({"word":word,"zh":zh,"pinyin":py,"rawEn":raw_en,"hsk":level})
               return out
 
-          def topic(word, raw_en):
-              t = (word + " " + raw_en).lower()
+          def topic(word):
               groups = {
                   "school": ["school","student","teacher","class","lesson","exam","homework","college","university","study","education","knowledge","degree","library","research"],
                   "work": ["job","work","office","company","boss","manager","worker","meeting","business","career","project","report","salary","department","factory","customer"],
@@ -118,82 +107,47 @@ jobs:
                   "nature": ["tree","flower","animal","river","mountain","forest","earth","land","sea","water","fire","air"],
                   "society": ["society","people","government","law","culture","history","community","public","social","country","world","language"]
               }
+              w = word.lower()
               for k, vals in groups.items():
-                  if any(v in t for v in vals):
+                  if any(v in w for v in vals):
                       return k
               return "daily"
 
-          def parse_dict(raw, word):
-              try:
-                  obj = json.loads(raw)
-              except Exception:
-                  return None
-              block = ((obj.get("en_vn") or {}).get("data") or {}).get("content") or ""
-              if not block:
-                  return None
+          def dict_pos(raw):
+              return str(raw or "").strip() or "word"
 
-              ipa_m = re.search(r"\[([^\]]+)\]", block)
-              ipa = (ipa_m.group(1).strip() if ipa_m else "")
-              meanings = [
-                  clean(m)
-                  for m in re.findall(r'<td id="mn"[^>]*>[\s\S]*?<td id="C_C"[^>]*>([\s\S]*?)</td>', block, re.I)
-                  if clean(m)
-              ]
-              ex_en = [
-                  clean(m)
-                  for m in re.findall(r'<td id="mh"[^>]*>[\s\S]*?<td id="C_C"[^>]*>([\s\S]*?)</td>', block, re.I)
-                  if clean(m)
-              ]
-              ex_vi = [
-                  clean(m)
-                  for m in re.findall(r'<td id="mh_n"[^>]*>[\s\S]*?<td id="C_C"[^>]*>([\s\S]*?)</td>', block, re.I)
-                  if clean(m)
-              ]
-
-              example = ""
-              example_vi = ""
-              for i, en in enumerate(ex_en):
-                  vi = ex_vi[i] if i < len(ex_vi) else ""
-                  if en and vi and re.search(r"\b" + re.escape(word) + r"\b", en, re.I):
-                      example, example_vi = en, vi
-                      break
-              if not example:
-                  for i, en in enumerate(ex_en):
-                      vi = ex_vi[i] if i < len(ex_vi) else ""
-                      if en and vi:
-                          example, example_vi = en, vi
-                          break
-
-              if not (ipa and meanings and example and example_vi):
-                  return None
-
-              return {
-                  "ipa": "/" + ipa + "/",
-                  "meaning": meanings[0],
-                  "example": example,
-                  "exampleVi": example_vi,
-              }
-
-          def enrich(c):
-              try:
-                  url = DICT_BASE + "/" + urllib.parse.quote(c["word"], safe="") + ".json"
-                  raw = get(url, 2)
-                  parsed = parse_dict(raw, c["word"])
-                  return {**c, **parsed} if parsed else None
-              except Exception:
-                  return None
-
-          def audio(text, lang):
-              return TTS_BASE + "?word=" + urllib.parse.quote(str(text)) + "&lang=" + lang
-
-          def pos(word, raw_en):
-              if re.match(r"^to\s+", raw_en, re.I):
-                  return "verb"
-              if word.endswith("ly"):
-                  return "adverb"
-              if word.endswith(("ous","ful","less","ive","able","ible","al","ic","ish","ary","ent","ant")):
-                  return "adjective"
-              return "noun"
+          # CMU ARPAbet -> readable IPA-like notation.
+          IPA = {
+              "AA":"ɑ","AE":"æ","AH":"ʌ","AO":"ɔ","AW":"aʊ","AY":"aɪ",
+              "EH":"ɛ","ER":"ɝ","EY":"eɪ","IH":"ɪ","IY":"i",
+              "OW":"oʊ","OY":"ɔɪ","UH":"ʊ","UW":"u",
+              "B":"b","CH":"tʃ","D":"d","DH":"ð","F":"f","G":"ɡ","HH":"h",
+              "JH":"dʒ","K":"k","L":"l","M":"m","N":"n","NG":"ŋ","P":"p",
+              "R":"r","S":"s","SH":"ʃ","T":"t","TH":"θ","V":"v","W":"w",
+              "Y":"j","Z":"z","ZH":"ʒ"
+          }
+          def cmu_ipa(word, cmu):
+              pr = cmu.get(word.lower())
+              if not pr:
+                  return ""
+              phones = pr[0]
+              parts=[]
+              primary=False
+              for ph in phones:
+                  m = re.fullmatch(r"([A-Z]+)([012]?)", ph)
+                  if not m:
+                      continue
+                  base, stress = m.group(1), m.group(2)
+                  val = IPA.get(base, "")
+                  if not val:
+                      continue
+                  if stress == "1" and not primary:
+                      parts.append("ˈ")
+                      primary=True
+                  elif stress == "2":
+                      parts.append("ˌ")
+                  parts.append(val)
+              return "/" + "".join(parts) + "/"
 
           vocab = readj("vocabulary.json")
           sentences = readj("sentences.json")
@@ -202,272 +156,285 @@ jobs:
           communication = readj("communication.json")
           trilingual = readj("trilingual.json")
 
-          existing_words = {norm(x.get("word")) for x in vocab}
-          existing_words |= {norm(x.get("en")) for x in trilingual}
+          current = {norm(x.get("word")) for x in vocab}
+          current |= {norm(x.get("en")) for x in trilingual}
+
           candidates = {}
-          for level in (3, 4, 5, 6):
-              raw = get(f"{HSK_BASE}/hsk{level}.csv")
+          for level in (3,4,5,6):
+              raw = get_text(f"{HSK_BASE}/hsk{level}.csv")
               for c in parse_hsk(raw, level):
-                  if c["word"] not in existing_words and c["word"] not in candidates:
+                  if c["word"] not in current and c["word"] not in candidates:
                       candidates[c["word"]] = c
+          ordered = sorted(candidates.values(), key=lambda x:(x["hsk"], x["word"]))
 
-          ordered = sorted(candidates.values(), key=lambda x: (x["hsk"], x["word"]))
-          enriched = []
-          for start in range(0, len(ordered), 120):
-              batch = ordered[start:start+120]
-              with ThreadPoolExecutor(max_workers=20) as pool:
-                  futures = [pool.submit(enrich, c) for c in batch]
-                  for f in as_completed(futures):
-                      item = f.result()
-                      if item:
-                          enriched.append(item)
-              print(f"dictionary enrichment: checked={min(start+120,len(ordered))} valid={len(enriched)}")
-              if len(enriched) >= NEED:
+          cmu = None
+          try:
+              import cmudict
+              cmu = cmudict.dict()
+          except Exception:
+              cmu = {}
+
+          conn = sqlite3.connect(DB_PATH)
+          cur = conn.cursor()
+          found = {}
+          for start in range(0, len(ordered), 450):
+              batch = ordered[start:start+450]
+              placeholders = ",".join("?" for _ in batch)
+              words = [x["word"] for x in batch]
+              cur.execute(
+                  f"""SELECT lower(de.en), de.en, de.vi, de.pos, de.pronunciation,
+                             dx.en_example, dx.vi_example
+                      FROM dictionary_entries de
+                      LEFT JOIN dictionary_examples dx
+                        ON dx.entry_id=de.entry_id
+                       AND dx.sort_order=1
+                      WHERE lower(de.en) IN ({placeholders})""",
+                  words
+              )
+              for row in cur.fetchall():
+                  k = norm(row[0])
+                  if k not in found:
+                      found[k] = {
+                          "en": row[1],
+                          "vi": row[2],
+                          "pos": row[3],
+                          "pronunciation": row[4],
+                          "example": row[5],
+                          "exampleVi": row[6]
+                      }
+          conn.close()
+
+          chosen=[]
+          used=set(current)
+          for c in ordered:
+              d=found.get(c["word"])
+              if not d:
+                  continue
+              example=str(d.get("example") or "").strip()
+              example_vi=str(d.get("exampleVi") or "").strip()
+              meaning=str(d.get("vi") or "").strip()
+              if not (meaning and example and example_vi):
+                  continue
+              if not re.search(r"\b"+re.escape(c["word"])+r"\b", example, re.I):
+                  continue
+              if c["word"] in used:
+                  continue
+              ipa=cmu_ipa(c["word"],cmu)
+              if not ipa:
+                  p=str(d.get("pronunciation") or "").strip()
+                  ipa=("/"+p.strip("/ ")+"/") if p else ""
+              if not ipa:
+                  continue
+              used.add(c["word"])
+              chosen.append({**c,**d,"ipa":ipa})
+              if len(chosen)==NEED:
                   break
 
-          chosen = []
-          used = set(existing_words)
-          for x in sorted(enriched, key=lambda z: (z["hsk"], z["word"])):
-              if len(chosen) >= NEED:
-                  break
-              if x["word"] not in used:
-                  used.add(x["word"])
-                  chosen.append(x)
+          assert len(chosen)==NEED, "only %d complete new HSK words found" % len(chosen)
 
-          assert len(chosen) == NEED, f"need 500 new words, got {len(chosen)}"
+          def tts(text,lang):
+              return TTS_BASE+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
 
-          new_vocab = []
-          new_sentences = []
-          new_questions = []
-          new_tri = []
+          new_vocab=[]
+          new_sentences=[]
+          new_questions=[]
+          new_tri=[]
 
-          for i, x in enumerate(chosen, 1):
-              topic_name = topic(x["word"], x["rawEn"])
-              level = "Beginner" if x["hsk"] == 3 else ("Intermediate" if x["hsk"] == 4 else "Upper-Intermediate")
-              vid = f"exp500_{i:03d}_{hash_id(x['word'])}"
-              sid = f"exp500_sent_{i:03d}_{hash_id(x['word'])}"
-              qid = f"exp500_q_{i:03d}_{hash_id(x['word'])}"
-              tid = f"exp500_tri_{i:03d}_{hash_id(x['word'])}"
+          for i,x in enumerate(chosen,1):
+              tp=topic(x["word"])
+              level="Beginner" if x["hsk"]==3 else ("Intermediate" if x["hsk"]==4 else "Upper-Intermediate")
+              vid=f"exp500_{i:03d}_{hash_id(x['word'])}"
+              sid=f"exp500_sent_{i:03d}_{hash_id(x['word'])}"
+              qid=f"exp500_q_{i:03d}_{hash_id(x['word'])}"
+              tid=f"exp500_tri_{i:03d}_{hash_id(x['word'])}"
 
-              v = {
-                  "id": vid, "word": x["word"], "ipa": x["ipa"],
-                  "meaning": x["meaning"], "pos": pos(x["word"], x["rawEn"]),
-                  "example": x["example"], "exampleVi": x["exampleVi"],
-                  "synonyms": "", "antonyms": "", "topic": topic_name, "level": level,
-                  "favorite": False, "status": "New", "reviewDue": None,
-                  "createdAt": "2026-09-25T00:00:00.000Z",
-                  "audio": "tts", "audioEn": audio(x["word"], "en"),
-                  "source": "expansion500", "sourceVersion": VERSION
+              v={
+                  "id":vid,"word":x["word"],"ipa":x["ipa"],"meaning":x["vi"],
+                  "pos":dict_pos(x["pos"]),"example":x["example"],"exampleVi":x["exampleVi"],
+                  "synonyms":"","antonyms":"","topic":tp,"level":level,
+                  "favorite":False,"status":"New","reviewDue":None,
+                  "createdAt":"2026-09-25T00:00:00.000Z","audio":"tts",
+                  "audioEn":tts(x["word"],"en"),
+                  "source":"expansion500","sourceVersion":VERSION
               }
-              s = {
-                  "id": sid, "en": x["example"], "vi": x["exampleVi"],
-                  "topic": topic_name,
-                  "grammar": "Simple Present" if v["pos"] == "verb" else "Vocabulary in context",
-                  "vocabWord": x["word"],
-                  "audioEn": audio(x["example"], "en"),
-                  "favorite": False, "source": "expansion500", "sourceVersion": VERSION
+              s={
+                  "id":sid,"en":x["example"],"vi":x["exampleVi"],"topic":tp,
+                  "grammar":"Vocabulary in context","vocabWord":x["word"],
+                  "audioEn":tts(x["example"],"en"),"favorite":False,
+                  "source":"expansion500","sourceVersion":VERSION
               }
-              new_vocab.append(v)
-              new_sentences.append(s)
-              new_tri.append({
-                  "id": tid, "en": x["word"], "zh": x["zh"], "pinyin": x["pinyin"],
-                  "vi": x["meaning"], "topic": topic_name, "level": level,
-                  "audio": "tts",
-                  "audioEn": audio(x["word"], "en"),
-                  "audioZh": audio(x["zh"], "zh"),
-                  "audioVi": audio(x["meaning"], "vi"),
-                  "source": "expansion500", "sourceVersion": VERSION
-              })
+              tri={
+                  "id":tid,"en":x["word"],"zh":x["zh"],"pinyin":x["pinyin"],
+                  "vi":x["vi"],"topic":tp,"level":level,"audio":"tts",
+                  "audioEn":tts(x["word"],"en"),"audioZh":tts(x["zh"],"zh"),
+                  "audioVi":tts(x["vi"],"vi"),"source":"expansion500",
+                  "sourceVersion":VERSION
+              }
+              new_vocab.append(v);new_sentences.append(s);new_tri.append(tri)
 
-          meaning_pool = [x["meaning"] for x in new_vocab]
-          for i, v in enumerate(new_vocab, 1):
-              distractors = []
-              for off in (37, 83, 149, 211, 277):
-                  m = meaning_pool[(i - 1 + off) % len(meaning_pool)]
-                  if norm(m) != norm(v["meaning"]) and norm(m) not in {norm(z) for z in distractors}:
-                      distractors.append(m)
-                  if len(distractors) == 3:
+          pool=[v["meaning"] for v in new_vocab]
+          for i,v in enumerate(new_vocab,1):
+              choices=[]
+              for off in (41,97,173,251,313):
+                  m=pool[(i-1+off)%len(pool)]
+                  if norm(m)!=norm(v["meaning"]) and norm(m) not in {norm(z) for z in choices}:
+                      choices.append(m)
+                  if len(choices)==3:
                       break
-              options = [v["meaning"]] + distractors
-              assert len(options) == 4 and len({norm(z) for z in options}) == 4
-              shift = (i * 7) % 4
-              options = options[shift:] + options[:shift]
+              opts=[v["meaning"]]+choices
+              assert len(opts)==4 and len({norm(z) for z in opts})==4
+              shift=(i*7)%4
+              opts=opts[shift:]+opts[:shift]
               new_questions.append({
-                  "id": f"exp500_q_{i:03d}_{hash_id(v['word'])}",
-                  "type": "multiple",
-                  "prompt": f'"{v["word"]}" nghĩa là gì?',
-                  "options": options,
-                  "answer": options.index(v["meaning"]),
-                  "explain": f'{v["word"]} = {v["meaning"]}.',
-                  "topic": v["topic"], "level": v["level"],
-                  "vocabWord": v["word"],
-                  "audio": "tts", "audioEn": audio(v["word"], "en"),
-                  "source": "expansion500", "sourceVersion": VERSION
+                  "id":f"exp500_q_{i:03d}_{hash_id(v['word'])}",
+                  "type":"multiple",
+                  "prompt":f'"{v["word"]}" nghĩa là gì?',
+                  "options":opts,
+                  "answer":opts.index(v["meaning"]),
+                  "explain":f'{v["word"]} = {v["meaning"]}.',
+                  "topic":v["topic"],"level":v["level"],"vocabWord":v["word"],
+                  "audio":"tts","audioEn":tts(v["word"],"en"),
+                  "source":"expansion500","sourceVersion":VERSION
               })
 
-          new_comm = []
-          for start in range(0, NEED, 5):
-              group = new_vocab[start:start+5]
-              ci = start // 5 + 1
-              lines = []
-              templates = [
-                  'What does the word "{w}" mean?',
-                  'How can I use "{w}" in a sentence?',
-                  'Can you give me an example with "{w}"?',
-                  'Where might I see the word "{w}"?',
-                  'How would you use "{w}" in daily English?'
-              ]
-              for j, v in enumerate(group):
-                  q = templates[j % len(templates)].format(w=v["word"])
-                  vi_q = 'Từ "' + v["word"] + '" có nghĩa là gì?'
-                  lines.append(["A", q, vi_q])
-                  lines.append(["B", v["example"], v["exampleVi"]])
+          new_comm=[]
+          templates=[
+              'What does "{w}" mean in everyday English?',
+              'How can I use "{w}" in a sentence?',
+              'Can you give me an example with "{w}"?',
+              'Where might I see the word "{w}"?',
+              'How would you use "{w}" in daily conversation?'
+          ]
+          for start in range(0,NEED,5):
+              group=new_vocab[start:start+5]
+              idx=start//5+1
+              lines=[]
+              for j,v in enumerate(group):
+                  q=templates[j%5].format(w=v["word"])
+                  lines.append(["A",q,'Từ "'+v["word"]+'" được dùng thế nào?'])
+                  lines.append(["B",v["example"],v["exampleVi"]])
               new_comm.append({
-                  "id": f"exp500_comm_{ci:03d}",
-                  "title": f"Luyện giao tiếp {ci:02d} — {group[0]['topic']}",
-                  "topic": group[0]["topic"],
-                  "vocab": [v["word"] for v in group],
-                  "lines": lines,
-                  "source": "expansion500", "sourceVersion": VERSION
+                  "id":f"exp500_comm_{idx:03d}",
+                  "title":f"Luyện giao tiếp {idx:02d} — {group[0]['topic']}",
+                  "topic":group[0]["topic"],
+                  "vocab":[v["word"] for v in group],
+                  "lines":lines,
+                  "source":"expansion500","sourceVersion":VERSION
               })
 
-          new_grammar = []
-          for start in range(0, NEED, 25):
-              group = new_vocab[start:start+25]
-              gi = start // 25 + 1
+          new_grammar=[]
+          for start in range(0,NEED,25):
+              group=new_vocab[start:start+25]
+              idx=start//25+1
               new_grammar.append({
-                  "id": f"exp500_grammar_{gi:02d}",
-                  "title": f"Ngữ pháp & dùng từ — {group[0]['topic']}",
-                  "level": "Beginner–Intermediate",
-                  "formula": "Vocabulary in context",
-                  "explain": "Đọc câu ví dụ, nghe và chú ý cách từ mới được dùng trong ngữ cảnh.",
-                  "examples": [v["example"] for v in group],
-                  "notes": "Gói 500 từ mới V8.0.0.",
-                  "vocabWords": [v["word"] for v in group],
-                  "source": "expansion500", "sourceVersion": VERSION
+                  "id":f"exp500_grammar_{idx:02d}",
+                  "title":f"Ngữ pháp & dùng từ — {group[0]['topic']}",
+                  "level":"Beginner–Intermediate",
+                  "formula":"Vocabulary in context",
+                  "explain":"Đọc câu ví dụ, nghe và chú ý cách từ mới được dùng trong ngữ cảnh.",
+                  "examples":[v["example"] for v in group],
+                  "notes":"Gói 500 từ mới V8.0.0.",
+                  "vocabWords":[v["word"] for v in group],
+                  "source":"expansion500","sourceVersion":VERSION
               })
 
-          writej("vocabulary.json", vocab + new_vocab)
-          writej("sentences.json", sentences + new_sentences)
-          writej("questions.json", questions + new_questions)
-          writej("trilingual.json", trilingual + new_tri)
-          writej("communication.json", communication + new_comm)
-          writej("grammar.json", grammar + new_grammar)
-
-          manifest = {
-              "package": "expansion500", "version": VERSION, "count": NEED,
-              "words": [
-                  {
-                      "word": new_vocab[i]["word"],
-                      "vocabId": new_vocab[i]["id"],
-                      "sentenceId": new_sentences[i]["id"],
-                      "questionId": new_questions[i]["id"],
-                      "trilingualId": new_tri[i]["id"],
-                      "communicationId": new_comm[i // 5]["id"],
-                      "grammarId": new_grammar[i // 25]["id"]
-                  } for i in range(NEED)
+          writej("vocabulary.json",vocab+new_vocab)
+          writej("sentences.json",sentences+new_sentences)
+          writej("questions.json",questions+new_questions)
+          writej("trilingual.json",trilingual+new_tri)
+          writej("communication.json",communication+new_comm)
+          writej("grammar.json",grammar+new_grammar)
+          writej("expansion500.json",{
+              "package":"expansion500","version":VERSION,"count":NEED,
+              "words":[
+                  {"word":new_vocab[i]["word"],"vocabId":new_vocab[i]["id"],
+                   "sentenceId":new_sentences[i]["id"],"questionId":new_questions[i]["id"],
+                   "trilingualId":new_tri[i]["id"],"communicationId":new_comm[i//5]["id"],
+                   "grammarId":new_grammar[i//25]["id"]}
+                  for i in range(NEED)
               ]
-          }
-          writej("expansion500.json", manifest)
+          })
 
-          attribution = """# Data attribution
+          (DATA/"ATTRIBUTION.md").write_text(
+              "# Data attribution\n\n"
+              "V8.0.0 sources:\n"
+              "- HSK word lists: https://github.com/plaktos/hsk_csv\n"
+              "- English-Vietnamese dictionary entries and paired examples: https://github.com/chuongmep/vi-en-dictionary\n"
+              "- Runtime TTS audio URLs: https://dict.minhqnd.com/\n\n"
+              "The 500-word package is stored as additive expansion500 records and cross-linked into sentences, questions, trilingual, communication and grammar practice. Existing app data and user progress are preserved.\n",
+              encoding="utf-8"
+          )
 
-          This V8.0.0 expansion uses:
-          - HSK word lists from plaktos/hsk_csv: https://github.com/plaktos/hsk_csv
-          - English-Vietnamese IPA, definitions, and paired examples from samuraitruong/open-vn-en-dict: https://github.com/samuraitruong/open-vn-en-dict
-          - Runtime/TTS audio URLs use the documented dict.minhqnd.com TTS API.
+          writej("version.json",{
+              "version":VERSION,"updatedAt":"2026-09-25",
+              "releaseNotes":"V8.0.0: thêm đúng 500 từ mới; mỗi từ có nghĩa, phát âm, câu Anh-Việt, audio TTS và liên kết vào học từ, flashcards, đọc-hiểu, nghe, nói, quiz, ôn tập, tam ngữ, giao tiếp, ngữ pháp.",
+              "files":{"vocabulary":"vocabulary.json","sentences":"sentences.json","questions":"questions.json","grammar":"grammar.json","communication":"communication.json","trilingual":"trilingual.json"},
+              "expansion":{"package":"expansion500","count":500}
+          })
 
-          The generated educational records are linked to the 500-word package through vocabWord and vocabWords references. The original app data is preserved and the new package is appended additively.
-          """
-          (DATA / "ATTRIBUTION.md").write_text(attribution, encoding="utf-8")
-
-          vj = {
-              "version": VERSION,
-              "updatedAt": "2026-09-25",
-              "releaseNotes": "V8.0.0: thêm đúng 500 từ mới và liên kết vào học từ, flashcards, đọc-hiểu, luyện nghe, luyện nói, trắc nghiệm, ôn tập, tam ngữ, giao tiếp, ngữ pháp và âm thanh TTS.",
-              "files": {
-                  "vocabulary": "vocabulary.json",
-                  "sentences": "sentences.json",
-                  "questions": "questions.json",
-                  "grammar": "grammar.json",
-                  "communication": "communication.json",
-                  "trilingual": "trilingual.json"
-              },
-              "expansion": {"package": "expansion500", "count": NEED}
-          }
-          writej("version.json", vj)
-
-          app = (ROOT / "app.js").read_text(encoding="utf-8")
-          app = re.sub(r'const APP_VERSION="[^"]+";', f'const APP_VERSION="{VERSION}";', app, count=1)
-          app = app.replace("English Master V7.0.6", "English Master V8.0.0")
+          app= (ROOT/"app.js").read_text(encoding="utf-8")
+          app=re.sub(r'const APP_VERSION="[^"]+";', f'const APP_VERSION="{VERSION}";', app, count=1)
+          app=app.replace("English Master V7.0.6","English Master V8.0.0")
           if "function dataAudit()" not in app:
-              app += r'''
+              app += '''
           function dataAudit(){
             const exp=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
-            const setOf=(arr,key)=>new Set(arr.map(key).filter(Boolean).map(norm));
-            const s=setOf(db.sentences,x=>x.vocabWord),q=setOf(db.questions,x=>x.vocabWord),t=setOf(db.trilingual,x=>x.en);
-            const c=setOf(db.communication.flatMap(x=>Array.isArray(x.vocab)?x.vocab:[]),x=>x);
-            const g=setOf(db.grammar.flatMap(x=>Array.isArray(x.vocabWords)?x.vocabWords:[]),x=>x);
+            const N=s=>new Set((s||[]).filter(Boolean).map(norm));
+            const sw=N(db.sentences.map(x=>x.vocabWord)),qw=N(db.questions.map(x=>x.vocabWord));
+            const tw=N(db.trilingual.map(x=>x.en)),cw=N(db.communication.flatMap(x=>x.vocab||[]));
+            const gw=N(db.grammar.flatMap(x=>x.vocabWords||[]));
             const result={
               expansion500:exp.length,
               duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
-              linkedSentences:exp.filter(x=>s.has(norm(x.word))).length,
-              linkedQuestions:exp.filter(x=>q.has(norm(x.word))).length,
-              linkedTrilingual:exp.filter(x=>t.has(norm(x.word))).length,
-              linkedCommunication:exp.filter(x=>c.has(norm(x.word))).length,
-              linkedGrammar:exp.filter(x=>g.has(norm(x.word))).length
+              sentences:exp.filter(x=>sw.has(norm(x.word))).length,
+              questions:exp.filter(x=>qw.has(norm(x.word))).length,
+              trilingual:exp.filter(x=>tw.has(norm(x.word))).length,
+              communication:exp.filter(x=>cw.has(norm(x.word))).length,
+              grammar:exp.filter(x=>gw.has(norm(x.word))).length,
+              audio:exp.filter(x=>x.audio==="tts"&&x.audioEn).length
             };
             console.table(result); return result;
           }
           '''
-          (ROOT / "app.js").write_text(app, encoding="utf-8")
+          (ROOT/"app.js").write_text(app,encoding="utf-8")
 
-          index = (ROOT / "index.html").read_text(encoding="utf-8")
-          index = re.sub(r'application-version" content="[^"]+"', f'application-version" content="{VERSION}"', index, count=1)
-          index = re.sub(r'<title>English Master[^<]*</title>', f'<title>English Master V{VERSION}</title>', index, count=1)
-          (ROOT / "index.html").write_text(index, encoding="utf-8")
+          index=(ROOT/"index.html").read_text(encoding="utf-8")
+          index=re.sub(r'application-version" content="[^"]+"', f'application-version" content="{VERSION}"', index, count=1)
+          index=re.sub(r'<title>English Master[^<]*</title>', f'<title>English Master V{VERSION}</title>', index, count=1)
+          (ROOT/"index.html").write_text(index,encoding="utf-8")
 
-          sw = (ROOT / "sw.js").read_text(encoding="utf-8")
-          sw = re.sub(r'english-master-v[^"]+', f'english-master-v{VERSION}', sw, count=1)
-          (ROOT / "sw.js").write_text(sw, encoding="utf-8")
+          sw=(ROOT/"sw.js").read_text(encoding="utf-8")
+          sw=re.sub(r'english-master-v[^"]+',f'english-master-v{VERSION}',sw,count=1)
+          (ROOT/"sw.js").write_text(sw,encoding="utf-8")
 
-          FV = readj("vocabulary.json")
-          FS = readj("sentences.json")
-          FQ = readj("questions.json")
-          FT = readj("trilingual.json")
-          FC = readj("communication.json")
-          FG = readj("grammar.json")
-
-          exp = [x for x in FV if x.get("source")=="expansion500" and x.get("sourceVersion")==VERSION]
-          assert len(exp) == 500
-          assert len({norm(x["word"]) for x in exp}) == 500
+          FV,FS,FQ,FT,FC,FG=[readj(n) for n in ["vocabulary.json","sentences.json","questions.json","trilingual.json","communication.json","grammar.json"]]
+          exp=[x for x in FV if x.get("source")=="expansion500" and x.get("sourceVersion")==VERSION]
+          assert len(exp)==500
+          assert len({norm(x["word"]) for x in exp})==500
           assert all(x.get("ipa") and x.get("meaning") and x.get("example") and x.get("exampleVi") for x in exp)
+          assert all(x.get("audioEn") for x in exp)
 
           ss={norm(x.get("vocabWord")) for x in FS if x.get("vocabWord")}
           qs={norm(x.get("vocabWord")) for x in FQ if x.get("vocabWord")}
           ts={norm(x.get("en")) for x in FT if x.get("en")}
-          cs={norm(w) for d in FC for w in (d.get("vocab") or [])}
-          gs={norm(w) for d in FG for w in (d.get("vocabWords") or [])}
+          cs={norm(w) for d in FC for w in d.get("vocab",[])}
+          gs={norm(w) for d in FG for w in d.get("vocabWords",[])}
 
           for x in exp:
               k=norm(x["word"])
-              assert k in ss, "missing sentence link: "+x["word"]
-              assert k in qs, "missing quiz link: "+x["word"]
-              assert k in ts, "missing trilingual link: "+x["word"]
-              assert k in cs, "missing communication link: "+x["word"]
-              assert k in gs, "missing grammar link: "+x["word"]
+              assert k in ss and k in qs and k in ts and k in cs and k in gs, x["word"]
 
           for q in FQ:
               if q.get("source")=="expansion500":
-                  assert len(q.get("options",[])) == 4
-                  assert len({norm(v) for v in q["options"]}) == 4
-                  assert isinstance(q.get("answer"), int) and 0 <= q["answer"] < 4
+                  assert len(q["options"])==4 and len({norm(v) for v in q["options"]})==4
+                  assert 0<=q["answer"]<4 and q["options"][q["answer"]]==q["explain"].split(" = ",1)[1].rstrip(".")
 
-          assert sum(1 for x in FS if x.get("source")=="expansion500") == 500
-          assert sum(1 for x in FQ if x.get("source")=="expansion500") == 500
-          assert sum(1 for x in FT if x.get("source")=="expansion500") == 500
-          assert sum(1 for x in FC if str(x.get("id","")).startswith("exp500_comm_")) == 100
-          assert sum(1 for x in FG if x.get("source")=="expansion500") == 20
+          assert sum(x.get("source")=="expansion500" for x in FS)==500
+          assert sum(x.get("source")=="expansion500" for x in FQ)==500
+          assert sum(x.get("source")=="expansion500" for x in FT)==500
+          assert sum(str(x.get("id","")).startswith("exp500_comm_") for x in FC)==100
+          assert sum(x.get("source")=="expansion500" for x in FG)==20
+          assert len(readj("expansion500.json")["words"])==500
 
           app_text=(ROOT/"app.js").read_text(encoding="utf-8")
           idx_text=(ROOT/"index.html").read_text(encoding="utf-8")
@@ -478,21 +445,12 @@ jobs:
           assert f"english-master-v{VERSION}" in sw_text
 
           print(json.dumps({
-              "status":"PASS",
-              "added":500,
-              "totals":{
-                  "vocabulary":len(FV),
-                  "sentences":len(FS),
-                  "questions":len(FQ),
-                  "trilingual":len(FT),
-                  "communication":len(FC),
-                  "grammar":len(FG)
-              },
-              "linked":{"sentences":500,"questions":500,"trilingual":500,"communication":500,"grammar":500},
-              "quiz":"500 new questions, 4 unique options each",
-              "audio":"word/sentence/trilingual TTS URLs plus existing browser TTS fallback",
-              "version":VERSION
-          }, ensure_ascii=False, indent=2))
+              "status":"PASS","added":500,
+              "totals":{"vocabulary":len(FV),"sentences":len(FS),"questions":len(FQ),
+                        "trilingual":len(FT),"communication":len(FC),"grammar":len(FG)},
+              "links":{"sentences":500,"questions":500,"trilingual":500,"communication":500,"grammar":500},
+              "audio":500,"quizUnique":"500/500 x 4 unique options","version":VERSION
+          },ensure_ascii=False,indent=2))
           PY
 
       - name: Commit generated content
