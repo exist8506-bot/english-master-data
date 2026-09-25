@@ -1,7 +1,7 @@
 {
-  "version": "7.0.2",
+  "version": "7.0.3",
   "updatedAt": "2026-09-25",
-  "releaseNotes": "V7.0.2: sửa liên kết câu V6, bổ sung IPA/audio metadata, sửa TTS đa ngôn ngữ, quiz, microphone, lưu/khôi phục tiến độ, IndexedDB cache, pagination, Ôn tập và thống kê từ đã học.",
+  "releaseNotes": "V7.0.3: bảo toàn tiến độ khi nạp cache, cải thiện audio/TTS đa ngôn ngữ, hỗ trợ audio URL, kiểm tra dữ liệu runtime, sửa trạng thái Ôn tập.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
