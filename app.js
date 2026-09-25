@@ -1,4 +1,4 @@
-const APP_VERSION="7.0.2";
+const APP_VERSION="7.0.3";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 
@@ -356,12 +356,10 @@ async function updateOnline(force){
         added++;
       }else{
         const oldV=next.vocab[i];
-        if(blandExample(oldV.example)||oldV.source==="remote"){
-          next.vocab[i]={...oldV,...x,source:"remote",sourceVersion:ver,
-            favorite:oldV.favorite??false,status:oldV.status||"New",reviewDue:oldV.reviewDue??null,
-            correct_count:oldV.correct_count||0,wrong_count:oldV.wrong_count||0,lastReviewed:oldV.lastReviewed||null};
-          changed++;
-        }
+        next.vocab[i]={...oldV,...x,source:"remote",sourceVersion:ver,
+          favorite:oldV.favorite??false,status:oldV.status||"New",reviewDue:oldV.reviewDue??null,
+          correct_count:oldV.correct_count||0,wrong_count:oldV.wrong_count||0,lastReviewed:oldV.lastReviewed||null};
+        changed++;
       }
     }
     for(const x of incoming.sentences){
@@ -369,7 +367,7 @@ async function updateOnline(force){
       if(i<0){
         next.sentences.push({...x,source:"remote",sourceVersion:ver,favorite:false});
         added++;
-      }else if(blandExample(next.sentences[i].en)||next.sentences[i].source==="remote"){
+      }else{
         const oldS=next.sentences[i];
         next.sentences[i]={...oldS,...x,source:"remote",sourceVersion:ver,favorite:oldS.favorite??false};
         changed++;
@@ -650,6 +648,12 @@ function settings(){
     '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>');
 }
 
+function registerServiceWorker(){
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){})});
+  }
+}
+
 function init(){
   load();
   if($("theme"))$("theme").onclick=function(){db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()};
@@ -659,5 +663,6 @@ function init(){
   });
   render();
   hydrateContent();
+  registerServiceWorker();
 }
 init();
