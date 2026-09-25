@@ -560,7 +560,7 @@ function jumpToItem(kind,raw){
   return true;
 }
 function jumpControl(kind,current,total){
-  return '<div class="jump-control"><span class="muted small">Tới câu</span><input class="jump-input" id="'+kind+'Jump" type="number" min="1" max="'+total+'" value="'+(current+1)+'" aria-label="Tới câu" onkeydown="if(event.key===\\'Enter\\')jumpToItem(\\''+kind+'\\',this.value)"><button onclick="jumpToItem(\\''+kind+'\\',document.getElementById(\\''+kind+'Jump\\').value)">Đi</button></div>';
+  return '<div class="jump-control"><span class="muted small">Tới câu</span><input class="jump-input" id="'+kind+'Jump" type="number" min="1" max="'+total+'" value="'+(current+1)+'" aria-label="Tới câu" onkeydown="if(event.key===\'Enter\')jumpToItem(\''+kind+'\',this.value)"><button onclick="jumpToItem(\''+kind+'\',document.getElementById(\''+kind+'Jump\').value)">Đi</button></div>';
 }
 
 function vocab(){
