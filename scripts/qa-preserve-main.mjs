@@ -43,10 +43,23 @@ function list(value, name) {
   return value;
 }
 
-const missingFiles = [];
+const changedOutput = execFileSync(
+  "git",
+  ["diff", "--name-only", "origin/main...HEAD", "--", "data/*.json"],
+  { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }
+).trim();
+
+const changedDataFiles = changedOutput
+  ? changedOutput.split("\\n").filter(Boolean).map((p) => p.replace(/^data\\//, ""))
+  : [];
+
 const results = {};
 
 for (const file of criticalFiles) {
+  if (!changedDataFiles.includes(file)) {
+    results[file] = { skipped: true, reason: "unchanged on PR" };
+    continue;
+  }
   try {
     execFileSync("git", ["cat-file", "-e", "origin/main:data/" + file], { maxBuffer: 256 * 1024 * 1024 });
   } catch {
@@ -101,13 +114,14 @@ if (!curExp || typeof curExp !== "object" || !Array.isArray(curExp.words)) {
 const baseWords = new Set(baseExp.words.map((x) => norm(x?.word)).filter(Boolean));
 const curWords = new Set(curExp.words.map((x) => norm(x?.word)).filter(Boolean));
 const missingExpansionWords = [...baseWords].filter((w) => !curWords.has(w));
-if (missingExpansionWords.length) {
+if (changedDataFiles.includes("expansion500.json") && missingExpansionWords.length) {
   throw new Error(
     "DATA LOSS detected in expansion500.json: " +
     missingExpansionWords.length +
     " previous expansion words disappeared: " +
     JSON.stringify(missingExpansionWords.slice(0, 10))
   );
+}
 }
 
 console.log("=== English Master preservation audit ===");
