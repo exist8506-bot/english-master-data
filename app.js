@@ -78,7 +78,7 @@ function toast(msg){
   el.textContent=msg; el.className="show"; setTimeout(function(){el.className=""},2600);
 }
 function addXP(n){db.stats.xp=(db.stats.xp||0)+Number(n||0)}
-function recordVocabOutcome(word,correct){
+function recordVocabOutcome(word,correct,dueDays){
   const key=norm(word);
   if(!key)return;
   const v=db.vocab.find(function(x){return norm(x.word)===key});
@@ -87,7 +87,8 @@ function recordVocabOutcome(word,correct){
   if(correct){
     v.correct_count=(Number(v.correct_count)||0)+1;
     if(v.status==="New"||v.status==="Chưa nhớ")v.status="Learning";
-    v.reviewDue=new Date(Date.now()+2*86400000).toISOString();
+    const days=Math.max(0,Number(dueDays??2));
+    v.reviewDue=new Date(Date.now()+days*86400000).toISOString();
   }else{
     v.wrong_count=(Number(v.wrong_count)||0)+1;
     v.status="Chưa nhớ";
@@ -335,9 +336,10 @@ function flashcards(){
 function rateFlash(status){
   const v=db.vocab[flashIndex%db.vocab.length];
   v.status=status;v.lastReviewed=new Date().toISOString();
-  v.reviewDue=new Date(Date.now()+(status==="Rất dễ"?7:status==="Đã nhớ"?2:0)*86400000).toISOString();
-  db.stats.learned++;
-  recordActivity();recordVocabOutcome(v.word,status!=="Chưa nhớ");addXP(5);flashIndex=(flashIndex+1)%db.vocab.length;flashFlipped=false;save();render();
+  const dueDays=status==="Rất dễ"?7:status==="Đã nhớ"?2:0;
+  v.reviewDue=new Date(Date.now()+dueDays*86400000).toISOString();
+  if(status!=="Chưa nhớ")db.stats.learned++;
+  recordActivity();recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);addXP(5);flashIndex=(flashIndex+1)%db.vocab.length;flashFlipped=false;save();render();
 }
 function shuffleFlash(){flashIndex=Math.floor(Math.random()*Math.max(1,db.vocab.length));flashFlipped=false;save();render()}
 
