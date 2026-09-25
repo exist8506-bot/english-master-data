@@ -78,6 +78,23 @@ function toast(msg){
   el.textContent=msg; el.className="show"; setTimeout(function(){el.className=""},2600);
 }
 function addXP(n){db.stats.xp=(db.stats.xp||0)+Number(n||0)}
+function recordVocabOutcome(word,correct){
+  const key=norm(word);
+  if(!key)return;
+  const v=db.vocab.find(function(x){return norm(x.word)===key});
+  if(!v)return;
+  v.lastReviewed=new Date().toISOString();
+  if(correct){
+    v.correct_count=(Number(v.correct_count)||0)+1;
+    if(v.status==="New"||v.status==="Chưa nhớ")v.status="Learning";
+    v.reviewDue=new Date(Date.now()+2*86400000).toISOString();
+  }else{
+    v.wrong_count=(Number(v.wrong_count)||0)+1;
+    v.status="Chưa nhớ";
+    v.reviewDue=new Date().toISOString();
+  }
+}
+
 function stopRecognition(){
   recognitionToken++;
   if(activeRecognition){try{activeRecognition.onend=null;activeRecognition.abort()}catch(e){} activeRecognition=null;}
@@ -320,7 +337,7 @@ function rateFlash(status){
   v.status=status;v.lastReviewed=new Date().toISOString();
   v.reviewDue=new Date(Date.now()+(status==="Rất dễ"?7:status==="Đã nhớ"?2:0)*86400000).toISOString();
   db.stats.learned++;
-  recordActivity();addXP(5);flashIndex=(flashIndex+1)%db.vocab.length;flashFlipped=false;save();render();
+  recordActivity();recordVocabOutcome(v.word,status!=="Chưa nhớ");addXP(5);flashIndex=(flashIndex+1)%db.vocab.length;flashFlipped=false;save();render();
 }
 function shuffleFlash(){flashIndex=Math.floor(Math.random()*Math.max(1,db.vocab.length));flashFlipped=false;save();render()}
 
@@ -341,7 +358,7 @@ function listenCheck(el,selected,correct){
   document.querySelectorAll(".option").forEach(function(b){b.disabled=true});
   const ok=norm(selected)===norm(correct);el.classList.add(ok?"correct":"wrong");
   $("listenResult").innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(correct)+"</b>";
-  db.stats.answered++;recordActivity();if(ok){db.stats.correct++;addXP(10)}save();
+  db.stats.answered++;recordActivity();recordVocabOutcome(s.vocabWord,ok);if(ok){db.stats.correct++;addXP(10)}save();
   if(listenAdvanceTimer)clearTimeout(listenAdvanceTimer);
   listenAdvanceTimer=setTimeout(function(){listenAdvanceTimer=0;listenIndex=(listenIndex+1)%db.sentences.length;window.__showListeningText=false;save();renderListening()},700);
 }
@@ -372,8 +389,9 @@ function startRecognition(){
     if(token!==recognitionToken||activeRecognition!==r)return;
     const heard=e.results?.[0]?.[0]?.transcript||"",score=similarityScore(heard,target);
     if(out)out.innerHTML="<b>Bạn nói:</b> "+esc(heard)+"<br><b>Mức khớp:</b> "+score+"%<br><span class=\"muted\">Đây là độ tương đồng văn bản, không phải chấm phát âm chuyên môn.</span>";
-    recordActivity();
-    if(score>=80){addXP(10);save()}else save();
+    recordActivity();recordVocabOutcome(db.sentences[speakIndex%db.sentences.length].vocabWord,score>=80);
+    if(score>=80)addXP(10);
+    save();
     if(autoNextSpeaking)setTimeout(function(){if(view==="speaking"&&token===recognitionToken)nextSpeak()},1200);
   };
   r.onerror=function(){
@@ -404,7 +422,7 @@ function quiz(){
 function answerQuiz(i,a){
   if(quizAnswered)return;quizAnswered=true;const ok=i===a,q=db.questions[quizIndex%db.questions.length];
   document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===a)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
-  db.stats.answered++;recordActivity();if(ok){db.stats.correct++;addXP(10)}
+  db.stats.answered++;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct++;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
 }
 function nextQuiz(){quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;save();render()}
