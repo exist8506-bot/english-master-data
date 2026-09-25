@@ -634,7 +634,7 @@ function review(){
   const due=db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=new Date()});
   const need=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||v.status==="New"});
   $("view").innerHTML=shell("Ôn tập","Ưu tiên từ đến hạn và từ bạn đánh dấu chưa nhớ.",
-    '<div class="grid"><div class="card"><div class="big">'+due.length+'</div><div class="muted">Đến hạn</div></div><div class="card"><div class="big">'+need.length+'</div><div class="muted">Cần củng cố</div></div><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Tổng từ</div></div></div><div class="card"><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Ôn bằng Flashcards</button></div></div>');
+    '<div class="grid"><div class="card"><div class="big">'+due.length+'</div><div class="muted">Đến hạn</div></div><div class="card"><div class="big">'+need.length+'</div><div class="muted">Cần củng cố</div></div><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Tổng từ</div></div></div><div class="card"><div class="actions"><button class="primary" onclick="startReview()">🃏 Bắt đầu ôn tập</button></div></div>');
 }
 function stats(){
   const acc=db.stats.answered?Math.round((db.stats.correct/db.stats.answered)*100):0;
