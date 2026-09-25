@@ -25,3 +25,8 @@ body.layout-phone .table-wrap{-webkit-overflow-scrolling:touch}
 body.layout-phone .table{min-width:620px}
 body.layout-phone .rating button{flex:1 1 100%;min-width:0}
 body.layout-phone .jump-input{max-width:88px}
+
+
+/* Quick device switch */
+.layout-quick{min-width:42px;min-height:42px;padding:7px 10px;font-size:18px;line-height:1;display:inline-grid;place-items:center}
+body.layout-phone .layout-quick,body.layout-desktop .layout-quick{flex:0 0 42px}
