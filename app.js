@@ -484,10 +484,11 @@ function rateFlash(status){
   const idx=reviewActive?reviewIndex:flashIndex;
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):db.vocab[idx%db.vocab.length];
   if(!v)return;
-  v.status=status;v.lastReviewed=new Date().toISOString();
   const dueDays=status==="Rất dễ"?7:status==="Đã nhớ"?2:0;
+  recordActivity();
+  recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);
+  v.status=status;
   v.reviewDue=new Date(Date.now()+dueDays*86400000).toISOString();
-  recordActivity();recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);
   flashFlipped=false;
   if(reviewActive){
     if(reviewIndex+1>=reviewQueue.length){
