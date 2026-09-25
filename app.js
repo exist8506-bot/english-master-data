@@ -1,6 +1,7 @@
-const APP_VERSION="8.0.0";
+const APP_VERSION="8.0.1";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
+const APP_VERSION_URL="./app-version.json";
 
 let db={
   vocab:[],sentences:[],questions:[],grammar:[],communication:[],trilingual:[],
@@ -834,6 +835,19 @@ function registerServiceWorker(){
   }
 }
 
+async function checkAppVersion(){
+  try{
+    const r=await fetch(APP_VERSION_URL+"?t="+Date.now(),{cache:"no-store"});
+    if(!r.ok)return;
+    const info=await r.json();
+    const remote=String(info.version||"");
+    if(remote&&remote!==APP_VERSION){
+      const url=new URL(window.location.href);
+      url.searchParams.set("appv",remote);
+      window.location.replace(url.toString());
+    }
+  }catch(e){}
+}
 function init(){
   load();
   if($("theme"))$("theme").onclick=function(){db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()};
@@ -852,6 +866,7 @@ function init(){
   }catch(e){}
   hydrateContent();
   registerServiceWorker();
+  checkAppVersion();
 }
 init();
 
