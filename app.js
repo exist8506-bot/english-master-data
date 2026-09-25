@@ -249,11 +249,18 @@ function stopSpeech(){
   speechToken++;
   if("speechSynthesis" in window)window.speechSynthesis.cancel();
 }
-function speak(text,rate,lang,retry){
+function speak(text,rate,lang,retry,skipContentAudio){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const t=String(text??"").trim();if(!t)return;
   const token=++speechToken;
   const r=Number(rate)||Number(db.profile.speechRate)||1,l=lang||"en-US",attempt=Number(retry||0);
+  if(!skipContentAudio){
+    let item=null;
+    if(view==="listening"&&db.sentences.length)item=db.sentences[listenIndex%db.sentences.length];
+    else if(view==="speaking"&&db.sentences.length)item=db.sentences[speakIndex%db.sentences.length];
+    const contentAudio=audioUrl(item,l);
+    if(contentAudio){playAudio(contentAudio,t,r,l);return;}
+  }
   const active=function(){return token===speechToken};
   const run=function(){
     if(!active())return;
@@ -300,7 +307,7 @@ function playAudio(url,fallbackText,rate,lang){
   if(!u){if(t)speak(t,r,l);return;}
   try{
     const a=new Audio(u);a.preload="auto";
-    a.play().catch(function(){toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");if(t)speak(t,r,l);});
+    a.play().catch(function(){toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");if(t)speak(t,r,l,0,true);});
   }catch(e){
     toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");
     if(t)speak(t,r,l);
