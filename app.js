@@ -226,6 +226,7 @@ function show(v){
   stopSpeech();
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
+  if(v!=="flashcards")reviewQueue=[];
   view=v;render();
 }
 function shell(title,sub,body){
@@ -679,9 +680,21 @@ function stats(){
   $("view").innerHTML=shell("Tiến độ","Theo dõi XP, số từ học và độ chính xác.",
     '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Số từ đã học</div></div><div class="card"><div class="big">'+acc+'%</div><div class="muted">Độ chính xác</div></div></div>');
 }
+function voiceAvailability(){
+  try{
+    const vs=window.speechSynthesis?.getVoices?.()||[];
+    const langs=["en-US","zh-CN","vi-VN"];
+    return langs.map(function(lang){
+      const exact=vs.find(function(v){return String(v.lang||"").toLowerCase()===lang.toLowerCase()});
+      const base=vs.find(function(v){return String(v.lang||"").toLowerCase().startsWith(lang.slice(0,2).toLowerCase())});
+      return (exact||base)?"✓ "+lang:"✗ "+lang;
+    }).join(" · ");
+  }catch(e){return "Không kiểm tra được giọng đọc";}
+}
 function settings(){
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
     '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div></div>'+
+    '<div class="card"><h2>🔊 Âm thanh & ngôn ngữ</h2><p class="muted">Giọng trình duyệt: '+esc(voiceAvailability())+'</p><p class="small muted">Nếu không có file audio riêng, app sẽ dùng giọng đọc TTS phù hợp với ngôn ngữ.</p></div>'+
     '<div class="card"><h2>🔊 Tốc độ mặc định</h2><select onchange="db.profile.speechRate=Number(this.value);save()">'+[0.5,0.75,1,1.25,1.5].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.speechRate||1)===x?"selected":"")+'>'+x+'×</option>'}).join("")+'</select></div>'+
     '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>');
 }
