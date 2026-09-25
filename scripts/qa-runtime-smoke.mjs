@@ -214,6 +214,17 @@ for (const route of routes) {
   }
 }
 
+T.setLayoutMode("phone");
+for (const route of routes) {
+  try {
+    T.show(route);
+    const html = document.getElementById("view").innerHTML;
+    check("mobile render " + route, document.body.classList._set.has("layout-phone") && html.length > 0 && !/\\b(?:undefined|NaN)\\b/.test(html));
+  } catch (e) {
+    check("mobile render " + route, false, e.stack || String(e));
+  }
+}
+
 T.show("vocab");
 document.getElementById("vSearch").value = "altogether";
 T.vocab();
