@@ -3,6 +3,7 @@ name: English Master - Data Integrity Guard
 on:
   push:
     branches:
+      - main
       - qa/data-preservation
   pull_request:
     branches:
