@@ -318,7 +318,12 @@ function audioUrl(item,lang){
   const l=String(lang||"").toLowerCase(),base=l.slice(0,2);
   const keys=base==="en"?["audioEn","audio_en","enAudio"]:base==="zh"?["audioZh","audio_zh","zhAudio","chineseAudio"]:base==="vi"?["audioVi","audio_vi","viAudio","vietnameseAudio"]:[];
   for(const k of keys){const v=String(item[k]||"").trim();if(v)return v;}
-  return String(item.audio||item.audioUrl||item.audio_url||"").trim();
+  const generic=String(item.audio||item.audioUrl||item.audio_url||"").trim();
+  if(!generic)return "";
+  const genericLang=String(item.audioLang||item.audio_lang||"").toLowerCase();
+  if(genericLang)return genericLang.startsWith(base)?generic:"";
+  const multilingual=!!(item.zh||item.chinese||item.vi||item.vietnamese);
+  return !multilingual||base==="en"?generic:"";
 }
 function audioButton(text,label,lang,rate,item){
   const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1,url=audioUrl(item,useLang);
