@@ -1,4 +1,4 @@
-const CACHE_NAME="english-master-v7.0.4";
+const CACHE_NAME="english-master-v7.0.5";
 const APP_SHELL=["./","./index.html","./app.js","./styles.css","./manifest.json"];
 
 self.addEventListener("install",event=>{
