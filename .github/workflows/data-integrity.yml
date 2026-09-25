@@ -1,0 +1,28 @@
+name: English Master - Data Integrity Guard
+
+on:
+  push:
+    branches:
+      - qa/data-integrity
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  data-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact test branch
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: JavaScript syntax check
+        run: node --check app.js
+
+      - name: Data integrity audit
+        run: node scripts/qa-data-integrity.mjs
