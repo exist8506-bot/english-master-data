@@ -97,6 +97,7 @@ if (missingExpansionWords.length) {
 }
 
 console.log("=== English Master preservation audit ===");
+console.log("Critical files checked: " + criticalFiles.length);
 console.log(JSON.stringify({
   status: "PASS",
   message: "All records present on main are preserved on the PR branch.",
