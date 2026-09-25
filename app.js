@@ -11,7 +11,7 @@ let db={
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
-let reviewQueue=[],reviewIndex=0,validatedContentSignature="";
+let reviewQueue=[],reviewIndex=0,validatedContentSignature="",updateInProgress=false;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
 let legacyStorageLoaded=false;
@@ -301,17 +301,21 @@ function playAudio(url){
     const a=new Audio(u);a.preload="auto";a.play().catch(function(){toast("Không phát được file âm thanh. Đang dùng giọng đọc trình duyệt.");});
   }catch(e){toast("Không thể phát file âm thanh.");}
 }
-function audioUrl(item){
+function audioUrl(item,lang){
   if(!item||typeof item!=="object")return "";
+  const l=String(lang||"").toLowerCase(),base=l.slice(0,2);
+  const keys=base==="en"?["audioEn","audio_en","enAudio"]:base==="zh"?["audioZh","audio_zh","zhAudio","chineseAudio"]:base==="vi"?["audioVi","audio_vi","viAudio","vietnameseAudio"]:[];
+  for(const k of keys){const v=String(item[k]||"").trim();if(v)return v;}
   return String(item.audio||item.audioUrl||item.audio_url||"").trim();
 }
 function audioButton(text,label,lang,rate,item){
-  const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1,url=audioUrl(item);
+  const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1,url=audioUrl(item,useLang);
   if(url)return '<button class="btn btn-secondary" onclick="event.stopPropagation();playAudio(\''+escapeJs(url)+'\')">'+(label||"🔊 Nghe")+'</button>';
   return '<button class="btn btn-secondary" onclick="event.stopPropagation();speak(\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
 }
-function audioGroup(text,lang){
-  return '<div class="actions">'+audioButton(text,"🔊 Nghe",lang||"en-US",1)+audioButton(text,"🐢 0.75×",lang||"en-US",0.75)+audioButton(text,"🐇 1.25×",lang||"en-US",1.25)+'</div>';
+function audioGroup(text,lang,item){
+  const l=lang||guessLang(text);
+  return '<div class="actions">'+audioButton(text,"🔊 Nghe",l,1,item)+audioButton(text,"🐢 0.75×",l,0.75,item)+audioButton(text,"🐇 1.25×",l,1.25,item)+'</div>';
 }
 
 
@@ -336,6 +340,8 @@ async function getJSON(url){
   return r.json();
 }
 async function updateOnline(force){
+  if(updateInProgress){toast("Đang cập nhật dữ liệu, vui lòng chờ lượt này hoàn tất.");return}
+  updateInProgress=true;
   try{
     const m=await getJSON(DATA_URL),ver=String(m.version??"");
     if(!ver)throw new Error("version.json thiếu version");
@@ -409,6 +415,8 @@ async function updateOnline(force){
     toast("Đã đồng bộ GitHub: +"+added+" mục mới, cập nhật "+changed+" mục.");
   }catch(e){
     toast("Cập nhật lỗi — chưa thay đổi dữ liệu hiện tại: "+e.message);
+  }finally{
+    updateInProgress=false;
   }
 }
 function validateContent(force){
@@ -480,7 +488,7 @@ function vocab(){
   $("view").innerHTML=shell("Học từ vựng","Mỗi từ có IPA, nghĩa, ví dụ và nghe từ/câu.",
     '<div class="card"><div class="row"><input id="vSearch" placeholder="Tìm từ, nghĩa hoặc ví dụ..." value="'+esc(q)+'" onkeydown="if(event.key===\'Enter\')vocab()"><button class="primary" onclick="vocab()">🔎 Tìm</button><button onclick="show(\'flashcards\')">🃏 Flashcards</button></div><div class="muted small" style="margin-top:8px">Hiển thị '+(list.length?start+1:0)+'–'+Math.min(start+size,list.length)+' / '+list.length+' từ</div>'+pageControls(vocabPage,list.length,size,"vocab")+'</div>'+
     '<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Từ</th><th>Nghĩa</th><th>Ví dụ</th><th>Nghe</th></tr></thead><tbody>'+
-    items.map(function(v){return '<tr><td><div class="word">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div></td><td>'+esc(v.meaning)+'<div class="small muted">'+esc(v.pos||"")+'</div></td><td>'+esc(v.example||"")+'<div class="small muted">'+esc(v.exampleVi||"")+'</div></td><td><div class="actions">'+audioButton(v.word,"🔊 Từ")+audioButton(v.example||v.word,"🔊 Câu")+'</div></td></tr>'}).join("")+
+    items.map(function(v){return '<tr><td><div class="word">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div></td><td>'+esc(v.meaning)+'<div class="small muted">'+esc(v.pos||"")+'</div></td><td>'+esc(v.example||"")+'<div class="small muted">'+esc(v.exampleVi||"")+'</div></td><td><div class="actions">'+audioButton(v.word,"🔊 Từ","en-US",1,v)+audioButton(v.example||v.word,"🔊 Câu","en-US",1,v)+'</div></td></tr>'}).join("")+
     '</tbody></table></div>'+pageControls(vocabPage,list.length,size,"vocab")+'</div>');
 }
 function sentences(){
@@ -489,7 +497,7 @@ function sentences(){
   const start=(sentencePage-1)*size,items=db.sentences.slice(start,start+size);
   $("view").innerHTML=shell("Học câu","Hiển thị theo trang để app nhẹ hơn trên điện thoại.",
     '<div class="card"><div class="muted small">Hiển thị '+(db.sentences.length?start+1:0)+'–'+Math.min(start+size,db.sentences.length)+' / '+db.sentences.length+' câu</div>'+pageControls(sentencePage,db.sentences.length,size,"sentences")+'</div>'+
-    '<div class="grid grid-2">'+items.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US")+'</div>'}).join("")+'</div>');
+    '<div class="grid grid-2">'+items.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US",s)+'</div>'}).join("")+'</div>');
 }
 function renderFlashcards(){flashcards()}
 function toggleFavorite(word){
@@ -515,8 +523,8 @@ function flashcards(){
   const idx=reviewActive?reviewIndex:flashIndex;
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):list[idx%list.length];
   if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
-  const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+audioGroup(v.word,"en-US")+'<p class="muted">Bấm vào thẻ để lật</p></div>';
-  const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US")+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1)+'</div>';
+  const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
+  const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US")+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
   $("view").innerHTML=shell(reviewActive?"Ôn tập bằng Flashcards":"Flashcards",reviewActive?"Đang ôn các từ đến hạn/chưa nhớ.":"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
     '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
 }
@@ -626,7 +634,7 @@ function quiz(){
   const q=db.questions[quizIndex%db.questions.length],opts=q.options||[];
   $("view").innerHTML=shell("Trắc nghiệm","Nghe câu hỏi và từng đáp án trước khi chọn.",
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(q.topic||"daily")+'</span><span class="muted">Câu '+(quizIndex%db.questions.length+1)+' / '+db.questions.length+'</span></div>'+
-    '<div class="actions" style="margin:14px 0">'+audioButton(q.prompt,"🔊 Đọc câu hỏi")+'</div><h2>'+esc(q.prompt)+'</h2><div class="options">'+
+    '<div class="actions" style="margin:14px 0">'+audioButton(q.prompt,"🔊 Đọc câu hỏi",guessLang(q.prompt),1,q)+'</div><h2>'+esc(q.prompt)+'</h2><div class="options">'+
     opts.map(function(o,i){return '<div class="row"><button class="option" style="flex:1" onclick="answerQuiz('+i+','+Number(q.answer)+')">'+String.fromCharCode(65+i)+". "+esc(o)+'</button>'+audioButton(o,"🔊",guessLang(o),1)+'</div>'}).join("")+
     '</div><div id="qres" class="hint" style="margin-top:14px">Chọn đáp án.</div></div>');
 }
@@ -640,7 +648,7 @@ function nextQuiz(){quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=fal
 
 function grammar(){
   $("view").innerHTML=shell("Ngữ pháp","Mỗi ví dụ có nút nghe để bạn nghe và đọc theo.",
-    '<div class="grid grid-2">'+db.grammar.map(function(g){return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3><div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div><p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+(g.examples||[]).map(function(e){return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1)+'</div>'}).join("")+'</div><p class="muted small">'+esc(g.notes||"")+'</p></div>'}).join("")+'</div>');
+    '<div class="grid grid-2">'+db.grammar.map(function(g){return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3><div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div><p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+(g.examples||[]).map(function(e){return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1,g)+'</div>'}).join("")+'</div><p class="muted small">'+esc(g.notes||"")+'</p></div>'}).join("")+'</div>');
 }
 function communication(){
   const size=12,pages=Math.max(1,Math.ceil(db.communication.length/size));
@@ -653,7 +661,7 @@ function communication(){
       return '<div class="card"><div class="toolbar"><span class="badge">'+esc(d.topic||"")+'</span><span class="muted small">'+lines.length+' lượt</span></div><h3>'+esc(d.title||"")+'</h3>'+
       '<div class="list">'+lines.map(function(l){
         return '<div class="item"><div><b>'+esc(l[0])+'</b> — <span>'+esc(l[1])+'</span></div>'+(l[2]?'<div class="muted small" style="margin-top:5px">'+esc(l[2])+'</div>':'')+
-        '<div class="actions" style="margin-top:7px">'+audioButton(l[1],"🔊 Nghe","en-US",1)+'</div></div>';
+        '<div class="actions" style="margin-top:7px">'+audioButton(l[1],"🔊 Nghe","en-US",1,l)+'</div></div>';
       }).join("")+'</div><div class="actions" style="margin-top:12px"><button class="primary" onclick="playDialogue('+i+')">▶ Nghe cả đoạn</button><button onclick="stopSpeech()">⏹ Dừng</button></div></div>';
     }).join("")+'</div>'+pageControls(communicationPage,db.communication.length,size,"communication"));
 }
@@ -670,7 +678,7 @@ function trilingual(){
   $("view").innerHTML=shell("Tam ngữ Anh – Trung – Việt","English • 中文 • Pinyin • Tiếng Việt; mỗi ngôn ngữ có giọng đọc riêng.",
     '<div class="card"><div class="muted small">Hiển thị '+(db.trilingual.length?start+1:0)+'–'+Math.min(start+size,db.trilingual.length)+' / '+db.trilingual.length+' mục</div>'+pageControls(trilingualPage,db.trilingual.length,size,"trilingual")+'</div>'+
     '<div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>English</th><th>中文</th><th>Pinyin</th><th>Tiếng Việt</th><th>Nghe</th></tr></thead><tbody>'+
-    items.map(function(x){return '<tr><td>'+esc(x.en||"")+'</td><td>'+esc(x.zh||x.chinese||"")+'</td><td>'+esc(x.pinyin||"")+'</td><td>'+esc(x.vi||x.vietnamese||"")+'</td><td><div class="actions">'+audioButton(x.en,"🇺🇸","en-US")+audioButton(x.zh||x.chinese,"🇨🇳","zh-CN")+audioButton(x.vi||x.vietnamese,"🇻🇳","vi-VN")+'</div></td></tr>'}).join("")+
+    items.map(function(x){return '<tr><td>'+esc(x.en||"")+'</td><td>'+esc(x.zh||x.chinese||"")+'</td><td>'+esc(x.pinyin||"")+'</td><td>'+esc(x.vi||x.vietnamese||"")+'</td><td><div class="actions">'+audioButton(x.en,"🇺🇸","en-US",1,x)+audioButton(x.zh||x.chinese,"🇨🇳","zh-CN",1,x)+audioButton(x.vi||x.vietnamese,"🇻🇳","vi-VN",1,x)+'</div></td></tr>'}).join("")+
     '</tbody></table></div>'+pageControls(trilingualPage,db.trilingual.length,size,"trilingual")+'</div>');
 }
 function review(){
