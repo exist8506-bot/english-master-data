@@ -78,6 +78,7 @@ function applyUserSnapshot(snapshot){
     v.status=s.status||v.status||"New";v.favorite=!!s.favorite;v.reviewDue=s.reviewDue??v.reviewDue??null;
     v.correct_count=Number(s.correct_count)||0;v.wrong_count=Number(s.wrong_count)||0;v.lastReviewed=s.lastReviewed||v.lastReviewed||null;
   });
+  db.stats.learned=db.vocab.filter(function(v){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(v.status)}).length;
   pendingUserState=null;
 }
 function openContentDB(){
@@ -202,7 +203,9 @@ function recordVocabOutcome(word,correct,dueDays){
   if(!v)return;
   v.lastReviewed=new Date().toISOString();
   if(correct){
+    const wasLearned=["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(v.status);
     v.correct_count=(Number(v.correct_count)||0)+1;
+    if(!wasLearned)db.stats.learned=(Number(db.stats.learned)||0)+1;
     if(v.status==="New"||v.status==="Chưa nhớ")v.status="Learning";
     const days=Math.max(0,Number(dueDays??2));
     v.reviewDue=new Date(Date.now()+days*86400000).toISOString();
@@ -484,7 +487,6 @@ function rateFlash(status){
   v.status=status;v.lastReviewed=new Date().toISOString();
   const dueDays=status==="Rất dễ"?7:status==="Đã nhớ"?2:0;
   v.reviewDue=new Date(Date.now()+dueDays*86400000).toISOString();
-  if(status!=="Chưa nhớ")db.stats.learned++;
   recordActivity();recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);
   flashFlipped=false;
   if(reviewActive){
@@ -638,7 +640,7 @@ function review(){
 function stats(){
   const acc=db.stats.answered?Math.round((db.stats.correct/db.stats.answered)*100):0;
   $("view").innerHTML=shell("Tiến độ","Theo dõi XP, số từ học và độ chính xác.",
-    '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Lần đánh dấu đã học</div></div><div class="card"><div class="big">'+acc+'%</div><div class="muted">Độ chính xác</div></div></div>');
+    '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Số từ đã học</div></div><div class="card"><div class="big">'+acc+'%</div><div class="muted">Độ chính xác</div></div></div>');
 }
 function settings(){
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
