@@ -265,7 +265,17 @@ check("phone layout mode applies", T.snap().db.profile.layout === "phone" && doc
 T.setLayoutMode("desktop");
 check("desktop layout mode applies", T.snap().db.profile.layout === "desktop" && document.body.classList._set.has("layout-desktop") && !document.body.classList._set.has("layout-phone"));
 T.setLayoutMode("auto");
-check("auto layout mode restores", T.snap().db.profile.layout === "auto" && !document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
+check("auto layout mode restores", T.snap().db.profile.layout === "auto" && document.body.classList._set.has("layout-desktop"));
+
+const originalMatchMedia = window.matchMedia;
+window.matchMedia = (query) => ({ matches: query.includes("max-width: 800px"), addEventListener() {}, addListener() {} });
+T.setLayoutMode("auto");
+check("auto layout detects phone viewport", document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
+window.matchMedia = originalMatchMedia;
+T.setLayoutMode("desktop");
+check("desktop layout remains isolated", !document.body.classList._set.has("layout-phone") && document.body.classList._set.has("layout-desktop"));
+T.setLayoutMode("phone");
+check("phone layout remains isolated", document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
 
 T.show("speaking");
 check("speaking UI and microphone fallback", document.getElementById("view").innerHTML.includes("Bắt đầu nói"));
@@ -345,6 +355,9 @@ check("version signals align", /APP_VERSION="8\.0\.0"/.test(app) && /application
 const styles=fs.readFileSync(path.join(root,"styles.css"),"utf8");
 check("phone layout is scoped only to phone class", styles.includes("body.layout-phone") && styles.includes("body.layout-phone #side") && styles.includes("body.layout-phone main"));
 check("phone layout uses bottom navigation", styles.includes("body.layout-phone #side{position:fixed") && styles.includes("body.layout-phone #side button"));
+check("phone layout has safe-area support", styles.includes("env(safe-area-inset-bottom)"));
+check("phone layout hardens long tables", styles.includes("body.layout-phone .table{min-width:620px}"));
+check("phone layout keeps touch targets usable", styles.includes("body.layout-phone button,body.layout-phone input,body.layout-phone select{min-height:42px}"));
 
 
 if (failures.length) {
