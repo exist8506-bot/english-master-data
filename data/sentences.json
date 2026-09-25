@@ -20796,8 +20796,8 @@
   },
   {
     "id": "sent6_1acfv19",
-    "en": "It is important to stay domestic.",
-    "vi": "Điều quan trọng là giữ được sự trong nước; nội địa.",
+    "en": "We use domestic products whenever possible.",
+    "vi": "Chúng tôi sử dụng sản phẩm trong nước khi có thể.",
     "topic": "travel",
     "grammar": "Adjective in context",
     "vocabWord": "domestic",
@@ -20805,8 +20805,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is domestic for us.",
-    "legacyVi": "Kế hoạch mới khá trong nước; nội địa với chúng tôi."
+    "legacyEn": "It is important to stay domestic.",
+    "legacyVi": "Điều quan trọng là giữ được sự trong nước; nội địa."
   },
   {
     "id": "sent6_1etti6t",
@@ -21006,8 +21006,8 @@
   },
   {
     "id": "sent6_qv84nv",
-    "en": "It is important to stay essential.",
-    "vi": "Điều quan trọng là giữ được sự thiết yếu.",
+    "en": "Water is essential for life.",
+    "vi": "Nước là thiết yếu cho sự sống.",
     "topic": "general",
     "grammar": "Adjective in context",
     "vocabWord": "essential",
@@ -21015,8 +21015,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is essential for us.",
-    "legacyVi": "Kế hoạch mới khá thiết yếu với chúng tôi."
+    "legacyEn": "It is important to stay essential.",
+    "legacyVi": "Điều quan trọng là giữ được sự thiết yếu."
   },
   {
     "id": "sent6_16un03b",
@@ -21216,8 +21216,8 @@
   },
   {
     "id": "sent6_1m5sly2",
-    "en": "It is important to stay formal.",
-    "vi": "Điều quan trọng là giữ được sự trang trọng; chính thức.",
+    "en": "She wore formal clothes to the meeting.",
+    "vi": "Cô ấy mặc trang phục trang trọng đến cuộc họp.",
     "topic": "communication",
     "grammar": "Adjective in context",
     "vocabWord": "formal",
@@ -21225,8 +21225,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is formal for us.",
-    "legacyVi": "Kế hoạch mới khá trang trọng; chính thức với chúng tôi."
+    "legacyEn": "It is important to stay formal.",
+    "legacyVi": "Điều quan trọng là giữ được sự trang trọng; chính thức."
   },
   {
     "id": "sent6_1g1oqos",
@@ -21986,8 +21986,8 @@
   },
   {
     "id": "sent6_1axsjn6",
-    "en": "It is important to stay original.",
-    "vi": "Điều quan trọng là giữ được sự nguyên gốc; độc đáo.",
+    "en": "This painting is an original work.",
+    "vi": "Bức tranh này là một tác phẩm nguyên bản.",
     "topic": "general",
     "grammar": "Adjective in context",
     "vocabWord": "original",
@@ -21995,8 +21995,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is original for us.",
-    "legacyVi": "Kế hoạch mới khá nguyên gốc; độc đáo với chúng tôi."
+    "legacyEn": "It is important to stay original.",
+    "legacyVi": "Điều quan trọng là giữ được sự nguyên gốc; độc đáo."
   },
   {
     "id": "sent6_1rtdb19",
@@ -22756,8 +22756,8 @@
   },
   {
     "id": "sent6_gagvss",
-    "en": "It is important to stay temporary.",
-    "vi": "Điều quan trọng là giữ được sự tạm thời.",
+    "en": "This is a temporary solution.",
+    "vi": "Đây là một giải pháp tạm thời.",
     "topic": "time",
     "grammar": "Adjective in context",
     "vocabWord": "temporary",
@@ -22765,8 +22765,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is temporary for us.",
-    "legacyVi": "Kế hoạch mới khá tạm thời với chúng tôi."
+    "legacyEn": "It is important to stay temporary.",
+    "legacyVi": "Điều quan trọng là giữ được sự tạm thời."
   },
   {
     "id": "sent6_1967r2v",
@@ -22896,8 +22896,8 @@
   },
   {
     "id": "sent6_1904vq3",
-    "en": "It is important to stay urban.",
-    "vi": "Điều quan trọng là giữ được sự đô thị.",
+    "en": "Many people live in urban areas.",
+    "vi": "Nhiều người sống ở khu vực đô thị.",
     "topic": "city",
     "grammar": "Adjective in context",
     "vocabWord": "urban",
@@ -22905,8 +22905,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is urban for us.",
-    "legacyVi": "Kế hoạch mới khá đô thị với chúng tôi."
+    "legacyEn": "It is important to stay urban.",
+    "legacyVi": "Điều quan trọng là giữ được sự đô thị."
   },
   {
     "id": "sent6_74qdkf",
@@ -25416,8 +25416,8 @@
   },
   {
     "id": "sent6_dna6ow",
-    "en": "It is important to stay spare.",
-    "vi": "Điều quan trọng là giữ được sự dư; dành ra.",
+    "en": "Do you have a spare key?",
+    "vi": "Bạn có chìa khóa dự phòng không?",
     "topic": "daily",
     "grammar": "Adjective in context",
     "vocabWord": "spare",
@@ -25425,8 +25425,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is spare for us.",
-    "legacyVi": "Kế hoạch mới khá dư; dành ra với chúng tôi."
+    "legacyEn": "It is important to stay spare.",
+    "legacyVi": "Điều quan trọng là giữ được sự dư; dành ra."
   },
   {
     "id": "sent6_1wsdtet",
@@ -25626,8 +25626,8 @@
   },
   {
     "id": "sent6_1rfegjj",
-    "en": "It is important to stay affordable.",
-    "vi": "Điều quan trọng là giữ được sự có giá phải chăng.",
+    "en": "This apartment is affordable for students.",
+    "vi": "Căn hộ này có giá phù hợp với sinh viên.",
     "topic": "money",
     "grammar": "Adjective in context",
     "vocabWord": "affordable",
@@ -25635,8 +25635,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is affordable for us.",
-    "legacyVi": "Kế hoạch mới khá có giá phải chăng với chúng tôi."
+    "legacyEn": "It is important to stay affordable.",
+    "legacyVi": "Điều quan trọng là giữ được sự có giá phải chăng."
   },
   {
     "id": "sent6_1g1jt55",
@@ -25766,8 +25766,8 @@
   },
   {
     "id": "sent6_dsc9eh",
-    "en": "It is important to stay conscious.",
-    "vi": "Điều quan trọng là giữ được sự có ý thức; tỉnh táo.",
+    "en": "She is conscious of her responsibilities.",
+    "vi": "Cô ấy nhận thức rõ trách nhiệm của mình.",
     "topic": "health",
     "grammar": "Adjective in context",
     "vocabWord": "conscious",
@@ -25775,8 +25775,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "favorite": false,
-    "legacyEn": "The new plan is conscious for us.",
-    "legacyVi": "Kế hoạch mới khá có ý thức; tỉnh táo với chúng tôi."
+    "legacyEn": "It is important to stay conscious.",
+    "legacyVi": "Điều quan trọng là giữ được sự có ý thức; tỉnh táo."
   },
   {
     "id": "sent6_ca51x6",
