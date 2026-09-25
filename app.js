@@ -178,9 +178,11 @@ async function hydrateContent(){
       save();
     }
   }
+  const liveUserState=userSnapshot(db);
   const cached=await readCachedContent();
   if(cached){
     db={...db,...contentSnapshot(cached)};
+    applyUserSnapshot(liveUserState);
     if(pendingUserState)applyUserSnapshot({vocabState:pendingUserState});
     render();
   }
