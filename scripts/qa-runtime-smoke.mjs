@@ -35,6 +35,7 @@ class El {
       _set: new Set(),
       add: (...xs) => xs.forEach((x) => this.classList._set.add(x)),
       remove: (...xs) => xs.forEach((x) => this.classList._set.delete(x)),
+      contains: (x) => this.classList._set.has(x),
       toggle: (x, force) => {
         const on = force === undefined ? !this.classList._set.has(x) : !!force;
         on ? this.classList._set.add(x) : this.classList._set.delete(x);
