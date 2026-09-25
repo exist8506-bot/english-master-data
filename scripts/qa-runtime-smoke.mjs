@@ -197,8 +197,15 @@ check(
   audit.trilingual === 500 &&
   audit.communication === 500 &&
   audit.grammar === 500 &&
-  audit.audio === 500,
+  audit.audio === 500 &&
+  Object.values(audit.missing || {}).every((items) => items.length === 0),
   JSON.stringify(audit)
+);
+check(
+  "500-word audit is per-item, not only aggregate",
+  audit.expansion500 === 500 &&
+  Object.values(audit.missing || {}).every((items) => Array.isArray(items)),
+  JSON.stringify(audit.missing || {})
 );
 
 const routes = [
