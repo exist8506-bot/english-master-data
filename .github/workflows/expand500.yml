@@ -427,7 +427,7 @@ jobs:
           for q in FQ:
               if q.get("source")=="expansion500":
                   assert len(q["options"])==4 and len({norm(v) for v in q["options"]})==4
-                  assert 0<=q["answer"]<4 and q["options"][q["answer"]]==q["explain"].split(" = ",1)[1].rstrip(".")
+                  assert 0<=q["answer"]<4 and q["options"][q["answer"]]==next(v["meaning"] for v in new_vocab if norm(v["word"])==norm(q["vocabWord"]))
 
           assert sum(x.get("source")=="expansion500" for x in FS)==500
           assert sum(x.get("source")=="expansion500" for x in FQ)==500
