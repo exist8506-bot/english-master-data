@@ -10600,13 +10600,17 @@
     "favorite": false
   },
   {
-    "en": "Patience is one of his strengths.",
-    "vi": "Kiên nhẫn là một trong những điểm mạnh của anh ấy.",
+    "en": "He is patient with his students.",
+    "vi": "Anh ấy kiên nhẫn với học sinh của mình.",
     "id": "sentLegacy_1qvw2ey",
-    "topic": "general",
+    "topic": "personality",
     "source": "legacy",
     "sourceVersion": "legacy",
-    "favorite": false
+    "favorite": false,
+    "legacyEn": "Patience is one of his strengths.",
+    "legacyVi": "Kiên nhẫn là một trong những điểm mạnh của anh ấy.",
+    "vocabWord": "patient",
+    "grammar": "Adjective in context"
   },
   {
     "en": "The teacher explained the structure of the sentence.",
