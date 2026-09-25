@@ -1,13 +1,14 @@
 {
-  "version": "7.0.5",
+  "version": "7.0.6",
   "updatedAt": "2026-09-25",
-  "releaseNotes": "V7.0.5: giữ tiến độ ổn định, bảo vệ dữ liệu remote, sửa thống kê từ đã học, cải thiện audio/TTS đa ngôn ngữ và ưu tiên đáp án nghe cùng chủ đề.",
+  "releaseNotes": "V7.0.6: thêm 500 mục mới và đồng bộ vào từ vựng, câu, trắc nghiệm, giao tiếp, nghe, phát âm/TTS và tam ngữ; giữ nguyên dữ liệu cũ.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
     "questions": "questions.json",
     "grammar": "grammar.json",
     "communication": "communication.json",
-    "trilingual": "trilingual.json"
+    "trilingual": "trilingual.json",
+    "extra500": "data/extra500_v8.json"
   }
 }
