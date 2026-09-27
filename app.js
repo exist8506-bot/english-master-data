@@ -88,17 +88,22 @@ function communicationLineIsNatural(line){
   const en=String(line??"").trim();
   if(!en)return false;
   const rejects=[
-    /^i'm practicing .+\\.$/i,
+    /^i'm practicing .+\.$/i,
     /^(?:when would you use|what does|how can i use|how would you use|can you give me an example with|can you tell me more about|why is .+ useful in real life|which word is easier to remember) /i,
-    /^i think .+ is easier because i can use it often\\.$/i,
+    /^i think .+ is easier because i can use it often\.$/i,
     /^do you know the word "/i,
-    /^yes\\. it means /i,
+    /^yes\. it means /i,
     /^where might i see the word "/i,
-    /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i
+    /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b/i
   ];
   if(rejects.some(function(re){return re.test(en)}))return false;
-  // Keep real sentences beginning with "A/An", but remove dictionary-style fragments.
-  if(/^(?:to|a|an)\\s+/i.test(en)&&!/[.!?]$/.test(en))return false;
+  // Dictionary-style infinitive fragments should never become dialogue lines.
+  if(/^to\s+/i.test(en))return false;
+  // Keep real "A/An ..." sentences, but reject noun-phrase fragments.
+  if(/^(?:a|an)\s+/i.test(en)){
+    const rest=en.replace(/^(?:a|an)\s+/i,"");
+    if(!/\b(?:am|is|are|was|were|can|could|will|would|should|must|have|has|had|do|does|did|need|needs|want|wants|like|likes|love|loves|go|goes|went|come|comes|came|make|makes|made|take|takes|took|give|gives|gave|work|works|worked|live|lives|lived|visit|visits|visited|call|calls|called|try|tries|tried|feel|feels|felt|look|looks|looked|seem|seems|seemed|help|helps|helped|keep|keeps|kept|start|starts|started|finish|finishes|finished|read|reads|wrote|write|writes|see|sees|saw|hear|hears|heard|find|finds|found|buy|buys|bought|open|opens|opened|close|closes|closed|sit|sits|sat|stand|stands|stood|sleep|sleeps|slept|eat|eats|ate|drink|drinks|drank|play|plays|played|study|studies|studied|learn|learns|learned|plan|plans|planned|enjoy|enjoys|enjoyed)\b/i.test(rest))return false;
+  }
   return true;
 }
 function communicationPracticePool(){
