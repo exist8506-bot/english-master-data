@@ -43,6 +43,7 @@ function sample(rows, n=8) {
 
 const sentences = readJson("sentences.json");
 const communication = readJson("communication.json");
+const vocabulary = readJson("vocabulary.json");
 const expansion = readJson("expansion500.json");
 const independent = sentences.filter(x => x?.source === "expansion500" || x?.source === "extra500_v8");
 
@@ -175,6 +176,21 @@ for(const s of independent){
   if(m&&!acceptableItIsPracticeAdjs.has(m[1].toLowerCase()))itIsPracticeBad.push(s);
 }
 
+const badVocabularyPatterns=[
+  /^we can buy together this evening\.$/i,
+  /^i feel (?:afraid|lazy|weak) when i finish my work\.$/i,
+  /^we will meet next (?:evening|hour|date)\.$/i,
+  /^we had (?:oven|knife|chopstick) for dinner\.$/i,
+  /^the doctor asked about my (?:nurse|ambulance)\.$/i,
+  /^she decided to (?:analyze|arrange|attend|contain|define|expect|imagine) after lunch\.$/i,
+  /^they tried to (?:accompany|affect|attach|encourage|estimate|harm|ignore) carefully\.$/i,
+  /^the team is working on secretary\.$/i,
+  /^i use my email to study at night\.$/i
+];
+const vocabularyBad=vocabulary.filter(function(v){
+  return badVocabularyPatterns.some(function(re){return re.test(String(v.example??"").trim())});
+});
+
 const communicationBad=[];
 for(const d of communication){
   for(const line of Array.isArray(d.lines)?d.lines:[]){
@@ -198,10 +214,12 @@ console.log(JSON.stringify({
   communicationSemanticFlags: communicationBad.length,
   communicationFlagSamples: communicationBad.slice(0,30),
   itIsPracticeTemplateFlags: itIsPracticeBad.length,
-  itIsPracticeTemplateSamples: sample(itIsPracticeBad, 30)
+  itIsPracticeTemplateSamples: sample(itIsPracticeBad, 30),
+  vocabularySemanticFlags: vocabularyBad.length,
+  vocabularySemanticSamples: vocabularyBad.slice(0,40).map(function(v){return {id:v.id,word:v.word,example:v.example,exampleVi:v.exampleVi}})
 }, null, 2));
 
-const totalFailures = bad.length + communicationBad.length + itIsPracticeBad.length + repeatedSkeletons.length + nearDuplicates.length;
+const totalFailures = bad.length + communicationBad.length + itIsPracticeBad.length + repeatedSkeletons.length + nearDuplicates.length + vocabularyBad.length;
 if(totalFailures){
   console.error("SEMANTIC AUDIT FAILED: "+totalFailures+" suspicious findings remain.");
   process.exitCode=1;

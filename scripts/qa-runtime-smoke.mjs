@@ -283,7 +283,14 @@ const knownBadPracticeExamples = [
   "I feel lazy when I finish my work.",
   "I feel weak when I finish my work.",
   "We can tell together this evening.",
-  "He decided to get before the meeting."
+  "He decided to get before the meeting.",
+  "We can buy together this evening.",
+  "I feel afraid when I finish my work.",
+  "I feel lazy when I finish my work.",
+  "I feel weak when I finish my work.",
+  "We will meet next evening.",
+  "We will meet next hour.",
+  "We will meet next date."
 ];
 check(
   "sentence practice pool filters bad/duplicate entries",
