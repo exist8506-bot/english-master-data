@@ -75,3 +75,6 @@ jobs:
           git add data/sentences.json
           git commit -m "fix: replace remaining unnatural standalone sentences"
           git push origin HEAD:main
+
+      - name: Post-repair semantic sentence audit
+        run: node scripts/qa-semantic-audit.mjs
