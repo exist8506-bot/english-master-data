@@ -36586,11 +36586,11 @@
   },
   {
     "id": "exp500_sent_463_d3213afb",
-    "en": "She sounded high during the conversation.",
-    "vi": "Cô ấy có vẻ cao trong cuộc trò chuyện.",
+    "en": "The price is high for this item.",
+    "vi": "Giá của món hàng này cao.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20sounded%20high%20during%20the%20conversation.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20price%20is%20high%20for%20this%20item.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -36630,22 +36630,22 @@
   },
   {
     "id": "exp500_sent_467_8f09b003",
-    "en": "The room looks new this morning.",
-    "vi": "Căn phòng trông mới vào sáng nay.",
+    "en": "I bought a new notebook yesterday.",
+    "vi": "Hôm qua tôi mua một quyển vở mới.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20room%20looks%20new%20this%20morning.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20bought%20a%20new%20notebook%20yesterday.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
   },
   {
     "id": "exp500_sent_468_e7482c70",
-    "en": "She sounded fast during the conversation.",
-    "vi": "Cô ấy có vẻ nhanh trong cuộc trò chuyện.",
+    "en": "This train is very fast.",
+    "vi": "Chuyến tàu này rất nhanh.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20sounded%20fast%20during%20the%20conversation.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=This%20train%20is%20very%20fast.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
