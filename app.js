@@ -42,7 +42,15 @@ const BAD_STANDALONE_SENTENCE_PATTERNS=[
   /^she seems visual today\.$/i,
   /^i saw aspect on my way home\.$/i,
   /^i noticed (?:youth|iron|steel) this morning\.$/i,
-  /^i usually (?:insist|acknowledge) after work\.$/i
+  /^i usually (?:insist|acknowledge) after work\.$/i,
+  /^i need to (?:usually|always|often|sometimes|still|really|very|maybe|carefully|slowly) before breakfast\.$/i,
+  /^i try to (?:always|usually|often|sometimes|still|really|very|carefully|slowly) every day\.$/i,
+  /^(?:she|he) wants to (?:always|usually|often|sometimes|still|really|very|carefully|slowly|maybe|again) after work\.$/i,
+  /^we can (?:quickly|almost|also|sometimes|usually|always) together this evening\.$/i,
+  /^that was a (?:angry|bored|lonely|brave|strong|dirty|rainy|warm|busy|easy|necessary|normal|private|small|old|safe|tiny|thirsty) experience for me\.$/i,
+  /^i feel (?:dangerous|full|sour|difficult|common|natural|personal|long) when i finish my work\.$/i,
+  /^it is (?:hungry|spicy|large|big|low|public) to practice a little every day\.$/i,
+  /^she sounded (?:delicious|salty|favorite) during the conversation\.$/i
 ];
 function isNaturalStandaloneSentence(item){
   if(!item||typeof item!=="object")return false;
