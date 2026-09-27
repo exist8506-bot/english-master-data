@@ -16,10 +16,23 @@ const criticalFiles = [
   "expansion500.json",
 ];
 
+function resolveBaseRef() {
+  try {
+    return execFileSync("git", ["merge-base", "origin/main", "HEAD"], { encoding: "utf8" }).trim();
+  } catch {}
+  try {
+    return execFileSync("git", ["rev-parse", "HEAD^"], { encoding: "utf8" }).trim();
+  } catch {}
+  return "";
+}
+
+const baseRef = resolveBaseRef();
+
 function gitShow(file) {
+  if (!baseRef) throw new Error("Unable to determine preservation base revision");
   return execFileSync(
     "git",
-    ["show", "origin/main:data/" + file],
+    ["show", baseRef + ":data/" + file],
     { encoding: "utf8", maxBuffer: 256 * 1024 * 1024 }
   );
 }
@@ -55,22 +68,12 @@ function asArray(value, label) {
 }
 
 let changedOutput = "";
-try {
+if (baseRef) {
   changedOutput = execFileSync(
     "git",
-    ["diff", "--name-only", "origin/main...HEAD", "--", "data"],
+    ["diff", "--name-only", baseRef + "...HEAD", "--", "data"],
     { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }
   ).trim();
-} catch (err) {
-  const head = execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
-  let base = "";
-  try {
-    base = execFileSync("git", ["rev-parse", "origin/main"], { encoding: "utf8" }).trim();
-  } catch {}
-  if (head !== base) throw err;
-  // Direct push to main: origin/main already points at HEAD, so there is no
-  // PR delta to compare. The other integrity audits still run normally.
-  changedOutput = "";
 }
 
 const changedDataFiles = changedOutput
@@ -88,8 +91,8 @@ for (const file of criticalFiles) {
   let baseValue;
   let currentValue;
   if (file === "expansion500.json") {
-    baseValue = parseJson(gitShow(file), "origin/main:data/" + file);
-    currentValue = parseJson(readCurrent(file), "PR:data/" + file);
+    baseValue = parseJson(gitShow(file), "BASE:data/" + file);
+    currentValue = parseJson(readCurrent(file), "CURRENT:data/" + file);
     if (!Array.isArray(baseValue?.words) || !Array.isArray(currentValue?.words)) {
       throw new Error("expansion500.json must contain a words array");
     }
@@ -115,8 +118,8 @@ for (const file of criticalFiles) {
     continue;
   }
 
-  const base = asArray(parseJson(gitShow(file), "origin/main:data/" + file), file + " (main)");
-  const current = asArray(parseJson(readCurrent(file), "PR:data/" + file), file + " (PR)");
+  const base = asArray(parseJson(gitShow(file), "BASE:data/" + file), file + " (main)");
+  const current = asArray(parseJson(readCurrent(file), "CURRENT:data/" + file), file + " (PR)");
 
   const baseKeys = new Set(base.map((x) => keyFor(file, x)).filter(Boolean));
   const currentKeys = new Set(current.map((x) => keyFor(file, x)).filter(Boolean));
@@ -141,7 +144,8 @@ for (const file of criticalFiles) {
 console.log("=== English Master preservation audit ===");
 console.log(JSON.stringify({
   status: "PASS",
+  baseRef,
   changedDataFiles,
-  message: "All records present on main are preserved. Unchanged data files were not rewritten.",
+  message: "All records present on the preservation base are preserved. Unchanged data files were not rewritten.",
   files: results
 }, null, 2));
