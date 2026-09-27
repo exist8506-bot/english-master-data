@@ -46,7 +46,8 @@ const BAD_STANDALONE_SENTENCE_PATTERNS=[
   /^(?:she|he) wants to (?:always|usually|often|sometimes|still|really|very|carefully|slowly|maybe|again) after work\\.$/i,
   /^we can (?:quickly|almost|also|sometimes|usually|always) together this evening\\.$/i,
   /^that was a (?:angry|bored|lonely|brave|strong|dirty|rainy|warm|busy|easy|necessary|normal|private|small|old|safe|tiny|thirsty) experience for me\\.$/i,
-  /^i feel (?:dangerous|full|sour|difficult|common|natural|personal|long) when i finish my work\\.$/i,
+  /^i feel (?:dangerous|full|sour|difficult|common|natural|personal|long) when i finish my work\\.$/i,  /^i feel (?:afraid|lazy|weak) when i finish my work\.$/i,
+
   /^it is (?:hungry|spicy|large|big|low|public) to practice a little every day\\.$/i,
   /^she sounded (?:delicious|salty|favorite) during the conversation\\.$/i,
 
