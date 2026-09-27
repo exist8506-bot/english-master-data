@@ -116,13 +116,14 @@ let fetchImpl = async (url) => {
   throw new Error("unknown fetch: " + u);
 };
 
+const seedVocabWord = String(data.vocabulary.find((v) => v && String(v.word ?? "").trim())?.word ?? "").trim();
 const seed = {
   schemaVersion: 2,
   stats: { xp: 123, streak: 4, learned: 7, answered: 8, correct: 6 },
   profile: { theme: "dark", autoUpdate: false, speechRate: 0.75, layout: "auto" },
   positions: { flashIndex: 17, listenIndex: 19, speakIndex: 23, quizIndex: 29 },
   vocabState: [{
-    word: "altogether",
+    word: seedVocabWord,
     status: "Review",
     favorite: true,
     correct_count: 4,
@@ -341,11 +342,18 @@ check("favorite interaction", !!searchableVocab && searchableVocab.favorite !== 
 
 T.show("quiz");
 snap = T.snap();
-const q = snap.db.questions[snap.quizIndex % snap.db.questions.length];
-const originalOptions = q.options.map((x) => String(x).trim().toLowerCase());
+const renderedQuizOptions = snap.quizOptions.map((x) => String(x).trim().toLowerCase());
+const q = snap.db.questions.find((item) => {
+  if (!item || !Array.isArray(item.options)) return false;
+  const normalized = item.options.map((x) => String(x).trim().toLowerCase());
+  return normalized.length === renderedQuizOptions.length && normalized.every((x) => renderedQuizOptions.includes(x));
+});
+check("quiz has a matching source question", !!q, JSON.stringify({quizIndex:snap.quizIndex,options:renderedQuizOptions}));
+const originalOptions = q ? q.options.map((x) => String(x).trim().toLowerCase()) : [];
 const renderedOptions = snap.quizOptions.map((x) => String(x).trim().toLowerCase());
 check(
   "quiz shuffles all four choices",
+  !!q &&
   renderedOptions.length === 4 &&
   new Set(renderedOptions).size === 4 &&
   new Set(renderedOptions).size === new Set(originalOptions).size &&

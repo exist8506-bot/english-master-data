@@ -881,11 +881,24 @@ function similarityScore(a,b){
 }
 
 
+function normalizeQuizIndex(){
+  const total=db.questions.length;
+  if(!total){quizIndex=0;return 0}
+  const n=Number(quizIndex);
+  const safe=Number.isFinite(n)?Math.trunc(n):0;
+  quizIndex=((safe%total)+total)%total;
+  return quizIndex;
+}
 function quiz(){
   quizAnswered=false;
   quizOptions=[];quizCorrectIndex=-1;
   if(!db.questions.length){$("view").innerHTML=shell("Trắc nghiệm","Chưa có dữ liệu.");return}
-  const q=db.questions[quizIndex%db.questions.length],raw=Array.isArray(q.options)?q.options:[];
+  const q=db.questions[normalizeQuizIndex()],raw=Array.isArray(q?.options)?q.options:[];
+  if(!q||raw.length!==4||raw.some(function(x){return !String(x??"").trim()})){
+    $("view").innerHTML=shell("Trắc nghiệm","Câu hỏi hiện tại không hợp lệ. Đang chuyển sang câu khác.");
+    quizIndex=0;
+    return quiz();
+  }
   const answerIndex=Number(q.answer);
   const paired=raw.map(function(text,index){return {text,correct:index===answerIndex}});
   quizOptions=shuffle(paired);
@@ -901,7 +914,8 @@ function answerQuiz(i,a){
   if(quizAnswered)return;
   const correctIndex=Number.isInteger(quizCorrectIndex)&&quizCorrectIndex>=0?quizCorrectIndex:Number(a);
   quizAnswered=true;
-  const ok=i===correctIndex,q=db.questions[quizIndex%db.questions.length];
+  const qIndex=normalizeQuizIndex(),q=db.questions[qIndex];
+  if(!q){quizAnswered=false;toast("Không tìm thấy câu hỏi hiện tại.");return}
   document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
   db.stats.answered=(Number(db.stats.answered)||0)+1;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct=(Number(db.stats.correct)||0)+1;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
