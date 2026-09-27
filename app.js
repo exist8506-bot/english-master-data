@@ -9,7 +9,7 @@ let db={
   profile:{theme:"light",autoUpdate:true,speechRate:1,layout:"auto"},
   lastRemoteVersion:""
 };
-let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false;
+let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
 let reviewQueue=[],reviewIndex=0,validatedContentSignature="",updateInProgress=false;
@@ -850,21 +850,30 @@ function similarityScore(a,b){
 
 function quiz(){
   quizAnswered=false;
+  quizOptions=[];quizCorrectIndex=-1;
   if(!db.questions.length){$("view").innerHTML=shell("Trắc nghiệm","Chưa có dữ liệu.");return}
-  const q=db.questions[quizIndex%db.questions.length],opts=q.options||[];
+  const q=db.questions[quizIndex%db.questions.length],raw=Array.isArray(q.options)?q.options:[];
+  const answerIndex=Number(q.answer);
+  const paired=raw.map(function(text,index){return {text,correct:index===answerIndex}});
+  quizOptions=shuffle(paired);
+  quizCorrectIndex=quizOptions.findIndex(function(o){return o.correct});
+  const opts=quizOptions.map(function(o){return o.text});
   $("view").innerHTML=shell("Trắc nghiệm","Nghe câu hỏi và từng đáp án trước khi chọn.",
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(q.topic||"daily")+'</span><span class="muted">Câu '+(quizIndex%db.questions.length+1)+' / '+db.questions.length+'</span>'+jumpControl("quiz",quizIndex%db.questions.length,db.questions.length)+'</div>'+
     '<div class="actions" style="margin:14px 0">'+audioButton(q.prompt,"🔊 Đọc câu hỏi",guessLang(q.prompt),1,q)+'</div><h2>'+esc(q.prompt)+'</h2><div class="options">'+
-    opts.map(function(o,i){return '<div class="row"><button class="option" style="flex:1" onclick="answerQuiz('+i+','+Number(q.answer)+')">'+String.fromCharCode(65+i)+". "+esc(o)+'</button>'+audioButton(o,"🔊",guessLang(o),1)+'</div>'}).join("")+
+    opts.map(function(o,i){return '<div class="row"><button class="option" style="flex:1" onclick="answerQuiz('+i+','+quizCorrectIndex+')">'+String.fromCharCode(65+i)+". "+esc(o)+'</button>'+audioButton(o,"🔊",guessLang(o),1)+'</div>'}).join("")+
     '</div><div id="qres" class="hint" style="margin-top:14px">Chọn đáp án.</div></div>');
 }
 function answerQuiz(i,a){
-  if(quizAnswered)return;quizAnswered=true;const ok=i===a,q=db.questions[quizIndex%db.questions.length];
-  document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===a)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
+  if(quizAnswered)return;
+  const correctIndex=Number.isInteger(quizCorrectIndex)&&quizCorrectIndex>=0?quizCorrectIndex:Number(a);
+  quizAnswered=true;
+  const ok=i===correctIndex,q=db.questions[quizIndex%db.questions.length];
+  document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
   db.stats.answered++;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct++;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
 }
-function nextQuiz(){quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;save();render()}
+function nextQuiz(){quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
 
 function grammar(){
   $("view").innerHTML=shell("Ngữ pháp","Mỗi ví dụ có nút nghe để bạn nghe và đọc theo.",
