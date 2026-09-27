@@ -143,7 +143,7 @@ const hooks = `
 window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
-  review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode,
+  review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, sentencePracticePool,
   listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -213,12 +213,14 @@ check(
   JSON.stringify(audit)
 );
 const standalone = data.sentences.filter((s) => s?.source === "expansion500" || s?.source === "extra500_v8");
+const practicePool = T.sentencePracticePool();
 const badStandalone = standalone.filter((s) => s?.vocabWord || !String(s?.en ?? "").trim() || !String(s?.vi ?? "").trim() ||
   /^I want to understand .* better\.$/i.test(String(s.en ?? "")) ||
   /^The .* is on my desk today\.$/i.test(String(s.en ?? "")) ||
   /^I talked to the homework after class\.$/i.test(String(s.en ?? "")) ||
   /^I put the airport in my travel bag\.$/i.test(String(s.en ?? "")));
 check("standalone sentence pack is natural and independent", standalone.length === 1000 && badStandalone.length === 0, JSON.stringify({count:standalone.length,bad:badStandalone.slice(0,5)}));
+check("sentence practice pool filters bad/duplicate entries", practicePool.length > 0 && practicePool.length <= standalone.length && practicePool.every((s) => !s.vocabWord && String(s.en ?? "").trim() && String(s.vi ?? "").trim()), JSON.stringify({standalone:standalone.length,practicePool:practicePool.length}));
 check(
   "500-word audit is per-item, not only aggregate",
   audit.expansion500 === 500 &&
@@ -284,13 +286,13 @@ check("listening interaction", afterListen.sentenceAnswered === sentenceAnswered
 T.show("listening");
 let html=document.getElementById("view").innerHTML;
 check("listening has direct jump control", html.includes('id="listeningJump"') && html.includes("Tới câu"));
-check("listening jump changes exact sentence", T.jumpToItem("listening", 100) && T.snap().listenIndex === 99 && document.getElementById("view").innerHTML.includes("Câu 100 / 3250"));
+check("listening jump changes exact sentence", T.jumpToItem("listening", 100) && T.snap().listenIndex === 99 && document.getElementById("view").innerHTML.includes("Câu 100 / " + practicePool.length));
 check("listening rejects out-of-range jump", T.jumpToItem("listening", 999999) === false && T.snap().listenIndex === 99);
 
 T.show("speaking");
 html=document.getElementById("view").innerHTML;
 check("speaking has direct jump control", html.includes('id="speakingJump"') && html.includes("Tới câu"));
-check("speaking jump changes exact sentence", T.jumpToItem("speaking", 200) && T.snap().speakIndex === 199 && document.getElementById("view").innerHTML.includes("Câu 200 / 3250"));
+check("speaking jump changes exact sentence", T.jumpToItem("speaking", 200) && T.snap().speakIndex === 199 && document.getElementById("view").innerHTML.includes("Câu 200 / " + practicePool.length));
 
 T.show("quiz");
 html=document.getElementById("view").innerHTML;
