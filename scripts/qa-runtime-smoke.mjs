@@ -516,6 +516,23 @@ const commPages=Math.max(1,Math.ceil(commPool.length/12));
 T.show("communication");
 T.goPage("communication",commPages);
 const commHtml=document.getElementById("view").innerHTML;
+const filteredCommunication = T.communicationPracticePool();
+const rawExtraDialogues = snap.db.communication.filter((d) => String(d.source ?? "") === "extra500_v8");
+check(
+  "communication UI excludes vocabulary-drill dialogues and template prompts",
+  rawExtraDialogues.length === 50 &&
+  filteredCommunication.length >= 150 &&
+  filteredCommunication.every((d) => String(d.source ?? "") !== "extra500_v8") &&
+  filteredCommunication.every((d) => (d.lines || []).every((l) => {
+    const en = String(l?.[1] ?? "").trim();
+    return !/^i'?m practicing\b/i.test(en) &&
+      !/^why do you need\b/i.test(en) &&
+      !/^how do you use\b.*\bin real life\?$/i.test(en) &&
+      !/^do you find\b.*\buseful\?$/i.test(en) &&
+      !/^what will you do with\b.*\bnext\?$/i.test(en);
+  })),
+  JSON.stringify({rawExtraDialogues:rawExtraDialogues.length,filtered:filteredCommunication.length})
+);
 check(
   "communication pagination uses filtered pool",
   commPool.length > 0 &&

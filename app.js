@@ -1,4 +1,4 @@
-const APP_VERSION="8.0.5";
+const APP_VERSION="8.0.6";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -99,8 +99,12 @@ function communicationLineIsNatural(line){
   const en=String(line??"").trim();
   if(!en)return false;
   const rejects=[
-    /^i'm practicing .+\.$/i,
+    /^i'?m practicing .+\.$/i,
     /^(?:when would you use|what does|how can i use|how would you use|can you give me an example with|can you tell me more about|why is .+ useful in real life|which word is easier to remember) /i,
+    /^why do you need\b/i,
+    /^how do you use\b.*\bin real life\?$/i,
+    /^do you find\b.*\buseful\?$/i,
+    /^what will you do with\b.*\bnext\?$/i,
     /^i think .+ is easier because i can use it often\.$/i,
     /^do you know the word "/i,
     /^yes\. it means /i,
@@ -127,9 +131,10 @@ function communicationLineIsNatural(line){
 }
 function communicationPracticePool(){
   return db.communication.map(function(d){
+    if(String(d.source||"")==="extra500_v8")return null;
     const lines=(d.lines||[]).filter(function(l){return Array.isArray(l)&&communicationLineIsNatural(l[1])});
     return {...d,lines};
-  }).filter(function(d){return d.lines.length>=2});
+  }).filter(function(d){return d&&d.lines.length>=2});
 }
 function guessLang(text){
   const t=String(text??"");
@@ -942,7 +947,7 @@ function communication(){
   const list=communicationPracticePool(),size=12,pages=Math.max(1,Math.ceil(list.length/size));
   if(communicationPage>pages)communicationPage=pages;
   const start=(communicationPage-1)*size,items=list.slice(start,start+size);
-  $("view").innerHTML=shell("Giao tiếp","Hội thoại và luyện dùng từ; các đoạn có thể gồm hội thoại thực tế hoặc câu luyện từ.",
+  $("view").innerHTML=shell("Giao tiếp","Chỉ hiển thị hội thoại có câu hoàn chỉnh, tự nhiên; các khung ghép từ máy móc được loại khỏi giao diện.",
     '<div class="card"><div class="muted small">Hiển thị '+(list.length?start+1:0)+'–'+Math.min(start+size,list.length)+' / '+list.length+' hội thoại</div>'+pageControls(communicationPage,list.length,size,"communication")+'</div>'+
     '<div class="grid grid-2">'+items.map(function(d,j){
       const i=start+j,lines=d.lines||[];

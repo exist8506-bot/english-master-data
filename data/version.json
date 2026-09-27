@@ -1,7 +1,7 @@
 {
-  "version": "8.0.5",
+  "version": "8.0.6",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.5: sửa các bản ghi ví dụ trùng cũ còn giữ mẫu câu không tự nhiên.",
+  "releaseNotes": "V8.0.6: lọc 50 hội thoại ghép từ máy móc và siết kiểm tra nội dung hiển thị.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
