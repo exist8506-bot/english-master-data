@@ -1,7 +1,7 @@
 {
   "version": "8.0.7",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.7: làm sạch hội thoại hiển thị và bổ sung sao lưu/nhập/đặt lại tiến độ.",
+  "releaseNotes": "V8.0.7: lọc hội thoại ghép từ máy móc và bổ sung sao lưu/nhập/đặt lại tiến độ.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
