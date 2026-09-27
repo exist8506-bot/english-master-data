@@ -156,7 +156,10 @@ window.__EM_TEST = {
 `;
 
 const context = {
-  window, document, navigator, localStorage, URL: { createObjectURL: () => "blob:english-master-test", revokeObjectURL: () => {} }, Audio: FakeAudio,
+  window, document, navigator, localStorage,
+  URL: { createObjectURL: () => "blob:english-master-test", revokeObjectURL: () => {} },
+  Blob: class { constructor(parts, options) { this.parts = parts; this.type = options?.type || ""; } },
+  Audio: FakeAudio,
   SpeechSynthesisUtterance, console, setTimeout, clearTimeout,
   fetch: fetchImpl,
 };
@@ -476,7 +479,7 @@ check(
   imported.db.stats.xp === 777 &&
   imported.db.profile.speechRate === 1.25 &&
   imported.db.profile.layout === "phone" &&
-  imported.positions?.flashIndex === 5 &&
+  imported.flashIndex === 5 &&
   importedWord?.status === "Review" &&
   importedWord?.favorite === true &&
   importedWord?.correct_count === 9 &&
