@@ -247,7 +247,12 @@ const knownBadPracticeExamples = [
   "We can hear together this evening.",
   "The team is working on secretary.",
   "They properly use the app.",
-  "I use my email to study at night."
+  "I use my email to study at night.",
+  "I feel afraid when I finish my work.",
+  "I feel lazy when I finish my work.",
+  "I feel weak when I finish my work.",
+  "We can tell together this evening.",
+  "He decided to get before the meeting."
 ];
 check(
   "sentence practice pool filters bad/duplicate entries",
