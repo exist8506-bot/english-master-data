@@ -224,6 +224,33 @@ const excludedPracticePatterns = [
 const excludedPracticeRows = independentSentences.filter((s) =>
   excludedPracticePatterns.some((re) => re.test(String(s.en ?? "")))
 );
+const badVocabularyExamples = [];
+const badVocabularyPatterns = [
+  /^I talked to (?:the )?(?:homework|book|dictionary) after class\.$/i,
+  /^I used my (?:password|audio) to study at night\.$/i,
+  /^The (?:chair|roof|sofa|soap|cup) was open when I came home\.$/i,
+  /^The (?:pocket|cotton) is easy to wear\.$/i,
+  /^The (?:home|shelf|lock|basket|spoon|dishwasher|garbage|detergent|kitchen table) is near the kitchen\.$/i,
+  /^I need to (?:talk|repeat|start|stand|eat|stay|use|take|look|like|feel|show) before breakfast\.$/i,
+  /^She wants to (?:make|bring|watch|save|together|below) after work\.$/i,
+  /^I try to (?:give|find|want|carry|reserve|borrow|outside|before) every day\.$/i,
+  /^We can (?:tell|hear|mean|open|do|keep|hate|catch|prefer|wish) together this evening\.$/i,
+  /^I noticed (?:youth|iron|steel|aspect) this morning\.$/i,
+  /^I saw (?:reading|hiking|birthday|idea) on my way home\.$/i,
+  /^The cashier gave me the customer service\.$/i,
+  /^I left my keys beside the key\.$/i
+];
+for (const v of vocab) {
+  const en = String(v?.example ?? "").trim();
+  const word = norm(v?.word);
+  if (!en || !word) { badVocabularyExamples.push({word:v?.word,reason:"missing example"}); continue; }
+  if (!en.toLowerCase().includes(word)) badVocabularyExamples.push({word:v.word,example:en,reason:"example does not contain target word/phrase"});
+  if (badVocabularyPatterns.some((re) => re.test(en))) badVocabularyExamples.push({word:v.word,example:en,reason:"known unnatural template"});
+}
+must(badVocabularyExamples.length === 0,
+  "Unnatural/incomplete vocabulary examples remain: " + badVocabularyExamples.length
+);
+
 const globalWordDuplicates = (() => {
   const counts = new Map();
   for (const v of vocab) {
