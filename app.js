@@ -585,8 +585,9 @@ function render(){
   fn();
 }
 function home(){
+  const practiceCount=sentencePracticePool().length;
   $("view").innerHTML=shell("English Master V8.0.1","Học • Luyện • Nhớ • Cải thiện",
-    '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
+    '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+practiceCount+'</div><div class="muted">Câu luyện độc lập</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
 function pageControls(page,total,size,kind){
@@ -828,7 +829,7 @@ function communication(){
   const size=12,pages=Math.max(1,Math.ceil(db.communication.length/size));
   if(communicationPage>pages)communicationPage=pages;
   const start=(communicationPage-1)*size,items=db.communication.slice(start,start+size);
-  $("view").innerHTML=shell("Giao tiếp","Hội thoại thực tế; mỗi đoạn có 8–12 lượt nói và có thể nghe từng câu hoặc cả đoạn.",
+  $("view").innerHTML=shell("Giao tiếp","Hội thoại và luyện dùng từ; các đoạn có thể gồm hội thoại thực tế hoặc câu luyện từ.",
     '<div class="card"><div class="muted small">Hiển thị '+(db.communication.length?start+1:0)+'–'+Math.min(start+size,db.communication.length)+' / '+db.communication.length+' hội thoại</div>'+pageControls(communicationPage,db.communication.length,size,"communication")+'</div>'+
     '<div class="grid grid-2">'+items.map(function(d,j){
       const i=start+j,lines=d.lines||[];
