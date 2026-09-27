@@ -33,6 +33,9 @@ class El {
     this.className = "";
     this.attributes = {};
     this.setAttribute = (name, value) => { this.attributes[name] = String(value); };
+    this.appendChild = (child) => { this.child = child; };
+    this.remove = () => { this.removed = true; };
+    this.click = () => { this.clicked = true; };
     this.classList = {
       _set: new Set(),
       add: (...xs) => xs.forEach((x) => this.classList._set.add(x)),
@@ -73,6 +76,7 @@ function SpeechSynthesisUtterance(text) {
 const windowListeners = new Map();
 const window = {
   indexedDB: undefined,
+  confirm: () => true,
   __showListeningText: false,
   addEventListener(name, fn) {
     if (!windowListeners.has(name)) windowListeners.set(name, []);
@@ -152,7 +156,7 @@ window.__EM_TEST = {
 `;
 
 const context = {
-  window, document, navigator, localStorage, Audio: FakeAudio,
+  window, document, navigator, localStorage, URL: { createObjectURL: () => "blob:english-master-test", revokeObjectURL: () => {} }, Audio: FakeAudio,
   SpeechSynthesisUtterance, console, setTimeout, clearTimeout,
   fetch: fetchImpl,
 };
@@ -446,9 +450,50 @@ check("settings exposes progress backup tools",
   settingsHtml.includes("resetProgress()")
 );
 check("progress backup functions exist", typeof T.exportProgress === "function" && typeof T.importProgress === "function" && typeof T.resetProgress === "function");
+
+let exportThrew = false;
+try { T.exportProgress(); } catch (e) { exportThrew = true; }
+check("export progress executes", !exportThrew && document.body.child?.clicked === true);
+
+const importWord = String(T.snap().db.vocab[0]?.word || "").trim();
+const importPayload = {
+  app: "English Master",
+  stats: { xp: 777, streak: 9, answered: 2, correct: 2, sentenceAnswered: 1, sentenceCorrect: 1, speakingAttempts: 1, speakingGood: 1, learned: 1 },
+  profile: { theme: "dark", autoUpdate: true, speechRate: 1.25, layout: "phone" },
+  positions: { flashIndex: 5, listenIndex: 6, speakIndex: 7, quizIndex: 8 },
+  vocabState: [{ word: importWord, status: "Review", favorite: true, correct_count: 9, wrong_count: 2 }]
+};
+await T.importProgress({
+  value: "import.json",
+  files: [{ text: async () => JSON.stringify(importPayload) }]
+});
+const imported = T.snap();
+const importedWord = imported.db.vocab.find((v) => String(v.word || "").trim() === importWord);
+check(
+  "import progress restores stats and vocab state",
+  imported.db.stats.xp === 777 &&
+  imported.db.profile.speechRate === 1.25 &&
+  imported.db.profile.layout === "phone" &&
+  imported.positions?.flashIndex === 5 &&
+  importedWord?.status === "Review" &&
+  importedWord?.favorite === true &&
+  importedWord?.correct_count === 9 &&
+  importedWord?.wrong_count === 2
+);
+
 const beforeReset = T.snap();
 T.resetProgress();
 const resetSnap = T.snap();
+check(
+  "reset progress keeps content but clears learning state",
+  resetSnap.db.vocab.length === beforeReset.db.vocab.length &&
+  resetSnap.db.questions.length === beforeReset.db.questions.length &&
+  resetSnap.db.sentences.length === beforeReset.db.sentences.length &&
+  resetSnap.db.stats.xp === 0 &&
+  resetSnap.db.stats.answered === 0 &&
+  resetSnap.db.stats.sentenceAnswered === 0 &&
+  resetSnap.db.vocab.every((v) => v.status === "New" && !v.favorite && Number(v.correct_count || 0) === 0 && Number(v.wrong_count || 0) === 0)
+);
 check(
   "reset progress clears learning state",
   resetSnap.db.stats.xp === 0 &&
