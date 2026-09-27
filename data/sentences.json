@@ -31195,14 +31195,14 @@
   },
   {
     "id": "extra500_v8_s_473",
-    "en": "I checked the sponsor list before the meeting.",
-    "vi": "Tôi kiểm tra danh sách nhà tài trợ trước cuộc họp.",
+    "en": "I have breakfast at home before class.",
+    "vi": "Tôi ăn sáng ở nhà trước giờ học.",
     "topic": "daily",
     "grammar": "Everyday English",
     "favorite": false,
     "source": "extra500_v8",
     "sourceVersion": "8.0.1",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20checked%20the%20sponsor%20list%20before%20making%20a%20decision.&lang=en"
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20have%20breakfast%20at%20home%20before%20class.&lang=en"
   },
   {
     "id": "extra500_v8_s_474",
@@ -33241,11 +33241,11 @@
   },
   {
     "id": "exp500_sent_159_91c5f742",
-    "en": "I put the market receipt in my wallet.",
-    "vi": "Tôi cất hóa đơn ở chợ vào ví.",
+    "en": "I check the weather before leaving.",
+    "vi": "Tôi kiểm tra thời tiết trước khi rời đi.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20put%20the%20market%20receipt%20in%20my%20wallet.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20check%20the%20weather%20before%20leaving.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
