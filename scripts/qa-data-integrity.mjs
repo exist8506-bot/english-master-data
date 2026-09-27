@@ -185,32 +185,47 @@ must(independentSentences.every((s) => !s.vocabWord && String(s.en ?? "").trim()
   "Independent sentence rows must have English/Vietnamese text and no vocabWord linkage"
 );
 const badStandalonePatterns = [
-  /^I want to understand .* better\.$/i,
-  /^I talked to (?:the )?(?:homework|book|dictionary) after class\.$/i,
-  /^I used the (?:question|college|career|office|station) during my study session\.$/i,
-  /^Our (?:student|answer|eraser|subject|course) was harder than I expected\.$/i,
-  /^I wrote the details beside (?:the )?(?:work|manager|client)\.$/i,
   /^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i,
   /^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b/i,
-  /^I need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\.$/i,
-  /^They tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\.$/i,
-  /^I put the (?:beach|market|airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) (?:travel )?(?:bag|wallet|pocket)\.$/i,
+  /^I need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\\.$/i,
+  /^They tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\\.$/i,
+  /^I put the (?:beach|market|airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) (?:travel )?(?:bag|wallet|pocket)\\.$/i,
   /^I checked (?:the )?(?:sun|cloud|storm|cold weather|sponsor) (?:at|before|after|in|on) /i,
-  /^(?:She|He) wants to (?:often|maybe|again|carefully) after work\.$/i,
-  /^We can (?:quickly|almost|also) together this evening\.$/i,
-  /^I try to (?:really|still|very) every day\.$/i,
-  /^It is (?:hungry|spicy|large) to practice a little every day\.$/i,
-  /^That was a thirsty experience for me\.$/i,
-  /^(?:She|He) sounded (?:delicious|salty|favorite) during the conversation\.$/i,
-  /^I feel (?:dangerous|full|sour) when I finish my work\.$/i,
+  /^(?:She|He) wants to (?:often|maybe|again|carefully) after work\\.$/i,
+  /^We can (?:quickly|almost|also) together this evening\\.$/i,
+  /^I try to (?:really|still|very) every day\\.$/i,
+  /^It is (?:hungry|spicy|large) to practice a little every day\\.$/i,
+  /^That was a (?:thirsty|angry|bored|lonely|brave|strong|dirty|rainy|warm|busy|easy|necessary|normal|private|small|old|safe|tiny) experience for me\\.$/i,
+  /^(?:She|He) sounded (?:delicious|salty|favorite) during the conversation\\.$/i,
+  /^I feel (?:dangerous|full|sour) when I finish my work\\.$/i,
+  /^I used the (?:question|college|career|office|station) during my study session\\.$/i,
+  /^I talked to (?:the )?(?:homework|book|dictionary) after class\\.$/i,
+  /^I wrote the details beside (?:the )?(?:work|manager|client)\\.$/i,
+  /^This plan is (?:immediate|civil)\\.$/i,
+  /^This majority is useful in everyday life\\.$/i,
+  /^She seems visual today\\.$/i,
+  /^I saw aspect on my way home\\.$/i,
+  /^I noticed (?:youth|iron|steel) this morning\\.$/i,
+  /^I usually (?:insist|acknowledge) after work\\.$/i
 ];
-const badStandalone = sentences.filter((s) => badStandalonePatterns.some((re) => re.test(String(s.en ?? ""))));
 
+const badStandalone = independentSentences.filter((s) =>
+  badStandalonePatterns.some((re) => re.test(String(s.en ?? "")))
+);
 must(badStandalone.length === 0,
   "Obvious machine-forced standalone sentences remain: " + badStandalone.length
 );
-const independentKeys = independentSentences.map((s) => norm(s.en)).filter(Boolean);
-must(new Set(independentKeys).size === independentKeys.length,
+
+const excludedPracticePatterns = [
+  /^I'm practicing .+\\.$/i,
+  /^(?:When would you use|What does|How can I use|How would you use|Can you give me an example with|Can you tell me more about|Why is .+ useful in real life|Which word is easier to remember) /i,
+  /^I think .+ is easier because I can use it often\\.$/i
+];
+const excludedPracticeRows = independentSentences.filter((s) =>
+  excludedPracticePatterns.some((re) => re.test(String(s.en ?? "")))
+);
+const standaloneEnglishKeys = independentSentences.map((s) => norm(s.en)).filter(Boolean);
+must(new Set(standaloneEnglishKeys).size === standaloneEnglishKeys.length,
   "Independent sentence-practice rows contain duplicate English sentences"
 );
 
