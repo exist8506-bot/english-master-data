@@ -143,7 +143,7 @@ const hooks = `
 window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
-  review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, sentencePracticePool, communicationPracticePool,
+  review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool,
   listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -426,6 +426,16 @@ check(
   !commEnglish.some((x) => /^a conscientious worker$/i.test(x)) &&
   !commEnglish.some((x) => /^to go for a bathe$/i.test(x)),
   JSON.stringify({lines:commEnglish.length,hasRealA:commEnglish.some((x) => /^A positive attitude can help you learn\.$/i.test(x)),hasFragment:commEnglish.some((x) => /^(?:a conscientious worker|to go for a bathe)$/i.test(x))})
+);
+const commPages=Math.max(1,Math.ceil(commPool.length/12));
+T.show("communication");
+T.goPage("communication",commPages);
+const commHtml=document.getElementById("view").innerHTML;
+check(
+  "communication pagination uses filtered pool",
+  commPool.length > 0 &&
+  commHtml.includes("Hiển thị "+((commPages-1)*12+1)+"–"+Math.min(commPages*12,commPool.length)+" / "+commPool.length+" hội thoại") &&
+  !commHtml.includes(" / 228 hội thoại")
 );
 
 T.show("trilingual");
