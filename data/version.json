@@ -1,7 +1,7 @@
 {
-  "version": "8.0.0",
-  "updatedAt": "2026-09-25",
-  "releaseNotes": "V8.0.0: thêm đúng 500 từ mới; mỗi từ có nghĩa, phát âm, câu Anh-Việt, audio TTS và liên kết vào học từ, flashcards, đọc-hiểu, nghe, nói, quiz, ôn tập, tam ngữ, giao tiếp, ngữ pháp.",
+  "version": "8.0.1",
+  "updatedAt": "2026-09-27",
+  "releaseNotes": "V8.0.1: làm sạch 1.000 câu luyện độc lập, loại câu ghép máy móc và câu hỏi về từ vựng khỏi chế độ luyện câu; giữ audio đồng bộ với English.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
