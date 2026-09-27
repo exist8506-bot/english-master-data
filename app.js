@@ -1009,6 +1009,10 @@ function exportProgress(){
     toast("Đã xuất tiến độ học tập.");
   }catch(e){toast("Không thể xuất tiến độ: "+e.message)}
 }
+function openProgressImport(){
+  const input=$("progressImport");
+  if(input&&typeof input.click==="function")input.click();
+}
 async function importProgress(input){
   const file=input?.files?.[0];
   if(!file)return;
@@ -1046,7 +1050,7 @@ function settings(){
       '<option value="desktop" '+(layout==="desktop"?"selected":"")+'>Máy tính</option>'+
     '</select></div>'+
     '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>'+
-    '<div class="card"><h2>💾 Dữ liệu học tập</h2><p class="small muted">Xuất tiến độ để sao lưu hoặc nhập lại trên thiết bị khác. Đặt lại chỉ xóa tiến độ, không xóa dữ liệu bài học.</p><div class="actions"><button class="primary" onclick="exportProgress()">⬇️ Xuất tiến độ</button><button onclick="document.getElementById('progressImport').click()">⬆️ Nhập tiến độ</button><button onclick="resetProgress()">♻️ Đặt lại tiến độ</button></div><input id="progressImport" type="file" accept="application/json,.json" style="display:none" onchange="importProgress(this)"></div>');
+    '<div class="card"><h2>💾 Dữ liệu học tập</h2><p class="small muted">Xuất tiến độ để sao lưu hoặc nhập lại trên thiết bị khác. Đặt lại chỉ xóa tiến độ, không xóa dữ liệu bài học.</p><div class="actions"><button class="primary" onclick="exportProgress()">⬇️ Xuất tiến độ</button><button onclick="openProgressImport()">⬆️ Nhập tiến độ</button><button onclick="resetProgress()">♻️ Đặt lại tiến độ</button></div><input id="progressImport" type="file" accept="application/json,.json" style="display:none" onchange="importProgress(this)"></div>');
 }
 function registerServiceWorker(){
   if("serviceWorker" in navigator){
