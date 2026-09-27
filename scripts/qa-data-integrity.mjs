@@ -241,7 +241,7 @@ const badVocabularyPatterns = [
   /^I left my keys beside the key\.$/i
 ];
 function exampleContainsTarget(en, word) {
-  const text = " " + String(en ?? "").toLowerCase().replace(/[^a-z0-9 -]/g, " ") + " ";
+  const text = " " + String(en ?? "").toLowerCase().replace(/[^a-z0-9 -]/g, " ").replace(/-/g, " ") + " ";
   const w = String(word ?? "").toLowerCase().trim();
   if (!w) return false;
   if (text.includes(" " + w + " ")) return true;

@@ -1,7 +1,7 @@
 {
-  "version": "8.0.8",
+  "version": "8.0.9",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.8: làm sạch thêm các ví dụ từ vựng ghép mẫu và đồng bộ bộ lọc ngữ nghĩa.",
+  "releaseNotes": "V8.0.9: sửa kiểm tra từ trong từ ghép và làm sạch ví dụ upper.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
