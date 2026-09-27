@@ -31,7 +31,18 @@ const BAD_STANDALONE_SENTENCE_PATTERNS=[
   /^i checked (?:the )?(?:sun|cloud|storm|cold weather|sponsor) (?:at|before|after|in|on) /i,
   /^the .* is on my desk today\.$/i,
   /^i talked to the homework after class\.$/i,
-  /^i used the (?:question|college|career|office|station) during my study session\.$/i
+  /^i used the (?:question|college|career|office|station) during my study session\.$/i,
+
+  # Standalone practice must be everyday English, not vocabulary-training meta-dialogue.
+  /^i'm practicing .+\.$/i,
+  /^(?:when would you use|what does|how can i use|how would you use|can you give me an example with|can you tell me more about|why is .+ useful in real life|which word is easier to remember) /i,
+  /^i think .+ is easier because i can use it often\.$/i,
+  /^this plan is (?:immediate|civil)\.$/i,
+  /^this majority is useful in everyday life\.$/i,
+  /^she seems visual today\.$/i,
+  /^i saw aspect on my way home\.$/i,
+  /^i noticed (?:youth|iron|steel) this morning\.$/i,
+  /^i usually (?:insist|acknowledge) after work\.$/i
 ];
 function isNaturalStandaloneSentence(item){
   if(!item||typeof item!=="object")return false;
