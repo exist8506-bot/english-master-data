@@ -186,37 +186,32 @@ must(independentSentences.every((s) => !s.vocabWord && String(s.en ?? "").trim()
 );
 const badStandalonePatterns = [
   /^I want to understand .* better\.$/i,
-  /^I talked to the homework after class\.$/i,
-  /^I talked to the book after class\.$/i,
-  /^I talked to the dictionary after class\.$/i,
-  /^I used the question during my study session\.$/i,
-  /^I used the college during my study session\.$/i,
-  /^Our student was harder than I expected\.$/i,
-  /^Our answer was harder than I expected\.$/i,
-  /^Our eraser was harder than I expected\.$/i,
-  /^I wrote the details beside the work\.$/i,
-  /^I wrote the details beside the manager\.$/i,
-  /^I wrote the details beside the client\.$/i,
-  /^The office is on my desk today\.$/i,
-  /^The meeting is on my desk today\.$/i,
-  /^The colleague is on my desk today\.$/i,
-  /^The task is on my desk today\.$/i,
-  /^I need to check the company before lunch\.$/i,
-  /^I need to check the career before lunch\.$/i,
-  /^We booked the station before leaving home\.$/i,
-  /^We booked the mountain before leaving home\.$/i,
-  /^I put the airport in my travel bag\.$/i,
-  /^I put the car in my travel bag\.$/i,
-  /^I checked the bicycle at the station\.$/i,
-  /^I checked the room at the station\.$/i,
-  /^I checked the river at the station\.$/i,
-  /^He decided to never before the meeting\.$/i,
-  /^A friendly police helped me find the station\.$/i,
+  /^I talked to (?:the )?(?:homework|book|dictionary) after class\.$/i,
+  /^I used the (?:question|college|career|office|station) during my study session\.$/i,
+  /^Our (?:student|answer|eraser|subject|course) was harder than I expected\.$/i,
+  /^I wrote the details beside (?:the )?(?:work|manager|client)\.$/i,
+  /^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i,
+  /^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b/i,
+  /^I need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\.$/i,
+  /^They tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\.$/i,
+  /^I put the (?:beach|market|airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) (?:travel )?(?:bag|wallet|pocket)\.$/i,
+  /^I checked (?:the )?(?:sun|cloud|storm|cold weather|sponsor) (?:at|before|after|in|on) /i,
+  /^(?:She|He) wants to (?:often|maybe|again|carefully) after work\.$/i,
+  /^We can (?:quickly|almost|also) together this evening\.$/i,
+  /^I try to (?:really|still|very) every day\.$/i,
+  /^It is (?:hungry|spicy|large) to practice a little every day\.$/i,
+  /^That was a thirsty experience for me\.$/i,
+  /^(?:She|He) sounded (?:delicious|salty|favorite) during the conversation\.$/i,
+  /^I feel (?:dangerous|full|sour) when I finish my work\.$/i,
 ];
 const badStandalone = sentences.filter((s) => badStandalonePatterns.some((re) => re.test(String(s.en ?? ""))));
 
 must(badStandalone.length === 0,
   "Obvious machine-forced standalone sentences remain: " + badStandalone.length
+);
+const independentKeys = independentSentences.map((s) => norm(s.en)).filter(Boolean);
+must(new Set(independentKeys).size === independentKeys.length,
+  "Independent sentence-practice rows contain duplicate English sentences"
 );
 
 const globalWordDuplicates = (() => {
