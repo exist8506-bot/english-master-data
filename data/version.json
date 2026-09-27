@@ -1,7 +1,7 @@
 {
-  "version": "8.0.3",
+  "version": "8.0.4",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.3: sửa 13 câu luyện độc lập còn lỗi ngữ nghĩa và siết kiểm tra dữ liệu từ xa.",
+  "releaseNotes": "V8.0.4: sửa thêm 19 ví dụ từ vựng có ngữ cảnh không tự nhiên.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
