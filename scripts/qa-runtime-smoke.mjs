@@ -141,7 +141,7 @@ try {
 
 const hooks = `
 window.__EM_TEST = {
-  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, reviewQueue: [...reviewQueue] }),
+  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, sentencePracticePool, communicationPracticePool,
   listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode,
@@ -307,9 +307,29 @@ check("favorite interaction", first.favorite !== favBefore);
 T.show("quiz");
 snap = T.snap();
 const q = snap.db.questions[snap.quizIndex % snap.db.questions.length];
+const originalOptions = q.options.map((x) => String(x).trim().toLowerCase());
+const renderedOptions = snap.quizOptions.map((x) => String(x).trim().toLowerCase());
+check(
+  "quiz shuffles all four choices",
+  renderedOptions.length === 4 &&
+  new Set(renderedOptions).size === 4 &&
+  new Set(renderedOptions).size === new Set(originalOptions).size &&
+  originalOptions.every((x) => renderedOptions.includes(x)) &&
+  snap.quizCorrectIndex >= 0 && snap.quizCorrectIndex < 4
+);
+const quizOrders = new Set();
+for (let i = 0; i < 12; i += 1) {
+  T.quiz();
+  const order = T.snap().quizOptions.join("\u0000");
+  quizOrders.add(order);
+}
+check("quiz order actually varies across renders", quizOrders.size > 1, "orders=" + quizOrders.size);
+T.quiz();
+snap = T.snap();
 const answeredBefore = snap.db.stats.answered;
 const correctBefore = snap.db.stats.correct;
-T.answerQuiz(q.answer, q.answer);
+const correctChoice = snap.quizCorrectIndex;
+T.answerQuiz(correctChoice, correctChoice);
 snap = T.snap();
 check("quiz interaction", snap.db.stats.answered === answeredBefore + 1 && snap.db.stats.correct === correctBefore + 1);
 
