@@ -276,8 +276,10 @@ check("flashcard interaction", T.snap().db.vocab.length === 3000);
 T.show("listening");
 snap = T.snap();
 const currentSentence = snap.db.sentences[snap.listenIndex % snap.db.sentences.length];
+const sentenceAnsweredBefore = T.snap().db.stats.sentenceAnswered || 0;
 T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
-check("listening interaction", T.snap().db.stats.answered >= answeredBefore + 2);
+const afterListen = T.snap().db.stats;
+check("listening interaction", afterListen.sentenceAnswered === sentenceAnsweredBefore + 1 && afterListen.sentenceCorrect >= 1);
 
 T.show("listening");
 let html=document.getElementById("view").innerHTML;
@@ -296,7 +298,7 @@ check("quiz has direct jump control", html.includes('id="quizJump"') && html.inc
 check("quiz jump changes exact question", T.jumpToItem("quiz", 300) && T.snap().quizIndex === 299 && document.getElementById("view").innerHTML.includes("Câu 300 / 5000"));
 
 T.show("settings");
-check("settings exposes one-click 500-word audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra liên kết 500 từ"));
+check("settings exposes one-click sentence audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra 500 câu luyện độc lập"));
 T.runContentAudit();
 check("one-click 500-word audit passes", document.getElementById("contentAuditResult").textContent.includes("500/500") && document.getElementById("contentAuditResult").textContent.includes("đầy đủ"));
 check("settings exposes device layout selector", document.getElementById("view").innerHTML.includes('id="layoutMode"') && document.getElementById("view").innerHTML.includes("Điện thoại") && document.getElementById("view").innerHTML.includes("Máy tính"));
