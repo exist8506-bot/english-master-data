@@ -998,6 +998,42 @@ function voiceAvailability(){
     }).join(" · ");
   }catch(e){return "Không kiểm tra được giọng đọc";}
 }
+function exportProgress(){
+  try{
+    const payload={app:"English Master",exportedAt:new Date().toISOString(),...userSnapshot()};
+    const blob=new Blob([JSON.stringify(payload,null,2)+"\n"],{type:"application/json;charset=utf-8"});
+    const url=URL.createObjectURL(blob),a=document.createElement("a");
+    a.href=url;a.download="english-master-progress.json";
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(url)},1000);
+    toast("Đã xuất tiến độ học tập.");
+  }catch(e){toast("Không thể xuất tiến độ: "+e.message)}
+}
+async function importProgress(input){
+  const file=input?.files?.[0];
+  if(!file)return;
+  try{
+    const raw=await file.text(),parsed=JSON.parse(raw);
+    if(!parsed||!Array.isArray(parsed.vocabState)||!parsed.stats||!parsed.profile)throw new Error("File tiến độ không đúng định dạng.");
+    const validStates=parsed.vocabState.every(function(s){return s&&String(s.word||"").trim()});
+    if(!validStates)throw new Error("File có mục từ vựng không hợp lệ.");
+    applyUserSnapshot(parsed);
+    save();render();
+    toast("Đã nhập tiến độ học tập.");
+  }catch(e){toast("Nhập tiến độ lỗi: "+e.message)}
+  finally{input.value=""}
+}
+function resetProgress(){
+  const ok=typeof window.confirm==="function"?window.confirm("Xóa toàn bộ XP, lịch sử ôn tập, yêu thích và trạng thái học?"):true;
+  if(!ok)return;
+  db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0};
+  db.vocab.forEach(function(v){
+    v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.lastReviewed=null;
+  });
+  flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
+  reviewQueue=[];reviewIndex=0;
+  save();render();toast("Đã đặt lại tiến độ học tập.");
+}
 function settings(){
   const layout=String(db.profile.layout||"auto");
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
@@ -1009,7 +1045,8 @@ function settings(){
       '<option value="phone" '+(layout==="phone"?"selected":"")+'>Điện thoại</option>'+
       '<option value="desktop" '+(layout==="desktop"?"selected":"")+'>Máy tính</option>'+
     '</select></div>'+
-    '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>');
+    '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>'+
+    '<div class="card"><h2>💾 Dữ liệu học tập</h2><p class="small muted">Xuất tiến độ để sao lưu hoặc nhập lại trên thiết bị khác. Đặt lại chỉ xóa tiến độ, không xóa dữ liệu bài học.</p><div class="actions"><button class="primary" onclick="exportProgress()">⬇️ Xuất tiến độ</button><button onclick="document.getElementById('progressImport').click()">⬆️ Nhập tiến độ</button><button onclick="resetProgress()">♻️ Đặt lại tiến độ</button></div><input id="progressImport" type="file" accept="application/json,.json" style="display:none" onchange="importProgress(this)"></div>');
 }
 function registerServiceWorker(){
   if("serviceWorker" in navigator){

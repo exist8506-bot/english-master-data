@@ -438,6 +438,13 @@ check(
   document.getElementById("contentAuditResult").textContent.includes("1.000/1.000") &&
   document.getElementById("contentAuditResult").textContent.includes("không trùng")
 );
+T.show("settings");
+const settingsHtml = document.getElementById("view").innerHTML;
+check("settings exposes progress backup tools",
+  settingsHtml.includes("exportProgress()") &&
+  settingsHtml.includes("progressImport") &&
+  settingsHtml.includes("resetProgress()")
+);
 check("settings exposes device layout selector", document.getElementById("view").innerHTML.includes('id="layoutMode"') && document.getElementById("view").innerHTML.includes("Điện thoại") && document.getElementById("view").innerHTML.includes("Máy tính"));
 T.setLayoutMode("phone");
 check("phone layout mode applies", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
