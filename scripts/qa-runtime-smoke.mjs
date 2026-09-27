@@ -148,7 +148,7 @@ const hooks = `
 window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
-  review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool,
+  grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool,
   listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -566,6 +566,14 @@ check("speaking UI and microphone fallback", document.getElementById("view").inn
 check("speaking sentence practice is independent from vocab", !document.getElementById("view").innerHTML.includes("Từ trọng tâm:"));
 try { T.startRecognition(); check("microphone fallback", true); } catch (e) { check("microphone fallback", false, e.stack || String(e)); }
 
+T.show("grammar");
+const rawGrammarLegacy = snap.db.grammar.filter((g) => String(g.id ?? "").startsWith("exp500_grammar_"));
+check(
+  "grammar UI excludes legacy vocabulary phrase bank",
+  rawGrammarLegacy.length === 20 &&
+  T.grammarPracticePool().length === 40 &&
+  document.getElementById("view").innerHTML.includes("Chỉ hiển thị bài ngữ pháp thực hành")
+);
 T.show("communication");
 try { T.playDialogue(0); check("dialogue playback path", true); } catch (e) { check("dialogue playback path", false, e.stack || String(e)); }
 const commPool = T.communicationPracticePool();
