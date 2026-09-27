@@ -30679,14 +30679,14 @@
   },
   {
     "id": "extra500_v8_s_426",
-    "en": "The room is quite external.",
-    "vi": "Căn phòng khá bên ngoài.",
+    "en": "The company hired an external consultant.",
+    "vi": "Công ty thuê một chuyên gia tư vấn bên ngoài.",
     "topic": "Học tập",
     "grammar": "Everyday English",
     "favorite": false,
     "source": "extra500_v8",
     "sourceVersion": "8.0.1",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20room%20is%20quite%20external.&lang=en"
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20company%20hired%20an%20external%20consultant.&lang=en"
   },
   {
     "id": "extra500_v8_s_427",
@@ -31372,14 +31372,14 @@
   },
   {
     "id": "extra500_v8_s_489",
-    "en": "The room is quite educational.",
-    "vi": "Căn phòng khá thuộc giáo dục.",
+    "en": "This course is educational and practical.",
+    "vi": "Khóa học này mang tính giáo dục và thực tế.",
     "topic": "Thể thao",
     "grammar": "Everyday English",
     "favorite": false,
     "source": "extra500_v8",
     "sourceVersion": "8.0.1",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20room%20is%20quite%20educational.&lang=en"
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=This%20course%20is%20educational%20and%20practical.&lang=en"
   },
   {
     "id": "extra500_v8_s_490",
@@ -31449,14 +31449,14 @@
   },
   {
     "id": "extra500_v8_s_496",
-    "en": "The room is quite biological.",
-    "vi": "Căn phòng khá thuộc sinh học.",
+    "en": "The lab studies biological processes.",
+    "vi": "Phòng thí nghiệm nghiên cứu các quá trình sinh học.",
     "topic": "Thói quen",
     "grammar": "Everyday English",
     "favorite": false,
     "source": "extra500_v8",
     "sourceVersion": "8.0.1",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20room%20is%20quite%20biological.&lang=en"
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20lab%20studies%20biological%20processes.&lang=en"
   },
   {
     "id": "extra500_v8_s_497",
@@ -32274,11 +32274,11 @@
   },
   {
     "id": "exp500_sent_071_a4c23fdd",
-    "en": "I used the lesson during my study session.",
-    "vi": "Tôi dùng bài học trong lúc học.",
+    "en": "I reviewed the lesson notes during my study session.",
+    "vi": "Tôi xem lại ghi chú bài học trong lúc học.",
     "topic": "school",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20used%20the%20lesson%20during%20my%20study%20session.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20reviewed%20the%20lesson%20notes%20during%20my%20study%20session.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32615,11 +32615,11 @@
   },
   {
     "id": "exp500_sent_102_7f6124d7",
-    "en": "My salary keeps me busy during the day.",
-    "vi": "Lương của tôi khiến tôi bận rộn suốt ngày.",
+    "en": "My work keeps me busy during the day.",
+    "vi": "Công việc khiến tôi bận rộn suốt ngày.",
     "topic": "work",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=My%20salary%20keeps%20me%20busy%20during%20the%20day.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=My%20work%20keeps%20me%20busy%20during%20the%20day.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -33781,11 +33781,11 @@
   },
   {
     "id": "exp500_sent_208_be6b5297",
-    "en": "The doctor asked about my nurse.",
-    "vi": "Bác sĩ hỏi về y tá của tôi.",
+    "en": "The doctor asked about my symptoms.",
+    "vi": "Bác sĩ hỏi về các triệu chứng của tôi.",
     "topic": "health",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20doctor%20asked%20about%20my%20nurse.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20doctor%20asked%20about%20my%20symptoms.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -33803,11 +33803,11 @@
   },
   {
     "id": "exp500_sent_210_1ce900f6",
-    "en": "She felt better after treating the clinic.",
-    "vi": "Cô ấy thấy đỡ hơn sau khi điều trị phòng khám.",
+    "en": "She felt better after treating the infection.",
+    "vi": "Cô ấy cảm thấy đỡ hơn sau khi điều trị nhiễm trùng.",
     "topic": "health",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20felt%20better%20after%20treating%20the%20clinic.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20felt%20better%20after%20treating%20the%20infection.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -33858,11 +33858,11 @@
   },
   {
     "id": "exp500_sent_215_4c778643",
-    "en": "She felt better after treating the energy.",
-    "vi": "Cô ấy thấy đỡ hơn sau khi điều trị năng lượng.",
+    "en": "She felt better after treating the injury.",
+    "vi": "Cô ấy cảm thấy đỡ hơn sau khi điều trị chấn thương.",
     "topic": "health",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20felt%20better%20after%20treating%20the%20energy.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20felt%20better%20after%20treating%20the%20injury.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -33979,22 +33979,22 @@
   },
   {
     "id": "exp500_sent_226_a5c8051e",
-    "en": "We need a better internet for this task.",
-    "vi": "Chúng tôi cần một internet tốt hơn cho việc này.",
+    "en": "We need a faster internet connection for this task.",
+    "vi": "Chúng tôi cần kết nối internet nhanh hơn cho việc này.",
     "topic": "technology",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20need%20a%20better%20internet%20for%20this%20task.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20need%20a%20faster%20internet%20connection%20for%20this%20task.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
   },
   {
     "id": "exp500_sent_227_f39a863",
-    "en": "I use my website to study at night.",
-    "vi": "Tôi dùng trang web để học vào ban đêm.",
+    "en": "I use my website to find study materials at night.",
+    "vi": "Tôi dùng trang web để tìm tài liệu học vào ban đêm.",
     "topic": "technology",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20use%20my%20website%20to%20study%20at%20night.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20use%20my%20website%20to%20find%20study%20materials%20at%20night.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34045,11 +34045,11 @@
   },
   {
     "id": "exp500_sent_232_22752b57",
-    "en": "I use my password to study at night.",
-    "vi": "Tôi dùng mật khẩu để học vào ban đêm.",
+    "en": "I use my password to access my study account at night.",
+    "vi": "Tôi dùng mật khẩu để truy cập tài khoản học tập vào ban đêm.",
     "topic": "technology",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20use%20my%20password%20to%20study%20at%20night.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20use%20my%20password%20to%20access%20my%20study%20account%20at%20night.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34100,11 +34100,11 @@
   },
   {
     "id": "exp500_sent_237_25a7329d",
-    "en": "I use my audio to study at night.",
-    "vi": "Tôi dùng âm thanh để học vào ban đêm.",
+    "en": "I use audio lessons to study at night.",
+    "vi": "Tôi dùng các bài học âm thanh để học vào ban đêm.",
     "topic": "technology",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20use%20my%20audio%20to%20study%20at%20night.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20use%20audio%20lessons%20to%20study%20at%20night.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34254,11 +34254,11 @@
   },
   {
     "id": "exp500_sent_251_2ec95a29",
-    "en": "I usually study in the week.",
-    "vi": "Tôi thường học vào tuần.",
+    "en": "I usually study during the week.",
+    "vi": "Tôi thường học trong tuần.",
     "topic": "time",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20study%20in%20the%20week.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20study%20during%20the%20week.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34287,11 +34287,11 @@
   },
   {
     "id": "exp500_sent_254_ce58b204",
-    "en": "I usually study in the minute.",
-    "vi": "Tôi thường học vào phút.",
+    "en": "I usually study for an hour at a time.",
+    "vi": "Tôi thường học mỗi lần một giờ.",
     "topic": "time",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20study%20in%20the%20minute.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20study%20for%20an%20hour%20at%20a%20time.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34320,11 +34320,11 @@
   },
   {
     "id": "exp500_sent_257_713147fb",
-    "en": "I usually study in the day.",
-    "vi": "Tôi thường học vào ngày.",
+    "en": "I usually study during the day.",
+    "vi": "Tôi thường học vào ban ngày.",
     "topic": "time",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20study%20in%20the%20day.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20study%20during%20the%20day.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34408,11 +34408,11 @@
   },
   {
     "id": "exp500_sent_265_709aafa4",
-    "en": "It is late to practice a little every day.",
-    "vi": "Thật muộn khi luyện tập một chút mỗi ngày.",
+    "en": "It is never too late to practice a little every day.",
+    "vi": "Không bao giờ là quá muộn để luyện tập một chút mỗi ngày.",
     "topic": "time",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20late%20to%20practice%20a%20little%20every%20day.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20never%20too%20late%20to%20practice%20a%20little%20every%20day.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34562,11 +34562,11 @@
   },
   {
     "id": "exp500_sent_279_dfb502e9",
-    "en": "The chair was near the window when I came home.",
-    "vi": "Cái ghế ở gần cửa sổ khi tôi về nhà.",
+    "en": "The chair was folded when I came home.",
+    "vi": "Chiếc ghế được gấp lại khi tôi về nhà.",
     "topic": "home",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20chair%20was%20near%20the%20window%20when%20I%20came%20home.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20chair%20was%20folded%20when%20I%20came%20home.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34617,11 +34617,11 @@
   },
   {
     "id": "exp500_sent_284_d3e5ce20",
-    "en": "The roof was damaged by the storm.",
-    "vi": "Mái nhà bị hư hại do cơn bão.",
+    "en": "The roof had a small opening when I came home.",
+    "vi": "Mái nhà có một lỗ nhỏ khi tôi về nhà.",
     "topic": "home",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20roof%20was%20damaged%20by%20the%20storm.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20roof%20had%20a%20small%20opening%20when%20I%20came%20home.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -34969,11 +34969,11 @@
   },
   {
     "id": "exp500_sent_316_f7129b9f",
-    "en": "The lake is full of life in spring.",
-    "vi": "Hồ tràn đầy sức sống vào mùa xuân.",
+    "en": "The lake was full of birds in spring.",
+    "vi": "Hồ đầy chim vào mùa xuân.",
     "topic": "nature",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20lake%20is%20full%20of%20life%20in%20spring.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20lake%20was%20full%20of%20birds%20in%20spring.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -35024,11 +35024,11 @@
   },
   {
     "id": "exp500_sent_321_d6d028b3",
-    "en": "The farm is full of life in spring.",
-    "vi": "Nông trại tràn đầy sức sống vào mùa xuân.",
+    "en": "The farm was full of flowers in spring.",
+    "vi": "Nông trại đầy hoa vào mùa xuân.",
     "topic": "nature",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20farm%20is%20full%20of%20life%20in%20spring.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20farm%20was%20full%20of%20flowers%20in%20spring.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -35079,11 +35079,11 @@
   },
   {
     "id": "exp500_sent_326_f11c45b7",
-    "en": "The cat is full of life in spring.",
-    "vi": "Mèo tràn đầy sức sống vào mùa xuân.",
+    "en": "The cat was full of energy in spring.",
+    "vi": "Con mèo tràn đầy năng lượng vào mùa xuân.",
     "topic": "nature",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20cat%20is%20full%20of%20life%20in%20spring.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20cat%20was%20full%20of%20energy%20in%20spring.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -35123,11 +35123,11 @@
   },
   {
     "id": "exp500_sent_330_222d6e81",
-    "en": "Children played beside the river.",
-    "vi": "Trẻ em chơi bên cạnh con sông.",
+    "en": "Children played beside the lake.",
+    "vi": "Trẻ em chơi bên cạnh hồ.",
     "topic": "nature",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Children%20played%20beside%20the%20river.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Children%20played%20beside%20the%20lake.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -35222,11 +35222,11 @@
   },
   {
     "id": "exp500_sent_339_c4758536",
-    "en": "A friendly adult helped me find the station.",
-    "vi": "Một người lớn thân thiện đã giúp tôi tìm nhà ga.",
+    "en": "A friendly traveler helped me find the station.",
+    "vi": "Một du khách thân thiện đã giúp tôi tìm nhà ga.",
     "topic": "people",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=A%20friendly%20adult%20helped%20me%20find%20the%20station.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=A%20friendly%20traveler%20helped%20me%20find%20the%20station.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -35310,11 +35310,11 @@
   },
   {
     "id": "exp500_sent_347_85e96cf3",
-    "en": "A friendly writer helped me find the station.",
-    "vi": "Một nhà văn thân thiện đã giúp tôi tìm nhà ga.",
+    "en": "A local resident helped me find the station.",
+    "vi": "Một người dân địa phương đã giúp tôi tìm nhà ga.",
     "topic": "people",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=A%20friendly%20writer%20helped%20me%20find%20the%20station.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=A%20local%20resident%20helped%20me%20find%20the%20station.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -36267,11 +36267,11 @@
   },
   {
     "id": "exp500_sent_434_eb64d5d5",
-    "en": "It is free to practice a little every day.",
-    "vi": "Thật miễn phí khi luyện tập một chút mỗi ngày.",
+    "en": "It is helpful to practice a little every evening.",
+    "vi": "Luyện tập một chút mỗi tối là điều hữu ích.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20free%20to%20practice%20a%20little%20every%20day.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20helpful%20to%20practice%20a%20little%20every%20evening.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -36322,11 +36322,11 @@
   },
   {
     "id": "exp500_sent_439_c4377ed1",
-    "en": "It is wrong to practice a little every day.",
-    "vi": "Thật sai khi luyện tập một chút mỗi ngày.",
+    "en": "It is important to practice a little every morning.",
+    "vi": "Luyện tập một chút mỗi sáng là điều quan trọng.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20wrong%20to%20practice%20a%20little%20every%20day.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20important%20to%20practice%20a%20little%20every%20morning.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -36355,11 +36355,11 @@
   },
   {
     "id": "exp500_sent_442_2ce9a2a2",
-    "en": "This problem is hard to solve.",
-    "vi": "Vấn đề này khó giải quyết.",
+    "en": "The problem looks hard this morning.",
+    "vi": "Vấn đề có vẻ khó vào sáng nay.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=This%20problem%20is%20hard%20to%20solve.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20problem%20looks%20hard%20this%20morning.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -36421,11 +36421,11 @@
   },
   {
     "id": "exp500_sent_448_78f4b947",
-    "en": "She sounded similar during the conversation.",
-    "vi": "Cô ấy có vẻ tương tự trong cuộc trò chuyện.",
+    "en": "The two voices sounded similar during the conversation.",
+    "vi": "Hai giọng nói nghe giống nhau trong cuộc trò chuyện.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20sounded%20similar%20during%20the%20conversation.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20two%20voices%20sounded%20similar%20during%20the%20conversation.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
