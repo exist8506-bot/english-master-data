@@ -36696,11 +36696,11 @@
   },
   {
     "id": "exp500_sent_473_d27acd5e",
-    "en": "She sounded happy during the conversation.",
-    "vi": "Cô ấy có vẻ vui vẻ trong cuộc trò chuyện.",
+    "en": "She spoke clearly during the conversation.",
+    "vi": "Cô ấy nói rõ ràng trong cuộc trò chuyện.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20sounded%20happy%20during%20the%20conversation.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20spoke%20clearly%20during%20the%20conversation.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -36762,11 +36762,11 @@
   },
   {
     "id": "exp500_sent_479_d8e0fc32",
-    "en": "It is useful to practice a little every day.",
-    "vi": "Luyện tập một chút mỗi ngày là điều hữu ích.",
+    "en": "It is helpful to practice a little every evening.",
+    "vi": "Luyện tập một chút mỗi tối là điều hữu ích.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20useful%20to%20practice%20a%20little%20every%20day.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20helpful%20to%20practice%20a%20little%20every%20evening.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
