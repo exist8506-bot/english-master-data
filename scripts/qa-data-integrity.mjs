@@ -213,6 +213,8 @@ const badStandalonePatterns = [
   /^He decided to never before the meeting\.$/i,
   /^A friendly police helped me find the station\.$/i,
 ];
+const badStandalone = sentences.filter((s) => badStandalonePatterns.some((re) => re.test(String(s.en ?? ""))));
+
 must(badStandalone.length === 0,
   "Obvious machine-forced standalone sentences remain: " + badStandalone.length
 );
