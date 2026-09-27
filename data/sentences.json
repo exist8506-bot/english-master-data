@@ -262,12 +262,12 @@
   },
   {
     "id": "sent500_1w9ohx",
-    "en": "I used the question during my study session.",
-    "vi": "Tôi dùng câu hỏi trong lúc học.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "question",
-    "favorite": false
+    "en": "The teacher asked an interesting question during class.",
+    "vi": "Giáo viên đã đặt một câu hỏi thú vị trong giờ học.",
+    "topic": "Trường học",
+    "grammar": "Simple Past",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20teacher%20asked%20an%20interesting%20question%20during%20class.&lang=en"
   },
   {
     "id": "sent500_10ricbj",
