@@ -430,7 +430,7 @@ check("quiz has direct jump control", html.includes('id="quizJump"') && html.inc
 check("quiz jump changes exact question", T.jumpToItem("quiz", 300) && T.snap().quizIndex === 299 && document.getElementById("view").innerHTML.includes("Câu 300 / 5000"));
 
 T.show("settings");
-check("settings exposes one-click sentence audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra 500 câu luyện độc lập"));
+check("settings exposes one-click sentence audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra 1.000 câu luyện độc lập"));
 T.runContentAudit();
 check(
   "one-click content audit passes",
