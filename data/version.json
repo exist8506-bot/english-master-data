@@ -1,7 +1,7 @@
 {
-  "version": "8.0.4",
+  "version": "8.0.5",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.4: sửa thêm 19 ví dụ từ vựng có ngữ cảnh không tự nhiên.",
+  "releaseNotes": "V8.0.5: sửa các bản ghi ví dụ trùng cũ còn giữ mẫu câu không tự nhiên.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
