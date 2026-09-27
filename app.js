@@ -579,8 +579,11 @@ function validateIncomingContent(incoming){
     grammar:function(x){return x&&String(x.title||"").trim()&&String(x.formula||"").trim()},
     communication:function(x){
       const lines=Array.isArray(x?.lines)?x.lines:[];
-      const validLines=lines.filter(function(l){return Array.isArray(l)&&communicationLineIsNatural(l[1])});
-      return x&&String(x.title||"").trim()&&lines.length>0&&validLines.length>=2;
+      // Keep the dialogue container intact; invalid/generated lines are filtered
+      // by communicationPracticePool() at render time instead of rejecting the
+      // whole conversation during remote hydration.
+      return x&&String(x.title||"").trim()&&lines.length>=2&&
+        lines.every(function(l){return Array.isArray(l)&&String(l[0]??"").trim()&&String(l[1]??"").trim()});
     },
     trilingual:function(x){return x&&String(x.en||"").trim()&&String(x.zh||x.chinese||"").trim()&&String(x.pinyin||"").trim()&&String(x.vi||x.vietnamese||"").trim()}
   };
