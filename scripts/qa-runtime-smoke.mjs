@@ -144,8 +144,8 @@ const hooks = `
 window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
-  review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool,
-  listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode,
+  review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool,
+  listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
 };
@@ -445,6 +445,20 @@ check("settings exposes progress backup tools",
   settingsHtml.includes("progressImport") &&
   settingsHtml.includes("resetProgress()")
 );
+check("progress backup functions exist", typeof T.exportProgress === "function" && typeof T.importProgress === "function" && typeof T.resetProgress === "function");
+const beforeReset = T.snap();
+T.resetProgress();
+const resetSnap = T.snap();
+check(
+  "reset progress clears learning state",
+  resetSnap.db.stats.xp === 0 &&
+  resetSnap.db.stats.answered === 0 &&
+  resetSnap.db.stats.sentenceAnswered === 0 &&
+  resetSnap.db.vocab.every((v) => v.status === "New" && !v.favorite && Number(v.correct_count || 0) === 0 && Number(v.wrong_count || 0) === 0)
+);
+T.applyUserSnapshot(beforeReset.db);
+T.save();
+T.show("settings");
 check("settings exposes device layout selector", document.getElementById("view").innerHTML.includes('id="layoutMode"') && document.getElementById("view").innerHTML.includes("Điện thoại") && document.getElementById("view").innerHTML.includes("Máy tính"));
 T.setLayoutMode("phone");
 check("phone layout mode applies", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
