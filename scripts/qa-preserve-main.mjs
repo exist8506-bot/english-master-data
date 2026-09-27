@@ -54,11 +54,24 @@ function asArray(value, label) {
   return value;
 }
 
-const changedOutput = execFileSync(
-  "git",
-  ["diff", "--name-only", "origin/main...HEAD", "--", "data"],
-  { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }
-).trim();
+let changedOutput = "";
+try {
+  changedOutput = execFileSync(
+    "git",
+    ["diff", "--name-only", "origin/main...HEAD", "--", "data"],
+    { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }
+  ).trim();
+} catch (err) {
+  const head = execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+  let base = "";
+  try {
+    base = execFileSync("git", ["rev-parse", "origin/main"], { encoding: "utf8" }).trim();
+  } catch {}
+  if (head !== base) throw err;
+  // Direct push to main: origin/main already points at HEAD, so there is no
+  // PR delta to compare. The other integrity audits still run normally.
+  changedOutput = "";
+}
 
 const changedDataFiles = changedOutput
   ? changedOutput.split(/\r?\n/).filter(Boolean).map((p) => p.replace(/^data\//, ""))
