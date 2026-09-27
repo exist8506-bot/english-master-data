@@ -220,7 +220,25 @@ const badStandalone = standalone.filter((s) => s?.vocabWord || !String(s?.en ?? 
   /^I talked to the homework after class\.$/i.test(String(s.en ?? "")) ||
   /^I put the airport in my travel bag\.$/i.test(String(s.en ?? "")));
 check("standalone sentence pack is natural and independent", standalone.length === 1000 && badStandalone.length === 0, JSON.stringify({count:standalone.length,bad:badStandalone.slice(0,5)}));
-check("sentence practice pool filters bad/duplicate entries", practicePool.length > 0 && practicePool.length <= standalone.length && practicePool.every((s) => !s.vocabWord && String(s.en ?? "").trim() && String(s.vi ?? "").trim()), JSON.stringify({standalone:standalone.length,practicePool:practicePool.length}));
+const practiceKeys = practicePool.map((s) => String(s.en ?? "").trim().toLowerCase().replace(/\\s+/g, " "));
+const knownBadPracticeExamples = [
+  "The room looks worried this morning.",
+  "I'm practicing shirt and pants.",
+  "When would you use broken?",
+  "She wants to often after work.",
+  "I need to usually before breakfast.",
+  "That was a thirsty experience for me.",
+  "I feel dangerous when I finish my work."
+];
+check(
+  "sentence practice pool filters bad/duplicate entries",
+  practicePool.length > 0 &&
+  practicePool.length <= standalone.length &&
+  new Set(practiceKeys).size === practiceKeys.length &&
+  practicePool.every((s) => !s.vocabWord && String(s.en ?? "").trim() && String(s.vi ?? "").trim()) &&
+  knownBadPracticeExamples.every((en) => !practicePool.some((s) => String(s.en ?? "").trim().toLowerCase() === en.toLowerCase())),
+  JSON.stringify({standalone:standalone.length,practicePool:practicePool.length,duplicates:practiceKeys.length-new Set(practiceKeys).size})
+);
 check(
   "500-word audit is per-item, not only aggregate",
   audit.expansion500 === 500 &&
