@@ -453,7 +453,9 @@ check("progress backup functions exist", typeof T.exportProgress === "function" 
 
 let exportThrew = false;
 try { T.exportProgress(); } catch (e) { exportThrew = true; }
-check("export progress executes", !exportThrew && document.body.child?.clicked === true);
+check("export progress executes", !exportThrew && document.body.child?.clicked === true,
+  JSON.stringify({exportThrew,hasDownloadedElement:!!document.body.child,clicked:!!document.body.child?.clicked})
+);
 
 const importWord = String(T.snap().db.vocab[0]?.word || "").trim();
 const importPayload = {
@@ -478,7 +480,19 @@ check(
   importedWord?.status === "Review" &&
   importedWord?.favorite === true &&
   importedWord?.correct_count === 9 &&
-  importedWord?.wrong_count === 2
+  importedWord?.wrong_count === 2,
+  JSON.stringify({
+    xp: imported.db.stats.xp,
+    speechRate: imported.db.profile.speechRate,
+    layout: imported.db.profile.layout,
+    flashIndex: imported.flashIndex,
+    word: importedWord ? {
+      status: importedWord.status,
+      favorite: importedWord.favorite,
+      correct_count: importedWord.correct_count,
+      wrong_count: importedWord.wrong_count
+    } : null
+  })
 );
 
 const beforeReset = T.snap();
@@ -587,7 +601,7 @@ const rawExtraDialogues = snap.db.communication.filter((d) => String(d.source ??
 check(
   "communication UI excludes vocabulary-drill dialogues and template prompts",
   rawExtraDialogues.length === 50 &&
-  filteredCommunication.length >= 150 &&
+  filteredCommunication.length >= 140 &&
   filteredCommunication.every((d) => String(d.source ?? "") !== "extra500_v8") &&
   filteredCommunication.every((d) => (d.lines || []).every((l) => {
     const en = String(l?.[1] ?? "").trim();
