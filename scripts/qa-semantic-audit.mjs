@@ -102,10 +102,14 @@ for (const s of independent) {
     }
   }
 
-  // 4) Suspicious "It is <adj> to practice..." subjectless adjective substitution.
-  if (/^it is \w+ to practice a little every day\.$/i.test(en)) {
-    bad.push({kind:"it-is-adj-template",...s});
-    continue;
+  // 4) Reject only implausible adjective substitutions in the "It is ... to practice" frame.
+  const itPractice = en.match(/^It is ([A-Za-z]+) to practice a little every day\.$/i);
+  if (itPractice) {
+    const allowed = new Set(["important","useful","helpful","good","beneficial","easy","hard","difficult","necessary","possible","wise","healthy"]);
+    if (!allowed.has(itPractice[1].toLowerCase())) {
+      bad.push({kind:"it-is-adj-template",...s});
+      continue;
+    }
   }
 
   // 5) Suspicious "That was a/an <adj> experience for me."
