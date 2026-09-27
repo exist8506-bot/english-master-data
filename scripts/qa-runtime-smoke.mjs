@@ -143,7 +143,7 @@ const hooks = `
 window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
-  review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, sentencePracticePool,
+  review, stats, settings, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, sentencePracticePool, communicationPracticePool,
   listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -204,6 +204,9 @@ check(
   audit.generalSentences === 500 &&
   audit.independentSentences === 1000 &&
   audit.independentSentenceLinks === 0 &&
+  audit.naturalIndependentSentences === 1000 &&
+  audit.standaloneQualityIssues === 0 &&
+  audit.standaloneDuplicateEnglish === 0 &&
   audit.questions === 500 &&
   audit.trilingual === 500 &&
   audit.communication === 500 &&
@@ -219,7 +222,15 @@ const badStandalone = standalone.filter((s) => s?.vocabWord || !String(s?.en ?? 
   /^The .* is on my desk today\.$/i.test(String(s.en ?? "")) ||
   /^I talked to the homework after class\.$/i.test(String(s.en ?? "")) ||
   /^I put the airport in my travel bag\.$/i.test(String(s.en ?? "")));
-check("standalone sentence pack is natural and independent", standalone.length === 1000 && badStandalone.length === 0, JSON.stringify({count:standalone.length,bad:badStandalone.slice(0,5)}));
+check(
+  "standalone sentence pack is natural and independent",
+  standalone.length === 1000 &&
+  badStandalone.length === 0 &&
+  T.dataAudit().naturalIndependentSentences === 1000 &&
+  T.dataAudit().standaloneQualityIssues === 0 &&
+  T.dataAudit().standaloneDuplicateEnglish === 0,
+  JSON.stringify({count:standalone.length,bad:badStandalone.slice(0,5),quality:T.dataAudit().standaloneQualityIssues,duplicates:T.dataAudit().standaloneDuplicateEnglish})
+);
 const practiceKeys = practicePool.map((s) => String(s.en ?? "").trim().toLowerCase().replace(/\\s+/g, " "));
 const knownBadPracticeExamples = [
   "The room looks worried this morning.",
@@ -228,7 +239,15 @@ const knownBadPracticeExamples = [
   "She wants to often after work.",
   "I need to usually before breakfast.",
   "That was a thirsty experience for me.",
-  "I feel dangerous when I finish my work."
+  "I feel dangerous when I finish my work.",
+  "The new plan is same for us.",
+  "This majority is useful in everyday life.",
+  "I try to give every day.",
+  "We will meet next hour.",
+  "We can hear together this evening.",
+  "The team is working on secretary.",
+  "They properly use the app.",
+  "I use my email to study at night."
 ];
 check(
   "sentence practice pool filters bad/duplicate entries",
@@ -320,7 +339,12 @@ check("quiz jump changes exact question", T.jumpToItem("quiz", 300) && T.snap().
 T.show("settings");
 check("settings exposes one-click sentence audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra 500 câu luyện độc lập"));
 T.runContentAudit();
-check("one-click 500-word audit passes", document.getElementById("contentAuditResult").textContent.includes("500/500") && document.getElementById("contentAuditResult").textContent.includes("đầy đủ"));
+check(
+  "one-click content audit passes",
+  document.getElementById("contentAuditResult").textContent.includes("500/500") &&
+  document.getElementById("contentAuditResult").textContent.includes("1.000/1.000") &&
+  document.getElementById("contentAuditResult").textContent.includes("không trùng")
+);
 check("settings exposes device layout selector", document.getElementById("view").innerHTML.includes('id="layoutMode"') && document.getElementById("view").innerHTML.includes("Điện thoại") && document.getElementById("view").innerHTML.includes("Máy tính"));
 T.setLayoutMode("phone");
 check("phone layout mode applies", T.snap().db.profile.layout === "phone" && document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
@@ -368,6 +392,16 @@ try { T.startRecognition(); check("microphone fallback", true); } catch (e) { ch
 
 T.show("communication");
 try { T.playDialogue(0); check("dialogue playback path", true); } catch (e) { check("dialogue playback path", false, e.stack || String(e)); }
+const commPool = T.communicationPracticePool();
+const commEnglish = commPool.flatMap((d) => (d.lines || []).map((l) => String(l?.[1] ?? "").trim()));
+check(
+  "communication keeps real A/An sentences and filters phrase fragments",
+  commEnglish.some((x) => /^A positive attitude can help you learn\.$/i.test(x)) &&
+  commEnglish.some((x) => /^A former colleague visited us yesterday\.$/i.test(x)) &&
+  !commEnglish.some((x) => /^a conscientious worker$/i.test(x)) &&
+  !commEnglish.some((x) => /^to go for a bathe$/i.test(x)),
+  JSON.stringify({lines:commEnglish.length,hasRealA:commEnglish.some((x) => /^A positive attitude can help you learn\.$/i.test(x)),hasFragment:commEnglish.some((x) => /^(?:a conscientious worker|to go for a bathe)$/i.test(x))})
+);
 
 T.show("trilingual");
 const tri = T.snap().db.trilingual.find((x) => x.en === "altogether");
