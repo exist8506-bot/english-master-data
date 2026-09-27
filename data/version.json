@@ -1,7 +1,7 @@
 {
-  "version": "8.0.7",
+  "version": "8.0.8",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.7: lọc hội thoại ghép từ máy móc và bổ sung sao lưu/nhập/đặt lại tiến độ.",
+  "releaseNotes": "V8.0.8: làm sạch thêm các ví dụ từ vựng ghép mẫu và đồng bộ bộ lọc ngữ nghĩa.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",

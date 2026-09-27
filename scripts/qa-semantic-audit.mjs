@@ -216,8 +216,16 @@ const badVocabularyPatterns=[
   /^the team is working on secretary\.$/i,
   /^i use my email to study at night\.$/i
 ];
+  /^i use my email to study at night\.$/i,
+  /^i need to (?:lose|wear|collect|throw) before dinner\.$/i,
+  /^she decided to (?:happen|hope|fail) today\.$/i,
+  /^we need to (?:escape|exchange|predict|produce|select|advise|fear|disappoint|employ|expand|install|locate|persuade|recover|sort) before the meeting\.$/i,
+  /^i use (?:input|output|block|gear|extension|disc|laser|icon) when i study\.$/i,
+  /^her job requires good (?:officer|chief|procedure|priority|duty|administrator|portfolio)\.$/i,
+  /^this feature makes (?:switch|component|disk|wire|utility|conversion|backup|plug) easier\.$/i,
+  /^the new device supports (?:panel|module|graphic|protocol|bookmark|circuit|interface|mode)\.$/i
 const vocabularyBad=vocabulary.filter(function(v){
-  return badVocabularyPatterns.some(function(re){return re.test(String(v.example??"").trim())});
+  return badVocabularyPatterns.concat([/^i need to (?:lose|wear|collect|throw) before dinner\.$/i,/^she decided to (?:happen|hope|fail) today\.$/i,/^we need to (?:escape|exchange|predict|produce|select|advise|fear|disappoint|employ|expand|install|locate|persuade|recover|sort) before the meeting\.$/i,/^i use (?:input|output|block|gear|extension|disc|laser|icon) when i study\.$/i,/^her job requires good (?:officer|chief|procedure|priority|duty|administrator|portfolio)\.$/i,/^this feature makes (?:switch|component|disk|wire|utility|conversion|backup|plug) easier\.$/i,/^the new device supports (?:panel|module|graphic|protocol|bookmark|circuit|interface|mode)\.$/i]).some(function(re){return re.test(String(v.example??"").trim())});
 });
 
 const communicationBad=[];
