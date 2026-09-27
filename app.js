@@ -892,7 +892,7 @@ function communication(){
         return '<div class="item"><div><b>'+esc(l[0])+'</b> — <span>'+esc(l[1])+'</span></div>'+(l[2]?'<div class="muted small" style="margin-top:5px">'+esc(l[2])+'</div>':'')+
         '<div class="actions" style="margin-top:7px">'+audioButton(l[1],"🔊 Nghe","en-US",1,l)+'</div></div>';
       }).join("")+'</div><div class="actions" style="margin-top:12px"><button class="primary" onclick="playDialogue('+i+')">▶ Nghe cả đoạn</button><button onclick="stopSpeech()">⏹ Dừng</button></div></div>';
-    }).join("")+'</div>'+pageControls(communicationPage,db.communication.length,size,"communication"));
+    }).join("")+'</div>'+pageControls(communicationPage,list.length,size,"communication"));
 }
 function playDialogue(index){
   const d=communicationPracticePool()[index];if(!d)return;
