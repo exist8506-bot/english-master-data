@@ -235,7 +235,11 @@ const practiceKeys = practicePool.map((s) => String(s.en ?? "").trim().toLowerCa
 const knownBadPracticeExamples = [
   "The room looks worried this morning.",
   "I'm practicing shirt and pants.",
+  "I'll keep practicing dress and skirt.",
   "When would you use broken?",
+  "Can you give me an example with painting?",
+  "Why is piece useful in real life?",
+  "Which word is easier to remember: tape or hide?",
   "She wants to often after work.",
   "I need to usually before breakfast.",
   "That was a thirsty experience for me.",
@@ -426,6 +430,23 @@ check(
   !commEnglish.some((x) => /^a conscientious worker$/i.test(x)) &&
   !commEnglish.some((x) => /^to go for a bathe$/i.test(x)),
   JSON.stringify({lines:commEnglish.length,hasRealA:commEnglish.some((x) => /^A positive attitude can help you learn\.$/i.test(x)),hasFragment:commEnglish.some((x) => /^(?:a conscientious worker|to go for a bathe)$/i.test(x))})
+);
+const knownBadCommunicationExamples = [
+  "The road is useful in daily life.",
+  "The tennis is useful in daily life.",
+  "The new plan is funny for us.",
+  "The new plan is same for us.",
+  "The new plan is dry for us.",
+  "The situation is primary right now.",
+  "They properly use the app.",
+  "This plan is immediate.",
+  "I noticed youth this morning.",
+  "I saw aspect on my way home."
+];
+check(
+  "communication filters semantic template failures",
+  knownBadCommunicationExamples.every((en) => !commEnglish.some((x) => String(x).trim().toLowerCase() === en.toLowerCase())),
+  JSON.stringify({remaining:knownBadCommunicationExamples.filter((en) => commEnglish.some((x) => String(x).trim().toLowerCase() === en.toLowerCase()))})
 );
 const commPages=Math.max(1,Math.ceil(commPool.length/12));
 T.show("communication");
