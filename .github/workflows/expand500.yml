@@ -211,6 +211,8 @@ jobs:
               meaning=str(d.get("vi") or "").strip()
               if not (meaning and example and example_vi):
                   continue
+              if any(rx.search(example) for rx in vocab_example_reject):
+                  continue
               if not re.search(r"\b"+re.escape(c["word"])+r"\b", example, re.I):
                   continue
               if c["word"] in used:
@@ -232,6 +234,20 @@ jobs:
 
           def tts(text,lang):
               return TTS_BASE+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
+
+          vocab_example_reject = [
+              re.compile(r"^I talked to (?:the )?(?:homework|book|dictionary) after class\.$", re.I),
+              re.compile(r"^I need to (?:talk|repeat|start|stand|eat|stay|use|take|look|like|feel|show) before breakfast\.$", re.I),
+              re.compile(r"^She wants to (?:make|bring|watch|save|together|below) after work\.$", re.I),
+              re.compile(r"^I try to (?:give|find|want|carry|reserve|borrow|outside|before) every day\.$", re.I),
+              re.compile(r"^We can (?:tell|hear|mean|open|do|keep|hate|catch|prefer|wish) together this evening\.$", re.I),
+              re.compile(r"^The (?:chair|roof|sofa|soap|cup) was open when I came home\.$", re.I),
+              re.compile(r"^The (?:pocket|cotton) is easy to wear\.$", re.I),
+              re.compile(r"^I saw (?:the )?(?:reading|hiking|birthday|idea) on my way home\.$", re.I),
+              re.compile(r"^I noticed (?:the )?(?:youth|iron|steel|aspect) this morning\.$", re.I),
+              re.compile(r"^The cashier gave me the customer service\.$", re.I),
+              re.compile(r"^I left my keys beside the key\.$", re.I)
+          ]
 
           new_vocab=[]
           new_sentences=[]
