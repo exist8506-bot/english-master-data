@@ -248,6 +248,22 @@ jobs:
               re.compile(r'^How can I use "', re.I),
               re.compile(r"^What is the meaning of ", re.I),
               re.compile(r"^to\b", re.I),
+
+              # Reject template-generated sentences that are grammatical-looking
+              # but semantically incomplete or mismatched for standalone practice.
+              re.compile(r"^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b", re.I),
+              re.compile(r"^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b", re.I),
+              re.compile(r"^I need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\\.$", re.I),
+              re.compile(r"^They tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\\.$", re.I),
+              re.compile(r"^I put the (?:beach|market|airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) (?:travel )?(?:bag|wallet|pocket)\\.$", re.I),
+              re.compile(r"^I checked (?:the )?(?:sun|cloud|storm|cold weather|sponsor) (?:at|before|after|in|on) ", re.I),
+              re.compile(r"^(?:She|He) wants to (?:often|maybe|again|carefully) after work\\.$", re.I),
+              re.compile(r"^We can (?:quickly|almost|also) together this evening\\.$", re.I),
+              re.compile(r"^I try to (?:really|still|very) every day\\.$", re.I),
+              re.compile(r"^It is (?:hungry|spicy|large) to practice a little every day\\.$", re.I),
+              re.compile(r"^That was a thirsty experience for me\\.$", re.I),
+              re.compile(r"^(?:She|He) sounded (?:delicious|salty|favorite) during the conversation\\.$", re.I),
+              re.compile(r"^I feel (?:dangerous|full|sour) when I finish my work\\.$", re.I),
           ]
           sentence_pool = []
           seen_sentence = set()
@@ -267,6 +283,9 @@ jobs:
                   seen_sentence.add(key)
                   sentence_pool.append({"en":en,"vi":vi,"topic":str(dialog.get("topic") or "Hằng ngày")})
           assert len(sentence_pool) >= NEED, "only %d natural standalone sentences available" % len(sentence_pool)
+          # Every generated standalone sentence must pass the same semantic sanity
+          # filters used by the app/QA, before it can be copied 500 times.
+          assert all(not any(rx.search(x["en"]) for rx in sentence_reject) for x in sentence_pool), "sentence_pool contains rejected standalone patterns"
           new_tri=[]
 
           for i,x in enumerate(chosen,1):
