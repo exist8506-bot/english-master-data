@@ -33,7 +33,7 @@ const BAD_STANDALONE_SENTENCE_PATTERNS=[
   /^i talked to the homework after class\.$/i,
   /^i used the (?:question|college|career|office|station) during my study session\.$/i,
 
-  # Standalone practice must be everyday English, not vocabulary-training meta-dialogue.
+  // Standalone practice must be everyday English, not vocabulary-training meta-dialogue.
   /^i'm practicing .+\.$/i,
   /^(?:when would you use|what does|how can i use|how would you use|can you give me an example with|can you tell me more about|why is .+ useful in real life|which word is easier to remember) /i,
   /^i think .+ is easier because i can use it often\.$/i,
