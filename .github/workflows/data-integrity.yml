@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   data-integrity:
@@ -39,6 +39,7 @@ jobs:
           node --check scripts/qa-chaos-data-protection-2.mjs
           node --check scripts/qa-runtime-smoke.mjs
           node --check scripts/qa-semantic-audit.mjs
+          node --check scripts/repair-standalone-sentences.mjs
 
       - name: Data preservation audit
         run: node scripts/qa-preserve-main.mjs
@@ -57,3 +58,20 @@ jobs:
 
       - name: Semantic sentence audit
         run: node scripts/qa-semantic-audit.mjs
+
+      - name: Repair known standalone sentence defects
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: node scripts/repair-standalone-sentences.mjs
+
+      - name: Commit standalone sentence repairs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- data/sentences.json; then
+            echo "No sentence repair changes."
+            exit 0
+          fi
+          git config user.name "English Master Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/sentences.json
+          git commit -m "fix: replace remaining unnatural standalone sentences"
+          git push origin HEAD:main
