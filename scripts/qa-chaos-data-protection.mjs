@@ -108,7 +108,8 @@ function makeIntegrityBase() {
       audioEn: "https://example.invalid/audio/" + encodeURIComponent(word) + ".mp3"
     })),
     "sentences.json": words.map((word, i) => ({
-      id: "s" + (i + 1), vocabWord: word, en: "This is " + word + ".", vi: "Đây là " + word + "."
+      id: "s" + (i + 1), source: "expansion500", sourceVersion: "8.0.0",
+      en: "I practiced this sentence today.", vi: "Hôm nay tôi luyện câu này."
     })),
     "questions.json": words.map((word, i) => ({
       id: "q" + (i + 1), vocabWord: word, prompt: "Choose " + word,
