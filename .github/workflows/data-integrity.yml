@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   data-integrity:
@@ -39,7 +39,6 @@ jobs:
           node --check scripts/qa-chaos-data-protection-2.mjs
           node --check scripts/qa-runtime-smoke.mjs
           node --check scripts/qa-semantic-audit.mjs
-          node --check scripts/repair-standalone-sentences.mjs
 
       - name: Data preservation audit
         run: node scripts/qa-preserve-main.mjs

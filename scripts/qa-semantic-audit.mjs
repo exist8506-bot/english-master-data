@@ -164,6 +164,13 @@ for(let i=0;i<samplePool.length;i++){
 }
 nearDuplicates.sort((a,b)=>b.score-a.score);
 
+const acceptableItIsPracticeAdjs = new Set(["important","useful","helpful","good","beneficial","easy","hard","difficult","necessary","possible","wise","healthy"]);
+const itIsPracticeBad=[];
+for(const s of independent){
+  const m=String(s.en??"").trim().match(/^It is ([A-Za-z]+) to practice a little every day\.$/i);
+  if(m&&!acceptableItIsPracticeAdjs.has(m[1].toLowerCase()))itIsPracticeBad.push(s);
+}
+
 const communicationBad=[];
 for(const d of communication){
   for(const line of Array.isArray(d.lines)?d.lines:[]){
@@ -186,5 +193,15 @@ console.log(JSON.stringify({
   nearDuplicateSamples: nearDuplicates.slice(0,40),
   communicationSemanticFlags: communicationBad.length,
   communicationFlagSamples: communicationBad.slice(0,30),
-  note:"Diagnostic only. No repository data was modified."
+  itIsPracticeTemplateFlags: itIsPracticeBad.length,
+  itIsPracticeTemplateSamples: sample(itIsPracticeBad, 30)
 }, null, 2));
+
+const totalFailures = bad.length + communicationBad.length + itIsPracticeBad.length + repeatedSkeletons.length + nearDuplicates.length;
+if(totalFailures){
+  console.error("SEMANTIC AUDIT FAILED: "+totalFailures+" suspicious findings remain.");
+  process.exitCode=1;
+}else{
+  console.log("SEMANTIC AUDIT PASSED: no suspicious semantic/template findings.");
+}
+

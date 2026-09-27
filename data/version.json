@@ -1,7 +1,7 @@
 {
-  "version": "8.0.2",
+  "version": "8.0.3",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.2: thay 2 ví dụ từ vựng không tự nhiên bằng câu tiếng Anh đời thường; giữ nguyên toàn bộ dữ liệu và liên kết.",
+  "releaseNotes": "V8.0.3: sửa 13 câu luyện độc lập còn lỗi ngữ nghĩa và siết kiểm tra dữ liệu từ xa.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",

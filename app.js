@@ -22,6 +22,12 @@ function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":
 function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/"/g,"&quot;").replace(/\r?\n/g," ")}
 function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
 const STANDALONE_SENTENCE_SOURCES=new Set(["extra500_v8","expansion500"]);
+const ALLOWED_IT_IS_PRACTICE_ADJECTIVES=new Set(["important","useful","helpful","good","beneficial","easy","hard","difficult","necessary","possible","wise","healthy"]);
+function standalonePracticeTemplateIsNatural(en){
+  const m=String(en??"").trim().match(/^It is ([A-Za-z]+) to practice a little every day\.$/i);
+  if(!m)return true;
+  return ALLOWED_IT_IS_PRACTICE_ADJECTIVES.has(m[1].toLowerCase());
+}
 const BAD_STANDALONE_SENTENCE_PATTERNS=[
   /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i,
   /^(?:he|she) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b/i,
@@ -76,6 +82,7 @@ function isNaturalStandaloneSentence(item){
   const en=String(item.en||"").trim(),vi=String(item.vi||"").trim(),source=String(item.source||"");
   if(!STANDALONE_SENTENCE_SOURCES.has(source)||!en||!vi||item.vocabWord)return false;
   if(!/[.!?]$/.test(en))return false;
+  if(!standalonePracticeTemplateIsNatural(en))return false;
   return !BAD_STANDALONE_SENTENCE_PATTERNS.some(function(re){return re.test(en)});
 }
 function sentencePracticePool(){
@@ -101,6 +108,7 @@ function communicationLineIsNatural(line){
     /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b/i
   ];
   if(rejects.some(function(re){return re.test(en)}))return false;
+  if(!standalonePracticeTemplateIsNatural(en))return false;
   // Dictionary-style infinitive fragments should never become dialogue lines.
   if(/^to\s+/i.test(en))return false;
   // Keep real "A/An ..." sentences, but reject noun-phrase fragments.
@@ -554,10 +562,25 @@ async function updateOnline(force){
 function validateIncomingContent(incoming){
   const rules={
     vocab:function(x){return x&&String(x.word||"").trim()&&String(x.meaning||"").trim()},
-    sentences:function(x){return x&&String(x.id||"").trim()&&String(x.en||"").trim()&&String(x.vi||"").trim()},
-    questions:function(x){return x&&String(x.id||"").trim()&&String(x.prompt||"").trim()&&Array.isArray(x.options)&&x.options.length>=2&&Number.isInteger(Number(x.answer))&&Number(x.answer)>=0&&Number(x.answer)<x.options.length},
+    sentences:function(x){
+      if(!x||!String(x.id||"").trim()||!String(x.en||"").trim()||!String(x.vi||"").trim())return false;
+      if(STANDALONE_SENTENCE_SOURCES.has(String(x.source||"")))return isNaturalStandaloneSentence(x);
+      return true;
+    },
+    questions:function(x){
+      const options=Array.isArray(x?.options)?x.options:[];
+      const normalizedOptions=options.map(norm);
+      return x&&String(x.id||"").trim()&&String(x.prompt||"").trim()&&
+        options.length===4&&normalizedOptions.every(Boolean)&&
+        new Set(normalizedOptions).size===4&&
+        Number.isInteger(Number(x.answer))&&Number(x.answer)>=0&&Number(x.answer)<4;
+    },
     grammar:function(x){return x&&String(x.title||"").trim()&&String(x.formula||"").trim()},
-    communication:function(x){return x&&String(x.title||"").trim()&&Array.isArray(x.lines)&&x.lines.length>0},
+    communication:function(x){
+      const lines=Array.isArray(x?.lines)?x.lines:[];
+      const validLines=lines.filter(function(l){return Array.isArray(l)&&communicationLineIsNatural(l[1])});
+      return x&&String(x.title||"").trim()&&lines.length>0&&validLines.length>=2;
+    },
     trilingual:function(x){return x&&String(x.en||"").trim()&&String(x.zh||x.chinese||"").trim()&&String(x.pinyin||"").trim()&&String(x.vi||x.vietnamese||"").trim()}
   };
   const bad=[];
@@ -880,10 +903,10 @@ function answerQuiz(i,a){
   quizAnswered=true;
   const ok=i===correctIndex,q=db.questions[quizIndex%db.questions.length];
   document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
-  db.stats.answered++;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct++;addXP(10)}
+  db.stats.answered=(Number(db.stats.answered)||0)+1;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct=(Number(db.stats.correct)||0)+1;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
 }
-function nextQuiz(){quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
+function nextQuiz(){if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
 
 function grammar(){
   $("view").innerHTML=shell("Ngữ pháp","Mỗi ví dụ có nút nghe để bạn nghe và đọc theo.",
@@ -947,7 +970,7 @@ function voiceAvailability(){
 function settings(){
   const layout=String(db.profile.layout||"auto");
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
-    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra 500 câu luyện độc lập</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra 500 câu luyện mới có English/Vietnamese/audio hợp lệ và không bị buộc vào vocabWord.</div></div>'+
+    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra 1.000 câu luyện độc lập</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra 1.000 câu luyện mới có English/Vietnamese/audio hợp lệ và không bị buộc vào vocabWord.</div></div>'+
     '<div class="card"><h2>🔊 Âm thanh & ngôn ngữ</h2><p class="muted">Giọng trình duyệt: '+esc(voiceAvailability())+'</p><p class="small muted">Nếu không có file audio riêng, app sẽ dùng giọng đọc TTS phù hợp với ngôn ngữ.</p></div>'+
     '<div class="card"><h2>🔊 Tốc độ mặc định</h2><select onchange="db.profile.speechRate=Number(this.value);save()">'+[0.5,0.75,1,1.25,1.5].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.speechRate||1)===x?"selected":"")+'>'+x+'×</option>'}).join("")+'</select></div>'+
     '<div class="card"><h2>📱💻 Bố cục thiết bị</h2><p class="small muted">“Tự động” bám theo kích thước màn hình. Có thể khóa bố cục Điện thoại hoặc Máy tính để thao tác thuận tiện hơn.</p><select id="layoutMode" onchange="setLayoutMode(this.value)">'+
