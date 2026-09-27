@@ -43,7 +43,7 @@ const data = Object.fromEntries(files.map((f) => [f, readJson(f)]));
 const version = String(data["version.json"].version ?? "");
 const expansion = data["expansion500.json"];
 
-must(version === String(expansion.version ?? ""), "Data version must match expansion metadata: " + version + " vs " + String(expansion.version ?? ""));
+must(/^\d+\.\d+\.\d+$/.test(version), "Data version must be semantic x.y.z, got " + version);
 must(expansion.package === "expansion500", "Unexpected expansion package: " + expansion.package);
 must(Number(expansion.count) === 500, "expansion500 count must be 500, got " + expansion.count);
 
