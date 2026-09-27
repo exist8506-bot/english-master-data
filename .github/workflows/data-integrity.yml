@@ -38,6 +38,7 @@ jobs:
           node --check scripts/qa-chaos-data-protection.mjs
           node --check scripts/qa-chaos-data-protection-2.mjs
           node --check scripts/qa-runtime-smoke.mjs
+          node --check scripts/qa-semantic-audit.mjs
 
       - name: Data preservation audit
         run: node scripts/qa-preserve-main.mjs
@@ -53,3 +54,6 @@ jobs:
 
       - name: Runtime smoke audit
         run: node scripts/qa-runtime-smoke.mjs
+
+      - name: Semantic sentence audit
+        run: node scripts/qa-semantic-audit.mjs
