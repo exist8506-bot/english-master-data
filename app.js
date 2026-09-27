@@ -554,6 +554,7 @@ async function updateOnline(force){
     save();render();
     toast("Đã đồng bộ GitHub: +"+added+" mục mới, cập nhật "+changed+" mục.");
   }catch(e){
+    try{window.__EM_LAST_UPDATE_ERROR=String(e?.message||e)}catch(_e){}
     toast("Cập nhật lỗi — chưa thay đổi dữ liệu hiện tại: "+e.message);
   }finally{
     updateInProgress=false;
