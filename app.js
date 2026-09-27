@@ -945,9 +945,13 @@ function grammarPracticePool(){
 function grammar(){
   const list=grammarPracticePool();
   const cards=list.map(function(g){
-    return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3><div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div><p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+
-      (g.examples||[]).map(function(e){return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1,g)+'</div>'}).join("")+
-      '</div><p class="muted small">'+esc(g.notes||"")+'</p></div>';
+    const examples=(g.examples||[]).map(function(e){
+      return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1,g)+'</div>';
+    }).join("");
+    return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3>'+
+      '<div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div>'+
+      '<p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+examples+'</div>'+
+      '<p class="muted small">'+esc(g.notes||"")+'</p></div>';
   }).join("");
   $("view").innerHTML=shell("Ngữ pháp","Chỉ hiển thị bài ngữ pháp thực hành; các mục từ vựng rời legacy không đưa vào giao diện.",'<div class="grid grid-2">'+cards+'</div>');
 }
