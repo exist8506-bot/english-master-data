@@ -21,6 +21,34 @@ function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
 function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/"/g,"&quot;").replace(/\r?\n/g," ")}
 function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
+const STANDALONE_SENTENCE_SOURCES=new Set(["extra500_v8","expansion500"]);
+const BAD_STANDALONE_SENTENCE_PATTERNS=[
+  /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b/i,
+  /^(?:he|she) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\b/i,
+  /^i need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\.$/i,
+  /^they tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\.$/i,
+  /^i put the (?:beach|market|airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) (?:travel )?(?:bag|wallet|pocket)\.$/i,
+  /^i checked (?:the )?(?:sun|cloud|storm|cold weather|sponsor) (?:at|before|after|in|on) /i,
+  /^the .* is on my desk today\.$/i,
+  /^i talked to the homework after class\.$/i,
+  /^i used the (?:question|college|career|office|station) during my study session\.$/i
+];
+function isNaturalStandaloneSentence(item){
+  if(!item||typeof item!=="object")return false;
+  const en=String(item.en||"").trim(),vi=String(item.vi||"").trim(),source=String(item.source||"");
+  if(!STANDALONE_SENTENCE_SOURCES.has(source)||!en||!vi||item.vocabWord)return false;
+  return !BAD_STANDALONE_SENTENCE_PATTERNS.some(function(re){return re.test(en)});
+}
+function sentencePracticePool(){
+  const seen=new Set(),out=[];
+  for(const s of db.sentences){
+    if(!isNaturalStandaloneSentence(s))continue;
+    const k=norm(s.en);
+    if(!k||seen.has(k))continue;
+    seen.add(k);out.push(s);
+  }
+  return out;
+}
 function guessLang(text){
   const t=String(text??"");
   if(/[\u3400-\u9fff]/.test(t))return "zh-CN";
@@ -258,8 +286,9 @@ function speak(text,rate,lang,retry,skipContentAudio){
   const r=Number(rate)||Number(db.profile.speechRate)||1,l=lang||"en-US",attempt=Number(retry||0);
   if(!skipContentAudio){
     let item=null;
-    if(view==="listening"&&db.sentences.length)item=db.sentences[listenIndex%db.sentences.length];
-    else if(view==="speaking"&&db.sentences.length)item=db.sentences[speakIndex%db.sentences.length];
+    const practice=sentencePracticePool();
+    if(view==="listening"&&practice.length)item=practice[listenIndex%practice.length];
+    else if(view==="speaking"&&practice.length)item=practice[speakIndex%practice.length];
     const contentAudio=audioUrl(item,l);
     if(contentAudio){playAudio(contentAudio,t,r,l);return;}
   }
@@ -560,8 +589,7 @@ function goPage(kind,page){
 function jumpToItem(kind,raw){
   const n=Math.trunc(Number(raw));
   let total=0;
-  if(kind==="listening")total=db.sentences.length;
-  else if(kind==="speaking")total=db.sentences.length;
+  if(kind==="listening"||kind==="speaking")total=sentencePracticePool().length;
   else if(kind==="quiz")total=db.questions.length;
   else return false;
   if(!Number.isFinite(n)||n<1||n>total){
@@ -601,9 +629,10 @@ function vocab(){
     '</tbody></table></div>'+pageControls(vocabPage,list.length,size,"vocab")+'</div>');
 }
 function sentences(){
-  const size=40,pages=Math.max(1,Math.ceil(db.sentences.length/size));
+  const list=sentencePracticePool();
+  const size=40,pages=Math.max(1,Math.ceil(list.length/size));
   if(sentencePage>pages)sentencePage=pages;
-  const start=(sentencePage-1)*size,items=db.sentences.slice(start,start+size);
+  const start=(sentencePage-1)*size,items=list.slice(start,start+size);
   $("view").innerHTML=shell("Học câu","Hiển thị theo trang để app nhẹ hơn trên điện thoại.",
     '<div class="card"><div class="muted small">Hiển thị '+(db.sentences.length?start+1:0)+'–'+Math.min(start+size,db.sentences.length)+' / '+db.sentences.length+' câu</div>'+pageControls(sentencePage,db.sentences.length,size,"sentences")+'</div>'+
     '<div class="grid grid-2">'+items.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US",s)+'</div>'}).join("")+'</div>');
@@ -671,16 +700,18 @@ function shuffleFlash(){
 
 function listening(){renderListening()}
 function renderListening(){
-  if(!db.sentences.length){$("view").innerHTML=shell("Luyện nghe","Chưa có dữ liệu.");return}
-  const s=db.sentences[listenIndex%db.sentences.length];
-  const seen=new Set([norm(s.vi||"")]),sameTopic=shuffle(db.sentences.filter(function(x){return x.id!==s.id&&x.vi&&norm(x.topic||"")===norm(s.topic||"")}));
-  const fallback=shuffle(db.sentences.filter(function(x){return x.id!==s.id&&x.vi&&!seen.has(norm(x.vi))}));
+  const list=sentencePracticePool();
+  if(!list.length){$("view").innerHTML=shell("Luyện nghe","Chưa có câu luyện độc lập.");return}
+  listenIndex=listenIndex%list.length;
+  const s=list[listenIndex];
+  const seen=new Set([norm(s.vi||"")]),sameTopic=shuffle(list.filter(function(x){return x.id!==s.id&&x.vi&&norm(x.topic||"")===norm(s.topic||"")}));
+  const fallback=shuffle(list.filter(function(x){return x.id!==s.id&&x.vi&&!seen.has(norm(x.vi))}));
   const wrong=[];
   sameTopic.concat(fallback).forEach(function(x){const k=norm(x.vi);if(k&&!seen.has(k)&&wrong.length<3){seen.add(k);wrong.push(x.vi);}});
   const choices=shuffle([s.vi,...wrong]);
   const showText=window.__showListeningText===true;
   $("view").innerHTML=shell("Luyện nghe","Nghe câu ở nhiều tốc độ, nghe lại và chọn đúng nghĩa.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(listenIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span>'+jumpControl("listening",listenIndex%db.sentences.length,db.sentences.length)+'</div>'+
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(listenIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("listening",listenIndex%db.sentences.length,db.sentences.length)+'</div>'+
     '<div class="actions" style="margin:14px 0"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 0.75×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">▶ 1×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1.25,\'en-US\')">🐇 1.25×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔁 Nghe lại</button><button onclick="window.__showListeningText=!window.__showListeningText;renderListening()">👁 '+(showText?"Ẩn câu":"Hiện câu")+'</button></div>'+
     (showText?'<div class="hint"><b>'+esc(s.en)+'</b><br><span class="muted">'+esc(s.vi||"")+'</span></div>':'')+
     '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){return '<button class="option" onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>'}).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">Hãy nghe rồi chọn.</div></div>');
@@ -694,28 +725,32 @@ function listenCheck(el,selected,correct){
   if(ok){db.stats.sentenceCorrect=(Number(db.stats.sentenceCorrect)||0)+1;addXP(10)}
   save();
   if(listenAdvanceTimer)clearTimeout(listenAdvanceTimer);
-  listenAdvanceTimer=setTimeout(function(){listenAdvanceTimer=0;listenIndex=(listenIndex+1)%db.sentences.length;window.__showListeningText=false;save();renderListening()},700);
+  listenAdvanceTimer=setTimeout(function(){const list=sentencePracticePool();listenAdvanceTimer=0;if(!list.length)return;listenIndex=(listenIndex+1)%list.length;window.__showListeningText=false;save();renderListening()},700);
 }
 
 function speaking(){renderSpeaking()}
 let autoNextSpeaking=true;
 function renderSpeaking(){
-  if(!db.sentences.length){$("view").innerHTML=shell("Luyện phát âm","Chưa có câu luyện.");return}
-  const s=db.sentences[speakIndex%db.sentences.length];
+  const list=sentencePracticePool();
+  if(!list.length){$("view").innerHTML=shell("Luyện phát âm","Chưa có câu luyện độc lập.");return}
+  speakIndex=speakIndex%list.length;
+  const s=list[speakIndex];
   $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → chấm độ tương đồng văn bản; câu luyện độc lập với danh sách từ vựng.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span>'+jumpControl("speaking",speakIndex%db.sentences.length,db.sentences.length)+'</div>'+
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("speaking",speakIndex%db.sentences.length,db.sentences.length)+'</div>'+
     '<h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p>'+
     '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button><button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
     '<div class="actions" style="margin-top:10px"><button onclick="autoNextSpeaking=!autoNextSpeaking;renderSpeaking()">⏭️ Tự chuyển: '+(autoNextSpeaking?"BẬT":"TẮT")+'</button><span class="muted small">Phím → cũng chuyển câu</span></div>'+
     '<div id="speechResult" class="hint" style="margin-top:14px">Nghe mẫu rồi nói lại.</div></div>');
 }
-function nextSpeak(){stopRecognition();speakIndex=(speakIndex+1)%db.sentences.length;save();renderSpeaking()}
-function prevSpeak(){stopRecognition();speakIndex=(speakIndex-1+db.sentences.length)%db.sentences.length;save();renderSpeaking()}
+function nextSpeak(){const list=sentencePracticePool();if(!list.length)return;stopRecognition();speakIndex=(speakIndex+1)%list.length;save();renderSpeaking()}
+function prevSpeak(){const list=sentencePracticePool();if(!list.length)return;stopRecognition();speakIndex=(speakIndex-1+list.length)%list.length;save();renderSpeaking()}
 function startRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!SR){toast("Chrome/Edge thường hỗ trợ nhận diện microphone tốt hơn.");return}
   stopRecognition();
-  const target=db.sentences[speakIndex%db.sentences.length].en,r=new SR(),token=++recognitionToken;
+  const list=sentencePracticePool();if(!list.length){toast("Chưa có câu luyện độc lập.");return}
+  speakIndex=speakIndex%list.length;
+  const target=list[speakIndex].en,r=new SR(),token=++recognitionToken;
   activeRecognition=r;r.lang="en-US";r.interimResults=false;r.maxAlternatives=1;
   const out=$("speechResult");if(out)out.textContent="🎙️ Đang nghe...";
   r.onresult=function(e){
@@ -902,7 +937,7 @@ function dataAudit(){
   const tw=normSet(db.trilingual.map(x=>x.en));
   const cw=normSet(db.communication.flatMap(x=>x.vocab||[]));
   const gw=normSet(db.grammar.flatMap(x=>x.vocabWords||[]));
-  const independent=[...expSentences,...generalSentences];
+  const independent=[...expSentences,...generalSentences].filter(isNaturalStandaloneSentence);
   const missing={sentences:[],questions:[],trilingual:[],communication:[],grammar:[],audio:[]};
   exp.forEach(v=>{
     const w=norm(v.word);
