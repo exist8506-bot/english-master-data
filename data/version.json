@@ -1,7 +1,7 @@
 {
-  "version": "8.0.9",
+  "version": "8.0.10",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.9: sửa kiểm tra từ trong từ ghép và làm sạch ví dụ upper.",
+  "releaseNotes": "V8.0.10: sửa thêm 6 ví dụ từ vựng còn mang khung câu máy móc.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
