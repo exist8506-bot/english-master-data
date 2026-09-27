@@ -159,14 +159,28 @@ const context = {
 vm.runInNewContext(app + "\n" + hooks, context, { filename: "english-master-runtime.js" });
 
 for (let i = 0; i < 80; i += 1) await Promise.resolve();
-await new Promise((resolve) => setTimeout(resolve, 25));
 
 const T = window.__EM_TEST;
 check("app test hooks initialized", !!T);
 
 let snap = T.snap();
-check(
-  "hydrate all datasets",
+let hydrateReady = false;
+for (let i = 0; i < 300; i += 1) {
+  snap = T.snap();
+  if (
+    snap.db.vocab.length === 3000 &&
+    snap.db.sentences.length === 3250 &&
+    snap.db.questions.length === 5000 &&
+    snap.db.communication.length === 228 &&
+    snap.db.trilingual.length === 2500 &&
+    snap.db.grammar.length === 60
+  ) {
+    hydrateReady = true;
+    break;
+  }
+  await new Promise((resolve) => setTimeout(resolve, 20));
+}
+check("hydrate all datasets", hydrateReady &&
   snap.db.vocab.length === 3000 &&
   snap.db.sentences.length === 3250 &&
   snap.db.questions.length === 5000 &&
