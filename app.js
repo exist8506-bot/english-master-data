@@ -5,7 +5,7 @@ const APP_VERSION_URL="./app-version.json";
 
 let db={
   vocab:[],sentences:[],questions:[],grammar:[],communication:[],trilingual:[],
-  stats:{xp:0,streak:0,learned:0,answered:0,correct:0},
+  stats:{xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0},
   profile:{theme:"light",autoUpdate:true,speechRate:1,layout:"auto"},
   lastRemoteVersion:""
 };
@@ -513,7 +513,7 @@ function updateLayoutQuickButton(phone){
   const nextPhone=!phone;
   const label=nextPhone?"📱":"🖥️";
   const title=nextPhone?"Chuyển sang giao diện điện thoại":"Chuyển sang giao diện máy tính";
-  b.textContent=label;b.title=title;if(b.setAttribute)b.setAttribute("aria-label",title);
+  b.textContent=label;b.title=title;if(b.setAttribute){b.setAttribute("title",title);b.setAttribute("aria-label",title);}
 }
 function applyLayoutMode(){
   const m=["auto","phone","desktop"].includes(String(db.profile.layout))?db.profile.layout:"auto";
@@ -537,7 +537,7 @@ function render(){
   fn();
 }
 function home(){
-  $("view").innerHTML=shell("English Master V8.0.0","Học • Luyện • Nhớ • Cải thiện",
+  $("view").innerHTML=shell("English Master V8.0.1","Học • Luyện • Nhớ • Cải thiện",
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+db.sentences.length+'</div><div class="muted">Câu học</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
@@ -689,8 +689,10 @@ function listenCheck(el,selected,correct){
   document.querySelectorAll(".option").forEach(function(b){b.disabled=true});
   const ok=norm(selected)===norm(correct);el.classList.add(ok?"correct":"wrong");
   $("listenResult").innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(correct)+"</b>";
-  const currentSentence=db.sentences[listenIndex%db.sentences.length];
-  db.stats.answered++;recordActivity();recordVocabOutcome(currentSentence?.vocabWord,ok);if(ok){db.stats.correct++;addXP(10)}save();
+  db.stats.sentenceAnswered=(Number(db.stats.sentenceAnswered)||0)+1;
+  recordActivity();
+  if(ok){db.stats.sentenceCorrect=(Number(db.stats.sentenceCorrect)||0)+1;addXP(10)}
+  save();
   if(listenAdvanceTimer)clearTimeout(listenAdvanceTimer);
   listenAdvanceTimer=setTimeout(function(){listenAdvanceTimer=0;listenIndex=(listenIndex+1)%db.sentences.length;window.__showListeningText=false;save();renderListening()},700);
 }
@@ -698,13 +700,12 @@ function listenCheck(el,selected,correct){
 function speaking(){renderSpeaking()}
 let autoNextSpeaking=true;
 function renderSpeaking(){
-  if(!db.sentences.length){$("view").innerHTML=shell("Phát âm","Chưa có câu luyện.");return}
-  const s=db.sentences[speakIndex%db.sentences.length],v=db.vocab.find(function(x){return norm(x.word)===norm(s.vocabWord)});
-  $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → có thể tự chuyển sang câu kế tiếp.",
+  if(!db.sentences.length){$("view").innerHTML=shell("Luyện phát âm","Chưa có câu luyện.");return}
+  const s=db.sentences[speakIndex%db.sentences.length];
+  $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → chấm độ tương đồng văn bản; câu luyện độc lập với danh sách từ vựng.",
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%db.sentences.length+1)+' / '+db.sentences.length+'</span>'+jumpControl("speaking",speakIndex%db.sentences.length,db.sentences.length)+'</div>'+
-    '<h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p><div class="hint"><b>Từ trọng tâm:</b> '+esc(s.vocabWord||"")+' <span class="ipa">'+esc(v?.ipa||"")+'</span></div>'+
-    '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button>'+audioButton(s.vocabWord||"","🔊 Nghe từ","en-US",1,v)+
-    '<button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
+    '<h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p>'+
+    '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\\''+escapeJs(s.en)+'\\',1,\\'en-US\\')">🔊 Nghe mẫu</button><button onclick="speak(\\''+escapeJs(s.en)+'\\',0.75,\\'en-US\\')">🐢 Nghe chậm</button><button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
     '<div class="actions" style="margin-top:10px"><button onclick="autoNextSpeaking=!autoNextSpeaking;renderSpeaking()">⏭️ Tự chuyển: '+(autoNextSpeaking?"BẬT":"TẮT")+'</button><span class="muted small">Phím → cũng chuyển câu</span></div>'+
     '<div id="speechResult" class="hint" style="margin-top:14px">Nghe mẫu rồi nói lại.</div></div>');
 }
@@ -721,8 +722,14 @@ function startRecognition(){
     if(token!==recognitionToken||activeRecognition!==r)return;
     const heard=e.results?.[0]?.[0]?.transcript||"",score=similarityScore(heard,target);
     if(out)out.innerHTML="<b>Bạn nói:</b> "+esc(heard)+"<br><b>Mức khớp:</b> "+score+"%<br><span class=\"muted\">Đây là độ tương đồng văn bản, không phải chấm phát âm chuyên môn.</span>";
-    recordActivity();recordVocabOutcome(db.sentences[speakIndex%db.sentences.length].vocabWord,score>=80);
-    if(score>=80)addXP(10);
+    db.stats.sentenceAnswered=(Number(db.stats.sentenceAnswered)||0)+1;
+    db.stats.speakingAttempts=(Number(db.stats.speakingAttempts)||0)+1;
+    recordActivity();
+    if(score>=80){
+      db.stats.sentenceCorrect=(Number(db.stats.sentenceCorrect)||0)+1;
+      db.stats.speakingGood=(Number(db.stats.speakingGood)||0)+1;
+      addXP(10);
+    }
     save();
     if(autoNextSpeaking)setTimeout(function(){if(view==="speaking"&&token===recognitionToken)nextSpeak()},1200);
   };
@@ -801,9 +808,11 @@ function review(){
     '<div class="grid"><div class="card"><div class="big">'+due.length+'</div><div class="muted">Đến hạn</div></div><div class="card"><div class="big">'+need.length+'</div><div class="muted">Cần củng cố</div></div><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Tổng từ</div></div></div><div class="card"><div class="actions"><button class="primary" onclick="startReview()">🃏 Bắt đầu ôn tập</button></div></div>');
 }
 function stats(){
-  const acc=db.stats.answered?Math.round((db.stats.correct/db.stats.answered)*100):0;
-  $("view").innerHTML=shell("Tiến độ","Theo dõi XP, số từ học và độ chính xác.",
-    '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Số từ đã học</div></div><div class="card"><div class="big">'+acc+'%</div><div class="muted">Độ chính xác</div></div></div>');
+  const quizAcc=db.stats.answered?Math.round((db.stats.correct/db.stats.answered)*100):0;
+  const sentenceAcc=db.stats.sentenceAnswered?Math.round((db.stats.sentenceCorrect/db.stats.sentenceAnswered)*100):0;
+  $("view").innerHTML=shell("Tiến độ","Theo dõi riêng quiz/từ vựng và luyện câu, không trộn hai loại tiến độ.",
+    '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Số từ đã học</div></div><div class="card"><div class="big">'+quizAcc+'%</div><div class="muted">Độ chính xác quiz</div></div></div>'+
+    '<div class="grid"><div class="card"><div class="big">'+(db.stats.sentenceAnswered||0)+'</div><div class="muted">Lượt luyện câu</div></div><div class="card"><div class="big">'+sentenceAcc+'%</div><div class="muted">Độ chính xác nghe/nói</div></div><div class="card"><div class="big">'+(db.stats.speakingGood||0)+'</div><div class="muted">Lần nói đạt ≥80%</div></div></div>');
 }
 function voiceAvailability(){
   try{
@@ -819,7 +828,7 @@ function voiceAvailability(){
 function settings(){
   const layout=String(db.profile.layout||"auto");
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
-    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra liên kết 500 từ</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra sẽ xác nhận từng từ mới có đủ câu, quiz, tam ngữ, giao tiếp, ngữ pháp và audio.</div></div>'+
+    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra 500 câu luyện độc lập</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra 500 câu luyện mới có English/Vietnamese/audio hợp lệ và không bị buộc vào vocabWord.</div></div>'+
     '<div class="card"><h2>🔊 Âm thanh & ngôn ngữ</h2><p class="muted">Giọng trình duyệt: '+esc(voiceAvailability())+'</p><p class="small muted">Nếu không có file audio riêng, app sẽ dùng giọng đọc TTS phù hợp với ngôn ngữ.</p></div>'+
     '<div class="card"><h2>🔊 Tốc độ mặc định</h2><select onchange="db.profile.speechRate=Number(this.value);save()">'+[0.5,0.75,1,1.25,1.5].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.speechRate||1)===x?"selected":"")+'>'+x+'×</option>'}).join("")+'</select></div>'+
     '<div class="card"><h2>📱💻 Bố cục thiết bị</h2><p class="small muted">“Tự động” bám theo kích thước màn hình. Có thể khóa bố cục Điện thoại hoặc Máy tính để thao tác thuận tiện hơn.</p><select id="layoutMode" onchange="setLayoutMode(this.value)">'+
@@ -886,37 +895,33 @@ function runContentAudit(){
 
 function dataAudit(){
   const exp=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
+  const expSentences=db.sentences.filter(s=>s.source==="expansion500");
+  const generalSentences=db.sentences.filter(s=>s.source==="extra500_v8");
   const normSet=arr=>new Set((arr||[]).filter(Boolean).map(norm));
-  const sw=normSet(db.sentences.map(x=>x.vocabWord));
   const qw=normSet(db.questions.map(x=>x.vocabWord));
   const tw=normSet(db.trilingual.map(x=>x.en));
   const cw=normSet(db.communication.flatMap(x=>x.vocab||[]));
   const gw=normSet(db.grammar.flatMap(x=>x.vocabWords||[]));
+  const independent=[...expSentences,...generalSentences];
   const missing={sentences:[],questions:[],trilingual:[],communication:[],grammar:[],audio:[]};
   exp.forEach(v=>{
     const w=norm(v.word);
-    if(!sw.has(w))missing.sentences.push(v.word);
     if(!qw.has(w))missing.questions.push(v.word);
     if(!tw.has(w))missing.trilingual.push(v.word);
     if(!cw.has(w))missing.communication.push(v.word);
     if(!gw.has(w))missing.grammar.push(v.word);
     if(!(v.audio==="tts"&&v.audioEn))missing.audio.push(v.word);
   });
-  const result={
-    expansion500:exp.length,
-    duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
-    sentences:exp.length-missing.sentences.length,
-    questions:exp.length-missing.questions.length,
-    trilingual:exp.length-missing.trilingual.length,
-    communication:exp.length-missing.communication.length,
-    grammar:exp.length-missing.grammar.length,
-    audio:exp.length-missing.audio.length,
-    missing
-  };
-  console.table({
-    expansion500:result.expansion500,duplicateWords:result.duplicateWords,
-    sentences:result.sentences,questions:result.questions,trilingual:result.trilingual,
-    communication:result.communication,grammar:result.grammar,audio:result.audio
+  independent.forEach(s=>{
+    if(!String(s.en||"").trim()||!String(s.vi||"").trim()||s.vocabWord)missing.sentences.push(s.id||"");
   });
-  return result;
+  const result={
+    expansion500:exp.length,duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
+    sentences:expSentences.length,generalSentences:generalSentences.length,
+    independentSentences:independent.length,independentSentenceLinks:independent.filter(x=>x.vocabWord).length,
+    questions:exp.length-missing.questions.length,trilingual:exp.length-missing.trilingual.length,
+    communication:exp.length-missing.communication.length,grammar:exp.length-missing.grammar.length,
+    audio:exp.length-missing.audio.length,missing
+  };
+  console.table(result);return result;
 }

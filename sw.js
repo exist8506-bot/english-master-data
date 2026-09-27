@@ -1,4 +1,4 @@
-const CACHE_NAME="english-master-v8.0.1-layout-switch-3";
+const CACHE_NAME="english-master-v8.0.1-layout-switch-4";
 const APP_SHELL=["./","./index.html","./app.js?v=8.0.1","./styles.css","./manifest.json","./app-version.json"];
 const NETWORK_FIRST_SHELL=new Set(["/english-master-data/","/english-master-data/index.html","/english-master-data/app.js","/english-master-data/styles.css","/english-master-data/manifest.json","/english-master-data/app-version.json"]);
 

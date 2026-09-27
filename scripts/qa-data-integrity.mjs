@@ -79,9 +79,8 @@ for (const v of vocab) {
   if (k && !vocabByWord.has(k)) vocabByWord.set(k, v);
 }
 
-const sentenceByVocab = new Set(
-  sentences.map((x) => norm(x?.vocabWord)).filter(Boolean)
-);
+const sentenceById = byId(sentences);
+const independentSentences = sentences.filter((x) => x?.source === "expansion500" || x?.source === "extra500_v8");
 const questionByVocab = new Set(
   questions.map((x) => norm(x?.vocabWord)).filter(Boolean)
 );
@@ -108,7 +107,8 @@ for (const row of expWords) {
   const v = vocabByWord.get(word);
 
   if (!v || v.source !== "expansion500" || String(v.sourceVersion ?? "") !== "8.0.0") missingVocab++;
-  if (!sentenceByVocab.has(word)) missingSentence++;
+  const s = sentenceById.get(String(row.sentenceId ?? ""));
+  if (!s || s.source !== "expansion500" || !String(s.en ?? "").trim() || !String(s.vi ?? "").trim() || s.vocabWord) missingSentence++;
   if (!questionByVocab.has(word)) missingQuestion++;
   if (!trilingualByEn.has(word)) missingTrilingual++;
   if (!communicationByVocab.has(word)) missingCommunication++;
@@ -137,7 +137,7 @@ for (const row of expWords) {
   const gWords = Array.isArray(g?.vocabWords) ? g.vocabWords.map(norm) : [];
   const ok =
     norm(v?.word) === word &&
-    norm(s?.vocabWord) === word &&
+    !!s && s.source === "expansion500" &&
     norm(q?.vocabWord) === word &&
     norm(t?.en) === word &&
     cWords.includes(word) &&
@@ -178,6 +178,27 @@ must(
   "Found communication row without lines"
 );
 
+
+must(independentSentences.length === 1000,
+  "Expected 1000 independent sentence-practice rows, got " + independentSentences.length
+);
+must(independentSentences.every((s) => !s.vocabWord && String(s.en ?? "").trim() && String(s.vi ?? "").trim()),
+  "Independent sentence rows must have English/Vietnamese text and no vocabWord linkage"
+);
+const badStandalonePatterns = [
+  /^I want to understand .* better\.$/i,
+  /^The .* is on my desk today\.$/i,
+  /^I talked to the homework after class\.$/i,
+  /^I used the question during my study session\.$/i,
+  /^I put the airport in my travel bag\.$/i,
+  /^He decided to never before the meeting\.$/i,
+  /^A friendly police helped me find the station\.$/i,
+];
+const badStandalone = independentSentences.filter((s) => badStandalonePatterns.some((re) => re.test(String(s.en ?? ""))));
+must(badStandalone.length === 0,
+  "Obvious machine-forced standalone sentences remain: " + badStandalone.length
+);
+
 const globalWordDuplicates = (() => {
   const counts = new Map();
   for (const v of vocab) {
@@ -197,6 +218,7 @@ console.log(JSON.stringify({
   communication: communication.length,
   trilingual: trilingual.length,
   expansion500: expWords.length,
+  independentSentences: independentSentences.length,
   globalDuplicateWordKeys: globalWordDuplicates,
   brokenExpansionMappings: badMappings,
   checks: "PASS"

@@ -201,6 +201,9 @@ check(
   audit.expansion500 === 500 &&
   audit.duplicateWords === 0 &&
   audit.sentences === 500 &&
+  audit.generalSentences === 500 &&
+  audit.independentSentences === 1000 &&
+  audit.independentSentenceLinks === 0 &&
   audit.questions === 500 &&
   audit.trilingual === 500 &&
   audit.communication === 500 &&
@@ -209,6 +212,13 @@ check(
   Object.values(audit.missing || {}).every((items) => items.length === 0),
   JSON.stringify(audit)
 );
+const standalone = data.sentences.filter((s) => s?.source === "expansion500" || s?.source === "extra500_v8");
+const badStandalone = standalone.filter((s) => s?.vocabWord || !String(s?.en ?? "").trim() || !String(s?.vi ?? "").trim() ||
+  /^I want to understand .* better\.$/i.test(String(s.en ?? "")) ||
+  /^The .* is on my desk today\.$/i.test(String(s.en ?? "")) ||
+  /^I talked to the homework after class\.$/i.test(String(s.en ?? "")) ||
+  /^I put the airport in my travel bag\.$/i.test(String(s.en ?? "")));
+check("standalone sentence pack is natural and independent", standalone.length === 1000 && badStandalone.length === 0, JSON.stringify({count:standalone.length,bad:badStandalone.slice(0,5)}));
 check(
   "500-word audit is per-item, not only aggregate",
   audit.expansion500 === 500 &&
@@ -331,6 +341,7 @@ check("phone layout remains isolated", document.body.classList._set.has("layout-
 
 T.show("speaking");
 check("speaking UI and microphone fallback", document.getElementById("view").innerHTML.includes("Bắt đầu nói"));
+check("speaking sentence practice is independent from vocab", !document.getElementById("view").innerHTML.includes("Từ trọng tâm:"));
 try { T.startRecognition(); check("microphone fallback", true); } catch (e) { check("microphone fallback", false, e.stack || String(e)); }
 
 T.show("communication");
@@ -399,16 +410,16 @@ check("backup storage key exists", !!storage.get("englishMaster_v1_backup"));
 
 const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
-check("index cache-busts latest app.js", index.includes('src="app.js?v=8.0.1"'));
+check("index cache-busts latest app.js", /<script[^>]+src="app\.js\?v=8\.0\.1"/.test(index));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 check("app version manifest is current", appVersion.version === "8.0.1");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 const sw = fs.readFileSync(path.join(root, "sw.js"), "utf8");
-check("index references app/style/manifest", index.includes('src="app.js"') && index.includes('href="styles.css"') && index.includes('href="manifest.json"'));
+check("index references app/style/manifest", /<script[^>]+src="app\.js(?:\?v=[^"]+)?"/.test(index) && index.includes('href="styles.css"') && index.includes('href="manifest.json"'));
 check("service worker caches app assets", sw.includes("app.js") && sw.includes("styles.css") && sw.includes("manifest.json"));
 check("manifest is installable", manifest.display === "standalone" && manifest.start_url === "./" && manifest.icons?.length >= 2);
-check("version signals align", /APP_VERSION="8\.0\.0"/.test(app) && /application-version" content="8\.0\.0"/.test(index) && /English Master V8\.0\.0/.test(index));
-check("service worker cache is busted for latest UI changes", /english-master-v8\.0\.0-layout-switch-2/.test(sw) && !/CACHE_NAME="english-master-v8\.0\.0"/.test(sw));
+check("version signals align", /APP_VERSION="8\.0\.1"/.test(app) && /application-version" content="8\.0\.1"/.test(index) && /English Master V8\.0\.1/.test(index));
+check("service worker cache is busted for latest UI changes", /english-master-v8\.0\.1-layout-switch-4/.test(sw) && !/CACHE_NAME="english-master-v8\.0\.0"/.test(sw));
 const styles=fs.readFileSync(path.join(root,"styles.css"),"utf8");
 check("phone layout is scoped only to phone class", styles.includes("body.layout-phone") && styles.includes("body.layout-phone #side") && styles.includes("body.layout-phone main"));
 check("phone layout uses bottom navigation", styles.includes("body.layout-phone #side{position:fixed") && styles.includes("body.layout-phone #side button"));
