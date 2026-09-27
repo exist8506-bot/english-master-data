@@ -23,39 +23,55 @@ function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\
 function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
 const STANDALONE_SENTENCE_SOURCES=new Set(["extra500_v8","expansion500"]);
 const BAD_STANDALONE_SENTENCE_PATTERNS=[
-  /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b/i,
-  /^(?:he|she) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\b/i,
-  /^i need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\.$/i,
-  /^they tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\.$/i,
-  /^i put the (?:beach|market|airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) (?:travel )?(?:bag|wallet|pocket)\.$/i,
+  /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i,
+  /^(?:he|she) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b/i,
+  /^i need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\\.$/i,
+  /^they tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\\.$/i,
+  /^i put the (?:beach|market|airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) (?:travel )?(?:bag|wallet|pocket)\\.$/i,
   /^i checked (?:the )?(?:sun|cloud|storm|cold weather|sponsor) (?:at|before|after|in|on) /i,
-  /^the .* is on my desk today\.$/i,
-  /^i talked to the homework after class\.$/i,
-  /^i used the (?:question|college|career|office|station) during my study session\.$/i,
-
-  // Standalone practice must be everyday English, not vocabulary-training meta-dialogue.
-  /^i'm practicing .+\.$/i,
+  /^the .* is on my desk today\\.$/i,
+  /^i talked to the homework after class\\.$/i,
+  /^i used the (?:question|college|career|office|station) during my study session\\.$/i,
+  /^i'm practicing .+\\.$/i,
   /^(?:when would you use|what does|how can i use|how would you use|can you give me an example with|can you tell me more about|why is .+ useful in real life|which word is easier to remember) /i,
-  /^i think .+ is easier because i can use it often\.$/i,
-  /^this plan is (?:immediate|civil)\.$/i,
-  /^this majority is useful in everyday life\.$/i,
-  /^she seems visual today\.$/i,
-  /^i saw aspect on my way home\.$/i,
-  /^i noticed (?:youth|iron|steel) this morning\.$/i,
-  /^i usually (?:insist|acknowledge) after work\.$/i,
-  /^i need to (?:usually|always|often|sometimes|still|really|very|maybe|carefully|slowly) before breakfast\.$/i,
-  /^i try to (?:always|usually|often|sometimes|still|really|very|carefully|slowly) every day\.$/i,
-  /^(?:she|he) wants to (?:always|usually|often|sometimes|still|really|very|carefully|slowly|maybe|again) after work\.$/i,
-  /^we can (?:quickly|almost|also|sometimes|usually|always) together this evening\.$/i,
-  /^that was a (?:angry|bored|lonely|brave|strong|dirty|rainy|warm|busy|easy|necessary|normal|private|small|old|safe|tiny|thirsty) experience for me\.$/i,
-  /^i feel (?:dangerous|full|sour|difficult|common|natural|personal|long) when i finish my work\.$/i,
-  /^it is (?:hungry|spicy|large|big|low|public) to practice a little every day\.$/i,
-  /^she sounded (?:delicious|salty|favorite) during the conversation\.$/i
+  /^i think .+ is easier because i can use it often\\.$/i,
+  /^this plan is (?:immediate|civil)\\.$/i,
+  /^this majority is useful in everyday life\\.$/i,
+  /^she seems visual today\\.$/i,
+  /^i saw aspect on my way home\\.$/i,
+  /^i noticed (?:youth|iron|steel) this morning\\.$/i,
+  /^i usually (?:insist|acknowledge) after work\\.$/i,
+  /^i need to (?:usually|always|often|sometimes|still|really|very|maybe|carefully|slowly) before breakfast\\.$/i,
+  /^i try to (?:always|usually|often|sometimes|still|really|very|carefully|slowly) every day\\.$/i,
+  /^(?:she|he) wants to (?:always|usually|often|sometimes|still|really|very|carefully|slowly|maybe|again) after work\\.$/i,
+  /^we can (?:quickly|almost|also|sometimes|usually|always) together this evening\\.$/i,
+  /^that was a (?:angry|bored|lonely|brave|strong|dirty|rainy|warm|busy|easy|necessary|normal|private|small|old|safe|tiny|thirsty) experience for me\\.$/i,
+  /^i feel (?:dangerous|full|sour|difficult|common|natural|personal|long) when i finish my work\\.$/i,
+  /^it is (?:hungry|spicy|large|big|low|public) to practice a little every day\\.$/i,
+  /^she sounded (?:delicious|salty|favorite) during the conversation\\.$/i,
+
+  // Newly found semantic/template failures. Keep this list conservative and specific.
+  /^the (?:new plan) is (?:same|dry|funny) for us\\.$/i,
+  /^the situation is primary right now\\.$/i,
+  /^the (?:road|tennis) is useful in daily life\\.$/i,
+  /^they properly use the app\\.$/i,
+  /^the team is working on secretary\\.$/i,
+  /^we will meet next (?:hour|date|evening)\\.?$/i,
+  /^we can (?:buy|hear|open|keep) together this evening\\.$/i,
+  /^i feel (?:kind|cool|welcome) when i finish my work\\.$/i,
+  /^i need to (?:receive|invest|float|surround|succeed|choose|stay|put) (?:before|after)\\b/i,
+  /^i try to (?:give|find|want|teach|carry) every day\\.$/i,
+  /^he decided to (?:close|put) before the meeting\\.$/i,
+  /^we need a new (?:class|exam|library) for this lesson\\.$/i,
+  /^i use my email to study at night\\.$/i,
+  /^the (?:luggage|bridge) was delayed this morning\\.$/i,
+  /^the truck was ready this morning\\.$/i
 ];
 function isNaturalStandaloneSentence(item){
   if(!item||typeof item!=="object")return false;
   const en=String(item.en||"").trim(),vi=String(item.vi||"").trim(),source=String(item.source||"");
   if(!STANDALONE_SENTENCE_SOURCES.has(source)||!en||!vi||item.vocabWord)return false;
+  if(!/[.!?]$/.test(en))return false;
   return !BAD_STANDALONE_SENTENCE_PATTERNS.some(function(re){return re.test(en)});
 }
 function sentencePracticePool(){
@@ -72,16 +88,18 @@ function communicationLineIsNatural(line){
   const en=String(line??"").trim();
   if(!en)return false;
   const rejects=[
-    /^i'm practicing .+\.$/i,
+    /^i'm practicing .+\\.$/i,
     /^(?:when would you use|what does|how can i use|how would you use|can you give me an example with|can you tell me more about|why is .+ useful in real life|which word is easier to remember) /i,
-    /^i think .+ is easier because i can use it often\.$/i,
+    /^i think .+ is easier because i can use it often\\.$/i,
     /^do you know the word "/i,
-    /^yes\. it means /i,
+    /^yes\\. it means /i,
     /^where might i see the word "/i,
-    /^(?:to|a|an)\s+/i
+    /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i
   ];
   if(rejects.some(function(re){return re.test(en)}))return false;
-  return !/^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b/i.test(en);
+  // Keep real sentences beginning with "A/An", but remove dictionary-style fragments.
+  if(/^(?:to|a|an)\\s+/i.test(en)&&!/[.!?]$/.test(en))return false;
+  return true;
 }
 function communicationPracticePool(){
   return db.communication.map(function(d){
@@ -89,7 +107,6 @@ function communicationPracticePool(){
     return {...d,lines};
   }).filter(function(d){return d.lines.length>=2});
 }
-
 function guessLang(text){
   const t=String(text??"");
   if(/[\u3400-\u9fff]/.test(t))return "zh-CN";
@@ -962,12 +979,16 @@ function runContentAudit(){
   const el=$("contentAuditResult");
   if(!el)return;
   if(!r.expansion500){el.textContent="Chưa tải gói expansion500.";return;}
-  if(r.duplicateWords||missing.length){
-    el.innerHTML="⚠️ Còn thiếu liên kết: "+missing.map(([k,items])=>esc(k)+" ("+items.length+")").join(", ")+
-      (r.duplicateWords?" · trùng từ: "+r.duplicateWords:"");
+  if(r.duplicateWords||missing.length||r.standaloneQualityIssues||r.standaloneDuplicateEnglish){
+    const parts=[];
+    if(missing.length)parts.push("thiếu liên kết: "+missing.map(([k,items])=>esc(k)+" ("+items.length+")").join(", "));
+    if(r.duplicateWords)parts.push("trùng từ: "+r.duplicateWords);
+    if(r.standaloneQualityIssues)parts.push("câu độc lập lỗi: "+r.standaloneQualityIssues);
+    if(r.standaloneDuplicateEnglish)parts.push("câu độc lập trùng: "+r.standaloneDuplicateEnglish);
+    el.innerHTML="⚠️ "+parts.join(" · ");
     return;
   }
-  el.textContent="✓ 500/500 từ đã được nối đầy đủ vào tất cả module kiểm tra.";
+  el.textContent="✓ 500/500 từ đã được nối đầy đủ · 1.000/1.000 câu luyện độc lập hợp lệ, không trùng.";
 }
 
 function dataAudit(){
@@ -981,6 +1002,9 @@ function dataAudit(){
   const gw=normSet(db.grammar.flatMap(x=>x.vocabWords||[]));
   const independentRaw=[...expSentences,...generalSentences];
   const independent=sentencePracticePool();
+  const independentKeys=independentRaw.map(s=>norm(s.en)).filter(Boolean);
+  const standaloneDuplicateEnglish=independentKeys.length-new Set(independentKeys).size;
+  const standaloneQuality=independentRaw.filter(function(s){return !isNaturalStandaloneSentence(s)});
   const missing={sentences:[],questions:[],trilingual:[],communication:[],grammar:[],audio:[]};
   exp.forEach(v=>{
     const w=norm(v.word);
@@ -999,6 +1023,8 @@ function dataAudit(){
     independentSentences:independentRaw.length,
     naturalIndependentSentences:independent.length,
     independentSentenceLinks:independentRaw.filter(x=>x.vocabWord).length,
+    standaloneQualityIssues:standaloneQuality.length,
+    standaloneDuplicateEnglish,
     questions:exp.length-missing.questions.length,trilingual:exp.length-missing.trilingual.length,
     communication:exp.length-missing.communication.length,grammar:exp.length-missing.grammar.length,
     audio:exp.length-missing.audio.length,missing
