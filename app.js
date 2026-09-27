@@ -369,8 +369,8 @@ function speak(text,rate,lang,retry,skipContentAudio){
   if(!skipContentAudio){
     let item=null;
     const practice=sentencePracticePool();
-    if(view==="listening"&&practice.length)item=practice[listenIndex%practice.length];
-    else if(view==="speaking"&&practice.length)item=practice[speakIndex%practice.length];
+    if(view==="listening"&&practice.length)item=practice[normalizeArrayIndex(listenIndex,practice.length)];
+    else if(view==="speaking"&&practice.length)item=practice[normalizeArrayIndex(speakIndex,practice.length)];
     const contentAudio=audioUrl(item,l);
     if(contentAudio){playAudio(contentAudio,t,r,l);return;}
   }
@@ -756,6 +756,8 @@ function flashcards(){
   if(!db.vocab.length){$("view").innerHTML=shell("Flashcards","Chưa có dữ liệu.");return}
   const reviewActive=reviewQueue.length>0;
   const list=reviewActive?reviewQueue:db.vocab;
+  if(reviewActive)reviewIndex=normalizeArrayIndex(reviewIndex,reviewQueue.length);
+  else flashIndex=normalizeArrayIndex(flashIndex,db.vocab.length);
   const idx=reviewActive?reviewIndex:flashIndex;
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):list[idx%list.length];
   if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
@@ -800,7 +802,7 @@ function listening(){renderListening()}
 function renderListening(){
   const list=sentencePracticePool();
   if(!list.length){$("view").innerHTML=shell("Luyện nghe","Chưa có câu luyện độc lập.");return}
-  listenIndex=listenIndex%list.length;
+  listenIndex=normalizeArrayIndex(listenIndex,list.length);
   const s=list[listenIndex];
   const seen=new Set([norm(s.vi||"")]),sameTopic=shuffle(list.filter(function(x){return x.id!==s.id&&x.vi&&norm(x.topic||"")===norm(s.topic||"")}));
   const fallback=shuffle(list.filter(function(x){return x.id!==s.id&&x.vi&&!seen.has(norm(x.vi))}));
@@ -831,7 +833,7 @@ let autoNextSpeaking=true;
 function renderSpeaking(){
   const list=sentencePracticePool();
   if(!list.length){$("view").innerHTML=shell("Luyện phát âm","Chưa có câu luyện độc lập.");return}
-  speakIndex=speakIndex%list.length;
+  speakIndex=normalizeArrayIndex(speakIndex,list.length);
   const s=list[speakIndex];
   $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → chấm độ tương đồng văn bản; câu luyện độc lập với danh sách từ vựng.",
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("speaking",speakIndex%list.length,list.length)+'</div>'+
@@ -847,7 +849,7 @@ function startRecognition(){
   if(!SR){toast("Chrome/Edge thường hỗ trợ nhận diện microphone tốt hơn.");return}
   stopRecognition();
   const list=sentencePracticePool();if(!list.length){toast("Chưa có câu luyện độc lập.");return}
-  speakIndex=speakIndex%list.length;
+  speakIndex=normalizeArrayIndex(speakIndex,list.length);
   const target=list[speakIndex].en,r=new SR(),token=++recognitionToken;
   activeRecognition=r;r.lang="en-US";r.interimResults=false;r.maxAlternatives=1;
   const out=$("speechResult");if(out)out.textContent="🎙️ Đang nghe...";
@@ -881,6 +883,12 @@ function similarityScore(a,b){
 }
 
 
+function normalizeArrayIndex(value,total){
+  if(!total)return 0;
+  const n=Number(value);
+  const safe=Number.isFinite(n)?Math.trunc(n):0;
+  return ((safe%total)+total)%total;
+}
 function normalizeQuizIndex(){
   const total=db.questions.length;
   if(!total){quizIndex=0;return 0}

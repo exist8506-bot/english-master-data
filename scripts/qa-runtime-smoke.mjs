@@ -389,22 +389,24 @@ check("flashcard interaction", T.snap().db.vocab.length === 3000);
 
 T.show("listening");
 snap = T.snap();
-const currentSentence = snap.db.sentences[snap.listenIndex % snap.db.sentences.length];
+const listeningPool = T.sentencePracticePool();
+const currentSentence = listeningPool[((Number.isFinite(Number(snap.listenIndex)) ? Math.trunc(Number(snap.listenIndex)) : 0) % Math.max(1, listeningPool.length) + Math.max(1, listeningPool.length)) % Math.max(1, listeningPool.length)];
+check("listening has a current practice sentence", !!currentSentence && !!String(currentSentence.en ?? "").trim() && !!String(currentSentence.vi ?? "").trim());
 const sentenceAnsweredBefore = T.snap().db.stats.sentenceAnswered || 0;
-T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
+if (currentSentence) T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
 const afterListen = T.snap().db.stats;
 check("listening interaction", afterListen.sentenceAnswered === sentenceAnsweredBefore + 1 && afterListen.sentenceCorrect >= 1);
 
 T.show("listening");
 let html=document.getElementById("view").innerHTML;
 check("listening has direct jump control", html.includes('id="listeningJump"') && html.includes("Tới câu"));
-check("listening jump changes exact sentence", T.jumpToItem("listening", 100) && T.snap().listenIndex === 99 && document.getElementById("view").innerHTML.includes("Câu 100 / " + practicePool.length));
+check("listening jump changes exact sentence", practicePool.length >= 100 && T.jumpToItem("listening", 100) && T.snap().listenIndex === 99 && document.getElementById("view").innerHTML.includes("Câu 100 / " + practicePool.length));
 check("listening rejects out-of-range jump", T.jumpToItem("listening", 999999) === false && T.snap().listenIndex === 99);
 
 T.show("speaking");
 html=document.getElementById("view").innerHTML;
 check("speaking has direct jump control", html.includes('id="speakingJump"') && html.includes("Tới câu"));
-check("speaking jump changes exact sentence", T.jumpToItem("speaking", 200) && T.snap().speakIndex === 199 && document.getElementById("view").innerHTML.includes("Câu 200 / " + practicePool.length));
+check("speaking jump changes exact sentence", practicePool.length >= 200 && T.jumpToItem("speaking", 200) && T.snap().speakIndex === 199 && document.getElementById("view").innerHTML.includes("Câu 200 / " + practicePool.length));
 
 T.show("quiz");
 html=document.getElementById("view").innerHTML;
