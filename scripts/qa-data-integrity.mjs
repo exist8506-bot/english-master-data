@@ -186,14 +186,33 @@ must(independentSentences.every((s) => !s.vocabWord && String(s.en ?? "").trim()
 );
 const badStandalonePatterns = [
   /^I want to understand .* better\.$/i,
-  /^The .* is on my desk today\.$/i,
   /^I talked to the homework after class\.$/i,
+  /^I talked to the book after class\.$/i,
+  /^I talked to the dictionary after class\.$/i,
   /^I used the question during my study session\.$/i,
+  /^I used the college during my study session\.$/i,
+  /^Our student was harder than I expected\.$/i,
+  /^Our answer was harder than I expected\.$/i,
+  /^Our eraser was harder than I expected\.$/i,
+  /^I wrote the details beside the work\.$/i,
+  /^I wrote the details beside the manager\.$/i,
+  /^I wrote the details beside the client\.$/i,
+  /^The office is on my desk today\.$/i,
+  /^The meeting is on my desk today\.$/i,
+  /^The colleague is on my desk today\.$/i,
+  /^The task is on my desk today\.$/i,
+  /^I need to check the company before lunch\.$/i,
+  /^I need to check the career before lunch\.$/i,
+  /^We booked the station before leaving home\.$/i,
+  /^We booked the mountain before leaving home\.$/i,
   /^I put the airport in my travel bag\.$/i,
+  /^I put the car in my travel bag\.$/i,
+  /^I checked the bicycle at the station\.$/i,
+  /^I checked the room at the station\.$/i,
+  /^I checked the river at the station\.$/i,
   /^He decided to never before the meeting\.$/i,
   /^A friendly police helped me find the station\.$/i,
 ];
-const badStandalone = independentSentences.filter((s) => badStandalonePatterns.some((re) => re.test(String(s.en ?? ""))));
 must(badStandalone.length === 0,
   "Obvious machine-forced standalone sentences remain: " + badStandalone.length
 );

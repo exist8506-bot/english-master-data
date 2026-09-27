@@ -181,12 +181,12 @@
   },
   {
     "id": "sent500_1x3j4",
-    "en": "Our student was harder than I expected.",
-    "vi": "Học sinh của chúng tôi khó hơn tôi nghĩ.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "student",
-    "favorite": false
+    "en": "I felt sad after hearing the news.",
+    "vi": "Tôi cảm thấy buồn sau khi nghe tin.",
+    "topic": "emotion",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20felt%20sad%20after%20hearing%20the%20news.&lang=en"
   },
   {
     "id": "sent500_vhy1h",
@@ -235,12 +235,12 @@
   },
   {
     "id": "sent500_ub18vn",
-    "en": "I talked to the homework after class.",
-    "vi": "Tôi nói chuyện với bài tập về nhà sau giờ học.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "homework",
-    "favorite": false
+    "en": "I was surprised by the result.",
+    "vi": "Tôi rất ngạc nhiên về kết quả.",
+    "topic": "emotion",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20was%20surprised%20by%20the%20result.&lang=en"
   },
   {
     "id": "sent500_1inv18y",
@@ -271,21 +271,21 @@
   },
   {
     "id": "sent500_10ricbj",
-    "en": "Our answer was harder than I expected.",
-    "vi": "Câu trả lời của chúng tôi khó hơn tôi nghĩ.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "answer",
-    "favorite": false
+    "en": "My parents are proud of me.",
+    "vi": "Bố mẹ tôi tự hào về tôi.",
+    "topic": "emotion",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=My%20parents%20are%20proud%20of%20me.&lang=en"
   },
   {
     "id": "sent500_1hpma7s",
-    "en": "I talked to the book after class.",
-    "vi": "Tôi nói chuyện với sách sau giờ học.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "book",
-    "favorite": false
+    "en": "She is honest with her friends.",
+    "vi": "Cô ấy thành thật với bạn bè.",
+    "topic": "emotion",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20is%20honest%20with%20her%20friends.&lang=en"
   },
   {
     "id": "sent500_lmcs2o",
@@ -316,21 +316,21 @@
   },
   {
     "id": "sent500_109ec4l",
-    "en": "Our eraser was harder than I expected.",
-    "vi": "Cục tẩy của chúng tôi khó hơn tôi nghĩ.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "eraser",
-    "favorite": false
+    "en": "I felt sick after the meal.",
+    "vi": "Tôi cảm thấy không khỏe sau bữa ăn.",
+    "topic": "health",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20felt%20sick%20after%20the%20meal.&lang=en"
   },
   {
     "id": "sent500_1ez7oz9",
-    "en": "I talked to the dictionary after class.",
-    "vi": "Tôi nói chuyện với từ điển sau giờ học.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "dictionary",
-    "favorite": false
+    "en": "I was late for class.",
+    "vi": "Tôi đã đến lớp muộn.",
+    "topic": "time",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20was%20late%20for%20class.&lang=en"
   },
   {
     "id": "sent500_1480gk0",
@@ -352,12 +352,12 @@
   },
   {
     "id": "sent500_13dzio2",
-    "en": "I used the college during my study session.",
-    "vi": "Tôi dùng trường cao đẳng trong lúc học.",
-    "topic": "school",
-    "grammar": "Simple Present",
-    "vocabWord": "college",
-    "favorite": false
+    "en": "This bag is light to carry.",
+    "vi": "Chiếc túi này nhẹ và dễ mang.",
+    "topic": "home",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=This%20bag%20is%20light%20to%20carry.&lang=en"
   },
   {
     "id": "sent500_1m9bm1k",
@@ -379,30 +379,30 @@
   },
   {
     "id": "sent500_pexppc",
-    "en": "I wrote the details beside the work.",
-    "vi": "Tôi ghi chi tiết bên cạnh công việc.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "work",
-    "favorite": false
+    "en": "The room is clean now.",
+    "vi": "Căn phòng bây giờ sạch sẽ.",
+    "topic": "home",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20room%20is%20clean%20now.&lang=en"
   },
   {
     "id": "sent500_1bbnghd",
-    "en": "The office is on my desk today.",
-    "vi": "Văn phòng đang ở trên bàn của tôi hôm nay.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "office",
-    "favorite": false
+    "en": "It is windy near the beach today.",
+    "vi": "Hôm nay gần bãi biển có nhiều gió.",
+    "topic": "weather",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20windy%20near%20the%20beach%20today.&lang=en"
   },
   {
     "id": "sent500_1b9xwos",
-    "en": "I need to check the company before lunch.",
-    "vi": "Tôi cần kiểm tra công ty trước bữa trưa.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "company",
-    "favorite": false
+    "en": "The restaurant offers seasonal dishes.",
+    "vi": "Nhà hàng phục vụ các món theo mùa.",
+    "topic": "weather",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20restaurant%20offers%20seasonal%20dishes.&lang=en"
   },
   {
     "id": "sent500_1m513po",
@@ -424,21 +424,21 @@
   },
   {
     "id": "sent500_ge93gs",
-    "en": "I wrote the details beside the manager.",
-    "vi": "Tôi ghi chi tiết bên cạnh quản lý.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "manager",
-    "favorite": false
+    "en": "The museum is free on Sundays.",
+    "vi": "Bảo tàng miễn phí vào Chủ nhật.",
+    "topic": "daily",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20museum%20is%20free%20on%20Sundays.&lang=en"
   },
   {
     "id": "sent500_3raptm",
-    "en": "The meeting is on my desk today.",
-    "vi": "Cuộc họp đang ở trên bàn của tôi hôm nay.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "meeting",
-    "favorite": false
+    "en": "It is wrong to lie to people.",
+    "vi": "Nói dối người khác là sai.",
+    "topic": "daily",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20is%20wrong%20to%20lie%20to%20people.&lang=en"
   },
   {
     "id": "sent500_1vwn4ji",
@@ -469,30 +469,30 @@
   },
   {
     "id": "sent500_13u3vha",
-    "en": "I wrote the details beside the client.",
-    "vi": "Tôi ghi chi tiết bên cạnh khách hàng.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "client",
-    "favorite": false
+    "en": "This app is useful for learning English.",
+    "vi": "Ứng dụng này hữu ích cho việc học tiếng Anh.",
+    "topic": "daily",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=This%20app%20is%20useful%20for%20learning%20English.&lang=en"
   },
   {
     "id": "sent500_p9t0ec",
-    "en": "The colleague is on my desk today.",
-    "vi": "Đồng nghiệp đang ở trên bàn của tôi hôm nay.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "colleague",
-    "favorite": false
+    "en": "Today is a special day for my family.",
+    "vi": "Hôm nay là một ngày đặc biệt với gia đình tôi.",
+    "topic": "daily",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Today%20is%20a%20special%20day%20for%20my%20family.&lang=en"
   },
   {
     "id": "sent500_r98q63",
-    "en": "I need to check the career before lunch.",
-    "vi": "Tôi cần kiểm tra sự nghiệp trước bữa trưa.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "career",
-    "favorite": false
+    "en": "This is a public library.",
+    "vi": "Đây là một thư viện công cộng.",
+    "topic": "daily",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=This%20is%20a%20public%20library.&lang=en"
   },
   {
     "id": "sent500_q5c5dv",
@@ -523,12 +523,12 @@
   },
   {
     "id": "sent500_1vs2t7w",
-    "en": "The task is on my desk today.",
-    "vi": "Nhiệm vụ đang ở trên bàn của tôi hôm nay.",
-    "topic": "work",
-    "grammar": "Simple Present",
-    "vocabWord": "task",
-    "favorite": false
+    "en": "The house is big enough for our family.",
+    "vi": "Ngôi nhà đủ lớn cho gia đình chúng tôi.",
+    "topic": "daily",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20house%20is%20big%20enough%20for%20our%20family.&lang=en"
   },
   {
     "id": "sent500_jrjir9",
@@ -577,21 +577,21 @@
   },
   {
     "id": "sent500_15s7fzk",
-    "en": "I put the airport in my travel bag.",
-    "vi": "Tôi cho sân bay vào túi du lịch.",
-    "topic": "travel",
-    "grammar": "Simple Present",
-    "vocabWord": "airport",
-    "favorite": false
+    "en": "My old computer is slow.",
+    "vi": "Máy tính cũ của tôi chạy chậm.",
+    "topic": "daily",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=My%20old%20computer%20is%20slow.&lang=en"
   },
   {
     "id": "sent500_1cifleb",
-    "en": "We booked the station before leaving home.",
-    "vi": "Chúng tôi đặt nhà ga trước khi rời nhà.",
-    "topic": "travel",
-    "grammar": "Simple Present",
-    "vocabWord": "station",
-    "favorite": false
+    "en": "They live in a large house.",
+    "vi": "Họ sống trong một ngôi nhà lớn.",
+    "topic": "shopping",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=They%20live%20in%20a%20large%20house.&lang=en"
   },
   {
     "id": "sent500_xdz9m1",
@@ -622,12 +622,12 @@
   },
   {
     "id": "sent500_18hsyp",
-    "en": "I put the car in my travel bag.",
-    "vi": "Tôi cho ô tô vào túi du lịch.",
+    "en": "The station is far from here.",
+    "vi": "Nhà ga cách đây khá xa.",
     "topic": "travel",
-    "grammar": "Simple Present",
-    "vocabWord": "car",
-    "favorite": false
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20station%20is%20far%20from%20here.&lang=en"
   },
   {
     "id": "sent500_1vp5z73",
@@ -640,12 +640,12 @@
   },
   {
     "id": "sent500_1nusisa",
-    "en": "I checked the bicycle at the station.",
-    "vi": "Tôi kiểm tra xe đạp ở nhà ga.",
-    "topic": "travel",
-    "grammar": "Simple Present",
-    "vocabWord": "bicycle",
-    "favorite": false
+    "en": "These pants fit me well.",
+    "vi": "Quần này vừa với tôi.",
+    "topic": "clothing",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=These%20pants%20fit%20me%20well.&lang=en"
   },
   {
     "id": "sent500_1sqamrn",
@@ -685,12 +685,12 @@
   },
   {
     "id": "sent500_fj9bp6",
-    "en": "I checked the room at the station.",
-    "vi": "Tôi kiểm tra phòng ở nhà ga.",
-    "topic": "travel",
-    "grammar": "Simple Present",
-    "vocabWord": "room",
-    "favorite": false
+    "en": "These jeans fit me well.",
+    "vi": "Quần jean này vừa với tôi.",
+    "topic": "clothing",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=These%20jeans%20fit%20me%20well.&lang=en"
   },
   {
     "id": "sent500_a2rz23",
@@ -721,21 +721,21 @@
   },
   {
     "id": "sent500_kh4qle",
-    "en": "We booked the mountain before leaving home.",
-    "vi": "Chúng tôi đặt núi trước khi rời nhà.",
-    "topic": "travel",
-    "grammar": "Simple Present",
-    "vocabWord": "mountain",
-    "favorite": false
+    "en": "I usually cut vegetables after work.",
+    "vi": "Tôi thường cắt rau sau giờ làm.",
+    "topic": "kitchen",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20cut%20vegetables%20after%20work.&lang=en"
   },
   {
     "id": "sent500_jizlsh",
-    "en": "I checked the river at the station.",
-    "vi": "Tôi kiểm tra sông ở nhà ga.",
-    "topic": "travel",
-    "grammar": "Simple Present",
-    "vocabWord": "river",
-    "favorite": false
+    "en": "She stays active by walking every morning.",
+    "vi": "Cô ấy duy trì sự năng động bằng cách đi bộ mỗi sáng.",
+    "topic": "personality",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20stays%20active%20by%20walking%20every%20morning.&lang=en"
   },
   {
     "id": "sent500_1t4jh8w",
@@ -2008,12 +2008,12 @@
   },
   {
     "id": "sent500_2zqpvt",
-    "en": "He decided to never before the meeting.",
-    "vi": "Anh ấy quyết định không bao giờ trước cuộc họp.",
-    "topic": "time",
-    "grammar": "Simple Present",
-    "vocabWord": "never",
-    "favorite": false
+    "en": "He is funny when he tells stories.",
+    "vi": "Anh ấy hài hước khi kể chuyện.",
+    "topic": "personality",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=He%20is%20funny%20when%20he%20tells%20stories.&lang=en"
   },
   {
     "id": "sent500_3lo2u3",
@@ -2665,12 +2665,12 @@
   },
   {
     "id": "sent500_1qwzh8b",
-    "en": "A friendly police helped me find the station.",
-    "vi": "Một cảnh sát thân thiện đã giúp tôi tìm nhà ga.",
-    "topic": "people",
-    "grammar": "Simple Present",
-    "vocabWord": "police",
-    "favorite": false
+    "en": "She is gentle with the baby.",
+    "vi": "Cô ấy dịu dàng với em bé.",
+    "topic": "personality",
+    "grammar": "Everyday English",
+    "favorite": false,
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20is%20gentle%20with%20the%20baby.&lang=en"
   },
   {
     "id": "sent500_d4h1hq",
@@ -32230,11 +32230,11 @@
   },
   {
     "id": "exp500_sent_067_fb84bdfe",
-    "en": "Our student was harder than I expected.",
-    "vi": "Học sinh của chúng tôi khó hơn tôi nghĩ.",
-    "topic": "school",
+    "en": "I usually send messages after work.",
+    "vi": "Tôi thường gửi tin nhắn sau giờ làm.",
+    "topic": "verb2",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Our%20student%20was%20harder%20than%20I%20expected.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20send%20messages%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32340,22 +32340,22 @@
   },
   {
     "id": "exp500_sent_077_c92aeeeb",
-    "en": "Our answer was harder than I expected.",
-    "vi": "Câu trả lời của chúng tôi khó hơn tôi nghĩ.",
-    "topic": "school",
+    "en": "I usually become tired after work.",
+    "vi": "Tôi thường cảm thấy mệt sau giờ làm.",
+    "topic": "verb2",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Our%20answer%20was%20harder%20than%20I%20expected.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20become%20tired%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
   },
   {
     "id": "exp500_sent_078_5a81bdb0",
-    "en": "I talked to the book after class.",
-    "vi": "Tôi nói chuyện với sách sau giờ học.",
-    "topic": "school",
+    "en": "I usually check my email after work.",
+    "vi": "Tôi thường kiểm tra email sau giờ làm.",
+    "topic": "verb3",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20talked%20to%20the%20book%20after%20class.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20check%20my%20email%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32395,22 +32395,22 @@
   },
   {
     "id": "exp500_sent_082_28460b4d",
-    "en": "Our eraser was harder than I expected.",
-    "vi": "Cục tẩy của chúng tôi khó hơn tôi nghĩ.",
-    "topic": "school",
+    "en": "I usually follow the news after work.",
+    "vi": "Tôi thường theo dõi tin tức sau giờ làm.",
+    "topic": "verb3",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Our%20eraser%20was%20harder%20than%20I%20expected.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20follow%20the%20news%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
   },
   {
     "id": "exp500_sent_083_eb9cc8fe",
-    "en": "I talked to the dictionary after class.",
-    "vi": "Tôi nói chuyện với từ điển sau giờ học.",
-    "topic": "school",
+    "en": "I usually enter data after work.",
+    "vi": "Tôi thường nhập dữ liệu sau giờ làm.",
+    "topic": "verb3",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20talked%20to%20the%20dictionary%20after%20class.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20enter%20data%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32439,11 +32439,11 @@
   },
   {
     "id": "exp500_sent_086_24c83574",
-    "en": "I used the college during my study session.",
-    "vi": "Tôi dùng trường cao đẳng trong lúc học.",
-    "topic": "school",
+    "en": "I usually deliver packages after work.",
+    "vi": "Tôi thường giao các gói hàng sau giờ làm.",
+    "topic": "verb3",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20used%20the%20college%20during%20my%20study%20session.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20deliver%20packages%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32472,11 +32472,11 @@
   },
   {
     "id": "exp500_sent_089_e7555186",
-    "en": "I wrote the details beside the work.",
-    "vi": "Tôi ghi chi tiết bên cạnh công việc.",
-    "topic": "work",
+    "en": "We chose the same option.",
+    "vi": "Chúng tôi chọn cùng một lựa chọn.",
+    "topic": "adjective1",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20wrote%20the%20details%20beside%20the%20work.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20chose%20the%20same%20option.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32494,11 +32494,11 @@
   },
   {
     "id": "exp500_sent_091_5346eb92",
-    "en": "I need to check the company before lunch.",
-    "vi": "Tôi cần kiểm tra công ty trước bữa trưa.",
-    "topic": "work",
+    "en": "The room is bright in the morning.",
+    "vi": "Căn phòng sáng vào buổi sáng.",
+    "topic": "adjective2",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20need%20to%20check%20the%20company%20before%20lunch.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20room%20is%20bright%20in%20the%20morning.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32527,11 +32527,11 @@
   },
   {
     "id": "exp500_sent_094_8306ad20",
-    "en": "I wrote the details beside the manager.",
-    "vi": "Tôi ghi chi tiết bên cạnh quản lý.",
-    "topic": "work",
+    "en": "Please keep the clothes dry.",
+    "vi": "Hãy giữ quần áo khô.",
+    "topic": "adjective2",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20wrote%20the%20details%20beside%20the%20manager.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Please%20keep%20the%20clothes%20dry.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32582,11 +32582,11 @@
   },
   {
     "id": "exp500_sent_099_fa2ee8bc",
-    "en": "I wrote the details beside the client.",
-    "vi": "Tôi ghi chi tiết bên cạnh khách hàng.",
-    "topic": "work",
+    "en": "I feel relaxed after a short walk.",
+    "vi": "Tôi cảm thấy thư giãn sau một chuyến đi bộ ngắn.",
+    "topic": "feelingsextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20wrote%20the%20details%20beside%20the%20client.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20feel%20relaxed%20after%20a%20short%20walk.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32604,11 +32604,11 @@
   },
   {
     "id": "exp500_sent_101_784aa734",
-    "en": "I need to check the career before lunch.",
-    "vi": "Tôi cần kiểm tra sự nghiệp trước bữa trưa.",
-    "topic": "work",
+    "en": "I felt confused by the instructions.",
+    "vi": "Tôi cảm thấy bối rối vì hướng dẫn.",
+    "topic": "feelingsextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20need%20to%20check%20the%20career%20before%20lunch.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20felt%20confused%20by%20the%20instructions.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32725,11 +32725,11 @@
   },
   {
     "id": "exp500_sent_112_66e9c1b",
-    "en": "We booked the station before leaving home.",
-    "vi": "Chúng tôi đặt nhà ga trước khi rời nhà.",
-    "topic": "travel",
+    "en": "I feel confident when I practice.",
+    "vi": "Tôi cảm thấy tự tin khi luyện tập.",
+    "topic": "feelingsextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20booked%20the%20station%20before%20leaving%20home.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20feel%20confident%20when%20I%20practice.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32769,11 +32769,11 @@
   },
   {
     "id": "exp500_sent_116_cc8d20b",
-    "en": "I put the car in my travel bag.",
-    "vi": "Tôi cho ô tô vào túi du lịch.",
-    "topic": "travel",
+    "en": "We visited an ancient temple.",
+    "vi": "Chúng tôi đã thăm một ngôi đền cổ.",
+    "topic": "placesextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20put%20the%20car%20in%20my%20travel%20bag.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20visited%20an%20ancient%20temple.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32791,11 +32791,11 @@
   },
   {
     "id": "exp500_sent_118_27da62be",
-    "en": "I checked the bicycle at the station.",
-    "vi": "Tôi kiểm tra xe đạp ở nhà ga.",
-    "topic": "travel",
+    "en": "The room is available this weekend.",
+    "vi": "Căn phòng còn trống vào cuối tuần này.",
+    "topic": "generalextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20checked%20the%20bicycle%20at%20the%20station.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20room%20is%20available%20this%20weekend.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32846,11 +32846,11 @@
   },
   {
     "id": "exp500_sent_123_722143be",
-    "en": "I checked the room at the station.",
-    "vi": "Tôi kiểm tra phòng ở nhà ga.",
-    "topic": "travel",
+    "en": "The city is famous for its food.",
+    "vi": "Thành phố nổi tiếng với đồ ăn.",
+    "topic": "generalextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20checked%20the%20room%20at%20the%20station.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20city%20is%20famous%20for%20its%20food.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
@@ -32890,22 +32890,22 @@
   },
   {
     "id": "exp500_sent_127_31819f3b",
-    "en": "We booked the mountain before leaving home.",
-    "vi": "Chúng tôi đặt núi trước khi rời nhà.",
-    "topic": "travel",
+    "en": "I usually repair computers after work.",
+    "vi": "Tôi thường sửa máy tính sau giờ làm.",
+    "topic": "verbextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20booked%20the%20mountain%20before%20leaving%20home.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20repair%20computers%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
   },
   {
     "id": "exp500_sent_128_59ca60c0",
-    "en": "I checked the river at the station.",
-    "vi": "Tôi kiểm tra sông ở nhà ga.",
-    "topic": "travel",
+    "en": "I usually jump for exercise after work.",
+    "vi": "Tôi thường nhảy để tập thể dục sau giờ làm.",
+    "topic": "verbextra",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20checked%20the%20river%20at%20the%20station.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20usually%20jump%20for%20exercise%20after%20work.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
