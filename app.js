@@ -652,8 +652,8 @@ function sentences(){
   const size=40,pages=Math.max(1,Math.ceil(list.length/size));
   if(sentencePage>pages)sentencePage=pages;
   const start=(sentencePage-1)*size,items=list.slice(start,start+size);
-  $("view").innerHTML=shell("Học câu","Hiển thị theo trang để app nhẹ hơn trên điện thoại.",
-    '<div class="card"><div class="muted small">Hiển thị '+(db.sentences.length?start+1:0)+'–'+Math.min(start+size,db.sentences.length)+' / '+db.sentences.length+' câu</div>'+pageControls(sentencePage,db.sentences.length,size,"sentences")+'</div>'+
+  $("view").innerHTML=shell("Học câu","Hiển thị theo trang để app nhẹ hơn trên điện thoại. Chỉ lấy câu độc lập, không gắn trực tiếp với từ vựng.",
+    '<div class="card"><div class="muted small">Hiển thị '+(list.length?start+1:0)+'–'+Math.min(start+size,list.length)+' / '+list.length+' câu</div>'+pageControls(sentencePage,list.length,size,"sentences")+'</div>'+
     '<div class="grid grid-2">'+items.map(function(s){return '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted small">'+esc(s.grammar||"")+'</span></div><h3>'+esc(s.en)+'</h3><p class="muted">'+esc(s.vi||"")+'</p>'+audioGroup(s.en,"en-US",s)+'</div>'}).join("")+'</div>');
 }
 function renderFlashcards(){flashcards()}
@@ -730,7 +730,7 @@ function renderListening(){
   const choices=shuffle([s.vi,...wrong]);
   const showText=window.__showListeningText===true;
   $("view").innerHTML=shell("Luyện nghe","Nghe câu ở nhiều tốc độ, nghe lại và chọn đúng nghĩa.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(listenIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("listening",listenIndex%db.sentences.length,db.sentences.length)+'</div>'+
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(listenIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("listening",listenIndex%list.length,list.length)+'</div>'+
     '<div class="actions" style="margin:14px 0"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 0.75×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">▶ 1×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1.25,\'en-US\')">🐇 1.25×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔁 Nghe lại</button><button onclick="window.__showListeningText=!window.__showListeningText;renderListening()">👁 '+(showText?"Ẩn câu":"Hiện câu")+'</button></div>'+
     (showText?'<div class="hint"><b>'+esc(s.en)+'</b><br><span class="muted">'+esc(s.vi||"")+'</span></div>':'')+
     '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){return '<button class="option" onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>'}).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">Hãy nghe rồi chọn.</div></div>');
@@ -755,7 +755,7 @@ function renderSpeaking(){
   speakIndex=speakIndex%list.length;
   const s=list[speakIndex];
   $("view").innerHTML=shell("Luyện phát âm","Nghe mẫu → nói lại → chấm độ tương đồng văn bản; câu luyện độc lập với danh sách từ vựng.",
-    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("speaking",speakIndex%db.sentences.length,db.sentences.length)+'</div>'+
+    '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(speakIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("speaking",speakIndex%list.length,list.length)+'</div>'+
     '<h2>'+esc(s.en)+'</h2><p class="muted">'+esc(s.vi||"")+'</p>'+
     '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button><button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
     '<div class="actions" style="margin-top:10px"><button onclick="autoNextSpeaking=!autoNextSpeaking;renderSpeaking()">⏭️ Tự chuyển: '+(autoNextSpeaking?"BẬT":"TẮT")+'</button><span class="muted small">Phím → cũng chuyển câu</span></div>'+
