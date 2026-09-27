@@ -956,7 +956,8 @@ function dataAudit(){
   const tw=normSet(db.trilingual.map(x=>x.en));
   const cw=normSet(db.communication.flatMap(x=>x.vocab||[]));
   const gw=normSet(db.grammar.flatMap(x=>x.vocabWords||[]));
-  const independent=[...expSentences,...generalSentences].filter(isNaturalStandaloneSentence);
+  const independentRaw=[...expSentences,...generalSentences];
+  const independent=sentencePracticePool();
   const missing={sentences:[],questions:[],trilingual:[],communication:[],grammar:[],audio:[]};
   exp.forEach(v=>{
     const w=norm(v.word);
@@ -966,13 +967,15 @@ function dataAudit(){
     if(!gw.has(w))missing.grammar.push(v.word);
     if(!(v.audio==="tts"&&v.audioEn))missing.audio.push(v.word);
   });
-  independent.forEach(s=>{
+  independentRaw.forEach(s=>{
     if(!String(s.en||"").trim()||!String(s.vi||"").trim()||s.vocabWord)missing.sentences.push(s.id||"");
   });
   const result={
     expansion500:exp.length,duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
     sentences:expSentences.length,generalSentences:generalSentences.length,
-    independentSentences:independent.length,independentSentenceLinks:independent.filter(x=>x.vocabWord).length,
+    independentSentences:independentRaw.length,
+    naturalIndependentSentences:independent.length,
+    independentSentenceLinks:independentRaw.filter(x=>x.vocabWord).length,
     questions:exp.length-missing.questions.length,trilingual:exp.length-missing.trilingual.length,
     communication:exp.length-missing.communication.length,grammar:exp.length-missing.grammar.length,
     audio:exp.length-missing.audio.length,missing
