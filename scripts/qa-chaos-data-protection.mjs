@@ -105,12 +105,15 @@ function makeIntegrityBase() {
       word,
       source: "expansion500",
       sourceVersion: "8.0.0",
+      meaning: "QA meaning " + word,
+      example: "I practiced " + word + " today.",
+      exampleVi: "Hôm nay tôi luyện " + word + ".",
       audioEn: "https://example.invalid/audio/" + encodeURIComponent(word) + ".mp3"
     })),
     "sentences.json": [
       ...words.map((word, i) => ({
         id: "s" + (i + 1), source: "expansion500", sourceVersion: "8.0.0",
-        en: "I practiced this sentence today.", vi: "Hôm nay tôi luyện câu này."
+        en: "I practiced " + word + " today.", vi: "Hôm nay tôi luyện " + word + "."
       })),
       ...Array.from({ length: 500 }, (_, i) => ({
         id: "extra-s" + (i + 1), source: "extra500_v8", sourceVersion: "8.0.1",
