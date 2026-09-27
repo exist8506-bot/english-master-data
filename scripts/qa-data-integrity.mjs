@@ -244,7 +244,8 @@ function exampleContainsTarget(en, word) {
   const text = " " + String(en ?? "").toLowerCase().replace(/[^a-z0-9 -]/g, " ").replace(/-/g, " ") + " ";
   const w = String(word ?? "").toLowerCase().trim();
   if (!w) return false;
-  if (text.includes(" " + w + " ")) return true;
+  const dehyphenated = w.replace(/-/g, " ");
+  if (text.includes(" " + w + " ") || text.includes(" " + dehyphenated + " ")) return true;
   // Accept common English inflections when the dictionary example uses a conjugated form.
   const variants = new Set([w]);
   if (/[^aeiou]y$/.test(w)) variants.add(w.slice(0,-1)+"ies");
