@@ -180,6 +180,7 @@ for (let i = 0; i < 300; i += 1) {
   }
   await new Promise((resolve) => setTimeout(resolve, 20));
 }
+const hydrateError = document.getElementById("toast")?.textContent || "";
 check("hydrate all datasets", hydrateReady &&
   snap.db.vocab.length === 3000 &&
   snap.db.sentences.length === 3250 &&
@@ -190,7 +191,8 @@ check("hydrate all datasets", hydrateReady &&
   JSON.stringify({
     vocab: snap.db.vocab.length, sentences: snap.db.sentences.length, questions: snap.db.questions.length,
     communication: snap.db.communication.length, trilingual: snap.db.trilingual.length, grammar: snap.db.grammar.length,
-  })
+  }),
+  "hydrateError="+hydrateError
 );
 check(
   "preserve user stats/profile/positions",
