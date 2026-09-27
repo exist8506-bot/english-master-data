@@ -928,6 +928,7 @@ function answerQuiz(i,a){
   quizAnswered=true;
   const qIndex=normalizeQuizIndex(),q=db.questions[qIndex];
   if(!q){quizAnswered=false;toast("Không tìm thấy câu hỏi hiện tại.");return}
+  const ok=i===correctIndex;
   document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
   db.stats.answered=(Number(db.stats.answered)||0)+1;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct=(Number(db.stats.correct)||0)+1;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
