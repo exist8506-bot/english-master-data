@@ -1,7 +1,7 @@
 {
-  "version": "8.0.1",
+  "version": "8.0.2",
   "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.1: làm sạch 1.000 câu luyện độc lập, loại câu ghép máy móc và câu hỏi về từ vựng khỏi chế độ luyện câu; giữ audio đồng bộ với English.",
+  "releaseNotes": "V8.0.2: thay 2 ví dụ từ vựng không tự nhiên bằng câu tiếng Anh đời thường; giữ nguyên toàn bộ dữ liệu và liên kết.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
