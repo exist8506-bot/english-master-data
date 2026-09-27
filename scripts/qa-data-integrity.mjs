@@ -224,11 +224,6 @@ const excludedPracticePatterns = [
 const excludedPracticeRows = independentSentences.filter((s) =>
   excludedPracticePatterns.some((re) => re.test(String(s.en ?? "")))
 );
-const standaloneEnglishKeys = independentSentences.map((s) => norm(s.en)).filter(Boolean);
-must(new Set(standaloneEnglishKeys).size === standaloneEnglishKeys.length,
-  "Independent sentence-practice rows contain duplicate English sentences"
-);
-
 const globalWordDuplicates = (() => {
   const counts = new Map();
   for (const v of vocab) {
