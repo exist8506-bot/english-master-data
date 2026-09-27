@@ -68,6 +68,27 @@ function sentencePracticePool(){
   }
   return out;
 }
+function communicationLineIsNatural(line){
+  const en=String(line??"").trim();
+  if(!en)return false;
+  const rejects=[
+    /^i'm practicing .+\.$/i,
+    /^(?:when would you use|what does|how can i use|how would you use|can you give me an example with|can you tell me more about|why is .+ useful in real life|which word is easier to remember) /i,
+    /^i think .+ is easier because i can use it often\.$/i,
+    /^do you know the word "/i,
+    /^yes\. it means /i,
+    /^where might i see the word "/i
+  ];
+  if(rejects.some(function(re){return re.test(en)}))return false;
+  return !/^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b/i.test(en);
+}
+function communicationPracticePool(){
+  return db.communication.map(function(d){
+    const lines=(d.lines||[]).filter(function(l){return Array.isArray(l)&&communicationLineIsNatural(l[1])});
+    return {...d,lines};
+  }).filter(function(d){return d.lines.length>=2});
+}
+
 function guessLang(text){
   const t=String(text??"");
   if(/[\u3400-\u9fff]/.test(t))return "zh-CN";
@@ -826,11 +847,11 @@ function grammar(){
     '<div class="grid grid-2">'+db.grammar.map(function(g){return '<div class="card"><span class="badge">'+esc(g.level||"Beginner")+'</span><h3>'+esc(g.title||"")+'</h3><div class="hint"><b>Công thức:</b> '+esc(g.formula||"")+'</div><p>'+esc(g.explain||"")+'</p><h4>Ví dụ</h4><div class="list">'+(g.examples||[]).map(function(e){return '<div class="item">'+esc(e)+' '+audioButton(e,"🔊 Nghe","en-US",1,g)+'</div>'}).join("")+'</div><p class="muted small">'+esc(g.notes||"")+'</p></div>'}).join("")+'</div>');
 }
 function communication(){
-  const size=12,pages=Math.max(1,Math.ceil(db.communication.length/size));
+  const list=communicationPracticePool(),size=12,pages=Math.max(1,Math.ceil(list.length/size));
   if(communicationPage>pages)communicationPage=pages;
-  const start=(communicationPage-1)*size,items=db.communication.slice(start,start+size);
+  const start=(communicationPage-1)*size,items=list.slice(start,start+size);
   $("view").innerHTML=shell("Giao tiếp","Hội thoại và luyện dùng từ; các đoạn có thể gồm hội thoại thực tế hoặc câu luyện từ.",
-    '<div class="card"><div class="muted small">Hiển thị '+(db.communication.length?start+1:0)+'–'+Math.min(start+size,db.communication.length)+' / '+db.communication.length+' hội thoại</div>'+pageControls(communicationPage,db.communication.length,size,"communication")+'</div>'+
+    '<div class="card"><div class="muted small">Hiển thị '+(list.length?start+1:0)+'–'+Math.min(start+size,list.length)+' / '+list.length+' hội thoại</div>'+pageControls(communicationPage,list.length,size,"communication")+'</div>'+
     '<div class="grid grid-2">'+items.map(function(d,j){
       const i=start+j,lines=d.lines||[];
       return '<div class="card"><div class="toolbar"><span class="badge">'+esc(d.topic||"")+'</span><span class="muted small">'+lines.length+' lượt</span></div><h3>'+esc(d.title||"")+'</h3>'+
@@ -841,7 +862,7 @@ function communication(){
     }).join("")+'</div>'+pageControls(communicationPage,db.communication.length,size,"communication"));
 }
 function playDialogue(index){
-  const d=db.communication[index];if(!d)return;
+  const d=communicationPracticePool()[index];if(!d)return;
   stopSpeech();const lines=(d.lines||[]).map(function(l){return l[1]});speakSequence(lines,0.9,"en-US");
 }
 
