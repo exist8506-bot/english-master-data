@@ -1,4 +1,4 @@
-const APP_VERSION="8.0.3";
+const APP_VERSION="8.0.5";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -554,7 +554,6 @@ async function updateOnline(force){
     save();render();
     toast("Đã đồng bộ GitHub: +"+added+" mục mới, cập nhật "+changed+" mục.");
   }catch(e){
-    try{window.__EM_LAST_UPDATE_ERROR=String(e?.message||e)}catch(_e){}
     toast("Cập nhật lỗi — chưa thay đổi dữ liệu hiện tại: "+e.message);
   }finally{
     updateInProgress=false;
