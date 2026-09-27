@@ -196,6 +196,32 @@ check(
 );
 
 const audit = T.dataAudit();
+const knownBadVocabularyExamples = [
+  "The room feels shy today.",
+  "The room feels rude today.",
+  "The road is useful in daily life.",
+  "The tennis is useful in daily life.",
+  "I need to receive before dinner.",
+  "The situation is financial right now.",
+  "The situation is gradual right now.",
+  "The situation is primary right now.",
+  "We need to succeed before the meeting.",
+  "We need to invest before the meeting.",
+  "We need to float before the meeting.",
+  "We need to surround before the meeting.",
+  "This hall is useful in everyday life.",
+  "This bottom is useful in everyday life.",
+  "The team is working on secretary.",
+  "They properly use the app.",
+  "I saw aspect on my way home.",
+  "I noticed justice this morning."
+];
+check(
+  "vocabulary examples reject known semantic templates",
+  knownBadVocabularyExamples.every((en) => !snap.db.vocab.some((v) => String(v.example || "").trim().toLowerCase() === en.toLowerCase())),
+  JSON.stringify({remaining:knownBadVocabularyExamples.filter((en) => snap.db.vocab.some((v) => String(v.example || "").trim().toLowerCase() === en.toLowerCase()))})
+);
+
 check(
   "500-word cross-feature audit",
   audit.expansion500 === 500 &&
