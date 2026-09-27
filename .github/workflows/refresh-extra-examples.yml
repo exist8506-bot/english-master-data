@@ -1,0 +1,126 @@
+name: Refresh extra500 real examples
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/vocabulary.json"
+      - "data/extra500_v8.json"
+      - ".github/workflows/refresh-extra-examples.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Refresh examples from dictionary
+        env:
+          DICT_DB_URL: https://raw.githubusercontent.com/chuongmep/vi-en-dictionary/main/vi_en_dict.db
+        run: |
+          set -e
+          curl -L --fail --retry 3 --retry-delay 1 "$DICT_DB_URL" -o /tmp/vi_en_dict.db
+          test -s /tmp/vi_en_dict.db
+          python3 - <<'PY'
+          import json, re, sqlite3
+          from pathlib import Path
+
+          ROOT = Path.cwd()
+          vocab_path = ROOT / "data" / "vocabulary.json"
+          vocab = json.loads(vocab_path.read_text(encoding="utf-8"))
+
+          def norm(s):
+              return re.sub(r"\s+", " ", str(s or "").strip().lower())
+
+          def has_word(word, sentence):
+              w = re.escape(str(word).strip())
+              return bool(re.search(r"(?<![A-Za-z])" + w.replace(r"\ ", r"\s+") + r"(?![A-Za-z])", sentence, re.I))
+
+          reject = [
+              re.compile(r"^I want to understand .* better\.$", re.I),
+              re.compile(r"^I'm practicing .+\.$", re.I),
+              re.compile(r"^(?:When would you use|Why is .+ useful in real life|Which word is easier to remember|Can you give me an example with|Can you tell me more about) ", re.I),
+              re.compile(r"^I think .+ is easier because I can use it often\.$", re.I),
+              re.compile(r"^Yes\. It means ", re.I),
+              re.compile(r'^Where might I see the word "', re.I),
+              re.compile(r'^How (?:would|can) you use "', re.I),
+              re.compile(r"^What does \".*\" mean", re.I),
+              re.compile(r"^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b", re.I),
+              re.compile(r"^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\b", re.I),
+              re.compile(r"^I need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just|usually|always|often|sometimes|still|really|very|maybe|carefully|slowly) before breakfast\.$", re.I),
+              re.compile(r"^(?:She|He) wants to (?:often|maybe|again|carefully|usually|always|sometimes|still|really|very|slowly) after work\.$", re.I),
+              re.compile(r"^We can (?:quickly|almost|also|sometimes|usually|always) together this evening\.$", re.I),
+              re.compile(r"^I try to (?:really|still|very|always|usually|often|sometimes|carefully|slowly) every day\.$", re.I),
+              re.compile(r"^It is (?:hungry|spicy|large|big|low|public) to practice a little every day\.$", re.I),
+              re.compile(r"^That was a (?:angry|bored|lonely|brave|strong|dirty|rainy|warm|busy|easy|necessary|normal|private|small|old|safe|tiny|thirsty) experience for me\.$", re.I),
+              re.compile(r"^(?:She|He) sounded (?:delicious|salty|favorite) during the conversation\.$", re.I),
+              re.compile(r"^I feel (?:dangerous|full|sour|difficult|common|natural|personal|long|mobile|online|young) when I finish my work\.$", re.I),
+              re.compile(r"^I (?:put|placed) the (?:airport|mountain|river|office|company|college|career|station) (?:in|into) (?:my|the) ", re.I),
+              re.compile(r"^(?:I|We) (?:booked|reserved) the (?:station|mountain|river|city)\b", re.I),
+          ]
+
+          conn = sqlite3.connect("/tmp/vi-en_dict.db")
+          cur = conn.cursor()
+          cur.execute("""SELECT lower(de.en), de.en, de.vi, dx.en_example, dx.vi_example
+                         FROM dictionary_entries de
+                         LEFT JOIN dictionary_examples dx ON dx.entry_id=de.entry_id AND dx.sort_order=1""")
+          rows = cur.fetchall()
+          conn.close()
+
+          by_word = {}
+          for lower_en, en, vi, ex_en, ex_vi in rows:
+              k = norm(lower_en)
+              if k and k not in by_word:
+                  by_word[k] = {"example": (ex_en or "").strip(), "exampleVi": (ex_vi or "").strip()}
+
+          changed = 0
+          dictionary = 0
+          fallback = 0
+          for v in vocab:
+              if v.get("source") != "extra500_v8":
+                  continue
+              word = str(v.get("word") or "").strip()
+              d = by_word.get(norm(word))
+              if d and d["example"] and d["exampleVi"] and has_word(word, d["example"]) and not any(rx.search(d["example"]) for rx in reject):
+                  v["example"] = d["example"]
+                  v["exampleVi"] = d["exampleVi"]
+                  v["exampleType"] = "dictionary"
+                  dictionary += 1
+              else:
+                  v["example"] = f'You may hear the word "{word}" in everyday conversation.'
+                  v["exampleVi"] = f'Bạn có thể nghe thấy từ "{word}" trong giao tiếp hằng ngày.'
+                  v["exampleType"] = "learning-context"
+                  fallback += 1
+              changed += 1
+
+          vocab_path.write_text(json.dumps(vocab, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+          wf = ROOT / ".github" / "workflows" / "refresh-extra-examples.yml"
+          text = wf.read_text(encoding="utf-8")
+          text = text.replace("""  push:
+    branches: [main]
+    paths:
+      - "data/vocabulary.json"
+      - "data/extra500_v8.json"
+      - ".github/workflows/refresh-extra-examples.yml"
+""", "")
+          wf.write_text(text, encoding="utf-8")
+
+          print(json.dumps({"status":"PASS","changed":changed,"dictionaryExamples":dictionary,"fallbackExamples":fallback},ensure_ascii=False,indent=2))
+          PY
+
+      - name: Validate and commit
+        run: |
+          node --check app.js
+          node scripts/qa-data-integrity.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/vocabulary.json .github/workflows/refresh-extra-examples.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: refresh extra500 vocabulary examples from real dictionary"
+          git push
