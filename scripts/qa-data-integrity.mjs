@@ -240,11 +240,35 @@ const badVocabularyPatterns = [
   /^The cashier gave me the customer service\.$/i,
   /^I left my keys beside the key\.$/i
 ];
+function exampleContainsTarget(en, word) {
+  const text = " " + String(en ?? "").toLowerCase().replace(/[^a-z0-9 -]/g, " ") + " ";
+  const w = String(word ?? "").toLowerCase().trim();
+  if (!w) return false;
+  if (text.includes(" " + w + " ")) return true;
+  // Accept common English inflections when the dictionary example uses a conjugated form.
+  const variants = new Set([w]);
+  if (/[^aeiou]y$/.test(w)) variants.add(w.slice(0,-1)+"ies");
+  else if (/(s|x|z|ch|sh)$/.test(w)) variants.add(w+"es");
+  else variants.add(w+"s");
+  if (/e$/.test(w)) variants.add(w.slice(0,-1)+"ed");
+  else if (/[^aeiou]y$/.test(w)) variants.add(w.slice(0,-1)+"ied");
+  else variants.add(w+"ed");
+  if (w.endsWith("ie")) variants.add(w.slice(0,-2)+"ying");
+  else if (w.endsWith("e")) variants.add(w.slice(0,-1)+"ing");
+  else variants.add(w+"ing");
+  const irregular = {
+    deny:"denied", apply:"applied", fight:"fought", hide:"hid", strike:"struck",
+    go:"went", come:"came", see:"saw", take:"took", give:"gave", write:"wrote",
+    speak:"spoke", think:"thought", buy:"bought", bring:"brought", teach:"taught"
+  };
+  if (irregular[w]) variants.add(irregular[w]);
+  return [...variants].some(v => text.includes(" " + v + " "));
+}
 for (const v of vocab) {
   const en = String(v?.example ?? "").trim();
   const word = norm(v?.word);
   if (!en || !word) { badVocabularyExamples.push({word:v?.word,reason:"missing example"}); continue; }
-  if (!en.toLowerCase().includes(word)) badVocabularyExamples.push({word:v.word,example:en,reason:"example does not contain target word/phrase"});
+  if (!exampleContainsTarget(en, word)) badVocabularyExamples.push({word:v.word,example:en,reason:"example does not contain target word/inflection"});
   if (badVocabularyPatterns.some((re) => re.test(en))) badVocabularyExamples.push({word:v.word,example:en,reason:"known unnatural template"});
 }
 must(badVocabularyExamples.length === 0,
