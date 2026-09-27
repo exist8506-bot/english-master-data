@@ -77,7 +77,8 @@ function communicationLineIsNatural(line){
     /^i think .+ is easier because i can use it often\.$/i,
     /^do you know the word "/i,
     /^yes\. it means /i,
-    /^where might i see the word "/i
+    /^where might i see the word "/i,
+    /^(?:to|a|an)\s+/i
   ];
   if(rejects.some(function(re){return re.test(en)}))return false;
   return !/^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b/i.test(en);
