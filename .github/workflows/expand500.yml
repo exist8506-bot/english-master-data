@@ -248,6 +248,12 @@ jobs:
               re.compile(r'^How can I use "', re.I),
               re.compile(r"^What is the meaning of ", re.I),
               re.compile(r"^to\b", re.I),
+              re.compile(r"^I'm practicing ", re.I),
+              re.compile(r"^When would you use ", re.I),
+              re.compile(r"^Which word is easier to remember: ", re.I),
+              re.compile(r"^Why is .+ useful in real life\\?$", re.I),
+              re.compile(r"^I think .+ is easier because I can use it often\\.$", re.I),
+              re.compile(r"^Can you tell me more about ", re.I),
 
               # Reject template-generated sentences that are grammatical-looking
               # but semantically incomplete or mismatched for standalone practice.
