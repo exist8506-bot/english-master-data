@@ -108,6 +108,13 @@ function communicationLineIsNatural(line){
     const rest=en.replace(/^(?:a|an)\s+/i,"");
     if(!/\b(?:am|is|are|was|were|can|could|will|would|should|must|have|has|had|do|does|did|need|needs|want|wants|like|likes|love|loves|go|goes|went|come|comes|came|make|makes|made|take|takes|took|give|gives|gave|work|works|worked|live|lives|lived|visit|visits|visited|call|calls|called|try|tries|tried|feel|feels|felt|look|looks|looked|seem|seems|seemed|help|helps|helped|keep|keeps|kept|start|starts|started|finish|finishes|finished|read|reads|wrote|write|writes|see|sees|saw|hear|hears|heard|find|finds|found|buy|buys|bought|open|opens|opened|close|closes|closed|sit|sits|sat|stand|stands|stood|sleep|sleeps|slept|eat|eats|ate|drink|drinks|drank|play|plays|played|study|studies|studied|learn|learns|learned|plan|plans|planned|enjoy|enjoys|enjoyed)\b/i.test(rest))return false;
   }
+  const semanticRejects=[
+    /^they properly use the app\.$/i,
+    /^this (?:plan|situation|difficulty|hall|bottom) is (?:immediate|primary|useful in daily life|same|dry|funny)\b/i,
+    /^(?:the|this) tennis is useful in daily life\.$/i,
+    /^i noticed (?:youth|iron|steel) this morning\.$/i
+  ];
+  if(semanticRejects.some(function(re){return re.test(en)}))return false;
   return true;
 }
 function communicationPracticePool(){
