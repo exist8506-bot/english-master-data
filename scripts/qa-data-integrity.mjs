@@ -79,7 +79,6 @@ for (const v of vocab) {
   if (k && !vocabByWord.has(k)) vocabByWord.set(k, v);
 }
 
-const sentenceById = byId(sentences);
 const independentSentences = sentences.filter((x) => x?.source === "expansion500" || x?.source === "extra500_v8");
 const questionByVocab = new Set(
   questions.map((x) => norm(x?.vocabWord)).filter(Boolean)
