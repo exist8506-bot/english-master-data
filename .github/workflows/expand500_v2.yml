@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: english-master-500-v2
+  group: english-master-v2-build
   cancel-in-progress: true
 
 jobs:
