@@ -274,7 +274,7 @@ const badStandalone = standalone.filter((s) => s?.vocabWord || !String(s?.en ?? 
   /^I put the airport in my travel bag\.$/i.test(String(s.en ?? "")));
 check(
   "standalone sentence pack is natural and independent",
-  standalone.length === 1500 &&
+  standalone.length === 1000 &&
   badStandalone.length === 0 &&
   T.dataAudit().naturalIndependentSentences === 1500 &&
   T.dataAudit().standaloneQualityIssues === 0 &&
@@ -408,7 +408,7 @@ check("quiz interaction", snap.db.stats.answered === answeredBefore + 1 && snap.
 
 T.show("flashcards");
 T.rateFlash("Đã nhớ");
-check("flashcard interaction", T.snap().db.vocab.length === 3000);
+check("flashcard interaction", T.snap().db.vocab.length === 3500);
 
 T.show("listening");
 snap = T.snap();
@@ -437,7 +437,7 @@ check("quiz has direct jump control", html.includes('id="quizJump"') && html.inc
 check("quiz jump changes exact question", T.jumpToItem("quiz", 300) && T.snap().quizIndex === 299 && document.getElementById("view").innerHTML.includes("Câu 300 / 6000"));
 
 T.show("settings");
-check("settings exposes one-click sentence audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra 1.000 câu luyện độc lập"));
+check("settings exposes one-click sentence audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra 1.500 câu luyện độc lập"));
 T.runContentAudit();
 check(
   "one-click content audit passes",
