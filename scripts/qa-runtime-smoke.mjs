@@ -632,7 +632,10 @@ check(
 );
 
 T.show("trilingual");
-const v2Words = snap.db.vocab.filter((v) => String(v.source ?? "") === "expansion500_v2" && String(v.sourceVersion ?? "") === "8.1.1");
+const v2PackagePathForRuntime = path.join(root, "data", "expansion500_v2.json");
+const v2PackageForRuntime = fs.existsSync(v2PackagePathForRuntime) ? JSON.parse(fs.readFileSync(v2PackagePathForRuntime, "utf8")) : { words: [] };
+const v2WordSetForRuntime = new Set((v2PackageForRuntime.words || []).map((x) => String(x.word || "").trim().toLowerCase()).filter(Boolean));
+const v2Words = snap.db.vocab.filter((v) => v2WordSetForRuntime.has(String(v.word || "").trim().toLowerCase()));
 const v2Sentences = snap.db.sentences.filter((x) => String(x.source ?? "") === "expansion500_v2");
 const v2Questions = snap.db.questions.filter((x) => String(x.source ?? "") === "expansion500_v2");
 const v2Tri = snap.db.trilingual.filter((x) => String(x.source ?? "") === "expansion500_v2");
