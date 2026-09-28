@@ -246,15 +246,20 @@ jobs:
                       "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi}
 
           chosen=[]; used_examples=set(); used_words_v2=set()
-          for c in ordered:
-              row=build_one(c)
-              if not row:
-                  continue
-              k=norm(row["example"]); wk=norm(row["word"])
-              if k in used_examples or wk in used_words_v2 or wk in used_words:
-                  continue
-              used_examples.add(k); used_words_v2.add(wk)
-              chosen.append(row)
+          for start in range(0,len(ordered),100):
+              batch=ordered[start:start+100]
+              with ThreadPoolExecutor(max_workers=6) as pool:
+                  results=list(pool.map(build_one,batch))
+              for row in results:
+                  if not row:
+                      continue
+                  k=norm(row["example"]); wk=norm(row["word"])
+                  if k in used_examples or wk in used_words_v2 or wk in used_words:
+                      continue
+                  used_examples.add(k); used_words_v2.add(wk)
+                  chosen.append(row)
+                  if len(chosen)>=NEED:
+                      break
               if len(chosen)>=NEED:
                   break
 
