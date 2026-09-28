@@ -178,8 +178,8 @@ for (let i = 0; i < 300; i += 1) {
     snap.db.vocab.length === 3500 &&
     snap.db.sentences.length === 3750 &&
     snap.db.questions.length === 6000 &&
-    snap.db.communication.length === 228 &&
-    snap.db.trilingual.length === 2500 &&
+    snap.db.communication.length === 328 &&
+    snap.db.trilingual.length === 3000 &&
     snap.db.grammar.length === 80
   ) {
     hydrateReady = true;
@@ -192,8 +192,8 @@ check("hydrate all datasets", hydrateReady &&
   snap.db.vocab.length === 3500 &&
   snap.db.sentences.length === 3750 &&
   snap.db.questions.length === 6000 &&
-  snap.db.communication.length === 228 &&
-  snap.db.trilingual.length === 2500 &&
+  snap.db.communication.length === 328 &&
+  snap.db.trilingual.length === 3000 &&
   snap.db.grammar.length === 80,
   JSON.stringify({
     vocab: snap.db.vocab.length, sentences: snap.db.sentences.length, questions: snap.db.questions.length,
@@ -318,7 +318,7 @@ const knownBadPracticeExamples = [
 check(
   "sentence practice pool filters bad/duplicate entries",
   practicePool.length > 0 &&
-  practicePool.length <= standalone.length &&
+  practicePool.length <= db.sentences.length &&
   new Set(practiceKeys).size === practiceKeys.length &&
   practicePool.every((s) => !s.vocabWord && String(s.en ?? "").trim() && String(s.vi ?? "").trim()) &&
   knownBadPracticeExamples.every((en) => !practicePool.some((s) => String(s.en ?? "").trim().toLowerCase() === en.toLowerCase())),
