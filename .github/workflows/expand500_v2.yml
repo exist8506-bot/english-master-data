@@ -171,7 +171,7 @@ jobs:
               for item in data.get("data",[]) if isinstance(data,dict) else []:
                   en=str(item.get("text") or "").strip()
                   if not en or not re.search(r"\\b"+re.escape(word)+r"\\b",en,re.I): continue
-                  if not (4<=len(en.split())<=28) or not /[.!?]$/.search(en): continue
+                  if not (4<=len(en.split())<=28) or not re.search(r"[.!?]$",en): continue
                   if any(rx.search(en) for rx in reject): continue
                   vi_list=flatten_translations(item.get("translations") or [])
                   vi=next((v for v in vi_list if v), "")
