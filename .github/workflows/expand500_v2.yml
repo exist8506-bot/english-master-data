@@ -176,6 +176,7 @@ jobs:
             re.compile(r"^I noticed (?:youth|iron|steel|aspect) this morning\.$",re.I),
           ]
 
+          from concurrent.futures import ThreadPoolExecutor
           from nltk.corpus import wordnet as wn
           POS_MAP={"n":"noun","v":"verb","a":"adjective","s":"adjective","r":"adverb"}
 
