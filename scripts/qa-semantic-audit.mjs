@@ -89,6 +89,7 @@ for (const s of independent) {
     continue;
   }
 
+  if (subj && inanimateSubjects.has(subj) && isBe && adj) {
     bad.push({kind:"inanimate-emotion",...s,detail:{subject:subj,adjective:adj}});
     continue;
   }
