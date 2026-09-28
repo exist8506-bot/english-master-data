@@ -189,7 +189,7 @@ jobs:
                       pick=(en_id,vi_id,en,vi); break
               if not pick: continue
               used_sentences.add(norm(pick[2]))
-              chosen.append({**x,"meta":meta[x["word"]],"example":pick[2],"exampleVi":pick[3],
+              chosen.append({**x,"example":pick[2],"exampleVi":pick[3],
                              "sourceRef":f"tatoeba:eng#{pick[0]}/vie#{pick[1]}"})
               if len(chosen)>=NEED: break
 
