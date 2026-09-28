@@ -671,7 +671,7 @@ function render(){
 }
 function home(){
   const practiceCount=sentencePracticePool().length;
-  $("view").innerHTML=shell("English Master V8.0.11","Học • Luyện • Nhớ • Cải thiện",
+  $("view").innerHTML=shell("English Master V"+APP_VERSION,"Học • Luyện • Nhớ • Cải thiện",
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+practiceCount+'</div><div class="muted">Câu luyện độc lập</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
     '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
 }
@@ -910,8 +910,21 @@ function quiz(){
   if(!db.questions.length){$("view").innerHTML=shell("Trắc nghiệm","Chưa có dữ liệu.");return}
   const q=db.questions[normalizeQuizIndex()],raw=Array.isArray(q?.options)?q.options:[];
   if(!q||raw.length!==4||raw.some(function(x){return !String(x??"").trim()})){
-    $("view").innerHTML=shell("Trắc nghiệm","Câu hỏi hiện tại không hợp lệ. Đang chuyển sang câu khác.");
-    quizIndex=0;
+    const start=normalizeQuizIndex(),total=db.questions.length;
+    let next=-1;
+    for(let step=1;step<total;step++){
+      const candidate=db.questions[(start+step)%total];
+      const options=Array.isArray(candidate?.options)?candidate.options:[];
+      if(candidate&&options.length===4&&options.every(function(x){return String(x??"").trim()})&&
+         new Set(options.map(norm)).size===4&&Number.isInteger(Number(candidate.answer))&&Number(candidate.answer)>=0&&Number(candidate.answer)<4){
+        next=(start+step)%total;break;
+      }
+    }
+    if(next<0){
+      $("view").innerHTML=shell("Trắc nghiệm","Không còn câu hỏi hợp lệ để luyện.");
+      return;
+    }
+    quizIndex=next;
     return quiz();
   }
   const answerIndex=Number(q.answer);
