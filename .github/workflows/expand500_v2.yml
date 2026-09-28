@@ -26,6 +26,7 @@ jobs:
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
           set -euo pipefail
+          python3 -m pip install --disable-pip-version-check -q cmudict
           python3 - <<'PY'
           import csv, hashlib, json, os, re, urllib.parse, urllib.request
           from pathlib import Path
