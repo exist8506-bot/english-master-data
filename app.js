@@ -19,7 +19,8 @@ let legacyStorageLoaded=false;
 
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
-function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/"/g,"&quot;").replace(/\r?\n/g," ")}
+function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/"/g,"&quot;").replace(/\r?
+/g," ")}
 function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
 const STANDALONE_SENTENCE_SOURCES=new Set(["extra500_v8","expansion500","expansion500_v2"]);
 const ALLOWED_IT_IS_PRACTICE_ADJECTIVES=new Set(["important","useful","helpful","good","beneficial","easy","hard","difficult","necessary","possible","wise","healthy"]);
@@ -30,7 +31,8 @@ function standalonePracticeTemplateIsNatural(en){
 }
 const BAD_STANDALONE_SENTENCE_PATTERNS=[
   /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i,
-  /^(?:the|a|an) (?:room|house|bedroom|office) (?:looks?|seems?) (?:very )?(?:cheap|hard|fresh)\\b/i,\n  /^(?:the|a|an) (?:room|house|bedroom|office) feels (?:very )?wet\\b/i,
+  /^(?:the|a|an) (?:room|house|bedroom|office) (?:looks?|seems?) (?:very )?(?:cheap|hard|fresh)\\b/i,
+  /^(?:the|a|an) (?:room|house|bedroom|office) feels (?:very )?wet\\b/i,
   /^(?:he|she) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b/i,
   /^i need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\\.$/i,
   /^they tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\\.$/i,
@@ -1027,7 +1029,8 @@ function voiceAvailability(){
 function exportProgress(){
   try{
     const payload={app:"English Master",exportedAt:new Date().toISOString(),...userSnapshot()};
-    const blob=new Blob([JSON.stringify(payload,null,2)+"\n"],{type:"application/json;charset=utf-8"});
+    const blob=new Blob([JSON.stringify(payload,null,2)+"
+"],{type:"application/json;charset=utf-8"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
     a.href=url;a.download="english-master-progress.json";
     document.body.appendChild(a);a.click();a.remove();
