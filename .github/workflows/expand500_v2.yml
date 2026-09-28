@@ -246,7 +246,7 @@ jobs:
                   break
 
           if len(chosen)<NEED:
-              raise SystemExit(f"Only {len(chosen)} verified new words available; expected {NEED}. Dictionary/API misses: {api_failures}.")
+              raise SystemExit(f"Only {len(chosen)} verified new words available; expected {NEED}.")
 
           def topic(word):
               groups={
