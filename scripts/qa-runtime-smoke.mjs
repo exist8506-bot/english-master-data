@@ -668,6 +668,20 @@ check(
   questionRows.every((q) => String(q.options[q.answer] ?? "").trim().length > 0)
 );
 
+const inlineHandlers = [...app.matchAll(/onclick="([^"]+)"/g)].map((m) => m[1]);
+const inlineNames = new Set();
+for (const handler of inlineHandlers) {
+  const m = handler.match(/^([A-Za-z_$][\\w$]*)\\s*\\(/);
+  if (m) inlineNames.add(m[1]);
+}
+const declaredFunctions = new Set([...app.matchAll(/(?:function|async function)\\s+([A-Za-z_$][\\w$]*)\\s*\\(/g)].map((m) => m[1]));
+const missingHandlers = [...inlineNames].filter((name) => !declaredFunctions.has(name));
+check(
+  "inline UI handlers point to declared functions",
+  missingHandlers.length === 0,
+  JSON.stringify({missing: missingHandlers.slice(0, 30), totalInlineHandlers: inlineHandlers.length})
+);
+
 const stableCounts = {
   vocab: T.snap().db.vocab.length,
   sentences: T.snap().db.sentences.length,
