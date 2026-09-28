@@ -30,6 +30,7 @@ function standalonePracticeTemplateIsNatural(en){
 }
 const BAD_STANDALONE_SENTENCE_PATTERNS=[
   /^(?:the|a|an) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b/i,
+  /^(?:the|a|an) (?:room|house|bedroom|office) (?:looks?|seems?) (?:very )?(?:cheap|hard|fresh)\\b/i,\n  /^(?:the|a|an) (?:room|house|bedroom|office) feels (?:very )?wet\\b/i,
   /^(?:he|she) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b/i,
   /^i need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\\.$/i,
   /^they tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\\.$/i,
