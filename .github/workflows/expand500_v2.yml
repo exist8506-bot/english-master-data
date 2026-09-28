@@ -27,6 +27,7 @@ jobs:
       - name: Build and validate V2
         env:
           DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
+          TATOEBA_API: https://api.tatoeba.org/v1/sentences
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
           TRANSLATE_API: https://translate.googleapis.com/translate_a/single
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
@@ -46,6 +47,7 @@ jobs:
           HSK_BASE=os.environ["HSK_BASE"]
           DICT_API=os.environ["DICT_API"]
           TRANSLATE_API=os.environ["TRANSLATE_API"]
+          TATOEBA_API=os.environ["TATOEBA_API"]
           TTS_BASE=os.environ["TTS_BASE"]
           UA="English-Master-V2-DataBuilder/2.0"
 
@@ -217,6 +219,21 @@ jobs:
                               if ex:
                                   example=ex; break
                           if example: break
+              if not example:
+                  try:
+                      params=urllib.parse.urlencode({
+                          "q":word,"lang":"eng","sort":"relevance",
+                          "word_count":"4-26","limit":"10"
+                      })
+                      td=get_json(TATOEBA_API+"?"+params,3)
+                  except Exception:
+                      td={}
+                  rows=td.get("data",[]) if isinstance(td,dict) else []
+                  for item in rows:
+                      ex=str(item.get("text") or "").strip()
+                      if ex and re.search(r"\\b"+re.escape(word)+r"\\b",ex,re.I):
+                          example=ex
+                          break
               if not example or len(example.split())<4 or len(example.split())>26: return None
               if any(rx.search(example) for rx in reject): return None
               phon=cmu_ipa(word) or cmu_ipa(matched_form)
