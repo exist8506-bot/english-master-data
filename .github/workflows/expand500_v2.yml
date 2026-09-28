@@ -23,15 +23,14 @@ jobs:
       - name: Build and validate V2
         env:
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
-          DICT_DB_URL: https://raw.githubusercontent.com/chuongmep/vi-en-dictionary/main/vi_en_dict.db
+          DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
+          TRANSLATE_API: https://translate.googleapis.com/translate_a/single
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
           set -euo pipefail
           python3 -m pip install --disable-pip-version-check -q cmudict
-          curl -L --fail --retry 3 --retry-delay 1 "$DICT_DB_URL" -o /tmp/vi_en_dict.db
-          test -s /tmp/vi_en_dict.db
           python3 - <<'PY'
-          import csv, hashlib, json, os, re, sqlite3, urllib.parse, urllib.request
+          import csv, hashlib, json, os, re, time, urllib.parse, urllib.request
           from pathlib import Path
 
           ROOT=Path.cwd()
@@ -40,9 +39,10 @@ jobs:
           SOURCE="expansion500_v2"
           NEED=500
           HSK_BASE=os.environ["HSK_BASE"]
-          DB_PATH="/tmp/vi_en_dict.db"
+          DICT_API=os.environ["DICT_API"]
+          TRANSLATE_API=os.environ["TRANSLATE_API"]
           TTS_BASE=os.environ["TTS_BASE"]
-          UA="English-Master-V2-DataBuilder/1.0"
+          UA="English-Master-V2-DataBuilder/2.0"
 
           def readj(name):
               return json.loads((DATA/name).read_text(encoding="utf-8"))
@@ -51,18 +51,46 @@ jobs:
               (DATA/name).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
           def norm(s):
-              return re.sub(r"\\s+"," ",str(s or "").strip().lower())
+              return re.sub(r"\s+"," ",str(s or "").strip().lower())
 
-          def get_text(url):
-              req=urllib.request.Request(url,headers={"User-Agent":UA})
-              with urllib.request.urlopen(req,timeout=30) as r:
-                  return r.read().decode("utf-8")
+          def get_json(url,tries=4):
+              last=None
+              for attempt in range(1,tries+1):
+                  try:
+                      req=urllib.request.Request(url,headers={"User-Agent":UA})
+                      with urllib.request.urlopen(req,timeout=25) as r:
+                          return json.loads(r.read().decode("utf-8"))
+                  except Exception as e:
+                      last=e
+                      if attempt<tries: time.sleep(0.4*attempt)
+              raise last
+
+          def get_text(url,tries=4):
+              last=None
+              for attempt in range(1,tries+1):
+                  try:
+                      req=urllib.request.Request(url,headers={"User-Agent":UA})
+                      with urllib.request.urlopen(req,timeout=25) as r:
+                          return r.read().decode("utf-8")
+                  except Exception as e:
+                      last=e
+                      if attempt<tries: time.sleep(0.4*attempt)
+              raise last
 
           def hash_id(s):
               return hashlib.sha1(str(s).encode("utf-8")).hexdigest()[:10]
 
           def tts(text,lang):
               return TTS_BASE+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
+
+          def translate(text):
+              q=urllib.parse.quote(str(text))
+              url=f"{TRANSLATE_API}?client=gtx&sl=en&tl=vi&dt=t&q={q}"
+              try:
+                  data=get_json(url,3)
+                  return "".join(str(part[0]) for part in data[0] if part and part[0]).strip()
+              except Exception:
+                  return ""
 
           vocab=readj("vocabulary.json")
           sentences=readj("sentences.json")
@@ -91,8 +119,8 @@ jobs:
                   zh=row[0].strip()
                   py=row[1].strip()
                   raw_en=",".join(row[2:]).strip()
-                  word=re.sub(r"^to\\s+","",raw_en,flags=re.I)
-                  word=re.sub(r"^(?:a|an)\\s+","",word,flags=re.I).strip().lower()
+                  word=re.sub(r"^to\s+","",raw_en,flags=re.I)
+                  word=re.sub(r"^(?:a|an)\s+","",word,flags=re.I).strip().lower()
                   if not zh or not py or not re.fullmatch(r"[a-z]+",word): continue
                   if word in blocked or len(word)<3 or len(word)>16: continue
                   if word in used_words or word in candidates: continue
@@ -100,70 +128,103 @@ jobs:
 
           ordered=sorted(candidates.values(),key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
 
-          # Real dictionary examples are the source for reading/speaking sentences.
-          # Reject only clearly malformed/generated templates; keep ordinary natural examples.
-          reject=[
-            re.compile(r"^I talked to (?:the )?(?:homework|book|dictionary) after class\\.$",re.I),
-            re.compile(r"^I need to (?:talk|repeat|start|stand|eat|stay|use|take|look|like|feel|show) before breakfast\\.$",re.I),
-            re.compile(r"^She wants to (?:make|bring|watch|save|together|below) after work\\.$",re.I),
-            re.compile(r"^I try to (?:give|find|want|carry|reserve|borrow|outside|before) every day\\.$",re.I),
-            re.compile(r"^We can (?:tell|hear|mean|open|do|keep|hate|catch|prefer|wish) together this evening\\.$",re.I),
-            re.compile(r"^The (?:chair|roof|sofa|soap|cup) was open when I came home\\.$",re.I),
-            re.compile(r"^The (?:pocket|cotton) is easy to wear\\.$",re.I),
-            re.compile(r"^I saw (?:the )?(?:reading|hiking|birthday|idea) on my way home\\.$",re.I),
-            re.compile(r"^I noticed (?:the )?(?:youth|iron|steel|aspect) this morning\\.$",re.I),
-            re.compile(r"^The cashier gave me the customer service\\.$",re.I),
-            re.compile(r"^I left my keys beside the key\\.$",re.I),
-            re.compile(r"^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b",re.I),
-            re.compile(r"^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b",re.I),
-            re.compile(r"^It is (?:hungry|spicy|large|big|low|public) to practice a little every day\\.$",re.I),
-            re.compile(r"^She sounded (?:delicious|salty|favorite) during the conversation\\.$",re.I),
-            re.compile(r"^I feel (?:dangerous|full|sour|difficult|common|natural|personal|long|afraid|lazy|weak) when I finish my work\\.$",re.I),
-          ]
+          cmu={}
+          try:
+              import cmudict
+              cmu=cmudict.dict()
+          except Exception:
+              pass
 
-          conn=sqlite3.connect(DB_PATH)
-          cur=conn.cursor()
-          found={}
-          words_list=[x["word"] for x in ordered]
-          for start in range(0,len(words_list),400):
-              batch=words_list[start:start+400]
-              if not batch: break
-              ph=",".join("?" for _ in batch)
-              cur.execute(
-                f"""SELECT lower(de.en),de.en,de.vi,de.pos,de.pronunciation,
-                           dx.en_example,dx.vi_example
-                    FROM dictionary_entries de
-                    LEFT JOIN dictionary_examples dx
-                      ON dx.entry_id=de.entry_id AND dx.sort_order=1
-                    WHERE lower(de.en) IN ({ph})""",
-                batch
-              )
-              for row in cur.fetchall():
-                  k=norm(row[0])
-                  if k not in found:
-                      found[k]={"en":row[1],"vi":row[2],"pos":row[3],
-                                "pronunciation":row[4],"example":row[5],"exampleVi":row[6]}
-          conn.close()
+          def cmu_ipa(word):
+              pr=cmu.get(word.lower())
+              if not pr: return ""
+              table={
+                "AA":"ɑ","AE":"æ","AH":"ʌ","AO":"ɔ","AW":"aʊ","AY":"aɪ","EH":"ɛ","ER":"ɝ",
+                "EY":"eɪ","IH":"ɪ","IY":"i","OW":"oʊ","OY":"ɔɪ","UH":"ʊ","UW":"u",
+                "B":"b","CH":"tʃ","D":"d","DH":"ð","F":"f","G":"ɡ","HH":"h","JH":"dʒ","K":"k",
+                "L":"l","M":"m","N":"n","NG":"ŋ","P":"p","R":"r","S":"s","SH":"ʃ","T":"t",
+                "TH":"θ","V":"v","W":"w","Y":"j","Z":"z","ZH":"ʒ"
+              }
+              out=[]; primary=False
+              for ph in pr[0]:
+                  m=re.fullmatch(r"([A-Z]+)([012]?)",ph)
+                  if not m: continue
+                  val=table.get(m.group(1),"")
+                  if not val: continue
+                  if m.group(2)=="1" and not primary:
+                      out.append("ˈ");primary=True
+                  elif m.group(2)=="2":
+                      out.append("ˌ")
+                  out.append(val)
+              return "/"+"" .join(out)+"/" if out else ""
+
+          reject=[
+            re.compile(r"^The (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b",re.I),
+            re.compile(r"^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\b",re.I),
+            re.compile(r"^I need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\.$",re.I),
+            re.compile(r"^They tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\.$",re.I),
+            re.compile(r"^It is (?:hungry|spicy|large|big|low|public) to practice a little every day\.$",re.I),
+            re.compile(r"^She sounded (?:delicious|salty|favorite) during the conversation\.$",re.I),
+            re.compile(r"^I feel (?:dangerous|full|sour|difficult|common|natural|personal|long|afraid|lazy|weak) when I finish my work\.$",re.I),
+            re.compile(r"^I noticed (?:youth|iron|steel|aspect) this morning\.$",re.I),
+          ]
 
           chosen=[]
           used_examples=set()
+          api_failures=0
           for c in ordered:
-              d=found.get(c["word"])
-              if not d: continue
-              meaning=str(d.get("vi") or "").strip()
-              example=str(d.get("example") or "").strip()
-              example_vi=str(d.get("exampleVi") or "").strip()
-              if not (meaning and example and example_vi): continue
-              if not (4 <= len(example.split()) <= 24): continue
-              if not re.search(r"\\b"+re.escape(c["word"])+r"\\b",example,re.I): continue
-              if norm(example) in used_examples: continue
+              word=c["word"]
+              try:
+                  entries=get_json(DICT_API+urllib.parse.quote(word))
+              except Exception:
+                  api_failures+=1
+                  continue
+              if not isinstance(entries,list) or not entries: continue
+              entry=entries[0] if isinstance(entries[0],dict) else {}
+              example=""
+              pos=""
+              for m in entry.get("meanings",[]) or []:
+                  if not pos: pos=str(m.get("partOfSpeech") or "")
+                  for d in m.get("definitions",[]) or []:
+                      ex=str(d.get("example") or "").strip()
+                      if ex and re.search(r"\b"+re.escape(word)+r"\b",ex,re.I):
+                          example=ex;break
+                  if example: break
+              if not example:
+                  for m in entry.get("meanings",[]) or []:
+                      for d in m.get("definitions",[]) or []:
+                          ex=str(d.get("example") or "").strip()
+                          if ex:
+                              example=ex;break
+                      if example: break
+              if not example: continue
+              if len(example.split())<4 or len(example.split())>26: continue
               if any(rx.search(example) for rx in reject): continue
+              if norm(example) in used_examples: continue
+              phon=str(entry.get("phonetic") or "").strip()
+              if not phon:
+                  for p in entry.get("phonetics",[]) or []:
+                      phon=str(p.get("text") or "").strip()
+                      if phon: break
+              if not phon: phon=cmu_ipa(word)
+              if not phon: continue
+              # Translate the actual HSK gloss and actual dictionary example.
+              joined=str(c["rawEn"])+" ||| "+example
+              vi=translate(joined)
+              if "|||" in vi:
+                  meaning_vi,example_vi=[z.strip() for z in vi.split("|||",1)]
+              else:
+                  meaning_vi=translate(str(c["rawEn"]))
+                  example_vi=translate(example)
+              if not meaning_vi or not example_vi: continue
               used_examples.add(norm(example))
-              chosen.append({**c,**d})
+              chosen.append({**c,"entry":entry,"pos":pos,"phonetic":phon,
+                              "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi})
               if len(chosen)==NEED: break
+              time.sleep(0.03)
 
           if len(chosen)<NEED:
-              raise SystemExit(f"Only {len(chosen)} high-quality new words available; expected {NEED}.")
+              raise SystemExit(f"Only {len(chosen)} verified new words available; expected {NEED}. Dictionary/API misses: {api_failures}.")
 
           def topic(word):
               groups={
@@ -185,72 +246,73 @@ jobs:
                   if any(v in w for v in vals): return k
               return "daily"
 
-          new_vocab=[];new_sentences=[];new_tri=[];new_questions=[]
+          new_vocab=[];new_sentences=[];new_tri=[]
           for i,x in enumerate(chosen,1):
               tp=topic(x["word"])
               level="Beginner" if x["hsk"]<=3 else ("Intermediate" if x["hsk"]<=4 else "Upper-Intermediate")
               hid=hash_id(x["word"])
-              vid=f"exp500v2_{i:03d}_{hid}"
-              sid=f"exp500v2_sent_{i:03d}_{hid}"
-              tid=f"exp500v2_tri_{i:03d}_{hid}"
-              q1id=f"exp500v2_qm_{i:03d}_{hid}"
-              q2id=f"exp500v2_qc_{i:03d}_{hid}"
               v={
-                "id":vid,"word":x["word"],"ipa":("/"+str(x["pronunciation"]).strip("/ ")+"/") if x.get("pronunciation") else "",
-                "meaning":x["vi"],"pos":str(x.get("pos") or "word").strip(),
-                "example":x["example"],"exampleVi":x["exampleVi"],"synonyms":"","antonyms":"",
-                "topic":tp,"level":level,"favorite":False,"status":"New","reviewDue":None,
-                "createdAt":"2026-09-28T00:00:00.000Z","audio":"tts","audioEn":tts(x["word"],"en"),
-                "source":SOURCE,"sourceVersion":VERSION
+                "id":f"exp500v2_{i:03d}_{hid}","word":x["word"],
+                "ipa":x["phonetic"],"meaning":x["meaningVi"],"pos":x["pos"] or "word",
+                "example":x["example"],"exampleVi":x["exampleVi"],
+                "synonyms":"","antonyms":"","topic":tp,"level":level,
+                "favorite":False,"status":"New","reviewDue":None,
+                "createdAt":"2026-09-28T00:00:00.000Z","audio":"tts",
+                "audioEn":tts(x["word"],"en"),"source":SOURCE,"sourceVersion":VERSION
               }
-              if not v["ipa"] or len(v["ipa"])<3:
-                  continue
               new_vocab.append(v)
               new_sentences.append({
-                "id":sid,"en":x["example"],"vi":x["exampleVi"],"topic":tp,"grammar":"Everyday English",
-                "audioEn":tts(x["example"],"en"),"favorite":False,"source":SOURCE,"sourceVersion":VERSION
+                "id":f"exp500v2_sent_{i:03d}_{hid}","en":x["example"],"vi":x["exampleVi"],
+                "topic":tp,"grammar":"Everyday English","audioEn":tts(x["example"],"en"),
+                "favorite":False,"source":SOURCE,"sourceVersion":VERSION
               })
               new_tri.append({
-                "id":tid,"en":x["word"],"zh":x["zh"],"pinyin":x["pinyin"],"vi":x["vi"],
-                "topic":tp,"level":level,"audio":"tts","audioEn":tts(x["word"],"en"),
-                "audioZh":tts(x["zh"],"zh"),"audioVi":tts(x["vi"],"vi"),
-                "source":SOURCE,"sourceVersion":VERSION
+                "id":f"exp500v2_tri_{i:03d}_{hid}","en":x["word"],"zh":x["zh"],
+                "pinyin":x["pinyin"],"vi":x["meaningVi"],"topic":tp,"level":level,
+                "audio":"tts","audioEn":tts(x["word"],"en"),"audioZh":tts(x["zh"],"zh"),
+                "audioVi":tts(x["meaningVi"],"vi"),"source":SOURCE,"sourceVersion":VERSION
               })
-              meanings=[z["meaning"] for z in new_vocab]
-              distract=[]
-              for prev in list(reversed(new_vocab[:-1]))+new_vocab:
-                  if norm(prev["meaning"])!=norm(v["meaning"]) and norm(prev["meaning"]) not in {norm(z) for z in distract}:
-                      distract.append(prev["meaning"])
-                  if len(distract)>=3: break
-              while len(distract)<3:
-                  distract.append("another meaning")
-              opts=[v["meaning"],*distract[:3]]
-              opts=opts[((i*5)%4):]+opts[:((i*5)%4)]
+
+          # Two quiz modes per new word: meaning + word-in-context.
+          all_meanings=[str(x.get("meaning") or "").strip() for x in vocab+new_vocab if str(x.get("meaning") or "").strip()]
+          all_meanings_unique=[]
+          seen_m=set()
+          for m in all_meanings:
+              k=norm(m)
+              if k and k not in seen_m:
+                  seen_m.add(k);all_meanings_unique.append(m)
+          all_words=[str(x.get("word") or "").strip() for x in vocab+new_vocab if str(x.get("word") or "").strip()]
+          new_questions=[]
+          for i,v in enumerate(new_vocab,1):
+              meaning=v["meaning"]
+              distract=[m for m in all_meanings_unique if norm(m)!=norm(meaning)][:3]
+              if len(distract)<3: raise SystemExit("Not enough unique meaning distractors")
+              opts=[meaning,*distract]
+              shift=(i*5)%4
+              opts=opts[shift:]+opts[:shift]
               new_questions.append({
-                "id":q1id,"type":"multiple","prompt":f'"{x["word"]}" nghĩa là gì?',
-                "options":opts,"answer":opts.index(v["meaning"]),
-                "explain":f'{x["word"]} = {x["vi"]}.',"topic":tp,"level":level,
-                "vocabWord":x["word"],"audio":"tts","audioEn":tts(x["word"],"en"),
-                "source":SOURCE,"sourceVersion":VERSION
+                "id":f"exp500v2_qm_{i:03d}_{hash_id(v['word'])}","type":"multiple",
+                "prompt":f'"{v["word"]}" nghĩa là gì?',"options":opts,
+                "answer":opts.index(meaning),"explain":f'{v["word"]} = {meaning}.',
+                "topic":v["topic"],"level":v["level"],"vocabWord":v["word"],
+                "audio":"tts","audioEn":tts(v["word"],"en"),"source":SOURCE,"sourceVersion":VERSION
               })
-              blank=re.sub(r"\\b"+re.escape(x["word"])+r"\\b","_____",x["example"],count=1,flags=re.I)
+              blank=re.sub(r"\b"+re.escape(v["word"])+r"\b","_____",v["example"],count=1,flags=re.I)
               word_opts=[v["word"]]
-              for prev in list(reversed(new_vocab[:-1]))+new_vocab:
-                  if norm(prev["word"])!=norm(v["word"]) and norm(prev["word"]) not in {norm(z) for z in word_opts}:
-                      word_opts.append(prev["word"])
-                  if len(word_opts)>=4: break
-              while len(word_opts)<4: word_opts.append("choice")
+              for w in all_words:
+                  if norm(w)!=norm(v["word"]) and norm(w) not in {norm(z) for z in word_opts}:
+                      word_opts.append(w)
+                  if len(word_opts)==4: break
+              if len(word_opts)<4: raise SystemExit("Not enough word distractors")
               shift=(i*3)%4
               word_opts=word_opts[shift:]+word_opts[:shift]
               new_questions.append({
-                "id":q2id,"type":"multiple","prompt":blank,"options":word_opts[:4],
-                "answer":word_opts.index(v["word"]),"explain":f'Từ phù hợp là "{v["word"]}".',
-                "topic":tp,"level":level,"vocabWord":x["word"],"audio":"tts",
-                "audioEn":tts(blank,"en"),"source":SOURCE,"sourceVersion":VERSION
+                "id":f"exp500v2_qc_{i:03d}_{hash_id(v['word'])}","type":"multiple",
+                "prompt":blank,"options":word_opts,"answer":word_opts.index(v["word"]),
+                "explain":f'Từ phù hợp là "{v["word"]}".',"topic":v["topic"],"level":v["level"],
+                "vocabWord":v["word"],"audio":"tts","audioEn":tts(blank,"en"),
+                "source":SOURCE,"sourceVersion":VERSION
               })
-
-          if len(new_vocab)!=NEED:
-              raise SystemExit(f"IPA selection left {len(new_vocab)} usable words; expected {NEED}.")
 
           new_comm=[]
           patterns=[
@@ -260,22 +322,21 @@ jobs:
             ('I want to remember "{w}".','Can you read an example aloud?','Yes, that helps me remember it.')
           ]
           for start in range(0,NEED,5):
-              group=chosen[start:start+5]
-              # Use five real dictionary examples in one learning conversation.
+              group=new_vocab[start:start+5]
               lines=[]
-              for j,x in enumerate(group):
-                  pat=patterns[j%len(patterns)]
+              for j,v in enumerate(group):
+                  p=patterns[j%len(patterns)]
                   lines.extend([
-                    ["A",pat[0].format(w=x["word"]),f'Hôm nay tôi bắt gặp từ "{x["word"]}".'],
-                    ["B",pat[1],"Bạn có thể dùng nó trong một câu không?"],
-                    ["A",x["example"],x["exampleVi"]],
-                    ["B",pat[2],"Ví dụ đó giúp tôi hiểu/nghi nhớ cách dùng."]
+                    ["A",p[0].format(w=v["word"]),f'Hôm nay tôi bắt gặp từ "{v["word"]}".'],
+                    ["B",p[1],"Bạn có thể dùng nó trong một câu không?"],
+                    ["A",v["example"],v["exampleVi"]],
+                    ["B",p[2],"Ví dụ đó giúp tôi hiểu/nghi nhớ cách dùng."]
                   ])
               new_comm.append({
                 "id":f"exp500v2_comm_{start//5+1:03d}",
                 "title":f"Luyện giao tiếp từ mới {start//5+1:03d}",
-                "topic":group[0]["topic"] if "topic" in group[0] else topic(group[0]["word"]),
-                "vocab":[x["word"] for x in group],"lines":lines,
+                "topic":group[0]["topic"],
+                "vocab":[v["word"] for v in group],"lines":lines,
                 "source":SOURCE,"sourceVersion":VERSION
               })
 
@@ -287,10 +348,10 @@ jobs:
                 "title":f"Từ mới trong ngữ cảnh — {group[0]['topic']}",
                 "level":"Beginner–Intermediate",
                 "formula":"Target word + natural example in context",
-                "explain":"Học cách nhận ra từ mới trong câu thật, nghe câu và nói lại câu theo ngữ cảnh.",
-                "examples":[x["example"] for x in group],
+                "explain":"Đọc câu ví dụ, nghe câu và nói lại câu để ghi nhớ cách dùng thực tế.",
+                "examples":[v["example"] for v in group],
                 "notes":"Gói 500 từ mới V2.",
-                "vocabWords":[x["word"] for x in group],
+                "vocabWords":[v["word"] for v in group],
                 "source":SOURCE,"sourceVersion":VERSION
               })
 
@@ -322,37 +383,32 @@ jobs:
 
           writej("version.json",{
             "version":VERSION,"updatedAt":"2026-09-28",
-            "releaseNotes":"V8.1.0: thêm đúng 500 từ mới có IPA, nghĩa Anh-Việt, câu ví dụ thực tế, audio, quiz ngữ nghĩa + quiz theo ngữ cảnh, câu luyện nghe/nói, tam ngữ, giao tiếp và ngữ pháp.",
+            "releaseNotes":"V8.1.0: thêm đúng 500 từ mới đã xác thực qua từ điển, mỗi từ có IPA, nghĩa Việt, câu ví dụ theo ngữ cảnh, audio; đồng thời nối vào đọc, nghe, nói, flashcards, quiz ngữ nghĩa, quiz theo ngữ cảnh, ôn tập, tam ngữ, giao tiếp và ngữ pháp.",
             "files":{"vocabulary":"vocabulary.json","sentences":"sentences.json","questions":"questions.json","grammar":"grammar.json","communication":"communication.json","trilingual":"trilingual.json"},
             "expansion":{"package":SOURCE,"count":500}
           })
 
-          # Hard validation of the newly added package.
-          assert len(new_vocab)==500
-          assert len({norm(x["word"]) for x in new_vocab})==500
-          assert len(new_sentences)==500 and all(x["source"]==SOURCE and x.get("en") and x.get("vi") and x.get("audioEn") for x in new_sentences)
+          assert len(new_vocab)==500 and len({norm(x["word"]) for x in new_vocab})==500
+          assert all(x.get("ipa") and x.get("meaning") and x.get("example") and x.get("exampleVi") and x.get("audioEn") for x in new_vocab)
+          assert len(new_sentences)==500 and all(x.get("en") and x.get("vi") and x.get("audioEn") and not x.get("vocabWord") for x in new_sentences)
+          assert len(new_questions)==1000 and all(len(x["options"])==4 and len({norm(z) for z in x["options"]})==4 and 0<=x["answer"]<4 for x in new_questions)
           assert len(new_tri)==500 and all(x.get("en") and x.get("zh") and x.get("pinyin") and x.get("vi") and x.get("audioEn") and x.get("audioZh") and x.get("audioVi") for x in new_tri)
-          assert len(new_questions)==1000
-          assert all(len(x["options"])==4 and len({norm(z) for z in x["options"]})==4 and 0<=x["answer"]<4 and x["options"][x["answer"]] for x in new_questions)
-          assert len(new_comm)==100 and all(len(d["lines"])>=20 for d in new_comm)
-          assert len(new_grammar)==20 and all(len(g["examples"])==25 and len(g["vocabWords"])==25 for g in new_grammar)
-          assert len(readj("expansion500_v2.json")["words"])==500
+          assert len(new_comm)==100 and all(len(d.get("lines",[]))==20 for d in new_comm)
+          assert len(new_grammar)==20 and all(len(g.get("examples",[]))==25 and len(g.get("vocabWords",[]))==25 for g in new_grammar)
           assert sum(x.get("source")==SOURCE for x in final_vocab)==500
           assert sum(x.get("source")==SOURCE for x in final_sentences)==500
           assert sum(x.get("source")==SOURCE for x in final_questions)==1000
           assert sum(x.get("source")==SOURCE for x in final_tri)==500
           assert sum(x.get("source")==SOURCE for x in final_comm)==100
           assert sum(x.get("source")==SOURCE for x in final_grammar)==20
-
-          # Every example must be represented by its target word and must pass the same obvious-bad filters.
-          assert all(re.search(r"\\b"+re.escape(x["word"])+r"\\b",x["example"],re.I) for x in new_vocab)
-          assert all(not any(rx.search(x["example"]) for rx in reject) for x in new_vocab)
+          assert all(re.search(r"\b"+re.escape(x["word"])+r"\b",x["example"],re.I) for x in new_vocab)
 
           print(json.dumps({
             "status":"PASS","newWords":500,"vocabTotal":len(final_vocab),
             "sentencesAdded":500,"questionsAdded":1000,"trilingualAdded":500,
-            "communicationAdded":100,"grammarAdded":20,"audioWords":500,
-            "speakingTargets":500,"readingExamples":500
+            "communicationAdded":100,"grammarAdded":20,
+            "audioWordTargets":500,"audioSentenceTargets":500,
+            "reading":500,"listening":500,"speaking":500,"quiz":1000,"review":500
           },ensure_ascii=False,indent=2))
           PY
 
