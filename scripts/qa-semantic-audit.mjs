@@ -84,7 +84,7 @@ for (const s of independent) {
   const subj = w[0] === "the" || w[0] === "a" || w[0] === "an" ? w.slice(1,2)[0] : w[0];
   const isBe = /\b(?:is|was|seems?|looks?)\b/.test(en.toLowerCase());
   const adj = w.find(x => emotionAdjs.has(x));
-  if (subj && inanimateSubjects.has(subj) && isBe && adj) {
+  if (subj && inanimateSubjects.has(subj) && /\\bfeels?\\b/i.test(en) && /\\bwet\\b/i.test(en)) {\n    bad.push({kind:"inanimate-feel-mismatch",...s,detail:{subject:subj,adjective:"wet"}});\n    continue;\n  }\n\n  if (subj && inanimateSubjects.has(subj) && isBe && adj) {
     bad.push({kind:"inanimate-emotion",...s,detail:{subject:subj,adjective:adj}});
     continue;
   }
