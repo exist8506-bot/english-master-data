@@ -120,6 +120,7 @@ jobs:
 
           matches=[x for x in hsk.values() if x["word"] in dict_map and dict_map[x["word"]].get("pron") and dict_map[x["word"]].get("senses_vi")]
           matches.sort(key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
+          print(f"PRE-TATOEBA: HSK={len(hsk)} static_dictionary={len(dict_map)} matched={len(matches)}")
 
           if len(matches)<700:
               tree=get_json(os.environ["DICT_TREE"])
@@ -139,6 +140,7 @@ jobs:
                           dict_map[head]=row
               matches=[x for x in hsk.values() if x["word"] in dict_map and dict_map[x["word"]].get("pron") and dict_map[x["word"]].get("senses_vi")]
               matches.sort(key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
+              print(f"POST-GENERAL: matched={len(matches)}")
 
           # 3) Real EN-VI example sentence from Tatoeba.
           reject=[
