@@ -27,12 +27,12 @@ jobs:
       - name: Build and validate V2
         env:
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
-          DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
           TRANSLATE_API: https://translate.googleapis.com/translate_a/single
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
           set -euo pipefail
-          python3 -m pip install --disable-pip-version-check -q cmudict
+          python3 -m pip install --disable-pip-version-check -q cmudict nltk
+          python3 -c 'import nltk; nltk.download("wordnet", quiet=True)'
           python3 - <<'PY'
           import csv, hashlib, json, os, re, time, urllib.parse, urllib.request
           from pathlib import Path
@@ -175,32 +175,39 @@ jobs:
 
           from concurrent.futures import ThreadPoolExecutor
 
+          from nltk.corpus import wordnet as wn
+
+          POS_MAP={"n":"noun","v":"verb","a":"adjective","s":"adjective","r":"adverb"}
+
           def build_one(c):
               word=c["word"]
+              base=word
               try:
-                  entries=get_json(DICT_API+urllib.parse.quote(word),3)
+                  synsets=wn.synsets(word)
+                  if not synsets:
+                      base=wn.morphy(word) or word
+                      synsets=wn.synsets(base)
               except Exception:
                   return None
-              if not isinstance(entries,list) or not entries:
+              if not synsets:
                   return None
-              entry=entries[0] if isinstance(entries[0],dict) else {}
               example=""; pos=""
-              for m in entry.get("meanings",[]) or []:
-                  if not pos:
-                      pos=str(m.get("partOfSpeech") or "")
-                  for d in m.get("definitions",[]) or []:
-                      ex=str(d.get("example") or "").strip()
-                      if ex and re.search(r"\b"+re.escape(word)+r"\b",ex,re.I):
+              for syn in synsets:
+                  for ex in syn.examples():
+                      ex=str(ex).strip()
+                      if re.search(r"\b"+re.escape(word)+r"\b",ex,re.I):
                           example=ex
+                          pos=POS_MAP.get(syn.pos(),syn.pos())
                           break
                   if example:
                       break
-              if not example:
-                  for m in entry.get("meanings",[]) or []:
-                      for d in m.get("definitions",[]) or []:
-                          ex=str(d.get("example") or "").strip()
-                          if ex:
+              if not example and base!=word:
+                  for syn in synsets:
+                      for ex in syn.examples():
+                          ex=str(ex).strip()
+                          if re.search(r"\b"+re.escape(base)+r"\b",ex,re.I):
                               example=ex
+                              pos=POS_MAP.get(syn.pos(),syn.pos())
                               break
                       if example:
                           break
@@ -208,14 +215,7 @@ jobs:
                   return None
               if any(rx.search(example) for rx in reject):
                   return None
-              phon=str(entry.get("phonetic") or "").strip()
-              if not phon:
-                  for p in entry.get("phonetics",[]) or []:
-                      phon=str(p.get("text") or "").strip()
-                      if phon:
-                          break
-              if not phon:
-                  phon=cmu_ipa(word)
+              phon=cmu_ipa(word) or cmu_ipa(base)
               if not phon:
                   return None
               vi=translate(str(c["rawEn"])+" ||| "+example)
@@ -224,7 +224,7 @@ jobs:
               meaning_vi,example_vi=[z.strip() for z in vi.split("|||",1)]
               if not meaning_vi or not example_vi:
                   return None
-              return {**c,"entry":entry,"pos":pos,"phonetic":phon,
+              return {**c,"pos":pos,"phonetic":phon,
                       "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi}
 
           chosen=[]; used_examples=set()
