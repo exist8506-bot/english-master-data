@@ -37015,15 +37015,16 @@
   },
   {
     "id": "exp500v2_sent_002_12c0f1fbad",
-    "en": "Ziri left at noon.",
-    "vi": "Ziri rời đi vào buổi trưa.",
+    "en": "I left my wallet at home this morning.",
+    "vi": "Tôi để ví ở nhà vào sáng nay.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Ziri%20left%20at%20noon.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20left%20my%20wallet%20at%20home%20this%20morning.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10207301"
+    "sourceRef": "editorial:context-fix",
+    "exampleVi": "Tôi để ví ở nhà vào sáng nay."
   },
   {
     "id": "exp500v2_sent_003_f52bc44a34",
@@ -37123,15 +37124,16 @@
   },
   {
     "id": "exp500v2_sent_011_a49a78f944",
-    "en": "Everyone has different looks.",
-    "vi": "Mỗi người đều có ngoại hình khác nhau.",
+    "en": "Everyone sees things differently.",
+    "vi": "Mỗi người nhìn nhận mọi việc theo cách khác nhau.",
     "topic": "daily",
     "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Everyone%20has%20different%20looks.&lang=en",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Everyone%20sees%20things%20differently.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11275827"
+    "sourceRef": "editorial:context-fix",
+    "exampleVi": "Mỗi người nhìn nhận mọi việc theo cách khác nhau."
   },
   {
     "id": "exp500v2_sent_012_432e9fa24a",
