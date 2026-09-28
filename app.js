@@ -1046,7 +1046,7 @@ function validateProgressImport(parsed){
   numeric.forEach(function(k){
     if(parsed.stats[k]!==undefined){
       const n=Number(parsed.stats[k]);
-      if(!Number.isFinite(n)||n<0)throw new Error("Thống kê "+k+"" không hợp lệ.");
+      if(!Number.isFinite(n)||n<0)throw new Error("Thống kê \""+k+"\" không hợp lệ.");
     }
   });
   const theme=String(parsed.profile.theme??"light");
