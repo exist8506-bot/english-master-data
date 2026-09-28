@@ -68,7 +68,7 @@ jobs:
 
           # ---- A. HSK candidate words ----
           hsk={}
-          for level in (3,4,5,6):
+          for level in (2,3,4,5,6):
               raw=fetch_text(f"{os.environ['HSK_BASE']}/hsk{level}.csv")
               for row in csv.reader(raw.splitlines()):
                   if len(row)<3: continue
@@ -137,16 +137,64 @@ jobs:
               raise SystemExit(f"Only {len(enriched)} new words have IPA + Vietnamese meaning; expected {NEED}.")
           enriched=sorted(enriched,key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
 
-          # ---- C. Static Tatoeba EN-VI snapshot ----
-          tatoeba=fetch_text(os.environ["TATOEBA_SNAPSHOT"])
-          sentence_rows=[]
-          for line in tatoeba.splitlines():
+          # ---- C. Official Tatoeba EN-VI export ----
+          import bz2, io
+
+          BASE="https://downloads.tatoeba.org/exports/per_language"
+          def fetch_bz2(url):
+              raw=fetch_text(url)
+              return raw
+
+          target_words={x["word"] for x in enriched}
+
+          # Read English sentences once; retain only sentences that can teach a target word.
+          eng_url=BASE+"/eng/eng_sentences.tsv.bz2"
+          eng_data=fetch_bytes=__import__("urllib.request").request.urlopen(
+              __import__("urllib.request").request.Request(eng_url,headers={"User-Agent":UA}),timeout=180
+          ).read()
+          relevant_eng={}
+          for line in bz2.decompress(eng_data).decode("utf-8").splitlines():
+              parts=line.split("\t",1)
+              if len(parts)!=2: continue
+              sid,textv=parts[0].strip(),parts[1].strip()
+              if not textv: continue
+              toks=set(re.findall(r"[A-Za-z]+",textv.lower()))
+              if not toks.intersection(target_words): continue
+              relevant_eng[sid]=textv
+
+          print("Relevant English Tatoeba sentences:",len(relevant_eng))
+
+          # Pair relevant English sentence IDs with Vietnamese IDs.
+          link_url=BASE+"/eng/eng-vie_links.tsv.bz2"
+          link_data=__import__("urllib.request").request.urlopen(
+              __import__("urllib.request").request.Request(link_url,headers={"User-Agent":UA}),timeout=120
+          ).read()
+          eng_to_vie={}
+          wanted_vie=set()
+          for line in bz2.decompress(link_data).decode("utf-8").splitlines():
               parts=line.split("\t")
-              if len(parts)<4: continue
-              en_id,vi_id,en,vi=parts[0].strip(),parts[1].strip(),parts[2].strip(),parts[3].strip()
-              if not en or not vi: continue
-              sentence_rows.append((en_id,vi_id,en,vi))
-          print("Tatoeba snapshot rows:",len(sentence_rows))
+              if len(parts)<2: continue
+              eid,vid=parts[0].strip(),parts[1].strip()
+              if eid in relevant_eng:
+                  eng_to_vie.setdefault(eid,[]).append(vid)
+                  wanted_vie.add(vid)
+
+          print("Relevant EN-VI links:",sum(len(v) for v in eng_to_vie.values()))
+
+          # Read Vietnamese sentences only for linked IDs we actually need.
+          vie_url=BASE+"/vie/vie_sentences.tsv.bz2"
+          vie_data=__import__("urllib.request").request.urlopen(
+              __import__("urllib.request").request.Request(vie_url,headers={"User-Agent":UA}),timeout=180
+          ).read()
+          vie_map={}
+          for line in bz2.decompress(vie_data).decode("utf-8").splitlines():
+              parts=line.split("\t",1)
+              if len(parts)!=2: continue
+              vid,textv=parts[0].strip(),parts[1].strip()
+              if vid in wanted_vie and textv:
+                  vie_map[vid]=textv
+
+          print("Vietnamese sentences found:",len(vie_map))
 
           names={"Tom","Mary","John","Muiriel","Ken","Jack","Bob","Jane","Mike","Alice","Paul","Tony","Lucy","Maria","Anna","Emily","Jim","Kate","Sami","Layla","Dan","Linda","Bill","Taro","Hanako","Yanni"}
           bad_patterns=[
@@ -163,39 +211,40 @@ jobs:
               for i,t in enumerate(toks):
                   clean=t.strip(".,!?;:\"'()")
                   if clean in names and i>0: return False
-                  if i>0 and clean and clean[:1].isupper() and clean not in {"I","I'm","I've","I'll","I'd"}: return False
+                  if i>0 and clean and clean[:1].isupper() and clean not in {"I","I'm","I've","I'll","I'd"}:
+                      return False
               if not re.search(r"[.!?]$",en): return False
               return not any(rx.search(en) for rx in bad_patterns)
 
-          def word_re(word):
-              return re.compile(r"\b"+re.escape(word)+r"\b",re.I)
-
-          index={}
-          for en_id,vi_id,en,vi in sentence_rows:
+          candidate_by_word={}
+          for eid,en in relevant_eng.items():
               if not usable(en): continue
-              key_en=norm(en)
-              for w in set(re.findall(r"[A-Za-z]+",en.lower())):
-                  index.setdefault(w,[]).append((len(en.split()),en_id,vi_id,en,vi))
-          for w in index:
-              index[w].sort(key=lambda z:(z[0],z[1]))
+              for word in target_words.intersection(set(re.findall(r"[A-Za-z]+",en.lower()))):
+                  for vid in eng_to_vie.get(eid,[]):
+                      vi=vie_map.get(vid)
+                      if not vi: continue
+                      candidate_by_word.setdefault(word,[]).append((len(en.split()),eid,vid,en,vi))
 
-          chosen=[]
-          used_sentences=set()
+          for word in candidate_by_word:
+              candidate_by_word[word].sort(key=lambda z:(z[0],z[1],z[2]))
+
+          chosen=[]; used_sentences=set()
           for x in enriched:
-              rows=index.get(x["word"],[])
-              pick=None
-              for _,en_id,vi_id,en,vi in rows:
-                  if word_re(x["word"]).search(en) and norm(en) not in used_sentences:
-                      pick=(en_id,vi_id,en,vi); break
+              rows=candidate_by_word.get(x["word"],[])
+              pick=next((r for r in rows if norm(r[3]) not in used_sentences),None)
               if not pick: continue
-              used_sentences.add(norm(pick[2]))
-              chosen.append({**x,"example":pick[2],"exampleVi":pick[3],
-                             "sourceRef":f"tatoeba:eng#{pick[0]}/vie#{pick[1]}"})
+              used_sentences.add(norm(pick[3]))
+              chosen.append({
+                **x,
+                "example":pick[3],
+                "exampleVi":pick[4],
+                "sourceRef":f"tatoeba:eng#{pick[1]}/vie#{pick[2]}"
+              })
               if len(chosen)>=NEED: break
 
-          print("Verified words with real EN-VI examples:",len(chosen))
+          print("Verified words with official EN-VI Tatoeba examples:",len(chosen))
           if len(chosen)<NEED:
-              raise SystemExit(f"Only {len(chosen)} verified new words with real EN-VI examples; expected {NEED}.")
+              raise SystemExit(f"Only {len(chosen)} new words have official EN-VI examples; expected {NEED}.")
 
           # ---- D. Build all linked learning modes ----
           def topic(word):
