@@ -610,9 +610,10 @@ const commHtml=document.getElementById("view").innerHTML;
 const filteredCommunication = T.communicationPracticePool();
 const rawExtraDialogues = snap.db.communication.filter((d) => String(d.source ?? "") === "extra500_v8");
 check(
-  "communication UI excludes vocabulary-drill dialogues and template prompts",
+  "communication UI restores expanded dialogues and filters only malformed lines",
   rawExtraDialogues.length === 50 &&
-  filteredCommunication.length >= 140 &&
+  filteredCommunication.length >= 178 &&
+  filteredCommunication.some((d) => String(d.source ?? "") === "extra500_v8") &&
   filteredCommunication.every((d) => String(d.source ?? "") !== "extra500_v8") &&
   filteredCommunication.every((d) => (d.lines || []).every((l) => {
     const en = String(l?.[1] ?? "").trim();
@@ -628,7 +629,7 @@ check(
   "communication pagination uses filtered pool",
   commPool.length > 0 &&
   commHtml.includes("Hiển thị "+((commPages-1)*12+1)+"–"+Math.min(commPages*12,commPool.length)+" / "+commPool.length+" hội thoại") &&
-  !commHtml.includes(" / 228 hội thoại")
+  commHtml.includes(" / "+commPool.length+" hội thoại")
 );
 
 T.show("trilingual");
