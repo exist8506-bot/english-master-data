@@ -614,7 +614,6 @@ check(
   rawExtraDialogues.length === 50 &&
   filteredCommunication.length >= 178 &&
   filteredCommunication.some((d) => String(d.source ?? "") === "extra500_v8") &&
-  filteredCommunication.every((d) => String(d.source ?? "") !== "extra500_v8") &&
   filteredCommunication.every((d) => (d.lines || []).every((l) => {
     const en = String(l?.[1] ?? "").trim();
     return !/^i'?m practicing\b/i.test(en) &&
