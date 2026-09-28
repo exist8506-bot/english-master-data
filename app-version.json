@@ -1,5 +1,5 @@
 {
-  "version": "8.0.10",
-  "updatedAt": "2026-09-27",
-  "reason": "full-runtime-data-quality-and-cache-hardening"
+  "version": "8.0.11",
+  "updatedAt": "2026-09-28",
+  "reason": "restore-and-clean-communication-content"
 }
