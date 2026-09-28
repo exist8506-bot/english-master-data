@@ -163,7 +163,7 @@ jobs:
 
           def fetch_tatoeba(c):
               word=c["word"]
-              params=urllib.parse.urlencode({"lang":"eng","trans:lang":"vie","showtrans:lang":"vie","q":word,"limit":20,"sort":"relevance"})
+              params=urllib.parse.urlencode({"lang":"eng","showtrans":"all","q":word,"limit":20,"sort":"relevance"})
               try:
                   data=get_json(os.environ["TATOEBA_API"]+"?"+params,4)
               except Exception:
