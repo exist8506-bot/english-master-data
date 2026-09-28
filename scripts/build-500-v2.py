@@ -4,7 +4,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor,as_completed
 
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/"data"
-VERSION="8.1.0"; SOURCE="expansion500_v2"; NEED=500
+VERSION="8.1.1"; SOURCE="expansion500_v2"; NEED=500
 UA="English-Master-500V2/4.0"
 MYMEMORY="https://api.mymemory.translated.net/get"
 TTS="https://dict.minhqnd.com/api/v1/tts"
@@ -251,10 +251,10 @@ assert len(new_tri)==500 and all(t["en"] and t["zh"] and t["pinyin"] and t["vi"]
 assert len(new_comm)==100 and all(len(d["lines"])==20 for d in new_comm)
 assert len(new_grammar)==20 and all(len(g["examples"])==25 and len(g["vocabWords"])==25 for g in new_grammar)
 
-W("vocabulary.json",vocab+new_vocab); W("sentences.json",sentences+new_sentences); W("questions.json",questions+new_questions)
-W("trilingual.json",tri+new_tri); W("communication.json",communication+new_comm); W("grammar.json",grammar+new_grammar)
+W("vocabulary.json",vocab_base+new_vocab); W("sentences.json",sentences_base+new_sentences); W("questions.json",questions_base+new_questions)
+W("trilingual.json",tri_base+new_tri); W("communication.json",communication_base+new_comm); W("grammar.json",grammar_base+new_grammar)
 W("expansion500_v2.json",{"package":SOURCE,"version":VERSION,"count":500,"attribution":"Example sentences from Tatoeba (tatoeba.org), CC BY 2.0 FR.","ipaSource":"CMUdict (Carnegie Mellon University).","words":[{"word":new_vocab[i]["word"],"vocabId":new_vocab[i]["id"],"sentenceId":new_sentences[i]["id"],"questionIds":[new_questions[i*2]["id"],new_questions[i*2+1]["id"]],"trilingualId":new_tri[i]["id"],"communicationId":new_comm[i//5]["id"],"grammarId":new_grammar[i//25]["id"]} for i in range(500)]})
-W("version.json",{"version":VERSION,"updatedAt":"2026-09-28","releaseNotes":"V8.1.0: thêm 500 từ mới; câu tiếng Anh lấy từ Tatoeba, có IPA, nghĩa Việt, nghe, đọc, nói, quiz, ôn tập, tam ngữ, giao tiếp và ngữ pháp.","files":{"vocabulary":"vocabulary.json","sentences":"sentences.json","questions":"questions.json","grammar":"grammar.json","communication":"communication.json","trilingual":"trilingual.json"},"expansion":{"package":SOURCE,"count":500}})
+W("version.json",{"version":VERSION,"updatedAt":"2026-09-28","releaseNotes":"V8.1.1: thêm 500 từ mới; câu tiếng Anh lấy từ Tatoeba, có IPA, nghĩa Việt, nghe, đọc, nói, quiz, ôn tập, tam ngữ, giao tiếp và ngữ pháp.","files":{"vocabulary":"vocabulary.json","sentences":"sentences.json","questions":"questions.json","grammar":"grammar.json","communication":"communication.json","trilingual":"trilingual.json"},"expansion":{"package":SOURCE,"count":500}})
 
 app=ROOT/"app.js"; txt=app.read_text(encoding="utf-8"); txt=re.sub(r'^const APP_VERSION="[^"]+";',f'const APP_VERSION="{VERSION}";',txt,count=1,flags=re.M); app.write_text(txt,encoding="utf-8")
 (ROOT/"app-version.json").write_text(json.dumps({"version":VERSION,"updatedAt":"2026-09-28"},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
