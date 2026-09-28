@@ -1,4 +1,4 @@
-const APP_VERSION="8.1.0";
+const APP_VERSION="8.1.1";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
