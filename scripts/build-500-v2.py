@@ -76,14 +76,23 @@ with ThreadPoolExecutor(max_workers=8) as pool:
 print("IPA+VI candidates:",len(enriched))
 if len(enriched)<NEED: raise SystemExit("Not enough words with IPA and Vietnamese meaning")
 
-# Official Tatoeba English export.
-raw=bz2.decompress(get_bytes("https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences.tsv.bz2")).decode("utf-8")
-targets={x["word"] for x in enriched}
+# Official Tatoeba EN + VI exports. Use sentence links instead of machine translation.
+ENG_SENT_URL="https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences.tsv.bz2"
+VIE_SENT_URL="https://downloads.tatoeba.org/exports/per_language/vie/vie_sentences.tsv.bz2"
+ENG_VIE_LINK_URL="https://downloads.tatoeba.org/exports/per_language/eng/eng-vie_links.tsv.bz2"
+
+raw_eng=bz2.decompress(get_bytes(ENG_SENT_URL)).decode("utf-8")
+raw_links=bz2.decompress(get_bytes(ENG_VIE_LINK_URL)).decode("utf-8")
+raw_vie=bz2.decompress(get_bytes(VIE_SENT_URL)).decode("utf-8")
+
 names={"Tom","Mary","John","Muiriel","Ken","Jack","Bob","Jane","Mike","Alice","Paul","Tony","Lucy","Maria","Anna","Emily","Jim","Kate","Sami","Layla","Dan","Linda","Bill","Taro","Hanako","Yanni"}
 bad=[
 re.compile(r"^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b",re.I),
-re.compile(r"^I'?m practicing\b",re.I),re.compile(r"^I noticed (?:youth|iron|steel) this morning\.$",re.I),
-re.compile(r"^I saw aspect on my way home\.$",re.I)]
+re.compile(r"^I'?m practicing\b",re.I),
+re.compile(r"^I noticed (?:youth|iron|steel) this morning\.$",re.I),
+re.compile(r"^I saw aspect on my way home\.$",re.I),
+re.compile(r"^They properly use the app\.$",re.I)
+]
 def usable(s):
     toks=s.split()
     if not 4<=len(toks)<=16 or not re.search(r"[.!?]$",s): return False
@@ -93,32 +102,45 @@ def usable(s):
         if i>0 and c and c[0].isupper() and c not in {"I","I'm","I've","I'll","I'd"}: return False
     return not any(rx.search(s) for rx in bad)
 
-by_word={}
-for line in raw.splitlines():
+# Link file: English sentence ID <tab> Vietnamese sentence ID.
+vie_by_id={}
+for line in raw_vie.splitlines():
+    p=line.split("\t",1)
+    if len(p)==2:
+        sid,vi_text=p[0].strip(),p[1].strip()
+        if vi_text: vie_by_id[sid]=vi_text
+
+links_by_eng={}
+for line in raw_links.splitlines():
+    p=line.split("\t")
+    if len(p)>=2:
+        eng_id,vie_id=p[0].strip(),p[1].strip()
+        if eng_id and vie_id:
+            links_by_eng.setdefault(eng_id,[]).append(vie_id)
+
+targets={x["word"] for x in enriched}
+chosen=[]; seen=set()
+for line in raw_eng.splitlines():
     p=line.split("\t",1)
     if len(p)!=2: continue
     sid,en=p[0].strip(),p[1].strip()
     if not usable(en): continue
-    for w in set(re.findall(r"[a-z]+",en.lower())).intersection(targets):
-        by_word.setdefault(w,[]).append((len(en.split()),sid,en))
-for w in by_word: by_word[w].sort(key=lambda x:(x[0],x[1]))
-
-chosen=[]; seen=set()
-for x in enriched:
-    row=next((r for r in by_word.get(x["word"],[]) if norm(r[2]) not in seen),None)
-    if not row: continue
-    seen.add(norm(row[2])); chosen.append({**x,"example":row[2],"exampleId":row[1]})
+    trans_ids=links_by_eng.get(sid,[])
+    vi=next((vie_by_id.get(tid,"").strip() for tid in trans_ids if vie_by_id.get(tid,"").strip()),"")
+    if not vi: continue
+    hit=targets.intersection(set(re.findall(r"[a-z]+",en.lower())))
+    for w in sorted(hit):
+        if w in used or w in {x["word"] for x in chosen}: continue
+        key=norm(en)
+        if key in seen: continue
+        seen.add(key)
+        src_level=hsk[w]["hsk"]
+        chosen.append({**hsk[w],"example":en,"exampleVi":vi,"exampleId":sid})
+        break
     if len(chosen)>=NEED: break
-print("Tatoeba example coverage:",len(chosen))
-if len(chosen)<NEED: raise SystemExit("Not enough real Tatoeba English examples")
 
-def add_vi(x):
-    v=translate(x["example"]); return None if not v else {**x,"exampleVi":v}
-with ThreadPoolExecutor(max_workers=8) as pool:
-    translated=[x for x in pool.map(add_vi,chosen) if x]
-print("Translated examples:",len(translated))
-if len(translated)<NEED: raise SystemExit("Not enough Vietnamese translations")
-chosen=translated[:NEED]
+print("Tatoeba EN-VI linked example coverage:",len(chosen))
+if len(chosen)<NEED: raise SystemExit(f"Only {len(chosen)} words have verified EN-VI linked examples; expected {NEED}.")
 
 def topic(w):
     groups={"school":["school","student","teacher","class","lesson","exam","homework","college","university","study","education","library","research","degree"],"work":["job","work","office","company","boss","manager","worker","meeting","business","career","project","report","salary","department","factory","customer"],"travel":["travel","trip","airport","station","train","bus","taxi","hotel","passport","flight","tour","journey","ticket","tourist","map","road"],"food":["food","meal","breakfast","lunch","dinner","restaurant","menu","bread","rice","noodle","soup","cake","fruit","vegetable","drink","taste"],"health":["health","doctor","hospital","medicine","exercise","ill","sick","fever","pain","body","heart","head","stomach","sleep"],"home":["home","house","room","kitchen","bathroom","door","window","table","chair","bed","family","parent","child","neighbor"],"shopping":["shop","shopping","buy","sell","price","cheap","expensive","market","store","clothes","shirt","shoe","size","discount"],"technology":["computer","phone","internet","email","screen","keyboard","software","technology","machine","online","website","video","camera"],"weather":["weather","rain","snow","wind","storm","cloud","sun","summer","winter","spring","autumn","temperature"],"feelings":["happy","sad","angry","afraid","worry","hope","love","hate","excited","tired","quiet","nervous","surprise","fear"],"city":["city","street","building","park","station","bridge","traffic","car","road","town","village","country"],"nature":["tree","flower","animal","river","mountain","forest","earth","land","sea","water","fire","air"]}
