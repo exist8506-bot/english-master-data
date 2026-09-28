@@ -1,0 +1,366 @@
+name: Build 500 new cross-feature vocabulary V2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build-v2:
+    if: github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'trigger 500-word package 8.1.0'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build and validate V2
+        env:
+          HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
+          DICT_DB_URL: https://raw.githubusercontent.com/chuongmep/vi-en-dictionary/main/vi_en_dict.db
+          TTS_BASE: https://dict.minhqnd.com/api/v1/tts
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check -q cmudict
+          curl -L --fail --retry 3 --retry-delay 1 "$DICT_DB_URL" -o /tmp/vi_en_dict.db
+          test -s /tmp/vi_en_dict.db
+          python3 - <<'PY'
+          import csv, hashlib, json, os, re, sqlite3, urllib.parse, urllib.request
+          from pathlib import Path
+
+          ROOT=Path.cwd()
+          DATA=ROOT/"data"
+          VERSION="8.1.0"
+          SOURCE="expansion500_v2"
+          NEED=500
+          HSK_BASE=os.environ["HSK_BASE"]
+          DB_PATH="/tmp/vi_en_dict.db"
+          TTS_BASE=os.environ["TTS_BASE"]
+          UA="English-Master-V2-DataBuilder/1.0"
+
+          def readj(name):
+              return json.loads((DATA/name).read_text(encoding="utf-8"))
+
+          def writej(name,obj):
+              (DATA/name).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+          def norm(s):
+              return re.sub(r"\\s+"," ",str(s or "").strip().lower())
+
+          def get_text(url):
+              req=urllib.request.Request(url,headers={"User-Agent":UA})
+              with urllib.request.urlopen(req,timeout=30) as r:
+                  return r.read().decode("utf-8")
+
+          def hash_id(s):
+              return hashlib.sha1(str(s).encode("utf-8")).hexdigest()[:10]
+
+          def tts(text,lang):
+              return TTS_BASE+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
+
+          vocab=readj("vocabulary.json")
+          sentences=readj("sentences.json")
+          questions=readj("questions.json")
+          grammar=readj("grammar.json")
+          communication=readj("communication.json")
+          trilingual=readj("trilingual.json")
+
+          used_words={norm(x.get("word")) for x in vocab}
+          used_words|={norm(x.get("en")) for x in trilingual}
+
+          blocked={
+            "a","an","the","and","or","but","if","then","than","so","as","of","to",
+            "in","on","at","by","for","from","with","about","into","over","under",
+            "not","no","yes","very","more","most","less","least","else","each",
+            "both","either","neither","also","just","only","even","still","again",
+            "another","other","others","same","such","what","which","who","whom",
+            "whose","how","why","where","when"
+          }
+
+          candidates={}
+          for level in (3,4,5,6):
+              raw=get_text(f"{HSK_BASE}/hsk{level}.csv")
+              for row in csv.reader(raw.splitlines()):
+                  if len(row)<3: continue
+                  zh=row[0].strip()
+                  py=row[1].strip()
+                  raw_en=",".join(row[2:]).strip()
+                  word=re.sub(r"^to\\s+","",raw_en,flags=re.I)
+                  word=re.sub(r"^(?:a|an)\\s+","",word,flags=re.I).strip().lower()
+                  if not zh or not py or not re.fullmatch(r"[a-z]+",word): continue
+                  if word in blocked or len(word)<3 or len(word)>16: continue
+                  if word in used_words or word in candidates: continue
+                  candidates[word]={"word":word,"zh":zh,"pinyin":py,"rawEn":raw_en,"hsk":level}
+
+          ordered=sorted(candidates.values(),key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
+
+          # Real dictionary examples are the source for reading/speaking sentences.
+          # Reject only clearly malformed/generated templates; keep ordinary natural examples.
+          reject=[
+            re.compile(r"^I talked to (?:the )?(?:homework|book|dictionary) after class\\.$",re.I),
+            re.compile(r"^I need to (?:talk|repeat|start|stand|eat|stay|use|take|look|like|feel|show) before breakfast\\.$",re.I),
+            re.compile(r"^She wants to (?:make|bring|watch|save|together|below) after work\\.$",re.I),
+            re.compile(r"^I try to (?:give|find|want|carry|reserve|borrow|outside|before) every day\\.$",re.I),
+            re.compile(r"^We can (?:tell|hear|mean|open|do|keep|hate|catch|prefer|wish) together this evening\\.$",re.I),
+            re.compile(r"^The (?:chair|roof|sofa|soap|cup) was open when I came home\\.$",re.I),
+            re.compile(r"^The (?:pocket|cotton) is easy to wear\\.$",re.I),
+            re.compile(r"^I saw (?:the )?(?:reading|hiking|birthday|idea) on my way home\\.$",re.I),
+            re.compile(r"^I noticed (?:the )?(?:youth|iron|steel|aspect) this morning\\.$",re.I),
+            re.compile(r"^The cashier gave me the customer service\\.$",re.I),
+            re.compile(r"^I left my keys beside the key\\.$",re.I),
+            re.compile(r"^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b",re.I),
+            re.compile(r"^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\\b",re.I),
+            re.compile(r"^It is (?:hungry|spicy|large|big|low|public) to practice a little every day\\.$",re.I),
+            re.compile(r"^She sounded (?:delicious|salty|favorite) during the conversation\\.$",re.I),
+            re.compile(r"^I feel (?:dangerous|full|sour|difficult|common|natural|personal|long|afraid|lazy|weak) when I finish my work\\.$",re.I),
+          ]
+
+          conn=sqlite3.connect(DB_PATH)
+          cur=conn.cursor()
+          found={}
+          words_list=[x["word"] for x in ordered]
+          for start in range(0,len(words_list),400):
+              batch=words_list[start:start+400]
+              if not batch: break
+              ph=",".join("?" for _ in batch)
+              cur.execute(
+                f"""SELECT lower(de.en),de.en,de.vi,de.pos,de.pronunciation,
+                           dx.en_example,dx.vi_example
+                    FROM dictionary_entries de
+                    LEFT JOIN dictionary_examples dx
+                      ON dx.entry_id=de.entry_id AND dx.sort_order=1
+                    WHERE lower(de.en) IN ({ph})""",
+                batch
+              )
+              for row in cur.fetchall():
+                  k=norm(row[0])
+                  if k not in found:
+                      found[k]={"en":row[1],"vi":row[2],"pos":row[3],
+                                "pronunciation":row[4],"example":row[5],"exampleVi":row[6]}
+          conn.close()
+
+          chosen=[]
+          used_examples=set()
+          for c in ordered:
+              d=found.get(c["word"])
+              if not d: continue
+              meaning=str(d.get("vi") or "").strip()
+              example=str(d.get("example") or "").strip()
+              example_vi=str(d.get("exampleVi") or "").strip()
+              if not (meaning and example and example_vi): continue
+              if not (4 <= len(example.split()) <= 24): continue
+              if not re.search(r"\\b"+re.escape(c["word"])+r"\\b",example,re.I): continue
+              if norm(example) in used_examples: continue
+              if any(rx.search(example) for rx in reject): continue
+              used_examples.add(norm(example))
+              chosen.append({**c,**d})
+              if len(chosen)==NEED: break
+
+          if len(chosen)<NEED:
+              raise SystemExit(f"Only {len(chosen)} high-quality new words available; expected {NEED}.")
+
+          def topic(word):
+              groups={
+                "school":["school","student","teacher","class","lesson","exam","homework","college","university","study","education","library","research","degree"],
+                "work":["job","work","office","company","boss","manager","worker","meeting","business","career","project","report","salary","department","factory","customer"],
+                "travel":["travel","trip","airport","station","train","bus","taxi","hotel","passport","flight","tour","journey","ticket","tourist","map","road"],
+                "food":["food","meal","breakfast","lunch","dinner","restaurant","menu","bread","rice","noodle","soup","cake","fruit","vegetable","drink","taste"],
+                "health":["health","doctor","hospital","medicine","exercise","ill","sick","fever","pain","body","heart","head","stomach","sleep"],
+                "home":["home","house","room","kitchen","bathroom","door","window","table","chair","bed","family","parent","child","neighbor"],
+                "shopping":["shop","shopping","buy","sell","price","cheap","expensive","market","store","clothes","shirt","shoe","size","discount"],
+                "technology":["computer","phone","internet","email","screen","keyboard","software","technology","machine","online","website","video","camera"],
+                "weather":["weather","rain","snow","wind","storm","cloud","sun","summer","winter","spring","autumn","temperature"],
+                "feelings":["happy","sad","angry","afraid","worry","hope","love","hate","excited","tired","quiet","nervous","surprise","fear"],
+                "city":["city","street","building","park","station","bridge","traffic","car","road","town","village","country"],
+                "nature":["tree","flower","animal","river","mountain","forest","earth","land","sea","water","fire","air"]
+              }
+              w=word.lower()
+              for k,vals in groups.items():
+                  if any(v in w for v in vals): return k
+              return "daily"
+
+          new_vocab=[];new_sentences=[];new_tri=[];new_questions=[]
+          for i,x in enumerate(chosen,1):
+              tp=topic(x["word"])
+              level="Beginner" if x["hsk"]<=3 else ("Intermediate" if x["hsk"]<=4 else "Upper-Intermediate")
+              hid=hash_id(x["word"])
+              vid=f"exp500v2_{i:03d}_{hid}"
+              sid=f"exp500v2_sent_{i:03d}_{hid}"
+              tid=f"exp500v2_tri_{i:03d}_{hid}"
+              q1id=f"exp500v2_qm_{i:03d}_{hid}"
+              q2id=f"exp500v2_qc_{i:03d}_{hid}"
+              v={
+                "id":vid,"word":x["word"],"ipa":("/"+str(x["pronunciation"]).strip("/ ")+"/") if x.get("pronunciation") else "",
+                "meaning":x["vi"],"pos":str(x.get("pos") or "word").strip(),
+                "example":x["example"],"exampleVi":x["exampleVi"],"synonyms":"","antonyms":"",
+                "topic":tp,"level":level,"favorite":False,"status":"New","reviewDue":None,
+                "createdAt":"2026-09-28T00:00:00.000Z","audio":"tts","audioEn":tts(x["word"],"en"),
+                "source":SOURCE,"sourceVersion":VERSION
+              }
+              if not v["ipa"] or len(v["ipa"])<3:
+                  continue
+              new_vocab.append(v)
+              new_sentences.append({
+                "id":sid,"en":x["example"],"vi":x["exampleVi"],"topic":tp,"grammar":"Everyday English",
+                "audioEn":tts(x["example"],"en"),"favorite":False,"source":SOURCE,"sourceVersion":VERSION
+              })
+              new_tri.append({
+                "id":tid,"en":x["word"],"zh":x["zh"],"pinyin":x["pinyin"],"vi":x["vi"],
+                "topic":tp,"level":level,"audio":"tts","audioEn":tts(x["word"],"en"),
+                "audioZh":tts(x["zh"],"zh"),"audioVi":tts(x["vi"],"vi"),
+                "source":SOURCE,"sourceVersion":VERSION
+              })
+              meanings=[z["meaning"] for z in new_vocab]
+              distract=[]
+              for prev in list(reversed(new_vocab[:-1]))+new_vocab:
+                  if norm(prev["meaning"])!=norm(v["meaning"]) and norm(prev["meaning"]) not in {norm(z) for z in distract}:
+                      distract.append(prev["meaning"])
+                  if len(distract)>=3: break
+              while len(distract)<3:
+                  distract.append("another meaning")
+              opts=[v["meaning"],*distract[:3]]
+              opts=opts[((i*5)%4):]+opts[:((i*5)%4)]
+              new_questions.append({
+                "id":q1id,"type":"multiple","prompt":f'"{x["word"]}" nghĩa là gì?',
+                "options":opts,"answer":opts.index(v["meaning"]),
+                "explain":f'{x["word"]} = {x["vi"]}.',"topic":tp,"level":level,
+                "vocabWord":x["word"],"audio":"tts","audioEn":tts(x["word"],"en"),
+                "source":SOURCE,"sourceVersion":VERSION
+              })
+              blank=re.sub(r"\\b"+re.escape(x["word"])+r"\\b","_____",x["example"],count=1,flags=re.I)
+              word_opts=[v["word"]]
+              for prev in list(reversed(new_vocab[:-1]))+new_vocab:
+                  if norm(prev["word"])!=norm(v["word"]) and norm(prev["word"]) not in {norm(z) for z in word_opts}:
+                      word_opts.append(prev["word"])
+                  if len(word_opts)>=4: break
+              while len(word_opts)<4: word_opts.append("choice")
+              shift=(i*3)%4
+              word_opts=word_opts[shift:]+word_opts[:shift]
+              new_questions.append({
+                "id":q2id,"type":"multiple","prompt":blank,"options":word_opts[:4],
+                "answer":word_opts.index(v["word"]),"explain":f'Từ phù hợp là "{v["word"]}".',
+                "topic":tp,"level":level,"vocabWord":x["word"],"audio":"tts",
+                "audioEn":tts(blank,"en"),"source":SOURCE,"sourceVersion":VERSION
+              })
+
+          if len(new_vocab)!=NEED:
+              raise SystemExit(f"IPA selection left {len(new_vocab)} usable words; expected {NEED}.")
+
+          new_comm=[]
+          patterns=[
+            ('I came across the word "{w}" today.','Can you use it in a sentence?','That example makes the meaning clear.'),
+            ('I learned the word "{w}" today.','What sentence helps you remember it?','That context is easy to picture.'),
+            ('I am practicing "{w}" today.','How would you use it naturally?','That sounds natural in context.'),
+            ('I want to remember "{w}".','Can you read an example aloud?','Yes, that helps me remember it.')
+          ]
+          for start in range(0,NEED,5):
+              group=chosen[start:start+5]
+              # Use five real dictionary examples in one learning conversation.
+              lines=[]
+              for j,x in enumerate(group):
+                  pat=patterns[j%len(patterns)]
+                  lines.extend([
+                    ["A",pat[0].format(w=x["word"]),f'Hôm nay tôi bắt gặp từ "{x["word"]}".'],
+                    ["B",pat[1],"Bạn có thể dùng nó trong một câu không?"],
+                    ["A",x["example"],x["exampleVi"]],
+                    ["B",pat[2],"Ví dụ đó giúp tôi hiểu/nghi nhớ cách dùng."]
+                  ])
+              new_comm.append({
+                "id":f"exp500v2_comm_{start//5+1:03d}",
+                "title":f"Luyện giao tiếp từ mới {start//5+1:03d}",
+                "topic":group[0]["topic"] if "topic" in group[0] else topic(group[0]["word"]),
+                "vocab":[x["word"] for x in group],"lines":lines,
+                "source":SOURCE,"sourceVersion":VERSION
+              })
+
+          new_grammar=[]
+          for start in range(0,NEED,25):
+              group=new_vocab[start:start+25]
+              new_grammar.append({
+                "id":f"exp500v2_grammar_{start//25+1:02d}",
+                "title":f"Từ mới trong ngữ cảnh — {group[0]['topic']}",
+                "level":"Beginner–Intermediate",
+                "formula":"Target word + natural example in context",
+                "explain":"Học cách nhận ra từ mới trong câu thật, nghe câu và nói lại câu theo ngữ cảnh.",
+                "examples":[x["example"] for x in group],
+                "notes":"Gói 500 từ mới V2.",
+                "vocabWords":[x["word"] for x in group],
+                "source":SOURCE,"sourceVersion":VERSION
+              })
+
+          final_vocab=vocab+new_vocab
+          final_sentences=sentences+new_sentences
+          final_questions=questions+new_questions
+          final_tri=trilingual+new_tri
+          final_comm=communication+new_comm
+          final_grammar=grammar+new_grammar
+
+          writej("vocabulary.json",final_vocab)
+          writej("sentences.json",final_sentences)
+          writej("questions.json",final_questions)
+          writej("trilingual.json",final_tri)
+          writej("communication.json",final_comm)
+          writej("grammar.json",final_grammar)
+          writej("expansion500_v2.json",{
+            "package":SOURCE,"version":VERSION,"count":NEED,
+            "words":[
+              {"word":new_vocab[i]["word"],"vocabId":new_vocab[i]["id"],
+               "sentenceId":new_sentences[i]["id"],
+               "questionIds":[new_questions[i*2]["id"],new_questions[i*2+1]["id"]],
+               "trilingualId":new_tri[i]["id"],
+               "communicationId":new_comm[i//5]["id"],
+               "grammarId":new_grammar[i//25]["id"]}
+              for i in range(NEED)
+            ]
+          })
+
+          writej("version.json",{
+            "version":VERSION,"updatedAt":"2026-09-28",
+            "releaseNotes":"V8.1.0: thêm đúng 500 từ mới có IPA, nghĩa Anh-Việt, câu ví dụ thực tế, audio, quiz ngữ nghĩa + quiz theo ngữ cảnh, câu luyện nghe/nói, tam ngữ, giao tiếp và ngữ pháp.",
+            "files":{"vocabulary":"vocabulary.json","sentences":"sentences.json","questions":"questions.json","grammar":"grammar.json","communication":"communication.json","trilingual":"trilingual.json"},
+            "expansion":{"package":SOURCE,"count":500}
+          })
+
+          # Hard validation of the newly added package.
+          assert len(new_vocab)==500
+          assert len({norm(x["word"]) for x in new_vocab})==500
+          assert len(new_sentences)==500 and all(x["source"]==SOURCE and x.get("en") and x.get("vi") and x.get("audioEn") for x in new_sentences)
+          assert len(new_tri)==500 and all(x.get("en") and x.get("zh") and x.get("pinyin") and x.get("vi") and x.get("audioEn") and x.get("audioZh") and x.get("audioVi") for x in new_tri)
+          assert len(new_questions)==1000
+          assert all(len(x["options"])==4 and len({norm(z) for z in x["options"]})==4 and 0<=x["answer"]<4 and x["options"][x["answer"]] for x in new_questions)
+          assert len(new_comm)==100 and all(len(d["lines"])>=20 for d in new_comm)
+          assert len(new_grammar)==20 and all(len(g["examples"])==25 and len(g["vocabWords"])==25 for g in new_grammar)
+          assert len(readj("expansion500_v2.json")["words"])==500
+          assert sum(x.get("source")==SOURCE for x in final_vocab)==500
+          assert sum(x.get("source")==SOURCE for x in final_sentences)==500
+          assert sum(x.get("source")==SOURCE for x in final_questions)==1000
+          assert sum(x.get("source")==SOURCE for x in final_tri)==500
+          assert sum(x.get("source")==SOURCE for x in final_comm)==100
+          assert sum(x.get("source")==SOURCE for x in final_grammar)==20
+
+          # Every example must be represented by its target word and must pass the same obvious-bad filters.
+          assert all(re.search(r"\\b"+re.escape(x["word"])+r"\\b",x["example"],re.I) for x in new_vocab)
+          assert all(not any(rx.search(x["example"]) for rx in reject) for x in new_vocab)
+
+          print(json.dumps({
+            "status":"PASS","newWords":500,"vocabTotal":len(final_vocab),
+            "sentencesAdded":500,"questionsAdded":1000,"trilingualAdded":500,
+            "communicationAdded":100,"grammarAdded":20,"audioWords":500,
+            "speakingTargets":500,"readingExamples":500
+          },ensure_ascii=False,indent=2))
+          PY
+
+      - name: Commit generated content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -m "V8.1.0: add 500 new cross-feature vocabulary [data-build]"
+          git push
