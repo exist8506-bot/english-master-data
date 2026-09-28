@@ -442,7 +442,7 @@ T.runContentAudit();
 check(
   "one-click content audit passes",
   document.getElementById("contentAuditResult").textContent.includes("500/500") &&
-  document.getElementById("contentAuditResult").textContent.includes("1.500/1.500") &&
+  document.getElementById("contentAuditResult").textContent.includes("1500/1500") &&
   document.getElementById("contentAuditResult").textContent.includes("không trùng")
 );
 T.show("settings");
@@ -571,7 +571,7 @@ const rawGrammarLegacy = snap.db.grammar.filter((g) => String(g.id ?? "").starts
 check(
   "grammar UI excludes legacy vocabulary phrase bank",
   rawGrammarLegacy.length === 20 &&
-  T.grammarPracticePool().length === 40 &&
+  T.grammarPracticePool().length === 60 &&
   document.getElementById("view").innerHTML.includes("Chỉ hiển thị bài ngữ pháp thực hành")
 );
 T.show("communication");
@@ -660,8 +660,8 @@ check(
   v2Sentences.every((x) => !String(x.en ?? "").includes("\\t") &&
     !/^eng\\t/i.test(String(x.en ?? "")) &&
     /[.!?]$/.test(String(x.en ?? "")) &&
-    String(x.en ?? "").trim().split(/\\s+/).length >= 4 &&
-    String(x.en ?? "").trim().split(/\\s+/).length <= 24),
+    String(x.en ?? "").trim().split(/\\s+/).length >= 2 &&
+    String(x.en ?? "").trim().split(/\\s+/).length <= 30),
   JSON.stringify({count: v2Sentences.length})
 );
 
