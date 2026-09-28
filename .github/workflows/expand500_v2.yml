@@ -5,6 +5,10 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: english-master-v2-build
+  cancel-in-progress: true
+
 jobs:
   build-v2:
     if: github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'trigger 500-word package 8.1.0'
@@ -169,59 +173,78 @@ jobs:
             re.compile(r"^I noticed (?:youth|iron|steel|aspect) this morning\.$",re.I),
           ]
 
-          chosen=[]
-          used_examples=set()
-          api_failures=0
-          for c in ordered:
+          from concurrent.futures import ThreadPoolExecutor
+
+          def build_one(c):
               word=c["word"]
               try:
-                  entries=get_json(DICT_API+urllib.parse.quote(word))
+                  entries=get_json(DICT_API+urllib.parse.quote(word),3)
               except Exception:
-                  api_failures+=1
-                  continue
-              if not isinstance(entries,list) or not entries: continue
+                  return None
+              if not isinstance(entries,list) or not entries:
+                  return None
               entry=entries[0] if isinstance(entries[0],dict) else {}
-              example=""
-              pos=""
+              example=""; pos=""
               for m in entry.get("meanings",[]) or []:
-                  if not pos: pos=str(m.get("partOfSpeech") or "")
+                  if not pos:
+                      pos=str(m.get("partOfSpeech") or "")
                   for d in m.get("definitions",[]) or []:
                       ex=str(d.get("example") or "").strip()
                       if ex and re.search(r"\b"+re.escape(word)+r"\b",ex,re.I):
-                          example=ex;break
-                  if example: break
+                          example=ex
+                          break
+                  if example:
+                      break
               if not example:
                   for m in entry.get("meanings",[]) or []:
                       for d in m.get("definitions",[]) or []:
                           ex=str(d.get("example") or "").strip()
                           if ex:
-                              example=ex;break
-                      if example: break
-              if not example: continue
-              if len(example.split())<4 or len(example.split())>26: continue
-              if any(rx.search(example) for rx in reject): continue
-              if norm(example) in used_examples: continue
+                              example=ex
+                              break
+                      if example:
+                          break
+              if not example or len(example.split())<4 or len(example.split())>26:
+                  return None
+              if any(rx.search(example) for rx in reject):
+                  return None
               phon=str(entry.get("phonetic") or "").strip()
               if not phon:
                   for p in entry.get("phonetics",[]) or []:
                       phon=str(p.get("text") or "").strip()
-                      if phon: break
-              if not phon: phon=cmu_ipa(word)
-              if not phon: continue
-              # Translate the actual HSK gloss and actual dictionary example.
-              joined=str(c["rawEn"])+" ||| "+example
-              vi=translate(joined)
-              if "|||" in vi:
-                  meaning_vi,example_vi=[z.strip() for z in vi.split("|||",1)]
-              else:
-                  meaning_vi=translate(str(c["rawEn"]))
-                  example_vi=translate(example)
-              if not meaning_vi or not example_vi: continue
-              used_examples.add(norm(example))
-              chosen.append({**c,"entry":entry,"pos":pos,"phonetic":phon,
-                              "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi})
-              if len(chosen)==NEED: break
-              time.sleep(0.03)
+                      if phon:
+                          break
+              if not phon:
+                  phon=cmu_ipa(word)
+              if not phon:
+                  return None
+              vi=translate(str(c["rawEn"])+" ||| "+example)
+              if "|||" not in vi:
+                  return None
+              meaning_vi,example_vi=[z.strip() for z in vi.split("|||",1)]
+              if not meaning_vi or not example_vi:
+                  return None
+              return {**c,"entry":entry,"pos":pos,"phonetic":phon,
+                      "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi}
+
+          chosen=[]; used_examples=set()
+          for start in range(0,len(ordered),100):
+              batch=ordered[start:start+100]
+              with ThreadPoolExecutor(max_workers=6) as pool:
+                  futures=[pool.submit(build_one,c) for c in batch]
+                  results=[f.result() for f in futures]
+              for row in results:
+                  if not row:
+                      continue
+                  k=norm(row["example"])
+                  if k in used_examples:
+                      continue
+                  used_examples.add(k)
+                  chosen.append(row)
+                  if len(chosen)>=NEED:
+                      break
+              if len(chosen)>=NEED:
+                  break
 
           if len(chosen)<NEED:
               raise SystemExit(f"Only {len(chosen)} verified new words available; expected {NEED}. Dictionary/API misses: {api_failures}.")
