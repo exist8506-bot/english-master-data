@@ -174,6 +174,60 @@ jobs:
             re.compile(r"^I noticed (?:youth|iron|steel|aspect) this morning\.$",re.I),
           ]
 
+          from nltk.corpus import wordnet as wn
+          POS_MAP={"n":"noun","v":"verb","a":"adjective","s":"adjective","r":"adverb"}
+
+          def build_one(c):
+              word=c["word"]
+              variants=[word]
+              for v in (
+                  re.sub(r"ies$","y",word),
+                  re.sub(r"([^s])s$","\\1",word),
+                  re.sub(r"ied$","y",word),
+                  re.sub(r"ed$","",word),
+                  re.sub(r"ing$","",word),
+              ):
+                  if v and v not in variants and len(v)>=3:
+                      variants.append(v)
+              example=""; pos=""; matched_form=word
+              for candidate in variants:
+                  try:
+                      synsets=wn.synsets(candidate)
+                  except Exception:
+                      synsets=[]
+                  for syn in synsets:
+                      for ex in syn.examples():
+                          ex=str(ex).strip()
+                          if re.search(r"\\b"+re.escape(candidate)+r"\\b",ex,re.I):
+                              example=ex; pos=POS_MAP.get(syn.pos(),syn.pos()); matched_form=candidate
+                              break
+                      if example: break
+                  if example: break
+              if not example:
+                  try:
+                      entries=get_json(DICT_API+urllib.parse.quote(word),3)
+                  except Exception:
+                      entries=[]
+                  if isinstance(entries,list) and entries:
+                      entry=entries[0] if isinstance(entries[0],dict) else {}
+                      for m in entry.get("meanings",[]) or []:
+                          if not pos: pos=str(m.get("partOfSpeech") or "")
+                          for d in m.get("definitions",[]) or []:
+                              ex=str(d.get("example") or "").strip()
+                              if ex:
+                                  example=ex; break
+                          if example: break
+              if not example or len(example.split())<4 or len(example.split())>26: return None
+              if any(rx.search(example) for rx in reject): return None
+              phon=cmu_ipa(word) or cmu_ipa(matched_form)
+              if not phon: return None
+              vi=translate(str(c["rawEn"])+" ||| "+example)
+              if "|||" not in vi: return None
+              meaning_vi,example_vi=[z.strip() for z in vi.split("|||",1)]
+              if not meaning_vi or not example_vi: return None
+              return {**c,"word":word,"originalWord":word,"pos":pos,"phonetic":phon,
+                      "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi}
+
           chosen=[]; used_examples=set(); used_words_v2=set()
           for c in ordered:
               row=build_one(c)
