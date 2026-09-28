@@ -5318,24 +5318,24 @@
     ],
     "lines": [
       [
+        "A",
         "What time do you usually wake up?",
-        "Bạn thường thức dậy lúc mấy giờ?",
-        "I usually get up at six and make breakfast."
+        "Bạn thường thức dậy lúc mấy giờ?"
       ],
       [
-        "Tôi thường dậy lúc sáu giờ và làm bữa sáng.",
+        "B",
+        "I usually get up at six and make breakfast.",
+        "Tôi thường dậy lúc sáu giờ và làm bữa sáng."
+      ],
+      [
+        "A",
         "Do you leave home early?",
         "Bạn có rời nhà sớm không?"
       ],
       [
+        "B",
         "Yes, I usually leave around seven.",
-        "Có, tôi thường rời nhà khoảng bảy giờ.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, tôi thường rời nhà khoảng bảy giờ."
       ]
     ],
     "source": "extra500_v8",
@@ -5359,24 +5359,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you busy this morning?",
-        "Sáng nay bạn có bận không?",
-        "A little. I need to finish some work first."
+        "Sáng nay bạn có bận không?"
       ],
       [
-        "Một chút. Tôi cần hoàn thành một số việc trước.",
+        "B",
+        "A little. I need to finish some work first.",
+        "Một chút. Tôi cần hoàn thành một số việc trước."
+      ],
+      [
+        "A",
         "Do you have time for coffee?",
         "Bạn có thời gian uống cà phê không?"
       ],
       [
+        "B",
         "Sure. Let's meet at the café at ten.",
-        "Được. Gặp nhau ở quán cà phê lúc mười giờ nhé.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Được. Gặp nhau ở quán cà phê lúc mười giờ nhé."
       ]
     ],
     "source": "extra500_v8",
@@ -5400,24 +5400,24 @@
     ],
     "lines": [
       [
+        "A",
         "Is anyone home right now?",
-        "Bây giờ có ai ở nhà không?",
-        "My sister is home. She is studying in her room."
+        "Bây giờ có ai ở nhà không?"
       ],
       [
-        "Em gái tôi ở nhà. Cô ấy đang học trong phòng.",
+        "B",
+        "My sister is home. She is studying in her room.",
+        "Em gái tôi ở nhà. Cô ấy đang học trong phòng."
+      ],
+      [
+        "A",
         "Could you ask her to call me?",
         "Bạn có thể bảo cô ấy gọi cho tôi không?"
       ],
       [
+        "B",
         "Sure. I will tell her when she finishes.",
-        "Được. Tôi sẽ nói với cô ấy khi cô ấy học xong.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Được. Tôi sẽ nói với cô ấy khi cô ấy học xong."
       ]
     ],
     "source": "extra500_v8",
@@ -5441,24 +5441,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you having dinner with your family tonight?",
-        "Tối nay bạn ăn tối với gia đình à?",
-        "Yes. We usually eat together on weekends."
+        "Tối nay bạn ăn tối với gia đình à?"
       ],
       [
-        "Đúng. Cuối tuần chúng tôi thường ăn cùng nhau.",
+        "B",
+        "Yes. We usually eat together on weekends.",
+        "Đúng. Cuối tuần chúng tôi thường ăn cùng nhau."
+      ],
+      [
+        "A",
         "What are you going to cook?",
         "Bạn định nấu món gì?"
       ],
       [
+        "B",
         "Probably noodles and some vegetables.",
-        "Có lẽ là mì và một ít rau.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có lẽ là mì và một ít rau."
       ]
     ],
     "source": "extra500_v8",
@@ -5482,24 +5482,24 @@
     ],
     "lines": [
       [
+        "A",
         "Do you have any plans for the weekend?",
-        "Cuối tuần bạn có kế hoạch gì không?",
-        "I want to rest and meet a friend."
+        "Cuối tuần bạn có kế hoạch gì không?"
       ],
       [
-        "Tôi muốn nghỉ ngơi và gặp một người bạn.",
+        "B",
+        "I want to rest and meet a friend.",
+        "Tôi muốn nghỉ ngơi và gặp một người bạn."
+      ],
+      [
+        "A",
         "Are you going anywhere?",
         "Bạn có đi đâu không?"
       ],
       [
+        "B",
         "Maybe we will walk around the city.",
-        "Có lẽ chúng tôi sẽ đi dạo quanh thành phố.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có lẽ chúng tôi sẽ đi dạo quanh thành phố."
       ]
     ],
     "source": "extra500_v8",
@@ -5523,24 +5523,24 @@
     ],
     "lines": [
       [
+        "A",
         "What are you studying today?",
-        "Hôm nay bạn đang học gì?",
-        "I am reviewing English and doing some exercises."
+        "Hôm nay bạn đang học gì?"
       ],
       [
-        "Tôi đang ôn tiếng Anh và làm vài bài tập.",
+        "B",
+        "I am reviewing English and doing some exercises.",
+        "Tôi đang ôn tiếng Anh và làm vài bài tập."
+      ],
+      [
+        "A",
         "Is the lesson difficult?",
         "Bài học có khó không?"
       ],
       [
+        "B",
         "Not really. I just need more practice.",
-        "Không hẳn. Tôi chỉ cần luyện tập thêm.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Không hẳn. Tôi chỉ cần luyện tập thêm."
       ]
     ],
     "source": "extra500_v8",
@@ -5564,24 +5564,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you ready for tomorrow's exam?",
-        "Bạn đã sẵn sàng cho kỳ thi ngày mai chưa?",
-        "Almost. I still need to review two chapters."
+        "Bạn đã sẵn sàng cho kỳ thi ngày mai chưa?"
       ],
       [
-        "Gần rồi. Tôi vẫn cần ôn lại hai chương.",
+        "B",
+        "Almost. I still need to review two chapters.",
+        "Gần rồi. Tôi vẫn cần ôn lại hai chương."
+      ],
+      [
+        "A",
         "Are you nervous?",
         "Bạn có lo không?"
       ],
       [
+        "B",
         "A little, but I think I will be fine.",
-        "Một chút, nhưng tôi nghĩ tôi sẽ ổn.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Một chút, nhưng tôi nghĩ tôi sẽ ổn."
       ]
     ],
     "source": "extra500_v8",
@@ -5605,24 +5605,24 @@
     ],
     "lines": [
       [
+        "A",
         "When does your class start?",
-        "Lớp của bạn bắt đầu lúc mấy giờ?",
-        "It starts at eight thirty."
+        "Lớp của bạn bắt đầu lúc mấy giờ?"
       ],
       [
-        "Nó bắt đầu lúc tám giờ rưỡi.",
+        "B",
+        "It starts at eight thirty.",
+        "Nó bắt đầu lúc tám giờ rưỡi."
+      ],
+      [
+        "A",
         "Do you need to bring anything?",
         "Bạn có cần mang theo gì không?"
       ],
       [
+        "B",
         "Just my notebook and a pen.",
-        "Chỉ cần vở và bút thôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Chỉ cần vở và bút thôi."
       ]
     ],
     "source": "extra500_v8",
@@ -5646,24 +5646,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you going to the library later?",
-        "Lát nữa bạn có đi thư viện không?",
-        "Yes. I need a quiet place to study."
+        "Lát nữa bạn có đi thư viện không?"
       ],
       [
-        "Có. Tôi cần một nơi yên tĩnh để học.",
+        "B",
+        "Yes. I need a quiet place to study.",
+        "Có. Tôi cần một nơi yên tĩnh để học."
+      ],
+      [
+        "A",
         "How long will you stay?",
         "Bạn sẽ ở đó bao lâu?"
       ],
       [
+        "B",
         "Probably two or three hours.",
-        "Có lẽ hai hoặc ba tiếng.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có lẽ hai hoặc ba tiếng."
       ]
     ],
     "source": "extra500_v8",
@@ -5687,24 +5687,24 @@
     ],
     "lines": [
       [
+        "A",
         "Have you finished your part of the project?",
-        "Bạn đã hoàn thành phần của mình trong dự án chưa?",
-        "Yes. I sent it to the group this morning."
+        "Bạn đã hoàn thành phần của mình trong dự án chưa?"
       ],
       [
-        "Rồi. Tôi đã gửi cho nhóm sáng nay.",
+        "B",
+        "Yes. I sent it to the group this morning.",
+        "Rồi. Tôi đã gửi cho nhóm sáng nay."
+      ],
+      [
+        "A",
         "Can we check everything together later?",
         "Lát nữa chúng ta kiểm tra mọi thứ cùng nhau nhé?"
       ],
       [
+        "B",
         "That sounds good.",
-        "Nghe được đấy.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Nghe được đấy."
       ]
     ],
     "source": "extra500_v8",
@@ -5728,24 +5728,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you at the office today?",
-        "Hôm nay bạn có ở văn phòng không?",
-        "Yes. I have a meeting this afternoon."
+        "Hôm nay bạn có ở văn phòng không?"
       ],
       [
-        "Có. Chiều nay tôi có một cuộc họp.",
+        "B",
+        "Yes. I have a meeting this afternoon.",
+        "Có. Chiều nay tôi có một cuộc họp."
+      ],
+      [
+        "A",
         "Is the meeting important?",
         "Cuộc họp có quan trọng không?"
       ],
       [
+        "B",
         "Yes. We need to discuss next week's plan.",
-        "Có. Chúng tôi cần bàn về kế hoạch tuần tới.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có. Chúng tôi cần bàn về kế hoạch tuần tới."
       ]
     ],
     "source": "extra500_v8",
@@ -5769,24 +5769,24 @@
     ],
     "lines": [
       [
+        "A",
         "Do you want to take a short break?",
-        "Bạn có muốn nghỉ một chút không?",
-        "Yes. I have been working for three hours."
+        "Bạn có muốn nghỉ một chút không?"
       ],
       [
-        "Có. Tôi đã làm việc được ba tiếng rồi.",
+        "B",
+        "Yes. I have been working for three hours.",
+        "Có. Tôi đã làm việc được ba tiếng rồi."
+      ],
+      [
+        "A",
         "Let's get some coffee.",
         "Đi uống cà phê nhé."
       ],
       [
+        "B",
         "Good idea. I need a little fresh air too.",
-        "Ý hay đấy. Tôi cũng cần hít thở không khí một chút.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Ý hay đấy. Tôi cũng cần hít thở không khí một chút."
       ]
     ],
     "source": "extra500_v8",
@@ -5810,24 +5810,24 @@
     ],
     "lines": [
       [
+        "A",
         "What time is the meeting?",
-        "Cuộc họp lúc mấy giờ?",
-        "It starts at two in the afternoon."
+        "Cuộc họp lúc mấy giờ?"
       ],
       [
-        "Nó bắt đầu lúc hai giờ chiều.",
+        "B",
+        "It starts at two in the afternoon.",
+        "Nó bắt đầu lúc hai giờ chiều."
+      ],
+      [
+        "A",
         "Should I prepare anything?",
         "Tôi có nên chuẩn bị gì không?"
       ],
       [
+        "B",
         "Just bring the latest report.",
-        "Chỉ cần mang báo cáo mới nhất.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Chỉ cần mang báo cáo mới nhất."
       ]
     ],
     "source": "extra500_v8",
@@ -5851,24 +5851,24 @@
     ],
     "lines": [
       [
+        "A",
         "Did you receive my email?",
-        "Bạn nhận được email của tôi chưa?",
-        "Yes, I read it this morning."
+        "Bạn nhận được email của tôi chưa?"
       ],
       [
-        "Có, tôi đã đọc sáng nay.",
+        "B",
+        "Yes, I read it this morning.",
+        "Có, tôi đã đọc sáng nay."
+      ],
+      [
+        "A",
         "Could you reply before lunch?",
         "Bạn có thể trả lời trước bữa trưa không?"
       ],
       [
+        "B",
         "Sure. I will do it soon.",
-        "Được. Tôi sẽ làm ngay.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Được. Tôi sẽ làm ngay."
       ]
     ],
     "source": "extra500_v8",
@@ -5892,24 +5892,24 @@
     ],
     "lines": [
       [
+        "A",
         "Is your computer working now?",
-        "Máy tính của bạn bây giờ hoạt động chưa?",
-        "Yes. I restarted it and it works fine."
+        "Máy tính của bạn bây giờ hoạt động chưa?"
       ],
       [
-        "Rồi. Tôi khởi động lại và nó hoạt động tốt.",
+        "B",
+        "Yes. I restarted it and it works fine.",
+        "Rồi. Tôi khởi động lại và nó hoạt động tốt."
+      ],
+      [
+        "A",
         "Was there a problem?",
         "Có vấn đề gì à?"
       ],
       [
+        "B",
         "It was just running very slowly.",
-        "Nó chỉ chạy rất chậm thôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Nó chỉ chạy rất chậm thôi."
       ]
     ],
     "source": "extra500_v8",
@@ -5933,24 +5933,24 @@
     ],
     "lines": [
       [
+        "A",
         "Why didn't you answer my call?",
-        "Sao bạn không nghe cuộc gọi của tôi?",
-        "Sorry. My phone was on silent."
+        "Sao bạn không nghe cuộc gọi của tôi?"
       ],
       [
-        "Xin lỗi. Điện thoại của tôi để chế độ im lặng.",
+        "B",
+        "Sorry. My phone was on silent.",
+        "Xin lỗi. Điện thoại của tôi để chế độ im lặng."
+      ],
+      [
+        "A",
         "Are you free now?",
         "Bây giờ bạn rảnh không?"
       ],
       [
+        "B",
         "Yes, I can talk now.",
-        "Có, bây giờ tôi có thể nói chuyện.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, bây giờ tôi có thể nói chuyện."
       ]
     ],
     "source": "extra500_v8",
@@ -5974,24 +5974,24 @@
     ],
     "lines": [
       [
+        "A",
         "Is the internet working at your place?",
-        "Mạng internet ở chỗ bạn có hoạt động không?",
-        "Yes, but it is a little slow tonight."
+        "Mạng internet ở chỗ bạn có hoạt động không?"
       ],
       [
-        "Có, nhưng tối nay hơi chậm.",
+        "B",
+        "Yes, but it is a little slow tonight.",
+        "Có, nhưng tối nay hơi chậm."
+      ],
+      [
+        "A",
         "Did you restart the router?",
         "Bạn đã khởi động lại bộ định tuyến chưa?"
       ],
       [
+        "B",
         "Yes. It seems better now.",
-        "Rồi. Có vẻ bây giờ tốt hơn rồi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Rồi. Có vẻ bây giờ tốt hơn rồi."
       ]
     ],
     "source": "extra500_v8",
@@ -6015,24 +6015,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you ready for your trip?",
-        "Bạn sẵn sàng cho chuyến đi chưa?",
-        "Almost. I still need to pack my clothes."
+        "Bạn sẵn sàng cho chuyến đi chưa?"
       ],
       [
-        "Gần rồi. Tôi vẫn cần xếp quần áo.",
+        "B",
+        "Almost. I still need to pack my clothes.",
+        "Gần rồi. Tôi vẫn cần xếp quần áo."
+      ],
+      [
+        "A",
         "What time are you leaving?",
         "Bạn rời đi lúc mấy giờ?"
       ],
       [
+        "B",
         "We are leaving early tomorrow morning.",
-        "Chúng tôi sẽ đi sớm vào sáng mai.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Chúng tôi sẽ đi sớm vào sáng mai."
       ]
     ],
     "source": "extra500_v8",
@@ -6056,24 +6056,24 @@
     ],
     "lines": [
       [
+        "A",
         "What time is your flight?",
-        "Chuyến bay của bạn lúc mấy giờ?",
-        "It leaves at nine thirty."
+        "Chuyến bay của bạn lúc mấy giờ?"
       ],
       [
-        "Nó khởi hành lúc chín giờ rưỡi.",
+        "B",
+        "It leaves at nine thirty.",
+        "Nó khởi hành lúc chín giờ rưỡi."
+      ],
+      [
+        "A",
         "How early will you get to the airport?",
         "Bạn sẽ đến sân bay sớm bao lâu?"
       ],
       [
+        "B",
         "About two hours before the flight.",
-        "Khoảng hai tiếng trước chuyến bay.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Khoảng hai tiếng trước chuyến bay."
       ]
     ],
     "source": "extra500_v8",
@@ -6097,24 +6097,24 @@
     ],
     "lines": [
       [
+        "A",
         "Have you checked in at the hotel?",
-        "Bạn đã nhận phòng khách sạn chưa?",
-        "Yes. The room is clean and comfortable."
+        "Bạn đã nhận phòng khách sạn chưa?"
       ],
       [
-        "Rồi. Phòng sạch và thoải mái.",
+        "B",
+        "Yes. The room is clean and comfortable.",
+        "Rồi. Phòng sạch và thoải mái."
+      ],
+      [
+        "A",
         "Is the hotel close to the station?",
         "Khách sạn có gần nhà ga không?"
       ],
       [
+        "B",
         "Yes, it is only a short walk away.",
-        "Có, chỉ đi bộ một đoạn ngắn thôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, chỉ đi bộ một đoạn ngắn thôi."
       ]
     ],
     "source": "extra500_v8",
@@ -6138,24 +6138,24 @@
     ],
     "lines": [
       [
+        "A",
         "Have you decided what to order?",
-        "Bạn đã quyết định gọi món gì chưa?",
-        "I think I will have the chicken soup."
+        "Bạn đã quyết định gọi món gì chưa?"
       ],
       [
-        "Tôi nghĩ tôi sẽ gọi súp gà.",
+        "B",
+        "I think I will have the chicken soup.",
+        "Tôi nghĩ tôi sẽ gọi súp gà."
+      ],
+      [
+        "A",
         "Do you want something to drink?",
         "Bạn có muốn uống gì không?"
       ],
       [
+        "B",
         "Yes, just some water, please.",
-        "Có, cho tôi một ít nước thôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, cho tôi một ít nước thôi."
       ]
     ],
     "source": "extra500_v8",
@@ -6179,24 +6179,24 @@
     ],
     "lines": [
       [
+        "A",
         "Does this shirt fit you?",
-        "Chiếc áo này có vừa bạn không?",
-        "Yes, but I prefer the larger size."
+        "Chiếc áo này có vừa bạn không?"
       ],
       [
-        "Có, nhưng tôi thích cỡ lớn hơn.",
+        "B",
+        "Yes, but I prefer the larger size.",
+        "Có, nhưng tôi thích cỡ lớn hơn."
+      ],
+      [
+        "A",
         "Should we look for another one?",
         "Chúng ta có nên tìm chiếc khác không?"
       ],
       [
+        "B",
         "Yes, let's check the next store.",
-        "Có, hãy xem cửa hàng bên cạnh.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, hãy xem cửa hàng bên cạnh."
       ]
     ],
     "source": "extra500_v8",
@@ -6220,24 +6220,24 @@
     ],
     "lines": [
       [
+        "A",
         "Can I pay by card here?",
-        "Tôi có thể thanh toán bằng thẻ ở đây không?",
-        "Yes, both card and cash are fine."
+        "Tôi có thể thanh toán bằng thẻ ở đây không?"
       ],
       [
-        "Có, thẻ và tiền mặt đều được.",
+        "B",
+        "Yes, both card and cash are fine.",
+        "Có, thẻ và tiền mặt đều được."
+      ],
+      [
+        "A",
         "Could I get a receipt?",
         "Tôi có thể lấy hóa đơn không?"
       ],
       [
+        "B",
         "Of course. Here you are.",
-        "Tất nhiên. Của bạn đây.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Tất nhiên. Của bạn đây."
       ]
     ],
     "source": "extra500_v8",
@@ -6261,24 +6261,24 @@
     ],
     "lines": [
       [
+        "A",
         "What do you usually eat for breakfast?",
-        "Bạn thường ăn gì vào bữa sáng?",
-        "I usually have bread and fruit."
+        "Bạn thường ăn gì vào bữa sáng?"
       ],
       [
-        "Tôi thường ăn bánh mì và trái cây.",
+        "B",
+        "I usually have bread and fruit.",
+        "Tôi thường ăn bánh mì và trái cây."
+      ],
+      [
+        "A",
         "Do you drink coffee every morning?",
         "Bạn có uống cà phê mỗi sáng không?"
       ],
       [
+        "B",
         "Yes, but only one cup.",
-        "Có, nhưng chỉ một cốc thôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, nhưng chỉ một cốc thôi."
       ]
     ],
     "source": "extra500_v8",
@@ -6302,24 +6302,24 @@
     ],
     "lines": [
       [
+        "A",
         "What are you cooking tonight?",
-        "Tối nay bạn nấu gì?",
-        "I am making rice, vegetables, and fish."
+        "Tối nay bạn nấu gì?"
       ],
       [
-        "Tôi đang nấu cơm, rau và cá.",
+        "B",
+        "I am making rice, vegetables, and fish.",
+        "Tôi đang nấu cơm, rau và cá."
+      ],
+      [
+        "A",
         "Do you need any help?",
         "Bạn có cần giúp gì không?"
       ],
       [
+        "B",
         "Could you wash the vegetables?",
-        "Bạn có thể rửa rau giúp tôi không?",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Bạn có thể rửa rau giúp tôi không?"
       ]
     ],
     "source": "extra500_v8",
@@ -6343,24 +6343,24 @@
     ],
     "lines": [
       [
+        "A",
         "How is the weather today?",
-        "Thời tiết hôm nay thế nào?",
-        "It is cloudy, but it is not raining."
+        "Thời tiết hôm nay thế nào?"
       ],
       [
-        "Trời nhiều mây nhưng không mưa.",
+        "B",
+        "It is cloudy, but it is not raining.",
+        "Trời nhiều mây nhưng không mưa."
+      ],
+      [
+        "A",
         "Do you think it will rain later?",
         "Bạn nghĩ lát nữa có mưa không?"
       ],
       [
+        "B",
         "Maybe. You should take an umbrella.",
-        "Có thể. Bạn nên mang theo ô.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có thể. Bạn nên mang theo ô."
       ]
     ],
     "source": "extra500_v8",
@@ -6384,24 +6384,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you going out in this rain?",
-        "Bạn có ra ngoài trong trời mưa thế này không?",
-        "I have to go to the store."
+        "Bạn có ra ngoài trong trời mưa thế này không?"
       ],
       [
-        "Tôi phải đi cửa hàng.",
+        "B",
+        "I have to go to the store.",
+        "Tôi phải đi cửa hàng."
+      ],
+      [
+        "A",
         "Do you have an umbrella?",
         "Bạn có ô không?"
       ],
       [
+        "B",
         "Yes. I always keep one by the door.",
-        "Có. Tôi luôn để một chiếc cạnh cửa.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có. Tôi luôn để một chiếc cạnh cửa."
       ]
     ],
     "source": "extra500_v8",
@@ -6425,24 +6425,24 @@
     ],
     "lines": [
       [
+        "A",
         "How are you feeling today?",
-        "Hôm nay bạn cảm thấy thế nào?",
-        "A little tired, but I feel better than yesterday."
+        "Hôm nay bạn cảm thấy thế nào?"
       ],
       [
-        "Hơi mệt, nhưng tôi thấy tốt hơn hôm qua.",
+        "B",
+        "A little tired, but I feel better than yesterday.",
+        "Hơi mệt, nhưng tôi thấy tốt hơn hôm qua."
+      ],
+      [
+        "A",
         "Did you sleep well?",
         "Bạn ngủ ngon không?"
       ],
       [
+        "B",
         "Yes, I got about eight hours of sleep.",
-        "Có, tôi ngủ khoảng tám tiếng.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, tôi ngủ khoảng tám tiếng."
       ]
     ],
     "source": "extra500_v8",
@@ -6466,24 +6466,24 @@
     ],
     "lines": [
       [
+        "A",
         "You look tired. Do you want to rest?",
-        "Bạn trông mệt. Bạn có muốn nghỉ không?",
-        "Yes. I have had a long day."
+        "Bạn trông mệt. Bạn có muốn nghỉ không?"
       ],
       [
-        "Có. Hôm nay tôi đã có một ngày dài.",
+        "B",
+        "Yes. I have had a long day.",
+        "Có. Hôm nay tôi đã có một ngày dài."
+      ],
+      [
+        "A",
         "Why don't you take a short nap?",
         "Sao bạn không ngủ một lát?"
       ],
       [
+        "B",
         "That sounds like a good idea.",
-        "Nghe có vẻ là một ý hay.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Nghe có vẻ là một ý hay."
       ]
     ],
     "source": "extra500_v8",
@@ -6507,24 +6507,24 @@
     ],
     "lines": [
       [
+        "A",
         "You seem quiet today. Is everything okay?",
-        "Hôm nay bạn có vẻ ít nói. Mọi thứ ổn chứ?",
-        "I am just thinking about a few things."
+        "Hôm nay bạn có vẻ ít nói. Mọi thứ ổn chứ?"
       ],
       [
-        "Tôi chỉ đang suy nghĩ về vài chuyện.",
+        "B",
+        "I am just thinking about a few things.",
+        "Tôi chỉ đang suy nghĩ về vài chuyện."
+      ],
+      [
+        "A",
         "Do you want to talk about them?",
         "Bạn có muốn nói về chúng không?"
       ],
       [
+        "B",
         "Maybe later. Thanks for asking.",
-        "Có lẽ để sau. Cảm ơn bạn đã hỏi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có lẽ để sau. Cảm ơn bạn đã hỏi."
       ]
     ],
     "source": "extra500_v8",
@@ -6548,24 +6548,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you meeting your friends tonight?",
-        "Tối nay bạn có gặp bạn bè không?",
-        "Yes. We are going to have dinner together."
+        "Tối nay bạn có gặp bạn bè không?"
       ],
       [
-        "Có. Chúng tôi sẽ ăn tối cùng nhau.",
+        "B",
+        "Yes. We are going to have dinner together.",
+        "Có. Chúng tôi sẽ ăn tối cùng nhau."
+      ],
+      [
+        "A",
         "How often do you meet?",
         "Các bạn gặp nhau thường xuyên không?"
       ],
       [
+        "B",
         "Usually once or twice a month.",
-        "Thường một hoặc hai lần mỗi tháng.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Thường một hoặc hai lần mỗi tháng."
       ]
     ],
     "source": "extra500_v8",
@@ -6589,24 +6589,24 @@
     ],
     "lines": [
       [
+        "A",
         "Have you met your new neighbor?",
-        "Bạn đã gặp hàng xóm mới chưa?",
-        "Yes. She seems very friendly."
+        "Bạn đã gặp hàng xóm mới chưa?"
       ],
       [
-        "Rồi. Cô ấy có vẻ rất thân thiện.",
+        "B",
+        "Yes. She seems very friendly.",
+        "Rồi. Cô ấy có vẻ rất thân thiện."
+      ],
+      [
+        "A",
         "Did you talk for long?",
         "Bạn nói chuyện lâu không?"
       ],
       [
+        "B",
         "Only for a few minutes.",
-        "Chỉ vài phút thôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Chỉ vài phút thôi."
       ]
     ],
     "source": "extra500_v8",
@@ -6630,24 +6630,24 @@
     ],
     "lines": [
       [
+        "A",
         "What do you like to do in your free time?",
-        "Bạn thích làm gì lúc rảnh?",
-        "I like reading and listening to music."
+        "Bạn thích làm gì lúc rảnh?"
       ],
       [
-        "Tôi thích đọc sách và nghe nhạc.",
+        "B",
+        "I like reading and listening to music.",
+        "Tôi thích đọc sách và nghe nhạc."
+      ],
+      [
+        "A",
         "Do you have any other hobbies?",
         "Bạn còn sở thích nào khác không?"
       ],
       [
+        "B",
         "I sometimes take photos when I go outside.",
-        "Đôi khi tôi chụp ảnh khi ra ngoài.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Đôi khi tôi chụp ảnh khi ra ngoài."
       ]
     ],
     "source": "extra500_v8",
@@ -6671,24 +6671,24 @@
     ],
     "lines": [
       [
+        "A",
         "Do you exercise regularly?",
-        "Bạn có tập thể dục thường xuyên không?",
-        "I try to walk for thirty minutes every day."
+        "Bạn có tập thể dục thường xuyên không?"
       ],
       [
-        "Tôi cố đi bộ ba mươi phút mỗi ngày.",
+        "B",
+        "I try to walk for thirty minutes every day.",
+        "Tôi cố đi bộ ba mươi phút mỗi ngày."
+      ],
+      [
+        "A",
         "Do you prefer walking or running?",
         "Bạn thích đi bộ hay chạy hơn?"
       ],
       [
+        "B",
         "Walking is easier for me.",
-        "Đi bộ dễ hơn với tôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Đi bộ dễ hơn với tôi."
       ]
     ],
     "source": "extra500_v8",
@@ -6712,24 +6712,24 @@
     ],
     "lines": [
       [
+        "A",
         "What kind of music do you like?",
-        "Bạn thích thể loại nhạc nào?",
-        "I like calm music when I study."
+        "Bạn thích thể loại nhạc nào?"
       ],
       [
-        "Tôi thích nhạc nhẹ khi học.",
+        "B",
+        "I like calm music when I study.",
+        "Tôi thích nhạc nhẹ khi học."
+      ],
+      [
+        "A",
         "Do you listen to music every day?",
         "Bạn có nghe nhạc mỗi ngày không?"
       ],
       [
+        "B",
         "Almost every day.",
-        "Gần như mỗi ngày.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Gần như mỗi ngày."
       ]
     ],
     "source": "extra500_v8",
@@ -6753,24 +6753,24 @@
     ],
     "lines": [
       [
+        "A",
         "Do you want to watch a movie tonight?",
-        "Tối nay bạn có muốn xem phim không?",
-        "Sure. What kind of movie should we watch?"
+        "Tối nay bạn có muốn xem phim không?"
       ],
       [
-        "Được. Chúng ta nên xem phim thể loại nào?",
+        "B",
+        "Sure. What kind of movie should we watch?",
+        "Được. Chúng ta nên xem phim thể loại nào?"
+      ],
+      [
+        "A",
         "How about a comedy?",
         "Phim hài thì sao?"
       ],
       [
+        "B",
         "That sounds perfect.",
-        "Nghe tuyệt đấy.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Nghe tuyệt đấy."
       ]
     ],
     "source": "extra500_v8",
@@ -6794,24 +6794,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you reading anything interesting?",
-        "Bạn đang đọc gì thú vị không?",
-        "Yes. I started a new novel last week."
+        "Bạn đang đọc gì thú vị không?"
       ],
       [
-        "Có. Tôi bắt đầu một cuốn tiểu thuyết mới tuần trước.",
+        "B",
+        "Yes. I started a new novel last week.",
+        "Có. Tôi bắt đầu một cuốn tiểu thuyết mới tuần trước."
+      ],
+      [
+        "A",
         "Do you like it so far?",
         "Đến giờ bạn có thích nó không?"
       ],
       [
+        "B",
         "Yes, I cannot stop reading it.",
-        "Có, tôi không thể ngừng đọc.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, tôi không thể ngừng đọc."
       ]
     ],
     "source": "extra500_v8",
@@ -6835,24 +6835,24 @@
     ],
     "lines": [
       [
+        "A",
         "Do you like spending time outside?",
-        "Bạn có thích dành thời gian ở ngoài trời không?",
-        "Yes. I feel relaxed when I am in nature."
+        "Bạn có thích dành thời gian ở ngoài trời không?"
       ],
       [
-        "Có. Tôi cảm thấy thư giãn khi ở gần thiên nhiên.",
+        "B",
+        "Yes. I feel relaxed when I am in nature.",
+        "Có. Tôi cảm thấy thư giãn khi ở gần thiên nhiên."
+      ],
+      [
+        "A",
         "Where do you usually go?",
         "Bạn thường đi đâu?"
       ],
       [
+        "B",
         "I like walking near the lake.",
-        "Tôi thích đi bộ gần hồ.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Tôi thích đi bộ gần hồ."
       ]
     ],
     "source": "extra500_v8",
@@ -6876,24 +6876,24 @@
     ],
     "lines": [
       [
+        "A",
         "What do we need from the store?",
-        "Chúng ta cần mua gì ở cửa hàng?",
-        "We need milk, eggs, and some fruit."
+        "Chúng ta cần mua gì ở cửa hàng?"
       ],
       [
-        "Chúng ta cần sữa, trứng và một ít trái cây.",
+        "B",
+        "We need milk, eggs, and some fruit.",
+        "Chúng ta cần sữa, trứng và một ít trái cây."
+      ],
+      [
+        "A",
         "Anything else?",
         "Còn gì nữa không?"
       ],
       [
+        "B",
         "Maybe some bread for tomorrow morning.",
-        "Có lẽ thêm bánh mì cho sáng mai.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có lẽ thêm bánh mì cho sáng mai."
       ]
     ],
     "source": "extra500_v8",
@@ -6917,24 +6917,24 @@
     ],
     "lines": [
       [
+        "A",
         "Are you saving money for something?",
-        "Bạn có đang tiết kiệm tiền cho việc gì không?",
-        "Yes. I want to buy a new laptop."
+        "Bạn có đang tiết kiệm tiền cho việc gì không?"
       ],
       [
-        "Có. Tôi muốn mua một chiếc laptop mới.",
+        "B",
+        "Yes. I want to buy a new laptop.",
+        "Có. Tôi muốn mua một chiếc laptop mới."
+      ],
+      [
+        "A",
         "Are you close to your goal?",
         "Bạn gần đạt mục tiêu chưa?"
       ],
       [
+        "B",
         "Not yet, but I am making progress.",
-        "Chưa, nhưng tôi đang tiến bộ.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Chưa, nhưng tôi đang tiến bộ."
       ]
     ],
     "source": "extra500_v8",
@@ -6958,24 +6958,24 @@
     ],
     "lines": [
       [
+        "A",
         "What are you doing after work?",
-        "Bạn làm gì sau giờ làm?",
-        "I am going home and making dinner."
+        "Bạn làm gì sau giờ làm?"
       ],
       [
-        "Tôi sẽ về nhà và nấu bữa tối.",
+        "B",
+        "I am going home and making dinner.",
+        "Tôi sẽ về nhà và nấu bữa tối."
+      ],
+      [
+        "A",
         "Are you free later?",
         "Lát nữa bạn có rảnh không?"
       ],
       [
+        "B",
         "Yes, after eight.",
-        "Có, sau tám giờ.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, sau tám giờ."
       ]
     ],
     "source": "extra500_v8",
@@ -6999,24 +6999,24 @@
     ],
     "lines": [
       [
+        "A",
         "When is your appointment?",
-        "Lịch hẹn của bạn khi nào?",
-        "It is at three tomorrow afternoon."
+        "Lịch hẹn của bạn khi nào?"
       ],
       [
-        "Là ba giờ chiều mai.",
+        "B",
+        "It is at three tomorrow afternoon.",
+        "Là ba giờ chiều mai."
+      ],
+      [
+        "A",
         "Do you need to arrive early?",
         "Bạn có cần đến sớm không?"
       ],
       [
+        "B",
         "Yes, they asked me to arrive ten minutes early.",
-        "Có, họ bảo tôi đến sớm mười phút.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có, họ bảo tôi đến sớm mười phút."
       ]
     ],
     "source": "extra500_v8",
@@ -7040,24 +7040,24 @@
     ],
     "lines": [
       [
+        "A",
         "Excuse me, do you know where the station is?",
-        "Xin lỗi, bạn có biết nhà ga ở đâu không?",
-        "Yes. It is about five minutes from here."
+        "Xin lỗi, bạn có biết nhà ga ở đâu không?"
       ],
       [
-        "Có. Nó cách đây khoảng năm phút.",
+        "B",
+        "Yes. It is about five minutes from here.",
+        "Có. Nó cách đây khoảng năm phút."
+      ],
+      [
+        "A",
         "Should I turn left at the corner?",
         "Tôi nên rẽ trái ở góc đường phải không?"
       ],
       [
+        "B",
         "Yes, then walk straight ahead.",
-        "Đúng, sau đó đi thẳng.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Đúng, sau đó đi thẳng."
       ]
     ],
     "source": "extra500_v8",
@@ -7081,24 +7081,24 @@
     ],
     "lines": [
       [
+        "A",
         "Does this bus go to the city center?",
-        "Xe buýt này có đi đến trung tâm thành phố không?",
-        "Yes, but you need to get off at the next stop."
+        "Xe buýt này có đi đến trung tâm thành phố không?"
       ],
       [
-        "Có, nhưng bạn cần xuống ở điểm dừng tiếp theo.",
+        "B",
+        "Yes, but you need to get off at the next stop.",
+        "Có, nhưng bạn cần xuống ở điểm dừng tiếp theo."
+      ],
+      [
+        "A",
         "How long does the trip take?",
         "Chuyến đi mất bao lâu?"
       ],
       [
+        "B",
         "About twenty minutes.",
-        "Khoảng hai mươi phút.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Khoảng hai mươi phút."
       ]
     ],
     "source": "extra500_v8",
@@ -7122,24 +7122,24 @@
     ],
     "lines": [
       [
+        "A",
         "Do you often go for a walk in the morning?",
-        "Bạn có thường đi dạo buổi sáng không?",
-        "Yes. It helps me wake up."
+        "Bạn có thường đi dạo buổi sáng không?"
       ],
       [
-        "Có. Nó giúp tôi tỉnh táo.",
+        "B",
+        "Yes. It helps me wake up.",
+        "Có. Nó giúp tôi tỉnh táo."
+      ],
+      [
+        "A",
         "Where do you walk?",
         "Bạn đi bộ ở đâu?"
       ],
       [
+        "B",
         "Usually around the park near my home.",
-        "Thường là quanh công viên gần nhà.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Thường là quanh công viên gần nhà."
       ]
     ],
     "source": "extra500_v8",
@@ -7163,24 +7163,24 @@
     ],
     "lines": [
       [
+        "A",
         "What do you usually do in the evening?",
-        "Bạn thường làm gì vào buổi tối?",
-        "I have dinner, study a little, and relax."
+        "Bạn thường làm gì vào buổi tối?"
       ],
       [
-        "Tôi ăn tối, học một chút và thư giãn.",
+        "B",
+        "I have dinner, study a little, and relax.",
+        "Tôi ăn tối, học một chút và thư giãn."
+      ],
+      [
+        "A",
         "Do you go to bed late?",
         "Bạn có ngủ muộn không?"
       ],
       [
+        "B",
         "Not usually. I try to sleep before eleven.",
-        "Thường không. Tôi cố ngủ trước mười một giờ.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Thường không. Tôi cố ngủ trước mười một giờ."
       ]
     ],
     "source": "extra500_v8",
@@ -7204,24 +7204,24 @@
     ],
     "lines": [
       [
+        "A",
         "Could you send me the details?",
-        "Bạn có thể gửi chi tiết cho tôi không?",
-        "Sure. I will send them this afternoon."
+        "Bạn có thể gửi chi tiết cho tôi không?"
       ],
       [
-        "Được. Tôi sẽ gửi chiều nay.",
+        "B",
+        "Sure. I will send them this afternoon.",
+        "Được. Tôi sẽ gửi chiều nay."
+      ],
+      [
+        "A",
         "Please let me know if anything changes.",
         "Hãy cho tôi biết nếu có gì thay đổi."
       ],
       [
+        "B",
         "Of course. I will keep you updated.",
-        "Tất nhiên. Tôi sẽ cập nhật cho bạn.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Tất nhiên. Tôi sẽ cập nhật cho bạn."
       ]
     ],
     "source": "extra500_v8",
@@ -7245,24 +7245,24 @@
     ],
     "lines": [
       [
+        "A",
         "Would you like to meet tomorrow?",
-        "Bạn có muốn gặp nhau ngày mai không?",
-        "Yes. What time works for you?"
+        "Bạn có muốn gặp nhau ngày mai không?"
       ],
       [
-        "Có. Mấy giờ phù hợp với bạn?",
+        "B",
+        "Yes. What time works for you?",
+        "Có. Mấy giờ phù hợp với bạn?"
+      ],
+      [
+        "A",
         "How about ten in the morning?",
         "Mười giờ sáng thì sao?"
       ],
       [
+        "B",
         "That works for me.",
-        "Giờ đó phù hợp với tôi.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Giờ đó phù hợp với tôi."
       ]
     ],
     "source": "extra500_v8",
@@ -7286,24 +7286,24 @@
     ],
     "lines": [
       [
+        "A",
         "Something is wrong with the printer.",
-        "Có gì đó không ổn với máy in.",
-        "Did you check the paper tray?"
+        "Có gì đó không ổn với máy in."
       ],
       [
-        "Bạn đã kiểm tra khay giấy chưa?",
+        "B",
+        "Did you check the paper tray?",
+        "Bạn đã kiểm tra khay giấy chưa?"
+      ],
+      [
+        "A",
         "Yes. It is empty.",
         "Rồi. Nó trống."
       ],
       [
+        "B",
         "Let me add some paper and try again.",
-        "Để tôi thêm giấy và thử lại.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Để tôi thêm giấy và thử lại."
       ]
     ],
     "source": "extra500_v8",
@@ -7327,24 +7327,24 @@
     ],
     "lines": [
       [
+        "A",
         "What helps you learn English?",
-        "Điều gì giúp bạn học tiếng Anh?",
-        "I practice a little every day."
+        "Điều gì giúp bạn học tiếng Anh?"
       ],
       [
-        "Tôi luyện tập một chút mỗi ngày.",
+        "B",
+        "I practice a little every day.",
+        "Tôi luyện tập một chút mỗi ngày."
+      ],
+      [
+        "A",
         "Do you practice speaking too?",
         "Bạn có luyện nói không?"
       ],
       [
+        "B",
         "Yes. I try to speak out loud whenever I can.",
-        "Có. Tôi cố nói thành tiếng bất cứ khi nào có thể.",
-        null
-      ],
-      [
-        null,
-        null,
-        null
+        "Có. Tôi cố nói thành tiếng bất cứ khi nào có thể."
       ]
     ],
     "source": "extra500_v8",
