@@ -21,7 +21,7 @@ function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
 function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/"/g,"&quot;").replace(/\r?\n/g," ")}
 function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
-const STANDALONE_SENTENCE_SOURCES=new Set(["extra500_v8","expansion500"]);
+const STANDALONE_SENTENCE_SOURCES=new Set(["extra500_v8","expansion500","expansion500_v2"]);
 const ALLOWED_IT_IS_PRACTICE_ADJECTIVES=new Set(["important","useful","helpful","good","beneficial","easy","hard","difficult","necessary","possible","wise","healthy"]);
 function standalonePracticeTemplateIsNatural(en){
   const m=String(en??"").trim().match(/^It is ([A-Za-z]+) to practice a little every day\.$/i);
