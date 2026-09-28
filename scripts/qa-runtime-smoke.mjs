@@ -318,7 +318,7 @@ const knownBadPracticeExamples = [
 check(
   "sentence practice pool filters bad/duplicate entries",
   practicePool.length > 0 &&
-  practicePool.length <= db.sentences.length &&
+  practicePool.length <= snap.db.sentences.length &&
   new Set(practiceKeys).size === practiceKeys.length &&
   practicePool.every((s) => !s.vocabWord && String(s.en ?? "").trim() && String(s.vi ?? "").trim()) &&
   knownBadPracticeExamples.every((en) => !practicePool.some((s) => String(s.en ?? "").trim().toLowerCase() === en.toLowerCase())),
