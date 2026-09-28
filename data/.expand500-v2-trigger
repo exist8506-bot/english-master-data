@@ -1,1 +1,1 @@
-Rebuild existing V2 package with corrected Tatoeba TSV parsing.
+Trigger V2 rebuild 8.1.1: correct Tatoeba TSV columns and preserve old corpus.
