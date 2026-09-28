@@ -1109,7 +1109,7 @@ function runContentAudit(){
   const missing=Object.entries(r.missing||{}).filter(([,items])=>items.length);
   const el=$("contentAuditResult");
   if(!el)return;
-  if(!r.expansion500){el.textContent="Chưa tải gói expansion500.";return;}
+  if(!r.expansion500){el.textContent="Chưa tải gói mở rộng.";return;}
   if(r.duplicateWords||missing.length||r.standaloneQualityIssues||r.standaloneDuplicateEnglish){
     const parts=[];
     if(missing.length)parts.push("thiếu liên kết: "+missing.map(([k,items])=>esc(k)+" ("+items.length+")").join(", "));
@@ -1119,12 +1119,14 @@ function runContentAudit(){
     el.innerHTML="⚠️ "+parts.join(" · ");
     return;
   }
-  el.textContent="✓ 500/500 từ đã được nối đầy đủ · 1.000/1.000 câu luyện độc lập hợp lệ, không trùng.";
+  el.textContent="✓ "+r.expansion500+"/"+r.expansion500+" từ đã được nối đầy đủ · "+r.naturalIndependentSentences+"/"+r.independentSentences+" câu luyện độc lập hợp lệ, không trùng.";
 }
 
 function dataAudit(){
-  const exp=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
-  const expSentences=db.sentences.filter(s=>s.source==="expansion500");
+  const packageV1=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
+  const packageV2=db.vocab.filter(v=>v.source==="expansion500_v2"&&v.sourceVersion==="8.1.0");
+  const exp=[...packageV1,...packageV2];
+  const expSentences=db.sentences.filter(s=>s.source==="expansion500"||s.source==="expansion500_v2");
   const generalSentences=db.sentences.filter(s=>s.source==="extra500_v8");
   const normSet=arr=>new Set((arr||[]).filter(Boolean).map(norm));
   const qw=normSet(db.questions.map(x=>x.vocabWord));
@@ -1149,7 +1151,8 @@ function dataAudit(){
     if(!String(s.en||"").trim()||!String(s.vi||"").trim()||s.vocabWord)missing.sentences.push(s.id||"");
   });
   const result={
-    expansion500:exp.length,duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
+    expansion500:exp.length,expansion500V1:packageV1.length,expansion500V2:packageV2.length,
+    duplicateWords:exp.length-new Set(exp.map(x=>norm(x.word))).size,
     sentences:expSentences.length,generalSentences:generalSentences.length,
     independentSentences:independentRaw.length,
     naturalIndependentSentences:independent.length,
