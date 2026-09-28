@@ -26,6 +26,7 @@ jobs:
 
       - name: Build and validate V2
         env:
+          DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
           TRANSLATE_API: https://translate.googleapis.com/translate_a/single
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
@@ -230,6 +231,29 @@ jobs:
                               break
                       if example:
                           break
+              if not example:
+                  try:
+                      entries=get_json(DICT_API+urllib.parse.quote(word),3)
+                      if isinstance(entries,list) and entries:
+                          entry=entries[0] if isinstance(entries[0],dict) else {}
+                          for m in entry.get("meanings",[]) or []:
+                              for d in m.get("definitions",[]) or []:
+                                  ex=str(d.get("example") or "").strip()
+                                  if ex:
+                                      example=ex
+                                      pos=str(m.get("partOfSpeech") or "") or pos
+                                      break
+                              if example:
+                                  break
+                          if not phon:
+                              phon=str(entry.get("phonetic") or "").strip()
+                              if not phon:
+                                  for p in entry.get("phonetics",[]) or []:
+                                      phon=str(p.get("text") or "").strip()
+                                      if phon:
+                                          break
+                  except Exception:
+                      pass
               if not example or len(example.split())<4 or len(example.split())>26:
                   return None
               if any(rx.search(example) for rx in reject):
