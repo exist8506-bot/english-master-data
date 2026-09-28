@@ -498,6 +498,28 @@ check(
   })
 );
 
+const beforeInvalidImport = T.snap();
+const invalidImportPayload = {
+  app: "English Master",
+  stats: { ...beforeInvalidImport.db.stats, xp: "not-a-number" },
+  profile: { ...beforeInvalidImport.db.profile, layout: "tablet" },
+  positions: { flashIndex: 999999 },
+  vocabState: [{ word: importWord, status: "BROKEN", favorite: "yes", correct_count: -2, wrong_count: 0 }]
+};
+await T.importProgress({
+  value: "invalid.json",
+  files: [{ text: async () => JSON.stringify(invalidImportPayload) }]
+});
+const afterInvalidImport = T.snap();
+check(
+  "invalid progress import is rejected atomically",
+  afterInvalidImport.db.stats.xp === beforeInvalidImport.db.stats.xp &&
+  afterInvalidImport.db.profile.layout === beforeInvalidImport.db.profile.layout &&
+  afterInvalidImport.flashIndex === beforeInvalidImport.flashIndex &&
+  afterInvalidImport.db.vocab.find(v => String(v.word || "").trim() === importWord)?.status ===
+    beforeInvalidImport.db.vocab.find(v => String(v.word || "").trim() === importWord)?.status
+);
+
 const beforeReset = T.snap();
 T.resetProgress();
 const resetSnap = T.snap();
