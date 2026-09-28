@@ -76,10 +76,13 @@ with ThreadPoolExecutor(max_workers=8) as pool:
 print("IPA+VI candidates:",len(enriched))
 if len(enriched)<NEED: raise SystemExit("Not enough words with IPA and Vietnamese meaning")
 
-# Official Tatoeba EN + VI exports. Use sentence links instead of machine translation.
+# Official Tatoeba English export. English examples are real corpus sentences.
+# Vietnamese is taken from a direct Tatoeba link when available, otherwise translated
+# only after the English sentence has been selected.
 ENG_SENT_URL="https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences.tsv.bz2"
 VIE_SENT_URL="https://downloads.tatoeba.org/exports/per_language/vie/vie_sentences.tsv.bz2"
 ENG_VIE_LINK_URL="https://downloads.tatoeba.org/exports/per_language/eng/eng-vie_links.tsv.bz2"
+GOOGLE="https://translate.googleapis.com/translate_a/single"
 
 raw_eng=bz2.decompress(get_bytes(ENG_SENT_URL)).decode("utf-8")
 raw_links=bz2.decompress(get_bytes(ENG_VIE_LINK_URL)).decode("utf-8")
@@ -91,7 +94,11 @@ re.compile(r"^(?:The|A|An) (?:room|house|chair|table|book|dictionary|homework|qu
 re.compile(r"^I'?m practicing\b",re.I),
 re.compile(r"^I noticed (?:youth|iron|steel) this morning\.$",re.I),
 re.compile(r"^I saw aspect on my way home\.$",re.I),
-re.compile(r"^They properly use the app\.$",re.I)
+re.compile(r"^They properly use the app\.$",re.I),
+re.compile(r"^The (?:road|tennis) is useful in daily life\.$",re.I),
+re.compile(r"^The new plan is (?:funny|same|dry) for us\.$",re.I),
+re.compile(r"^The situation is primary right now\.$",re.I),
+re.compile(r"^This plan is immediate\.$",re.I)
 ]
 def usable(s):
     toks=s.split()
@@ -102,45 +109,75 @@ def usable(s):
         if i>0 and c and c[0].isupper() and c not in {"I","I'm","I've","I'll","I'd"}: return False
     return not any(rx.search(s) for rx in bad)
 
-# Link file: English sentence ID <tab> Vietnamese sentence ID.
+# Direct Tatoeba EN->VI links, used whenever present.
 vie_by_id={}
 for line in raw_vie.splitlines():
     p=line.split("\t",1)
-    if len(p)==2:
-        sid,vi_text=p[0].strip(),p[1].strip()
-        if vi_text: vie_by_id[sid]=vi_text
+    if len(p)==2 and p[1].strip():
+        vie_by_id[p[0].strip()]=p[1].strip()
 
 links_by_eng={}
 for line in raw_links.splitlines():
     p=line.split("\t")
     if len(p)>=2:
-        eng_id,vie_id=p[0].strip(),p[1].strip()
-        if eng_id and vie_id:
-            links_by_eng.setdefault(eng_id,[]).append(vie_id)
+        links_by_eng.setdefault(p[0].strip(),[]).append(p[1].strip())
 
 targets={x["word"] for x in enriched}
-chosen=[]; seen=set()
+eng_rows=[]
 for line in raw_eng.splitlines():
     p=line.split("\t",1)
     if len(p)!=2: continue
     sid,en=p[0].strip(),p[1].strip()
     if not usable(en): continue
-    trans_ids=links_by_eng.get(sid,[])
-    vi=next((vie_by_id.get(tid,"").strip() for tid in trans_ids if vie_by_id.get(tid,"").strip()),"")
-    if not vi: continue
     hit=targets.intersection(set(re.findall(r"[a-z]+",en.lower())))
+    if not hit: continue
+    direct_vi=next((vie_by_id.get(tid,"").strip() for tid in links_by_eng.get(sid,[]) if vie_by_id.get(tid,"").strip()),"")
+    eng_rows.append((sid,en,hit,direct_vi))
+# Short, unique, ordinary sentences first.
+eng_rows.sort(key=lambda x:(len(x[1].split()),x[0]))
+chosen=[]; seen=set()
+for sid,en,hit,direct_vi in eng_rows:
     for w in sorted(hit):
         if w in used or w in {x["word"] for x in chosen}: continue
-        key=norm(en)
-        if key in seen: continue
-        seen.add(key)
-        src_level=hsk[w]["hsk"]
-        chosen.append({**hsk[w],"example":en,"exampleVi":vi,"exampleId":sid})
+        k=norm(en)
+        if k in seen: continue
+        seen.add(k)
+        chosen.append({**hsk[w],"example":en,"exampleId":sid,"exampleVi":direct_vi})
         break
     if len(chosen)>=NEED: break
 
-print("Tatoeba EN-VI linked example coverage:",len(chosen))
-if len(chosen)<NEED: raise SystemExit(f"Only {len(chosen)} words have verified EN-VI linked examples; expected {NEED}.")
+print("Tatoeba real English coverage:",len(chosen))
+if len(chosen)<NEED:
+    raise SystemExit(f"Only {len(chosen)} words have real Tatoeba English examples; expected {NEED}.")
+
+def translate_google(text):
+    q=urllib.parse.urlencode({"client":"gtx","sl":"en","tl":"vi","dt":"t","q":str(text)})
+    for a in range(3):
+        try:
+            req=urllib.request.Request(GOOGLE+"?"+q,headers={"User-Agent":UA})
+            with urllib.request.urlopen(req,timeout=20) as r:
+                d=json.loads(r.read().decode("utf-8"))
+            if isinstance(d,list) and d and isinstance(d[0],list):
+                v="".join(str(part[0]) for part in d[0] if part and part[0]).strip()
+                if v: return v
+        except Exception: pass
+        if a<2: time.sleep(.5*(a+1))
+    return ""
+
+def fill_vietnamese(row):
+    if row.get("exampleVi"):
+        return row
+    vi=translate(row["example"])
+    if not vi:
+        vi=translate_google(row["example"])
+    return None if not vi else {**row,"exampleVi":vi}
+
+with ThreadPoolExecutor(max_workers=8) as pool:
+    translated=[x for x in pool.map(fill_vietnamese,chosen) if x]
+print("Selected examples with Vietnamese:",len(translated))
+if len(translated)<NEED:
+    raise SystemExit(f"Only {len(translated)} selected examples have Vietnamese translations; expected {NEED}.")
+chosen=translated[:NEED]
 
 def topic(w):
     groups={"school":["school","student","teacher","class","lesson","exam","homework","college","university","study","education","library","research","degree"],"work":["job","work","office","company","boss","manager","worker","meeting","business","career","project","report","salary","department","factory","customer"],"travel":["travel","trip","airport","station","train","bus","taxi","hotel","passport","flight","tour","journey","ticket","tourist","map","road"],"food":["food","meal","breakfast","lunch","dinner","restaurant","menu","bread","rice","noodle","soup","cake","fruit","vegetable","drink","taste"],"health":["health","doctor","hospital","medicine","exercise","ill","sick","fever","pain","body","heart","head","stomach","sleep"],"home":["home","house","room","kitchen","bathroom","door","window","table","chair","bed","family","parent","child","neighbor"],"shopping":["shop","shopping","buy","sell","price","cheap","expensive","market","store","clothes","shirt","shoe","size","discount"],"technology":["computer","phone","internet","email","screen","keyboard","software","technology","machine","online","website","video","camera"],"weather":["weather","rain","snow","wind","storm","cloud","sun","summer","winter","spring","autumn","temperature"],"feelings":["happy","sad","angry","afraid","worry","hope","love","hate","excited","tired","quiet","nervous","surprise","fear"],"city":["city","street","building","park","station","bridge","traffic","car","road","town","village","country"],"nature":["tree","flower","animal","river","mountain","forest","earth","land","sea","water","fire","air"]}
