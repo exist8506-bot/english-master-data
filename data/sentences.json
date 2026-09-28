@@ -1090,8 +1090,8 @@
   },
   {
     "id": "sent500_142jlds",
-    "en": "The room looks cheap this morning.",
-    "vi": "Căn phòng trông rẻ vào sáng nay.",
+    "en": "The room is affordable to rent this month.",
+    "vi": "Căn phòng có giá thuê phải chăng trong tháng này.",
     "topic": "shopping",
     "grammar": "Adjective in context",
     "vocabWord": "cheap",
@@ -3564,8 +3564,8 @@
   },
   {
     "id": "sent500_1rh1u58",
-    "en": "The room looks hard this morning.",
-    "vi": "Căn phòng trông khó vào sáng nay.",
+    "en": "The mattress feels hard, so I need a softer one.",
+    "vi": "Tấm nệm khá cứng nên tôi cần một chiếc mềm hơn.",
     "topic": "daily",
     "grammar": "Simple Present",
     "vocabWord": "hard",
@@ -3834,8 +3834,8 @@
   },
   {
     "id": "sent500_1c1n0vj",
-    "en": "The room looks fresh this morning.",
-    "vi": "Căn phòng trông tươi vào sáng nay.",
+    "en": "The room feels fresh after I open the window.",
+    "vi": "Căn phòng trở nên thoáng mát sau khi tôi mở cửa sổ.",
     "topic": "food",
     "grammar": "Adjective in context",
     "vocabWord": "fresh",
@@ -7740,8 +7740,8 @@
   },
   {
     "id": "sent5_9e4lpj",
-    "en": "The room feels wet today.",
-    "vi": "Căn phòng hôm nay khá ướt.",
+    "en": "The bathroom floor is wet today.",
+    "vi": "Sàn phòng tắm hôm nay bị ướt.",
     "topic": "adjective2",
     "grammar": "Adjective in context",
     "vocabWord": "wet",
