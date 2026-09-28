@@ -1,7 +1,7 @@
 {
-  "version": "8.0.10",
-  "updatedAt": "2026-09-27",
-  "releaseNotes": "V8.0.10: sửa thêm 6 ví dụ từ vựng còn mang khung câu máy móc.",
+  "version": "8.0.11",
+  "updatedAt": "2026-09-28",
+  "releaseNotes": "V8.0.11: khôi phục 50 hội thoại mở rộng, thay nội dung ghép từ máy móc bằng hội thoại tự nhiên và làm sạch các câu giao tiếp lỗi.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
