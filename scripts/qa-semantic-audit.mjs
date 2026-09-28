@@ -45,10 +45,14 @@ const sentences = readJson("sentences.json");
 const communication = readJson("communication.json");
 const vocabulary = readJson("vocabulary.json");
 const expansion = readJson("expansion500.json");
-const independent = sentences.filter(x => x?.source === "expansion500" || x?.source === "extra500_v8");
+const expansionV2 = readJson("expansion500_v2.json");
+const independent = sentences.filter(x => x?.source === "expansion500" || x?.source === "expansion500_v2" || x?.source === "extra500_v8");
 
 const sentenceById = new Map(sentences.map(x => [String(x.id ?? ""), x]));
-const expansionRows = Array.isArray(expansion?.words) ? expansion.words : [];
+const expansionRows = [
+  ...(Array.isArray(expansion?.words) ? expansion.words : []),
+  ...(Array.isArray(expansionV2?.words) ? expansionV2.words : [])
+];
 
 // Broad semantic compatibility dictionaries: intentionally conservative.
 const inanimateSubjects = new Set([
@@ -157,7 +161,7 @@ const bigrams = (s) => {
 };
 const jaccard=(a,b)=>{let hit=0;for(const x of a)if(b.has(x))hit++;return hit/Math.max(1,new Set([...a,...b]).size)};
 const nearDuplicates=[];
-const samplePool=independent.slice(0, 1000);
+const samplePool=independent.slice(0, 2000);
 for(let i=0;i<samplePool.length;i++){
   const a=samplePool[i],A=bigrams(a.en);
   for(let j=i+1;j<samplePool.length;j++){
