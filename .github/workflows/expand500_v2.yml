@@ -29,6 +29,7 @@ jobs:
           DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
           TATOEBA_API: https://api.tatoeba.org/v1/sentences
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
+          MYMEMORY_API: https://api.mymemory.translated.net/get
           TRANSLATE_API: https://translate.googleapis.com/translate_a/single
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
