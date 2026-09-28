@@ -674,7 +674,7 @@ for (const handler of inlineHandlers) {
   const m = handler.match(/^([A-Za-z_$][A-Za-z0-9_$]*)\s*\(/);
   if (m) inlineNames.add(m[1]);
 }
-const declaredFunctions = new Set([...app.matchAll(/(?:function|async function)\\s+([A-Za-z_$][\\w$]*)\\s*\\(/g)].map((m) => m[1]));
+const declaredFunctions = new Set([...app.matchAll(/(?:function|async function)\s+([A-Za-z_$][\w$]*)\s*\(/g)].map((m) => m[1]));
 const missingHandlers = [...inlineNames].filter((name) => !declaredFunctions.has(name));
 check(
   "inline UI handlers point to declared functions",
