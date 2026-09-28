@@ -21,8 +21,8 @@ jobs:
       - name: Build and validate 500-word package from static snapshots
         env:
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
-          VOCAB_STATIC: https://raw.githubusercontent.com/quangpromise/LearningEnglish/main/app/lib/features/vocabulary/data/vocabulary_data.dart
           TATOEBA_SNAPSHOT: https://raw.githubusercontent.com/quangpromise/LearningEnglish/main/scripts/english_path/data/tatoeba_eng_vie.tsv
+          MYMEMORY_API: https://api.mymemory.translated.net/get
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
           set -euo pipefail
@@ -79,23 +79,62 @@ jobs:
                   hsk.setdefault(word,{"word":word,"zh":zh,"pinyin":py,"rawEn":raw_en,"hsk":level})
           print("HSK candidates:",len(hsk))
 
-          # ---- B. Static vocabulary metadata (IPA + Vietnamese meaning) ----
-          dart=fetch_text(os.environ["VOCAB_STATIC"])
-          meta={}
-          for m in re.finditer(r"VocabWord\((.*?)\n\s*\),",dart,re.S):
-              body=m.group(1)
-              fields={}
-              for key in ("en","ipa","vi"):
-                  mm=re.search(r"\b"+key+r":\s*'((?:[^'\\]|\\.)*)'",body)
-                  if mm:
-                      fields[key]=mm.group(1).replace("\\'","'").replace("\\\\","\\")
-              word=norm(fields.get("en"))
-              if word and re.fullmatch(r"[a-z]+",word) and fields.get("ipa") and fields.get("vi") and word not in meta:
-                  meta[word]=fields
-          matched_meta=[x for x in hsk.values() if x["word"] in meta]
-          print("Static vocab metadata matches:",len(matched_meta))
-          if len(matched_meta)<NEED:
-              raise SystemExit(f"Only {len(matched_meta)} new HSK words have static IPA/VI metadata; expected {NEED}.")
+          # ---- B. IPA from CMUdict + Vietnamese meaning from HSK gloss ----
+          import subprocess, sys
+          subprocess.check_call([sys.executable,"-m","pip","install","-q","cmudict"])
+          import cmudict
+          CMU=cmudict.dict()
+          IPA_MAP={
+            "AA":"ɑ","AE":"æ","AH":"ʌ","AO":"ɔ","AW":"aʊ","AY":"aɪ","EH":"ɛ","ER":"ɝ",
+            "EY":"eɪ","IH":"ɪ","IY":"i","OW":"oʊ","OY":"ɔɪ","UH":"ʊ","UW":"u",
+            "B":"b","CH":"tʃ","D":"d","DH":"ð","F":"f","G":"ɡ","HH":"h","JH":"dʒ","K":"k",
+            "L":"l","M":"m","N":"n","NG":"ŋ","P":"p","R":"r","S":"s","SH":"ʃ","T":"t",
+            "TH":"θ","V":"v","W":"w","Y":"j","Z":"z","ZH":"ʒ"
+          }
+          def ipa(word):
+              p=CMU.get(word.lower())
+              if not p: return ""
+              out=[]; stressed=False
+              for ph in p[0]:
+                  m=re.fullmatch(r"([A-Z]+)([012]?)",ph)
+                  if not m: continue
+                  v=IPA_MAP.get(m.group(1))
+                  if not v: continue
+                  if m.group(2)=="1" and not stressed:
+                      out.append("ˈ"); stressed=True
+                  elif m.group(2)=="2":
+                      out.append("ˌ")
+                  out.append(v)
+              return "/"+"" .join(out)+"/" if out else ""
+
+          def translate_vi(text):
+              q=urllib.parse.urlencode({"q":str(text),"langpair":"en|vi"})
+              try:
+                  req=urllib.request.Request(os.environ["MYMEMORY_API"]+"?"+q,headers={"User-Agent":UA})
+                  with urllib.request.urlopen(req,timeout=15) as r:
+                      d=json.loads(r.read().decode("utf-8"))
+                  v=str((d.get("responseData") or {}).get("translatedText") or "").strip()
+                  if v and "MYMEMORY WARNING" not in v.upper():
+                      return v
+              except Exception:
+                  return ""
+              return ""
+
+          candidates=[x for x in hsk.values() if ipa(x["word"])]
+          candidates.sort(key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
+          print("Candidates with IPA:",len(candidates))
+
+          def enrich(x):
+              vi=translate_vi(x["rawEn"])
+              if not vi: return None
+              return {**x,"ipa":ipa(x["word"]),"meaningVi":vi}
+
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              enriched=[x for x in pool.map(enrich,candidates) if x]
+          print("Enriched HSK words:",len(enriched))
+          if len(enriched)<NEED:
+              raise SystemExit(f"Only {len(enriched)} new words have IPA + Vietnamese meaning; expected {NEED}.")
+          enriched=sorted(enriched,key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
 
           # ---- C. Static Tatoeba EN-VI snapshot ----
           tatoeba=fetch_text(os.environ["TATOEBA_SNAPSHOT"])
@@ -141,7 +180,7 @@ jobs:
 
           chosen=[]
           used_sentences=set()
-          for x in matched_meta:
+          for x in enriched:
               rows=index.get(x["word"],[])
               pick=None
               for _,en_id,vi_id,en,vi in rows:
@@ -184,8 +223,8 @@ jobs:
               level="Beginner" if x["hsk"]==3 else ("Intermediate" if x["hsk"]==4 else "Upper-Intermediate")
               hid=hashlib.sha1(x["word"].encode()).hexdigest()[:10]
               new_vocab.append({
-                "id":f"exp500v2_{i:03d}_{hid}","word":x["word"],"ipa":x["meta"]["ipa"],
-                "meaning":x["meta"]["vi"],"pos":"word","example":x["example"],"exampleVi":x["exampleVi"],
+                "id":f"exp500v2_{i:03d}_{hid}","word":x["word"],"ipa":x["ipa"],
+                "meaning":x["meaningVi"],"pos":"word","example":x["example"],"exampleVi":x["exampleVi"],
                 "synonyms":"","antonyms":"","topic":tp,"level":level,
                 "favorite":False,"status":"New","reviewDue":None,"createdAt":"2026-09-28T00:00:00.000Z",
                 "audio":"tts","audioEn":tts(x["word"],"en"),"source":SOURCE,"sourceVersion":VERSION,
@@ -198,8 +237,8 @@ jobs:
               })
               new_tri.append({
                 "id":f"exp500v2_tri_{i:03d}_{hid}","en":x["word"],"zh":x["zh"],"pinyin":x["pinyin"],
-                "vi":x["meta"]["vi"],"topic":tp,"level":level,"audio":"tts",
-                "audioEn":tts(x["word"],"en"),"audioZh":tts(x["zh"],"zh"),"audioVi":tts(x["meta"]["vi"],"vi"),
+                "vi":x["meaningVi"],"topic":tp,"level":level,"audio":"tts",
+                "audioEn":tts(x["word"],"en"),"audioZh":tts(x["zh"],"zh"),"audioVi":tts(x["meaningVi"],"vi"),
                 "source":SOURCE,"sourceVersion":VERSION
               })
 
