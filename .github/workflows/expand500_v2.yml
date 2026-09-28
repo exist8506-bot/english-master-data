@@ -245,13 +245,6 @@ jobs:
                                       break
                               if example:
                                   break
-                          if not phon:
-                              phon=str(entry.get("phonetic") or "").strip()
-                              if not phon:
-                                  for p in entry.get("phonetics",[]) or []:
-                                      phon=str(p.get("text") or "").strip()
-                                      if phon:
-                                          break
                   except Exception:
                       pass
               if not example or len(example.split())<4 or len(example.split())>26:
