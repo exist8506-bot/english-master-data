@@ -42,6 +42,8 @@ const files = [
 const data = Object.fromEntries(files.map((f) => [f, readJson(f)]));
 const version = String(data["version.json"].version ?? "");
 const expansion = data["expansion500.json"];
+const expansionV2Path = path.join(dataDir, "expansion500_v2.json");
+const expansionV2 = fs.existsSync(expansionV2Path) ? readJson("expansion500_v2.json") : null;
 
 must(/^\d+\.\d+\.\d+$/.test(version), "Data version must be semantic x.y.z, got " + version);
 must(expansion.package === "expansion500", "Unexpected expansion package: " + expansion.package);
@@ -79,7 +81,7 @@ for (const v of vocab) {
   if (k && !vocabByWord.has(k)) vocabByWord.set(k, v);
 }
 
-const independentSentences = sentences.filter((x) => x?.source === "expansion500" || x?.source === "extra500_v8");
+const independentSentences = sentences.filter((x) => x?.source === "expansion500" || x?.source === "expansion500_v2" || x?.source === "extra500_v8");
 const questionByVocab = new Set(
   questions.map((x) => norm(x?.vocabWord)).filter(Boolean)
 );
@@ -178,8 +180,9 @@ must(
 );
 
 
-must(independentSentences.length === 1000,
-  "Expected 1000 independent sentence-practice rows, got " + independentSentences.length
+const expectedIndependentSentences = expansionV2 ? 1500 : 1000;
+must(independentSentences.length === expectedIndependentSentences,
+  "Expected " + expectedIndependentSentences + " independent sentence-practice rows, got " + independentSentences.length
 );
 must(independentSentences.every((s) => !s.vocabWord && String(s.en ?? "").trim() && String(s.vi ?? "").trim()),
   "Independent sentence rows must have English/Vietnamese text and no vocabWord linkage"
