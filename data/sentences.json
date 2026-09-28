@@ -12062,8 +12062,8 @@
     "favorite": false
   },
   {
-    "en": "She decided to elect after lunch.",
-    "vi": "Cô ấy quyết định bầu chọn; chọn sau bữa trưa.",
+    "en": "I usually have lunch at noon.",
+    "vi": "Tôi thường ăn trưa vào buổi trưa.",
     "id": "sentLegacy_12u07up",
     "vocabWord": "lunch",
     "topic": "food",
@@ -12162,8 +12162,8 @@
     "favorite": false
   },
   {
-    "en": "We talked about fashion yesterday.",
-    "vi": "Chúng tôi nói về thời trang; phong cách hôm qua.",
+    "en": "I saw her yesterday.",
+    "vi": "Tôi đã gặp cô ấy hôm qua.",
     "id": "sentLegacy_16bh8j7",
     "vocabWord": "yesterday",
     "topic": "time",
@@ -12212,8 +12212,8 @@
     "favorite": false
   },
   {
-    "en": "She decided to grab after lunch.",
-    "vi": "Cô ấy quyết định chộp; nắm lấy sau bữa trưa.",
+    "en": "We had lunch together after class.",
+    "vi": "Chúng tôi ăn trưa cùng nhau sau giờ học.",
     "id": "sentLegacy_14sm0jy",
     "vocabWord": "lunch",
     "topic": "food",
@@ -12362,8 +12362,8 @@
     "favorite": false
   },
   {
-    "en": "She decided to occur after lunch.",
-    "vi": "Cô ấy quyết định xảy ra sau bữa trưa.",
+    "en": "I had lunch before the meeting.",
+    "vi": "Tôi đã ăn trưa trước cuộc họp.",
     "id": "sentLegacy_132gh80",
     "vocabWord": "lunch",
     "topic": "food",
@@ -12412,8 +12412,8 @@
     "favorite": false
   },
   {
-    "en": "She decided to react after lunch.",
-    "vi": "Cô ấy quyết định phản ứng sau bữa trưa.",
+    "en": "We had lunch after the class.",
+    "vi": "Chúng tôi ăn trưa sau giờ học.",
     "id": "sentLegacy_1uc7hgh",
     "vocabWord": "lunch",
     "topic": "food",
@@ -12562,8 +12562,8 @@
     "favorite": false
   },
   {
-    "en": "She decided to sign after lunch.",
-    "vi": "Cô ấy quyết định ký; dấu hiệu sau bữa trưa.",
+    "en": "We had lunch together.",
+    "vi": "Chúng tôi đã ăn trưa cùng nhau.",
     "id": "sentLegacy_z3tg2g",
     "vocabWord": "lunch",
     "topic": "food",
@@ -13483,8 +13483,8 @@
   },
   {
     "id": "sent7_0041",
-    "en": "We talked about throughout yesterday.",
-    "vi": "Chúng tôi nói về suốt; khắp hôm qua.",
+    "en": "It rained throughout the night.",
+    "vi": "Trời mưa suốt đêm.",
     "topic": "general",
     "grammar": "Everyday English",
     "vocabWord": "throughout",
