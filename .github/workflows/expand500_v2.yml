@@ -28,7 +28,6 @@ jobs:
         env:
           DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
-          DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
           TRANSLATE_API: https://translate.googleapis.com/translate_a/single
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
