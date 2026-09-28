@@ -134,7 +134,7 @@ for line in raw_eng.splitlines():
     direct_vi=next((vie_by_id.get(tid,"").strip() for tid in links_by_eng.get(sid,[]) if vie_by_id.get(tid,"").strip()),"")
     eng_rows.append((sid,en,hit,direct_vi))
 # Short, unique, ordinary sentences first.
-eng_rows.sort(key=lambda x:(len(x[1].split()),x[0]))
+eng_rows.sort(key=lambda x:(0 if x[3] else 1,len(x[1].split()),x[0]))
 chosen=[]; seen=set()
 for sid,en,hit,direct_vi in eng_rows:
     for w in sorted(hit):
