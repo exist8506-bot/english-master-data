@@ -135,6 +135,7 @@ for line in raw_eng.splitlines():
     eng_rows.append((sid,en,hit,direct_vi))
 # Short, unique, ordinary sentences first.
 eng_rows.sort(key=lambda x:(0 if x[3] else 1,len(x[1].split()),x[0]))
+enriched_by_word={x["word"]:x for x in enriched}
 chosen=[]; seen=set()
 for sid,en,hit,direct_vi in eng_rows:
     for w in sorted(hit):
@@ -142,7 +143,9 @@ for sid,en,hit,direct_vi in eng_rows:
         k=norm(en)
         if k in seen: continue
         seen.add(k)
-        chosen.append({**hsk[w],"example":en,"exampleId":sid,"exampleVi":direct_vi})
+        base=enriched_by_word.get(w)
+        if not base: continue
+        chosen.append({**base,"example":en,"exampleId":sid,"exampleVi":direct_vi})
         break
     if len(chosen)>=NEED: break
 
