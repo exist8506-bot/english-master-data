@@ -1,1 +1,1 @@
-Trigger after restoring enriched V2 records.
+Rebuild existing V2 package with corrected Tatoeba TSV parsing.
