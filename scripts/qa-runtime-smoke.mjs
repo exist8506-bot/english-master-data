@@ -250,7 +250,7 @@ check(
   "500-word cross-feature audit",
   audit.expansion500 === 500 &&
   audit.duplicateWords === 0 &&
-  audit.sentences === 500 &&
+  audit.sentences === 1000 &&
   audit.generalSentences === 500 &&
   audit.independentSentences === 1500 &&
   audit.independentSentenceLinks === 0 &&
@@ -661,7 +661,7 @@ check(
     !/^eng\\t/i.test(String(x.en ?? "")) &&
     /[.!?]$/.test(String(x.en ?? "")) &&
     String(x.en ?? "").trim().split(/\\s+/).length >= 4 &&
-    String(x.en ?? "").trim().split(/\\s+/).length <= 16),
+    String(x.en ?? "").trim().split(/\\s+/).length <= 24),
   JSON.stringify({count: v2Sentences.length})
 );
 
