@@ -632,7 +632,7 @@ check(
 );
 
 T.show("trilingual");
-const v2Words = snap.db.vocab.filter((v) => String(v.source ?? "") === "expansion500_v2" && String(v.sourceVersion ?? "") === "8.1.0");
+const v2Words = snap.db.vocab.filter((v) => String(v.source ?? "") === "expansion500_v2" && String(v.sourceVersion ?? "") === "8.1.1");
 const v2Sentences = snap.db.sentences.filter((x) => String(x.source ?? "") === "expansion500_v2");
 const v2Questions = snap.db.questions.filter((x) => String(x.source ?? "") === "expansion500_v2");
 const v2Tri = snap.db.trilingual.filter((x) => String(x.source ?? "") === "expansion500_v2");
