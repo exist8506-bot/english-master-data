@@ -18,8 +18,12 @@ def get_bytes(url,timeout=240):
 def get_text(url,timeout=240): return get_bytes(url,timeout).decode("utf-8")
 def tts(text,lang): return TTS+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
 
-vocab=R("vocabulary.json"); sentences=R("sentences.json"); questions=R("questions.json")
-grammar=R("grammar.json"); communication=R("communication.json"); tri=R("trilingual.json")
+vocab=[x for x in R("vocabulary.json") if x.get("source")!=SOURCE]
+sentences=[x for x in R("sentences.json") if x.get("source")!=SOURCE]
+questions=[x for x in R("questions.json") if x.get("source")!=SOURCE]
+grammar=[x for x in R("grammar.json") if x.get("source")!=SOURCE]
+communication=[x for x in R("communication.json") if x.get("source")!=SOURCE]
+tri=[x for x in R("trilingual.json") if x.get("source")!=SOURCE]
 used={norm(v.get("word")) for v in vocab}; used|={norm(v.get("en")) for v in tri}
 
 # HSK 2-6
@@ -112,9 +116,15 @@ def usable(s):
 # Direct Tatoeba EN->VI links, used whenever present.
 vie_by_id={}
 for line in raw_vie.splitlines():
-    p=line.split("\t",1)
-    if len(p)==2 and p[1].strip():
-        vie_by_id[p[0].strip()]=p[1].strip()
+    p=line.split("\t")
+    if len(p)>=3:
+        sid,vi_text=p[0].strip(),p[-1].strip()
+    elif len(p)==2:
+        sid,vi_text=p[0].strip(),p[1].strip()
+    else:
+        continue
+    if sid and vi_text:
+        vie_by_id[sid]=vi_text
 
 links_by_eng={}
 for line in raw_links.splitlines():
@@ -125,9 +135,13 @@ for line in raw_links.splitlines():
 targets={x["word"] for x in enriched}
 eng_rows=[]
 for line in raw_eng.splitlines():
-    p=line.split("\t",1)
-    if len(p)!=2: continue
-    sid,en=p[0].strip(),p[1].strip()
+    p=line.split("\t")
+    if len(p)>=3:
+        sid,en=p[0].strip(),p[-1].strip()
+    elif len(p)==2:
+        sid,en=p[0].strip(),p[1].strip()
+    else:
+        continue
     if not usable(en): continue
     hit=targets.intersection(set(re.findall(r"[a-z]+",en.lower())))
     if not hit: continue
