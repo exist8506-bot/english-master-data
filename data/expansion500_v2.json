@@ -2,7 +2,7 @@
   "package": "expansion500_v2",
   "version": "8.1.1",
   "count": 500,
-  "attribution": "Example sentences from Tatoeba (tatoeba.org), CC BY 2.0 FR.",
+  "attribution": "500 new-word example sentences: Tatoeba-derived corpus with 2 editorial context corrections.",
   "ipaSource": "CMUdict (Carnegie Mellon University).",
   "words": [
     {
@@ -6004,6 +6004,18 @@
       "trilingualId": "exp500v2_tri_500_1ca0739975",
       "communicationId": "exp500v2_comm_100",
       "grammarId": "exp500v2_grammar_20"
+    }
+  ],
+  "contextCorrections": [
+    {
+      "word": "left",
+      "from": "Ziri left at noon.",
+      "to": "I left my wallet at home this morning."
+    },
+    {
+      "word": "everyone",
+      "from": "Everyone has different looks.",
+      "to": "Everyone sees things differently."
     }
   ]
 }
