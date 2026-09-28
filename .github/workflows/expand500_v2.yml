@@ -48,6 +48,7 @@ jobs:
           DICT_API=os.environ["DICT_API"]
           TRANSLATE_API=os.environ["TRANSLATE_API"]
           TATOEBA_API=os.environ["TATOEBA_API"]
+          MYMEMORY_API=os.environ["MYMEMORY_API"]
           TTS_BASE=os.environ["TTS_BASE"]
           UA="English-Master-V2-DataBuilder/2.0"
 
@@ -91,13 +92,13 @@ jobs:
               return TTS_BASE+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
 
           def translate(text):
-              q=urllib.parse.quote(str(text))
-              url=f"{TRANSLATE_API}?client=gtx&sl=en&tl=vi&dt=t&q={q}"
               try:
-                  data=get_json(url,3)
-                  return "".join(str(part[0]) for part in data[0] if part and part[0]).strip()
+                  params=urllib.parse.urlencode({"q":str(text),"langpair":"en|vi"})
+                  data=get_json(MYMEMORY_API+"?"+params,3)
+                  return str((data.get("responseData") or {}).get("translatedText") or "").strip()
               except Exception:
                   return ""
+
 
           vocab=readj("vocabulary.json")
           sentences=readj("sentences.json")
