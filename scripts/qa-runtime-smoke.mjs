@@ -175,12 +175,12 @@ let hydrateReady = false;
 for (let i = 0; i < 300; i += 1) {
   snap = T.snap();
   if (
-    snap.db.vocab.length === 3000 &&
-    snap.db.sentences.length === 3250 &&
-    snap.db.questions.length === 5000 &&
+    snap.db.vocab.length === 3500 &&
+    snap.db.sentences.length === 3750 &&
+    snap.db.questions.length === 6000 &&
     snap.db.communication.length === 228 &&
     snap.db.trilingual.length === 2500 &&
-    snap.db.grammar.length === 60
+    snap.db.grammar.length === 80
   ) {
     hydrateReady = true;
     break;
@@ -189,12 +189,12 @@ for (let i = 0; i < 300; i += 1) {
 }
 const hydrateError = window.__EM_LAST_UPDATE_ERROR || document.getElementById("toast")?.textContent || "";
 check("hydrate all datasets", hydrateReady &&
-  snap.db.vocab.length === 3000 &&
-  snap.db.sentences.length === 3250 &&
-  snap.db.questions.length === 5000 &&
+  snap.db.vocab.length === 3500 &&
+  snap.db.sentences.length === 3750 &&
+  snap.db.questions.length === 6000 &&
   snap.db.communication.length === 228 &&
   snap.db.trilingual.length === 2500 &&
-  snap.db.grammar.length === 60,
+  snap.db.grammar.length === 80,
   JSON.stringify({
     vocab: snap.db.vocab.length, sentences: snap.db.sentences.length, questions: snap.db.questions.length,
     communication: snap.db.communication.length, trilingual: snap.db.trilingual.length, grammar: snap.db.grammar.length,
@@ -252,9 +252,9 @@ check(
   audit.duplicateWords === 0 &&
   audit.sentences === 500 &&
   audit.generalSentences === 500 &&
-  audit.independentSentences === 1000 &&
+  audit.independentSentences === 1500 &&
   audit.independentSentenceLinks === 0 &&
-  audit.naturalIndependentSentences === 1000 &&
+  audit.naturalIndependentSentences === 1500 &&
   audit.standaloneQualityIssues === 0 &&
   audit.standaloneDuplicateEnglish === 0 &&
   audit.questions === 500 &&
@@ -274,9 +274,9 @@ const badStandalone = standalone.filter((s) => s?.vocabWord || !String(s?.en ?? 
   /^I put the airport in my travel bag\.$/i.test(String(s.en ?? "")));
 check(
   "standalone sentence pack is natural and independent",
-  standalone.length === 1000 &&
+  standalone.length === 1500 &&
   badStandalone.length === 0 &&
-  T.dataAudit().naturalIndependentSentences === 1000 &&
+  T.dataAudit().naturalIndependentSentences === 1500 &&
   T.dataAudit().standaloneQualityIssues === 0 &&
   T.dataAudit().standaloneDuplicateEnglish === 0,
   JSON.stringify({count:standalone.length,bad:badStandalone.slice(0,5),quality:T.dataAudit().standaloneQualityIssues,duplicates:T.dataAudit().standaloneDuplicateEnglish})
@@ -434,7 +434,7 @@ check("speaking jump changes exact sentence", practicePool.length >= 200 && T.ju
 T.show("quiz");
 html=document.getElementById("view").innerHTML;
 check("quiz has direct jump control", html.includes('id="quizJump"') && html.includes("Tới câu"));
-check("quiz jump changes exact question", T.jumpToItem("quiz", 300) && T.snap().quizIndex === 299 && document.getElementById("view").innerHTML.includes("Câu 300 / 5000"));
+check("quiz jump changes exact question", T.jumpToItem("quiz", 300) && T.snap().quizIndex === 299 && document.getElementById("view").innerHTML.includes("Câu 300 / 6000"));
 
 T.show("settings");
 check("settings exposes one-click sentence audit", document.getElementById("view").innerHTML.includes("runContentAudit()") && document.getElementById("view").innerHTML.includes("Kiểm tra 1.000 câu luyện độc lập"));
@@ -442,7 +442,7 @@ T.runContentAudit();
 check(
   "one-click content audit passes",
   document.getElementById("contentAuditResult").textContent.includes("500/500") &&
-  document.getElementById("contentAuditResult").textContent.includes("1.000/1.000") &&
+  document.getElementById("contentAuditResult").textContent.includes("1.500/1.500") &&
   document.getElementById("contentAuditResult").textContent.includes("không trùng")
 );
 T.show("settings");
