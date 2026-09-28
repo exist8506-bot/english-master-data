@@ -671,7 +671,7 @@ check(
 const inlineHandlers = [...app.matchAll(/onclick="([^"]+)"/g)].map((m) => m[1]);
 const inlineNames = new Set();
 for (const handler of inlineHandlers) {
-  const m = handler.match(/^([A-Za-z_$][\\w$]*)\\s*\\(/);
+  const m = handler.match(/^([A-Za-z_$][A-Za-z0-9_$]*)\\s*\\(/);
   if (m) inlineNames.add(m[1]);
 }
 const declaredFunctions = new Set([...app.matchAll(/(?:function|async function)\\s+([A-Za-z_$][\\w$]*)\\s*\\(/g)].map((m) => m[1]));
