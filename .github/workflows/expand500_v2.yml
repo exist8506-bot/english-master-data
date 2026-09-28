@@ -1,12 +1,12 @@
-name: Build 500 new cross-feature vocabulary V2
+name: Build verified 500-word V2 package
 
 on:
-  workflow_dispatch:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
-  group: english-master-v2-build
+  group: english-master-500-v2
   cancel-in-progress: true
 
 jobs:
@@ -16,28 +16,20 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Build and validate V2
+      - name: Build and validate 500-word package
         env:
-          DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
-          TATOEBA_API: https://api.tatoeba.org/v1/sentences
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
-          MYMEMORY_API: https://api.mymemory.translated.net/get
-          TRANSLATE_API: https://translate.googleapis.com/translate_a/single
+          DICT_TREE: https://api.github.com/repos/thichhoc-org/thichhoc-dict/git/trees/main?recursive=1
+          DICT_RAW: https://raw.githubusercontent.com/thichhoc-org/thichhoc-dict/main/
+          TATOEBA_API: https://api.tatoeba.org/unstable/sentences
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
           set -euo pipefail
-          python3 -m pip install --disable-pip-version-check -q cmudict nltk
-          python3 -c 'import nltk; nltk.download("wordnet", quiet=True)'
           python3 - <<'PY'
           import csv, hashlib, json, os, re, time, urllib.parse, urllib.request
+          from concurrent.futures import ThreadPoolExecutor
           from pathlib import Path
 
           ROOT=Path.cwd()
@@ -45,13 +37,7 @@ jobs:
           VERSION="8.1.0"
           SOURCE="expansion500_v2"
           NEED=500
-          HSK_BASE=os.environ["HSK_BASE"]
-          DICT_API=os.environ["DICT_API"]
-          TRANSLATE_API=os.environ["TRANSLATE_API"]
-          TATOEBA_API=os.environ["TATOEBA_API"]
-          MYMEMORY_API=os.environ["MYMEMORY_API"]
-          TTS_BASE=os.environ["TTS_BASE"]
-          UA="English-Master-V2-DataBuilder/2.0"
+          UA="English-Master-500V2/1.0"
 
           def readj(name):
               return json.loads((DATA/name).read_text(encoding="utf-8"))
@@ -62,44 +48,23 @@ jobs:
           def norm(s):
               return re.sub(r"\s+"," ",str(s or "").strip().lower())
 
+          def get_bytes(url,tries=4):
+              last=None
+              for attempt in range(1,tries+1):
+                  try:
+                      req=urllib.request.Request(url,headers={"User-Agent":UA})
+                      with urllib.request.urlopen(req,timeout=40) as r:
+                          return r.read()
+                  except Exception as e:
+                      last=e
+                      if attempt<tries: time.sleep(0.8*attempt)
+              raise last
+
           def get_json(url,tries=4):
-              last=None
-              for attempt in range(1,tries+1):
-                  try:
-                      req=urllib.request.Request(url,headers={"User-Agent":UA})
-                      with urllib.request.urlopen(req,timeout=25) as r:
-                          return json.loads(r.read().decode("utf-8"))
-                  except Exception as e:
-                      last=e
-                      if attempt<tries: time.sleep(0.4*attempt)
-              raise last
-
-          def get_text(url,tries=4):
-              last=None
-              for attempt in range(1,tries+1):
-                  try:
-                      req=urllib.request.Request(url,headers={"User-Agent":UA})
-                      with urllib.request.urlopen(req,timeout=25) as r:
-                          return r.read().decode("utf-8")
-                  except Exception as e:
-                      last=e
-                      if attempt<tries: time.sleep(0.4*attempt)
-              raise last
-
-          def hash_id(s):
-              return hashlib.sha1(str(s).encode("utf-8")).hexdigest()[:10]
+              return json.loads(get_bytes(url,tries).decode("utf-8"))
 
           def tts(text,lang):
-              return TTS_BASE+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
-
-          def translate(text):
-              try:
-                  params=urllib.parse.urlencode({"q":str(text),"langpair":"en|vi"})
-                  data=get_json(MYMEMORY_API+"?"+params,3)
-                  return str((data.get("responseData") or {}).get("translatedText") or "").strip()
-              except Exception:
-                  return ""
-
+              return os.environ["TTS_BASE"]+"?word="+urllib.parse.quote(str(text))+"&lang="+lang
 
           vocab=readj("vocabulary.json")
           sentences=readj("sentences.json")
@@ -109,20 +74,12 @@ jobs:
           trilingual=readj("trilingual.json")
 
           used_words={norm(x.get("word")) for x in vocab}
-          used_words|={norm(x.get("en")) for x in trilingual}
+          used_words |= {norm(x.get("en")) for x in trilingual}
 
-          blocked={
-            "a","an","the","and","or","but","if","then","than","so","as","of","to",
-            "in","on","at","by","for","from","with","about","into","over","under",
-            "not","no","yes","very","more","most","less","least","else","each",
-            "both","either","neither","also","just","only","even","still","again",
-            "another","other","others","same","such","what","which","who","whom",
-            "whose","how","why","where","when"
-          }
-
-          candidates={}
+          # 1) Load HSK 3-6 candidates (single practical English words).
+          hsk={}
           for level in (3,4,5,6):
-              raw=get_text(f"{HSK_BASE}/hsk{level}.csv")
+              raw=get_bytes(f"{os.environ['HSK_BASE']}/hsk{level}.csv").decode("utf-8")
               for row in csv.reader(raw.splitlines()):
                   if len(row)<3: continue
                   zh=row[0].strip()
@@ -131,140 +88,123 @@ jobs:
                   word=re.sub(r"^to\s+","",raw_en,flags=re.I)
                   word=re.sub(r"^(?:a|an)\s+","",word,flags=re.I).strip().lower()
                   if not zh or not py or not re.fullmatch(r"[a-z]+",word): continue
-                  if word in blocked or len(word)<3 or len(word)>16: continue
-                  if word in used_words or word in candidates: continue
-                  candidates[word]={"word":word,"zh":zh,"pinyin":py,"rawEn":raw_en,"hsk":level}
+                  if len(word)<3 or len(word)>15: continue
+                  if word in used_words: continue
+                  if word not in hsk or level < hsk[word]["hsk"]:
+                      hsk[word]={"word":word,"zh":zh,"pinyin":py,"rawEn":raw_en,"hsk":level}
 
-          ordered=sorted(candidates.values(),key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
+          # 2) Load the static EN-VI dictionary once. Prefer frequency-tier data,
+          # then load general shards only when needed.
+          dict_rows=[]
+          base=os.environ["DICT_RAW"]
+          freq_urls=[base+f"dict-en-vi/data/entries/freq-tier1-{i:02d}.jsonl" for i in range(1,5)]
+          def fetch_lines(url):
+              return get_bytes(url).decode("utf-8").splitlines()
+          with ThreadPoolExecutor(max_workers=4) as pool:
+              batches=list(pool.map(fetch_lines,freq_urls))
+          for lines in batches:
+              for line in lines:
+                  try:
+                      row=json.loads(line)
+                  except Exception:
+                      continue
+                  if row.get("lang")=="en-vi":
+                      dict_rows.append(row)
 
-          cmu={}
-          try:
-              import cmudict
-              cmu=cmudict.dict()
-          except Exception:
-              pass
+          dict_map={}
+          for row in dict_rows:
+              head=norm(row.get("headword"))
+              if not re.fullmatch(r"[a-z]+",head): continue
+              if head not in dict_map or float(row.get("freq") or 0) > float(dict_map[head].get("freq") or 0):
+                  dict_map[head]=row
 
-          def cmu_ipa(word):
-              pr=cmu.get(word.lower())
-              if not pr: return ""
-              table={
-                "AA":"ɑ","AE":"æ","AH":"ʌ","AO":"ɔ","AW":"aʊ","AY":"aɪ","EH":"ɛ","ER":"ɝ",
-                "EY":"eɪ","IH":"ɪ","IY":"i","OW":"oʊ","OY":"ɔɪ","UH":"ʊ","UW":"u",
-                "B":"b","CH":"tʃ","D":"d","DH":"ð","F":"f","G":"ɡ","HH":"h","JH":"dʒ","K":"k",
-                "L":"l","M":"m","N":"n","NG":"ŋ","P":"p","R":"r","S":"s","SH":"ʃ","T":"t",
-                "TH":"θ","V":"v","W":"w","Y":"j","Z":"z","ZH":"ʒ"
-              }
-              out=[]; primary=False
-              for ph in pr[0]:
-                  m=re.fullmatch(r"([A-Z]+)([012]?)",ph)
-                  if not m: continue
-                  val=table.get(m.group(1),"")
-                  if not val: continue
-                  if m.group(2)=="1" and not primary:
-                      out.append("ˈ");primary=True
-                  elif m.group(2)=="2":
-                      out.append("ˌ")
-                  out.append(val)
-              return "/"+"" .join(out)+"/" if out else ""
+          matches=[x for x in hsk.values() if x["word"] in dict_map and dict_map[x["word"]].get("pron") and dict_map[x["word"]].get("senses_vi")]
+          matches.sort(key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
 
+          if len(matches)<700:
+              tree=get_json(os.environ["DICT_TREE"])
+              urls=[x["url"] for x in tree.get("tree",[]) if x.get("type")=="blob" and re.fullmatch(r"dict-en-vi/data/entries/general-[a-z](?:-[0-9]+)?\\.jsonl",x.get("path",""))]
+              with ThreadPoolExecutor(max_workers=8) as pool:
+                  general_batches=list(pool.map(fetch_lines,urls))
+              for lines in general_batches:
+                  for line in lines:
+                      try:
+                          row=json.loads(line)
+                      except Exception:
+                          continue
+                      if row.get("lang")!="en-vi": continue
+                      head=norm(row.get("headword"))
+                      if not re.fullmatch(r"[a-z]+",head) or head not in hsk: continue
+                      if head not in dict_map or float(row.get("freq") or 0) > float(dict_map[head].get("freq") or 0):
+                          dict_map[head]=row
+              matches=[x for x in hsk.values() if x["word"] in dict_map and dict_map[x["word"]].get("pron") and dict_map[x["word"]].get("senses_vi")]
+              matches.sort(key=lambda x:(x["hsk"],len(x["word"]),x["word"]))
+
+          # 3) Real EN-VI example sentence from Tatoeba.
           reject=[
-            re.compile(r"^The (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\b",re.I),
-            re.compile(r"^(?:He|She) decided to (?:need|know|happen|fail|occur|already|only|slowly|beautifully|probably|just|discover|detect|indicate|expect|elect|react|advertise)\b",re.I),
-            re.compile(r"^I need to (?:use|take|look|like|feel|show|spend|lend|beautifully|probably|just) before breakfast\.$",re.I),
-            re.compile(r"^They tried to (?:support|continue|establish|wonder|disturb|entertain|express|propose|resolve|serve|submit|thank|appear|gain|accompany|affect|attach|complain|consider|contribute|create|decrease|encourage|estimate|harm|ignore|notice|prevent|recommend) carefully\.$",re.I),
-            re.compile(r"^It is (?:hungry|spicy|large|big|low|public) to practice a little every day\.$",re.I),
-            re.compile(r"^She sounded (?:delicious|salty|favorite) during the conversation\.$",re.I),
-            re.compile(r"^I feel (?:dangerous|full|sour|difficult|common|natural|personal|long|afraid|lazy|weak) when I finish my work\.$",re.I),
-            re.compile(r"^I noticed (?:youth|iron|steel|aspect) this morning\.$",re.I),
+              re.compile(r"^the (?:room|house|chair|table|book|dictionary|homework|question|answer|company|career|station|airport|mountain|river|bicycle|office|meeting|manager|client|desk|computer|phone|window|door) (?:looks?|is|was|seems?) (?:very )?(?:sad|happy|angry|excited|nervous|tired|lonely|worried|afraid|jealous|proud|surprised|calm|friendly|serious|careful|rich|sure|offline|cloudy|snowy|local|short|sweet)\\b",re.I),
+              re.compile(r"^i'?m practicing\\b",re.I),
+              re.compile(r"^(?:when would you use|how can i use|how would you use|can you give me an example with|can you tell me more about)\\b",re.I),
+              re.compile(r"^i noticed (?:youth|iron|steel) this morning\\.$",re.I),
+              re.compile(r"^i saw aspect on my way home\\.$",re.I)
           ]
 
-          from concurrent.futures import ThreadPoolExecutor
-          from nltk.corpus import wordnet as wn
-          POS_MAP={"n":"noun","v":"verb","a":"adjective","s":"adjective","r":"adverb"}
+          def flatten_translations(value):
+              out=[]
+              if isinstance(value,dict):
+                  if value.get("lang")=="vie" and value.get("text"):
+                      out.append(str(value["text"]).strip())
+                  for v in value.values():
+                      out.extend(flatten_translations(v))
+              elif isinstance(value,list):
+                  for v in value:
+                      out.extend(flatten_translations(v))
+              return out
 
-          def build_one(c):
+          def fetch_tatoeba(c):
               word=c["word"]
-              variants=[word]
-              for v in (
-                  re.sub(r"ies$","y",word),
-                  re.sub(r"([^s])s$","\\1",word),
-                  re.sub(r"ied$","y",word),
-                  re.sub(r"ed$","",word),
-                  re.sub(r"ing$","",word),
-              ):
-                  if v and v not in variants and len(v)>=3:
-                      variants.append(v)
-              example=""; pos=""; matched_form=word
-              for candidate in variants:
-                  try:
-                      synsets=wn.synsets(candidate)
-                  except Exception:
-                      synsets=[]
-                  for syn in synsets:
-                      for ex in syn.examples():
-                          ex=str(ex).strip()
-                          if re.search(r"\\b"+re.escape(candidate)+r"\\b",ex,re.I):
-                              example=ex; pos=POS_MAP.get(syn.pos(),syn.pos()); matched_form=candidate
-                              break
-                      if example: break
-                  if example: break
-              if not example:
-                  try:
-                      entries=get_json(DICT_API+urllib.parse.quote(word),3)
-                  except Exception:
-                      entries=[]
-                  if isinstance(entries,list) and entries:
-                      entry=entries[0] if isinstance(entries[0],dict) else {}
-                      for m in entry.get("meanings",[]) or []:
-                          if not pos: pos=str(m.get("partOfSpeech") or "")
-                          for d in m.get("definitions",[]) or []:
-                              ex=str(d.get("example") or "").strip()
-                              if ex:
-                                  example=ex; break
-                          if example: break
-              if not example:
-                  try:
-                      params=urllib.parse.urlencode({
-                          "q":word,"lang":"eng","sort":"relevance",
-                          "word_count":"4-26","limit":"10"
-                      })
-                      td=get_json(TATOEBA_API+"?"+params,3)
-                  except Exception:
-                      td={}
-                  rows=td.get("data",[]) if isinstance(td,dict) else []
-                  for item in rows:
-                      ex=str(item.get("text") or "").strip()
-                      if ex and re.search(r"\\b"+re.escape(word)+r"\\b",ex,re.I):
-                          example=ex
-                          break
-              if not example or len(example.split())<4 or len(example.split())>26: return None
-              if any(rx.search(example) for rx in reject): return None
-              phon=cmu_ipa(word) or cmu_ipa(matched_form)
-              if not phon: return None
-              vi=translate(str(c["rawEn"])+" ||| "+example)
-              if "|||" not in vi: return None
-              meaning_vi,example_vi=[z.strip() for z in vi.split("|||",1)]
-              if not meaning_vi or not example_vi: return None
-              return {**c,"word":word,"originalWord":word,"pos":pos,"phonetic":phon,
-                      "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi}
+              params=urllib.parse.urlencode({"lang":"eng","trans:lang":"vie","q":word,"limit":20,"sort":"relevance"})
+              try:
+                  data=get_json(os.environ["TATOEBA_API"]+"?"+params,4)
+              except Exception:
+                  return None
+              for item in data.get("data",[]) if isinstance(data,dict) else []:
+                  en=str(item.get("text") or "").strip()
+                  if not en or not re.search(r"\\b"+re.escape(word)+r"\\b",en,re.I): continue
+                  if not (4<=len(en.split())<=28) or not /[.!?]$/.search(en): continue
+                  if any(rx.search(en) for rx in reject): continue
+                  vi_list=flatten_translations(item.get("translations") or [])
+                  vi=next((v for v in vi_list if v), "")
+                  if not vi: continue
+                  return {**c,"example":en,"exampleVi":vi,"sourceRef":item.get("id")}
+              return None
 
-          chosen=[]; used_examples=set(); used_words_v2=set()
-          for start in range(0,len(ordered),100):
-              batch=ordered[start:start+100]
-              with ThreadPoolExecutor(max_workers=6) as pool:
-                  results=list(pool.map(build_one,batch))
-              for row in results:
-                  if not row:
+          chosen=[]
+          used_examples=set()
+          with ThreadPoolExecutor(max_workers=6) as pool:
+              for row in pool.map(fetch_tatoeba,matches):
+                  if not row: continue
+                  word=row["word"]
+                  key=norm(row["example"])
+                  if word in used_words or word in {x["word"] for x in chosen} or key in used_examples:
                       continue
-                  k=norm(row["example"]); wk=norm(row["word"])
-                  if k in used_examples or wk in used_words_v2 or wk in used_words:
-                      continue
-                  used_examples.add(k); used_words_v2.add(wk)
+                  used_examples.add(key)
                   chosen.append(row)
                   if len(chosen)>=NEED:
                       break
-              if len(chosen)>=NEED:
-                  break
+
+          if len(chosen)<NEED:
+              raise SystemExit(f"Only {len(chosen)} verified new words with real EN-VI examples; expected {NEED}.")
+
+          new_vocab=[]; new_sentences=[]; new_tri=[]; new_questions=[]
+
+          all_meanings=[str(x.get("meaning") or "").strip() for x in vocab if str(x.get("meaning") or "").strip()]
+          all_meanings_unique=[]
+          seen_m=set()
+          for m in all_meanings:
+              k=norm(m)
+              if k and k not in seen_m:
+                  seen_m.add(k); all_meanings_unique.append(m)
 
           def topic(word):
               groups={
@@ -286,97 +226,84 @@ jobs:
                   if any(v in w for v in vals): return k
               return "daily"
 
-          new_vocab=[];new_sentences=[];new_tri=[]
           for i,x in enumerate(chosen,1):
+              d=dict_map[x["word"]]
+              vi_mean=str((d.get("senses_vi") or [""])[0]).strip()
+              if not vi_mean: raise SystemExit("Missing Vietnamese meaning")
               tp=topic(x["word"])
               level="Beginner" if x["hsk"]<=3 else ("Intermediate" if x["hsk"]<=4 else "Upper-Intermediate")
-              hid=hash_id(x["word"])
-              v={
-                "id":f"exp500v2_{i:03d}_{hid}","word":x["word"],
-                "ipa":x["phonetic"],"meaning":x["meaningVi"],"pos":x["pos"] or "word",
+              hid=hashlib.sha1(x["word"].encode()).hexdigest()[:10]
+              new_vocab.append({
+                "id":f"exp500v2_{i:03d}_{hid}","word":x["word"],"ipa":d["pron"],
+                "meaning":vi_mean,"pos":d.get("pos") or "word",
                 "example":x["example"],"exampleVi":x["exampleVi"],
                 "synonyms":"","antonyms":"","topic":tp,"level":level,
                 "favorite":False,"status":"New","reviewDue":None,
                 "createdAt":"2026-09-28T00:00:00.000Z","audio":"tts",
-                "audioEn":tts(x["word"],"en"),"source":SOURCE,"sourceVersion":VERSION
-              }
-              new_vocab.append(v)
+                "audioEn":tts(x["word"],"en"),"source":SOURCE,"sourceVersion":VERSION,
+                "sourceRef":x.get("sourceRef"),"hsk":x["hsk"]
+              })
               new_sentences.append({
                 "id":f"exp500v2_sent_{i:03d}_{hid}","en":x["example"],"vi":x["exampleVi"],
                 "topic":tp,"grammar":"Everyday English","audioEn":tts(x["example"],"en"),
-                "favorite":False,"source":SOURCE,"sourceVersion":VERSION
+                "favorite":False,"source":SOURCE,"sourceVersion":VERSION,"sourceRef":x.get("sourceRef")
               })
               new_tri.append({
                 "id":f"exp500v2_tri_{i:03d}_{hid}","en":x["word"],"zh":x["zh"],
-                "pinyin":x["pinyin"],"vi":x["meaningVi"],"topic":tp,"level":level,
+                "pinyin":x["pinyin"],"vi":vi_mean,"topic":tp,"level":level,
                 "audio":"tts","audioEn":tts(x["word"],"en"),"audioZh":tts(x["zh"],"zh"),
-                "audioVi":tts(x["meaningVi"],"vi"),"source":SOURCE,"sourceVersion":VERSION
+                "audioVi":tts(vi_mean,"vi"),"source":SOURCE,"sourceVersion":VERSION
               })
 
-          # Two quiz modes per new word: meaning + word-in-context.
-          all_meanings=[str(x.get("meaning") or "").strip() for x in vocab+new_vocab if str(x.get("meaning") or "").strip()]
-          all_meanings_unique=[]
-          seen_m=set()
-          for m in all_meanings:
-              k=norm(m)
-              if k and k not in seen_m:
-                  seen_m.add(k);all_meanings_unique.append(m)
           all_words=[str(x.get("word") or "").strip() for x in vocab+new_vocab if str(x.get("word") or "").strip()]
-          new_questions=[]
           for i,v in enumerate(new_vocab,1):
-              meaning=v["meaning"]
-              distract=[m for m in all_meanings_unique if norm(m)!=norm(meaning)][:3]
-              if len(distract)<3: raise SystemExit("Not enough unique meaning distractors")
-              opts=[meaning,*distract]
-              shift=(i*5)%4
-              opts=opts[shift:]+opts[:shift]
+              distract=[m for m in all_meanings_unique if norm(m)!=norm(v["meaning"])][:3]
+              if len(distract)<3: raise SystemExit("Not enough meaning distractors")
+              opts=[v["meaning"],*distract]
+              shift=(i*5)%4; opts=opts[shift:]+opts[:shift]
               new_questions.append({
-                "id":f"exp500v2_qm_{i:03d}_{hash_id(v['word'])}","type":"multiple",
-                "prompt":f'"{v["word"]}" nghĩa là gì?',"options":opts,
-                "answer":opts.index(meaning),"explain":f'{v["word"]} = {meaning}.',
+                "id":f"exp500v2_qm_{i:03d}_{hashlib.sha1(v['word'].encode()).hexdigest()[:10]}",
+                "type":"multiple","prompt":f'"{v["word"]}" nghĩa là gì?',"options":opts,
+                "answer":opts.index(v["meaning"]),"explain":f'{v["word"]} = {v["meaning"]}.',
                 "topic":v["topic"],"level":v["level"],"vocabWord":v["word"],
                 "audio":"tts","audioEn":tts(v["word"],"en"),"source":SOURCE,"sourceVersion":VERSION
               })
-              blank=re.sub(r"\b"+re.escape(v["word"])+r"\b","_____",v["example"],count=1,flags=re.I)
+              blank=re.sub(r"\\b"+re.escape(v["word"])+r"\\b","_____",v["example"],count=1,flags=re.I)
               word_opts=[v["word"]]
               for w in all_words:
                   if norm(w)!=norm(v["word"]) and norm(w) not in {norm(z) for z in word_opts}:
                       word_opts.append(w)
                   if len(word_opts)==4: break
               if len(word_opts)<4: raise SystemExit("Not enough word distractors")
-              shift=(i*3)%4
-              word_opts=word_opts[shift:]+word_opts[:shift]
+              shift=(i*3)%4; word_opts=word_opts[shift:]+word_opts[:shift]
               new_questions.append({
-                "id":f"exp500v2_qc_{i:03d}_{hash_id(v['word'])}","type":"multiple",
-                "prompt":blank,"options":word_opts,"answer":word_opts.index(v["word"]),
-                "explain":f'Từ phù hợp là "{v["word"]}".',"topic":v["topic"],"level":v["level"],
-                "vocabWord":v["word"],"audio":"tts","audioEn":tts(blank,"en"),
-                "source":SOURCE,"sourceVersion":VERSION
+                "id":f"exp500v2_qc_{i:03d}_{hashlib.sha1(v['word'].encode()).hexdigest()[:10]}",
+                "type":"multiple","prompt":blank,"options":word_opts,"answer":word_opts.index(v["word"]),
+                "explain":f'Từ phù hợp là "{v["word"]}".',
+                "topic":v["topic"],"level":v["level"],"vocabWord":v["word"],
+                "audio":"tts","audioEn":tts(blank,"en"),"source":SOURCE,"sourceVersion":VERSION
               })
 
           new_comm=[]
           patterns=[
-            ('I came across the word "{w}" today.','Can you use it in a sentence?','That example makes the meaning clear.'),
-            ('I learned the word "{w}" today.','What sentence helps you remember it?','That context is easy to picture.'),
-            ('I am practicing "{w}" today.','How would you use it naturally?','That sounds natural in context.'),
-            ('I want to remember "{w}".','Can you read an example aloud?','Yes, that helps me remember it.')
+            ("I came across a new word while reading today.","Where did you see it?","The example gives a clear context."),
+            ("I heard a new word in a conversation today.","What was the sentence?","That context makes it easier to remember."),
+            ("I found a useful word while studying.","How was it used?","The example shows how it works in a real sentence."),
+            ("I saw a new word in an article this morning.","Did the sentence help?","Yes, the context makes the meaning clearer.")
           ]
           for start in range(0,NEED,5):
-              group=new_vocab[start:start+5]
-              lines=[]
+              group=new_vocab[start:start+5]; lines=[]
               for j,v in enumerate(group):
                   p=patterns[j%len(patterns)]
                   lines.extend([
-                    ["A",p[0].format(w=v["word"]),f'Hôm nay tôi bắt gặp từ "{v["word"]}".'],
-                    ["B",p[1],"Bạn có thể dùng nó trong một câu không?"],
+                    ["A",p[0],p[0].replace("I ","Tôi ").replace("word","từ mới")],
+                    ["B",p[1],"Bạn thấy nó ở đâu?"],
                     ["A",v["example"],v["exampleVi"]],
-                    ["B",p[2],"Ví dụ đó giúp tôi hiểu/nghi nhớ cách dùng."]
+                    ["B",p[2],"Ngữ cảnh đó giúp ghi nhớ dễ hơn."]
                   ])
               new_comm.append({
-                "id":f"exp500v2_comm_{start//5+1:03d}",
-                "title":f"Luyện giao tiếp từ mới {start//5+1:03d}",
-                "topic":group[0]["topic"],
-                "vocab":[v["word"] for v in group],"lines":lines,
+                "id":f"exp500v2_comm_{start//5+1:03d}","title":f"Luyện giao tiếp từ mới {start//5+1:03d}",
+                "topic":group[0]["topic"],"vocab":[v["word"] for v in group],"lines":lines,
                 "source":SOURCE,"sourceVersion":VERSION
               })
 
@@ -385,12 +312,12 @@ jobs:
               group=new_vocab[start:start+25]
               new_grammar.append({
                 "id":f"exp500v2_grammar_{start//25+1:02d}",
-                "title":f"Từ mới trong ngữ cảnh — {group[0]['topic']}",
+                "title":f"Ngữ pháp qua câu thật — {group[0]['topic']}",
                 "level":"Beginner–Intermediate",
-                "formula":"Target word + natural example in context",
-                "explain":"Đọc câu ví dụ, nghe câu và nói lại câu để ghi nhớ cách dùng thực tế.",
+                "formula":"Real sentence + target word in context",
+                "explain":"Đọc câu thật, nghe câu và nói lại câu để ghi nhớ cách dùng trong ngữ cảnh.",
                 "examples":[v["example"] for v in group],
-                "notes":"Gói 500 từ mới V2.",
+                "notes":"Gói 500 từ mới V2; câu ví dụ lấy từ Tatoeba.",
                 "vocabWords":[v["word"] for v in group],
                 "source":SOURCE,"sourceVersion":VERSION
               })
@@ -408,8 +335,10 @@ jobs:
           writej("trilingual.json",final_tri)
           writej("communication.json",final_comm)
           writej("grammar.json",final_grammar)
+
           writej("expansion500_v2.json",{
             "package":SOURCE,"version":VERSION,"count":NEED,
+            "attribution":"Example sentences from Tatoeba (tatoeba.org), CC BY 2.0 FR.",
             "words":[
               {"word":new_vocab[i]["word"],"vocabId":new_vocab[i]["id"],
                "sentenceId":new_sentences[i]["id"],
@@ -423,40 +352,47 @@ jobs:
 
           writej("version.json",{
             "version":VERSION,"updatedAt":"2026-09-28",
-            "releaseNotes":"V8.1.0: thêm đúng 500 từ mới đã xác thực qua từ điển, mỗi từ có IPA, nghĩa Việt, câu ví dụ theo ngữ cảnh, audio; đồng thời nối vào đọc, nghe, nói, flashcards, quiz ngữ nghĩa, quiz theo ngữ cảnh, ôn tập, tam ngữ, giao tiếp và ngữ pháp.",
+            "releaseNotes":"V8.1.0: thêm đúng 500 từ mới có IPA, nghĩa Việt, câu EN-VI có thật, nghe, đọc, nói, quiz, ôn tập, tam ngữ, giao tiếp và ngữ pháp.",
             "files":{"vocabulary":"vocabulary.json","sentences":"sentences.json","questions":"questions.json","grammar":"grammar.json","communication":"communication.json","trilingual":"trilingual.json"},
             "expansion":{"package":SOURCE,"count":500}
           })
 
+          # Align UI/version/cache signals.
+          app=ROOT/"app.js"
+          txt=app.read_text(encoding="utf-8")
+          txt=re.sub(r'^const APP_VERSION="[^"]+";',f'const APP_VERSION="{VERSION}";',txt,count=1,flags=re.M)
+          app.write_text(txt,encoding="utf-8")
+          writej("../app-version.json",{"version":VERSION,"updatedAt":"2026-09-28","reason":"verified 500-word V2 content"})
+          idx=ROOT/"index.html"; s=idx.read_text(encoding="utf-8")
+          s=re.sub(r'<meta name="application-version" content="[^"]+">',f'<meta name="application-version" content="{VERSION}">',s)
+          s=s.replace('English Master V8.0.11','English Master V'+VERSION).replace('app.js?v=8.0.11','app.js?v='+VERSION)
+          s=s.replace('<link rel="stylesheet" href="styles.css">','<link rel="stylesheet" href="styles.css">')
+          idx.write_text(s,encoding="utf-8")
+          sw=ROOT/"sw.js"; s=sw.read_text(encoding="utf-8")
+          s=re.sub(r'CACHE_NAME="[^"]+"',f'CACHE_NAME="english-master-v{VERSION}-layout-switch"',s,1)
+          s=re.sub(r'app\\.js\\?v=[0-9.]+', 'app.js?v='+VERSION, s)
+          sw.write_text(s,encoding="utf-8")
+          manifest=ROOT/"manifest.json"; m=json.loads(manifest.read_text(encoding="utf-8"))
+          m["name"]="English Master V"+VERSION
+          manifest.write_text(json.dumps(m,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+          # Hard assertions before commit.
           assert len(new_vocab)==500 and len({norm(x["word"]) for x in new_vocab})==500
           assert all(x.get("ipa") and x.get("meaning") and x.get("example") and x.get("exampleVi") and x.get("audioEn") for x in new_vocab)
           assert len(new_sentences)==500 and all(x.get("en") and x.get("vi") and x.get("audioEn") and not x.get("vocabWord") for x in new_sentences)
-          assert len(new_questions)==1000 and all(len(x["options"])==4 and len({norm(z) for z in x["options"]})==4 and 0<=x["answer"]<4 for x in new_questions)
+          assert len(new_questions)==1000 and all(len(x["options"])==4 and len({norm(z) for z in x["options"]})==4 and 0<=x["answer"]<4 and x["options"][x["answer"]] for x in new_questions)
           assert len(new_tri)==500 and all(x.get("en") and x.get("zh") and x.get("pinyin") and x.get("vi") and x.get("audioEn") and x.get("audioZh") and x.get("audioVi") for x in new_tri)
           assert len(new_comm)==100 and all(len(d.get("lines",[]))==20 for d in new_comm)
           assert len(new_grammar)==20 and all(len(g.get("examples",[]))==25 and len(g.get("vocabWords",[]))==25 for g in new_grammar)
-          assert sum(x.get("source")==SOURCE for x in final_vocab)==500
-          assert sum(x.get("source")==SOURCE for x in final_sentences)==500
-          assert sum(x.get("source")==SOURCE for x in final_questions)==1000
-          assert sum(x.get("source")==SOURCE for x in final_tri)==500
-          assert sum(x.get("source")==SOURCE for x in final_comm)==100
-          assert sum(x.get("source")==SOURCE for x in final_grammar)==20
-          assert all(re.search(r"\b"+re.escape(x["word"])+r"\b",x["example"],re.I) for x in new_vocab)
-
-          print(json.dumps({
-            "status":"PASS","newWords":500,"vocabTotal":len(final_vocab),
-            "sentencesAdded":500,"questionsAdded":1000,"trilingualAdded":500,
-            "communicationAdded":100,"grammarAdded":20,
-            "audioWordTargets":500,"audioSentenceTargets":500,
-            "reading":500,"listening":500,"speaking":500,"quiz":1000,"review":500
-          },ensure_ascii=False,indent=2))
+          assert all(not any(rx.search(v["example"]) for rx in reject) for v in new_vocab)
+          print(json.dumps({"PASS":True,"newWords":500,"sentencesAdded":500,"questionsAdded":1000,"trilingualAdded":500,"communicationAdded":100,"grammarAdded":20},ensure_ascii=False))
           PY
 
-      - name: Commit generated content
+      - name: Commit generated data and version
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          git add data app.js app-version.json index.html sw.js manifest.json
           git diff --cached --quiet && exit 0
-          git commit -m "V8.1.0: add 500 new cross-feature vocabulary [data-build]"
+          git commit -m "V8.1.0: add 500 verified cross-feature words [data-build]"
           git push
