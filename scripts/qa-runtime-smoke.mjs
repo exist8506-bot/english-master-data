@@ -653,6 +653,16 @@ check(
   JSON.stringify({vocab:v2Words.length,sentences:v2Sentences.length,questions:v2Questions.length,trilingual:v2Tri.length,communication:v2Comm.length,grammar:v2Grammar.length})
 );
 check(
+  "V2 standalone English fields are clean",
+  v2Sentences.every((x) => !String(x.en ?? "").includes("\\t") &&
+    !/^eng\\t/i.test(String(x.en ?? "")) &&
+    /[.!?]$/.test(String(x.en ?? "")) &&
+    String(x.en ?? "").trim().split(/\\s+/).length >= 4 &&
+    String(x.en ?? "").trim().split(/\\s+/).length <= 16),
+  JSON.stringify({count: v2Sentences.length})
+);
+
+check(
   "500-word V2 mapping covers every word",
   !v2PackageExists || v2Package.words.every((m) => v2Words.some((v) => v.word === m.word && v.id === m.vocabId) &&
     v2Sentences.some((x) => x.id === m.sentenceId) &&
