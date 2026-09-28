@@ -180,33 +180,53 @@ jobs:
 
           def build_one(c):
               word=c["word"]
-              base=word
+              variants=[word]
+              for v in (
+                  re.sub(r"ies$","y",word),
+                  re.sub(r"([^s])s$","\\1",word),
+                  re.sub(r"ied$","y",word),
+                  re.sub(r"ed$","",word),
+                  re.sub(r"ing$","",word),
+              ):
+                  if v and v not in variants and len(v)>=3:
+                      variants.append(v)
               try:
-                  synsets=wn.synsets(word)
-                  if not synsets:
-                      base=wn.morphy(word) or word
-                      synsets=wn.synsets(base)
+                  synsets=[]
+                  for candidate in variants:
+                      synsets.extend(wn.synsets(candidate))
+                  # Keep order while removing duplicate synsets.
+                  uniq=[]; seen_syn=set()
+                  for syn in synsets:
+                      key=syn.name()
+                      if key not in seen_syn:
+                          seen_syn.add(key); uniq.append(syn)
+                  synsets=uniq
               except Exception:
                   return None
               if not synsets:
                   return None
-              example=""; pos=""
-              for syn in synsets:
-                  for ex in syn.examples():
-                      ex=str(ex).strip()
-                      if re.search(r"\b"+re.escape(word)+r"\b",ex,re.I):
-                          example=ex
-                          pos=POS_MAP.get(syn.pos(),syn.pos())
+              example=""; pos=""; matched_form=word
+              for candidate in variants:
+                  for syn in wn.synsets(candidate):
+                      for ex in syn.examples():
+                          ex=str(ex).strip()
+                          if re.search(r"\\b"+re.escape(candidate)+r"\\b",ex,re.I):
+                              example=ex
+                              pos=POS_MAP.get(syn.pos(),syn.pos())
+                              matched_form=candidate
+                              break
+                      if example:
                           break
                   if example:
                       break
-              if not example and base!=word:
+              if not example:
                   for syn in synsets:
                       for ex in syn.examples():
                           ex=str(ex).strip()
-                          if re.search(r"\b"+re.escape(base)+r"\b",ex,re.I):
+                          if ex:
                               example=ex
                               pos=POS_MAP.get(syn.pos(),syn.pos())
+                              matched_form=next((v for v in variants if re.search(r"\\b"+re.escape(v)+r"\\b",ex,re.I)),word)
                               break
                       if example:
                           break
@@ -214,7 +234,10 @@ jobs:
                   return None
               if any(rx.search(example) for rx in reject):
                   return None
-              phon=cmu_ipa(word) or cmu_ipa(base)
+              actual_word=word
+              if matched_form!=word:
+                  actual_word=matched_form
+              phon=cmu_ipa(actual_word) or cmu_ipa(word)
               if not phon:
                   return None
               vi=translate(str(c["rawEn"])+" ||| "+example)
@@ -223,10 +246,12 @@ jobs:
               meaning_vi,example_vi=[z.strip() for z in vi.split("|||",1)]
               if not meaning_vi or not example_vi:
                   return None
-              return {**c,"pos":pos,"phonetic":phon,
+              return {**c,"word":actual_word,"originalWord":word,"pos":pos,"phonetic":phon,
                       "meaningVi":meaning_vi,"example":example,"exampleVi":example_vi}
 
-          chosen=[]; used_examples=set()
+
+
+          chosen=[]; used_examples=set(); used_words_v2=set()
           for start in range(0,len(ordered),100):
               batch=ordered[start:start+100]
               with ThreadPoolExecutor(max_workers=6) as pool:
@@ -235,10 +260,10 @@ jobs:
               for row in results:
                   if not row:
                       continue
-                  k=norm(row["example"])
-                  if k in used_examples:
+                  k=norm(row["example"]); wk=norm(row["word"])
+                  if k in used_examples or wk in used_words_v2 or wk in used_words:
                       continue
-                  used_examples.add(k)
+                  used_examples.add(k); used_words_v2.add(wk)
                   chosen.append(row)
                   if len(chosen)>=NEED:
                       break
