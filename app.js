@@ -1,4 +1,4 @@
-const APP_VERSION="8.0.10";
+const APP_VERSION="8.0.11";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -131,7 +131,6 @@ function communicationLineIsNatural(line){
 }
 function communicationPracticePool(){
   return db.communication.map(function(d){
-    if(String(d.source||"")==="extra500_v8")return null;
     const lines=(d.lines||[]).filter(function(l){return Array.isArray(l)&&communicationLineIsNatural(l[1])});
     return {...d,lines};
   }).filter(function(d){return d&&d.lines.length>=2});
@@ -959,7 +958,7 @@ function communication(){
   const list=communicationPracticePool(),size=12,pages=Math.max(1,Math.ceil(list.length/size));
   if(communicationPage>pages)communicationPage=pages;
   const start=(communicationPage-1)*size,items=list.slice(start,start+size);
-  $("view").innerHTML=shell("Giao tiếp","Chỉ hiển thị hội thoại có câu hoàn chỉnh, tự nhiên; các khung ghép từ máy móc được loại khỏi giao diện.",
+  $("view").innerHTML=shell("Giao tiếp","Hiển thị hội thoại có câu hoàn chỉnh và tự nhiên; nội dung mở rộng đã được khôi phục và làm sạch.",
     '<div class="card"><div class="muted small">Hiển thị '+(list.length?start+1:0)+'–'+Math.min(start+size,list.length)+' / '+list.length+' hội thoại</div>'+pageControls(communicationPage,list.length,size,"communication")+'</div>'+
     '<div class="grid grid-2">'+items.map(function(d,j){
       const i=start+j,lines=d.lines||[];
