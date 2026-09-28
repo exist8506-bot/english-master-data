@@ -1037,14 +1037,50 @@ function openProgressImport(){
   const input=$("progressImport");
   if(input&&typeof input.click==="function")input.click();
 }
+function validateProgressImport(parsed){
+  if(!parsed||typeof parsed!=="object")throw new Error("File tiến độ không đúng định dạng.");
+  if(!Array.isArray(parsed.vocabState)||!parsed.stats||typeof parsed.stats!=="object"||!parsed.profile||typeof parsed.profile!=="object"){
+    throw new Error("Thiếu phần stats, profile hoặc vocabState.");
+  }
+  const numeric=["xp","streak","learned","answered","correct","sentenceAnswered","sentenceCorrect","speakingAttempts","speakingGood"];
+  numeric.forEach(function(k){
+    if(parsed.stats[k]!==undefined){
+      const n=Number(parsed.stats[k]);
+      if(!Number.isFinite(n)||n<0)throw new Error("Thống kê "+k+"" không hợp lệ.");
+    }
+  });
+  const theme=String(parsed.profile.theme??"light");
+  if(!["light","dark"].includes(theme))throw new Error("Giao diện không hợp lệ.");
+  if(parsed.profile.autoUpdate!==undefined&&typeof parsed.profile.autoUpdate!=="boolean")throw new Error("Tùy chọn tự cập nhật không hợp lệ.");
+  if(parsed.profile.speechRate!==undefined){
+    const rate=Number(parsed.profile.speechRate);
+    if(!Number.isFinite(rate)||rate<0.5||rate>1.5)throw new Error("Tốc độ giọng đọc không hợp lệ.");
+  }
+  if(parsed.profile.layout!==undefined&&!["auto","phone","desktop"].includes(String(parsed.profile.layout))){
+    throw new Error("Bố cục thiết bị không hợp lệ.");
+  }
+  const allowedStatus=new Set(["New","Learning","Review","Mastered","Chưa nhớ","Đã nhớ","Rất dễ"]);
+  const validStates=parsed.vocabState.every(function(s){
+    if(!s||!String(s.word||"").trim())return false;
+    if(s.status!==undefined&&!allowedStatus.has(String(s.status)))return false;
+    if(s.favorite!==undefined&&typeof s.favorite!=="boolean")return false;
+    for(const k of ["correct_count","wrong_count"]){
+      if(s[k]!==undefined){
+        const n=Number(s[k]);
+        if(!Number.isFinite(n)||n<0)return false;
+      }
+    }
+    return true;
+  });
+  if(!validStates)throw new Error("File có mục từ vựng không hợp lệ.");
+  return true;
+}
 async function importProgress(input){
   const file=input?.files?.[0];
   if(!file)return;
   try{
     const raw=await file.text(),parsed=JSON.parse(raw);
-    if(!parsed||!Array.isArray(parsed.vocabState)||!parsed.stats||!parsed.profile)throw new Error("File tiến độ không đúng định dạng.");
-    const validStates=parsed.vocabState.every(function(s){return s&&String(s.word||"").trim()});
-    if(!validStates)throw new Error("File có mục từ vựng không hợp lệ.");
+    validateProgressImport(parsed);
     applyUserSnapshot(parsed);
     save();render();
     toast("Đã nhập tiến độ học tập.");
