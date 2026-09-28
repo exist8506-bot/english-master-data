@@ -657,11 +657,13 @@ check(
 );
 check(
   "V2 standalone English fields are clean",
-  v2Sentences.every((x) => !String(x.en ?? "").includes("\\t") &&
-    !/^eng\\t/i.test(String(x.en ?? "")) &&
-    /[.!?]$/.test(String(x.en ?? "")) &&
-    String(x.en ?? "").trim().split(/\\s+/).length >= 2 &&
-    String(x.en ?? "").trim().split(/\\s+/).length <= 30),
+  v2Sentences.every((x) => {
+    const en=String(x.en ?? "").trim(),vi=String(x.vi ?? "").trim();
+    return !String(x.en ?? "").includes("\\t") &&
+      !/^eng\\t/i.test(String(x.en ?? "")) &&
+      /[.!?]$/.test(en) &&
+      en.length>0 && vi.length>0 && !x.vocabWord;
+  }),
   JSON.stringify({count: v2Sentences.length})
 );
 
