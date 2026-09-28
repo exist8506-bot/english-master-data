@@ -28,6 +28,7 @@ jobs:
         env:
           DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
           HSK_BASE: https://raw.githubusercontent.com/plaktos/hsk_csv/master
+          DICT_API: https://api.dictionaryapi.dev/api/v2/entries/en/
           TRANSLATE_API: https://translate.googleapis.com/translate_a/single
           TTS_BASE: https://dict.minhqnd.com/api/v1/tts
         run: |
@@ -44,6 +45,7 @@ jobs:
           SOURCE="expansion500_v2"
           NEED=500
           HSK_BASE=os.environ["HSK_BASE"]
+          DICT_API=os.environ["DICT_API"]
           TRANSLATE_API=os.environ["TRANSLATE_API"]
           TTS_BASE=os.environ["TTS_BASE"]
           UA="English-Master-V2-DataBuilder/2.0"
