@@ -1028,8 +1028,7 @@ function voiceAvailability(){
 function exportProgress(){
   try{
     const payload={app:"English Master",exportedAt:new Date().toISOString(),...userSnapshot()};
-    const blob=new Blob([JSON.stringify(payload,null,2)+"
-"],{type:"application/json;charset=utf-8"});
+    const blob=new Blob([JSON.stringify(payload,null,2)+"\n"],{type:"application/json;charset=utf-8"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
     a.href=url;a.download="english-master-progress.json";
     document.body.appendChild(a);a.click();a.remove();
