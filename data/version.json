@@ -1,7 +1,7 @@
 {
-  "version": "8.0.11",
+  "version": "8.1.0",
   "updatedAt": "2026-09-28",
-  "releaseNotes": "V8.0.11: khôi phục 50 hội thoại mở rộng, thay nội dung ghép từ máy móc bằng hội thoại tự nhiên và làm sạch các câu giao tiếp lỗi.",
+  "releaseNotes": "V8.1.0: thêm 500 từ mới; câu tiếng Anh lấy từ Tatoeba, có IPA, nghĩa Việt, nghe, đọc, nói, quiz, ôn tập, tam ngữ, giao tiếp và ngữ pháp.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
@@ -11,7 +11,7 @@
     "trilingual": "trilingual.json"
   },
   "expansion": {
-    "package": "expansion500",
+    "package": "expansion500_v2",
     "count": 500
   }
 }
