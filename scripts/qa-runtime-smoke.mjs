@@ -650,6 +650,24 @@ check(
   JSON.stringify({ source: provenanceAfter?.source, sourceVersion: provenanceAfter?.sourceVersion })
 );
 
+const questionRows = snap.db.questions || [];
+check(
+  "quiz question schema and four-choice integrity",
+  questionRows.length >= 5000 && questionRows.every((q) => {
+    const opts = Array.isArray(q?.options) ? q.options : [];
+    const answer = Number(q?.answer);
+    return q?.type === "multiple" && opts.length === 4 &&
+      opts.every((x) => String(x ?? "").trim()) &&
+      new Set(opts.map((x) => String(x).trim().toLowerCase())).size === 4 &&
+      Number.isInteger(answer) && answer >= 0 && answer < opts.length;
+  }),
+  JSON.stringify({count: questionRows.length})
+);
+check(
+  "quiz answer is tied to an existing option",
+  questionRows.every((q) => String(q.options[q.answer] ?? "").trim().length > 0)
+);
+
 const stableCounts = {
   vocab: T.snap().db.vocab.length,
   sentences: T.snap().db.sentences.length,
