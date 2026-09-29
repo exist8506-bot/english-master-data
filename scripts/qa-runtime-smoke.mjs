@@ -523,6 +523,25 @@ check(
   })
 );
 
+const relationInvalidImport = {
+  app: "English Master",
+  stats: { xp: 1, answered: 2, correct: 3 },
+  profile: { theme: "light", autoUpdate: true, speechRate: 1, layout: "auto" },
+  positions: {},
+  vocabState: [{ word: importWord, status: "Review" }]
+};
+await T.importProgress({
+  value: "relation-invalid.json",
+  files: [{ text: async () => JSON.stringify(relationInvalidImport) }]
+});
+const relationCheck = T.snap();
+check(
+  "impossible accuracy stats are rejected",
+  relationCheck.db.stats.xp === 888 &&
+  relationCheck.db.stats.answered === 4 &&
+  relationCheck.db.stats.correct === 3
+);
+
 const beforeInvalidImport = T.snap();
 const invalidImportPayload = {
   app: "English Master",
@@ -757,6 +776,15 @@ check(
   JSON.stringify({ source: provenanceAfter?.source, sourceVersion: provenanceAfter?.sourceVersion })
 );
 
+T.setFetch(fetchImpl);
+const restoredVocabLength = T.snap().db.vocab.length;
+T.snap().db.vocab.pop();
+await T.updateOnline(false);
+check(
+  "same-version missing content triggers resync",
+  T.snap().db.vocab.length === restoredVocabLength &&
+  !!T.snap().db.vocab.find((v) => String(v.word || "").trim() === importWord)
+);
 const questionRows = snap.db.questions || [];
 check(
   "quiz question schema and four-choice integrity",
