@@ -737,10 +737,14 @@ check(
 );
 
 T.show("review");
-const beforeReviewNew = T.snap().db.vocab.find((v) => String(v.word || "").trim() !== backupWord);
-if(beforeReviewNew)beforeReviewNew.status = "New";
+const newReviewWord = T.snap().db.vocab.find((v) => String(v.word || "").trim() !== backupWord);
+if(newReviewWord)newReviewWord.status = "New";
 T.startReview();
-check("review queue contains weak words", T.snap().reviewQueue.length > 0 && !T.snap().reviewQueue.includes(norm(backupWord)));
+check(
+  "review queue prioritizes weak words over new words",
+  T.snap().reviewQueue.includes(norm(backupWord)) &&
+  (!newReviewWord || !T.snap().reviewQueue.includes(norm(newReviewWord.word)))
+);
 
 const provenanceBefore = T.snap().db.vocab.find((v) => v.word === "altogether");
 check("expansion provenance before resync", provenanceBefore?.source === "expansion500" && provenanceBefore?.sourceVersion === "8.0.0");
