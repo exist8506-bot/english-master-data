@@ -1,4 +1,4 @@
-const APP_VERSION="8.1.1";
+const APP_VERSION="8.1.2";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -182,7 +182,15 @@ function userSnapshot(source){
 function applyUserSnapshot(snapshot){
   if(!snapshot)return;
   db.stats={...db.stats,...(snapshot.stats||{})};
+  const numericStats=["xp","streak","learned","answered","correct","sentenceAnswered","sentenceCorrect","speakingAttempts","speakingGood"];
+  numericStats.forEach(function(k){
+    const n=Number(db.stats[k]);
+    db.stats[k]=Number.isFinite(n)?Math.max(0,Math.floor(n)):0;
+  });
   db.profile={...db.profile,...(snapshot.profile||{})};
+  if(!["light","dark"].includes(String(db.profile.theme)))db.profile.theme="light";
+  const rate=Number(db.profile.speechRate);
+  db.profile.speechRate=Number.isFinite(rate)?Math.max(0.5,Math.min(1.5,rate)):1;
   const p=snapshot.positions||{};
   flashIndex=Number.isFinite(Number(p.flashIndex))?Number(p.flashIndex):flashIndex;
   listenIndex=Number.isFinite(Number(p.listenIndex))?Number(p.listenIndex):listenIndex;
@@ -248,7 +256,10 @@ function save(){
     if(previous){
       try{
         const prevParsed=JSON.parse(previous);
-        localStorage.setItem(STORAGE_KEY+"_backup",JSON.stringify(userSnapshot(prevParsed)));
+        const prevSnapshot=(prevParsed&&typeof prevParsed==="object"&&Array.isArray(prevParsed.vocabState))
+          ? prevParsed
+          : userSnapshot(prevParsed);
+        localStorage.setItem(STORAGE_KEY+"_backup",JSON.stringify(prevSnapshot));
       }catch(e){}
     }
     localStorage.setItem(STORAGE_KEY,serialized);
@@ -427,6 +438,7 @@ function playAudio(url,fallbackText,rate,lang){
   if(!u){if(t)speak(t,r,l);return;}
   try{
     const a=new Audio(u);a.preload="auto";
+    a.playbackRate=Math.max(0.5,Math.min(2,r));
     a.play().catch(function(){toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");if(t)speak(t,r,l,0,true);});
   }catch(e){
     toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");
@@ -754,7 +766,7 @@ function toggleFavorite(word){
 function startReview(){
   const now=new Date();
   const due=db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=now});
-  const need=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||v.status==="New"});
+  const need=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"});
   const seen=new Set(),queue=[];
   due.concat(need).forEach(function(v){
     const k=norm(v.word);if(k&&!seen.has(k)){seen.add(k);queue.push(k);}
