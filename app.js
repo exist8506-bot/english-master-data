@@ -1,4 +1,4 @@
-const APP_VERSION="8.1.2";
+const APP_VERSION="8.1.3";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -7,7 +7,8 @@ let db={
   vocab:[],sentences:[],questions:[],grammar:[],communication:[],trilingual:[],
   stats:{xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0},
   profile:{theme:"light",autoUpdate:true,speechRate:1,layout:"auto"},
-  lastRemoteVersion:""
+  lastRemoteVersion:"",
+  contentCounts:{}
 };
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
@@ -167,7 +168,8 @@ function contentSnapshot(source){
     grammar:Array.isArray(d.grammar)?d.grammar:[],
     communication:Array.isArray(d.communication)?d.communication:[],
     trilingual:Array.isArray(d.trilingual)?d.trilingual:[],
-    lastRemoteVersion:String(d.lastRemoteVersion||"")
+    lastRemoteVersion:String(d.lastRemoteVersion||""),
+    contentCounts:{...(d.contentCounts||{})}
   };
 }
 function userSnapshot(source){
@@ -189,6 +191,8 @@ function applyUserSnapshot(snapshot){
   });
   db.profile={...db.profile,...(snapshot.profile||{})};
   if(!["light","dark"].includes(String(db.profile.theme)))db.profile.theme="light";
+  if(typeof db.profile.autoUpdate!=="boolean")db.profile.autoUpdate=true;
+  if(!["auto","phone","desktop"].includes(String(db.profile.layout)))db.profile.layout="auto";
   const rate=Number(db.profile.speechRate);
   db.profile.speechRate=Number.isFinite(rate)?Math.max(0.5,Math.min(1.5,rate)):1;
   const p=snapshot.positions||{};
@@ -503,7 +507,11 @@ async function updateOnline(force){
       trilingual:{path:files.trilingual||"trilingual.json",key:x=>norm(x.en)+"|"+norm(x.zh||x.chinese)}
     };
     const hasBland=db.vocab.some(v=>blandExample(v.example))||db.sentences.some(s=>blandExample(s.en));
-    if(!force&&db.lastRemoteVersion===ver&&!hasBland){toast("Dữ liệu đang mới nhất.");return}
+    const countsMatch=Object.keys(spec).every(function(key){
+      return Number(db.contentCounts?.[key])>0 &&
+        Number(db.contentCounts[key])===(Array.isArray(db[key])?db[key].length:0);
+    });
+    if(!force&&db.lastRemoteVersion===ver&&countsMatch&&!hasBland){toast("Dữ liệu đang mới nhất.");return}
 
     const incoming={};
     for(const key of Object.keys(spec)){
@@ -564,7 +572,9 @@ async function updateOnline(force){
       }
     }
 
-    const remoteContent={...next,lastRemoteVersion:ver};
+    const remoteContent={...next,lastRemoteVersion:ver,
+      contentCounts:Object.fromEntries(Object.keys(next).map(function(key){return [key,next[key].length]}))
+    };
     db={...db,...remoteContent};
     validateContent(true);
     if(pendingUserState){applyUserSnapshot({vocabState:pendingUserState});pendingUserState=null;}
@@ -1064,6 +1074,13 @@ function validateProgressImport(parsed){
       if(!Number.isFinite(n)||n<0)throw new Error("Thống kê \""+k+"\" không hợp lệ.");
     }
   });
+  const statPairs=[["correct","answered"],["sentenceCorrect","sentenceAnswered"],["speakingGood","speakingAttempts"]];
+  statPairs.forEach(function(pair){
+    const a=parsed.stats[pair[0]],b=parsed.stats[pair[1]];
+    if(a!==undefined&&b!==undefined&&Number(a)>Number(b)){
+      throw new Error("Thống kê \""+pair[0]+"\" không thể lớn hơn \""+pair[1]+"\".");
+    }
+  });
   const theme=String(parsed.profile.theme??"light");
   if(!["light","dark"].includes(theme))throw new Error("Giao diện không hợp lệ.");
   if(parsed.profile.autoUpdate!==undefined&&typeof parsed.profile.autoUpdate!=="boolean")throw new Error("Tùy chọn tự cập nhật không hợp lệ.");
@@ -1116,7 +1133,7 @@ function resetProgress(){
 function settings(){
   const layout=String(db.profile.layout||"auto");
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
-    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra 1.500 câu luyện độc lập</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra các câu luyện độc lập có English/Vietnamese/audio hợp lệ và không bị buộc vào vocabWord. Hiện có 1.500 câu luyện độc lập sau khi tích hợp V8.1.1.</div></div>'+
+    '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra 1.500 câu luyện độc lập</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra các câu luyện độc lập có English/Vietnamese/audio hợp lệ và không bị buộc vào vocabWord. Hiện có 1.500 câu luyện độc lập sau khi tích hợp V8.1.3.</div></div>'+
     '<div class="card"><h2>📚 Nguồn dữ liệu</h2><p class="small muted">Câu ví dụ tiếng Anh: Tatoeba (tatoeba.org). Phát âm IPA: CMUdict. Từ Trung/Pinyin: dữ liệu HSK CSV. Một số câu có thể có chỉnh sửa ngữ cảnh thủ công để giữ tiếng Anh tự nhiên.</p></div>'+    '<div class="card"><h2>🔊 Âm thanh & ngôn ngữ</h2><p class="muted">Giọng trình duyệt: '+esc(voiceAvailability())+'</p><p class="small muted">Nếu không có file audio riêng, app sẽ dùng giọng đọc TTS phù hợp với ngôn ngữ.</p></div>'+
     '<div class="card"><h2>🔊 Tốc độ mặc định</h2><select onchange="db.profile.speechRate=Number(this.value);save()">'+[0.5,0.75,1,1.25,1.5].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.speechRate||1)===x?"selected":"")+'>'+x+'×</option>'}).join("")+'</select></div>'+
     '<div class="card"><h2>📱💻 Bố cục thiết bị</h2><p class="small muted">“Tự động” bám theo kích thước màn hình. Có thể khóa bố cục Điện thoại hoặc Máy tính để thao tác thuận tiện hơn.</p><select id="layoutMode" onchange="setLayoutMode(this.value)">'+
