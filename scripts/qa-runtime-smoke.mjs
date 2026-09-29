@@ -523,6 +523,7 @@ check(
   })
 );
 
+const beforeRelationImport = T.snap();
 const relationInvalidImport = {
   app: "English Master",
   stats: { xp: 1, answered: 2, correct: 3 },
@@ -537,9 +538,10 @@ await T.importProgress({
 const relationCheck = T.snap();
 check(
   "impossible accuracy stats are rejected",
-  relationCheck.db.stats.xp === 888 &&
-  relationCheck.db.stats.answered === 4 &&
-  relationCheck.db.stats.correct === 3
+  relationCheck.db.stats.xp === beforeRelationImport.db.stats.xp &&
+  relationCheck.db.stats.answered === beforeRelationImport.db.stats.answered &&
+  relationCheck.db.stats.correct === beforeRelationImport.db.stats.correct &&
+  relationCheck.db.profile.theme === beforeRelationImport.db.profile.theme
 );
 
 const beforeInvalidImport = T.snap();
