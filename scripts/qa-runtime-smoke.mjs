@@ -756,12 +756,15 @@ check(
 );
 
 T.show("review");
-const newReviewWord = T.snap().db.vocab.find((v) => String(v.word || "").trim() !== backupWord);
+const weakReviewWord = String(T.snap().db.vocab[0]?.word || "").trim();
+const weakReviewVocab = T.snap().db.vocab.find((v) => String(v.word || "").trim() === weakReviewWord);
+const newReviewWord = T.snap().db.vocab.find((v) => String(v.word || "").trim() !== weakReviewWord);
+if(weakReviewVocab)weakReviewVocab.status = "Review";
 if(newReviewWord)newReviewWord.status = "New";
 T.startReview();
 check(
   "review queue prioritizes weak words over new words",
-  T.snap().reviewQueue.includes(norm(backupWord)) &&
+  T.snap().reviewQueue.includes(norm(weakReviewWord)) &&
   (!newReviewWord || !T.snap().reviewQueue.includes(norm(newReviewWord.word)))
 );
 
