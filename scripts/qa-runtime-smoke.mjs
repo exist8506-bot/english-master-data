@@ -764,8 +764,8 @@ if(newReviewWord)newReviewWord.status = "New";
 T.startReview();
 check(
   "review queue prioritizes weak words over new words",
-  T.snap().reviewQueue.includes(norm(weakReviewWord)) &&
-  (!newReviewWord || !T.snap().reviewQueue.includes(norm(newReviewWord.word)))
+  T.snap().reviewQueue.includes(String(weakReviewWord).trim().toLowerCase()) &&
+  (!newReviewWord || !T.snap().reviewQueue.includes(String(newReviewWord.word).trim().toLowerCase()))
 );
 
 const provenanceBefore = T.snap().db.vocab.find((v) => v.word === "altogether");
