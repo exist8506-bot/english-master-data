@@ -104,8 +104,9 @@ const localStorage = {
   setItem(k, v) { storage.set(k, String(v)); },
   removeItem(k) { storage.delete(k); },
 };
+const audioCalls = [];
 class FakeAudio {
-  constructor(url) { this.url = url; this.preload = ""; }
+  constructor(url) { this.url = url; this.preload = ""; this.playbackRate = 1; audioCalls.push(this); }
   play() { return Promise.resolve(); }
 }
 
@@ -148,7 +149,7 @@ const hooks = `
 window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
-  grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool,
+  grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
   listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot,
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -461,6 +462,30 @@ check("export progress executes", !exportThrew && document.body.child?.clicked =
 );
 
 const importWord = String(T.snap().db.vocab[0]?.word || "").trim();
+const numericStringPayload = {
+  app: "English Master",
+  stats: { xp: "888", streak: "7", answered: "4", correct: "3", sentenceAnswered: "2", sentenceCorrect: "1", speakingAttempts: "2", speakingGood: "1", learned: "1" },
+  profile: { theme: "dark", autoUpdate: true, speechRate: "0.75", layout: "phone" },
+  positions: { flashIndex: "9", listenIndex: "10", speakIndex: "11", quizIndex: "12" },
+  vocabState: [{ word: importWord, status: "Review", favorite: true, correct_count: "5", wrong_count: "2" }]
+};
+await T.importProgress({
+  value: "numeric-strings.json",
+  files: [{ text: async () => JSON.stringify(numericStringPayload) }]
+});
+const normalizedNumeric = T.snap();
+const normalizedWord = normalizedNumeric.db.vocab.find((v) => String(v.word || "").trim() === importWord);
+check(
+  "numeric import values are normalized to numbers",
+  typeof normalizedNumeric.db.stats.xp === "number" &&
+  normalizedNumeric.db.stats.xp === 888 &&
+  typeof normalizedNumeric.db.stats.answered === "number" &&
+  normalizedNumeric.db.stats.answered === 4 &&
+  normalizedNumeric.db.profile.speechRate === 0.75 &&
+  normalizedNumeric.flashIndex === 9 &&
+  normalizedWord?.correct_count === 5 &&
+  normalizedWord?.wrong_count === 2
+);
 const importPayload = {
   app: "English Master",
   stats: { xp: 777, streak: 9, answered: 2, correct: 2, sentenceAnswered: 1, sentenceCorrect: 1, speakingAttempts: 1, speakingGood: 1, learned: 1 },
@@ -701,10 +726,21 @@ check(
 
 const tri = T.snap().db.trilingual.find((x) => x.en === "altogether");
 check("three-language audio paths", !!T.audioUrl(tri, "en-US") && !!T.audioUrl(tri, "zh-CN") && !!T.audioUrl(tri, "vi-VN"));
+const audioBefore = audioCalls.length;
+T.playAudio("https://example.invalid/test.mp3", "speed test", 0.75, "en-US");
+T.playAudio("https://example.invalid/test2.mp3", "speed test", 1.25, "en-US");
+check(
+  "file audio respects selected playback speed",
+  audioCalls.length === audioBefore + 2 &&
+  audioCalls[audioCalls.length - 2].playbackRate === 0.75 &&
+  audioCalls[audioCalls.length - 1].playbackRate === 1.25
+);
 
 T.show("review");
+const beforeReviewNew = T.snap().db.vocab.find((v) => String(v.word || "").trim() !== backupWord);
+if(beforeReviewNew)beforeReviewNew.status = "New";
 T.startReview();
-check("review queue", T.snap().reviewQueue.length > 0);
+check("review queue contains weak words", T.snap().reviewQueue.length > 0 && !T.snap().reviewQueue.includes(norm(backupWord)));
 
 const provenanceBefore = T.snap().db.vocab.find((v) => v.word === "altogether");
 check("expansion provenance before resync", provenanceBefore?.source === "expansion500" && provenanceBefore?.sourceVersion === "8.0.0");
@@ -779,14 +815,32 @@ check(
   snap.db.questions.length === stableCounts.questions
 );
 
+const backupWord = String(T.snap().db.vocab[0]?.word || "").trim();
+const backupVocab = T.snap().db.vocab.find((v) => String(v.word || "").trim() === backupWord);
+backupVocab.status = "Review";
+backupVocab.favorite = true;
+backupVocab.correct_count = 12;
+backupVocab.wrong_count = 3;
 T.setStats({ xp: 555 });
 T.save();
+backupVocab.status = "Mastered";
+backupVocab.favorite = false;
+backupVocab.correct_count = 99;
 T.setStats({ xp: 777 });
 T.save();
 storage.set("englishMaster_v1", "{broken-json");
 T.setStats({ xp: 0 });
 T.load();
-check("corrupt primary recovers from backup", T.snap().db.stats.xp === 555, T.snap().db.stats.xp);
+const recovered = T.snap().db.vocab.find((v) => String(v.word || "").trim() === backupWord);
+check(
+  "corrupt primary recovers from backup",
+  T.snap().db.stats.xp === 555 &&
+  recovered?.status === "Review" &&
+  recovered?.favorite === true &&
+  recovered?.correct_count === 12 &&
+  recovered?.wrong_count === 3,
+  JSON.stringify({xp:T.snap().db.stats.xp,recovered})
+);
 
 check("content storage key exists", !!storage.get("englishMaster_v1"));
 check("backup storage key exists", !!storage.get("englishMaster_v1_backup"));
