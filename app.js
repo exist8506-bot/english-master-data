@@ -201,7 +201,7 @@ function userSnapshot(source){
 function applyUserSnapshot(snapshot){
   if(!snapshot)return;
   db.stats={...db.stats,...(snapshot.stats||{})};
-  const numericStats=["xp","streak","learned","answered","correct","sentenceAnswered","sentenceCorrect","speakingAttempts","speakingGood"];
+  const numericStats=["xp","streak","learned","answered","correct","sentenceAnswered","sentenceCorrect","speakingAttempts","speakingGood","dailyUnits","practiceCompleted"];
   numericStats.forEach(function(k){
     const n=Number(db.stats[k]);
     db.stats[k]=Number.isFinite(n)?Math.max(0,Math.floor(n)):0;
@@ -426,6 +426,7 @@ function stopSpeech(){
 function speak(text,rate,lang,retry,skipContentAudio){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const t=String(text??"").trim();if(!t)return;
+  if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
   const token=++speechToken;
   const r=Number(rate)||Number(db.profile.speechRate)||1,l=lang||"en-US",attempt=Number(retry||0);
   if(!skipContentAudio){
@@ -466,6 +467,7 @@ function speak(text,rate,lang,retry,skipContentAudio){
 function speakSequence(lines,rate,lang){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const seq=(lines||[]).map(String).map(function(x){return x.trim()}).filter(Boolean),r=Number(rate)||0.92,l=lang||"en-US",token=++speechToken;
+  if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
   window.speechSynthesis.cancel();
   let i=0;
   function next(){
@@ -480,21 +482,24 @@ function speakSequence(lines,rate,lang){
 function playAudio(url,fallbackText,rate,lang){
   const u=String(url||"").trim(),t=String(fallbackText||"").trim(),r=Number(rate)||1,l=lang||guessLang(t);
   if(!u){if(t)speak(t,r,l);return;}
+  speechToken++;
+  if("speechSynthesis" in window)window.speechSynthesis.cancel();
   try{
-    if(activeAudio){
-      try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}
-      activeAudio=null;
-    }
+    if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
     const a=new Audio(u);a.preload="auto";
     a.playbackRate=Math.max(0.5,Math.min(2,r));
     activeAudio=a;
-    a.onended=function(){if(activeAudio===a)activeAudio=null};
-    a.onerror=function(){if(activeAudio===a)activeAudio=null};
-    a.play().catch(function(){
+    let failed=false;
+    const fallback=function(){
+      if(failed)return;
+      failed=true;
       if(activeAudio===a)activeAudio=null;
       toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");
       if(t)speak(t,r,l,0,true);
-    });
+    };
+    a.onended=function(){if(activeAudio===a)activeAudio=null};
+    a.onerror=fallback;
+    a.play().catch(fallback);
   }catch(e){
     if(activeAudio)activeAudio=null;
     toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");
@@ -1221,7 +1226,7 @@ function validateProgressImport(parsed){
   if(!Array.isArray(parsed.vocabState)||!parsed.stats||typeof parsed.stats!=="object"||!parsed.profile||typeof parsed.profile!=="object"){
     throw new Error("Thiếu phần stats, profile hoặc vocabState.");
   }
-  const numeric=["xp","streak","learned","answered","correct","sentenceAnswered","sentenceCorrect","speakingAttempts","speakingGood"];
+  const numeric=["xp","streak","learned","answered","correct","sentenceAnswered","sentenceCorrect","speakingAttempts","speakingGood","dailyUnits","practiceCompleted"];
   numeric.forEach(function(k){
     if(parsed.stats[k]!==undefined){
       const n=Number(parsed.stats[k]);
