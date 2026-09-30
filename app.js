@@ -462,7 +462,15 @@ function audioUrl(item,lang){
   return !multilingual||base==="en"?generic:"";
 }
 function audioButton(text,label,lang,rate,item){
-  const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1,url=audioUrl(item,useLang);
+  const useLang=lang||guessLang(text),useRate=Number(rate)||Number(db.profile.speechRate)||1;
+  const primaryText=(function(){
+    if(!item||typeof item!=="object"||Array.isArray(item))return "";
+    const l=String(useLang).toLowerCase();
+    return l.startsWith("zh")?String(item.zh||item.chinese||"").trim():
+      l.startsWith("vi")?String(item.vi||item.vietnamese||"").trim():
+      String(item.word||item.en||"").trim();
+  })();
+  const url=primaryText&&norm(primaryText)===norm(text)?audioUrl(item,useLang):"";
   if(url)return '<button class="btn btn-secondary" onclick="event.stopPropagation();playAudio(\''+escapeJs(url)+'\',\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
   return '<button class="btn btn-secondary" onclick="event.stopPropagation();speak(\''+escapeJs(text)+'\','+useRate+',\''+useLang+'\')">'+(label||"🔊 Nghe")+'</button>';
 }
@@ -857,7 +865,11 @@ function listenCheck(el,selected,correct){
   if(ok){db.stats.sentenceCorrect=(Number(db.stats.sentenceCorrect)||0)+1;addXP(10)}
   save();
   if(listenAdvanceTimer)clearTimeout(listenAdvanceTimer);
-  listenAdvanceTimer=setTimeout(function(){const list=sentencePracticePool();listenAdvanceTimer=0;if(!list.length)return;listenIndex=(listenIndex+1)%list.length;window.__showListeningText=false;save();renderListening()},700);
+  listenAdvanceTimer=setTimeout(function(){
+    const list=sentencePracticePool();listenAdvanceTimer=0;
+    if(view!=="listening"||!list.length)return;
+    listenIndex=(listenIndex+1)%list.length;window.__showListeningText=false;save();renderListening();
+  },700);
 }
 
 function speaking(){renderSpeaking()}
@@ -1122,7 +1134,7 @@ async function importProgress(input){
 function resetProgress(){
   const ok=typeof window.confirm==="function"?window.confirm("Xóa toàn bộ XP, lịch sử ôn tập, yêu thích và trạng thái học?"):true;
   if(!ok)return;
-  db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0};
+  db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,lastActivityDate:""};
   db.vocab.forEach(function(v){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.lastReviewed=null;
   });
