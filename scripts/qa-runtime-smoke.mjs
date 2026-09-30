@@ -419,7 +419,7 @@ check("date key is stable", T.dateKey(new Date("2026-09-30T12:00:00"))==="2026-0
 check("language voice lookup handles exact and fallback", !!T.getVoice("en-US") && !!T.getVoice("zh-CN"));
 check("voice availability reports supported languages", T.voiceAvailability().includes("en-US") && T.voiceAvailability().includes("zh-CN"));
 check("shell escapes rendered text", !T.shell("<x>","a&b").includes("<x>"));
-check("audio group renders three speed controls", (T.audioGroup("hello","en-US").match(/button/g)||[]).length===3);
+check("audio group renders three speed controls", (T.audioGroup("hello","en-US").match(/<button/g)||[]).length===3);
 check("page controls hide for one-page lists", T.pageControls(1,20,50,"vocab")==="" && T.pageControls(1,100,50,"vocab").includes("Trang 1 / 2"));
 check("jump control exposes bounded number input", T.jumpControl("quiz",2,6000).includes('min="1"') && T.jumpControl("quiz",2,6000).includes('max="6000"'));
 check("quiz index normalization handles corrupt global index", (T.setStats({}), T.show("quiz"), true));
@@ -440,7 +440,7 @@ if(v){
   const afterWrong=T.snap().db.vocab.find(x=>x.word===v.word);
   check("vocabulary wrong outcome schedules immediate review", afterWrong.wrong_count===before.wrong+1 && afterWrong.status==="Chưa nhớ");
 }
-check("no-indexedDB content cache path is graceful", T.openContentDB() instanceof Promise);
+check("no-indexedDB content cache path is graceful", typeof T.openContentDB()?.then==="function");
 T.stopRecognition();
 check("stop recognition is idempotent", true);
 const incomingValid={
