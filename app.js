@@ -430,7 +430,7 @@ function show(v){
   stopSpeech();
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
-  if(v!=="flashcards"){reviewQueue=[];quickReviewActive=false;}
+  if(v!=="flashcards"&&v!=="reviewSummary"){reviewQueue=[];reviewIndex=0;quickReviewActive=false;reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};}
   if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;}
   view=v;render();
 }
