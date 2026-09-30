@@ -921,7 +921,7 @@ function buildReviewQueue(mode="smart",limit=20){
 function startReview(mode="smart",limit=20){
   const queue=buildReviewQueue(mode,limit);
   if(!queue.length){toast("Không có từ phù hợp với phiên ôn này.");return;}
-  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;show("flashcards");
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;reviewSession={active:true,mode:String(mode||"smart"),total:queue.length,answered:0,remembered:0,forgot:0,xp:0};show("flashcards");
 }
 function buildQuickStudyQueue(limit=10){
   return buildReviewQueue("smart",limit);
@@ -929,7 +929,7 @@ function buildQuickStudyQueue(limit=10){
 function startQuickStudy(){
   const queue=buildQuickStudyQueue(10);
   if(!queue.length){toast("Chưa có từ để tạo phiên học nhanh.");return;}
-  reviewQueue=queue;reviewIndex=0;quickReviewActive=true;flashFlipped=false;show("flashcards");
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=true;flashFlipped=false;reviewSession={active:true,mode:"quick",total:queue.length,answered:0,remembered:0,forgot:0,xp:0};show("flashcards");
   toast("Đã tạo phiên học nhanh: "+queue.length+" từ.");
 }
 function reviewMeta(v){
