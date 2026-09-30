@@ -1,4 +1,4 @@
-const APP_VERSION="9.1.3";
+const APP_VERSION="9.1.4";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -13,7 +13,7 @@ let db={
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
-let reviewQueue=[],reviewIndex=0,quickReviewActive=false,validatedContentSignature="",updateInProgress=false;
+let reviewQueue=[],reviewIndex=0,quickReviewActive=false,reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0},validatedContentSignature="",updateInProgress=false;
 let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[],practiceCorrectCount=0;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
@@ -430,7 +430,7 @@ function show(v){
   stopSpeech();
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
-  if(v!=="flashcards"){reviewQueue=[];quickReviewActive=false;}
+  if(v!=="flashcards"&&v!=="reviewSummary"){reviewQueue=[];reviewIndex=0;quickReviewActive=false;reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};}
   if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;}
   view=v;render();
 }
@@ -805,7 +805,7 @@ function render(){
   document.body.classList.toggle("dark",db.profile.theme==="dark");
   applyLayoutMode();
   if($("streak"))$("streak").textContent=db.stats.streak||0;
-  const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,stats:stats,settings:settings}[view]||home;
+  const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,reviewSummary:reviewSummary,stats:stats,settings:settings}[view]||home;
   fn();
 }
 function home(){
@@ -921,7 +921,7 @@ function buildReviewQueue(mode="smart",limit=20){
 function startReview(mode="smart",limit=20){
   const queue=buildReviewQueue(mode,limit);
   if(!queue.length){toast("Không có từ phù hợp với phiên ôn này.");return;}
-  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;show("flashcards");
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;reviewSession={active:true,mode:String(mode||"smart"),total:queue.length,answered:0,remembered:0,forgot:0,xp:0};show("flashcards");
 }
 function buildQuickStudyQueue(limit=10){
   return buildReviewQueue("smart",limit);
@@ -929,7 +929,7 @@ function buildQuickStudyQueue(limit=10){
 function startQuickStudy(){
   const queue=buildQuickStudyQueue(10);
   if(!queue.length){toast("Chưa có từ để tạo phiên học nhanh.");return;}
-  reviewQueue=queue;reviewIndex=0;quickReviewActive=true;flashFlipped=false;show("flashcards");
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=true;flashFlipped=false;reviewSession={active:true,mode:"quick",total:queue.length,answered:0,remembered:0,forgot:0,xp:0};show("flashcards");
   toast("Đã tạo phiên học nhanh: "+queue.length+" từ.");
 }
 function reviewMeta(v){
@@ -961,22 +961,38 @@ function rateFlash(status){
   if(!v)return;
   recordActivity();
   recordVocabOutcome(v.word,status!=="Chưa nhớ",undefined,status);
-  if(status!=="Chưa nhớ")addXP(5);
+  const earned=status!=="Chưa nhớ"?5:0;
+  if(earned)addXP(earned);
+  if(reviewActive&&reviewSession.active){reviewSession.answered++;reviewSession.xp+=earned;if(status==="Chưa nhớ")reviewSession.forgot++;else reviewSession.remembered++;}
   v.status=status;
   db.stats.learned=db.vocab.filter(function(x){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(x.status)}).length;
   flashFlipped=false;
   if(reviewActive){
-    if(reviewIndex+1>=reviewQueue.length){
-      reviewQueue=[];reviewIndex=0;const wasQuick=quickReviewActive;quickReviewActive=false;save();
-      if(wasQuick){show("home");toast("Hoàn thành phiên học nhanh.");}
-      else show("review");
-      return;
-    }
+    if(reviewIndex+1>=reviewQueue.length){finishReviewSession();return;}
     reviewIndex++;
   }else{
     flashIndex=(flashIndex+1)%db.vocab.length;
   }
   save();render();
+}
+function finishReviewSession(){
+  const result={...reviewSession};
+  reviewQueue=[];reviewIndex=0;quickReviewActive=false;
+  reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};
+  save();window.__lastReviewSummary=result;view="reviewSummary";render();
+}
+function reviewSummary(){
+  const s=window.__lastReviewSummary||{mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};
+  const pct=s.answered?Math.round(s.remembered/s.answered*100):0;
+  const label=s.mode==="quick"?"Học nhanh hôm nay":s.mode==="smart"?"Ôn thông minh":"Ôn "+s.mode;
+  $("view").innerHTML=shell("Hoàn thành phiên học",label,
+    '<div class="grid"><div class="card"><div class="big">'+s.total+'</div><div class="muted">Tổng thẻ</div></div>'+
+    '<div class="card"><div class="big">'+s.answered+'</div><div class="muted">Đã đánh giá</div></div>'+
+    '<div class="card"><div class="big">'+s.remembered+'</div><div class="muted">Nhớ được</div></div>'+
+    '<div class="card"><div class="big">'+s.forgot+'</div><div class="muted">Chưa nhớ</div></div>'+
+    '<div class="card"><div class="big">'+pct+'%</div><div class="muted">Tỷ lệ nhớ</div></div>'+
+    '<div class="card"><div class="big">+'+s.xp+'</div><div class="muted">XP từ phiên</div></div></div>'+
+    '<div class="card"><h2>Tiếp tục học</h2><div class="actions"><button class="primary" onclick="startQuickStudy()">⚡ Học nhanh 10 từ</button><button onclick="show(\'review\')">🔄 Ôn tập</button><button onclick="show(\'home\')">🏠 Trang chủ</button></div></div>');
 }
 function shuffleFlash(){
   if(reviewQueue.length){
@@ -1426,7 +1442,7 @@ function resetProgress(){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.reviewStreak=0;v.lastReviewed=null;
   });
   flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
-  reviewQueue=[];reviewIndex=0;quickReviewActive=false;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
+  reviewQueue=[];reviewIndex=0;quickReviewActive=false;reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
   view="home";save();render();toast("Đã đặt lại tiến độ học tập.");
 }
 function dailyGoalOptions(){return [5,10,15,20,30].map(function(x){var selected=Number(db.profile.dailyGoal||10)===x?" selected":"";return '<option value="'+x+'"'+selected+'>'+x+' hoạt động</option>';}).join("");}
