@@ -381,7 +381,7 @@ function shuffle(arr){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
   return a;
 }
-let speechToken=0;
+let speechToken=0,activeAudio=null;
 function getVoice(lang){
   try{
     const vs=window.speechSynthesis?.getVoices?.()||[], p=String(lang||"en-US").toLowerCase();
@@ -391,6 +391,10 @@ function getVoice(lang){
 function stopSpeech(){
   speechToken++;
   if("speechSynthesis" in window)window.speechSynthesis.cancel();
+  if(activeAudio){
+    try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}
+    activeAudio=null;
+  }
 }
 function speak(text,rate,lang,retry,skipContentAudio){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
@@ -450,10 +454,22 @@ function playAudio(url,fallbackText,rate,lang){
   const u=String(url||"").trim(),t=String(fallbackText||"").trim(),r=Number(rate)||1,l=lang||guessLang(t);
   if(!u){if(t)speak(t,r,l);return;}
   try{
+    if(activeAudio){
+      try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}
+      activeAudio=null;
+    }
     const a=new Audio(u);a.preload="auto";
     a.playbackRate=Math.max(0.5,Math.min(2,r));
-    a.play().catch(function(){toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");if(t)speak(t,r,l,0,true);});
+    activeAudio=a;
+    a.onended=function(){if(activeAudio===a)activeAudio=null};
+    a.onerror=function(){if(activeAudio===a)activeAudio=null};
+    a.play().catch(function(){
+      if(activeAudio===a)activeAudio=null;
+      toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");
+      if(t)speak(t,r,l,0,true);
+    });
   }catch(e){
+    if(activeAudio)activeAudio=null;
     toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");
     if(t)speak(t,r,l,0,true);
   }
