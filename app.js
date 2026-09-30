@@ -160,7 +160,8 @@ function dailyPercent(){ensureDailyProgress();return Math.min(100,Math.round((Nu
 function weakVocabularyPool(){
   const weak=db.vocab.filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0));
   const fresh=db.vocab.filter(v=>v.status==="New");
-  const rest=db.vocab.filter(v=>!weak.includes(v)&&!fresh.includes(v));
+  const weakSet=new Set(weak),freshSet=new Set(fresh);
+  const rest=db.vocab.filter(v=>!weakSet.has(v)&&!freshSet.has(v));
   return [...weak,...fresh,...rest];
 }
 function recordActivity(){
