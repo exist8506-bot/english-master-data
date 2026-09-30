@@ -378,6 +378,12 @@ check("search reaches an existing vocab record", !!searchTerm && document.getEle
 const favBefore = searchableVocab?.favorite;
 if (searchTerm) T.toggleFavorite(searchTerm);
 check("favorite interaction", !!searchableVocab && searchableVocab.favorite !== favBefore);
+T.show("home");
+const homeState=T.snap().db.vocab;
+const expectedPending=new Set(homeState.filter(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date()).map(v=>String(v.word||"").trim().toLowerCase()).concat(homeState.filter(v=>v.status==="Chưa nhớ"||v.status==="Review").map(v=>String(v.word||"").trim().toLowerCase())).filter(Boolean)).size;
+const homePendingMatch=document.getElementById("view").innerHTML.match(/(\d+) từ đang đến hạn hoặc yếu/);
+check("home pending count is unique", !!homePendingMatch && Number(homePendingMatch[1])===expectedPending);
+
 
 // Core helper and resilience audit.
 check("language detection covers English/Chinese/Vietnamese", T.guessLang("hello")==="en-US" && T.guessLang("你好")==="zh-CN" && T.guessLang("xin chào")==="vi-VN");
