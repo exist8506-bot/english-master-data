@@ -905,6 +905,13 @@ function startReview(){
   if(!queue.length){toast("Hiện chưa có từ cần ôn.");return;}
   reviewQueue=queue;reviewIndex=0;flashFlipped=false;show("flashcards");
 }
+function reviewMeta(v){
+  const streak=Math.max(0,Number(v?.reviewStreak)||0);
+  if(!v?.reviewDue)return '<div class="muted small">🧠 Chuỗi nhớ: '+streak+'</div>';
+  const d=new Date(v.reviewDue);
+  if(Number.isNaN(d.getTime()))return '<div class="muted small">🧠 Chuỗi nhớ: '+streak+'</div>';
+  return '<div class="muted small">🧠 Chuỗi nhớ: '+streak+' · Ôn lại: '+esc(d.toLocaleDateString("vi-VN"))+'</div>';
+}
 function flashcards(){
   if(!db.vocab.length){$("view").innerHTML=shell("Flashcards","Chưa có dữ liệu.");return}
   const reviewActive=reviewQueue.length>0;
@@ -914,7 +921,7 @@ function flashcards(){
   const idx=reviewActive?reviewIndex:flashIndex;
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):list[idx%list.length];
   if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
-  const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
+  const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+reviewMeta(v)+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
   const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US",v)+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
   $("view").innerHTML=shell(reviewActive?"Ôn tập bằng Flashcards":"Flashcards",reviewActive?"Đang ôn các từ đến hạn/chưa nhớ.":"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
     '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
