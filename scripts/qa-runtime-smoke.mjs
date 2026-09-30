@@ -403,7 +403,7 @@ for(let step=0; step<ps.practiceQueue.length; step++){
     const idx=item.options.findIndex(x=>normalizeTest(x)===normalizeTest(item.answer));
     T.practiceAnswer(idx);
   }
-  if(step<ps.practiceQueue.length-1)T.practiceNext();
+  T.practiceNext();
 }
 check("practice completion awards completion counter", (T.snap().db.stats.practiceCompleted||0)>=1);
 
