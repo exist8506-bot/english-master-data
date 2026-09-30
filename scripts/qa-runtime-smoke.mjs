@@ -152,7 +152,7 @@ window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
-  listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio,
+  listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -376,6 +376,16 @@ check("favorite interaction", !!searchableVocab && searchableVocab.favorite !== 
 
 // Core helper and resilience audit.
 check("language detection covers English/Chinese/Vietnamese", T.guessLang("hello")==="en-US" && T.guessLang("你好")==="zh-CN" && T.guessLang("xin chào")==="vi-VN");
+check("fill-in-the-blank only replaces whole words", T.blankWordInExample("I like bread.", "bread").includes("_____") && T.blankWordInExample("The printer is useful.", "print")==="");
+const q0=T.snap().db.questions[0];
+const savedOpts=q0.options,savedAns=q0.answer;
+q0.options=[savedOpts[0],savedOpts[0],savedOpts[2],savedOpts[3]];
+T.show("quiz");
+check("quiz rejects duplicate local options", T.snap().quizOptions.length===0);
+q0.options=savedOpts;q0.answer=savedAns;
+T.show("quiz");
+check("quiz recovers after local question repair", T.snap().quizOptions.length===4 && Number.isInteger(T.snap().quizCorrectIndex));
+
 check("standalone sentence naturality filter works", T.standalonePracticeTemplateIsNatural("It is useful to practice a little every day.") && !T.standalonePracticeTemplateIsNatural("It is hungry to practice a little every day."));
 const validIndependent=T.sentencePracticePool()[0];
 check("standalone sentence validator accepts real sentence", !!validIndependent && T.isNaturalStandaloneSentence(validIndependent)===true);
