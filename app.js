@@ -155,7 +155,7 @@ function normalizeDailyHistory(input){
   for(const row of Array.isArray(input)?input:[]){
     if(!row||typeof row!=="object")continue;
     const date=String(row.date||"").trim();
-    if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(date))continue;
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(date))continue;
     const units=Math.max(0,Math.min(100000,Math.floor(Number(row.units)||0)));
     const goalRaw=Number(row.goal);
     const goal=Number.isFinite(goalRaw)?Math.max(1,Math.min(100,Math.floor(goalRaw))):10;
@@ -177,7 +177,6 @@ function ensureDailyProgress(){
   const today=dateKey();
   if(String(db.stats.dailyDate||"")!==today){db.stats.dailyDate=today;db.stats.dailyUnits=0;}
   db.stats.dailyHistory=normalizeDailyHistory(db.stats.dailyHistory);
-  syncDailyHistoryEntry();
 }
 function recordStudyUnit(){
   ensureDailyProgress();
@@ -1473,7 +1472,7 @@ function validateProgressImport(parsed){
     if(!Array.isArray(parsed.stats.dailyHistory))throw new Error("Lịch sử mục tiêu ngày không hợp lệ.");
     const seen=new Set();
     parsed.stats.dailyHistory.forEach(function(row){
-      if(!row||typeof row!=="object"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(row.date||""))||seen.has(String(row.date))||!Number.isFinite(Number(row.units))||Number(row.units)<0||!Number.isFinite(Number(row.goal))||Number(row.goal)<1){
+      if(!row||typeof row!=="object"||!/^\d{4}-\d{2}-\d{2}$/.test(String(row.date||""))||seen.has(String(row.date))||!Number.isFinite(Number(row.units))||Number(row.units)<0||!Number.isFinite(Number(row.goal))||Number(row.goal)<1){
         throw new Error("Lịch sử mục tiêu ngày không hợp lệ.");
       }
       seen.add(String(row.date));
