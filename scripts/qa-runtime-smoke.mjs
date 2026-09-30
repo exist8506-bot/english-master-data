@@ -104,6 +104,7 @@ const localStorage = {
   setItem(k, v) { storage.set(k, String(v)); },
   removeItem(k) { storage.delete(k); },
 };
+const normalizeTest = (v) => String(v ?? "").trim().toLowerCase().replace(/\s+/g, " ");
 const audioCalls = [];
 class FakeAudio {
   constructor(url) { this.url = url; this.preload = ""; this.playbackRate = 1; this.paused = false; this.currentTime = 0; audioCalls.push(this); }
@@ -381,7 +382,7 @@ check("practice session creates mixed exercises", ps.practiceQueue.length === 8 
 const practiceFirst = ps.practiceQueue[0];
 const dailyBeforePractice = Number(ps.db.stats.dailyUnits)||0;
 if(practiceFirst && practiceFirst.type!=="order"){
-  const correctPractice = practiceFirst.options.findIndex(x=>norm(x)===norm(practiceFirst.answer));
+  const correctPractice = practiceFirst.options.findIndex(x=>normalizeTest(x)===normalizeTest(practiceFirst.answer));
   T.practiceAnswer(correctPractice);
   ps = T.snap();
   check("practice answer updates learning and daily progress", ps.practiceAnswered && (Number(ps.db.stats.dailyUnits)||0)===dailyBeforePractice+1 &&
@@ -399,7 +400,7 @@ for(let step=0; step<ps.practiceQueue.length; step++){
     });
     T.practiceCheckOrder();
   }else{
-    const idx=item.options.findIndex(x=>norm(x)===norm(item.answer));
+    const idx=item.options.findIndex(x=>normalizeTest(x)===normalizeTest(item.answer));
     T.practiceAnswer(idx);
   }
   if(step<ps.practiceQueue.length-1)T.practiceNext();
