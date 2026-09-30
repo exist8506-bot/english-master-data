@@ -1060,7 +1060,7 @@ function buildPracticeSession(count=8){
     const v=vocab[i],mode=i%4;
     if(mode===0){
       const options=chooseFour(v.meaning,"meaning");
-      out.push({type:"meaning",prompt:v.word,example:v.example,answer:v.meaning,options});
+      out.push({type:"meaning",prompt:v.word,word:v.word,meaning:v.meaning,example:v.example,answer:v.meaning,options});
     }else if(mode===1){
       const options=chooseFour(v.word,"word");
       out.push({type:"translate",prompt:v.meaning,word:v.word,answer:v.word,options});
