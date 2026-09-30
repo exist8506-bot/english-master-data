@@ -157,7 +157,7 @@ window.__EM_TEST = {
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
   listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
-  dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions,
+  dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -393,6 +393,21 @@ check("remote validator handles null records safely", (()=>{try{T.validateIncomi
 }});return false;}catch(e){return true;}})());
 
 check("fill-in-the-blank only replaces whole words", T.blankWordInExample("I like bread.", "bread").includes("_____") && T.blankWordInExample("The printer is useful.", "print")==="");
+check("spaced repetition interval grows with memory streak",
+  T.reviewIntervalDays({reviewStreak:1},"Đã nhớ")===1 &&
+  T.reviewIntervalDays({reviewStreak:2},"Đã nhớ")===2 &&
+  T.reviewIntervalDays({reviewStreak:3},"Đã nhớ")===4 &&
+  T.reviewIntervalDays({reviewStreak:5},"Đã nhớ")===14 &&
+  T.reviewIntervalDays({reviewStreak:6},"Đã nhớ")===30 &&
+  T.reviewIntervalDays({reviewStreak:8},"Đã nhớ")===60
+);
+check("easy rating extends spaced repetition interval",
+  T.reviewIntervalDays({reviewStreak:1},"Rất dễ")===2 &&
+  T.reviewIntervalDays({reviewStreak:5},"Rất dễ")===28 &&
+  T.reviewIntervalDays({reviewStreak:8},"Rất dễ")===90 &&
+  T.reviewIntervalDays({reviewStreak:2},"Chưa nhớ")===0
+);
+
 check("fill-in-the-blank escapes regex metacharacters", T.blankWordInExample("Use C++ today.", "C++").includes("_____") && T.blankWordInExample("This costs $5.", "$5").includes("_____") && T.blankWordInExample("Read (draft) now.", "(draft)").includes("_____"));
 const q0=T.snap().db.questions[0];
 const savedOpts=q0.options,savedAns=q0.answer;
@@ -448,13 +463,13 @@ check("quiz skips corrupted question safely", T.snap().quizOptions.length===4 &&
 T.snap().db.questions.shift();
 const v=T.snap().db.vocab.find(x=>String(x.word||"").trim());
 if(v){
-  const before={status:v.status,correct:v.correct_count||0,wrong:v.wrong_count||0};
+  const before={status:v.status,correct:v.correct_count||0,wrong:v.wrong_count||0,reviewStreak:v.reviewStreak||0};
   T.recordVocabOutcome(v.word,true,3);
   const after=T.snap().db.vocab.find(x=>x.word===v.word);
-  check("vocabulary outcome updates correct/review state", after.correct_count===before.correct+1 && after.reviewDue && after.status!=="New");
+  check("vocabulary outcome updates correct/review state", after.correct_count===before.correct+1 && after.reviewDue && after.status!=="New" && after.reviewStreak===before.reviewStreak+1);
   T.recordVocabOutcome(v.word,false,0);
   const afterWrong=T.snap().db.vocab.find(x=>x.word===v.word);
-  check("vocabulary wrong outcome schedules immediate review", afterWrong.wrong_count===before.wrong+1 && afterWrong.status==="Chưa nhớ");
+  check("vocabulary wrong outcome schedules immediate review and resets streak", afterWrong.wrong_count===before.wrong+1 && afterWrong.status==="Chưa nhớ" && afterWrong.reviewStreak===0);
 }
 check("no-indexedDB content cache path is graceful", typeof T.openContentDB()?.then==="function");
 T.stopRecognition();
@@ -1159,8 +1174,8 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.1.0" && !index.includes("V10") && !icon512.includes("V10"));
-check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.0","9.0.1")===1 && T.compareVersions("9.0.0","9.1.0")===-1 && T.compareVersions("9.1.0","9.1.0")===0 && T.compareVersions("future","9.1.0")===0 && T.compareVersions("10.0","9.1.0")===0);
+check("V9 is the final version signal", expectedAppVersion==="9.1.1" && !index.includes("V10") && !icon512.includes("V10"));
+check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.1","9.0.1")===1 && T.compareVersions("9.0.0","9.1.1")===-1 && T.compareVersions("9.1.1","9.1.1")===0 && T.compareVersions("future","9.1.1")===0 && T.compareVersions("10.0","9.1.1")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.10","9.1.2")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
