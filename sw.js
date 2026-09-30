@@ -1,5 +1,5 @@
-const CACHE_NAME="english-master-v9.0.0";
-const APP_SHELL=["./","./index.html","./app.js?v=9.0.0","./styles.css","./manifest.json","./app-version.json"];
+const CACHE_NAME="english-master-v9.0.1";
+const APP_SHELL=["./","./index.html","./app.js?v=9.0.1","./styles.css","./manifest.json","./app-version.json"];
 const NETWORK_FIRST_SHELL=new Set(["/english-master-data/","/english-master-data/index.html","/english-master-data/app.js","/english-master-data/styles.css","/english-master-data/manifest.json","/english-master-data/app-version.json"]);
 
 self.addEventListener("install",event=>{
