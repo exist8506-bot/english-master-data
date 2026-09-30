@@ -1141,7 +1141,7 @@ function practiceCheckOrder(){
   const item=practiceQueue[practiceIndex];if(!item||item.type!=="order")return;
   const actual=practiceAnswerOrder.map(function(i){return item.words[i]}).join(" ");
   const ok=norm(actual)===norm(item.target.replace(/[.!?]+$/,""));
-  practiceAnswered=true;finishPractice(ok);
+  practiceAnswered=true;finishPractice(ok);if(ok)practiceCorrectCount++;
   const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Câu đúng: <b>"+esc(item.target)+"</b>";
   save();render();
 }
