@@ -1094,6 +1094,7 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
+check("V9 is the final version signal", expectedAppVersion==="9.0.0" && !index.includes("V10") && !icon512.includes("V10"));
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 check("manifest app name matches app version", String(manifest.name || "").includes("V" + expectedAppVersion));
