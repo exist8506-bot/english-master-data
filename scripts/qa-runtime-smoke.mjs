@@ -566,6 +566,7 @@ for(const mode of modes){
 T.startPracticeMode("mixed",6);
 const modeSnap=T.snap();
 check("practice mode start resets session counters", modeSnap.practiceMode==="mixed" && modeSnap.practiceQueue.length===6 && modeSnap.practiceAnsweredCount===0 && modeSnap.practiceCorrectCount===0 && modeSnap.practiceSessionXp===0);
+T.startPracticeMode("smart",8);
 \ncheck("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
   new Set(ps.practiceQueue.map(x=>x.type)).size >= 3 &&
   ps.practiceQueue.every(x=>(x.type==="order" ? x.words.length>=1 : x.options.length===4)));
@@ -1237,9 +1238,9 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.1.4" && !index.includes("V10") && !icon512.includes("V10"));
-check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.4","9.0.1")===1 && T.compareVersions("9.0.0","9.1.4")===-1 && T.compareVersions("9.1.4","9.1.4")===0 && T.compareVersions("future","9.1.4")===0 && T.compareVersions("10.0","9.1.4")===0);
-check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.40","9.1.4")===1 && T.compareVersions("9.10.0","9.9.9")===1);
+check("V9 is the final version signal", expectedAppVersion==="9.1.5" && !index.includes("V10") && !icon512.includes("V10"));
+check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.5","9.0.1")===1 && T.compareVersions("9.0.0","9.1.5")===-1 && T.compareVersions("9.1.5","9.1.5")===0 && T.compareVersions("future","9.1.5")===0 && T.compareVersions("10.0","9.1.5")===0);
+check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.50","9.1.5")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 check("manifest app name matches app version", String(manifest.name || "").includes("V" + expectedAppVersion));
