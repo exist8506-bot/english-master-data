@@ -553,6 +553,26 @@ check("chooseFour returns unique choices when enough data", T.chooseFour("___unl
 const savedStats={...T.snap().db.stats};T.finishPractice(true);T.setStats(savedStats);
 check("finishPractice is callable without corrupting stats", true);
 check("progress import validator rejects invalid daily counters", (()=>{try{T.validateProgressImport({stats:{dailyUnits:-1},profile:{theme:"light"},vocabState:[]});return false;}catch(e){return true;}})());
+const dailyBackup=JSON.parse(JSON.stringify(T.snap().db.stats));
+T.ensureDailyProgress();
+let dailySnap=T.snap();
+const todayKey=T.dateKey();
+const todayEntry=(dailySnap.db.stats.dailyHistory||[]).find(x=>x.date===todayKey);
+check("daily history keeps today's activity", !!todayEntry && todayEntry.units===Number(dailySnap.db.stats.dailyUnits||0) && todayEntry.goal===T.dailyGoal());
+T.recordStudyUnit();
+dailySnap=T.snap();
+const afterEntry=(dailySnap.db.stats.dailyHistory||[]).find(x=>x.date===todayKey);
+check("daily history increments with study activity", !!afterEntry && afterEntry.units===Number(dailySnap.db.stats.dailyUnits||0));
+const badHistoryTests=[
+  {stats:{dailyHistory:"bad"},profile:{theme:"light"},vocabState:[]},
+  {stats:{dailyHistory:[{date:"bad",units:1,goal:10}]},profile:{theme:"light"},vocabState:[]},
+  {stats:{dailyHistory:[{date:todayKey,units:-1,goal:10}]},profile:{theme:"light"},vocabState:[]}
+];
+check("progress import rejects malformed daily history", badHistoryTests.every(x=>{try{T.validateProgressImport(x);return false;}catch(e){return true;}}));
+const validDaily={stats:{dailyHistory:[{date:todayKey,units:3,goal:5}]},profile:{theme:"light"},vocabState:[]};
+check("progress import accepts valid daily history", (()=>{try{T.validateProgressImport(validDaily);return true;}catch(e){return false;}})());
+T.setStats(dailyBackup);T.ensureDailyProgress();
+
 
 T.show("practice");
 const practiceSessionXpBefore=Number(T.snap().db.stats.xp)||0;
@@ -608,6 +628,8 @@ check("perfect mixed practice awards lesson and perfect bonus XP", (Number(T.sna
 check("practice completion reward message is not stale", !document.getElementById("toast").textContent.includes("+20 XP"));
 check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);
 check("practice completion reports selected mode", !String(document.getElementById("toast").textContent||"").includes("undefined"));
+check("practice completion reports correct answered count", /Hoàn thành .*: 8\/8 đúng/.test(String(document.getElementById("toast").textContent||"")));
+
 
 T.show("quiz");
 snap = T.snap();
@@ -887,6 +909,8 @@ check(
 );
 check("reset progress clears streak activity date", !("lastActivityDate" in resetSnap.db.stats) || resetSnap.db.stats.lastActivityDate === "");
 check("reset clears practice session state", resetSnap.practiceQueue.length===0 && resetSnap.practiceIndex===0 && resetSnap.practiceAnswered===false && resetSnap.practiceAnswerOrder.length===0 && resetSnap.practiceCorrectCount===0 && resetSnap.practiceMode==="smart" && resetSnap.practiceAnsweredCount===0 && resetSnap.practiceSessionXp===0);
+check("reset clears daily history", Array.isArray(resetSnap.db.stats.dailyHistory) && resetSnap.db.stats.dailyHistory.length===0);
+
 
 T.applyUserSnapshot(beforeReset.db);
 T.save();
@@ -1246,9 +1270,9 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.1.5" && !index.includes("V10") && !icon512.includes("V10"));
-check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.5","9.0.1")===1 && T.compareVersions("9.0.0","9.1.5")===-1 && T.compareVersions("9.1.5","9.1.5")===0 && T.compareVersions("future","9.1.5")===0 && T.compareVersions("10.0","9.1.5")===0);
-check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.50","9.1.5")===1 && T.compareVersions("9.10.0","9.9.9")===1);
+check("V9 is the final version signal", expectedAppVersion==="9.1.6" && !index.includes("V10") && !icon512.includes("V10"));
+check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
+check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 check("manifest app name matches app version", String(manifest.name || "").includes("V" + expectedAppVersion));
