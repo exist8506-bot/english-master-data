@@ -157,7 +157,7 @@ window.__EM_TEST = {
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
   listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
-  dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays,
+  dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -591,6 +591,7 @@ check("vocabulary word uses attached audio", !!wordAudioButton && (!audioVocab.a
 check("vocabulary example does not reuse word audio", !!exampleAudioButton && !exampleAudioButton.includes("playAudio("));
 
 T.show("flashcards");
+check("flashcards show spaced repetition status", document.getElementById("view").innerHTML.includes("Chuỗi nhớ") && document.getElementById("view").innerHTML.includes("Ôn lại"));
 const xpBeforeFlash=Number(T.snap().db.stats.xp)||0;
 T.rateFlash("Đã nhớ");
 check("flashcard learning awards XP", (Number(T.snap().db.stats.xp)||0)>=xpBeforeFlash+5);
