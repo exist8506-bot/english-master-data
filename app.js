@@ -1,4 +1,4 @@
-const APP_VERSION="9.1.2";
+const APP_VERSION="9.1.3";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -817,7 +817,7 @@ function home(){
   $("view").innerHTML=shell("English Master V"+APP_VERSION,"Học • Luyện • Nhớ • Cải thiện",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><div class="actions" style="margin-top:12px"><button class="primary" onclick="learnNext()">▶ Học tiếp</button><button onclick="startQuickStudy()">⚡ Học nhanh 10 từ</button><button onclick="show(\'practice\')">🧩 Luyện tập</button></div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+practiceCount+'</div><div class="muted">Câu luyện</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Quiz</div></div></div>'+
-    '<div class="card"><h2>📌 Hôm nay</h2><p class="muted">'+(pending>0?pending+' từ đang đến hạn hoặc yếu.':'Chưa có từ cần ôn; app sẽ tạo bài luyện hỗn hợp.')+'</p><div class="actions"><button onclick="startReview()">🔄 Ôn từ yếu</button><button onclick="show(\'quiz\')">🧠 Quiz</button><button onclick="show(\'listening\')">🎧 Nghe</button><button onclick="show(\'speaking\')">🎙️ Nói</button></div></div>');
+    '<div class="card"><h2>📌 Hôm nay</h2><p class="muted">'+(pending>0?pending+' từ đang đến hạn hoặc yếu.':'Chưa có từ cần ôn; app sẽ tạo bài luyện hỗn hợp.')+'</p><div class="actions"><button onclick="startReview('weak',20)">🔄 Ôn từ yếu</button><button onclick="show(\'quiz\')">🧠 Quiz</button><button onclick="show(\'listening\')">🎧 Nghe</button><button onclick="show(\'speaking\')">🎙️ Nói</button></div></div>');
 }
 function pageControls(page,total,size,kind){
   const pages=Math.max(1,Math.ceil(total/size)),p=Math.min(Math.max(1,Number(page)||1),pages);
@@ -894,33 +894,37 @@ function toggleFavorite(word){
   if(!v)return;
   v.favorite=!v.favorite;save();render();
 }
-function startReview(){
+function buildReviewQueue(mode="smart",limit=20){
+  const max=Math.max(1,Math.min(50,Math.floor(Number(limit)||20)));
   const now=new Date();
-  const due=db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=now});
-  const need=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"});
+  const groups={
+    due:db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=now}),
+    weak:db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)}),
+    favorites:db.vocab.filter(function(v){return !!v.favorite}),
+    mistakes:db.vocab.filter(function(v){return Number(v.wrong_count||0)>Number(v.correct_count||0)}),
+    new:db.vocab.filter(function(v){return v.status==="New"}),
+    all:db.vocab.slice()
+  };
+  const key=String(mode||"smart").toLowerCase();
+  const order=key==="smart"?["due","weak","favorites","new"]:groups[key]?[key]:["due","weak"];
   const seen=new Set(),queue=[];
-  due.concat(need).forEach(function(v){
-    const k=norm(v.word);if(k&&!seen.has(k)){seen.add(k);queue.push(k);}
-  });
-  if(!queue.length){toast("Hiện chưa có từ cần ôn.");return;}
-  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;show("flashcards");
-}
-function buildQuickStudyQueue(limit=10){
-  const max=Math.max(1,Math.min(20,Math.floor(Number(limit)||10)));
-  const now=new Date(),seen=new Set(),queue=[];
-  const groups=[
-    db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=now}),
-    db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)}),
-    db.vocab.filter(function(v){return v.status==="New"})
-  ];
-  groups.forEach(function(group){
+  for(const groupName of order){
+    const group=groups[groupName]||[];
     for(const v of group){
       const k=norm(v.word);
       if(k&&!seen.has(k)){seen.add(k);queue.push(k);}
-      if(queue.length>=max)return;
+      if(queue.length>=max)return queue;
     }
-  });
-  return queue.slice(0,max);
+  }
+  return queue;
+}
+function startReview(mode="smart",limit=20){
+  const queue=buildReviewQueue(mode,limit);
+  if(!queue.length){toast("Không có từ phù hợp với phiên ôn này.");return;}
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;show("flashcards");
+}
+function buildQuickStudyQueue(limit=10){
+  return buildReviewQueue("smart",limit);
 }
 function startQuickStudy(){
   const queue=buildQuickStudyQueue(10);
@@ -1282,10 +1286,28 @@ function trilingual(){
     '</tbody></table></div>'+pageControls(trilingualPage,db.trilingual.length,size,"trilingual")+'</div>');
 }
 function review(){
-  const due=db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=new Date()});
-  const need=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"});
-  $("view").innerHTML=shell("Ôn tập","Ưu tiên từ đến hạn và những từ đang yếu/chưa nhớ.",
-    '<div class="grid"><div class="card"><div class="big">'+due.length+'</div><div class="muted">Đến hạn</div></div><div class="card"><div class="big">'+need.length+'</div><div class="muted">Cần củng cố</div></div><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Tổng từ</div></div></div><div class="card"><div class="actions"><button class="primary" onclick="startReview()">🃏 Bắt đầu ôn tập</button></div></div>');
+  const now=new Date();
+  const due=db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=now});
+  const weak=db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)});
+  const favorites=db.vocab.filter(function(v){return !!v.favorite});
+  const mistakes=db.vocab.filter(function(v){return Number(v.wrong_count||0)>Number(v.correct_count||0)});
+  const fresh=db.vocab.filter(function(v){return v.status==="New"});
+  $("view").innerHTML=shell("Ôn tập","Chọn đúng loại phiên học thay vì phải ôn toàn bộ danh sách.",
+    '<div class="grid">'+
+      '<div class="card"><div class="big">'+due.length+'</div><div class="muted">Đến hạn</div></div>'+
+      '<div class="card"><div class="big">'+weak.length+'</div><div class="muted">Từ yếu</div></div>'+
+      '<div class="card"><div class="big">'+mistakes.length+'</div><div class="muted">Sai nhiều</div></div>'+
+      '<div class="card"><div class="big">'+favorites.length+'</div><div class="muted">Yêu thích</div></div>'+
+      '<div class="card"><div class="big">'+fresh.length+'</div><div class="muted">Từ mới</div></div>'+
+    '</div>'+
+    '<div class="card"><h2>🧠 Ôn tập thông minh</h2><p class="muted">Ưu tiên theo thứ tự: đến hạn → từ yếu → yêu thích → từ mới, không lặp từ.</p><div class="actions"><button class="primary" onclick="startReview(\'smart\',20)">🧠 Ôn thông minh 20 từ</button><button onclick="startReview(\'smart\',10)">⚡ Ôn nhanh 10 từ</button></div></div>'+
+    '<div class="card"><h2>🎯 Ôn theo mục tiêu</h2><div class="actions">'+
+      '<button onclick="startReview(\'due\',20)">⏰ Từ đến hạn</button>'+
+      '<button onclick="startReview(\'weak\',20)">🔥 Từ yếu</button>'+
+      '<button onclick="startReview(\'mistakes\',20)">❌ Sai nhiều</button>'+
+      '<button onclick="startReview(\'favorites\',20)">⭐ Yêu thích</button>'+
+      '<button onclick="startReview(\'new\',20)">🆕 Từ mới</button>'+
+    '</div></div>');
 }
 function stats(){
   ensureDailyProgress();
