@@ -150,7 +150,8 @@ window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
-  listenCheck, startReview, playDialogue, audioUrl, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot,
+  listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex,
+  setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
 };
@@ -406,6 +407,19 @@ const correctChoice = snap.quizCorrectIndex;
 T.answerQuiz(correctChoice, correctChoice);
 snap = T.snap();
 check("quiz interaction", snap.db.stats.answered === answeredBefore + 1 && snap.db.stats.correct === correctBefore + 1);
+const answeredAfterFirst = snap.db.stats.answered;
+T.answerQuiz(correctChoice, correctChoice);
+check("quiz blocks double-answer scoring", T.snap().db.stats.answered === answeredAfterFirst && T.snap().db.stats.correct === correctBefore + 1);
+
+const quizPromptButton = (document.getElementById("view").innerHTML.match(/<button[^>]*>🔊 Đọc câu hỏi<\/button>/) || [])[0] || "";
+check("quiz question uses TTS for prompt instead of word audio", !!quizPromptButton && !quizPromptButton.includes("playAudio("));
+
+T.show("vocab");
+const audioVocab = T.snap().db.vocab.find((v) => String(v.word || "").trim() === importWord) || T.snap().db.vocab[0];
+const wordAudioButton = audioVocab ? T.audioButton(audioVocab.word, "🔊 Từ", "en-US", 1, audioVocab) : "";
+const exampleAudioButton = audioVocab ? T.audioButton(audioVocab.example || audioVocab.word, "🔊 Câu", "en-US", 1, audioVocab) : "";
+check("vocabulary word uses attached audio", !!wordAudioButton && (!audioVocab.audioEn || wordAudioButton.includes("playAudio(")));
+check("vocabulary example does not reuse word audio", !!exampleAudioButton && !exampleAudioButton.includes("playAudio("));
 
 T.show("flashcards");
 T.rateFlash("Đã nhớ");
@@ -426,6 +440,14 @@ let html=document.getElementById("view").innerHTML;
 check("listening has direct jump control", html.includes('id="listeningJump"') && html.includes("Tới câu"));
 check("listening jump changes exact sentence", practicePool.length >= 100 && T.jumpToItem("listening", 100) && T.snap().listenIndex === 99 && document.getElementById("view").innerHTML.includes("Câu 100 / " + practicePool.length));
 check("listening rejects out-of-range jump", T.jumpToItem("listening", 999999) === false && T.snap().listenIndex === 99);
+
+// The automatic listening advance must never repaint another screen after the learner leaves Listening.
+T.show("listening");
+const timerSentence = T.sentencePracticePool()[T.snap().listenIndex];
+if (timerSentence) T.listenCheck(new El("timer-option", "button"), timerSentence.vi, timerSentence.vi);
+T.setView("stats");
+await new Promise((resolve) => setTimeout(resolve, 760));
+check("listening auto-advance never overwrites another route", document.getElementById("view").innerHTML.includes("Tiến độ"));
 
 T.show("speaking");
 html=document.getElementById("view").innerHTML;
@@ -586,6 +608,8 @@ check(
   resetSnap.db.stats.sentenceAnswered === 0 &&
   resetSnap.db.vocab.every((v) => v.status === "New" && !v.favorite && Number(v.correct_count || 0) === 0 && Number(v.wrong_count || 0) === 0)
 );
+check("reset progress clears streak activity date", !("lastActivityDate" in resetSnap.db.stats) || resetSnap.db.stats.lastActivityDate === "");
+
 T.applyUserSnapshot(beforeReset.db);
 T.save();
 T.show("settings");
@@ -628,6 +652,22 @@ T.setLayoutMode("desktop");
 check("desktop layout remains isolated", !document.body.classList._set.has("layout-phone") && document.body.classList._set.has("layout-desktop"));
 T.setLayoutMode("phone");
 check("phone layout remains isolated", document.body.classList._set.has("layout-phone") && !document.body.classList._set.has("layout-desktop"));
+const fallbackBefore = T.snap().db.stats.xp;
+T.show("home");
+check("unknown route falls back to home", T.snap().db.view === undefined && document.getElementById("view").innerHTML.includes("English Master V"));
+check("index normalization wraps negative index", T.normalizeArrayIndex(-1, 5) === 4);
+check("index normalization handles invalid value", T.normalizeArrayIndex("bad", 5) === 0);
+
+check("cached content validator accepts complete cache", T.usableCachedContent({
+  vocab:[1],sentences:[1],questions:[1],grammar:[1],communication:[1],trilingual:[1],
+  contentCounts:{vocab:1,sentences:1,questions:1,grammar:1,communication:1,trilingual:1}
+}));
+check("cached content validator rejects incomplete cache", !T.usableCachedContent({
+  vocab:[1],sentences:[1],questions:[1],grammar:[1],communication:[1],trilingual:[1],
+  contentCounts:{vocab:1,sentences:0,questions:1,grammar:1,communication:1,trilingual:1}
+}));
+check("similarity score exact match is 100", T.similarityScore("Hello world!", "hello world.") === 100);
+check("similarity score empty input is 0", T.similarityScore("", "hello") === 0);
 
 T.show("speaking");
 check("speaking UI and microphone fallback", document.getElementById("view").innerHTML.includes("Bắt đầu nói"));
