@@ -1,4 +1,4 @@
-const APP_VERSION="9.0.1";
+const APP_VERSION="9.1.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -1099,7 +1099,7 @@ function nextQuiz(){stopSpeech();if(!db.questions.length){quizAnswered=false;qui
 function blankWordInExample(example,word){
   const text=String(example||""),target=String(word||"").trim();
   if(!text||!target)return "";
-  const escaped=target.replace(/[.*+?^${}()|[\\]\\]/g,"\\function chooseFour(correct,field){");
+  const escaped=target.replace(/[.*+?^${}()|[\\]\\]/g,"\\  const escaped=target.replace(/[.*+?^${}()|[\\]\\]/g,"\\function chooseFour(correct,field){");");
   const re=new RegExp("(^|[^A-Za-z0-9'])"+escaped+"(?![A-Za-z0-9'])","i");
   let found=false;
   const out=text.replace(re,function(prefix){found=true;return prefix+"_____";});
@@ -1183,8 +1183,11 @@ function practiceCheckOrder(){
 function practiceNext(){
   if(!practiceAnswered)return;
   if(practiceIndex+1>=practiceQueue.length){
-    db.stats.practiceCompleted=(Number(db.stats.practiceCompleted)||0)+1;addXP(30);if(practiceCorrectCount===practiceQueue.length)addXP(50);
-    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;save();toast("Hoàn thành bài luyện. +20 XP");show("home");return;
+    const lessonSize=practiceQueue.length,perfect=practiceCorrectCount===lessonSize;
+    db.stats.practiceCompleted=(Number(db.stats.practiceCompleted)||0)+1;addXP(30);if(perfect)addXP(50);
+    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;save();
+    toast("Hoàn thành bài luyện. +30 XP hoàn thành"+(perfect?" · +50 XP hoàn hảo":""));
+    show("home");return;
   }
   practiceIndex++;practiceAnswered=false;practiceAnswerOrder=[];save();render();
 }
@@ -1380,13 +1383,19 @@ function registerServiceWorker(){
   }
 }
 
+function compareVersions(a,b){
+  const pa=String(a||"").split(".").map(x=>Number(x)),pb=String(b||"").split(".").map(x=>Number(x));
+  if(pa.length!==3||pb.length!==3||pa.some(x=>!Number.isInteger(x)||x<0)||pb.some(x=>!Number.isInteger(x)||x<0))return 0;
+  for(let i=0;i<3;i++){if(pa[i]>pb[i])return 1;if(pa[i]<pb[i])return -1;}
+  return 0;
+}
 async function checkAppVersion(){
   try{
     const r=await fetch(APP_VERSION_URL+"?t="+Date.now(),{cache:"no-store"});
     if(!r.ok)return;
     const info=await r.json();
-    const remote=String(info.version||"");
-    if(remote&&remote!==APP_VERSION){
+    const remote=String(info.version||"").trim();
+    if(compareVersions(remote,APP_VERSION)>0){
       const url=new URL(window.location.href);
       url.searchParams.set("appv",remote);
       window.location.replace(url.toString());
