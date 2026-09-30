@@ -578,12 +578,21 @@ const xpBeforeFlash=Number(T.snap().db.stats.xp)||0;
 T.rateFlash("Đã nhớ");
 check("flashcard learning awards XP", (Number(T.snap().db.stats.xp)||0)>=xpBeforeFlash+5);
 check("flashcard interaction", T.snap().db.vocab.length === 3500);
+T.show("flashcards");
+T.shuffleFlash();
+check("flashcard shuffle keeps valid index", T.snap().flashIndex>=0 && T.snap().flashIndex<3500);
+check("flashcard shuffle does not corrupt content", T.snap().db.vocab.length===3500);
+
 
 T.show("listening");
 snap = T.snap();
 const listeningPool = T.sentencePracticePool();
 const currentSentence = listeningPool[((Number.isFinite(Number(snap.listenIndex)) ? Math.trunc(Number(snap.listenIndex)) : 0) % Math.max(1, listeningPool.length) + Math.max(1, listeningPool.length)) % Math.max(1, listeningPool.length)];
 check("listening has a current practice sentence", !!currentSentence && !!String(currentSentence.en ?? "").trim() && !!String(currentSentence.vi ?? "").trim());
+const listeningHtml=document.getElementById("view").innerHTML;
+const listenOptionCount=(listeningHtml.match(/class="option"/g)||[]).length;
+check("listening renders up to four unique choices", listenOptionCount>=2 && listenOptionCount<=4);
+
 const sentenceAnsweredBefore = T.snap().db.stats.sentenceAnswered || 0;
 if (currentSentence) T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
 const afterListen = T.snap().db.stats;
@@ -607,6 +616,11 @@ T.show("speaking");
 html=document.getElementById("view").innerHTML;
 check("speaking has direct jump control", html.includes('id="speakingJump"') && html.includes("Tới câu"));
 check("speaking jump changes exact sentence", practicePool.length >= 200 && T.jumpToItem("speaking", 200) && T.snap().speakIndex === 199 && document.getElementById("view").innerHTML.includes("Câu 200 / " + practicePool.length));
+T.show("speaking");
+T.prevSpeak();
+T.nextSpeak();
+check("speaking previous/next keep valid bounds", T.snap().speakIndex>=0 && T.snap().speakIndex<practicePool.length);
+
 
 T.show("quiz");
 html=document.getElementById("view").innerHTML;
