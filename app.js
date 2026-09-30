@@ -1,4 +1,4 @@
-const APP_VERSION="9.1.1";
+const APP_VERSION="9.1.2";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -13,7 +13,7 @@ let db={
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
-let reviewQueue=[],reviewIndex=0,validatedContentSignature="",updateInProgress=false;
+let reviewQueue=[],reviewIndex=0,quickReviewActive=false,validatedContentSignature="",updateInProgress=false;
 let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[],practiceCorrectCount=0;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
@@ -430,7 +430,7 @@ function show(v){
   stopSpeech();
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
-  if(v!=="flashcards")reviewQueue=[];
+  if(v!=="flashcards"){reviewQueue=[];quickReviewActive=false;}
   if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;}
   view=v;render();
 }
@@ -815,7 +815,7 @@ function home(){
   const weakWords=db.vocab.filter(v=>v.status==="Chưa nhớ"||v.status==="Review").map(v=>norm(v.word));
   const pending=new Set(dueWords.concat(weakWords).filter(Boolean)).size;
   $("view").innerHTML=shell("English Master V"+APP_VERSION,"Học • Luyện • Nhớ • Cải thiện",
-    '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><div class="actions" style="margin-top:12px"><button class="primary" onclick="learnNext()">▶ Học tiếp</button><button onclick="show(\'practice\')">⚡ Luyện nhanh</button></div></div>'+
+    '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><div class="actions" style="margin-top:12px"><button class="primary" onclick="learnNext()">▶ Học tiếp</button><button onclick="startQuickStudy()">⚡ Học nhanh 10 từ</button><button onclick="show(\'practice\')">🧩 Luyện tập</button></div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+practiceCount+'</div><div class="muted">Câu luyện</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Quiz</div></div></div>'+
     '<div class="card"><h2>📌 Hôm nay</h2><p class="muted">'+(pending>0?pending+' từ đang đến hạn hoặc yếu.':'Chưa có từ cần ôn; app sẽ tạo bài luyện hỗn hợp.')+'</p><div class="actions"><button onclick="startReview()">🔄 Ôn từ yếu</button><button onclick="show(\'quiz\')">🧠 Quiz</button><button onclick="show(\'listening\')">🎧 Nghe</button><button onclick="show(\'speaking\')">🎙️ Nói</button></div></div>');
 }
@@ -903,7 +903,30 @@ function startReview(){
     const k=norm(v.word);if(k&&!seen.has(k)){seen.add(k);queue.push(k);}
   });
   if(!queue.length){toast("Hiện chưa có từ cần ôn.");return;}
-  reviewQueue=queue;reviewIndex=0;flashFlipped=false;show("flashcards");
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;show("flashcards");
+}
+function buildQuickStudyQueue(limit=10){
+  const max=Math.max(1,Math.min(20,Math.floor(Number(limit)||10)));
+  const now=new Date(),seen=new Set(),queue=[];
+  const groups=[
+    db.vocab.filter(function(v){return v.reviewDue&&new Date(v.reviewDue)<=now}),
+    db.vocab.filter(function(v){return v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)}),
+    db.vocab.filter(function(v){return v.status==="New"})
+  ];
+  groups.forEach(function(group){
+    for(const v of group){
+      const k=norm(v.word);
+      if(k&&!seen.has(k)){seen.add(k);queue.push(k);}
+      if(queue.length>=max)return;
+    }
+  });
+  return queue.slice(0,max);
+}
+function startQuickStudy(){
+  const queue=buildQuickStudyQueue(10);
+  if(!queue.length){toast("Chưa có từ để tạo phiên học nhanh.");return;}
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=true;flashFlipped=false;show("flashcards");
+  toast("Đã tạo phiên học nhanh: "+queue.length+" từ.");
 }
 function reviewMeta(v){
   const streak=Math.max(0,Number(v?.reviewStreak)||0);
@@ -923,7 +946,7 @@ function flashcards(){
   if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
   const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+reviewMeta(v)+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
   const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US",v)+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
-  $("view").innerHTML=shell(reviewActive?"Ôn tập bằng Flashcards":"Flashcards",reviewActive?"Đang ôn các từ đến hạn/chưa nhớ.":"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
+  $("view").innerHTML=shell(reviewActive?(quickReviewActive?"Học nhanh hôm nay":"Ôn tập bằng Flashcards"):"Flashcards",reviewActive?(quickReviewActive?"Phiên 10 từ ưu tiên: đến hạn → yếu → mới.":"Đang ôn các từ đến hạn/chưa nhớ."):"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
     '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
 }
 function rateFlash(status){
@@ -940,7 +963,10 @@ function rateFlash(status){
   flashFlipped=false;
   if(reviewActive){
     if(reviewIndex+1>=reviewQueue.length){
-      reviewQueue=[];reviewIndex=0;save();show("review");return;
+      reviewQueue=[];reviewIndex=0;const wasQuick=quickReviewActive;quickReviewActive=false;save();
+      if(wasQuick){show("home");toast("Hoàn thành phiên học nhanh.");}
+      else show("review");
+      return;
     }
     reviewIndex++;
   }else{
@@ -1378,7 +1404,7 @@ function resetProgress(){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.reviewStreak=0;v.lastReviewed=null;
   });
   flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
-  reviewQueue=[];reviewIndex=0;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
+  reviewQueue=[];reviewIndex=0;quickReviewActive=false;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
   view="home";save();render();toast("Đã đặt lại tiến độ học tập.");
 }
 function dailyGoalOptions(){return [5,10,15,20,30].map(function(x){var selected=Number(db.profile.dailyGoal||10)===x?" selected":"";return '<option value="'+x+'"'+selected+'>'+x+' hoạt động</option>';}).join("");}
