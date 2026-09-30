@@ -903,7 +903,7 @@ function startReview(){
     const k=norm(v.word);if(k&&!seen.has(k)){seen.add(k);queue.push(k);}
   });
   if(!queue.length){toast("Hiện chưa có từ cần ôn.");return;}
-  reviewQueue=queue;reviewIndex=0;flashFlipped=false;show("flashcards");
+  reviewQueue=queue;reviewIndex=0;quickReviewActive=false;flashFlipped=false;show("flashcards");
 }
 function buildQuickStudyQueue(limit=10){
   const max=Math.max(1,Math.min(20,Math.floor(Number(limit)||10)));
@@ -946,7 +946,7 @@ function flashcards(){
   if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
   const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+reviewMeta(v)+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
   const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US",v)+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
-  $("view").innerHTML=shell(reviewActive?"Ôn tập bằng Flashcards":"Flashcards",reviewActive?"Đang ôn các từ đến hạn/chưa nhớ.":"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
+  $("view").innerHTML=shell(reviewActive?(quickReviewActive?"Học nhanh hôm nay":"Ôn tập bằng Flashcards"):"Flashcards",reviewActive?(quickReviewActive?"Phiên 10 từ ưu tiên: đến hạn → yếu → mới.":"Đang ôn các từ đến hạn/chưa nhớ."):"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
     '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
 }
 function rateFlash(status){
@@ -1404,7 +1404,7 @@ function resetProgress(){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.reviewStreak=0;v.lastReviewed=null;
   });
   flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
-  reviewQueue=[];reviewIndex=0;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
+  reviewQueue=[];reviewIndex=0;quickReviewActive=false;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
   view="home";save();render();toast("Đã đặt lại tiến độ học tập.");
 }
 function dailyGoalOptions(){return [5,10,15,20,30].map(function(x){var selected=Number(db.profile.dailyGoal||10)===x?" selected":"";return '<option value="'+x+'"'+selected+'>'+x+' hoạt động</option>';}).join("");}
