@@ -1219,7 +1219,7 @@ function stats(){
   const quizAcc=db.stats.answered?Math.round((db.stats.correct/db.stats.answered)*100):0;
   const sentenceAcc=db.stats.sentenceAnswered?Math.round((db.stats.sentenceCorrect/db.stats.sentenceAnswered)*100):0;
   const done=Number(db.stats.dailyUnits)||0,target=dailyGoal(),pct=dailyPercent();
-  const weak=weakVocabularyPool().filter(v=>Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
+  const weak=weakVocabularyPool().filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
   $("view").innerHTML=shell("Tiến độ V9","Mục tiêu ngày, độ chính xác và từ cần củng cố.",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><p class="muted small">'+pct+'% hoàn thành · còn '+Math.max(0,target-done)+' hoạt động.</p></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Từ đã học</div></div><div class="card"><div class="big">'+(db.stats.practiceCompleted||0)+'</div><div class="muted">Bài luyện hoàn thành</div></div></div>'+
