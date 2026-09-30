@@ -1161,6 +1161,7 @@ const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"
 const expectedAppVersion = String(appVersion.version || "");
 check("V9 is the final version signal", expectedAppVersion==="9.1.0" && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.0","9.0.1")===1 && T.compareVersions("9.0.0","9.1.0")===-1 && T.compareVersions("9.1.0","9.1.0")===0 && T.compareVersions("future","9.1.0")===0 && T.compareVersions("10.0","9.1.0")===0);
+check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.10","9.1.2")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 check("manifest app name matches app version", String(manifest.name || "").includes("V" + expectedAppVersion));
