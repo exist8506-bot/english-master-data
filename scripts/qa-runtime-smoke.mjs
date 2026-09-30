@@ -95,6 +95,7 @@ const window = {
     cancel() {},
     resume() {},
     speak(u) {
+      speechCalls.push(u);
       setTimeout(() => u.onend?.(), 0);
     },
   },
@@ -108,6 +109,7 @@ const localStorage = {
 };
 const normalizeTest = (v) => String(v ?? "").trim().toLowerCase().replace(/\s+/g, " ");
 const audioCalls = [];
+const speechCalls = [];
 class FakeAudio {
   constructor(url) { this.url = url; this.preload = ""; this.playbackRate = 1; this.paused = false; this.currentTime = 0; this.onended = null; this.onerror = null; audioCalls.push(this); }
   play() { this.paused = false; return Promise.resolve(); }
@@ -481,6 +483,7 @@ check("finishPractice is callable without corrupting stats", true);
 check("progress import validator rejects invalid daily counters", (()=>{try{T.validateProgressImport({stats:{dailyUnits:-1},profile:{theme:"light"},vocabState:[]});return false;}catch(e){return true;}})());
 
 T.show("practice");
+const practiceSessionXpBefore=Number(T.snap().db.stats.xp)||0;
 let ps = T.snap();
 check("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
   new Set(ps.practiceQueue.map(x=>x.type)).size >= 3 &&
@@ -512,6 +515,7 @@ for(let step=0; step<ps.practiceQueue.length; step++){
   T.practiceNext();
 }
 check("practice completion awards completion counter", (T.snap().db.stats.practiceCompleted||0)>=1);
+check("perfect mixed practice awards lesson and perfect bonus XP", (Number(T.snap().db.stats.xp)||0)-practiceSessionXpBefore>=160);
 check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);
 
 T.show("quiz");
