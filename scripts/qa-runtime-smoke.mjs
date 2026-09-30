@@ -565,7 +565,12 @@ for(const mode of modes){
 }
 T.startPracticeMode("mixed",6);
 const modeSnap=T.snap();
-check("practice mode start resets session counters", modeSnap.practiceMode==="mixed" && modeSnap.practiceQueue.length===6 && modeSnap.practiceAnsweredCount===0 && modeSnap.practiceCorrectCount===0 && modeSnap.practiceSessionXp===0);
+check("practice mode start resets session counters", modeSnap.practiceMode==="mixed" && modeSnap.practiceQueue.length===6 && modeSnap.practiceAnsweredCount===0 && modeSnap.practiceCorrectCount===0 && modeSnap.practiceSessionXp===0);\nT.startPracticeMode("favorites",6);
+const favoriteModeCount=T.snap().practiceQueue.length;
+T.show("home");T.show("practice");
+const reopenedPractice=T.snap();
+check("reopening practice preserves selected mode", reopenedPractice.practiceMode==="favorites" && reopenedPractice.practiceQueue.length===favoriteModeCount);
+T.startPracticeMode("smart",8);
 T.startPracticeMode("smart",8);
 
 check("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
