@@ -1121,16 +1121,6 @@ storage.set("englishMaster_v1", "{broken-json");
 T.setStats({ xp: 0 });
 T.load();
 const recovered = T.snap().db.vocab.find((v) => String(v.word || "").trim() === backupWord);
-check("saved progress schema detector rejects malformed snapshots", !T.savedProgressLooksUsable({stats:{},profile:{}}) && T.savedProgressLooksUsable({stats:{},profile:{},vocabState:[]}));
-check("saved progress detector rejects null vocab states", !T.savedProgressLooksUsable({stats:{},profile:{},vocabState:[null]}));
-const malformedApplyStats={...T.snap().db.stats};
-T.applyUserSnapshot({stats:{xp:malformedApplyStats.xp},profile:{theme:"light"},vocabState:[null,{}, {word:""}]});
-check("malformed vocab state is filtered without crash", T.snap().db.stats.xp===malformedApplyStats.xp);
-T.applyUserSnapshot({stats:{answered:2,correct:9,sentenceAnswered:1,sentenceCorrect:5,speakingAttempts:1,speakingGood:8},profile:{theme:"light"},vocabState:[{word:String(T.snap().db.vocab[0]?.word||"x"),status:"BROKEN",correct_count:-4,wrong_count:-7}]});
-const normalizedCorrupt=T.snap();
-const normalizedCorruptWord=normalizedCorrupt.db.vocab[0];
-check("restored stats obey impossible-ratio limits", normalizedCorrupt.db.stats.correct===2 && normalizedCorrupt.db.stats.sentenceCorrect===1 && normalizedCorrupt.db.stats.speakingGood===1);
-check("restored vocab state normalizes invalid status and negative counts", normalizedCorruptWord?.status!=="BROKEN" && normalizedCorruptWord?.correct_count===0 && normalizedCorruptWord?.wrong_count===0);
 
 
 check("legacy content detector rejects malformed item arrays", !T.legacyContentLooksUsable({vocab:[null],sentences:[{}],questions:[{}],grammar:[{}],communication:[{}],trilingual:[{}]}) && T.legacyContentLooksUsable({
@@ -1146,6 +1136,16 @@ check(
   recovered?.wrong_count === 3,
   JSON.stringify({xp:T.snap().db.stats.xp,recovered})
 );
+check("saved progress schema detector rejects malformed snapshots", !T.savedProgressLooksUsable({stats:{},profile:{}}) && T.savedProgressLooksUsable({stats:{},profile:{},vocabState:[]}));
+check("saved progress detector rejects null vocab states", !T.savedProgressLooksUsable({stats:{},profile:{},vocabState:[null]}));
+const malformedApplyStats={...T.snap().db.stats};
+T.applyUserSnapshot({stats:{xp:malformedApplyStats.xp},profile:{theme:"light"},vocabState:[null,{}, {word:""}]});
+check("malformed vocab state is filtered without crash", T.snap().db.stats.xp===malformedApplyStats.xp);
+T.applyUserSnapshot({stats:{answered:2,correct:9,sentenceAnswered:1,sentenceCorrect:5,speakingAttempts:1,speakingGood:8},profile:{theme:"light"},vocabState:[{word:String(T.snap().db.vocab[0]?.word||"x"),status:"BROKEN",correct_count:-4,wrong_count:-7}]});
+const normalizedCorrupt=T.snap();
+const normalizedCorruptWord=normalizedCorrupt.db.vocab.find(v=>String(v.word||"").trim().toLowerCase()===backupWord.toLowerCase());
+check("restored stats obey impossible-ratio limits", normalizedCorrupt.db.stats.correct===2 && normalizedCorrupt.db.stats.sentenceCorrect===1 && normalizedCorrupt.db.stats.speakingGood===1);
+check("restored vocab state normalizes invalid status and negative counts", normalizedCorruptWord?.status!=="BROKEN" && normalizedCorruptWord?.correct_count===0 && normalizedCorruptWord?.wrong_count===0);
 
 check("content storage key exists", !!storage.get("englishMaster_v1"));
 check("backup storage key exists", !!storage.get("englishMaster_v1_backup"));
