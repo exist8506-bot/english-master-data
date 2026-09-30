@@ -386,7 +386,7 @@ if(practiceFirst && practiceFirst.type!=="order"){
   T.practiceAnswer(correctPractice);
   ps = T.snap();
   check("practice answer updates learning and daily progress", ps.practiceAnswered && (Number(ps.db.stats.dailyUnits)||0)===dailyBeforePractice+1 &&
-    ps.db.vocab.some(v=>String(v.word||"").trim().toLowerCase()===String(practiceFirst.answer||"").trim().toLowerCase() && Number(v.correct_count||0)>=1));
+    ps.db.vocab.some(v=>String(v.word||"").trim().toLowerCase()===String(practiceFirst.word||"").trim().toLowerCase() && Number(v.correct_count||0)>=1), JSON.stringify({type:practiceFirst.type,word:practiceFirst.word,answer:practiceFirst.answer,before:dailyBeforePractice,after:ps.db.stats.dailyUnits}));
 }
 T.show("practice");
 for(let step=0; step<ps.practiceQueue.length; step++){
