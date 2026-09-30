@@ -107,7 +107,7 @@ const localStorage = {
 const normalizeTest = (v) => String(v ?? "").trim().toLowerCase().replace(/\s+/g, " ");
 const audioCalls = [];
 class FakeAudio {
-  constructor(url) { this.url = url; this.preload = ""; this.playbackRate = 1; this.paused = false; this.currentTime = 0; audioCalls.push(this); }
+  constructor(url) { this.url = url; this.preload = ""; this.playbackRate = 1; this.paused = false; this.currentTime = 0; this.onended = null; this.onerror = null; audioCalls.push(this); }
   play() { this.paused = false; return Promise.resolve(); }
   pause() { this.paused = true; }
 }
@@ -373,6 +373,34 @@ check("search reaches an existing vocab record", !!searchTerm && document.getEle
 const favBefore = searchableVocab?.favorite;
 if (searchTerm) T.toggleFavorite(searchTerm);
 check("favorite interaction", !!searchableVocab && searchableVocab.favorite !== favBefore);
+
+// Core helper and resilience audit.
+check("language detection covers English/Chinese/Vietnamese", T.guessLang("hello")==="en-US" && T.guessLang("你好")==="zh-CN" && T.guessLang("xin chào")==="vi-VN");
+check("standalone sentence naturality filter works", T.standalonePracticeTemplateIsNatural("It is useful to practice a little every day.") && !T.standalonePracticeTemplateIsNatural("It is hungry to practice a little every day."));
+const validIndependent=T.sentencePracticePool()[0];
+check("standalone sentence validator accepts real sentence", !!validIndependent && T.isNaturalStandaloneSentence(validIndependent)===true);
+check("communication line filter rejects fragments", T.communicationLineIsNatural("to practice")==false);
+check("mergeBy deduplicates and can replace", T.mergeBy([{id:"a",value:1}],[{id:"a",value:2},{id:"b",value:3}],x=>x.id,(old,incoming)=>incoming.value>old.value).length===2 &&
+  T.mergeBy([{id:"a",value:1}],[{id:"a",value:2}],x=>x.id,(old,incoming)=>true)[0].value===2);
+check("remote replacement policy recognizes replaceable sources", T.remoteReplaceAllowed({example:"I learned the word hello."}) && !T.remoteReplaceAllowed({example:"Hello, how are you?"}));
+check("audio URL language routing is safe", T.audioUrl({audioEn:"en.mp3",audioZh:"zh.mp3",audioVi:"vi.mp3"},"en-US")==="en.mp3" &&
+  T.audioUrl({audioEn:"en.mp3",audioZh:"zh.mp3",audioVi:"vi.mp3"},"zh-CN")==="zh.mp3" &&
+  T.audioUrl({audio:"generic.mp3"},"zh-CN")==="");
+check("daily goal options render a selected value", T.dailyGoalOptions().includes('value="10"') && T.dailyGoalOptions().includes("selected"));
+const daily0=Number(T.snap().db.stats.dailyUnits)||0;
+T.recordStudyUnit();
+const daily1=Number(T.snap().db.stats.dailyUnits)||0;
+check("daily study unit increments exactly once", daily1===daily0+1);
+T.setStats({dailyUnits:0,practiceCompleted:"4"});
+T.ensureDailyProgress();
+check("V9 progress counters normalize and remain numeric", typeof T.snap().db.stats.dailyUnits==="number" && typeof T.snap().db.stats.practiceCompleted==="number" && T.snap().db.stats.practiceCompleted===4);
+T.setStats({lastActivityDate:""});
+const beforeActivity=Number(T.snap().db.stats.dailyUnits)||0;
+T.recordActivity();
+const afterFirstActivity=T.snap().db.stats.dailyUnits;
+T.recordActivity();
+const afterSecondActivity=T.snap().db.stats.dailyUnits;
+check("activity tracking counts each completed activity", afterFirstActivity===beforeActivity+1 && afterSecondActivity===beforeActivity+2);
 
 T.show("practice");
 let ps = T.snap();
