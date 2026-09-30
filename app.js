@@ -211,6 +211,9 @@ function applyUserSnapshot(snapshot){
   if(!["auto","phone","desktop"].includes(String(db.profile.layout)))db.profile.layout="auto";
   const rate=Number(db.profile.speechRate);
   db.profile.speechRate=Number.isFinite(rate)?Math.max(0.5,Math.min(1.5,rate)):1;
+  const goal=Number(db.profile.dailyGoal);
+  db.profile.dailyGoal=Number.isFinite(goal)?Math.max(1,Math.min(100,Math.floor(goal))):10;
+  ensureDailyProgress();
   const p=snapshot.positions||{};
   flashIndex=Number.isFinite(Number(p.flashIndex))?Number(p.flashIndex):flashIndex;
   listenIndex=Number.isFinite(Number(p.listenIndex))?Number(p.listenIndex):listenIndex;
@@ -1040,6 +1043,87 @@ function answerQuiz(i,a){
 }
 function nextQuiz(){if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
 
+function chooseFour(correct,field){
+  const key=norm(correct),items=shuffle(db.vocab.filter(v=>norm(v[field]||"")!==key)),out=[correct];
+  for(const v of items){
+    const x=String(v[field]||"").trim();
+    if(x&&!out.some(y=>norm(y)===norm(x)))out.push(x);
+    if(out.length===4)break;
+  }
+  return out.length===4?shuffle(out):out;
+}
+function buildPracticeSession(count=8){
+  const vocab=weakVocabularyPool().filter(v=>String(v.word||"").trim()&&String(v.meaning||"").trim());
+  const sentences=sentencePracticePool(),out=[];
+  for(let i=0;i<Math.min(count,vocab.length);i++){
+    const v=vocab[i],mode=i%4;
+    if(mode===0){
+      const options=chooseFour(v.meaning,"meaning");
+      out.push({type:"meaning",prompt:v.word,example:v.example,answer:v.meaning,options});
+    }else if(mode===1){
+      const options=chooseFour(v.word,"word");
+      out.push({type:"translate",prompt:v.meaning,answer:v.word,options});
+    }else if(mode===2){
+      const example=String(v.example||"").trim(),lower=example.toLowerCase(),target=String(v.word||"").trim().toLowerCase();
+      const at=lower.indexOf(target);
+      const prompt=at>=0?example.slice(0,at)+"_____"+example.slice(at+target.length):(example||("Use the word: "+v.word));
+      const options=chooseFour(v.word,"word");
+      out.push({type:"fill",prompt,answer:v.word,options});
+    }else{
+      const s=sentences[i%Math.max(1,sentences.length)],target=String(s?.en||v.example||v.word).trim();
+      const words=target.replace(/[.!?]+$/,"").split(/\s+/).filter(Boolean);
+      out.push({type:"order",prompt:s?.vi||"Sắp xếp câu",target,words:shuffle(words)});
+    }
+  }
+  return out;
+}
+function practice(){
+  if(!practiceQueue.length)practiceQueue=buildPracticeSession();
+  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9","Chưa đủ dữ liệu để tạo bài.");return;}
+  practiceIndex=normalizeArrayIndex(practiceIndex,practiceQueue.length);
+  const item=practiceQueue[practiceIndex];
+  let body='<div class="toolbar"><span class="badge">⚡ Luyện tập hỗn hợp</span><span class="muted">'+(practiceIndex+1)+' / '+practiceQueue.length+'</span></div>';
+  if(item.type!=="order"){
+    const title=item.type==="meaning"?"Chọn nghĩa đúng":item.type==="translate"?"Chọn từ đúng":"Điền từ còn thiếu";
+    body+='<h2>'+esc(title)+'</h2><div class="hint"><b>'+esc(item.prompt)+'</b></div>'+(item.example?'<p class="muted">'+esc(item.example)+'</p>':"")+'<div class="options" style="margin-top:14px">'+item.options.map(function(o,i){return '<button class="option" '+(practiceAnswered?"disabled":"")+' onclick="practiceAnswer('+i+')">'+String.fromCharCode(65+i)+'. '+esc(o)+'</button>'}).join("")+'</div>';
+  }else{
+    body+='<h2>Sắp xếp câu</h2><p class="muted">'+esc(item.prompt)+'</p><div class="practice-order">'+practiceAnswerOrder.map(function(i){return '<button class="token chosen" onclick="practiceRemoveToken('+i+')">'+esc(item.words[i])+'</button>'}).join(" ")+'</div><div class="practice-order">'+item.words.map(function(w,i){const used=practiceAnswerOrder.includes(i);return '<button class="token" '+(used||practiceAnswered?"disabled":"")+' onclick="practicePickToken('+i+')">'+esc(w)+'</button>'}).join(" ")+'</div><button class="primary" style="margin-top:12px" onclick="practiceCheckOrder()">Kiểm tra</button>';
+  }
+  body+='<div id="practiceResult" class="hint" style="margin-top:14px">'+(practiceAnswered?"":"Hoàn thành bài rồi kiểm tra đáp án.")+'</div><div class="actions" style="margin-top:14px">'+(practiceAnswered?'<button class="primary" onclick="practiceNext()">Câu tiếp →</button>':"")+'<button onclick="restartPractice()">🔀 Bài khác</button></div>';
+  $("view").innerHTML=shell("Luyện tập V9","Ưu tiên từ yếu, sau đó đến từ mới.",body);
+}
+function finishPractice(ok){recordActivity();if(ok)addXP(10);}
+function practiceAnswer(index){
+  if(practiceAnswered)return;
+  const item=practiceQueue[practiceIndex];if(!item||item.type==="order")return;
+  const choice=String(item.options[index]??"");
+  const ok=norm(choice)===norm(item.answer);
+  practiceAnswered=true;finishPractice(ok);
+  const correctIndex=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
+  document.querySelectorAll(".option").forEach(function(b,i){b.disabled=true;if(i===correctIndex)b.classList.add("correct");if(i===index&&!ok)b.classList.add("wrong");});
+  const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(item.answer)+"</b>";
+  save();render();
+}
+function practicePickToken(i){if(practiceAnswered||practiceAnswerOrder.includes(i))return;practiceAnswerOrder.push(i);render();}
+function practiceRemoveToken(i){if(practiceAnswered)return;const p=practiceAnswerOrder.lastIndexOf(i);if(p>=0){practiceAnswerOrder.splice(p,1);render();}}
+function practiceCheckOrder(){
+  if(practiceAnswered)return;
+  const item=practiceQueue[practiceIndex];if(!item||item.type!=="order")return;
+  const actual=practiceAnswerOrder.map(function(i){return item.words[i]}).join(" ");
+  const ok=norm(actual)===norm(item.target.replace(/[.!?]+$/,""));
+  practiceAnswered=true;finishPractice(ok);
+  const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Câu đúng: <b>"+esc(item.target)+"</b>";
+  save();render();
+}
+function practiceNext(){
+  if(!practiceAnswered)return;
+  if(practiceIndex+1>=practiceQueue.length){
+    db.stats.practiceCompleted=(Number(db.stats.practiceCompleted)||0)+1;addXP(20);
+    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];save();toast("Hoàn thành bài luyện. +20 XP");show("home");return;
+  }
+  practiceIndex++;practiceAnswered=false;practiceAnswerOrder=[];save();render();
+}
+function restartPractice(){practiceQueue=buildPracticeSession();practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];render();}
 function grammarPracticePool(){
   return db.grammar.filter(function(g){return !String(g.id||"").startsWith("exp500_grammar_")});
 }
@@ -1094,11 +1178,16 @@ function review(){
     '<div class="grid"><div class="card"><div class="big">'+due.length+'</div><div class="muted">Đến hạn</div></div><div class="card"><div class="big">'+need.length+'</div><div class="muted">Cần củng cố</div></div><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Tổng từ</div></div></div><div class="card"><div class="actions"><button class="primary" onclick="startReview()">🃏 Bắt đầu ôn tập</button></div></div>');
 }
 function stats(){
+  ensureDailyProgress();
   const quizAcc=db.stats.answered?Math.round((db.stats.correct/db.stats.answered)*100):0;
   const sentenceAcc=db.stats.sentenceAnswered?Math.round((db.stats.sentenceCorrect/db.stats.sentenceAnswered)*100):0;
-  $("view").innerHTML=shell("Tiến độ","Theo dõi riêng quiz/từ vựng và luyện câu, không trộn hai loại tiến độ.",
-    '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Số từ đã học</div></div><div class="card"><div class="big">'+quizAcc+'%</div><div class="muted">Độ chính xác quiz</div></div></div>'+
-    '<div class="grid"><div class="card"><div class="big">'+(db.stats.sentenceAnswered||0)+'</div><div class="muted">Lượt luyện câu</div></div><div class="card"><div class="big">'+sentenceAcc+'%</div><div class="muted">Độ chính xác nghe/nói</div></div><div class="card"><div class="big">'+(db.stats.speakingGood||0)+'</div><div class="muted">Lần nói đạt ≥80%</div></div></div>');
+  const done=Number(db.stats.dailyUnits)||0,target=dailyGoal(),pct=dailyPercent();
+  const weak=weakVocabularyPool().filter(v=>Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
+  $("view").innerHTML=shell("Tiến độ V9","Mục tiêu ngày, độ chính xác và từ cần củng cố.",
+    '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><p class="muted small">'+pct+'% hoàn thành · còn '+Math.max(0,target-done)+' hoạt động.</p></div>'+
+    '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Từ đã học</div></div><div class="card"><div class="big">'+(db.stats.practiceCompleted||0)+'</div><div class="muted">Bài luyện hoàn thành</div></div></div>'+
+    '<div class="grid"><div class="card"><div class="big">'+quizAcc+'%</div><div class="muted">Quiz</div></div><div class="card"><div class="big">'+sentenceAcc+'%</div><div class="muted">Nghe/nói</div></div><div class="card"><div class="big">'+(db.stats.speakingGood||0)+'</div><div class="muted">Nói đạt ≥80%</div></div></div>'+
+    '<div class="card"><h2>🔥 Từ cần củng cố</h2>'+(weak.length?'<div class="list">'+weak.map(v=>'<div class="item"><b>'+esc(v.word)+'</b><span class="muted"> · sai '+Number(v.wrong_count||0)+' / đúng '+Number(v.correct_count||0)+'</span></div>').join("")+'</div>':'<div class="empty">Chưa có từ yếu được ghi nhận.</div>')+'</div>');
 }
 function voiceAvailability(){
   try{
@@ -1151,6 +1240,10 @@ function validateProgressImport(parsed){
   if(parsed.profile.speechRate!==undefined){
     const rate=Number(parsed.profile.speechRate);
     if(!Number.isFinite(rate)||rate<0.5||rate>1.5)throw new Error("Tốc độ giọng đọc không hợp lệ.");
+  }
+  if(parsed.profile.dailyGoal!==undefined){
+    const goal=Number(parsed.profile.dailyGoal);
+    if(!Number.isInteger(goal)||goal<1||goal>100)throw new Error("Mục tiêu ngày không hợp lệ.");
   }
   if(parsed.profile.layout!==undefined&&!["auto","phone","desktop"].includes(String(parsed.profile.layout))){
     throw new Error("Bố cục thiết bị không hợp lệ.");
