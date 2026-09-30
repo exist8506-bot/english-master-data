@@ -157,7 +157,7 @@ window.__EM_TEST = {
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
   listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
-  dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport,
+  dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -393,6 +393,7 @@ check("remote validator handles null records safely", (()=>{try{T.validateIncomi
 }});return false;}catch(e){return true;}})());
 
 check("fill-in-the-blank only replaces whole words", T.blankWordInExample("I like bread.", "bread").includes("_____") && T.blankWordInExample("The printer is useful.", "print")==="");
+check("fill-in-the-blank escapes regex metacharacters", T.blankWordInExample("Use C++ today.", "C++").includes("_____") && T.blankWordInExample("This costs $5.", "$5").includes("_____") && T.blankWordInExample("Read (draft) now.", "(draft)").includes("_____"));
 const q0=T.snap().db.questions[0];
 const savedOpts=q0.options,savedAns=q0.answer;
 q0.options=[savedOpts[0],savedOpts[0],savedOpts[2],savedOpts[3]];
@@ -522,6 +523,7 @@ for(let step=0; step<ps.practiceQueue.length; step++){
 }
 check("practice completion awards completion counter", (T.snap().db.stats.practiceCompleted||0)>=1);
 check("perfect mixed practice awards lesson and perfect bonus XP", (Number(T.snap().db.stats.xp)||0)-practiceSessionXpBefore>=160);
+check("practice completion reward message is not stale", !document.getElementById("toast").textContent.includes("+20 XP"));
 check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);
 
 T.show("quiz");
@@ -1157,7 +1159,8 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.0.1" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", expectedAppVersion==="9.1.0" && !index.includes("V10") && !icon512.includes("V10"));
+check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.0","9.0.1")===1 && T.compareVersions("9.0.0","9.1.0")===-1 && T.compareVersions("9.1.0","9.1.0")===0 && T.compareVersions("future","9.1.0")===0 && T.compareVersions("10.0","9.1.0")===0);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 check("manifest app name matches app version", String(manifest.name || "").includes("V" + expectedAppVersion));
