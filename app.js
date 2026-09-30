@@ -14,7 +14,7 @@ let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizI
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
 let reviewQueue=[],reviewIndex=0,validatedContentSignature="",updateInProgress=false;
-let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[];
+let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[],practiceCorrectCount=0;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
 let legacyStorageLoaded=false;
@@ -393,7 +393,7 @@ function show(v){
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
   if(v!=="flashcards")reviewQueue=[];
-  if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];}
+  if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;}
   view=v;render();
 }
 function learnNext(){
@@ -884,6 +884,7 @@ function rateFlash(status){
   const dueDays=status==="Rất dễ"?7:status==="Đã nhớ"?2:0;
   recordActivity();
   recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);
+  if(status!=="Chưa nhớ")addXP(5);
   v.status=status;
   v.reviewDue=new Date(Date.now()+dueDays*86400000).toISOString();
   db.stats.learned=db.vocab.filter(function(x){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(x.status)}).length;
@@ -1127,7 +1128,7 @@ function practiceAnswer(index){
   const item=practiceQueue[practiceIndex];if(!item||item.type==="order")return;
   const choice=String(item.options[index]??"");
   const ok=norm(choice)===norm(item.answer);
-  practiceAnswered=true;finishPractice(ok);if(item.word)recordVocabOutcome(item.word,ok);
+  practiceAnswered=true;finishPractice(ok);if(ok)practiceCorrectCount++;if(item.word)recordVocabOutcome(item.word,ok);
   const correctIndex=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
   document.querySelectorAll(".option").forEach(function(b,i){b.disabled=true;if(i===correctIndex)b.classList.add("correct");if(i===index&&!ok)b.classList.add("wrong");});
   const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(item.answer)+"</b>";
@@ -1147,12 +1148,12 @@ function practiceCheckOrder(){
 function practiceNext(){
   if(!practiceAnswered)return;
   if(practiceIndex+1>=practiceQueue.length){
-    db.stats.practiceCompleted=(Number(db.stats.practiceCompleted)||0)+1;addXP(20);
-    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];save();toast("Hoàn thành bài luyện. +20 XP");show("home");return;
+    db.stats.practiceCompleted=(Number(db.stats.practiceCompleted)||0)+1;addXP(30);if(practiceCorrectCount===practiceQueue.length)addXP(50);
+    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;save();toast("Hoàn thành bài luyện. +20 XP");show("home");return;
   }
   practiceIndex++;practiceAnswered=false;practiceAnswerOrder=[];save();render();
 }
-function restartPractice(){practiceQueue=buildPracticeSession();practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];render();}
+function restartPractice(){practiceQueue=buildPracticeSession();practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;render();}
 function grammarPracticePool(){
   return db.grammar.filter(function(g){return !String(g.id||"").startsWith("exp500_grammar_")});
 }
