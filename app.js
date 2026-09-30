@@ -1176,8 +1176,32 @@ function chooseFour(correct,field){
   }
   return out.length===4?shuffle(out):out;
 }
-function buildPracticeSession(count=8){
-  const vocab=weakVocabularyPool().filter(v=>String(v.word||"").trim()&&String(v.meaning||"").trim());
+function practiceVocabularyPool(mode="smart"){
+  const all=db.vocab.filter(v=>String(v.word||"").trim()&&String(v.meaning||"").trim());
+  const weak=all.filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0));
+  const favorites=all.filter(v=>!!v.favorite);
+  const fresh=all.filter(v=>v.status==="New");
+  const key=String(mode||"smart").toLowerCase();
+  if(key==="weak")return weak;
+  if(key==="favorites")return favorites;
+  if(key==="new")return fresh;
+  if(key==="mixed")return shuffle(all);
+  return weakVocabularyPool();
+}
+function practiceModeLabel(mode){
+  return ({smart:"Thông minh",weak:"Từ yếu",favorites:"Yêu thích",new:"Từ mới",mixed:"Tổng hợp"})[String(mode||"smart").toLowerCase()]||"Thông minh";
+}
+function startPracticeMode(mode="smart",count=8){
+  const pool=practiceVocabularyPool(mode);
+  if(!pool.length){toast("Chưa có từ phù hợp với chế độ luyện này.");return;}
+  practiceMode=String(mode||"smart").toLowerCase();
+  practiceQueue=buildPracticeSession(count,practiceMode);
+  practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;
+  if(!practiceQueue.length){toast("Không đủ dữ liệu để tạo bài luyện.");return;}
+  render();
+}
+function buildPracticeSession(count=8,mode="smart"){
+  const vocab=practiceVocabularyPool(mode);
   const sentences=sentencePracticePool(),out=[];
   for(let i=0;i<Math.min(count,vocab.length);i++){
     const v=vocab[i],mode=i%4;
