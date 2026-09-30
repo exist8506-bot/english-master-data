@@ -220,7 +220,7 @@ function applyUserSnapshot(snapshot){
   listenIndex=Number.isFinite(Number(p.listenIndex))?Number(p.listenIndex):listenIndex;
   speakIndex=Number.isFinite(Number(p.speakIndex))?Number(p.speakIndex):speakIndex;
   quizIndex=Number.isFinite(Number(p.quizIndex))?Number(p.quizIndex):quizIndex;
-  const states=Array.isArray(snapshot.vocabState)?snapshot.vocabState:[];
+  const states=(Array.isArray(snapshot.vocabState)?snapshot.vocabState:[]).filter(function(s){return s&&typeof s==="object"&&String(s.word||"").trim()});
   if(!Array.isArray(db.vocab)||!db.vocab.length){pendingUserState=states;return;}
   const map=new Map(states.map(function(s){return [norm(s.word),s]}));
   db.vocab.forEach(function(v){
@@ -310,7 +310,9 @@ function save(){
 }
 function savedProgressLooksUsable(parsed){
   if(!parsed||typeof parsed!=="object")return false;
-  if(Array.isArray(parsed.vocabState)&&parsed.stats&&typeof parsed.stats==="object"&&parsed.profile&&typeof parsed.profile==="object")return true;
+  if(Array.isArray(parsed.vocabState)&&parsed.stats&&typeof parsed.stats==="object"&&parsed.profile&&typeof parsed.profile==="object"){
+    return parsed.vocabState.every(function(s){return s&&typeof s==="object"&&String(s.word||"").trim()});
+  }
   return Array.isArray(parsed.vocab);
 }
 function legacyContentLooksUsable(parsed){
