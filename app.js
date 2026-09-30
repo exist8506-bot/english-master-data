@@ -1,4 +1,4 @@
-const APP_VERSION="9.1.0";
+const APP_VERSION="9.1.1";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -193,7 +193,7 @@ function userSnapshot(source){
   const d=source||db,stats={...(d.stats||{})},profile={...(d.profile||{})};
   const states=Array.isArray(d.vocab)?d.vocab.map(function(v){return {
     word:v.word,status:v.status||"New",favorite:!!v.favorite,reviewDue:v.reviewDue||null,
-    correct_count:Number(v.correct_count)||0,wrong_count:Number(v.wrong_count)||0,lastReviewed:v.lastReviewed||null
+    correct_count:Number(v.correct_count)||0,wrong_count:Number(v.wrong_count)||0,reviewStreak:Number(v.reviewStreak)||0,lastReviewed:v.lastReviewed||null
   }}):[];
   const p=d.positions||{flashIndex,listenIndex,speakIndex,quizIndex};
   return {schemaVersion:2,stats,profile,positions:p,vocabState:states};
@@ -234,6 +234,8 @@ function applyUserSnapshot(snapshot){
     const correct=Number(s.correct_count),wrong=Number(s.wrong_count);
     v.correct_count=Number.isFinite(correct)?Math.max(0,Math.floor(correct)):0;
     v.wrong_count=Number.isFinite(wrong)?Math.max(0,Math.floor(wrong)):0;
+    const streak=Number(s.reviewStreak);
+    v.reviewStreak=Number.isFinite(streak)?Math.max(0,Math.floor(streak)):Number(v.reviewStreak||0);
     v.lastReviewed=s.lastReviewed||v.lastReviewed||null;
   });
   db.stats.learned=db.vocab.filter(function(v){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(v.status)}).length;
@@ -390,7 +392,14 @@ function toast(msg){
   el.textContent=msg; el.className="show"; setTimeout(function(){el.className=""},2600);
 }
 function addXP(n){db.stats.xp=(db.stats.xp||0)+Number(n||0)}
-function recordVocabOutcome(word,correct,dueDays){
+function reviewIntervalDays(v,rating){
+  const streak=Math.max(1,Number(v?.reviewStreak)||1);
+  if(rating==="Chưa nhớ")return 0;
+  const base=Math.min(60,[1,2,4,7,14,30][Math.min(5,streak-1)]||60);
+  return rating==="Rất dễ"?Math.min(90,base*2):base;
+}
+function recordVocabOutcome(word,correct,dueDays,rating){
+
   const key=norm(word);
   if(!key)return;
   const v=db.vocab.find(function(x){return norm(x.word)===key});
@@ -399,12 +408,14 @@ function recordVocabOutcome(word,correct,dueDays){
   if(correct){
     const wasLearned=["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(v.status);
     v.correct_count=(Number(v.correct_count)||0)+1;
+    v.reviewStreak=Math.max(1,Number(v.reviewStreak)||0)+1;
     if(!wasLearned)db.stats.learned=(Number(db.stats.learned)||0)+1;
     if(v.status==="New"||v.status==="Chưa nhớ")v.status="Learning";
-    const days=Math.max(0,Number(dueDays??2));
+    const days=dueDays!==undefined?Math.max(0,Number(dueDays)||0):reviewIntervalDays(v,rating);
     v.reviewDue=new Date(Date.now()+days*86400000).toISOString();
   }else{
     v.wrong_count=(Number(v.wrong_count)||0)+1;
+    v.reviewStreak=0;
     v.status="Chưa nhớ";
     v.reviewDue=new Date().toISOString();
   }
@@ -914,12 +925,10 @@ function rateFlash(status){
   const idx=reviewActive?reviewIndex:flashIndex;
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):db.vocab[idx%db.vocab.length];
   if(!v)return;
-  const dueDays=status==="Rất dễ"?7:status==="Đã nhớ"?2:0;
   recordActivity();
-  recordVocabOutcome(v.word,status!=="Chưa nhớ",dueDays);
+  recordVocabOutcome(v.word,status!=="Chưa nhớ",undefined,status);
   if(status!=="Chưa nhớ")addXP(5);
   v.status=status;
-  v.reviewDue=new Date(Date.now()+dueDays*86400000).toISOString();
   db.stats.learned=db.vocab.filter(function(x){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(x.status)}).length;
   flashFlipped=false;
   if(reviewActive){
@@ -1321,6 +1330,10 @@ function validateProgressImport(parsed){
     if(!s||!String(s.word||"").trim())return false;
     if(s.status!==undefined&&!allowedStatus.has(String(s.status)))return false;
     if(s.favorite!==undefined&&typeof s.favorite!=="boolean")return false;
+    if(s.reviewStreak!==undefined){
+      const n=Number(s.reviewStreak);
+      if(!Number.isFinite(n)||n<0||!Number.isInteger(n))return false;
+    }
     for(const k of ["correct_count","wrong_count"]){
       if(s[k]!==undefined){
         const n=Number(s[k]);
@@ -1355,7 +1368,7 @@ function resetProgress(){
   if(!ok)return;
   db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,lastActivityDate:"",dailyDate:dateKey(),dailyUnits:0,practiceCompleted:0};
   db.vocab.forEach(function(v){
-    v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.lastReviewed=null;
+    v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.reviewStreak=0;v.lastReviewed=null;
   });
   flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
   reviewQueue=[];reviewIndex=0;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
