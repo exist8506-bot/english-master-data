@@ -206,6 +206,9 @@ function applyUserSnapshot(snapshot){
     const n=Number(db.stats[k]);
     db.stats[k]=Number.isFinite(n)?Math.max(0,Math.floor(n)):0;
   });
+  db.stats.correct=Math.min(db.stats.correct,db.stats.answered);
+  db.stats.sentenceCorrect=Math.min(db.stats.sentenceCorrect,db.stats.sentenceAnswered);
+  db.stats.speakingGood=Math.min(db.stats.speakingGood,db.stats.speakingAttempts);
   db.profile={...db.profile,...(snapshot.profile||{})};
   if(!["light","dark"].includes(String(db.profile.theme)))db.profile.theme="light";
   if(typeof db.profile.autoUpdate!=="boolean")db.profile.autoUpdate=true;
@@ -223,10 +226,15 @@ function applyUserSnapshot(snapshot){
   const states=(Array.isArray(snapshot.vocabState)?snapshot.vocabState:[]).filter(function(s){return s&&typeof s==="object"&&String(s.word||"").trim()});
   if(!Array.isArray(db.vocab)||!db.vocab.length){pendingUserState=states;return;}
   const map=new Map(states.map(function(s){return [norm(s.word),s]}));
+  const allowedStatus=new Set(["New","Learning","Review","Mastered","Chưa nhớ","Đã nhớ","Rất dễ"]);
   db.vocab.forEach(function(v){
     const s=map.get(norm(v.word));if(!s)return;
-    v.status=s.status||v.status||"New";v.favorite=!!s.favorite;v.reviewDue=s.reviewDue??v.reviewDue??null;
-    v.correct_count=Number(s.correct_count)||0;v.wrong_count=Number(s.wrong_count)||0;v.lastReviewed=s.lastReviewed||v.lastReviewed||null;
+    v.status=allowedStatus.has(String(s.status))?String(s.status):(v.status||"New");
+    v.favorite=!!s.favorite;v.reviewDue=s.reviewDue??v.reviewDue??null;
+    const correct=Number(s.correct_count),wrong=Number(s.wrong_count);
+    v.correct_count=Number.isFinite(correct)?Math.max(0,Math.floor(correct)):0;
+    v.wrong_count=Number.isFinite(wrong)?Math.max(0,Math.floor(wrong)):0;
+    v.lastReviewed=s.lastReviewed||v.lastReviewed||null;
   });
   db.stats.learned=db.vocab.filter(function(v){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(v.status)}).length;
   pendingUserState=null;
