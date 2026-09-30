@@ -932,6 +932,8 @@ check("content storage key exists", !!storage.get("englishMaster_v1"));
 check("backup storage key exists", !!storage.get("englishMaster_v1_backup"));
 
 const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
+check("header theme button is accessible", /id="theme"[^>]+aria-label="[^"]+"/.test(index) && /id="theme"[^>]+title="[^"]+"/.test(index));
+check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+aria-label="Cài đặt"[^>]+title="Cài đặt"/.test(index));
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
