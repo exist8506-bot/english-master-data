@@ -151,7 +151,7 @@ window.__EM_TEST = {
   snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue] }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
-  listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex,
+  listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -335,7 +335,7 @@ check(
 );
 
 const routes = [
-  "home", "vocab", "sentences", "flashcards", "quiz", "listening",
+  "home", "vocab", "sentences", "flashcards", "practice", "quiz", "listening",
   "speaking", "grammar", "communication", "trilingual", "review", "stats", "settings",
 ];
 for (const route of routes) {
@@ -372,6 +372,39 @@ check("search reaches an existing vocab record", !!searchTerm && document.getEle
 const favBefore = searchableVocab?.favorite;
 if (searchTerm) T.toggleFavorite(searchTerm);
 check("favorite interaction", !!searchableVocab && searchableVocab.favorite !== favBefore);
+
+T.show("practice");
+let ps = T.snap();
+check("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
+  new Set(ps.practiceQueue.map(x=>x.type)).size >= 3 &&
+  ps.practiceQueue.every(x=>(x.type==="order" ? x.words.length>=1 : x.options.length===4)));
+const practiceFirst = ps.practiceQueue[0];
+const dailyBeforePractice = Number(ps.db.stats.dailyUnits)||0;
+if(practiceFirst && practiceFirst.type!=="order"){
+  const correctPractice = practiceFirst.options.findIndex(x=>norm(x)===norm(practiceFirst.answer));
+  T.practiceAnswer(correctPractice);
+  ps = T.snap();
+  check("practice answer updates learning and daily progress", ps.practiceAnswered && (Number(ps.db.stats.dailyUnits)||0)===dailyBeforePractice+1 &&
+    ps.db.vocab.some(v=>String(v.word||"").trim().toLowerCase()===String(practiceFirst.answer||"").trim().toLowerCase() && Number(v.correct_count||0)>=1));
+}
+T.show("practice");
+for(let step=0; step<ps.practiceQueue.length; step++){
+  const item=T.snap().practiceQueue[T.snap().practiceIndex];
+  if(!item)break;
+  if(item.type==="order"){
+    const targetWords=String(item.target||"").replace(/[.!?]+$/,"").split(/\s+/).filter(Boolean);
+    targetWords.forEach(word=>{
+      const idx=item.words.findIndex((w,i)=>T.snap().practiceAnswerOrder.includes(i)===false&&String(w).toLowerCase()===String(word).toLowerCase());
+      if(idx>=0)T.practicePickToken(idx);
+    });
+    T.practiceCheckOrder();
+  }else{
+    const idx=item.options.findIndex(x=>norm(x)===norm(item.answer));
+    T.practiceAnswer(idx);
+  }
+  if(step<ps.practiceQueue.length-1)T.practiceNext();
+}
+check("practice completion awards completion counter", (T.snap().db.stats.practiceCompleted||0)>=1);
 
 T.show("quiz");
 snap = T.snap();
@@ -952,6 +985,7 @@ check("phone layout uses bottom navigation", styles.includes("body.layout-phone 
 check("phone layout has safe-area support", styles.includes("env(safe-area-inset-bottom)"));
 check("phone layout hardens long tables", styles.includes("body.layout-phone .table{min-width:620px}"));
 check("phone layout keeps touch targets usable", styles.includes("body.layout-phone button,body.layout-phone input,body.layout-phone select{min-height:42px}"));
+check("V9 practice order controls have styling hooks", styles.includes(".practice-order") && styles.includes(".token"));
 check("quick layout button has stable touch size", styles.includes(".layout-quick{min-width:42px;min-height:42px") && styles.includes("body.layout-phone .layout-quick,body.layout-desktop .layout-quick"));
 
 
