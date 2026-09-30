@@ -769,7 +769,17 @@ await T.importProgress(failingInput);
 localStorage.setItem=originalSetItem;
 check("valid import is atomic when storage save fails", T.snap().db.stats.xp===importPreserveStats.xp);
 
+T.show("practice");
+const resetPracticeSeed=T.snap();
+if(resetPracticeSeed.practiceQueue.length){
+  const firstResetItem=resetPracticeSeed.practiceQueue[0];
+  if(firstResetItem.type!=="order"){
+    const idx=firstResetItem.options.findIndex(x=>normalizeTest(x)===normalizeTest(firstResetItem.answer));
+    T.practiceAnswer(idx);
+  }
+}
 const beforeReset = T.snap();
+
 T.resetProgress();
 const resetSnap = T.snap();
 check(
@@ -790,6 +800,7 @@ check(
   resetSnap.db.vocab.every((v) => v.status === "New" && !v.favorite && Number(v.correct_count || 0) === 0 && Number(v.wrong_count || 0) === 0)
 );
 check("reset progress clears streak activity date", !("lastActivityDate" in resetSnap.db.stats) || resetSnap.db.stats.lastActivityDate === "");
+check("reset clears practice session state", resetSnap.practiceQueue.length===0 && resetSnap.practiceIndex===0 && resetSnap.practiceAnswered===false && resetSnap.practiceAnswerOrder.length===0 && resetSnap.practiceCorrectCount===0);
 
 T.applyUserSnapshot(beforeReset.db);
 T.save();
