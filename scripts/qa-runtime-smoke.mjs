@@ -14,6 +14,8 @@ const data = {
   grammar: JSON.parse(fs.readFileSync(path.join(dataDir, "grammar.json"), "utf8")),
   version: JSON.parse(fs.readFileSync(path.join(dataDir, "version.json"), "utf8")),
 };
+const icon512 = fs.readFileSync(path.join(root, "icon-512.svg"), "utf8");
+
 
 const failures = [];
 const pass = (name) => console.log("PASS", name);
@@ -377,6 +379,11 @@ check("favorite interaction", !!searchableVocab && searchableVocab.favorite !== 
 
 // Core helper and resilience audit.
 check("language detection covers English/Chinese/Vietnamese", T.guessLang("hello")==="en-US" && T.guessLang("你好")==="zh-CN" && T.guessLang("xin chào")==="vi-VN");
+check("inline JS escaping protects HTML entities", T.escapeJs("&#39;<>&quot;").includes("&amp;#39;") && T.escapeJs("&#39;<>&quot;").includes("&lt;") && T.escapeJs("&#39;<>&quot;").includes("&gt;"));
+check("remote validator handles null records safely", (()=>{try{T.validateIncomingContent({...{
+  vocab:[null],sentences:[],questions:[],grammar:[],communication:[],trilingual:[]
+}});return false;}catch(e){return true;}})());
+
 check("fill-in-the-blank only replaces whole words", T.blankWordInExample("I like bread.", "bread").includes("_____") && T.blankWordInExample("The printer is useful.", "print")==="");
 const q0=T.snap().db.questions[0];
 const savedOpts=q0.options,savedAns=q0.answer;
@@ -453,6 +460,8 @@ const incomingValid={
 };
 check("incoming content validator accepts valid schema", T.validateIncomingContent(incomingValid)===true);
 check("incoming content validator rejects invalid schema", (()=>{try{T.validateIncomingContent({...incomingValid,questions:[{id:"bad",prompt:"Q",options:["a","a","b","c"],answer:0}]});return false;}catch(e){return true;}})());
+check("incoming validator rejects duplicate remote keys", (()=>{try{T.validateIncomingContent({...incomingValid,vocab:[{word:"qa",meaning:"1"},{word:" QA ",meaning:"2"}]});return false;}catch(e){return true;}})());
+
 const snapBefore=T.snap().db.vocab.length;
 const dup=T.snap().db.vocab.slice();
 T.snap().db.vocab.push({...dup[0]});
@@ -1076,6 +1085,7 @@ const sw = fs.readFileSync(path.join(root, "sw.js"), "utf8");
 check("index references app/style/manifest", /<script[^>]+src="app\.js(?:\?v=[^"]+)?"/.test(index) && index.includes('href="styles.css"') && index.includes('href="manifest.json"'));
 check("service worker caches app assets", sw.includes("app.js") && sw.includes("styles.css") && sw.includes("manifest.json"));
 check("manifest is installable", manifest.display === "standalone" && manifest.start_url === "./" && manifest.icons?.length >= 2);
+check("512 icon canvas matches manifest size", /viewBox="0 0 512 512"/.test(icon512) && /width="512"/.test(icon512) && /height="512"/.test(icon512));
 check("version signals align", app.includes('APP_VERSION="' + expectedAppVersion + '"') && index.includes('application-version" content="' + expectedAppVersion + '"') && index.includes("English Master V" + expectedAppVersion));
 check("service worker cache is busted for latest UI changes", sw.includes("english-master-v" + expectedAppVersion) && sw.includes("app.js?v=" + expectedAppVersion));
 const styles=fs.readFileSync(path.join(root,"styles.css"),"utf8");
