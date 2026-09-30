@@ -1115,6 +1115,12 @@ check("saved progress detector rejects null vocab states", !T.savedProgressLooks
 const malformedApplyStats={...T.snap().db.stats};
 T.applyUserSnapshot({stats:{xp:malformedApplyStats.xp},profile:{theme:"light"},vocabState:[null,{}, {word:""}]});
 check("malformed vocab state is filtered without crash", T.snap().db.stats.xp===malformedApplyStats.xp);
+T.applyUserSnapshot({stats:{answered:2,correct:9,sentenceAnswered:1,sentenceCorrect:5,speakingAttempts:1,speakingGood:8},profile:{theme:"light"},vocabState:[{word:String(T.snap().db.vocab[0]?.word||"x"),status:"BROKEN",correct_count:-4,wrong_count:-7}]});
+const normalizedCorrupt=T.snap();
+const normalizedCorruptWord=normalizedCorrupt.db.vocab[0];
+check("restored stats obey impossible-ratio limits", normalizedCorrupt.db.stats.correct===2 && normalizedCorrupt.db.stats.sentenceCorrect===1 && normalizedCorrupt.db.stats.speakingGood===1);
+check("restored vocab state normalizes invalid status and negative counts", normalizedCorruptWord?.status!=="BROKEN" && normalizedCorruptWord?.correct_count===0 && normalizedCorruptWord?.wrong_count===0);
+
 
 check("legacy content detector rejects malformed item arrays", !T.legacyContentLooksUsable({vocab:[null],sentences:[{}],questions:[{}],grammar:[{}],communication:[{}],trilingual:[{}]}) && T.legacyContentLooksUsable({
   vocab:[{word:"hello",meaning:"xin chào"}],sentences:[{id:"s1",en:"Hello.",vi:"Xin chào."}],questions:[{id:"q1",prompt:"Q",options:["a","b","c","d"],answer:0}],grammar:[{id:"g1",title:"Present",formula:"S + V"}],communication:[{id:"c1",title:"Hi",lines:[["A","Hello."],["B","Hi."]]}],trilingual:[{en:"hello",zh:"你好",pinyin:"nǐ hǎo",vi:"xin chào"}]
