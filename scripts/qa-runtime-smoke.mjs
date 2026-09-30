@@ -383,7 +383,6 @@ const homeState=T.snap().db.vocab;
 const expectedPending=new Set(homeState.filter(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date()).map(v=>String(v.word||"").trim().toLowerCase()).concat(homeState.filter(v=>v.status==="Chưa nhớ"||v.status==="Review").map(v=>String(v.word||"").trim().toLowerCase())).filter(Boolean)).size;
 const homePendingMatch=document.getElementById("view").innerHTML.match(/(\d+) từ đang đến hạn hoặc yếu/);
 check("home pending count is unique", !!homePendingMatch && Number(homePendingMatch[1])===expectedPending);
-check("review session initializes with queue size", T.snap().reviewSession.active===true && T.snap().reviewSession.total===3 && T.snap().reviewSession.answered===0);
 
 const quickDue = snap.db.vocab.find(v=>String(v.word||"").trim()===String(snap.db.vocab[0]?.word||"").trim());
 const quickWeak = snap.db.vocab.find(v=>v!==quickDue);
@@ -1085,6 +1084,9 @@ const newReviewWord = T.snap().db.vocab.find((v) => String(v.word || "").trim() 
 if(weakReviewVocab)weakReviewVocab.status = "Review";
 if(newReviewWord)newReviewWord.status = "New";
 T.startReview("weak",3);
+const weakSessionSnap=T.snap();
+check("review session initializes with queue size", weakSessionSnap.reviewSession.active===true && weakSessionSnap.reviewSession.total===weakSessionSnap.reviewQueue.length && weakSessionSnap.reviewSession.total<=3 && weakSessionSnap.reviewSession.answered===0);
+
 check(
   "review queue prioritizes weak words over new words",
   T.snap().reviewQueue.includes(String(weakReviewWord).trim().toLowerCase()) &&
