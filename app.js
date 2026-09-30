@@ -1,4 +1,4 @@
-const APP_VERSION="9.0.0";
+const APP_VERSION="9.0.1";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -286,7 +286,11 @@ function usableCachedContent(cached){
 function save(){
   try{
     db.positions={flashIndex,listenIndex,speakIndex,quizIndex};
-    const serialized=JSON.stringify(userSnapshot());
+    const snapshot=userSnapshot();
+    snapshot.stats.dailyDate=String(snapshot.stats.dailyDate||"");
+    snapshot.stats.dailyUnits=Math.max(0,Math.floor(Number(snapshot.stats.dailyUnits)||0));
+    snapshot.stats.practiceCompleted=Math.max(0,Math.floor(Number(snapshot.stats.practiceCompleted)||0));
+    const serialized=JSON.stringify(snapshot);
     const previous=localStorage.getItem(STORAGE_KEY);
     if(previous){
       try{
@@ -309,6 +313,14 @@ function savedProgressLooksUsable(parsed){
   if(Array.isArray(parsed.vocabState)&&parsed.stats&&typeof parsed.stats==="object"&&parsed.profile&&typeof parsed.profile==="object")return true;
   return Array.isArray(parsed.vocab);
 }
+function legacyContentLooksUsable(parsed){
+  if(!parsed||typeof parsed!=="object")return false;
+  const keys=["vocab","sentences","questions","grammar","communication","trilingual"];
+  return keys.every(function(key){
+    const arr=parsed[key];
+    return Array.isArray(arr)&&arr.length>0&&arr.every(function(item){return item&&typeof item==="object"});
+  });
+}
 function load(){
   let parsed=null,current=null;
   try{
@@ -323,20 +335,19 @@ function load(){
       else parsed=null;
     }catch(e){parsed=null}
   }
-  if(parsed&&Array.isArray(parsed.vocab)){
-    legacyStorageLoaded=true;
-    db={
-      ...db,...parsed,
-      schemaVersion:2,
-      vocab:Array.isArray(parsed.vocab)?parsed.vocab:[],
-      sentences:Array.isArray(parsed.sentences)?parsed.sentences:[],
-      questions:Array.isArray(parsed.questions)?parsed.questions:[],
-      grammar:Array.isArray(parsed.grammar)?parsed.grammar:[],
-      communication:Array.isArray(parsed.communication)?parsed.communication:[],
-      trilingual:Array.isArray(parsed.trilingual)?parsed.trilingual:[],
-      stats:{...db.stats,...(parsed.stats||{})},
-      profile:{...db.profile,...(parsed.profile||{})}
-    };
+  if(parsed&&legacyContentLooksUsable(parsed)){
+    try{
+      validateIncomingContent(contentSnapshot(parsed));
+      legacyStorageLoaded=true;
+      db={
+        ...db,...parsed,
+        schemaVersion:2,
+        vocab:parsed.vocab,sentences:parsed.sentences,questions:parsed.questions,
+        grammar:parsed.grammar,communication:parsed.communication,trilingual:parsed.trilingual,
+        stats:{...db.stats,...(parsed.stats||{})},
+        profile:{...db.profile,...(parsed.profile||{})}
+      };
+    }catch(e){legacyStorageLoaded=false}
   }
   applyUserSnapshot(parsed);
 }
@@ -498,10 +509,12 @@ function playAudio(url,fallbackText,rate,lang){
     a.playbackRate=Math.max(0.5,Math.min(2,r));
     activeAudio=a;
     let failed=false;
+    const audioToken=++speechToken;
     const fallback=function(){
       if(failed)return;
       failed=true;
       if(activeAudio===a)activeAudio=null;
+      if(audioToken!==speechToken)return;
       toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");
       if(t)speak(t,r,l,0,true);
     };
@@ -1327,7 +1340,7 @@ function resetProgress(){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.lastReviewed=null;
   });
   flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
-  reviewQueue=[];reviewIndex=0;
+  reviewQueue=[];reviewIndex=0;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
   save();render();toast("Đã đặt lại tiến độ học tập.");
 }
 function dailyGoalOptions(){return [5,10,15,20,30].map(function(x){var selected=Number(db.profile.dailyGoal||10)===x?" selected":"";return '<option value="'+x+'"'+selected+'>'+x+' hoạt động</option>';}).join("");}
