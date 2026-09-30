@@ -275,11 +275,13 @@ function readCachedContent(){
 function usableCachedContent(cached){
   if(!cached||typeof cached!=="object")return false;
   const keys=["vocab","sentences","questions","grammar","communication","trilingual"];
-  return keys.every(function(key){
+  const complete=keys.every(function(key){
     const arr=Array.isArray(cached[key])?cached[key]:[];
     const expected=Number(cached.contentCounts?.[key]);
     return arr.length>0&&Number.isFinite(expected)&&expected===arr.length;
   });
+  if(!complete)return false;
+  try{validateIncomingContent(contentSnapshot(cached));return true}catch(e){return false}
 }
 function save(){
   try{
@@ -1007,7 +1009,9 @@ function quiz(){
   quizOptions=[];quizCorrectIndex=-1;
   if(!db.questions.length){$("view").innerHTML=shell("Trắc nghiệm","Chưa có dữ liệu.");return}
   const q=db.questions[normalizeQuizIndex()],raw=Array.isArray(q?.options)?q.options:[];
-  if(!q||raw.length!==4||raw.some(function(x){return !String(x??"").trim()})){
+  const qValid=!!q&&raw.length===4&&raw.every(function(x){return String(x??"").trim()})&&
+    new Set(raw.map(norm)).size===4&&Number.isInteger(Number(q.answer))&&Number(q.answer)>=0&&Number(q.answer)<4;
+  if(!qValid){
     const start=normalizeQuizIndex(),total=db.questions.length;
     let next=-1;
     for(let step=1;step<total;step++){
@@ -1049,6 +1053,15 @@ function answerQuiz(i,a){
 }
 function nextQuiz(){if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
 
+function blankWordInExample(example,word){
+  const text=String(example||""),target=String(word||"").trim();
+  if(!text||!target)return "";
+  const escaped=target.replace(/[.*+?^${}()|[\\]\\]/g,"\\function chooseFour(correct,field){");
+  const re=new RegExp("(^|[^A-Za-z0-9'])"+escaped+"(?![A-Za-z0-9'])","i");
+  let found=false;
+  const out=text.replace(re,function(prefix){found=true;return prefix+"_____";});
+  return found?out:"";
+}
 function chooseFour(correct,field){
   const key=norm(correct),items=shuffle(db.vocab.filter(v=>norm(v[field]||"")!==key)),out=[correct];
   for(const v of items){
@@ -1070,11 +1083,14 @@ function buildPracticeSession(count=8){
       const options=chooseFour(v.word,"word");
       out.push({type:"translate",prompt:v.meaning,word:v.word,answer:v.word,options});
     }else if(mode===2){
-      const example=String(v.example||"").trim(),lower=example.toLowerCase(),target=String(v.word||"").trim().toLowerCase();
-      const at=lower.indexOf(target);
-      const prompt=at>=0?example.slice(0,at)+"_____"+example.slice(at+target.length):(example||("Use the word: "+v.word));
+      const example=String(v.example||"").trim();
+      const prompt=blankWordInExample(example,v.word);
       const options=chooseFour(v.word,"word");
-      out.push({type:"fill",prompt,word:v.word,answer:v.word,options});
+      if(prompt)out.push({type:"fill",prompt,word:v.word,answer:v.word,options});
+      else{
+        const meaningOptions=chooseFour(v.meaning,"meaning");
+        out.push({type:"meaning",prompt:v.word,word:v.word,meaning:v.meaning,example:v.example,answer:v.meaning,options:meaningOptions});
+      }
     }else{
       const s=sentences[i%Math.max(1,sentences.length)],target=String(s?.en||v.example||v.word).trim();
       const words=target.replace(/[.!?]+$/,"").split(/\s+/).filter(Boolean);
