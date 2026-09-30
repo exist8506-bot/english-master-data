@@ -1120,7 +1120,8 @@ T.save();
 storage.set("englishMaster_v1", "{broken-json");
 T.setStats({ xp: 0 });
 T.load();
-const recovered = T.snap().db.vocab.find((v) => String(v.word || "").trim() === backupWord);
+const recoveredSource = T.snap().db.vocab.find((v) => String(v.word || "").trim() === backupWord);
+const recovered = recoveredSource ? JSON.parse(JSON.stringify(recoveredSource)) : null;
 
 
 check("legacy content detector rejects malformed item arrays", !T.legacyContentLooksUsable({vocab:[null],sentences:[{}],questions:[{}],grammar:[{}],communication:[{}],trilingual:[{}]}) && T.legacyContentLooksUsable({
