@@ -567,7 +567,8 @@ T.startPracticeMode("mixed",6);
 const modeSnap=T.snap();
 check("practice mode start resets session counters", modeSnap.practiceMode==="mixed" && modeSnap.practiceQueue.length===6 && modeSnap.practiceAnsweredCount===0 && modeSnap.practiceCorrectCount===0 && modeSnap.practiceSessionXp===0);
 T.startPracticeMode("smart",8);
-\ncheck("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
+
+check("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
   new Set(ps.practiceQueue.map(x=>x.type)).size >= 3 &&
   ps.practiceQueue.every(x=>(x.type==="order" ? x.words.length>=1 : x.options.length===4)));
 const practiceFirst = ps.practiceQueue[0];
@@ -599,7 +600,8 @@ for(let step=0; step<ps.practiceQueue.length; step++){
 check("practice completion awards completion counter", (T.snap().db.stats.practiceCompleted||0)>=1);
 check("perfect mixed practice awards lesson and perfect bonus XP", (Number(T.snap().db.stats.xp)||0)-practiceSessionXpBefore>=160);
 check("practice completion reward message is not stale", !document.getElementById("toast").textContent.includes("+20 XP"));
-check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);\ncheck("practice completion reports selected mode", !String(document.getElementById("toast").textContent||"").includes("undefined"));
+check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);
+check("practice completion reports selected mode", !String(document.getElementById("toast").textContent||"").includes("undefined"));
 
 T.show("quiz");
 snap = T.snap();
