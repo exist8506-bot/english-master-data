@@ -620,6 +620,11 @@ T.show("speaking");
 T.prevSpeak();
 T.nextSpeak();
 check("speaking previous/next keep valid bounds", T.snap().speakIndex>=0 && T.snap().speakIndex<practicePool.length);
+T.playAudio("https://example.invalid/speak-next.mp3","next",1,"en-US");
+const speakAudio=audioCalls[audioCalls.length-1];
+T.nextSpeak();
+check("speaking next stops audio", speakAudio.paused === true && speakAudio.currentTime === 0);
+
 
 
 T.show("quiz");
@@ -981,6 +986,17 @@ T.playAudio("https://example.invalid/first.mp3", "first", 1, "en-US");
 const firstAudio = audioCalls[audioCalls.length - 1];
 T.playAudio("https://example.invalid/second.mp3", "second", 1, "en-US");
 check("starting another file audio stops the previous one", firstAudio.paused === true);
+T.show("listening");
+T.playAudio("https://example.invalid/jump.mp3","jump",1,"en-US");
+const jumpAudio=audioCalls[audioCalls.length-1];
+T.jumpToItem("listening",101);
+check("jumping listening item stops audio", jumpAudio.paused === true && jumpAudio.currentTime === 0);
+T.show("sentences");
+T.playAudio("https://example.invalid/page.mp3","page",1,"en-US");
+const pageAudio=audioCalls[audioCalls.length-1];
+T.goPage("sentences",2);
+check("changing sentence page stops audio", pageAudio.paused === true && pageAudio.currentTime === 0);
+
 
 T.show("review");
 const weakReviewWord = String(T.snap().db.vocab[0]?.word || "").trim();
