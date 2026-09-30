@@ -1,12 +1,12 @@
-const APP_VERSION="8.1.3";
+const APP_VERSION="9.0.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
 
 let db={
   vocab:[],sentences:[],questions:[],grammar:[],communication:[],trilingual:[],
-  stats:{xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0},
-  profile:{theme:"light",autoUpdate:true,speechRate:1,layout:"auto"},
+  stats:{xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,dailyDate:"",dailyUnits:0,practiceCompleted:0},
+  profile:{theme:"light",autoUpdate:true,speechRate:1,layout:"auto",dailyGoal:10},
   lastRemoteVersion:"",
   contentCounts:{}
 };
@@ -14,6 +14,7 @@ let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizI
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
 let reviewQueue=[],reviewIndex=0,validatedContentSignature="",updateInProgress=false;
+let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[];
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
 let legacyStorageLoaded=false;
@@ -149,8 +150,23 @@ function dateKey(d){
   const x=d||new Date();
   return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0");
 }
+function ensureDailyProgress(){
+  const today=dateKey();
+  if(String(db.stats.dailyDate||"")!==today){db.stats.dailyDate=today;db.stats.dailyUnits=0;}
+}
+function recordStudyUnit(){ensureDailyProgress();db.stats.dailyUnits=(Number(db.stats.dailyUnits)||0)+1;}
+function dailyGoal(){const n=Number(db.profile.dailyGoal);return Number.isFinite(n)?Math.max(1,Math.min(100,Math.floor(n))):10;}
+function dailyPercent(){ensureDailyProgress();return Math.min(100,Math.round((Number(db.stats.dailyUnits)||0)/dailyGoal()*100));}
+function weakVocabularyPool(){
+  const weak=db.vocab.filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0));
+  const fresh=db.vocab.filter(v=>v.status==="New");
+  const rest=db.vocab.filter(v=>!weak.includes(v)&&!fresh.includes(v));
+  return [...weak,...fresh,...rest];
+}
 function recordActivity(){
   const today=dateKey(),last=String(db.stats.lastActivityDate||"");
+  ensureDailyProgress();
+  recordStudyUnit();
   if(last===today)return;
   if(last){
     const a=new Date(last+"T00:00:00"),b=new Date(today+"T00:00:00");
@@ -371,7 +387,14 @@ function show(v){
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
   if(v!=="flashcards")reviewQueue=[];
+  if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];}
   view=v;render();
+}
+function learnNext(){
+  const due=db.vocab.some(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date());
+  const weak=db.vocab.some(v=>v.status==="Chưa nhớ"||v.status==="Review");
+  if(due||weak){startReview();return;}
+  show("practice");
 }
 function shell(title,sub,body){
   return '<section class="card hero"><h1 class="title">'+esc(title)+'</h1><p class="muted">'+esc(sub||"")+'</p></section>'+(body||"")
@@ -724,14 +747,18 @@ function render(){
   document.body.classList.toggle("dark",db.profile.theme==="dark");
   applyLayoutMode();
   if($("streak"))$("streak").textContent=db.stats.streak||0;
-  const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,stats:stats,settings:settings}[view]||home;
+  const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,stats:stats,settings:settings}[view]||home;
   fn();
 }
 function home(){
-  const practiceCount=sentencePracticePool().length;
+  ensureDailyProgress();
+  const practiceCount=sentencePracticePool().length,done=Number(db.stats.dailyUnits)||0,target=dailyGoal(),pct=dailyPercent();
+  const due=db.vocab.filter(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date()).length;
+  const weak=db.vocab.filter(v=>v.status==="Chưa nhớ"||v.status==="Review").length;
   $("view").innerHTML=shell("English Master V"+APP_VERSION,"Học • Luyện • Nhớ • Cải thiện",
-    '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+practiceCount+'</div><div class="muted">Câu luyện độc lập</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Câu trắc nghiệm</div></div></div>'+
-    '<div class="card"><h2>Học nhanh</h2><div class="actions"><button class="primary" onclick="show(\'flashcards\')">🃏 Flashcards</button><button onclick="show(\'speaking\')">🎙️ Phát âm</button><button onclick="show(\'listening\')">🎧 Luyện nghe</button><button onclick="show(\'quiz\')">🧠 Trắc nghiệm</button></div></div>');
+    '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><div class="actions" style="margin-top:12px"><button class="primary" onclick="learnNext()">▶ Học tiếp</button><button onclick="show(\'practice\')">⚡ Luyện nhanh</button></div></div>'+
+    '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+practiceCount+'</div><div class="muted">Câu luyện</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Quiz</div></div></div>'+
+    '<div class="card"><h2>📌 Hôm nay</h2><p class="muted">'+(due+weak>0?(due+weak)+' từ đang đến hạn hoặc yếu.':'Chưa có từ cần ôn; app sẽ tạo bài luyện hỗn hợp.')+'</p><div class="actions"><button onclick="startReview()">🔄 Ôn từ yếu</button><button onclick="show(\'quiz\')">🧠 Quiz</button><button onclick="show(\'listening\')">🎧 Nghe</button><button onclick="show(\'speaking\')">🎙️ Nói</button></div></div>');
 }
 function pageControls(page,total,size,kind){
   const pages=Math.max(1,Math.ceil(total/size)),p=Math.min(Math.max(1,Number(page)||1),pages);
@@ -1159,7 +1186,7 @@ async function importProgress(input){
 function resetProgress(){
   const ok=typeof window.confirm==="function"?window.confirm("Xóa toàn bộ XP, lịch sử ôn tập, yêu thích và trạng thái học?"):true;
   if(!ok)return;
-  db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,lastActivityDate:""};
+  db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,lastActivityDate:"",dailyDate:dateKey(),dailyUnits:0,practiceCompleted:0};
   db.vocab.forEach(function(v){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.lastReviewed=null;
   });
