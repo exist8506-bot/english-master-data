@@ -153,10 +153,10 @@ try {
 
 const hooks = `
 window.__EM_TEST = {
-  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, quickReviewActive, reviewSession: {...reviewSession}, lastReviewSummary: window.__lastReviewSummary ? {...window.__lastReviewSummary} : null }),
+  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, practiceMode, practiceAnsweredCount, practiceSessionXp, quickReviewActive, reviewSession: {...reviewSession}, lastReviewSummary: window.__lastReviewSummary ? {...window.__lastReviewSummary} : null }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview, buildReviewQueue,
-  listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
+  listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practiceVocabularyPool, practiceModeLabel, startPracticeMode, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
   dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
@@ -557,7 +557,16 @@ check("progress import validator rejects invalid daily counters", (()=>{try{T.va
 T.show("practice");
 const practiceSessionXpBefore=Number(T.snap().db.stats.xp)||0;
 let ps = T.snap();
-check("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
+const modes=["weak","favorites","new","mixed"];
+for(const mode of modes){
+  const pool=T.practiceVocabularyPool(mode);
+  const queue=T.buildPracticeSession(8,mode);
+  check("practice mode "+mode+" builds from the selected pool", queue.length===Math.min(8,pool.length) && queue.length>0);
+}
+T.startPracticeMode("mixed",6);
+const modeSnap=T.snap();
+check("practice mode start resets session counters", modeSnap.practiceMode==="mixed" && modeSnap.practiceQueue.length===6 && modeSnap.practiceAnsweredCount===0 && modeSnap.practiceCorrectCount===0 && modeSnap.practiceSessionXp===0);
+\ncheck("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
   new Set(ps.practiceQueue.map(x=>x.type)).size >= 3 &&
   ps.practiceQueue.every(x=>(x.type==="order" ? x.words.length>=1 : x.options.length===4)));
 const practiceFirst = ps.practiceQueue[0];
@@ -589,7 +598,7 @@ for(let step=0; step<ps.practiceQueue.length; step++){
 check("practice completion awards completion counter", (T.snap().db.stats.practiceCompleted||0)>=1);
 check("perfect mixed practice awards lesson and perfect bonus XP", (Number(T.snap().db.stats.xp)||0)-practiceSessionXpBefore>=160);
 check("practice completion reward message is not stale", !document.getElementById("toast").textContent.includes("+20 XP"));
-check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);
+check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);\ncheck("practice completion reports selected mode", !String(document.getElementById("toast").textContent||"").includes("undefined"));
 
 T.show("quiz");
 snap = T.snap();
@@ -868,7 +877,7 @@ check(
   resetSnap.db.vocab.every((v) => v.status === "New" && !v.favorite && Number(v.correct_count || 0) === 0 && Number(v.wrong_count || 0) === 0)
 );
 check("reset progress clears streak activity date", !("lastActivityDate" in resetSnap.db.stats) || resetSnap.db.stats.lastActivityDate === "");
-check("reset clears practice session state", resetSnap.practiceQueue.length===0 && resetSnap.practiceIndex===0 && resetSnap.practiceAnswered===false && resetSnap.practiceAnswerOrder.length===0 && resetSnap.practiceCorrectCount===0);
+check("reset clears practice session state", resetSnap.practiceQueue.length===0 && resetSnap.practiceIndex===0 && resetSnap.practiceAnswered===false && resetSnap.practiceAnswerOrder.length===0 && resetSnap.practiceCorrectCount===0 && resetSnap.practiceMode==="smart" && resetSnap.practiceAnsweredCount===0 && resetSnap.practiceSessionXp===0);
 
 T.applyUserSnapshot(beforeReset.db);
 T.save();
