@@ -408,7 +408,7 @@ function recordVocabOutcome(word,correct,dueDays,rating){
   if(correct){
     const wasLearned=["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(v.status);
     v.correct_count=(Number(v.correct_count)||0)+1;
-    v.reviewStreak=Math.max(1,Number(v.reviewStreak)||0)+1;
+    v.reviewStreak=Math.max(0,Number(v.reviewStreak)||0)+1;
     if(!wasLearned)db.stats.learned=(Number(db.stats.learned)||0)+1;
     if(v.status==="New"||v.status==="Chưa nhớ")v.status="Learning";
     const days=dueDays!==undefined?Math.max(0,Number(dueDays)||0):reviewIntervalDays(v,rating);
@@ -907,7 +907,7 @@ function startReview(){
 }
 function reviewMeta(v){
   const streak=Math.max(0,Number(v?.reviewStreak)||0);
-  if(!v?.reviewDue)return '<div class="muted small">🧠 Chuỗi nhớ: '+streak+'</div>';
+  if(!v?.reviewDue)return '<div class="muted small">🧠 Chuỗi nhớ: '+streak+' · Ôn lại: chưa đặt lịch</div>';
   const d=new Date(v.reviewDue);
   if(Number.isNaN(d.getTime()))return '<div class="muted small">🧠 Chuỗi nhớ: '+streak+'</div>';
   return '<div class="muted small">🧠 Chuỗi nhớ: '+streak+' · Ôn lại: '+esc(d.toLocaleDateString("vi-VN"))+'</div>';
