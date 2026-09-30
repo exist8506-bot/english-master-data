@@ -572,7 +572,7 @@ T.show("home");T.show("practice");
 const reopenedPractice=T.snap();
 check("reopening practice preserves selected mode", reopenedPractice.practiceMode==="favorites" && reopenedPractice.practiceQueue.length===favoriteModeCount);
 T.startPracticeMode("smart",8);
-T.startPracticeMode("smart",8);
+ps=T.snap();
 
 check("practice session creates mixed exercises", ps.practiceQueue.length === 8 &&
   new Set(ps.practiceQueue.map(x=>x.type)).size >= 3 &&
