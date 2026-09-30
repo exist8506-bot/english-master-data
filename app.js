@@ -1062,13 +1062,13 @@ function buildPracticeSession(count=8){
       out.push({type:"meaning",prompt:v.word,example:v.example,answer:v.meaning,options});
     }else if(mode===1){
       const options=chooseFour(v.word,"word");
-      out.push({type:"translate",prompt:v.meaning,answer:v.word,options});
+      out.push({type:"translate",prompt:v.meaning,word:v.word,answer:v.word,options});
     }else if(mode===2){
       const example=String(v.example||"").trim(),lower=example.toLowerCase(),target=String(v.word||"").trim().toLowerCase();
       const at=lower.indexOf(target);
       const prompt=at>=0?example.slice(0,at)+"_____"+example.slice(at+target.length):(example||("Use the word: "+v.word));
       const options=chooseFour(v.word,"word");
-      out.push({type:"fill",prompt,answer:v.word,options});
+      out.push({type:"fill",prompt,word:v.word,answer:v.word,options});
     }else{
       const s=sentences[i%Math.max(1,sentences.length)],target=String(s?.en||v.example||v.word).trim();
       const words=target.replace(/[.!?]+$/,"").split(/\s+/).filter(Boolean);
