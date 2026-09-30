@@ -151,7 +151,7 @@ try {
 
 const hooks = `
 window.__EM_TEST = {
-  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder] }),
+  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
   listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
@@ -512,6 +512,7 @@ for(let step=0; step<ps.practiceQueue.length; step++){
   T.practiceNext();
 }
 check("practice completion awards completion counter", (T.snap().db.stats.practiceCompleted||0)>=1);
+check("completed practice awards lesson XP", (Number(T.snap().db.stats.xp)||0)>0);
 
 T.show("quiz");
 snap = T.snap();
@@ -563,7 +564,9 @@ check("vocabulary word uses attached audio", !!wordAudioButton && (!audioVocab.a
 check("vocabulary example does not reuse word audio", !!exampleAudioButton && !exampleAudioButton.includes("playAudio("));
 
 T.show("flashcards");
+const xpBeforeFlash=Number(T.snap().db.stats.xp)||0;
 T.rateFlash("Đã nhớ");
+check("flashcard learning awards XP", (Number(T.snap().db.stats.xp)||0)>=xpBeforeFlash+5);
 check("flashcard interaction", T.snap().db.vocab.length === 3500);
 
 T.show("listening");
