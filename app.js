@@ -805,7 +805,7 @@ function render(){
   document.body.classList.toggle("dark",db.profile.theme==="dark");
   applyLayoutMode();
   if($("streak"))$("streak").textContent=db.stats.streak||0;
-  const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,stats:stats,settings:settings}[view]||home;
+  const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,reviewSummary:reviewSummary,stats:stats,settings:settings}[view]||home;
   fn();
 }
 function home(){
@@ -961,22 +961,38 @@ function rateFlash(status){
   if(!v)return;
   recordActivity();
   recordVocabOutcome(v.word,status!=="Chưa nhớ",undefined,status);
-  if(status!=="Chưa nhớ")addXP(5);
+  const earned=status!=="Chưa nhớ"?5:0;
+  if(earned)addXP(earned);
+  if(reviewActive&&reviewSession.active){reviewSession.answered++;reviewSession.xp+=earned;if(status==="Chưa nhớ")reviewSession.forgot++;else reviewSession.remembered++;}
   v.status=status;
   db.stats.learned=db.vocab.filter(function(x){return ["Learning","Review","Mastered","Đã nhớ","Rất dễ"].includes(x.status)}).length;
   flashFlipped=false;
   if(reviewActive){
-    if(reviewIndex+1>=reviewQueue.length){
-      reviewQueue=[];reviewIndex=0;const wasQuick=quickReviewActive;quickReviewActive=false;save();
-      if(wasQuick){show("home");toast("Hoàn thành phiên học nhanh.");}
-      else show("review");
-      return;
-    }
+    if(reviewIndex+1>=reviewQueue.length){finishReviewSession();return;}
     reviewIndex++;
   }else{
     flashIndex=(flashIndex+1)%db.vocab.length;
   }
   save();render();
+}
+function finishReviewSession(){
+  const result={...reviewSession};
+  reviewQueue=[];reviewIndex=0;quickReviewActive=false;
+  reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};
+  save();window.__lastReviewSummary=result;view="reviewSummary";render();
+}
+function reviewSummary(){
+  const s=window.__lastReviewSummary||{mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};
+  const pct=s.answered?Math.round(s.remembered/s.answered*100):0;
+  const label=s.mode==="quick"?"Học nhanh hôm nay":s.mode==="smart"?"Ôn thông minh":"Ôn "+s.mode;
+  $("view").innerHTML=shell("Hoàn thành phiên học",label,
+    '<div class="grid"><div class="card"><div class="big">'+s.total+'</div><div class="muted">Tổng thẻ</div></div>'+
+    '<div class="card"><div class="big">'+s.answered+'</div><div class="muted">Đã đánh giá</div></div>'+
+    '<div class="card"><div class="big">'+s.remembered+'</div><div class="muted">Nhớ được</div></div>'+
+    '<div class="card"><div class="big">'+s.forgot+'</div><div class="muted">Chưa nhớ</div></div>'+
+    '<div class="card"><div class="big">'+pct+'%</div><div class="muted">Tỷ lệ nhớ</div></div>'+
+    '<div class="card"><div class="big">+'+s.xp+'</div><div class="muted">XP từ phiên</div></div></div>'+
+    '<div class="card"><h2>Tiếp tục học</h2><div class="actions"><button class="primary" onclick="startQuickStudy()">⚡ Học nhanh 10 từ</button><button onclick="show(\'review\')">🔄 Ôn tập</button><button onclick="show(\'home\')">🏠 Trang chủ</button></div></div>');
 }
 function shuffleFlash(){
   if(reviewQueue.length){
