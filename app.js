@@ -809,6 +809,7 @@ function pageControls(page,total,size,kind){
     '<button onclick="goPage(\''+kind+'\','+(p+1)+')" '+(p>=pages?"disabled":"")+'">Sau →</button></div>';
 }
 function goPage(kind,page){
+  stopSpeech();
   const p=Math.max(1,Number(page)||1);
   if(kind==="vocab")vocabPage=p;
   else if(kind==="sentences")sentencePage=p;
@@ -817,6 +818,7 @@ function goPage(kind,page){
   render();
 }
 function jumpToItem(kind,raw){
+  stopSpeech();
   const n=Math.trunc(Number(raw));
   let total=0;
   if(kind==="listening"||kind==="speaking")total=sentencePracticePool().length;
@@ -899,6 +901,7 @@ function flashcards(){
     '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
 }
 function rateFlash(status){
+  stopSpeech();
   const reviewActive=reviewQueue.length>0;
   const idx=reviewActive?reviewIndex:flashIndex;
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):db.vocab[idx%db.vocab.length];
@@ -950,6 +953,7 @@ function renderListening(){
     '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){return '<button class="option" onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>'}).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">Hãy nghe rồi chọn.</div></div>');
 }
 function listenCheck(el,selected,correct){
+  stopSpeech();
   document.querySelectorAll(".option").forEach(function(b){b.disabled=true});
   const ok=norm(selected)===norm(correct);el.classList.add(ok?"correct":"wrong");
   $("listenResult").innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(correct)+"</b>";
@@ -979,8 +983,8 @@ function renderSpeaking(){
     '<div class="actions" style="margin-top:10px"><button onclick="autoNextSpeaking=!autoNextSpeaking;renderSpeaking()">⏭️ Tự chuyển: '+(autoNextSpeaking?"BẬT":"TẮT")+'</button><span class="muted small">Phím → cũng chuyển câu</span></div>'+
     '<div id="speechResult" class="hint" style="margin-top:14px">Nghe mẫu rồi nói lại.</div></div>');
 }
-function nextSpeak(){const list=sentencePracticePool();if(!list.length)return;stopRecognition();speakIndex=(speakIndex+1)%list.length;save();renderSpeaking()}
-function prevSpeak(){const list=sentencePracticePool();if(!list.length)return;stopRecognition();speakIndex=(speakIndex-1+list.length)%list.length;save();renderSpeaking()}
+function nextSpeak(){const list=sentencePracticePool();if(!list.length)return;stopSpeech();stopRecognition();speakIndex=(speakIndex+1)%list.length;save();renderSpeaking()}
+function prevSpeak(){const list=sentencePracticePool();if(!list.length)return;stopSpeech();stopRecognition();speakIndex=(speakIndex-1+list.length)%list.length;save();renderSpeaking()}
 function startRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!SR){toast("Chrome/Edge thường hỗ trợ nhận diện microphone tốt hơn.");return}
@@ -1072,6 +1076,7 @@ function quiz(){
 }
 function answerQuiz(i,a){
   if(quizAnswered)return;
+  stopSpeech();
   const correctIndex=Number.isInteger(quizCorrectIndex)&&quizCorrectIndex>=0?quizCorrectIndex:Number(a);
   quizAnswered=true;
   const qIndex=normalizeQuizIndex(),q=db.questions[qIndex];
@@ -1081,7 +1086,7 @@ function answerQuiz(i,a){
   db.stats.answered=(Number(db.stats.answered)||0)+1;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct=(Number(db.stats.correct)||0)+1;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
 }
-function nextQuiz(){if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
+function nextQuiz(){stopSpeech();if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
 
 function blankWordInExample(example,word){
   const text=String(example||""),target=String(word||"").trim();
