@@ -304,18 +304,24 @@ function save(){
     return false;
   }
 }
+function savedProgressLooksUsable(parsed){
+  if(!parsed||typeof parsed!=="object")return false;
+  if(Array.isArray(parsed.vocabState)&&parsed.stats&&typeof parsed.stats==="object"&&parsed.profile&&typeof parsed.profile==="object")return true;
+  return Array.isArray(parsed.vocab);
+}
 function load(){
   let parsed=null,current=null;
   try{
     current=localStorage.getItem(STORAGE_KEY);
     try{parsed=current?JSON.parse(current):null}catch(e){}
   }catch(e){}
-  if(!parsed){
+  if(!savedProgressLooksUsable(parsed)){
     try{
       const backup=localStorage.getItem(STORAGE_KEY+"_backup");
-      try{parsed=backup?JSON.parse(backup):null}catch(e){}
-      if(parsed)toast("Đã khôi phục tiến độ từ bản sao lưu cục bộ.");
-    }catch(e){}
+      const backupParsed=backup?JSON.parse(backup):null;
+      if(savedProgressLooksUsable(backupParsed)){parsed=backupParsed;toast("Đã khôi phục tiến độ từ bản sao lưu cục bộ.");}
+      else parsed=null;
+    }catch(e){parsed=null}
   }
   if(parsed&&Array.isArray(parsed.vocab)){
     legacyStorageLoaded=true;
