@@ -252,6 +252,15 @@ function readCachedContent(){
     });
   });
 }
+function usableCachedContent(cached){
+  if(!cached||typeof cached!=="object")return false;
+  const keys=["vocab","sentences","questions","grammar","communication","trilingual"];
+  return keys.every(function(key){
+    const arr=Array.isArray(cached[key])?cached[key]:[];
+    const expected=Number(cached.contentCounts?.[key]);
+    return arr.length>0&&Number.isFinite(expected)&&expected===arr.length;
+  });
+}
 function save(){
   try{
     db.positions={flashIndex,listenIndex,speakIndex,quizIndex};
@@ -313,7 +322,7 @@ async function hydrateContent(){
   }
   const liveUserState=userSnapshot(db);
   const cached=await readCachedContent();
-  if(cached){
+  if(cached&&usableCachedContent(cached)){
     db={...db,...contentSnapshot(cached)};
     applyUserSnapshot(liveUserState);
     if(pendingUserState)applyUserSnapshot({vocabState:pendingUserState});
