@@ -736,6 +736,14 @@ check(
     beforeInvalidImport.db.vocab.find(v => String(v.word || "").trim() === importWord)?.status
 );
 
+const importPreserveStats={...T.snap().db.stats};
+const originalSetItem=localStorage.setItem;
+localStorage.setItem=()=>{throw new Error("quota");};
+const failingInput={value:"",files:[{text:async()=>JSON.stringify({stats:{xp:9999},profile:{theme:"dark"},vocabState:[]})}]};
+await T.importProgress(failingInput);
+localStorage.setItem=originalSetItem;
+check("valid import is atomic when storage save fails", T.snap().db.stats.xp===importPreserveStats.xp);
+
 const beforeReset = T.snap();
 T.resetProgress();
 const resetSnap = T.snap();
