@@ -1,11 +1,11 @@
-const APP_VERSION="9.1.5";
+const APP_VERSION="9.1.6";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
 
 let db={
   vocab:[],sentences:[],questions:[],grammar:[],communication:[],trilingual:[],
-  stats:{xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,dailyDate:"",dailyUnits:0,practiceCompleted:0},
+  stats:{xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,dailyDate:"",dailyUnits:0,dailyHistory:[],practiceCompleted:0},
   profile:{theme:"light",autoUpdate:true,speechRate:1,layout:"auto",dailyGoal:10},
   lastRemoteVersion:"",
   contentCounts:{}
@@ -150,11 +150,56 @@ function dateKey(d){
   const x=d||new Date();
   return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0");
 }
+function normalizeDailyHistory(input){
+  const map=new Map();
+  for(const row of Array.isArray(input)?input:[]){
+    if(!row||typeof row!=="object")continue;
+    const date=String(row.date||"").trim();
+    if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(date))continue;
+    const units=Math.max(0,Math.min(100000,Math.floor(Number(row.units)||0)));
+    const goalRaw=Number(row.goal);
+    const goal=Number.isFinite(goalRaw)?Math.max(1,Math.min(100,Math.floor(goalRaw))):10;
+    map.set(date,{date,units,goal});
+  }
+  return [...map.values()].sort((a,b)=>a.date.localeCompare(b.date)).slice(-30);
+}
+function syncDailyHistoryEntry(){
+  const history=normalizeDailyHistory(db.stats.dailyHistory);
+  const date=String(db.stats.dailyDate||dateKey());
+  const units=Math.max(0,Math.floor(Number(db.stats.dailyUnits)||0));
+  const goal=dailyGoal();
+  const found=history.findIndex(x=>x.date===date);
+  const entry={date,units,goal};
+  if(found>=0)history[found]=entry;else history.push(entry);
+  db.stats.dailyHistory=history.slice(-30);
+}
 function ensureDailyProgress(){
   const today=dateKey();
   if(String(db.stats.dailyDate||"")!==today){db.stats.dailyDate=today;db.stats.dailyUnits=0;}
+  db.stats.dailyHistory=normalizeDailyHistory(db.stats.dailyHistory);
+  syncDailyHistoryEntry();
 }
-function recordStudyUnit(){ensureDailyProgress();db.stats.dailyUnits=(Number(db.stats.dailyUnits)||0)+1;}
+function recordStudyUnit(){
+  ensureDailyProgress();
+  db.stats.dailyUnits=(Number(db.stats.dailyUnits)||0)+1;
+  syncDailyHistoryEntry();
+}
+function dailyHistorySeries(days=7){
+  const n=Math.max(1,Math.min(30,Math.floor(Number(days)||7)));
+  const history=new Map(normalizeDailyHistory(db.stats.dailyHistory).map(x=>[x.date,x]));
+  const out=[];
+  const today=new Date();
+  today.setHours(0,0,0,0);
+  for(let i=n-1;i>=0;i--){
+    const d=new Date(today);d.setDate(d.getDate()-i);
+    const date=dateKey(d),row=history.get(date)||{date,units:0,goal:dailyGoal()};
+    out.push({...row,label:String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0"),pct:Math.min(100,Math.round((row.units/Math.max(1,row.goal))*100))});
+  }
+  return out;
+}
+function dailyGoalsMet(days=7){
+  return dailyHistorySeries(days).filter(x=>x.units>=x.goal).length;
+}
 function dailyGoal(){const n=Number(db.profile.dailyGoal);return Number.isFinite(n)?Math.max(1,Math.min(100,Math.floor(n))):10;}
 function dailyPercent(){ensureDailyProgress();return Math.min(100,Math.round((Number(db.stats.dailyUnits)||0)/dailyGoal()*100));}
 function weakVocabularyPool(){
@@ -209,6 +254,7 @@ function applyUserSnapshot(snapshot){
   db.stats.correct=Math.min(db.stats.correct,db.stats.answered);
   db.stats.sentenceCorrect=Math.min(db.stats.sentenceCorrect,db.stats.sentenceAnswered);
   db.stats.speakingGood=Math.min(db.stats.speakingGood,db.stats.speakingAttempts);
+  db.stats.dailyHistory=normalizeDailyHistory(db.stats.dailyHistory);
   db.profile={...db.profile,...(snapshot.profile||{})};
   if(!["light","dark"].includes(String(db.profile.theme)))db.profile.theme="light";
   if(typeof db.profile.autoUpdate!=="boolean")db.profile.autoUpdate=true;
@@ -431,7 +477,7 @@ function show(v){
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
   if(v!=="flashcards"&&v!=="reviewSummary"){reviewQueue=[];reviewIndex=0;quickReviewActive=false;reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};}
-  if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;}
+  if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;}
   view=v;render();
 }
 function learnNext(){
@@ -1269,10 +1315,10 @@ function practiceCheckOrder(){
 function practiceNext(){
   if(!practiceAnswered)return;
   if(practiceIndex+1>=practiceQueue.length){
-    const lessonSize=practiceQueue.length,perfect=practiceCorrectCount===lessonSize,accuracy=practiceAnsweredCount?Math.round(practiceCorrectCount/practiceAnsweredCount*100):0;
+    const lessonSize=practiceQueue.length,correct=practiceCorrectCount,answered=practiceAnsweredCount,perfect=correct===lessonSize,accuracy=answered?Math.round(correct/answered*100):0,sessionXp=practiceSessionXp;
     db.stats.practiceCompleted=(Number(db.stats.practiceCompleted)||0)+1;addXP(30);if(perfect)addXP(50);
-    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;save();
-    toast("Hoàn thành "+practiceModeLabel(practiceMode)+": "+practiceCorrectCount+"/"+practiceAnsweredCount+" đúng · "+accuracy+"%"+(perfect?" · +50 XP hoàn hảo":""));
+    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;save();
+    toast("Hoàn thành "+practiceModeLabel(practiceMode)+": "+correct+"/"+answered+" đúng · "+accuracy+"% · +"+sessionXp+" XP trả lời"+(perfect?" · +50 XP hoàn hảo":""));
     show("home");return;
   }
   practiceIndex++;practiceAnswered=false;practiceAnswerOrder=[];save();render();
@@ -1355,8 +1401,11 @@ function stats(){
   const sentenceAcc=db.stats.sentenceAnswered?Math.round((db.stats.sentenceCorrect/db.stats.sentenceAnswered)*100):0;
   const done=Number(db.stats.dailyUnits)||0,target=dailyGoal(),pct=dailyPercent();
   const weak=weakVocabularyPool().filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
-  $("view").innerHTML=shell("Tiến độ V9","Mục tiêu ngày, độ chính xác và từ cần củng cố.",
+  const history=dailyHistorySeries(7),goalsMet=dailyGoalsMet(7);
+  const historyHtml=history.map(function(x){return '<div class="item"><div class="toolbar"><span>'+x.label+'</span><b>'+x.units+'/'+x.goal+'</b></div><div class="progress" style="margin-top:6px"><div class="bar" style="width:'+x.pct+'%"></div></div></div>';}).join("");
+  $("view").innerHTML=shell("Tiến độ V9","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><p class="muted small">'+pct+'% hoàn thành · còn '+Math.max(0,target-done)+' hoạt động.</p></div>'+
+    '<div class="card"><div class="toolbar"><b>📅 7 ngày gần đây</b><b>'+goalsMet+'/7 đạt mục tiêu</b></div><div class="list" style="margin-top:10px">'+historyHtml+'</div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Từ đã học</div></div><div class="card"><div class="big">'+(db.stats.practiceCompleted||0)+'</div><div class="muted">Bài luyện hoàn thành</div></div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+quizAcc+'%</div><div class="muted">Quiz</div></div><div class="card"><div class="big">'+sentenceAcc+'%</div><div class="muted">Nghe/nói</div></div><div class="card"><div class="big">'+(db.stats.speakingGood||0)+'</div><div class="muted">Nói đạt ≥80%</div></div></div>'+
     '<div class="card"><h2>🔥 Từ cần củng cố</h2>'+(weak.length?'<div class="list">'+weak.map(v=>'<div class="item"><b>'+esc(v.word)+'</b><span class="muted"> · sai '+Number(v.wrong_count||0)+' / đúng '+Number(v.correct_count||0)+'</span></div>').join("")+'</div>':'<div class="empty">Chưa có từ yếu được ghi nhận.</div>')+'</div>');
@@ -1420,6 +1469,16 @@ function validateProgressImport(parsed){
   if(parsed.profile.layout!==undefined&&!["auto","phone","desktop"].includes(String(parsed.profile.layout))){
     throw new Error("Bố cục thiết bị không hợp lệ.");
   }
+  if(parsed.stats.dailyHistory!==undefined){
+    if(!Array.isArray(parsed.stats.dailyHistory))throw new Error("Lịch sử mục tiêu ngày không hợp lệ.");
+    const seen=new Set();
+    parsed.stats.dailyHistory.forEach(function(row){
+      if(!row||typeof row!=="object"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(row.date||""))||seen.has(String(row.date))||!Number.isFinite(Number(row.units))||Number(row.units)<0||!Number.isFinite(Number(row.goal))||Number(row.goal)<1){
+        throw new Error("Lịch sử mục tiêu ngày không hợp lệ.");
+      }
+      seen.add(String(row.date));
+    });
+  }
   const allowedStatus=new Set(["New","Learning","Review","Mastered","Chưa nhớ","Đã nhớ","Rất dễ"]);
   const validStates=parsed.vocabState.every(function(s){
     if(!s||!String(s.word||"").trim())return false;
@@ -1461,7 +1520,7 @@ async function importProgress(input){
 function resetProgress(){
   const ok=typeof window.confirm==="function"?window.confirm("Xóa toàn bộ XP, lịch sử ôn tập, yêu thích và trạng thái học?"):true;
   if(!ok)return;
-  db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,lastActivityDate:"",dailyDate:dateKey(),dailyUnits:0,practiceCompleted:0};
+  db.stats={xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,lastActivityDate:"",dailyDate:dateKey(),dailyUnits:0,dailyHistory:[],practiceCompleted:0};
   db.vocab.forEach(function(v){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.reviewStreak=0;v.lastReviewed=null;
   });
