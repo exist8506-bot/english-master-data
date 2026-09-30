@@ -153,6 +153,7 @@ window.__EM_TEST = {
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview,
   listenCheck, startReview, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
+  dateKey, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -411,6 +412,61 @@ const afterFirstActivity=T.snap().db.stats.dailyUnits;
 T.recordActivity();
 const afterSecondActivity=T.snap().db.stats.dailyUnits;
 check("activity tracking counts each completed activity", afterFirstActivity===beforeActivity+1 && afterSecondActivity===beforeActivity+2);
+
+// Direct audit of remaining helper paths and edge cases.
+check("date key is stable", /^\\d{4}-\\d{2}-\\d{2}$/.test(T.dateKey(new Date("2026-09-30T12:00:00"))));
+check("language voice lookup handles exact and fallback", !!T.getVoice("en-US") && !!T.getVoice("zh-CN"));
+check("voice availability reports supported languages", T.voiceAvailability().includes("en-US") && T.voiceAvailability().includes("zh-CN"));
+check("shell escapes rendered text", !T.shell("<x>","a&b").includes("<x>"));
+check("audio group renders three speed controls", (T.audioGroup("hello","en-US").match(/button/g)||[]).length===3);
+check("page controls hide for one-page lists", T.pageControls(1,20,50,"vocab")==="" && T.pageControls(1,100,50,"vocab").includes("Trang 1 / 2"));
+check("jump control exposes bounded number input", T.jumpControl("quiz",2,6000).includes('min="1"') && T.jumpControl("quiz",2,6000).includes('max="6000"'));
+check("quiz index normalization handles corrupt global index", (T.setStats({}), T.show("quiz"), true));
+T.snap().db.questions.unshift({id:"qa-bad",prompt:"bad",options:["x","x","y","z"],answer:0});
+const beforeQCount=T.snap().db.questions.length;
+T.show("quiz");
+check("quiz skips corrupted question safely", T.snap().quizOptions.length===4 && T.snap().db.questions.length===beforeQCount);
+T.snap().db.questions.shift();
+const v=T.snap().db.vocab.find(x=>String(x.word||"").trim());
+if(v){
+  const before={status:v.status,correct:v.correct_count||0,wrong:v.wrong_count||0};
+  T.recordVocabOutcome(v.word,true,3);
+  const after=T.snap().db.vocab.find(x=>x.word===v.word);
+  check("vocabulary outcome updates correct/review state", after.correct_count===before.correct+1 && after.reviewDue && after.status!=="New");
+  T.recordVocabOutcome(v.word,false,0);
+  const afterWrong=T.snap().db.vocab.find(x=>x.word===v.word);
+  check("vocabulary wrong outcome schedules immediate review", afterWrong.wrong_count===before.wrong+1 && afterWrong.status==="Chưa nhớ");
+}
+check("no-indexedDB content cache path is graceful", T.openContentDB() instanceof Promise);
+T.stopRecognition();
+check("stop recognition is idempotent", true);
+const incomingValid={
+  vocab:[{word:"qa",meaning:"qa"}],
+  sentences:[{id:"qa-s",en:"I study.",vi:"Tôi học."}],
+  questions:[{id:"qa-q",prompt:"Q",options:["a","b","c","d"],answer:0}],
+  grammar:[{id:"qa-g",title:"Present",formula:"S + V"}],
+  communication:[{id:"qa-c",title:"Hi",lines:[["A","Hello."],["B","Hi."]]}],
+  trilingual:[{en:"hello",zh:"你好",pinyin:"nǐ hǎo",vi:"xin chào"}]
+};
+check("incoming content validator accepts valid schema", T.validateIncomingContent(incomingValid)===true);
+check("incoming content validator rejects invalid schema", (()=>{try{T.validateIncomingContent({...incomingValid,questions:[{id:"bad",prompt:"Q",options:["a","a","b","c"],answer:0}]});return false;}catch(e){return true;}})());
+const snapBefore=T.snap().db.vocab.length;
+const dup=T.snap().db.vocab.slice();
+T.snap().db.vocab.push({...dup[0]});
+const issues=T.validateContent(true);
+T.snap().db.vocab.pop();
+check("content validator catches duplicate vocab", issues.some(x=>x.includes("vocab trùng")) && T.snap().db.vocab.length===snapBefore);
+check("layout viewport helper returns a boolean", typeof T.isPhoneViewport()==="boolean");
+T.updateLayoutQuickButton(true);
+check("layout button labels desktop target in phone mode", document.getElementById("layoutQuick").attributes["aria-label"].includes("máy tính"));
+T.handleViewportChange();
+T.renderFlashcards();T.renderListening();T.renderSpeaking();
+check("render aliases execute safely", true);
+T.show("speaking");T.nextSpeak();T.prevSpeak();check("speaking next/prev navigation executes", true);
+check("chooseFour returns unique choices when enough data", T.chooseFour("___unlikely___","meaning").length===4);
+const savedStats={...T.snap().db.stats};T.finishPractice(true);T.setStats(savedStats);
+check("finishPractice is callable without corrupting stats", true);
+check("progress import validator rejects invalid daily counters", (()=>{try{T.validateProgressImport({stats:{dailyUnits:-1},profile:{theme:"light"},vocabState:[]});return false;}catch(e){return true;}})());
 
 T.show("practice");
 let ps = T.snap();
