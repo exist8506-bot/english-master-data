@@ -1229,7 +1229,7 @@ function buildPracticeSession(count=8,mode="smart"){
   return out;
 }
 function practice(){
-  if(!practiceQueue.length)practiceQueue=buildPracticeSession();
+  if(!practiceQueue.length)practiceQueue=buildPracticeSession(8,practiceMode);
   if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9","Chưa đủ dữ liệu để tạo bài.");return;}
   practiceIndex=normalizeArrayIndex(practiceIndex,practiceQueue.length);
   const item=practiceQueue[practiceIndex];
