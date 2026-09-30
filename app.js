@@ -777,8 +777,9 @@ function render(){
 function home(){
   ensureDailyProgress();
   const practiceCount=sentencePracticePool().length,done=Number(db.stats.dailyUnits)||0,target=dailyGoal(),pct=dailyPercent();
-  const due=db.vocab.filter(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date()).length;
-  const weak=db.vocab.filter(v=>v.status==="Chưa nhớ"||v.status==="Review").length;
+  const dueWords=db.vocab.filter(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date()).map(v=>norm(v.word));
+  const weakWords=db.vocab.filter(v=>v.status==="Chưa nhớ"||v.status==="Review").map(v=>norm(v.word));
+  const pending=new Set(dueWords.concat(weakWords).filter(Boolean)).size;
   $("view").innerHTML=shell("English Master V"+APP_VERSION,"Học • Luyện • Nhớ • Cải thiện",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><div class="actions" style="margin-top:12px"><button class="primary" onclick="learnNext()">▶ Học tiếp</button><button onclick="show(\'practice\')">⚡ Luyện nhanh</button></div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.vocab.length+'</div><div class="muted">Từ vựng</div></div><div class="card"><div class="big">'+practiceCount+'</div><div class="muted">Câu luyện</div></div><div class="card"><div class="big">'+db.questions.length+'</div><div class="muted">Quiz</div></div></div>'+
