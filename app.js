@@ -1098,7 +1098,7 @@ function practiceAnswer(index){
   const item=practiceQueue[practiceIndex];if(!item||item.type==="order")return;
   const choice=String(item.options[index]??"");
   const ok=norm(choice)===norm(item.answer);
-  practiceAnswered=true;finishPractice(ok);
+  practiceAnswered=true;finishPractice(ok);if(item.word)recordVocabOutcome(item.word,ok);
   const correctIndex=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
   document.querySelectorAll(".option").forEach(function(b,i){b.disabled=true;if(i===correctIndex)b.classList.add("correct");if(i===index&&!ok)b.classList.add("wrong");});
   const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(item.answer)+"</b>";
