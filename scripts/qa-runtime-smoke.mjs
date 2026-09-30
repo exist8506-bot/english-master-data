@@ -1074,8 +1074,8 @@ storage.set("englishMaster_v1", "{broken-json");
 T.setStats({ xp: 0 });
 T.load();
 const recovered = T.snap().db.vocab.find((v) => String(v.word || "").trim() === backupWord);
-check(
 check("saved progress schema detector rejects malformed snapshots", !T.savedProgressLooksUsable({stats:{},profile:{}}) && T.savedProgressLooksUsable({stats:{},profile:{},vocabState:[]}));
+check(
   "corrupt primary recovers from backup",
   T.snap().db.stats.xp === 555 &&
   recovered?.status === "Review" &&
