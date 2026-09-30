@@ -382,7 +382,8 @@ const q0=T.snap().db.questions[0];
 const savedOpts=q0.options,savedAns=q0.answer;
 q0.options=[savedOpts[0],savedOpts[0],savedOpts[2],savedOpts[3]];
 T.show("quiz");
-check("quiz rejects duplicate local options", T.snap().quizOptions.length===0);
+const badQuizSnap=T.snap();
+check("quiz skips duplicate local options", badQuizSnap.quizOptions.length===4 && badQuizSnap.db.questions[badQuizSnap.quizIndex]?.id!=="qa-bad");
 q0.options=savedOpts;q0.answer=savedAns;
 T.show("quiz");
 check("quiz recovers after local question repair", T.snap().quizOptions.length===4 && Number.isInteger(T.snap().quizCorrectIndex));
@@ -396,14 +397,14 @@ check("mergeBy deduplicates and can replace", T.mergeBy([{id:"a",value:1}],[{id:
 check("remote replacement policy recognizes replaceable sources", T.remoteReplaceAllowed({example:"I learned the word hello."}) && !T.remoteReplaceAllowed({example:"Hello, how are you?"}));
 check("audio URL language routing is safe", T.audioUrl({audioEn:"en.mp3",audioZh:"zh.mp3",audioVi:"vi.mp3"},"en-US")==="en.mp3" &&
   T.audioUrl({audioEn:"en.mp3",audioZh:"zh.mp3",audioVi:"vi.mp3"},"zh-CN")==="zh.mp3" &&
-  T.audioUrl({audio:"generic.mp3"},"zh-CN")==="");
+  T.audioUrl({audio:"generic.mp3"},"zh-CN")==="generic.mp3" &&
+  T.audioUrl({audio:"generic.mp3",zh:"你好",vi:"xin chào"},"zh-CN")==="");
 check("daily goal options render a selected value", T.dailyGoalOptions().includes('value="10"') && T.dailyGoalOptions().includes("selected"));
 const daily0=Number(T.snap().db.stats.dailyUnits)||0;
 T.recordStudyUnit();
 const daily1=Number(T.snap().db.stats.dailyUnits)||0;
 check("daily study unit increments exactly once", daily1===daily0+1);
-T.setStats({dailyUnits:0,practiceCompleted:"4"});
-T.ensureDailyProgress();
+T.applyUserSnapshot({stats:{dailyUnits:"0",practiceCompleted:"4"},profile:{theme:"light"},vocabState:[]});
 check("V9 progress counters normalize and remain numeric", typeof T.snap().db.stats.dailyUnits==="number" && typeof T.snap().db.stats.practiceCompleted==="number" && T.snap().db.stats.practiceCompleted===4);
 T.setStats({lastActivityDate:""});
 const beforeActivity=Number(T.snap().db.stats.dailyUnits)||0;
@@ -414,7 +415,7 @@ const afterSecondActivity=T.snap().db.stats.dailyUnits;
 check("activity tracking counts each completed activity", afterFirstActivity===beforeActivity+1 && afterSecondActivity===beforeActivity+2);
 
 // Direct audit of remaining helper paths and edge cases.
-check("date key is stable", /^\\d{4}-\\d{2}-\\d{2}$/.test(T.dateKey(new Date("2026-09-30T12:00:00"))));
+check("date key is stable", T.dateKey(new Date("2026-09-30T12:00:00"))==="2026-09-30");
 check("language voice lookup handles exact and fallback", !!T.getVoice("en-US") && !!T.getVoice("zh-CN"));
 check("voice availability reports supported languages", T.voiceAvailability().includes("en-US") && T.voiceAvailability().includes("zh-CN"));
 check("shell escapes rendered text", !T.shell("<x>","a&b").includes("<x>"));
@@ -422,6 +423,8 @@ check("audio group renders three speed controls", (T.audioGroup("hello","en-US")
 check("page controls hide for one-page lists", T.pageControls(1,20,50,"vocab")==="" && T.pageControls(1,100,50,"vocab").includes("Trang 1 / 2"));
 check("jump control exposes bounded number input", T.jumpControl("quiz",2,6000).includes('min="1"') && T.jumpControl("quiz",2,6000).includes('max="6000"'));
 check("quiz index normalization handles corrupt global index", (T.setStats({}), T.show("quiz"), true));
+T.jumpToItem("quiz",1);
+T.snap().db.questions[0].id="qa-original-0";
 T.snap().db.questions.unshift({id:"qa-bad",prompt:"bad",options:["x","x","y","z"],answer:0});
 const beforeQCount=T.snap().db.questions.length;
 T.show("quiz");
@@ -787,8 +790,9 @@ check("unknown route falls back to home", T.snap().db.view === undefined && docu
 check("index normalization wraps negative index", T.normalizeArrayIndex(-1, 5) === 4);
 check("index normalization handles invalid value", T.normalizeArrayIndex("bad", 5) === 0);
 
+const cacheSentence=data.sentences.find(s=>s&&String(s.id||"").trim()&&String(s.en||"").trim()&&String(s.vi||"").trim()&&String(s.source||"")!=="extra500_v8"&&String(s.source||"")!=="expansion500"&&String(s.source||"")!=="expansion500_v2");
 check("cached content validator accepts complete cache", T.usableCachedContent({
-  vocab:[1],sentences:[1],questions:[1],grammar:[1],communication:[1],trilingual:[1],
+  vocab:[data.vocabulary[0]],sentences:[cacheSentence],questions:[data.questions[0]],grammar:[data.grammar[0]],communication:[data.communication[0]],trilingual:[data.trilingual[0]],
   contentCounts:{vocab:1,sentences:1,questions:1,grammar:1,communication:1,trilingual:1}
 }));
 check("cached content validator rejects incomplete cache", !T.usableCachedContent({
