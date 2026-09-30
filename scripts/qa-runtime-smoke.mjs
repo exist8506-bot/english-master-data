@@ -106,8 +106,9 @@ const localStorage = {
 };
 const audioCalls = [];
 class FakeAudio {
-  constructor(url) { this.url = url; this.preload = ""; this.playbackRate = 1; audioCalls.push(this); }
-  play() { return Promise.resolve(); }
+  constructor(url) { this.url = url; this.preload = ""; this.playbackRate = 1; this.paused = false; this.currentTime = 0; audioCalls.push(this); }
+  play() { this.paused = false; return Promise.resolve(); }
+  pause() { this.paused = true; }
 }
 
 let fetchImpl = async (url) => {
@@ -796,6 +797,14 @@ check(
   audioCalls[audioCalls.length - 2].playbackRate === 0.75 &&
   audioCalls[audioCalls.length - 1].playbackRate === 1.25
 );
+T.playAudio("https://example.invalid/stop-test.mp3", "stop test", 1, "en-US");
+const audioToStop = audioCalls[audioCalls.length - 1];
+T.show("home");
+check("route change stops active file audio", audioToStop.paused === true && audioToStop.currentTime === 0);
+T.playAudio("https://example.invalid/first.mp3", "first", 1, "en-US");
+const firstAudio = audioCalls[audioCalls.length - 1];
+T.playAudio("https://example.invalid/second.mp3", "second", 1, "en-US");
+check("starting another file audio stops the previous one", firstAudio.paused === true);
 
 T.show("review");
 const weakReviewWord = String(T.snap().db.vocab[0]?.word || "").trim();
@@ -928,6 +937,7 @@ const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"
 const expectedAppVersion = String(appVersion.version || "");
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
+check("manifest app name matches app version", String(manifest.name || "").includes("V" + expectedAppVersion));
 const sw = fs.readFileSync(path.join(root, "sw.js"), "utf8");
 check("index references app/style/manifest", /<script[^>]+src="app\.js(?:\?v=[^"]+)?"/.test(index) && index.includes('href="styles.css"') && index.includes('href="manifest.json"'));
 check("service worker caches app assets", sw.includes("app.js") && sw.includes("styles.css") && sw.includes("manifest.json"));
