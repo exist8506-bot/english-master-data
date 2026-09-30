@@ -153,10 +153,10 @@ try {
 
 const hooks = `
 window.__EM_TEST = {
-  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, quickReviewActive }),
+  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, quickReviewActive, reviewSession: {...reviewSession}, lastReviewSummary: window.__lastReviewSummary ? {...window.__lastReviewSummary} : null }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview, buildReviewQueue,
-  listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
+  listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
   dateKey, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta,
   setView: (v) => { view = v; },
   setFetch: (fn) => { fetch = fn; },
@@ -383,6 +383,8 @@ const homeState=T.snap().db.vocab;
 const expectedPending=new Set(homeState.filter(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date()).map(v=>String(v.word||"").trim().toLowerCase()).concat(homeState.filter(v=>v.status==="Chưa nhớ"||v.status==="Review").map(v=>String(v.word||"").trim().toLowerCase())).filter(Boolean)).size;
 const homePendingMatch=document.getElementById("view").innerHTML.match(/(\d+) từ đang đến hạn hoặc yếu/);
 check("home pending count is unique", !!homePendingMatch && Number(homePendingMatch[1])===expectedPending);
+check("review session initializes with queue size", T.snap().reviewSession.active===true && T.snap().reviewSession.total===3 && T.snap().reviewSession.answered===0);
+
 const quickDue = snap.db.vocab.find(v=>String(v.word||"").trim()===String(snap.db.vocab[0]?.word||"").trim());
 const quickWeak = snap.db.vocab.find(v=>v!==quickDue);
 const quickNew = snap.db.vocab.find(v=>v!==quickDue && v!==quickWeak);
@@ -508,6 +510,17 @@ if(v){
   T.recordVocabOutcome(v.word,false,0);
   const afterWrong=T.snap().db.vocab.find(x=>x.word===v.word);
   check("vocabulary wrong outcome schedules immediate review and resets streak", afterWrong.wrong_count===before.wrong+1 && afterWrong.status==="Chưa nhớ" && afterWrong.reviewStreak===0);
+T.startReview("smart",1);
+const sessionWord=T.snap().db.vocab[0];
+const sessionBeforeXp=T.snap().db.stats.xp;
+T.rateFlash("Đã nhớ");
+const summarySnap=T.snap();
+check("flashcard session ends on summary", summarySnap.view==="reviewSummary" && summarySnap.reviewQueue.length===0 && summarySnap.lastReviewSummary?.total===1 && summarySnap.lastReviewSummary?.answered===1);
+check("flashcard session summary counts remembered and XP", summarySnap.lastReviewSummary?.remembered===1 && summarySnap.lastReviewSummary?.forgot===0 && summarySnap.lastReviewSummary?.xp===5 && summarySnap.db.stats.xp===sessionBeforeXp+5);
+T.startReview("smart",1);
+T.show("home");
+check("leaving an unfinished review clears transient session state", T.snap().reviewSession.active===false && T.snap().reviewQueue.length===0);
+
 }
 check("no-indexedDB content cache path is graceful", typeof T.openContentDB()?.then==="function");
 T.stopRecognition();
@@ -1071,7 +1084,7 @@ const weakReviewVocab = T.snap().db.vocab.find((v) => String(v.word || "").trim(
 const newReviewWord = T.snap().db.vocab.find((v) => String(v.word || "").trim() !== weakReviewWord);
 if(weakReviewVocab)weakReviewVocab.status = "Review";
 if(newReviewWord)newReviewWord.status = "New";
-T.startReview("weak",10);
+T.startReview("weak",3);
 check(
   "review queue prioritizes weak words over new words",
   T.snap().reviewQueue.includes(String(weakReviewWord).trim().toLowerCase()) &&
@@ -1213,9 +1226,9 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.1.3" && !index.includes("V10") && !icon512.includes("V10"));
-check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.3","9.0.1")===1 && T.compareVersions("9.0.0","9.1.3")===-1 && T.compareVersions("9.1.3","9.1.3")===0 && T.compareVersions("future","9.1.3")===0 && T.compareVersions("10.0","9.1.3")===0);
-check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.30","9.1.3")===1 && T.compareVersions("9.10.0","9.9.9")===1);
+check("V9 is the final version signal", expectedAppVersion==="9.1.4" && !index.includes("V10") && !icon512.includes("V10"));
+check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.4","9.0.1")===1 && T.compareVersions("9.0.0","9.1.4")===-1 && T.compareVersions("9.1.4","9.1.4")===0 && T.compareVersions("future","9.1.4")===0 && T.compareVersions("10.0","9.1.4")===0);
+check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.40","9.1.4")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 check("manifest app name matches app version", String(manifest.name || "").includes("V" + expectedAppVersion));
