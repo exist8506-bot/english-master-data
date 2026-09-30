@@ -446,7 +446,7 @@ check("listening rejects out-of-range jump", T.jumpToItem("listening", 999999) =
 T.show("listening");
 const timerSentence = T.sentencePracticePool()[T.snap().listenIndex];
 if (timerSentence) T.listenCheck(new El("timer-option", "button"), timerSentence.vi, timerSentence.vi);
-T.setView("stats");
+T.show("stats");
 await new Promise((resolve) => setTimeout(resolve, 760));
 check("listening auto-advance never overwrites another route", document.getElementById("view").innerHTML.includes("Tiến độ"));
 
