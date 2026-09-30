@@ -21,7 +21,7 @@ let legacyStorageLoaded=false;
 
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]})}
-function escapeJs(s){return String(s??"").replace(/\\/g,"\\\\").replace(/\'/g,"\\\'").replace(/"/g,"&quot;").replace(/\r?\n/g," ")}
+function escapeJs(s){return String(s??"").replace(/&/g,"&amp;").replace(/\\/g,"\\\\").replace(/\'/g,"\\\'").replace(/"/g,"&quot;").replace(/\r?\n/g," ").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
 const STANDALONE_SENTENCE_SOURCES=new Set(["extra500_v8","expansion500","expansion500_v2"]);
 const ALLOWED_IT_IS_PRACTICE_ADJECTIVES=new Set(["important","useful","helpful","good","beneficial","easy","hard","difficult","necessary","possible","wise","healthy"]);
@@ -683,11 +683,18 @@ function validateIncomingContent(incoming){
     trilingual:function(x){return x&&String(x.en||"").trim()&&String(x.zh||x.chinese||"").trim()&&String(x.pinyin||"").trim()&&String(x.vi||x.vietnamese||"").trim()}
   };
   const bad=[];
+  const keyFns={
+    vocab:x=>norm(x.word),sentences:x=>String(x.id||""),
+    questions:x=>String(x.id||""),grammar:x=>String(x.id||x.title||""),
+    communication:x=>String(x.id||x.title||""),trilingual:x=>norm(x.en)+"|"+norm(x.zh||x.chinese)
+  };
   Object.keys(rules).forEach(function(key){
     const arr=Array.isArray(incoming[key])?incoming[key]:[];
     if(!arr.length){bad.push(key+" rỗng");return}
     const invalid=arr.reduce(function(n,x){return n+(rules[key](x)?0:1)},0);
     if(invalid>0)bad.push(key+" có "+invalid+"/"+arr.length+" mục không hợp lệ");
+    const keys=arr.map(keyFns[key]).filter(Boolean),dups=keys.length-new Set(keys).size;
+    if(dups>0)bad.push(key+" trùng "+dups+" khóa");
   });
   if(bad.length)throw new Error("Dữ liệu từ xa không an toàn: "+bad.join("; "));
   return true;
@@ -1289,11 +1296,17 @@ function validateProgressImport(parsed){
 async function importProgress(input){
   const file=input?.files?.[0];
   if(!file)return;
+  const previous=userSnapshot(db);
   try{
     const raw=await file.text(),parsed=JSON.parse(raw);
     validateProgressImport(parsed);
     applyUserSnapshot(parsed);
-    save();render();
+    if(!save()){
+      applyUserSnapshot(previous);
+      save();
+      throw new Error("Không thể lưu tiến độ sau khi nhập.");
+    }
+    render();
     toast("Đã nhập tiến độ học tập.");
   }catch(e){toast("Nhập tiến độ lỗi: "+e.message)}
   finally{input.value=""}
