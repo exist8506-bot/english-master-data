@@ -1356,7 +1356,7 @@ function resetProgress(){
   });
   flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
   reviewQueue=[];reviewIndex=0;practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;
-  save();render();toast("Đã đặt lại tiến độ học tập.");
+  view="home";save();render();toast("Đã đặt lại tiến độ học tập.");
 }
 function dailyGoalOptions(){return [5,10,15,20,30].map(function(x){var selected=Number(db.profile.dailyGoal||10)===x?" selected":"";return '<option value="'+x+'"'+selected+'>'+x+' hoạt động</option>';}).join("");}
 function settings(){
