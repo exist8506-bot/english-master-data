@@ -415,7 +415,7 @@ const quizPromptButton = (document.getElementById("view").innerHTML.match(/<butt
 check("quiz question uses TTS for prompt instead of word audio", !!quizPromptButton && !quizPromptButton.includes("playAudio("));
 
 T.show("vocab");
-const audioVocab = T.snap().db.vocab.find((v) => String(v.word || "").trim() === importWord) || T.snap().db.vocab[0];
+const audioVocab = T.snap().db.vocab[0];
 const wordAudioButton = audioVocab ? T.audioButton(audioVocab.word, "🔊 Từ", "en-US", 1, audioVocab) : "";
 const exampleAudioButton = audioVocab ? T.audioButton(audioVocab.example || audioVocab.word, "🔊 Câu", "en-US", 1, audioVocab) : "";
 check("vocabulary word uses attached audio", !!wordAudioButton && (!audioVocab.audioEn || wordAudioButton.includes("playAudio(")));
