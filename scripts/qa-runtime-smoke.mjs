@@ -1095,6 +1095,11 @@ T.setStats({ xp: 0 });
 T.load();
 const recovered = T.snap().db.vocab.find((v) => String(v.word || "").trim() === backupWord);
 check("saved progress schema detector rejects malformed snapshots", !T.savedProgressLooksUsable({stats:{},profile:{}}) && T.savedProgressLooksUsable({stats:{},profile:{},vocabState:[]}));
+check("saved progress detector rejects null vocab states", !T.savedProgressLooksUsable({stats:{},profile:{},vocabState:[null]}));
+const malformedApplyStats={...T.snap().db.stats};
+T.applyUserSnapshot({stats:{xp:malformedApplyStats.xp},profile:{theme:"light"},vocabState:[null,{}, {word:""}]});
+check("malformed vocab state is filtered without crash", T.snap().db.stats.xp===malformedApplyStats.xp);
+
 check("legacy content detector rejects malformed item arrays", !T.legacyContentLooksUsable({vocab:[null],sentences:[{}],questions:[{}],grammar:[{}],communication:[{}],trilingual:[{}]}) && T.legacyContentLooksUsable({
   vocab:[{word:"hello",meaning:"xin chào"}],sentences:[{id:"s1",en:"Hello.",vi:"Xin chào."}],questions:[{id:"q1",prompt:"Q",options:["a","b","c","d"],answer:0}],grammar:[{id:"g1",title:"Present",formula:"S + V"}],communication:[{id:"c1",title:"Hi",lines:[["A","Hello."],["B","Hi."]]}],trilingual:[{en:"hello",zh:"你好",pinyin:"nǐ hǎo",vi:"xin chào"}]
 }));
