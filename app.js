@@ -395,7 +395,7 @@ function addXP(n){db.stats.xp=(db.stats.xp||0)+Number(n||0)}
 function reviewIntervalDays(v,rating){
   const streak=Math.max(1,Number(v?.reviewStreak)||1);
   if(rating==="Chưa nhớ")return 0;
-  const base=Math.min(60,[1,2,4,7,14,30][Math.min(5,streak-1)]||60);
+  const base=[1,2,4,7,14,30,60][Math.min(6,streak-1)]||60;
   return rating==="Rất dễ"?Math.min(90,base*2):base;
 }
 function recordVocabOutcome(word,correct,dueDays,rating){
