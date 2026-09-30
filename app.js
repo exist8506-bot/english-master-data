@@ -1287,7 +1287,7 @@ function resetProgress(){
   reviewQueue=[];reviewIndex=0;
   save();render();toast("Đã đặt lại tiến độ học tập.");
 }
-function dailyGoalOptions(){return [5,10,15,20,30].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.dailyGoal||10)===x?"selected":"")+">'+x+' hoạt động</option>'}).join("");}
+function dailyGoalOptions(){return [5,10,15,20,30].map(function(x){var selected=Number(db.profile.dailyGoal||10)===x?" selected":"";return '<option value="'+x+'"'+selected+'>'+x+' hoạt động</option>';}).join("");}
 function settings(){
   const layout=String(db.profile.layout||"auto");
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
