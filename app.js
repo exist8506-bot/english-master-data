@@ -684,9 +684,9 @@ function validateIncomingContent(incoming){
   };
   const bad=[];
   const keyFns={
-    vocab:x=>norm(x.word),sentences:x=>String(x.id||""),
-    questions:x=>String(x.id||""),grammar:x=>String(x.id||x.title||""),
-    communication:x=>String(x.id||x.title||""),trilingual:x=>norm(x.en)+"|"+norm(x.zh||x.chinese)
+    vocab:x=>norm((x||{}).word),sentences:x=>String((x||{}).id||""),
+    questions:x=>String((x||{}).id||""),grammar:x=>String((x||{}).id||(x||{}).title||""),
+    communication:x=>String((x||{}).id||(x||{}).title||""),trilingual:x=>norm((x||{}).en)+"|"+norm((x||{}).zh||(x||{}).chinese)
   };
   Object.keys(rules).forEach(function(key){
     const arr=Array.isArray(incoming[key])?incoming[key]:[];
