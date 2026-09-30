@@ -13,7 +13,7 @@ let db={
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
-let reviewQueue=[],reviewIndex=0,quickReviewActive=false,validatedContentSignature="",updateInProgress=false;
+let reviewQueue=[],reviewIndex=0,quickReviewActive=false,reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0},validatedContentSignature="",updateInProgress=false;
 let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[],practiceCorrectCount=0;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
