@@ -7,15 +7,38 @@
   "localArtifacts": [
     {
       "file": "English_Master_Offline.html",
-      "sizeBytes": 2998078,
-      "sha256": "34df0e344eb1f1cc56a99216e3aadc106568031312b1c756d25d0bd7f293105a"
+      "sizeBytes": 3039543,
+      "sha256": "72aee38aad0eb932e416b72b9a5f4aa6822f802cd59c1850c51bb1964ee0dcc8"
     },
     {
       "file": "English_Master_V9.1.7.zip",
-      "sizeBytes": 480997,
-      "sha256": "948dae82507006d4c134ab15d37224a9f28d1df46ce044332f47cee9b9406df7"
+      "sizeBytes": 488396,
+      "sha256": "c6ee8c18f4ccbc6b15e14ef67fed0583140d83d65c30fe0da3db40a915301d78"
     }
   ],
+  "bundledData": {
+    "vocabulary": 2000,
+    "sentences": 2000,
+    "questions": 4000,
+    "grammar": 40,
+    "communication": 78,
+    "trilingual": 1500
+  },
+  "qa": {
+    "syntax": "PASS",
+    "pageErrors": "0",
+    "consoleErrors": "0",
+    "mobileViewsTested": 13,
+    "mobileHorizontalOverflow": "PASS",
+    "desktopViewsTested": 13,
+    "desktopHorizontalOverflow": "PASS",
+    "quiz": "PASS (4 options, correct index valid, disabled after answer)",
+    "speaking": "PASS (simulated recognition, stats/XP persisted)",
+    "persistence": "PASS (compact progress snapshot survives reload simulation)",
+    "backup": "PASS (compact export/import)",
+    "offlineUpdate": "PASS (no crash on fetch failure)",
+    "contentAudit": "PASS (IPA complete, sentence links complete, valid quiz answer schema)"
+  },
   "baseGithubAppVersion": "9.1.6",
-  "note": "This branch records the V9.1.7 local build. GitHub main remains the existing 9.1.6 runtime until the V9.1.7 source is synced."
+  "note": "Final V9.1.7 build was deeply QA-tested locally. GitHub main remains the existing 9.1.6 runtime; this branch stores the V9.1.7 build manifest and QA record. The GitHub connector used here does not expose a binary-file upload operation for the 3 MB HTML bundle."
 }
