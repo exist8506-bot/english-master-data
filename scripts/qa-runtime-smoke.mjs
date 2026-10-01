@@ -160,7 +160,7 @@ window.__EM_TEST = {
   dateKey, setDailyGoal, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta, splitSpeechText, tokenLevenshtein, audioCacheSize, preloadAudio, refreshVoiceCache, derivedPoolSignature, normalizeSpeechText, getVoice,
   renderErrorFallback, speechSynthesisUsable, cancelSpeechSynthesis, toggleTheme,
   setView: (v) => { view = v; },
-  setPracticeState: (queue,index,answered) => { practiceQueue = queue; practiceIndex = index; practiceAnswered = answered; practiceAnswerOrder = []; practiceCorrectCount = 0; practiceAnsweredCount = 0; practiceSessionXp = 0; },
+  setPracticeState: (queue,index,answered) => { practiceQueue = queue; practiceIndex = index; practiceAnswered = answered; practiceSelectedIndex = -1; practiceAnswerOrder = []; practiceCorrectCount = 0; practiceAnsweredCount = 0; practiceSessionXp = 0; },
   setQuizCorrectIndex: (v) => { quizCorrectIndex = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -1408,11 +1408,16 @@ check("quiz preserves answered state after rerender", (() => {
   if (!before.quizOptions.length) return false;
   T.answerQuiz(0, expectedCorrect);
   const answered = T.snap();
+  const answeredOptions = [...answered.quizOptions];
+  const answeredCorrectIndex = answered.quizCorrectIndex;
   T.render();
+  const after = T.snap();
   const html = document.getElementById("view").innerHTML;
   return answered.quizSelectedIndex===0 &&
     (Number(answered.db.stats.answered)||0) >= answeredBefore + 1 &&
-    T.snap().quizAnswered === true &&
+    after.quizAnswered === true &&
+    JSON.stringify(after.quizOptions)===JSON.stringify(answeredOptions) &&
+    after.quizCorrectIndex===answeredCorrectIndex &&
     html.includes('disabled') &&
     html.includes("Câu tiếp");
 })());
