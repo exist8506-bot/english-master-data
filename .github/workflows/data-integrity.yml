@@ -13,6 +13,7 @@ on:
 permissions:
   contents: read
 
+# V9.2.0: keep the complete regression suite on every main-branch code/data update.
 jobs:
   data-integrity:
     runs-on: ubuntu-latest
