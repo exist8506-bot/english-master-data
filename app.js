@@ -12,12 +12,12 @@ let db={
   contentCounts:{}
 };
 const VALID_VIEWS=new Set(["home","vocab","sentences","flashcards","practice","quiz","listening","speaking","grammar","communication","trilingual","review","reviewSummary","stats","settings"]);
-let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1;
-let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0,listenAnswered=false;
+let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1,quizSelectedIndex=-1;
+let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0,listenAnswered=false,listenSelected="",listenCorrect="";
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
 let reviewQueue=[],reviewIndex=0,quickReviewActive=false,reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0},validatedContentSignature="",updateInProgress=false;
 let derivedPools={signature:"",sentences:null,communication:null};
-let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[],practiceCorrectCount=0,practiceMode="smart",practiceAnsweredCount=0,practiceSessionXp=0;
+let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceSelectedIndex=-1,practiceAnswerOrder=[],practiceCorrectCount=0,practiceMode="smart",practiceAnsweredCount=0,practiceSessionXp=0;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
 let legacyStorageLoaded=false;
@@ -573,7 +573,10 @@ function toggleTheme(){
 }
 function show(v){
   v=VALID_VIEWS.has(String(v))?String(v):"home";
-  if(v==="listening")listenAnswered=false;
+  const enteringView=v!==view;
+  if(enteringView&&v==="listening"){listenAnswered=false;listenSelected="";listenCorrect="";}
+  if(enteringView&&v==="quiz"){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;quizSelectedIndex=-1;}
+  if(enteringView&&v==="practice"){practiceAnswered=false;practiceSelectedIndex=-1;practiceAnswerOrder=[];}
   stopSpeech();
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
@@ -1125,12 +1128,13 @@ function jumpToItem(kind,raw){
     if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0}
     window.__showListeningText=false;
     listenIndex=n-1;
+    listenAnswered=false;listenSelected="";listenCorrect="";
   }else if(kind==="speaking"){
     stopRecognition();
     speakIndex=n-1;
   }else{
     quizIndex=n-1;
-    quizAnswered=false;
+    quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;quizSelectedIndex=-1;
   }
   save();render();
   return true;
@@ -1286,7 +1290,6 @@ function listening(){renderListening()}
 function renderListening(){
   const list=sentencePracticePool();
   if(!list.length){$("view").innerHTML=shell("Luyện nghe","Chưa có câu luyện độc lập.");return}
-  listenAnswered=false;
   listenIndex=normalizeArrayIndex(listenIndex,list.length);
   const s=list[listenIndex];
   const seen=new Set([norm(s.vi||"")]),sameTopic=shuffle(list.filter(function(x){return x.id!==s.id&&x.vi&&norm(x.topic||"")===norm(s.topic||"")}));
@@ -1299,12 +1302,17 @@ function renderListening(){
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(s.topic||"daily")+'</span><span class="muted">Câu '+(listenIndex%list.length+1)+' / '+list.length+'</span>'+jumpControl("listening",listenIndex%list.length,list.length)+'</div>'+
     '<div class="actions" style="margin:14px 0"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 0.75×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">▶ 1×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1.25,\'en-US\')">🐇 1.25×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔁 Nghe lại</button><button onclick="window.__showListeningText=!window.__showListeningText;renderListening()">👁 '+(showText?"Ẩn câu":"Hiện câu")+'</button></div>'+
     (showText?'<div class="hint"><b>'+esc(s.en)+'</b><br><span class="muted">'+esc(s.vi||"")+'</span></div>':'')+
-    '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){return '<button class="option" onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>'}).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">Hãy nghe rồi chọn.</div></div>');
+    '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){
+      const selected=norm(o)===norm(listenSelected),correct=norm(o)===norm(listenCorrect);
+      const cls=listenAnswered?(correct?" correct":selected?" wrong":""):"";
+      return '<button class="option'+cls+'" '+(listenAnswered?"disabled":"")+' onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>';
+    }).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">'+(listenAnswered?(norm(listenSelected)===norm(listenCorrect)?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(listenCorrect)+"</b>"):"Hãy nghe rồi chọn.")+'</div></div>');
   preloadItemAudio(s,"en-US");
 }
 function listenCheck(el,selected,correct){
   if(listenAnswered)return;
   if(!el||!String(correct??"").trim()){toast("Câu nghe không hợp lệ.");return}
+  listenSelected=String(selected??"");listenCorrect=String(correct??"");
   listenAnswered=true;
   stopSpeech();
   document.querySelectorAll(".option").forEach(function(b){b.disabled=true});
@@ -1319,7 +1327,7 @@ function listenCheck(el,selected,correct){
   listenAdvanceTimer=setTimeout(function(){
     const list=sentencePracticePool();listenAdvanceTimer=0;
     if(view!=="listening"||!list.length)return;
-    listenIndex=(listenIndex+1)%list.length;window.__showListeningText=false;save();renderListening();
+    listenIndex=(listenIndex+1)%list.length;window.__showListeningText=false;listenAnswered=false;listenSelected="";listenCorrect="";save();renderListening();
   },700);
 }
 
@@ -1464,8 +1472,6 @@ function normalizeQuizIndex(){
   return quizIndex;
 }
 function quiz(){
-  quizAnswered=false;
-  quizOptions=[];quizCorrectIndex=-1;
   if(!db.questions.length){$("view").innerHTML=shell("Trắc nghiệm","Chưa có dữ liệu.");return}
   const q=db.questions[normalizeQuizIndex()],raw=Array.isArray(q?.options)?q.options:[];
   const qValid=!!q&&raw.length===4&&raw.every(function(x){return String(x??"").trim()})&&
@@ -1496,8 +1502,15 @@ function quiz(){
   $("view").innerHTML=shell("Trắc nghiệm","Nghe câu hỏi và từng đáp án trước khi chọn.",
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(q.topic||"daily")+'</span><span class="muted">Câu '+(quizIndex%db.questions.length+1)+' / '+db.questions.length+'</span>'+jumpControl("quiz",quizIndex%db.questions.length,db.questions.length)+'</div>'+
     '<div class="actions" style="margin:14px 0">'+audioButton(q.prompt,"🔊 Đọc câu hỏi",guessLang(q.prompt),1,q)+'</div><h2>'+esc(q.prompt)+'</h2><div class="options">'+
-    opts.map(function(o,i){return '<div class="row"><button class="option" style="flex:1" onclick="answerQuiz('+i+','+quizCorrectIndex+')">'+String.fromCharCode(65+i)+". "+esc(o)+'</button>'+audioButton(o,"🔊",guessLang(o),1)+'</div>'}).join("")+
-    '</div><div id="qres" class="hint" style="margin-top:14px">Chọn đáp án.</div></div>');
+    opts.map(function(o,i){
+      const cls=quizAnswered?(i===quizCorrectIndex?" correct":i===quizSelectedIndex?" wrong":""):"";
+      return '<div class="row"><button class="option'+cls+'" style="flex:1" '+(quizAnswered?"disabled":"")+' onclick="answerQuiz('+i+','+quizCorrectIndex+')">'+String.fromCharCode(65+i)+". "+esc(o)+'</button>'+audioButton(o,"🔊",guessLang(o),1)+'</div>';
+    }).join("")+
+    '</div><div id="qres" class="hint" style="margin-top:14px">'+
+      (quizAnswered
+        ? ((quizSelectedIndex===quizCorrectIndex?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>')
+        : "Chọn đáp án.")+
+      '</div></div>');
 }
 function answerQuiz(i,a){
   if(quizAnswered)return;
@@ -1510,12 +1523,13 @@ function answerQuiz(i,a){
   const qIndex=normalizeQuizIndex(),q=db.questions[qIndex];
   if(!q){quizAnswered=false;toast("Không tìm thấy câu hỏi hiện tại.");return}
   const ok=choiceIndex===correctIndex;
+  quizSelectedIndex=choiceIndex;
   document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===choiceIndex&&!ok)b.classList.add("wrong")});
   db.stats.answered=(Number(db.stats.answered)||0)+1;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct=(Number(db.stats.correct)||0)+1;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';
   animateResult("qres",ok?"good":"bad");playUiFeedback(ok?"xp":"bad");save();
 }
-function nextQuiz(){stopSpeech();if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
+function nextQuiz(){stopSpeech();if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;quizSelectedIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;quizSelectedIndex=-1;save();render()}
 
 function blankWordInExample(example,word){
   const text=String(example||""),target=String(word||"").trim();
@@ -1555,7 +1569,7 @@ function startPracticeMode(mode="smart",count=8){
   if(!pool.length){toast("Chưa có từ phù hợp với chế độ luyện này.");return;}
   practiceMode=String(mode||"smart").toLowerCase();
   practiceQueue=buildPracticeSession(count,practiceMode);
-  practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;
+  practiceIndex=0;practiceAnswered=false;practiceSelectedIndex=-1;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;
   if(!practiceQueue.length){toast("Không đủ dữ liệu để tạo bài luyện.");return;}
   render();
 }
@@ -1595,11 +1609,25 @@ function practice(){
   let body='<div class="toolbar"><span class="badge">⚡ '+esc(practiceModeLabel(practiceMode))+'</span><span class="muted">'+(practiceIndex+1)+' / '+practiceQueue.length+' · Đúng '+practiceCorrectCount+' / '+practiceAnsweredCount+'</span></div>';
   if(item.type!=="order"){
     const title=item.type==="meaning"?"Chọn nghĩa đúng":item.type==="translate"?"Chọn từ đúng":"Điền từ còn thiếu";
-    body+='<h2>'+esc(title)+'</h2><div class="hint"><b>'+esc(item.prompt)+'</b></div>'+(item.example?'<p class="muted">'+esc(item.example)+'</p>':"")+'<div class="options" style="margin-top:14px">'+item.options.map(function(o,i){return '<button class="option" '+(practiceAnswered?"disabled":"")+' onclick="practiceAnswer('+i+')">'+String.fromCharCode(65+i)+'. '+esc(o)+'</button>'}).join("")+'</div>';
+    body+='<h2>'+esc(title)+'</h2><div class="hint"><b>'+esc(item.prompt)+'</b></div>'+(item.example?'<p class="muted">'+esc(item.example)+'</p>':"")+'<div class="options" style="margin-top:14px">'+item.options.map(function(o,i){
+      const correctIdx=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
+      const cls=practiceAnswered?(i===correctIdx?" correct":i===practiceSelectedIndex?" wrong":""):"";
+      return '<button class="option'+cls+'" '+(practiceAnswered?"disabled":"")+' onclick="practiceAnswer('+i+')">'+String.fromCharCode(65+i)+'. '+esc(o)+'</button>';
+    }).join("")+'</div>';
   }else{
     body+='<h2>Sắp xếp câu</h2><p class="muted">'+esc(item.prompt)+'</p><div class="practice-order">'+practiceAnswerOrder.map(function(i){return '<button class="token chosen" onclick="practiceRemoveToken('+i+')">'+esc(item.words[i])+'</button>'}).join(" ")+'</div><div class="practice-order">'+item.words.map(function(w,i){const used=practiceAnswerOrder.includes(i);return '<button class="token" '+(used||practiceAnswered?"disabled":"")+' onclick="practicePickToken('+i+')">'+esc(w)+'</button>'}).join(" ")+'</div><button class="primary" style="margin-top:12px" onclick="practiceCheckOrder()">Kiểm tra</button>';
   }
-  body+='<div id="practiceResult" class="hint" style="margin-top:14px">'+(practiceAnswered?"":"Hoàn thành bài rồi kiểm tra đáp án.")+'</div><div class="actions" style="margin-top:14px">'+(practiceAnswered?'<button class="primary" onclick="practiceNext()">Câu tiếp →</button>':"")+'<button onclick="restartPractice()">🔀 Bài khác</button></div><div class="card" style="margin-top:12px"><div class="muted small">Chế độ luyện</div><div class="actions"><button onclick="startPracticeMode(\'smart\',8)">🧠 Thông minh</button><button onclick="startPracticeMode(\'weak\',8)">🔥 Từ yếu</button><button onclick="startPracticeMode(\'favorites\',8)">⭐ Yêu thích</button><button onclick="startPracticeMode(\'new\',8)">🆕 Từ mới</button><button onclick="startPracticeMode(\'mixed\',8)">🎲 Tổng hợp</button></div><div class="muted small" style="margin-top:8px">Đang chọn: <b>'+esc(practiceModeLabel(practiceMode))+'</b> · XP phiên: '+practiceSessionXp+'</div></div>';
+  let preservedResult="Hoàn thành bài rồi kiểm tra đáp án.";
+  if(practiceAnswered){
+    if(item.type==="order"){
+      const actual=practiceAnswerOrder.map(function(i){return item.words[i]}).join(" ");
+      preservedResult=norm(actual)===norm(item.target.replace(/[.!?]+$/,""))?"✓ Chính xác!":"✗ Chưa đúng. Câu đúng: <b>"+esc(item.target)+"</b>";
+    }else{
+      const correctIdx=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
+      preservedResult=practiceSelectedIndex===correctIdx?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(item.answer)+"</b>";
+    }
+  }
+  body+='<div id="practiceResult" class="hint" style="margin-top:14px">'+preservedResult+'</div><div class="actions" style="margin-top:14px">'+(practiceAnswered?'<button class="primary" onclick="practiceNext()">Câu tiếp →</button>':"")+'<button onclick="restartPractice()">🔀 Bài khác</button></div><div class="card" style="margin-top:12px"><div class="muted small">Chế độ luyện</div><div class="actions"><button onclick="startPracticeMode(\'smart\',8)">🧠 Thông minh</button><button onclick="startPracticeMode(\'weak\',8)">🔥 Từ yếu</button><button onclick="startPracticeMode(\'favorites\',8)">⭐ Yêu thích</button><button onclick="startPracticeMode(\'new\',8)">🆕 Từ mới</button><button onclick="startPracticeMode(\'mixed\',8)">🎲 Tổng hợp</button></div><div class="muted small" style="margin-top:8px">Đang chọn: <b>'+esc(practiceModeLabel(practiceMode))+'</b> · XP phiên: '+practiceSessionXp+'</div></div>';
   $("view").innerHTML=shell("Luyện tập","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
 }
 function finishPractice(ok){recordActivity();practiceAnsweredCount++;if(ok){addXP(10);practiceCorrectCount++;practiceSessionXp+=10;}}
@@ -1610,6 +1638,7 @@ function practiceAnswer(index){
   if(!Number.isInteger(choiceIndex)||choiceIndex<0||choiceIndex>=item.options.length){toast("Đáp án không hợp lệ.");return}
   const choice=String(item.options[choiceIndex]??"");
   const ok=norm(choice)===norm(item.answer);
+  practiceSelectedIndex=choiceIndex;
   practiceAnswered=true;finishPractice(ok);if(item.word)recordVocabOutcome(item.word,ok);
   const correctIndex=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
   document.querySelectorAll(".option").forEach(function(b,i){b.disabled=true;if(i===correctIndex)b.classList.add("correct");if(i===index&&!ok)b.classList.add("wrong");});
@@ -1653,13 +1682,13 @@ function practiceNext(){
   if(practiceIndex+1>=practiceQueue.length){
     const lessonSize=practiceQueue.length,correct=practiceCorrectCount,answered=practiceAnsweredCount,perfect=correct===lessonSize,accuracy=answered?Math.round(correct/answered*100):0,sessionXp=practiceSessionXp;
     db.stats.practiceCompleted=(Number(db.stats.practiceCompleted)||0)+1;addXP(30);if(perfect)addXP(50);
-    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;save();
+    practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceSelectedIndex=-1;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;save();
     toast("Hoàn thành "+practiceModeLabel(practiceMode)+": "+correct+"/"+answered+" đúng · "+accuracy+"% · +"+sessionXp+" XP trả lời"+(perfect?" · +50 XP hoàn hảo":""));
     show("home");return;
   }
-  practiceIndex++;practiceAnswered=false;practiceAnswerOrder=[];save();render();
+  practiceIndex++;practiceAnswered=false;practiceSelectedIndex=-1;practiceAnswerOrder=[];save();render();
 }
-function restartPractice(){practiceQueue=buildPracticeSession(8,practiceMode);practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;render();}
+function restartPractice(){practiceQueue=buildPracticeSession(8,practiceMode);practiceIndex=0;practiceAnswered=false;practiceSelectedIndex=-1;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;render();}
 function grammarPracticePool(){
   return db.grammar.filter(function(g){
     const id=String(g.id||"");
@@ -1872,7 +1901,7 @@ function resetProgress(){
   db.vocab.forEach(function(v){
     v.status="New";v.favorite=false;v.reviewDue=null;v.correct_count=0;v.wrong_count=0;v.reviewStreak=0;v.lastReviewed=null;
   });
-  flashIndex=0;flashFlipped=false;listenIndex=0;speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;
+  flashIndex=0;flashFlipped=false;listenIndex=0;listenAnswered=false;listenSelected="";listenCorrect="";speakIndex=0;quizIndex=0;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;quizSelectedIndex=-1;
   reviewQueue=[];reviewIndex=0;quickReviewActive=false;reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceMode="smart";practiceAnsweredCount=0;practiceSessionXp=0;
   view="home";save();render();toast("Đã đặt lại tiến độ học tập.");
 }
