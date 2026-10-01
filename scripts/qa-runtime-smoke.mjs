@@ -337,8 +337,10 @@ check(
   JSON.stringify({standalone:standalone.length,practicePool:practicePool.length,duplicates:practiceKeys.length-new Set(practiceKeys).size})
 );
 check(
-  "500-word audit is per-item, not only aggregate",
-  audit.expansion500 === 500 &&
+  "expansion audit is per-item across V1 and V2, not only aggregate",
+  audit.expansion500 === 1000 &&
+  audit.expansion500V1 === 500 &&
+  audit.expansion500V2 === 500 &&
   Object.values(audit.missing || {}).every((items) => Array.isArray(items)),
   JSON.stringify(audit.missing || {})
 );
