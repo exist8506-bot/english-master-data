@@ -254,3 +254,32 @@ body.layout-phone #backTop{right:14px;bottom:calc(84px + env(safe-area-inset-bot
 @media(prefers-reduced-motion:reduce){
   #view.page-enter,#view.page-enter>.card{will-change:auto}
 }
+
+/* V9.4.0 comprehensive UX foundation */
+:root{--focus:3px solid var(--p);--radius-lg:18px;--radius-md:13px;--surface-2:color-mix(in srgb,var(--card) 92%,var(--bg))}
+body{line-height:1.5}
+h1,h2,h3{line-height:1.2;letter-spacing:-.015em}
+h1,h2,h3,p{margin-top:0}
+.card{box-shadow:var(--shadow-card);transition:box-shadow .18s ease,border-color .18s ease,background-color .18s ease}
+.card:focus-within{border-color:color-mix(in srgb,var(--p) 42%,var(--line));box-shadow:0 0 0 3px var(--p-soft),var(--shadow-card)}
+button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:var(--focus);outline-offset:3px;box-shadow:0 0 0 6px var(--p-soft)!important}
+button[aria-current="page"],aside button.active{background:var(--p-soft)!important;color:var(--p)!important}
+aside button{min-height:42px}
+aside button.active{box-shadow:inset 3px 0 0 var(--p)}
+.table th{position:sticky;top:0;background:var(--card);z-index:1}
+.table tbody tr{transition:background-color .14s ease}
+@media(hover:hover){.table tbody tr:hover{background:var(--p-soft)}.item:hover{border-color:color-mix(in srgb,var(--p) 25%,var(--line))}}
+input::placeholder{color:var(--muted);opacity:.78}
+select{appearance:auto}
+.error-state{text-align:center;padding:34px 22px}
+.error-icon{font-size:40px;margin-bottom:10px}
+.error-state details{text-align:left;margin:16px 0;padding:10px;background:var(--surface-2);border-radius:10px}
+.error-state code{display:block;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:8px}
+.empty{border:1px dashed var(--line);border-radius:var(--radius-md);background:var(--surface-2)}
+.notice{border:1px solid color-mix(in srgb,var(--p) 12%,var(--line))}
+.progress{position:relative}
+.progress .bar{min-width:0;transition:width .35s var(--ease)}
+body.layout-phone .card:focus-within{box-shadow:0 0 0 2px var(--p-soft),var(--shadow-card)}
+body.layout-phone .table th{position:sticky;left:auto}
+@media(max-width:800px){main{padding-top:18px}.card{border-radius:15px}.hero{border-radius:17px}}
+@media(prefers-reduced-motion:reduce){.card,.table tbody tr,.progress .bar{transition:none!important}}

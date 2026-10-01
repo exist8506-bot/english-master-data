@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.12";
+const APP_VERSION="9.4.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -482,7 +482,7 @@ function showBootSkeleton(){
 let toastTimer=0;
 function toast(msg){
   const el=$("toast"); if(!el)return;
-  el.textContent=msg; el.className="show";
+  el.textContent=msg; el.className="show"; el.setAttribute("role","status"); el.setAttribute("aria-live","polite");
   clearTimeout(toastTimer);
   toastTimer=setTimeout(function(){el.className=""},2600);
 }
@@ -1005,6 +1005,12 @@ function applyLayoutMode(){
 function handleViewportChange(){
   if(String(db.profile.layout)==="auto")applyLayoutMode();
 }
+function renderErrorFallback(error){
+  const el=$("view");if(!el)return;
+  const detail=error&&error.message?String(error.message):"Lỗi không xác định";
+  el.innerHTML=shell("Có lỗi khi hiển thị","Dữ liệu học của bạn vẫn được giữ nguyên.",
+    '<div class="card error-state"><div class="error-icon" aria-hidden="true">⚠️</div><h2>Không thể mở màn hình này</h2><p class="muted">Bạn có thể thử tải lại màn hình. Tiến độ học tập không bị xóa.</p><details><summary>Chi tiết kỹ thuật</summary><code>'+esc(detail)+'</code></details><div class="actions"><button class="primary" onclick="render()">🔄 Thử lại</button><button onclick="show("home")">🏠 Về trang chủ</button></div></div>');
+}
 function render(){
   db.vocab=Array.isArray(db.vocab)?db.vocab:[];db.sentences=Array.isArray(db.sentences)?db.sentences:[];
   db.questions=Array.isArray(db.questions)?db.questions:[];db.grammar=Array.isArray(db.grammar)?db.grammar:[];
@@ -1024,7 +1030,7 @@ function render(){
     });
   }
   const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,reviewSummary:reviewSummary,stats:stats,settings:settings}[view]||home;
-  fn();
+  try{fn()}catch(error){console.error("[English Master] render error",error);renderErrorFallback(error)}
   const animate=renderMotion;
   renderMotion=false;
   if(animate){
