@@ -199,3 +199,33 @@ body.layout-phone #backTop{right:14px;bottom:calc(84px + env(safe-area-inset-bot
 @keyframes streakPulse{0%{transform:scale(1)}45%{transform:scale(1.34)}100%{transform:scale(1)}}
 @media(max-width:600px){.xp-burst{top:66px;right:12px}#backTop{right:12px}}
 @media(prefers-reduced-motion:reduce){.xp-burst,#streak.streak-pulse{animation:none!important}#backTop{transition:none!important}}
+
+/* V9.3.8 loading and sync surface */
+#syncStatus{
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  min-height:32px;padding:5px 9px;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);background:color-mix(in srgb,var(--card) 88%,transparent);
+  font-size:11px;font-weight:700;white-space:nowrap;
+  transition:transform .2s var(--ease),border-color .2s ease,background-color .2s ease,color .2s ease;
+}
+#syncStatus[data-state="sync"]{color:var(--p);border-color:rgba(91,91,214,.2);animation:syncPulse 1.1s ease-in-out infinite}
+#syncStatus[data-state="ok"]{color:var(--ok);border-color:rgba(22,131,74,.18)}
+#syncStatus[data-state="error"]{color:var(--bad);border-color:rgba(196,61,61,.18)}
+#view.boot-loading{animation:none}
+.skeleton-line,.skeleton-card span,.skeleton-chips span,.skeleton-progress{
+  position:relative;overflow:hidden;background:linear-gradient(90deg,var(--line),color-mix(in srgb,var(--line) 55%,var(--card)),var(--line));
+  background-size:220% 100%;animation:skeletonWave 1.2s linear infinite;border-radius:10px
+}
+.skeleton-hero{min-height:165px}
+.skeleton-line{height:14px;width:46%;margin:4px 0 11px}.skeleton-line.wide{height:27px;width:62%;border-radius:9px}
+.skeleton-chips{display:flex;gap:8px;margin-top:19px}.skeleton-chips span{height:30px;width:84px;border-radius:999px}
+.skeleton-progress{height:5px;width:100%;margin-top:18px}
+.skeleton-card{min-height:110px;padding:19px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.skeleton-card span:first-child{height:26px;width:38%;border-radius:8px}.skeleton-card span:last-child{height:13px;width:58%}
+@keyframes skeletonWave{0%{background-position:200% 0}100%{background-position:-20% 0}}
+@keyframes syncPulse{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
+@media(max-width:800px){#syncStatus{display:none}}
+@media(prefers-reduced-motion:reduce){
+  #syncStatus{animation:none!important}
+  .skeleton-line,.skeleton-card span,.skeleton-chips span,.skeleton-progress{animation:none!important}
+}

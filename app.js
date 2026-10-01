@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.7";
+const APP_VERSION="9.3.8";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -459,10 +459,25 @@ async function hydrateContent(){
   }
   const hasContent=[db.vocab,db.sentences,db.questions,db.grammar,db.communication,db.trilingual].every(function(arr){return Array.isArray(arr)&&arr.length>0});
   if(!hasContent){
+    showBootSkeleton();
     await updateOnline(true);
   }else if(db.profile.autoUpdate!==false){
     setTimeout(function(){updateOnline(false)},500);
   }
+}
+function setSyncIndicator(state,text){
+  const el=$("syncStatus");if(!el)return;
+  const labels={idle:["●","Đồng bộ"],sync:["↻","Đang đồng bộ"],ok:["✓","Đã đồng bộ"],offline:["•","Ngoại tuyến"],error:["!","Cập nhật lỗi"]};
+  const x=labels[state]||labels.idle;
+  el.textContent=x[0]+" "+x[1];
+  el.dataset.state=state;
+  el.setAttribute("aria-label",text||x[1]);
+  el.title=text||x[1];
+}
+function showBootSkeleton(){
+  const el=$("view");if(!el)return;
+  el.classList.add("boot-loading");
+  el.innerHTML='<section class="card hero skeleton-hero"><div class="skeleton-line wide"></div><div class="skeleton-line"></div><div class="skeleton-chips"><span></span><span></span><span></span></div><div class="skeleton-progress"></div></section><div class="grid"><div class="card skeleton-card"><span></span><span></span></div><div class="card skeleton-card"><span></span><span></span></div><div class="card skeleton-card"><span></span><span></span></div></div>';
 }
 function toast(msg){
   const el=$("toast"); if(!el)return;
@@ -781,6 +796,7 @@ async function getJSON(url){
 async function updateOnline(force){
   if(updateInProgress){toast("Đang cập nhật dữ liệu, vui lòng chờ lượt này hoàn tất.");return}
   updateInProgress=true;
+  setSyncIndicator("sync","Đang kiểm tra và đồng bộ dữ liệu");
   try{
     const m=await getJSON(DATA_URL),ver=String(m.version??"");
     if(!ver)throw new Error("version.json thiếu version");
@@ -797,7 +813,7 @@ async function updateOnline(force){
       return Number(db.contentCounts?.[key])>0 &&
         Number(db.contentCounts[key])===(Array.isArray(db[key])?db[key].length:0);
     });
-    if(!force&&db.lastRemoteVersion===ver&&countsMatch&&!hasBland){toast("Dữ liệu đang mới nhất.");return}
+    if(!force&&db.lastRemoteVersion===ver&&countsMatch&&!hasBland){setSyncIndicator("ok","Dữ liệu đang mới nhất");toast("Dữ liệu đang mới nhất.");return}
 
     const incoming={};
     const downloaded=await Promise.all(Object.keys(spec).map(async function(key){
@@ -869,11 +885,14 @@ async function updateOnline(force){
     const cached=await cacheContent(db);
     if(!cached&&"indexedDB" in window)toast("Nội dung đã cập nhật nhưng chưa tạo được bản cache offline.");
     save();render();
+    setSyncIndicator("ok","Đã đồng bộ dữ liệu từ GitHub");
     toast("Đã đồng bộ GitHub: +"+added+" mục mới, cập nhật "+changed+" mục.");
   }catch(e){
+    setSyncIndicator("error","Cập nhật dữ liệu gặp lỗi");
     toast("Cập nhật lỗi — chưa thay đổi dữ liệu hiện tại: "+e.message);
   }finally{
     updateInProgress=false;
+    setTimeout(function(){if(!updateInProgress)setSyncIndicator(db.lastRemoteVersion?"ok":"idle")},900);
   }
 }
 function validateIncomingContent(incoming){
