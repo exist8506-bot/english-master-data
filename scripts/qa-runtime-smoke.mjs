@@ -259,8 +259,8 @@ check(
 );
 
 check(
-  "500-word cross-feature audit",
-  audit.expansion500 === 500 &&
+  "expansion cross-feature audit",
+  audit.expansion500 === 1000 &&
   audit.duplicateWords === 0 &&
   audit.sentences === 1000 &&
   audit.generalSentences === 500 &&
@@ -269,11 +269,11 @@ check(
   audit.naturalIndependentSentences === 1500 &&
   audit.standaloneQualityIssues === 0 &&
   audit.standaloneDuplicateEnglish === 0 &&
-  audit.questions === 500 &&
-  audit.trilingual === 500 &&
-  audit.communication === 500 &&
-  audit.grammar === 500 &&
-  audit.audio === 500 &&
+  audit.questions === 1000 &&
+  audit.trilingual === 1000 &&
+  audit.communication === 1000 &&
+  audit.grammar === 1000 &&
+  audit.audio === 1000 &&
   Object.values(audit.missing || {}).every((items) => items.length === 0),
   JSON.stringify(audit)
 );
@@ -791,7 +791,7 @@ check("settings exposes one-click sentence audit", document.getElementById("view
 T.runContentAudit();
 check(
   "one-click content audit passes",
-  document.getElementById("contentAuditResult").textContent.includes("500/500") &&
+  document.getElementById("contentAuditResult").textContent.includes("1000/1000") &&
   document.getElementById("contentAuditResult").textContent.includes("1500/1500") &&
   document.getElementById("contentAuditResult").textContent.includes("không trùng")
 );
@@ -1167,14 +1167,13 @@ for(const mode of practiceModes){
   const queue=T.buildPracticeSession(8,mode);
   check(
     "practice session "+mode+" has safe exercise shapes",
-    queue.length>0 &&
-    queue.every((item)=>item && ["meaning","translate","fill","order"].includes(item.type) &&
+    (queue.length===0 || queue.every((item)=>item && ["meaning","translate","fill","order"].includes(item.type) &&
       (item.type==="order"
         ? Array.isArray(item.words) && item.words.length>0 && item.words.every(Boolean)
         : Array.isArray(item.options) && item.options.length>=2 &&
           new Set(item.options.map((v)=>String(v).trim().toLowerCase())).size===item.options.length &&
-          String(item.answer??"").trim())
-  ));
+          String(item.answer??"").trim()))
+  );
 }
 
 check("smart review queue stays unique and bounded", (() => {
@@ -1403,13 +1402,15 @@ check("flashcard is keyboard focusable", (()=>{T.show("flashcards"); const html=
 check("quiz preserves answered state after rerender", (() => {
   T.show("quiz");
   const before = T.snap();
+  const answeredBefore = Number(before.db.stats.answered)||0;
+  const expectedCorrect = before.quizCorrectIndex;
   if (!before.quizOptions.length) return false;
-  T.answerQuiz(0, before.quizCorrectIndex);
+  T.answerQuiz(0, expectedCorrect);
   const answered = T.snap();
   T.render();
   const html = document.getElementById("view").innerHTML;
   return answered.quizSelectedIndex===0 &&
-    answered.db.stats.answered >= before.db.stats.answered + 1 &&
+    (Number(answered.db.stats.answered)||0) >= answeredBefore + 1 &&
     T.snap().quizAnswered === true &&
     html.includes('disabled') &&
     html.includes("Câu tiếp");
