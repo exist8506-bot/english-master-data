@@ -34,3 +34,14 @@ Repo này được dùng làm nguồn lưu trữ và cập nhật dữ liệu ch
 
 ## Final QA gate — V9.3.2
 - Full repository regression suite is required against the final V9.3.2 application commit.
+
+## V9.3.3
+- Fixed false-positive speech normalization for real words such as “were”, “well”, and “its”.
+- Microphone cancellation now clears pending recognition timeouts immediately.
+- Failed audio cache entries are evicted before fallback/retry.
+- Voice selection now prefers exact language/region matches before broader fallbacks.
+- Online content files download in parallel while validation and replacement remain atomic.
+- Added accessibility feedback for the toast status region and regression tests for speech/audio edge cases.
+
+## Final QA gate — V9.3.3
+- Full repository regression suite is required against the final V9.3.3 application commit.

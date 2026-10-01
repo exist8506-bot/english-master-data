@@ -1014,6 +1014,8 @@ check("similarity score exact match is 100", T.similarityScore("Hello world!", "
 check("similarity score empty input is 0", T.similarityScore("", "hello") === 0);
 check("speech similarity normalizes common contractions", T.similarityScore("I'm ready!", "I am ready.") >= 90);
 check("speech similarity penalizes word-order errors", T.similarityScore("world hello", "hello world") < 100);
+check("speech normalization keeps real words intact", T.normalizeSpeechText("We were well. It was its turn. I'll go.") === "we were well it was its turn i will go");
+check("audio cache reuses the same source", (()=>{const before=T.audioCacheSize();T.preloadAudio("qa-audio.mp3");const after=T.audioCacheSize();T.preloadAudio("qa-audio.mp3");return T.audioCacheSize()===after && after===before+1;})());
 
 T.show("speaking");
 check("speaking UI and microphone fallback", document.getElementById("view").innerHTML.includes("Bắt đầu nói"));
@@ -1313,7 +1315,7 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.3.2" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", expectedAppVersion==="9.3.3" && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));

@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.2";
+const APP_VERSION="9.3.3";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -499,6 +499,7 @@ function recordVocabOutcome(word,correct,dueDays,rating){
 
 function stopRecognition(){
   recognitionToken++;
+  clearRecognitionTimer();
   if(activeRecognition){try{activeRecognition.onend=null;activeRecognition.abort()}catch(e){} activeRecognition=null;}
 }
 function show(v){
@@ -544,8 +545,23 @@ function installVoiceCache(){
 }
 function getVoice(lang){
   try{
-    const vs=voiceCacheReady?voiceCache:refreshVoiceCache(),p=String(lang||"en-US").toLowerCase();
-    return vs.find(v=>String(v.lang||"").toLowerCase()===p)||vs.find(v=>String(v.lang||"").toLowerCase().startsWith(p.split("-")[0]))||null;
+    const vs=voiceCacheReady?voiceCache:refreshVoiceCache();
+    const p=String(lang||"en-US").toLowerCase(),parts=p.split("-"),base=parts[0],region=parts[1]||"";
+    let best=null,bestScore=Infinity;
+    for(const v of vs){
+      const vl=String(v?.lang||"").toLowerCase();
+      if(!vl)continue;
+      let score=Infinity;
+      if(vl===p)score=0;
+      else if(region&&vl===base+"-"+region)score=1;
+      else if(vl===base)score=3;
+      else if(vl.startsWith(base+"-"))score=5;
+      else continue;
+      if(v.default)score-=0.75;
+      if(v.localService)score-=0.25;
+      if(score<bestScore){bestScore=score;best=v;}
+    }
+    return best;
   }catch(e){return null}
 }
 function trimAudioCache(){
@@ -654,6 +670,7 @@ function playAudio(url,fallbackText,rate,lang){
     let failed=false;
     const fallback=function(){
       if(failed)return;failed=true;
+      if(audioCache.get(u)===a)audioCache.delete(u);
       if(activeAudio===a)activeAudio=null;
       if(token!==speechToken)return;
       toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");
@@ -740,12 +757,13 @@ async function updateOnline(force){
     if(!force&&db.lastRemoteVersion===ver&&countsMatch&&!hasBland){toast("Dữ liệu đang mới nhất.");return}
 
     const incoming={};
-    for(const key of Object.keys(spec)){
+    const downloaded=await Promise.all(Object.keys(spec).map(async function(key){
       const raw=await getJSON(DATA_URL.replace(/\/[^/]+$/,"/"+spec[key].path));
       const arr=Array.isArray(raw)?raw:(Array.isArray(raw[key])?raw[key]:[]);
       if(!Array.isArray(arr))throw new Error(key+" không trả về mảng dữ liệu");
-      incoming[key]=arr;
-    }
+      return [key,arr];
+    }));
+    downloaded.forEach(function(pair){incoming[pair[0]]=pair[1]});
     validateIncomingContent(incoming);
 
     const next={
@@ -1248,9 +1266,9 @@ function normalizeSpeechText(s){
   t=t
     .replace(/\b(i'm|im)\b/g,"i am")
     .replace(/\b(you're|youre)\b/g,"you are")
-    .replace(/\b(we're|were)\b/g,"we are")
+    .replace(/\b(we're)\b/g,"we are")
     .replace(/\b(they're|theyre)\b/g,"they are")
-    .replace(/\b(it's|its)\b/g,"it is")
+    .replace(/\b(it's)\b/g,"it is")
     .replace(/\b(can't|cant)\b/g,"cannot")
     .replace(/\b(won't|wont)\b/g,"will not")
     .replace(/\b(don't|dont)\b/g,"do not")
@@ -1260,13 +1278,13 @@ function normalizeSpeechText(s){
     .replace(/\b(aren't|arent)\b/g,"are not")
     .replace(/\b(wasn't|wasnt)\b/g,"was not")
     .replace(/\b(weren't|werent)\b/g,"were not")
-    .replace(/\b(i'll|ill)\b/g,"i will")
+    .replace(/\b(i'll)\b/g,"i will")
     .replace(/\b(you'll|youll)\b/g,"you will")
-    .replace(/\b(we'll|well)\b/g,"we will")
+    .replace(/\b(we'll)\b/g,"we will")
     .replace(/\b(they'll|theyll)\b/g,"they will")
-    .replace(/\b(i'd|id)\b/g,"i would")
+    .replace(/\b(i'd)\b/g,"i would")
     .replace(/\b(you'd|youd)\b/g,"you would")
-    .replace(/\b(we'd|wed)\b/g,"we would")
+    .replace(/\b(we'd)\b/g,"we would")
     .replace(/\b(they'd|theyd)\b/g,"they would");
   return t.replace(/[.!?,;:()[\]{}"]/g," ").replace(/\s+/g," ").trim();
 }
