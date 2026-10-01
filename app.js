@@ -1,4 +1,4 @@
-const APP_VERSION="9.2.0";
+const APP_VERSION="9.3.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -198,6 +198,15 @@ function dailyHistorySeries(days=7){
 }
 function dailyGoalsMet(days=7){
   return dailyHistorySeries(days).filter(x=>x.units>=x.goal).length;
+}
+function setDailyGoal(value){
+  const n=Number(value);
+  if(!Number.isInteger(n)||n<1||n>100){toast("Mục tiêu ngày không hợp lệ.");return}
+  ensureDailyProgress();
+  db.profile.dailyGoal=n;
+  syncDailyHistoryEntry();
+  save();
+  render();
 }
 function dailyGoal(){const n=Number(db.profile.dailyGoal);return Number.isFinite(n)?Math.max(1,Math.min(100,Math.floor(n))):10;}
 function dailyPercent(){ensureDailyProgress();return Math.min(100,Math.round((Number(db.stats.dailyUnits)||0)/dailyGoal()*100));}
@@ -1068,6 +1077,9 @@ function renderListening(){
     '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){return '<button class="option" onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>'}).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">Hãy nghe rồi chọn.</div></div>');
 }
 function listenCheck(el,selected,correct){
+  if(listenAnswered)return;
+  if(!el||!String(correct??"").trim()){toast("Câu nghe không hợp lệ.");return}
+  listenAnswered=true;
   stopSpeech();
   document.querySelectorAll(".option").forEach(function(b){b.disabled=true});
   const ok=norm(selected)===norm(correct);el.classList.add(ok?"correct":"wrong");
@@ -1223,7 +1235,8 @@ function answerQuiz(i,a){
   const choiceIndex=Number.isInteger(Number(i))?Number(i):-1;
   if(choiceIndex<0||choiceIndex>=quizOptions.length){toast("Đáp án không hợp lệ.");return}
   stopSpeech();
-  const correctIndex=Number.isInteger(quizCorrectIndex)&&quizCorrectIndex>=0?quizCorrectIndex:Number(a);
+  if(!Number.isInteger(quizCorrectIndex)||quizCorrectIndex<0||quizCorrectIndex>=quizOptions.length){toast("Câu hỏi chưa sẵn sàng.");return}
+  const correctIndex=quizCorrectIndex;
   quizAnswered=true;
   const qIndex=normalizeQuizIndex(),q=db.questions[qIndex];
   if(!q){quizAnswered=false;toast("Không tìm thấy câu hỏi hiện tại.");return}
@@ -1306,7 +1319,7 @@ function buildPracticeSession(count=8,mode="smart"){
 }
 function practice(){
   if(!practiceQueue.length)practiceQueue=buildPracticeSession(8,practiceMode);
-  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9.2","Chưa đủ dữ liệu để tạo bài.");return;}
+  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9.3","Chưa đủ dữ liệu để tạo bài.");return;}
   practiceIndex=normalizeArrayIndex(practiceIndex,practiceQueue.length);
   const item=practiceQueue[practiceIndex];
   let body='<div class="toolbar"><span class="badge">⚡ '+esc(practiceModeLabel(practiceMode))+'</span><span class="muted">'+(practiceIndex+1)+' / '+practiceQueue.length+' · Đúng '+practiceCorrectCount+' / '+practiceAnsweredCount+'</span></div>';
@@ -1317,13 +1330,15 @@ function practice(){
     body+='<h2>Sắp xếp câu</h2><p class="muted">'+esc(item.prompt)+'</p><div class="practice-order">'+practiceAnswerOrder.map(function(i){return '<button class="token chosen" onclick="practiceRemoveToken('+i+')">'+esc(item.words[i])+'</button>'}).join(" ")+'</div><div class="practice-order">'+item.words.map(function(w,i){const used=practiceAnswerOrder.includes(i);return '<button class="token" '+(used||practiceAnswered?"disabled":"")+' onclick="practicePickToken('+i+')">'+esc(w)+'</button>'}).join(" ")+'</div><button class="primary" style="margin-top:12px" onclick="practiceCheckOrder()">Kiểm tra</button>';
   }
   body+='<div id="practiceResult" class="hint" style="margin-top:14px">'+(practiceAnswered?"":"Hoàn thành bài rồi kiểm tra đáp án.")+'</div><div class="actions" style="margin-top:14px">'+(practiceAnswered?'<button class="primary" onclick="practiceNext()">Câu tiếp →</button>':"")+'<button onclick="restartPractice()">🔀 Bài khác</button></div><div class="card" style="margin-top:12px"><div class="muted small">Chế độ luyện</div><div class="actions"><button onclick="startPracticeMode(\'smart\',8)">🧠 Thông minh</button><button onclick="startPracticeMode(\'weak\',8)">🔥 Từ yếu</button><button onclick="startPracticeMode(\'favorites\',8)">⭐ Yêu thích</button><button onclick="startPracticeMode(\'new\',8)">🆕 Từ mới</button><button onclick="startPracticeMode(\'mixed\',8)">🎲 Tổng hợp</button></div><div class="muted small" style="margin-top:8px">Đang chọn: <b>'+esc(practiceModeLabel(practiceMode))+'</b> · XP phiên: '+practiceSessionXp+'</div></div>';
-  $("view").innerHTML=shell("Luyện tập V9.2","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
+  $("view").innerHTML=shell("Luyện tập V9.3","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
 }
 function finishPractice(ok){recordActivity();practiceAnsweredCount++;if(ok){addXP(10);practiceCorrectCount++;practiceSessionXp+=10;}}
 function practiceAnswer(index){
   if(practiceAnswered)return;
   const item=practiceQueue[practiceIndex];if(!item||item.type==="order")return;
-  const choice=String(item.options[index]??"");
+  const choiceIndex=Number(index);
+  if(!Number.isInteger(choiceIndex)||choiceIndex<0||choiceIndex>=item.options.length){toast("Đáp án không hợp lệ.");return}
+  const choice=String(item.options[choiceIndex]??"");
   const ok=norm(choice)===norm(item.answer);
   practiceAnswered=true;finishPractice(ok);if(item.word)recordVocabOutcome(item.word,ok);
   const correctIndex=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
@@ -1433,7 +1448,7 @@ function stats(){
   const weak=weakVocabularyPool().filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
   const history=dailyHistorySeries(7),goalsMet=dailyGoalsMet(7);
   const historyHtml=history.map(function(x){return '<div class="item"><div class="toolbar"><span>'+x.label+'</span><b>'+x.units+'/'+x.goal+'</b></div><div class="progress" style="margin-top:6px"><div class="bar" style="width:'+x.pct+'%"></div></div></div>';}).join("");
-  $("view").innerHTML=shell("Tiến độ V9.2","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
+  $("view").innerHTML=shell("Tiến độ V9.3","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><p class="muted small">'+pct+'% hoàn thành · còn '+Math.max(0,target-done)+' hoạt động.</p></div>'+
     '<div class="card"><div class="toolbar"><b>📅 7 ngày gần đây</b><b>'+goalsMet+'/7 đạt mục tiêu</b></div><div class="list" style="margin-top:10px">'+historyHtml+'</div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Từ đã học</div></div><div class="card"><div class="big">'+(db.stats.practiceCompleted||0)+'</div><div class="muted">Bài luyện hoàn thành</div></div></div>'+

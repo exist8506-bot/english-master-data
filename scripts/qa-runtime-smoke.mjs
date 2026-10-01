@@ -153,7 +153,7 @@ try {
 
 const hooks = `
 window.__EM_TEST = {
-  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, practiceMode, practiceAnsweredCount, practiceSessionXp, quickReviewActive, reviewSession: {...reviewSession}, lastReviewSummary: window.__lastReviewSummary ? {...window.__lastReviewSummary} : null }),
+  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, practiceMode, practiceAnsweredCount, practiceSessionXp, quickReviewActive, reviewSession: {...reviewSession}, listenAnswered, lastReviewSummary: window.__lastReviewSummary ? {...window.__lastReviewSummary} : null }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview, buildReviewQueue,
   listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practiceVocabularyPool, practiceModeLabel, startPracticeMode, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
@@ -675,6 +675,12 @@ const invalidQuizAnswerBefore = T.snap().db.stats.answered;
 const invalidQuizIndexBefore = T.snap().quizIndex;
 T.answerQuiz(999, T.snap().quizCorrectIndex);
 check("invalid quiz choice is ignored", T.snap().db.stats.answered === invalidQuizAnswerBefore && T.snap().quizIndex === invalidQuizIndexBefore);
+const savedQuizCorrectIndex = T.snap().quizCorrectIndex;
+T.snap().quizCorrectIndex = -1;
+const quizAnsweredBeforeInvalidCorrect = T.snap().db.stats.answered;
+T.answerQuiz(0, 0);
+check("quiz rejects missing internal correct index", T.snap().db.stats.answered === quizAnsweredBeforeInvalidCorrect);
+T.snap().quizCorrectIndex = savedQuizCorrectIndex;
 const quizPromptButton = (document.getElementById("view").innerHTML.match(/<button[^>]*>🔊 Đọc câu hỏi<\/button>/) || [])[0] || "";
 check("quiz question uses TTS for prompt instead of word audio", !!quizPromptButton && !quizPromptButton.includes("playAudio("));
 
@@ -707,6 +713,15 @@ const listenOptionCount=(listeningHtml.match(/class="option"/g)||[]).length;
 check("listening renders up to four unique choices", listenOptionCount>=2 && listenOptionCount<=4);
 
 const sentenceAnsweredBefore = T.snap().db.stats.sentenceAnswered || 0;
+const sentenceCorrectBefore = T.snap().db.stats.sentenceCorrect || 0;
+if (currentSentence) {
+  const listenButton = new El("listen-option-idempotent", "button");
+  T.listenCheck(listenButton, currentSentence.vi, currentSentence.vi);
+  T.listenCheck(listenButton, currentSentence.vi, currentSentence.vi);
+}
+const afterDoubleListen = T.snap().db.stats;
+check("listening double-tap is scored only once", afterDoubleListen.sentenceAnswered === sentenceAnsweredBefore + 1 && afterDoubleListen.sentenceCorrect === sentenceCorrectBefore + 1 && T.snap().listenAnswered === true);
+T.show("listening");
 if (currentSentence) T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
 const afterListen = T.snap().db.stats;
 check("listening interaction", afterListen.sentenceAnswered === sentenceAnsweredBefore + 1 && afterListen.sentenceCorrect >= 1);
@@ -883,6 +898,10 @@ localStorage.setItem=originalSetItem;
 check("valid import is atomic when storage save fails", T.snap().db.stats.xp===importPreserveStats.xp);
 
 T.show("practice");
+const invalidPracticeBefore = T.snap().practiceAnsweredCount;
+T.practiceAnswer(999);
+check("invalid practice choice is ignored", T.snap().practiceAnsweredCount === invalidPracticeBefore && T.snap().practiceAnswered === false);
+
 const resetPracticeSeed=T.snap();
 if(resetPracticeSeed.practiceQueue.length){
   const firstResetItem=resetPracticeSeed.practiceQueue[0];
@@ -917,6 +936,9 @@ check("reset clears practice session state", resetSnap.practiceQueue.length===0 
 check("reset clears daily history", Array.isArray(resetSnap.db.stats.dailyHistory) && resetSnap.db.stats.dailyHistory.length===0);
 
 
+T.setDailyGoal(20);
+const goalToday = T.snap().db.stats.dailyHistory.find(x => x.date === T.snap().db.stats.dailyDate);
+check("daily goal change updates today's history", T.snap().db.profile.dailyGoal === 20 && goalToday?.goal === 20);
 T.applyUserSnapshot(beforeReset.db);
 T.save();
 T.show("settings");
@@ -1276,7 +1298,7 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.2.0" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", expectedAppVersion==="9.3.0" && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));

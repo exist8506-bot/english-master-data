@@ -11,3 +11,6 @@ Repo này được dùng làm nguồn lưu trữ và cập nhật dữ liệu ch
 
 ## V9.2.0
 - Stability hardening for speech recognition, quiz input validation, and lifecycle progress persistence.
+
+## V9.3.0
+- Logic hardening for listening double-tap scoring, malformed practice/quiz input, and daily-goal history synchronization.
