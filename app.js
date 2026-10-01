@@ -1,4 +1,4 @@
-const APP_VERSION="9.4.2";
+const APP_VERSION="9.4.3";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -665,8 +665,17 @@ function splitSpeechText(text,maxLength=180){
   if(current)chunks.push(current);
   return chunks.length?chunks:[t];
 }
+function speechSynthesisUsable(){
+  try{
+    const synth=window.speechSynthesis;
+    return !!synth&&typeof synth.speak==="function"&&typeof synth.cancel==="function"&&typeof SpeechSynthesisUtterance==="function";
+  }catch(e){return false}
+}
+function cancelSpeechSynthesis(){
+  try{if(window.speechSynthesis&&typeof window.speechSynthesis.cancel==="function")window.speechSynthesis.cancel()}catch(e){}
+}
 function speak(text,rate,lang,retry,skipContentAudio){
-  if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
+  if(!speechSynthesisUsable()){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const t=String(text??"").trim();if(!t)return;
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
   const token=++speechToken;
@@ -681,8 +690,13 @@ function speak(text,rate,lang,retry,skipContentAudio){
   const parts=splitSpeechText(t),active=function(){return token===speechToken};let partIndex=0;
   const runPart=function(){
     if(!active()||partIndex>=parts.length)return;
-    try{window.speechSynthesis.cancel()}catch(e){}
-    const u=new SpeechSynthesisUtterance(parts[partIndex++]);
+    cancelSpeechSynthesis();
+    let u;
+    try{u=new SpeechSynthesisUtterance(parts[partIndex++])}catch(e){
+      if(attempt<1){setTimeout(function(){if(active())speak(t,r,l,1,skipContentAudio)},160)}
+      else toast("Không thể tạo giọng đọc trên trình duyệt này.");
+      return;
+    }
     u.lang=l;u.rate=r;u.pitch=1;u.volume=1;
     const v=getVoice(l);if(v)u.voice=v;
     u.onend=function(){if(active())setTimeout(runPart,20)};
@@ -706,14 +720,16 @@ function speak(text,rate,lang,retry,skipContentAudio){
   }else runPart();
 }
 function speakSequence(lines,rate,lang){
-  if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
+  if(!speechSynthesisUsable()){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const seq=(lines||[]).map(String).map(function(x){return x.trim()}).filter(Boolean),r=Math.max(0.5,Math.min(1.5,Number(rate)||0.92)),l=lang||"en-US",token=++speechToken;
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
-  try{window.speechSynthesis.cancel()}catch(e){}
+  cancelSpeechSynthesis();
   let i=0;
   function next(){
     if(token!==speechToken||i>=seq.length)return;
-    const u=new SpeechSynthesisUtterance(seq[i++]);u.lang=l;u.rate=r;u.pitch=1;u.volume=1;
+    let u;
+    try{u=new SpeechSynthesisUtterance(seq[i++])}catch(e){if(token===speechToken)toast("Không thể tạo giọng đọc trên trình duyệt này.");return}
+    u.lang=l;u.rate=r;u.pitch=1;u.volume=1;
     const v=getVoice(l);if(v)u.voice=v;
     u.onend=function(){if(token===speechToken)next()};
     u.onerror=function(){if(token===speechToken)setTimeout(next,120)};
@@ -730,7 +746,7 @@ function playAudio(url,fallbackText,rate,lang){
   const u=String(url||"").trim(),t=String(fallbackText||"").trim(),r=Math.max(0.5,Math.min(2,Number(rate)||1)),l=lang||guessLang(t);
   if(!u){if(t)speak(t,r,l);return}
   const token=++speechToken;
-  if("speechSynthesis" in window)window.speechSynthesis.cancel();
+  cancelSpeechSynthesis();
   try{
     if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
     let a=audioCache.get(u);
@@ -1198,6 +1214,8 @@ function flashcards(){
   const idx=reviewActive?reviewIndex:flashIndex;
   const v=reviewActive?db.vocab.find(function(x){return norm(x.word)===norm(reviewQueue[idx%reviewQueue.length])}):list[idx%list.length];
   if(!v){reviewQueue=[];reviewIndex=0;return flashcards();}
+  const flashAria=flashFlipped?"Hiện mặt trước của thẻ":"Lật thẻ để xem nghĩa";
+  const flashKeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();flashFlipped=!flashFlipped;renderFlashcards()}";
   const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+reviewMeta(v)+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
   const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US",v)+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
   $("view").innerHTML=shell(reviewActive?(quickReviewActive?"Học nhanh hôm nay":"Ôn tập bằng Flashcards"):"Flashcards",reviewActive?(quickReviewActive?"Phiên 10 từ ưu tiên: đến hạn → yếu → mới.":"Đang ôn các từ đến hạn/chưa nhớ."):"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
@@ -1712,7 +1730,7 @@ function stats(){
   const weak=weakVocabularyPool().filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
   const history=dailyHistorySeries(7),goalsMet=dailyGoalsMet(7);
   const historyHtml=history.map(function(x){return '<div class="item"><div class="toolbar"><span>'+x.label+'</span><b>'+x.units+'/'+x.goal+'</b></div><div class="progress" style="margin-top:6px"><div class="bar" style="width:'+x.pct+'%"></div></div></div>';}).join("");
-  $("view").innerHTML=shell("Tiến độ V9.3.1","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
+  $("view").innerHTML=shell("Tiến độ","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><p class="muted small">'+pct+'% hoàn thành · còn '+Math.max(0,target-done)+' hoạt động.</p></div>'+
     '<div class="card"><div class="toolbar"><b>📅 7 ngày gần đây</b><b>'+goalsMet+'/7 đạt mục tiêu</b></div><div class="list" style="margin-top:10px">'+historyHtml+'</div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Từ đã học</div></div><div class="card"><div class="big">'+(db.stats.practiceCompleted||0)+'</div><div class="muted">Bài luyện hoàn thành</div></div></div>'+
