@@ -670,6 +670,11 @@ const answeredAfterFirst = snap.db.stats.answered;
 T.answerQuiz(correctChoice, correctChoice);
 check("quiz blocks double-answer scoring", T.snap().db.stats.answered === answeredAfterFirst && T.snap().db.stats.correct === correctBefore + 1);
 
+T.show("quiz");
+const invalidQuizAnswerBefore = T.snap().db.stats.answered;
+const invalidQuizIndexBefore = T.snap().quizIndex;
+T.answerQuiz(999, T.snap().quizCorrectIndex);
+check("invalid quiz choice is ignored", T.snap().db.stats.answered === invalidQuizAnswerBefore && T.snap().quizIndex === invalidQuizIndexBefore);
 const quizPromptButton = (document.getElementById("view").innerHTML.match(/<button[^>]*>🔊 Đọc câu hỏi<\/button>/) || [])[0] || "";
 check("quiz question uses TTS for prompt instead of word audio", !!quizPromptButton && !quizPromptButton.includes("playAudio("));
 
@@ -971,6 +976,7 @@ check("cached content validator rejects incomplete cache", !T.usableCachedConten
 }));
 check("similarity score exact match is 100", T.similarityScore("Hello world!", "hello world.") === 100);
 check("similarity score empty input is 0", T.similarityScore("", "hello") === 0);
+check("speech similarity normalizes common contractions", T.similarityScore("I'm ready!", "I am ready.") >= 90);
 
 T.show("speaking");
 check("speaking UI and microphone fallback", document.getElementById("view").innerHTML.includes("Bắt đầu nói"));
@@ -1270,7 +1276,7 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.1.6" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", expectedAppVersion==="9.2.0" && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));

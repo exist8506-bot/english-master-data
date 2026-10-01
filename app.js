@@ -1,4 +1,4 @@
-const APP_VERSION="9.1.6";
+const APP_VERSION="9.2.0";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -1106,11 +1106,12 @@ function startRecognition(){
   stopRecognition();
   const list=sentencePracticePool();if(!list.length){toast("Chưa có câu luyện độc lập.");return}
   speakIndex=normalizeArrayIndex(speakIndex,list.length);
-  const target=list[speakIndex].en,r=new SR(),token=++recognitionToken;
+  const target=list[speakIndex].en,r=new SR(),token=++recognitionToken;let handledResult=false;
   activeRecognition=r;r.lang="en-US";r.interimResults=false;r.maxAlternatives=1;
   const out=$("speechResult");if(out)out.textContent="🎙️ Đang nghe...";
   r.onresult=function(e){
-    if(token!==recognitionToken||activeRecognition!==r)return;
+    if(handledResult)return;if(token!==recognitionToken||activeRecognition!==r)return;
+    handledResult=true;
     const heard=e.results?.[0]?.[0]?.transcript||"",score=similarityScore(heard,target);
     if(out)out.innerHTML="<b>Bạn nói:</b> "+esc(heard)+"<br><b>Mức khớp:</b> "+score+"%<br><span class=\"muted\">Đây là độ tương đồng văn bản, không phải chấm phát âm chuyên môn.</span>";
     db.stats.sentenceAnswered=(Number(db.stats.sentenceAnswered)||0)+1;
@@ -1132,10 +1133,38 @@ function startRecognition(){
   r.onend=function(){if(activeRecognition===r)activeRecognition=null;};
   try{r.start()}catch(e){if(activeRecognition===r)activeRecognition=null;toast("Microphone đang bận. Hãy thử lại.");}
 }
+function normalizeSpeechText(s){
+  let t=norm(s).replace(/’/g,"'");
+  t=t
+    .replace(/\b(i'm|im)\b/g,"i am")
+    .replace(/\b(you're|youre)\b/g,"you are")
+    .replace(/\b(we're|were)\b/g,"we are")
+    .replace(/\b(they're|theyre)\b/g,"they are")
+    .replace(/\b(it's|its)\b/g,"it is")
+    .replace(/\b(can't|cant)\b/g,"cannot")
+    .replace(/\b(won't|wont)\b/g,"will not")
+    .replace(/\b(don't|dont)\b/g,"do not")
+    .replace(/\b(doesn't|doesnt)\b/g,"does not")
+    .replace(/\b(didn't|didnt)\b/g,"did not")
+    .replace(/\b(isn't|isnt)\b/g,"is not")
+    .replace(/\b(aren't|arent)\b/g,"are not")
+    .replace(/\b(wasn't|wasnt)\b/g,"was not")
+    .replace(/\b(weren't|werent)\b/g,"were not")
+    .replace(/\b(i'll|ill)\b/g,"i will")
+    .replace(/\b(you'll|youll)\b/g,"you will")
+    .replace(/\b(we'll|well)\b/g,"we will")
+    .replace(/\b(they'll|theyll)\b/g,"they will")
+    .replace(/\b(i'd|id)\b/g,"i would")
+    .replace(/\b(you'd|youd)\b/g,"you would")
+    .replace(/\b(we'd|wed)\b/g,"we would")
+    .replace(/\b(they'd|theyd)\b/g,"they would");
+  return t.replace(/[.!?,;:()[\]{}"]/g," ").replace(/\s+/g," ").trim();
+}
 function similarityScore(a,b){
-  const A=norm(a).replace(/[.!?,]/g,"").split(" ").filter(Boolean),B=norm(b).replace(/[.!?,]/g,"").split(" ").filter(Boolean);
+  const A=normalizeSpeechText(a).split(" ").filter(Boolean),B=normalizeSpeechText(b).split(" ").filter(Boolean);
   if(!A.length||!B.length)return 0;let hit=0;const used=new Set();
-  A.forEach(function(x){const i=B.findIndex(function(y,j){return !used.has(j)&&x===y});if(i>=0){hit++;used.add(i)}});return Math.round(hit/Math.max(A.length,B.length)*100);
+  A.forEach(function(x){const i=B.findIndex(function(y,j){return !used.has(j)&&x===y});if(i>=0){hit++;used.add(i)}});
+  return Math.round(hit/Math.max(A.length,B.length)*100);
 }
 
 
@@ -1191,13 +1220,15 @@ function quiz(){
 }
 function answerQuiz(i,a){
   if(quizAnswered)return;
+  const choiceIndex=Number.isInteger(Number(i))?Number(i):-1;
+  if(choiceIndex<0||choiceIndex>=quizOptions.length){toast("Đáp án không hợp lệ.");return}
   stopSpeech();
   const correctIndex=Number.isInteger(quizCorrectIndex)&&quizCorrectIndex>=0?quizCorrectIndex:Number(a);
   quizAnswered=true;
   const qIndex=normalizeQuizIndex(),q=db.questions[qIndex];
   if(!q){quizAnswered=false;toast("Không tìm thấy câu hỏi hiện tại.");return}
-  const ok=i===correctIndex;
-  document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
+  const ok=choiceIndex===correctIndex;
+  document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===choiceIndex&&!ok)b.classList.add("wrong")});
   db.stats.answered=(Number(db.stats.answered)||0)+1;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct=(Number(db.stats.correct)||0)+1;addXP(10)}
   $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
 }
@@ -1275,7 +1306,7 @@ function buildPracticeSession(count=8,mode="smart"){
 }
 function practice(){
   if(!practiceQueue.length)practiceQueue=buildPracticeSession(8,practiceMode);
-  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9","Chưa đủ dữ liệu để tạo bài.");return;}
+  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9.2","Chưa đủ dữ liệu để tạo bài.");return;}
   practiceIndex=normalizeArrayIndex(practiceIndex,practiceQueue.length);
   const item=practiceQueue[practiceIndex];
   let body='<div class="toolbar"><span class="badge">⚡ '+esc(practiceModeLabel(practiceMode))+'</span><span class="muted">'+(practiceIndex+1)+' / '+practiceQueue.length+' · Đúng '+practiceCorrectCount+' / '+practiceAnsweredCount+'</span></div>';
@@ -1286,7 +1317,7 @@ function practice(){
     body+='<h2>Sắp xếp câu</h2><p class="muted">'+esc(item.prompt)+'</p><div class="practice-order">'+practiceAnswerOrder.map(function(i){return '<button class="token chosen" onclick="practiceRemoveToken('+i+')">'+esc(item.words[i])+'</button>'}).join(" ")+'</div><div class="practice-order">'+item.words.map(function(w,i){const used=practiceAnswerOrder.includes(i);return '<button class="token" '+(used||practiceAnswered?"disabled":"")+' onclick="practicePickToken('+i+')">'+esc(w)+'</button>'}).join(" ")+'</div><button class="primary" style="margin-top:12px" onclick="practiceCheckOrder()">Kiểm tra</button>';
   }
   body+='<div id="practiceResult" class="hint" style="margin-top:14px">'+(practiceAnswered?"":"Hoàn thành bài rồi kiểm tra đáp án.")+'</div><div class="actions" style="margin-top:14px">'+(practiceAnswered?'<button class="primary" onclick="practiceNext()">Câu tiếp →</button>':"")+'<button onclick="restartPractice()">🔀 Bài khác</button></div><div class="card" style="margin-top:12px"><div class="muted small">Chế độ luyện</div><div class="actions"><button onclick="startPracticeMode(\'smart\',8)">🧠 Thông minh</button><button onclick="startPracticeMode(\'weak\',8)">🔥 Từ yếu</button><button onclick="startPracticeMode(\'favorites\',8)">⭐ Yêu thích</button><button onclick="startPracticeMode(\'new\',8)">🆕 Từ mới</button><button onclick="startPracticeMode(\'mixed\',8)">🎲 Tổng hợp</button></div><div class="muted small" style="margin-top:8px">Đang chọn: <b>'+esc(practiceModeLabel(practiceMode))+'</b> · XP phiên: '+practiceSessionXp+'</div></div>';
-  $("view").innerHTML=shell("Luyện tập V9","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
+  $("view").innerHTML=shell("Luyện tập V9.2","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
 }
 function finishPractice(ok){recordActivity();practiceAnsweredCount++;if(ok){addXP(10);practiceCorrectCount++;practiceSessionXp+=10;}}
 function practiceAnswer(index){
@@ -1402,7 +1433,7 @@ function stats(){
   const weak=weakVocabularyPool().filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
   const history=dailyHistorySeries(7),goalsMet=dailyGoalsMet(7);
   const historyHtml=history.map(function(x){return '<div class="item"><div class="toolbar"><span>'+x.label+'</span><b>'+x.units+'/'+x.goal+'</b></div><div class="progress" style="margin-top:6px"><div class="bar" style="width:'+x.pct+'%"></div></div></div>';}).join("");
-  $("view").innerHTML=shell("Tiến độ V9","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
+  $("view").innerHTML=shell("Tiến độ V9.2","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><p class="muted small">'+pct+'% hoàn thành · còn '+Math.max(0,target-done)+' hoạt động.</p></div>'+
     '<div class="card"><div class="toolbar"><b>📅 7 ngày gần đây</b><b>'+goalsMet+'/7 đạt mục tiêu</b></div><div class="list" style="margin-top:10px">'+historyHtml+'</div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Từ đã học</div></div><div class="card"><div class="big">'+(db.stats.practiceCompleted||0)+'</div><div class="muted">Bài luyện hoàn thành</div></div></div>'+
@@ -1543,6 +1574,15 @@ function settings(){
     '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>'+
     '<div class="card"><h2>💾 Dữ liệu học tập</h2><p class="small muted">Xuất tiến độ để sao lưu hoặc nhập lại trên thiết bị khác. Đặt lại chỉ xóa tiến độ, không xóa dữ liệu bài học.</p><div class="actions"><button class="primary" onclick="exportProgress()">⬇️ Xuất tiến độ</button><button onclick="openProgressImport()">⬆️ Nhập tiến độ</button><button onclick="resetProgress()">♻️ Đặt lại tiến độ</button></div><input id="progressImport" type="file" accept="application/json,.json" style="display:none" onchange="importProgress(this)"></div>');
 }
+function persistLifecycle(){
+  try{save();}catch(e){}
+}
+function installLifecyclePersistence(){
+  try{
+    document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")persistLifecycle()});
+    window.addEventListener("pagehide",persistLifecycle);
+  }catch(e){}
+}
 function registerServiceWorker(){
   if("serviceWorker" in navigator){
     window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){})});
@@ -1587,6 +1627,7 @@ function init(){
   hydrateContent();
   registerServiceWorker();
   checkAppVersion();
+  installLifecyclePersistence();
 }
 init();
 
