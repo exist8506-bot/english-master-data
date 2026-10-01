@@ -437,6 +437,7 @@ check("remote validator handles null records safely", (()=>{try{T.validateIncomi
 }});return false;}catch(e){return true;}})());
 
 check("fill-in-the-blank only replaces whole words", T.blankWordInExample("I like bread.", "bread").includes("_____") && T.blankWordInExample("The printer is useful.", "print")==="");
+check("fill-in-the-blank hides the matched word without leaking the answer", (()=>{const out=T.blankWordInExample("I called my daughter after dinner.","daughter");return out==="I called my _____ after dinner."&&!out.includes("daughter");})());
 check("spaced repetition interval grows with memory streak",
   T.reviewIntervalDays({reviewStreak:1},"Đã nhớ")===1 &&
   T.reviewIntervalDays({reviewStreak:2},"Đã nhớ")===2 &&
