@@ -470,7 +470,7 @@ function setSyncIndicator(state,text){
   const labels={idle:["●","Đồng bộ"],sync:["↻","Đang đồng bộ"],ok:["✓","Đã đồng bộ"],offline:["•","Ngoại tuyến"],error:["!","Cập nhật lỗi"]};
   const x=labels[state]||labels.idle;
   el.textContent=x[0]+" "+x[1];
-  el.dataset.state=state;
+  if(el.dataset)el.dataset.state=state;
   el.setAttribute("aria-label",text||x[1]);
   el.title=text||x[1];
 }
