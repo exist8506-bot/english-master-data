@@ -1541,10 +1541,13 @@ function nextQuiz(){stopSpeech();if(!db.questions.length){quizAnswered=false;qui
 function blankWordInExample(example,word){
   const text=String(example||""),target=String(word||"").trim();
   if(!text||!target)return "";
-  const escaped=target.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  const escaped=target.replace(/[.*+?^${}()|[\\]\\\\]/g,"\\$&");
   const re=new RegExp("(^|[^A-Za-z0-9'])"+escaped+"(?![A-Za-z0-9'])","i");
   let found=false;
-  const out=text.replace(re,function(prefix){found=true;return prefix+"_____";});
+  const out=text.replace(re,function(match,prefix){
+    found=true;
+    return prefix+"_____";
+  });
   return found?out:"";
 }
 function chooseFour(correct,field){
