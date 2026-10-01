@@ -742,7 +742,9 @@ if (currentSentence) {
 }
 const afterDoubleListen = T.snap().db.stats;
 check("listening double-tap is scored only once", afterDoubleListen.sentenceAnswered === sentenceAnsweredBefore + 1 && afterDoubleListen.sentenceCorrect === sentenceCorrectBefore + 1 && T.snap().listenAnswered === true);
+T.show("stats");
 T.show("listening");
+check("listening answer state resets on re-entry", T.snap().listenAnswered === false);
 if (currentSentence) T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
 const afterListen = T.snap().db.stats;
 check("listening interaction", afterListen.sentenceAnswered === sentenceAnsweredBefore + 1 && afterListen.sentenceCorrect >= 1);
@@ -1031,10 +1033,14 @@ try { T.startRecognition(); check("microphone fallback", true); } catch (e) { ch
 
 T.show("grammar");
 const rawGrammarLegacy = snap.db.grammar.filter((g) => String(g.id ?? "").startsWith("exp500_grammar_"));
+const rawGrammarV2PhraseBank = snap.db.grammar.filter((g) => String(g.id ?? "").startsWith("exp500v2_grammar_"));
+const grammarPool = T.grammarPracticePool();
 check(
-  "grammar UI excludes legacy vocabulary phrase bank",
+  "grammar UI excludes legacy vocabulary phrase banks",
   rawGrammarLegacy.length === 20 &&
-  T.grammarPracticePool().length === 60 &&
+  rawGrammarV2PhraseBank.length === 20 &&
+  grammarPool.length === 40 &&
+  !grammarPool.some((g) => String(g.id ?? "").startsWith("exp500_grammar_") || String(g.id ?? "").startsWith("exp500v2_grammar_")) &&
   document.getElementById("view").innerHTML.includes("Chỉ hiển thị bài ngữ pháp thực hành")
 );
 T.show("communication");
@@ -1328,6 +1334,21 @@ check("version comparison handles multi-digit patch versions", T.compareVersions
 
 check("speech capability guard accepts usable synthesis", T.speechSynthesisUsable()===true && typeof T.cancelSpeechSynthesis==="function");
 check("speech capability guard rejects incomplete synthesis", (()=>{const original=window.speechSynthesis.speak; window.speechSynthesis.speak=undefined; let ok=true; try{T.speak("guard test",1,"en-US")}catch(e){ok=false} window.speechSynthesis.speak=original; return ok;})());
+check("content audio is preferred even without SpeechSynthesis", (() => {
+  const pool = T.sentencePracticePool();
+  const item = pool[0];
+  if(!item) return false;
+  const oldSpeak = window.speechSynthesis.speak;
+  const before = audioCalls.length;
+  item.audioEn = "qa-content-audio.mp3";
+  T.setView("listening");
+  window.speechSynthesis.speak = undefined;
+  let ok = true;
+  try { T.speak(item.en, 1, "en-US"); } catch (e) { ok = false; }
+  window.speechSynthesis.speak = oldSpeak;
+  const created = audioCalls.slice(before);
+  return ok && created.some((a) => a.url === "qa-content-audio.mp3");
+})());
 check("settings theme control uses safe handler", (()=>{T.show("settings"); const html=document.getElementById("view").innerHTML; return html.includes('onclick="toggleTheme()"') && !html.includes('onclick="db.profile.theme=db.profile.theme==="dark"');})());
 check("settings theme handler really toggles", (()=>{const before=T.snap().db.profile.theme; T.toggleTheme(); const changed=T.snap().db.profile.theme!==before; T.toggleTheme(); return changed && T.snap().db.profile.theme===before;})());
 check("practice UI has no stale version label", (()=>{T.show("practice"); const html=document.getElementById("view").innerHTML; return html.includes("Luyện tập") && !html.includes("Luyện tập V9.3.1");})());
@@ -1352,6 +1373,7 @@ check("phone layout uses bottom navigation", styles.includes("body.layout-phone 
 check("phone layout has safe-area support", styles.includes("env(safe-area-inset-bottom)"));
 check("phone layout hardens long tables", styles.includes("body.layout-phone .table{min-width:620px}"));
 check("phone layout keeps touch targets usable", styles.includes("body.layout-phone button,body.layout-phone input,body.layout-phone select{min-height:42px}"));
+check("phone layout clears fixed bottom navigation", styles.includes("padding:13px 12px calc(100px + env(safe-area-inset-bottom))") && styles.includes("scroll-padding-bottom:calc(100px + env(safe-area-inset-bottom))"));
 check("V9 practice order controls have styling hooks", styles.includes(".practice-order") && styles.includes(".token"));
 check("quick layout button has stable touch size", styles.includes(".layout-quick{min-width:42px;min-height:42px") && styles.includes("body.layout-phone .layout-quick,body.layout-desktop .layout-quick"));
 check("V9.3.4 navigation animation hook exists", app.includes("renderMotion=true") && app.includes("page-enter"));
