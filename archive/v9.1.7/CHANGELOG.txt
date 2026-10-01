@@ -1,0 +1,15 @@
+English Master V9.1.7
+
+Deep QA/fix pass:
+- Compact progress-only localStorage; legacy full DB key removed/migrated.
+- Review/weak-word queue and favorites persistence.
+- Quiz option shuffling/correct-index handling and re-entry reset.
+- Speaking stats/XP persistence and offline-safe recognition.
+- Compact progress backup import/export with legacy compatibility.
+- Pagination for large vocabulary/sentence/trilingual/communication sets.
+- Fixed vocabulary loader key mismatch (vocabulary vs vocab).
+- Repaired missing IPA and sentence vocab links in bundled content.
+- Corrected a batch of clearly unnatural generated example sentences.
+- Mobile horizontal overflow fixed across all tested views.
+- Desktop and mobile smoke tests: no page errors/console errors; all tested views render.
+- Bundled content audited: 2,000 vocabulary, 2,000 sentences, 4,000 questions, 40 grammar, 78 communication, 1,500 trilingual entries.
