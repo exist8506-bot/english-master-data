@@ -1165,15 +1165,16 @@ check(
 const practiceModes=["smart","weak","favorites","new","mixed"];
 for(const mode of practiceModes){
   const queue=T.buildPracticeSession(8,mode);
-  check(
-    "practice session "+mode+" has safe exercise shapes",
-    (queue.length===0 || queue.every((item)=>item && ["meaning","translate","fill","order"].includes(item.type) &&
-      (item.type==="order"
-        ? Array.isArray(item.words) && item.words.length>0 && item.words.every(Boolean)
-        : Array.isArray(item.options) && item.options.length>=2 &&
-          new Set(item.options.map((v)=>String(v).trim().toLowerCase())).size===item.options.length &&
-          String(item.answer??"").trim()))
-  );
+  const safeQueue=queue.every((item)=>{
+    if(!item||!["meaning","translate","fill","order"].includes(item.type))return false;
+    if(item.type==="order"){
+      return Array.isArray(item.words)&&item.words.length>0&&item.words.every(Boolean);
+    }
+    return Array.isArray(item.options)&&item.options.length>=2&&
+      new Set(item.options.map((v)=>String(v).trim().toLowerCase())).size===item.options.length&&
+      String(item.answer??"").trim();
+  });
+  check("practice session "+mode+" has safe exercise shapes",queue.length===0||safeQueue);
 }
 
 check("smart review queue stays unique and bounded", (() => {
