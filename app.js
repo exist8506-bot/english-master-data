@@ -2033,7 +2033,7 @@ function runContentAudit(){
 
 function dataAudit(){
   const packageV1=db.vocab.filter(v=>v.source==="expansion500"&&v.sourceVersion==="8.0.0");
-  const packageV2=db.vocab.filter(v=>v.source==="expansion500_v2"&&v.sourceVersion==="8.1.0");
+  const packageV2=db.vocab.filter(v=>v.source==="expansion500_v2");
   const exp=[...packageV1,...packageV2];
   const expSentences=db.sentences.filter(s=>s.source==="expansion500"||s.source==="expansion500_v2");
   const generalSentences=db.sentences.filter(s=>s.source==="extra500_v8");
