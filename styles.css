@@ -164,3 +164,24 @@ body.layout-phone .hero-progress{margin-top:14px}
   button::after{display:none}
   #theme{transition:none!important}
 }
+
+/* V9.3.6 learning feedback effects */
+#view{position:relative}
+#view::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:0}
+#view.feedback-good::after{background:radial-gradient(circle at 50% 18%,rgba(22,131,74,.16),transparent 28%);animation:feedbackGood .58s ease-out both}
+#view.feedback-bad::after{background:radial-gradient(circle at 50% 18%,rgba(196,61,61,.14),transparent 25%);animation:feedbackBad .42s ease-out both}
+#view.feedback-xp::after{background:radial-gradient(circle at 50% 10%,var(--p-glow),transparent 26%);animation:feedbackXp .62s ease-out both}
+.result-good,.result-bad{border-radius:12px;padding:10px 12px;margin-top:10px}
+.result-good{animation:resultGood .42s var(--ease) both;background:var(--p-soft);box-shadow:0 0 0 1px rgba(91,91,214,.08)}
+.result-bad{animation:resultBad .4s ease both;background:rgba(196,61,61,.08);box-shadow:0 0 0 1px rgba(196,61,61,.10)}
+.correct{box-shadow:0 0 0 1px rgba(22,131,74,.10),0 8px 22px rgba(22,131,74,.11);animation:answerWin .45s var(--ease) both!important}
+.wrong{box-shadow:0 0 0 1px rgba(196,61,61,.10),0 8px 20px rgba(196,61,61,.09);animation:answerShake .38s ease both!important}
+@keyframes feedbackGood{0%{opacity:0;transform:scale(.94)}25%{opacity:1}100%{opacity:0;transform:scale(1.05)}}
+@keyframes feedbackBad{0%{opacity:0}20%{opacity:1}65%{opacity:.3}100%{opacity:0}}
+@keyframes feedbackXp{0%{opacity:0;transform:scale(.9)}28%{opacity:1}100%{opacity:0;transform:scale(1.08)}}
+@keyframes resultGood{from{opacity:0;transform:translateY(5px) scale(.985)}60%{transform:translateY(-1px) scale(1.01)}to{opacity:1;transform:none}}
+@keyframes resultBad{0%{opacity:0;transform:translateX(0)}25%{transform:translateX(-3px)}50%{transform:translateX(3px)}100%{opacity:1;transform:none}}
+@keyframes answerWin{0%{transform:scale(.98)}55%{transform:scale(1.025)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){
+  #view.feedback-good::after,#view.feedback-bad::after,#view.feedback-xp::after,.result-good,.result-bad,.correct,.wrong{animation:none!important}
+}

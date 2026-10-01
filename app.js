@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.5";
+const APP_VERSION="9.3.6";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -468,6 +468,22 @@ function toast(msg){
   el.textContent=msg; el.className="show"; setTimeout(function(){el.className=""},2600);
 }
 function addXP(n){db.stats.xp=(db.stats.xp||0)+Number(n||0)}
+let uiFeedbackTimer=0;
+function playUiFeedback(kind){
+  const el=$("view");if(!el)return;
+  const cls=kind==="bad"?"feedback-bad":kind==="xp"?"feedback-xp":"feedback-good";
+  el.classList.remove("feedback-good","feedback-bad","feedback-xp");
+  void el.offsetWidth;
+  el.classList.add(cls);
+  if(uiFeedbackTimer)clearTimeout(uiFeedbackTimer);
+  uiFeedbackTimer=setTimeout(function(){el.classList.remove(cls)},620);
+}
+function animateResult(id,kind){
+  const el=$(id);if(!el)return;
+  el.classList.remove("result-good","result-bad");
+  void el.offsetWidth;
+  el.classList.add(kind==="bad"?"result-bad":"result-good");
+}
 function reviewIntervalDays(v,rating){
   const streak=Math.max(1,Number(v?.reviewStreak)||1);
   if(rating==="Chưa nhớ")return 0;
@@ -1198,6 +1214,7 @@ function listenCheck(el,selected,correct){
   document.querySelectorAll(".option").forEach(function(b){b.disabled=true});
   const ok=norm(selected)===norm(correct);el.classList.add(ok?"correct":"wrong");
   $("listenResult").innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(correct)+"</b>";
+  animateResult("listenResult",ok?"good":"bad");playUiFeedback(ok?"xp":"bad");
   db.stats.sentenceAnswered=(Number(db.stats.sentenceAnswered)||0)+1;
   recordActivity();
   if(ok){db.stats.sentenceCorrect=(Number(db.stats.sentenceCorrect)||0)+1;addXP(10)}
@@ -1399,7 +1416,8 @@ function answerQuiz(i,a){
   const ok=choiceIndex===correctIndex;
   document.querySelectorAll(".option").forEach(function(b,j){b.disabled=true;if(j===correctIndex)b.classList.add("correct");if(j===choiceIndex&&!ok)b.classList.add("wrong")});
   db.stats.answered=(Number(db.stats.answered)||0)+1;recordActivity();recordVocabOutcome(q.vocabWord,ok);if(ok){db.stats.correct=(Number(db.stats.correct)||0)+1;addXP(10)}
-  $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';save();
+  $("qres").innerHTML=(ok?"✓ Chính xác!":"✗ Chưa đúng.")+" "+esc(q.explain||"")+'<br><button class="primary" onclick="nextQuiz()">Câu tiếp →</button>';
+  animateResult("qres",ok?"good":"bad");playUiFeedback(ok?"xp":"bad");save();
 }
 function nextQuiz(){stopSpeech();if(!db.questions.length){quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;return}quizIndex=(quizIndex+1)%db.questions.length;quizAnswered=false;quizOptions=[];quizCorrectIndex=-1;save();render()}
 
@@ -1500,7 +1518,7 @@ function practiceAnswer(index){
   const correctIndex=item.options.findIndex(function(x){return norm(x)===norm(item.answer)});
   document.querySelectorAll(".option").forEach(function(b,i){b.disabled=true;if(i===correctIndex)b.classList.add("correct");if(i===index&&!ok)b.classList.add("wrong");});
   const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(item.answer)+"</b>";
-  save();render();
+  save();render();animateResult("practiceResult",ok?"good":"bad");playUiFeedback(ok?"xp":"bad");
 }
 function practicePickToken(i){
   if(practiceAnswered)return;
