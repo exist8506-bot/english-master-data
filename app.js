@@ -1,4 +1,4 @@
-const APP_VERSION="9.4.6";
+const APP_VERSION="9.4.7";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -573,6 +573,7 @@ function toggleTheme(){
 }
 function show(v){
   v=VALID_VIEWS.has(String(v))?String(v):"home";
+  if(v==="listening")listenAnswered=false;
   stopSpeech();
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
@@ -681,7 +682,6 @@ function cancelSpeechSynthesis(){
   try{if(window.speechSynthesis&&typeof window.speechSynthesis.cancel==="function")window.speechSynthesis.cancel()}catch(e){}
 }
 function speak(text,rate,lang,retry,skipContentAudio){
-  if(!speechSynthesisUsable()){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const t=String(text??"").trim();if(!t)return;
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
   const token=++speechToken;
@@ -693,6 +693,7 @@ function speak(text,rate,lang,retry,skipContentAudio){
     const contentAudio=audioUrl(item,l);
     if(contentAudio){playAudio(contentAudio,t,r,l);return}
   }
+  if(!speechSynthesisUsable()){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const parts=splitSpeechText(t),active=function(){return token===speechToken};let partIndex=0;
   const runPart=function(){
     if(!active()||partIndex>=parts.length)return;
@@ -1285,6 +1286,7 @@ function listening(){renderListening()}
 function renderListening(){
   const list=sentencePracticePool();
   if(!list.length){$("view").innerHTML=shell("Luyện nghe","Chưa có câu luyện độc lập.");return}
+  listenAnswered=false;
   listenIndex=normalizeArrayIndex(listenIndex,list.length);
   const s=list[listenIndex];
   const seen=new Set([norm(s.vi||"")]),sameTopic=shuffle(list.filter(function(x){return x.id!==s.id&&x.vi&&norm(x.topic||"")===norm(s.topic||"")}));
@@ -1659,7 +1661,10 @@ function practiceNext(){
 }
 function restartPractice(){practiceQueue=buildPracticeSession(8,practiceMode);practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;render();}
 function grammarPracticePool(){
-  return db.grammar.filter(function(g){return !String(g.id||"").startsWith("exp500_grammar_")});
+  return db.grammar.filter(function(g){
+    const id=String(g.id||"");
+    return !id.startsWith("exp500_grammar_")&&!id.startsWith("exp500v2_grammar_");
+  });
 }
 function grammar(){
   const list=grammarPracticePool();
