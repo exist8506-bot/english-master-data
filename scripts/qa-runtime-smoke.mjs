@@ -1322,13 +1322,14 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.4.3" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", expectedAppVersion==="9.4.4" && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 
 check("speech capability guard accepts usable synthesis", T.speechSynthesisUsable()===true && typeof T.cancelSpeechSynthesis==="function");
 check("speech capability guard rejects incomplete synthesis", (()=>{const original=window.speechSynthesis.speak; window.speechSynthesis.speak=undefined; let ok=true; try{T.speak("guard test",1,"en-US")}catch(e){ok=false} window.speechSynthesis.speak=original; return ok;})());
 check("render error fallback keeps home action valid", (()=>{T.renderErrorFallback(new Error("qa-fallback")); const html=document.getElementById("view").innerHTML; return html.includes("onclick=\"show('home')\"") && !html.includes('onclick="show("home")"') && html.includes("qa-fallback");})());
+check("unknown view normalizes to home", (()=>{T.show("__unknown_route__"); return T.snap().view==="home" && document.getElementById("view").innerHTML.includes("English Master V");})());
 check("flashcard is keyboard focusable", (()=>{T.show("flashcards"); const html=document.getElementById("view").innerHTML; return html.includes('role="button"') && html.includes('tabindex="0"') && html.includes("onkeydown=");})());
 check("audio path tolerates throwing speech cancel", (()=>{const original=window.speechSynthesis.cancel; window.speechSynthesis.cancel=()=>{throw new Error("qa-cancel")}; let ok=true; try{T.playAudio("qa-audio.mp3","test",1,"en-US")}catch(e){ok=false} window.speechSynthesis.cancel=original; return ok;})());
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));

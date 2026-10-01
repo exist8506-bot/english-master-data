@@ -1,4 +1,4 @@
-const APP_VERSION="9.4.3";
+const APP_VERSION="9.4.4";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -11,6 +11,7 @@ let db={
   lastRemoteVersion:"",
   contentCounts:{}
 };
+const VALID_VIEWS=new Set(["home","vocab","sentences","flashcards","practice","quiz","listening","speaking","grammar","communication","trilingual","review","reviewSummary","stats","settings"]);
 let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizIndex=0,quizAnswered=false,quizOptions=[],quizCorrectIndex=-1;
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0,listenAnswered=false;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
@@ -567,6 +568,7 @@ function stopRecognition(){
   if(activeRecognition){try{activeRecognition.onend=null;activeRecognition.abort()}catch(e){} activeRecognition=null;}
 }
 function show(v){
+  v=VALID_VIEWS.has(String(v))?String(v):"home";
   stopSpeech();
   stopRecognition();
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
@@ -734,7 +736,7 @@ function speakSequence(lines,rate,lang){
     u.onend=function(){if(token===speechToken)next()};
     u.onerror=function(){if(token===speechToken)setTimeout(next,120)};
     try{
-      window.speechSynthesis.resume();
+      if(typeof window.speechSynthesis.resume==="function")window.speechSynthesis.resume();
       if(token===speechToken)window.speechSynthesis.speak(u);
     }catch(e){
       if(token===speechToken)toast("Không thể phát chuỗi âm thanh. Bấm Nghe lại để thử.");
@@ -1030,7 +1032,7 @@ function renderErrorFallback(error){
   const el=$("view");if(!el)return;
   const detail=error&&error.message?String(error.message):"Lỗi không xác định";
   el.innerHTML=shell("Có lỗi khi hiển thị","Dữ liệu học của bạn vẫn được giữ nguyên.",
-    '<div class="card error-state"><div class="error-icon" aria-hidden="true">⚠️</div><h2>Không thể mở màn hình này</h2><p class="muted">Bạn có thể thử tải lại màn hình. Tiến độ học tập không bị xóa.</p><details><summary>Chi tiết kỹ thuật</summary><code>'+esc(detail)+'</code></details><div class="actions"><button class="primary" onclick="render()">🔄 Thử lại</button><button onclick="show("home")">🏠 Về trang chủ</button></div></div>');
+    '<div class="card error-state"><div class="error-icon" aria-hidden="true">⚠️</div><h2>Không thể mở màn hình này</h2><p class="muted">Bạn có thể thử tải lại màn hình. Tiến độ học tập không bị xóa.</p><details><summary>Chi tiết kỹ thuật</summary><code>'+esc(detail)+'</code></details><div class="actions"><button class="primary" onclick="render()">🔄 Thử lại</button><button onclick="show(\'home\')">🏠 Về trang chủ</button></div></div>');
 }
 function render(){
   db.vocab=Array.isArray(db.vocab)?db.vocab:[];db.sentences=Array.isArray(db.sentences)?db.sentences:[];
@@ -1219,7 +1221,7 @@ function flashcards(){
   const front='<div><div class="big">'+esc(v.word)+'</div><div class="ipa">'+esc(v.ipa||"")+'</div>'+reviewMeta(v)+audioGroup(v.word,"en-US",v)+'<p class="muted">Bấm vào thẻ để lật</p></div>';
   const back='<div><div class="big">'+esc(v.meaning)+'</div><p>'+esc(v.example||"")+'</p><p class="muted">'+esc(v.exampleVi||"")+'</p>'+audioGroup(v.word,"en-US",v)+audioButton(v.example||v.word,"🔊 Nghe ví dụ","en-US",1,v)+'</div>';
   $("view").innerHTML=shell(reviewActive?(quickReviewActive?"Học nhanh hôm nay":"Ôn tập bằng Flashcards"):"Flashcards",reviewActive?(quickReviewActive?"Phiên 10 từ ưu tiên: đến hạn → yếu → mới.":"Đang ôn các từ đến hạn/chưa nhớ."):"Lật thẻ, nghe từ/câu rồi tự đánh giá.",
-    '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
+    '<div class="card"><div class="row" style="justify-content:space-between"><b>Thẻ '+(idx%list.length+1)+' / '+list.length+'</b><div class="actions"><button onclick="toggleFavorite(\''+escapeJs(v.word)+'\')">'+(v.favorite?"⭐ Bỏ yêu thích":"☆ Yêu thích")+'</button><button onclick="shuffleFlash()">🔀 Ngẫu nhiên</button></div></div><div class="flash '+(flashFlipped?"flipped":"")+'" role="button" tabindex="0" aria-label="'+flashAria+'" onclick="flashFlipped=!flashFlipped;renderFlashcards()" onkeydown="'+flashKeydown+'">'+(flashFlipped?back:front)+'</div><div class="actions"><button onclick="rateFlash(\'Chưa nhớ\')">😵 Chưa nhớ</button><button onclick="rateFlash(\'Đã nhớ\')">🙂 Đã nhớ</button><button onclick="rateFlash(\'Rất dễ\')">😎 Rất dễ</button></div></div>');
 }
 function rateFlash(status){
   stopSpeech();
@@ -1637,7 +1639,7 @@ function practiceCheckOrder(){
   const ok=norm(actual)===norm(item.target.replace(/[.!?]+$/,""));
   practiceAnswered=true;finishPractice(ok);
   const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Câu đúng: <b>"+esc(item.target)+"</b>";
-  save();render();
+  save();render();animateResult("practiceResult",ok?"good":"bad");playUiFeedback(ok?"xp":"bad");
 }
 function practiceNext(){
   if(!practiceAnswered)return;
@@ -1928,7 +1930,7 @@ function installVisualInteractionHooks(){
     const top=$("backTop");
     const sync=function(){if(top)top.classList.toggle("show",window.scrollY>480)};
     window.addEventListener("scroll",sync,{passive:true});
-    if(top)top.onclick=function(){try{window.scrollTo({top:0,behavior:"smooth"})}catch(e){window.scrollTo(0,0)}};
+    if(top)top.onclick=function(){try{const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;window.scrollTo({top:0,behavior:reduce?"auto":"smooth"})}catch(e){window.scrollTo(0,0)}};
     sync();
   }catch(e){}
 }
