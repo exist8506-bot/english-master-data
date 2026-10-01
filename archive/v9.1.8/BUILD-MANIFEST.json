@@ -1,0 +1,28 @@
+{
+  "app": "English Master",
+  "version": "9.1.8",
+  "archivedAt": "2026-10-01",
+  "repo": "exist8506-bot/english-master-data",
+  "branch": "archive/v9.1.8",
+  "localZip": "English_Master_V9.1.8.zip",
+  "zipSha256": "0fcec817035f29e885cda17bb142d9c646883616ad707025815f8dfb4adfe834",
+  "qa": {
+    "syntax": "PASS",
+    "mobile": "PASS",
+    "desktop": "PASS",
+    "persistence": "PASS",
+    "speaking": "PASS",
+    "quiz": "PASS",
+    "offlineUpdate": "PASS",
+    "contentAudit": "PASS"
+  },
+  "contentCounts": {
+    "vocabulary": 2000,
+    "sentences": 2000,
+    "questions": 4000,
+    "grammar": 40,
+    "communication": 78,
+    "trilingual": 1500
+  },
+  "note": "V9.1.8 is the deeply tested local build. Main remains unchanged."
+}
