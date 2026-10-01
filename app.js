@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.8";
+const APP_VERSION="9.3.9";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -1029,10 +1029,15 @@ function render(){
       kick(function(){
         if(seq!==renderMotionSeq)return;
         el.classList.add("page-enter");
-        setTimeout(function(){if(seq===renderMotionSeq)el.classList.remove("page-enter")},950);
+        setTimeout(function(){if(seq===renderMotionSeq)el.classList.remove("page-enter")},560);
       });
     }
-    try{if(typeof window.scrollTo==="function")window.scrollTo({top:0,behavior:"smooth"})}catch(e){}
+    try{
+      if(typeof window.scrollTo==="function"){
+        const behavior=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth";
+        window.scrollTo({top:0,behavior:behavior});
+      }
+    }catch(e){}
   }
 }
 function home(){

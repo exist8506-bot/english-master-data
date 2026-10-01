@@ -229,3 +229,23 @@ body.layout-phone #backTop{right:14px;bottom:calc(84px + env(safe-area-inset-bot
   #syncStatus{animation:none!important}
   .skeleton-line,.skeleton-card span,.skeleton-chips span,.skeleton-progress{animation:none!important}
 }
+
+/* V9.3.9 deep UI polish: controlled motion + layout stability */
+#view{min-height:calc(100vh - 150px)}
+#view.page-enter{will-change:opacity,transform}
+#view.page-enter>.card{will-change:opacity,transform}
+.hero-stats{contain:layout paint}
+.hero-chip{animation-duration:.32s}
+.progress .bar,.hero-progress span{transform-origin:left center}
+@media(hover:hover){
+  body.layout-desktop .card:not(.hero):hover{transform:translateY(-2px)}
+  body.layout-desktop .item:hover{transform:translateY(-1px)}
+}
+@media(max-width:800px){
+  #view{min-height:calc(100vh - 142px)}
+  .hero-top{align-items:stretch;flex-direction:column}
+  .hero-stats{justify-content:flex-start;max-width:none}
+}
+@media(prefers-reduced-motion:reduce){
+  #view.page-enter,#view.page-enter>.card{will-change:auto}
+}
