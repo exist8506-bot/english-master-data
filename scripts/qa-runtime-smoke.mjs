@@ -153,7 +153,7 @@ try {
 
 const hooks = `
 window.__EM_TEST = {
-  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, practiceMode, practiceAnsweredCount, practiceSessionXp, quickReviewActive, reviewSession: {...reviewSession}, listenAnswered, lastReviewSummary: window.__lastReviewSummary ? {...window.__lastReviewSummary} : null }),
+  snap: () => ({ db, view, flashIndex, listenIndex, speakIndex, quizIndex, quizOptions: quizOptions.map((x) => x.text), quizCorrectIndex, quizSelectedIndex, listenAnswered, listenSelected, listenCorrect, practiceSelectedIndex, reviewQueue: [...reviewQueue], practiceQueue: practiceQueue.map((x) => ({...x, options:[...(x.options||[])], words:[...(x.words||[])]})), practiceIndex, practiceAnswered, practiceAnswerOrder: [...practiceAnswerOrder], practiceCorrectCount, practiceMode, practiceAnsweredCount, practiceSessionXp, quickReviewActive, reviewSession: {...reviewSession}, listenAnswered, lastReviewSummary: window.__lastReviewSummary ? {...window.__lastReviewSummary} : null }),
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview, buildReviewQueue,
   listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practiceVocabularyPool, practiceModeLabel, startPracticeMode, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
@@ -1358,6 +1358,49 @@ check("escape key handler stops both speech and recognition", app.includes('if(e
 check("render error fallback keeps home action valid", (()=>{T.renderErrorFallback(new Error("qa-fallback")); const html=document.getElementById("view").innerHTML; return html.includes("onclick=\"show('home')\"") && !html.includes('onclick="show("home")"') && html.includes("qa-fallback");})());
 check("unknown view normalizes to home", (()=>{T.show("__unknown_route__"); return T.snap().view==="home" && document.getElementById("view").innerHTML.includes("English Master V");})());
 check("flashcard is keyboard focusable", (()=>{T.show("flashcards"); const html=document.getElementById("view").innerHTML; return html.includes('role="button"') && html.includes('tabindex="0"') && html.includes("onkeydown=");})());
+
+check("quiz preserves answered state after rerender", (() => {
+  T.show("quiz");
+  const before = T.snap();
+  if (!before.quizOptions.length) return false;
+  T.answerQuiz(0, before.quizCorrectIndex);
+  const answered = T.snap();
+  T.render();
+  const html = document.getElementById("view").innerHTML;
+  return answered.quizSelectedIndex===0 &&
+    answered.db.stats.answered >= before.db.stats.answered + 1 &&
+    T.snap().quizAnswered === true &&
+    html.includes('disabled') &&
+    html.includes("Câu tiếp");
+})());
+
+check("listening preserves answered state after rerender", (() => {
+  T.show("listening");
+  const pool = T.sentencePracticePool();
+  const s = pool[T.snap().listenIndex];
+  if (!s) return false;
+  T.listenCheck(new El("rerender-listen-option","button"), s.vi, s.vi);
+  T.render();
+  const html = document.getElementById("view").innerHTML;
+  return T.snap().listenAnswered === true &&
+    T.snap().listenSelected === s.vi &&
+    html.includes('disabled') &&
+    html.includes("✓ Chính xác!");
+})());
+
+check("practice preserves answered state after rerender", (() => {
+  T.show("practice");
+  const before = T.snap();
+  const item = before.practiceQueue[before.practiceIndex];
+  if (!item || item.type==="order" || !item.options?.length) return false;
+  T.practiceAnswer(0);
+  T.render();
+  const html = document.getElementById("view").innerHTML;
+  return T.snap().practiceAnswered === true &&
+    T.snap().practiceSelectedIndex === 0 &&
+    html.includes('disabled') &&
+    html.includes("practiceResult");
+})());
 check("audio path tolerates throwing speech cancel", (()=>{const original=window.speechSynthesis.cancel; window.speechSynthesis.cancel=()=>{throw new Error("qa-cancel")}; let ok=true; try{T.playAudio("qa-audio.mp3","test",1,"en-US")}catch(e){ok=false} window.speechSynthesis.cancel=original; return ok;})());
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
