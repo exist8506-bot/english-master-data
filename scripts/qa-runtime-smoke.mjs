@@ -159,6 +159,7 @@ window.__EM_TEST = {
   listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practiceVocabularyPool, practiceModeLabel, startPracticeMode, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
   dateKey, setDailyGoal, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta, splitSpeechText, tokenLevenshtein, audioCacheSize, preloadAudio, refreshVoiceCache, derivedPoolSignature, normalizeSpeechText, getVoice,
   setView: (v) => { view = v; },
+  setPracticeState: (queue,index,answered) => { practiceQueue = queue; practiceIndex = index; practiceAnswered = answered; practiceAnswerOrder = []; practiceCorrectCount = 0; practiceAnsweredCount = 0; practiceSessionXp = 0; },
   setQuizCorrectIndex: (v) => { quizCorrectIndex = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
@@ -600,23 +601,11 @@ const malformedOrderBefore=T.snap().practiceAnswerOrder.length;
 T.practicePickToken(-1);
 T.practicePickToken(999999);
 check("practice rejects malformed sentence-order tokens", T.snap().practiceAnswerOrder.length===malformedOrderBefore);
+T.setPracticeState([{type:"order",prompt:"Test sentence",target:"hello world",words:["hello","world"]}],0,false);
+const orderSnap=T.snap();
+T.practiceCheckOrder();
+check("practice rejects incomplete sentence-order submission", orderSnap.practiceAnswered===false && T.snap().practiceAnswered===false && T.snap().practiceAnswerOrder.length===0);
 T.startPracticeMode("smart",8);
-let orderItem=T.snap().practiceQueue.find(x=>x.type==="order");
-if(orderItem){
-  let safety=0;
-  while(T.snap().practiceQueue[T.snap().practiceIndex]?.type!=="order" && safety<8){
-    const item=T.snap().practiceQueue[T.snap().practiceIndex];
-    if(!item||item.type==="order")break;
-    const idx=item.options.findIndex((x)=>normalizeTest(x)===normalizeTest(item.answer));
-    if(idx<0)break;
-    T.practiceAnswer(idx);
-    T.practiceNext();
-    safety++;
-  }
-  const orderSnap=T.snap(),beforeAnswered=orderSnap.practiceAnswered;
-  T.practiceCheckOrder();
-  check("practice rejects incomplete sentence-order submission", safety>0 && safety<8 && orderSnap.practiceQueue[orderSnap.practiceIndex]?.type==="order" && T.snap().practiceAnswered===beforeAnswered);
-}
 T.startPracticeMode("favorites",6);
 const favoriteModeCount=T.snap().practiceQueue.length;
 T.show("home");T.show("practice");
