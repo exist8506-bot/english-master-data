@@ -1,4 +1,4 @@
-const APP_VERSION="9.4.0";
+const APP_VERSION="9.4.1";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -650,7 +650,7 @@ function preloadItemAudio(item,lang){
 function audioCacheSize(){return audioCache.size}
 function stopSpeech(){
   speechToken++;
-  if("speechSynthesis" in window)window.speechSynthesis.cancel();
+  if("speechSynthesis" in window){try{window.speechSynthesis.cancel()}catch(e){} }
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
 }
 function splitSpeechText(text,maxLength=180){
@@ -717,7 +717,12 @@ function speakSequence(lines,rate,lang){
     const v=getVoice(l);if(v)u.voice=v;
     u.onend=function(){if(token===speechToken)next()};
     u.onerror=function(){if(token===speechToken)setTimeout(next,120)};
-    window.speechSynthesis.resume();window.speechSynthesis.speak(u);
+    try{
+      window.speechSynthesis.resume();
+      if(token===speechToken)window.speechSynthesis.speak(u);
+    }catch(e){
+      if(token===speechToken)toast("Không thể phát chuỗi âm thanh. Bấm Nghe lại để thử.");
+    }
   }
   next();
 }
