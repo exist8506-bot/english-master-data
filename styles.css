@@ -129,3 +129,38 @@ body.layout-phone #side button::before{left:10px;right:10px;top:auto;bottom:3px;
 @keyframes answerPop{0%{transform:scale(.98)}60%{transform:scale(1.015)}100%{transform:scale(1)}}@keyframes answerShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 @keyframes riseIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}@keyframes toastProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(prefers-reduced-motion:reduce){body{transition:none}button,.card,.item,input,select{transition:none!important}#toast.show::after{animation:none}#view.page-enter,#view.page-enter>.card,.flash,.rating,.notice,.bar,.brand>b::after{animation:none!important}}
+
+/* V9.3.5 interface feedback layer */
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.hero-top>div:first-child{min-width:0;flex:1}
+.hero-stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:430px}
+.hero-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--card) 86%,transparent);box-shadow:0 5px 14px rgba(23,30,52,.05);white-space:nowrap;animation:chipFloat .45s var(--ease) both}
+.hero-chip:nth-child(2){animation-delay:.06s}.hero-chip:nth-child(3){animation-delay:.12s}
+.hero-chip small{color:var(--muted);font-size:11px;font-weight:600}
+.hero-chip b{font-size:13px}
+.hero-chip.flame{border-color:rgba(255,138,43,.18)}.hero-chip.xp{border-color:rgba(91,91,214,.18)}.hero-chip.goal{border-color:rgba(22,131,74,.18)}
+.hero-progress{height:4px;margin-top:18px;border-radius:999px;background:var(--line);overflow:hidden;opacity:.9}
+.hero-progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--p),#7b7be7);box-shadow:0 0 12px var(--p-glow);animation:heroProgress .72s var(--ease) both}
+button::after{content:"";position:absolute;left:50%;top:50%;width:0;height:0;padding-top:0;border-radius:50%;background:var(--p-soft);transform:translate(-50%,-50%);pointer-events:none;opacity:0}
+button:active:not(:disabled)::after{width:150%;padding-top:150%;opacity:1;transition:width .24s ease,padding-top .24s ease,opacity .24s ease}
+button.primary::after{background:rgba(255,255,255,.16)}
+.top-actions button{box-shadow:0 5px 14px rgba(23,30,52,.05)}
+.top-actions button:hover{box-shadow:0 8px 18px var(--p-soft)}
+#theme{transition:transform .32s var(--ease),background-color .25s ease,box-shadow .25s ease}
+body.dark #theme{transform:rotate(180deg)}
+body.layout-phone .hero-top{display:block}
+body.layout-phone .hero-stats{margin-top:12px;justify-content:flex-start;max-width:none}
+body.layout-phone .hero-chip{padding:7px 9px}
+body.layout-phone .hero-progress{margin-top:14px}
+@media(max-width:700px){
+  .hero-top{display:block}
+  .hero-stats{justify-content:flex-start;margin-top:12px;max-width:none}
+  .hero-chip{padding:7px 9px}
+}
+@keyframes chipFloat{from{opacity:0;transform:translateY(7px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes heroProgress{from{transform:scaleX(.05);transform-origin:left;opacity:.35}to{transform:scaleX(1);transform-origin:left;opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .hero-chip,.hero-progress span{animation:none!important}
+  button::after{display:none}
+  #theme{transition:none!important}
+}

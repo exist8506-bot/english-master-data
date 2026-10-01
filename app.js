@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.4";
+const APP_VERSION="9.3.5";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -518,7 +518,8 @@ function learnNext(){
   show("practice");
 }
 function shell(title,sub,body){
-  return '<section class="card hero"><h1 class="title">'+esc(title)+'</h1><p class="muted">'+esc(sub||"")+'</p></section>'+(body||"")
+  const xp=Number(db.stats?.xp)||0,streak=Number(db.stats?.streak)||0,done=Number(db.stats?.dailyUnits)||0,target=dailyGoal(),pct=Math.min(100,Math.round((done/Math.max(1,target))*100));
+  return '<section class="card hero"><div class="hero-top"><div><h1 class="title">'+esc(title)+'</h1><p class="muted">'+esc(sub||"")+'</p></div><div class="hero-stats" aria-label="Tiến độ nhanh"><span class="hero-chip flame">🔥 <b>'+streak+'</b><small>ngày</small></span><span class="hero-chip xp">⭐ <b>'+xp+'</b><small>XP</small></span><span class="hero-chip goal">🎯 <b>'+pct+'%</b><small>hôm nay</small></span></div></div><div class="hero-progress" aria-hidden="true"><span style="width:'+pct+'%"></span></div></section>'+(body||"")
 }
 function shuffle(arr){
   const a=Array.isArray(arr)?arr.slice():[];
