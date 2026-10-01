@@ -968,7 +968,7 @@ function render(){
       kick(function(){
         if(seq!==renderMotionSeq)return;
         el.classList.add("page-enter");
-        setTimeout(function(){if(seq===renderMotionSeq)el.classList.remove("page-enter")},700);
+        setTimeout(function(){if(seq===renderMotionSeq)el.classList.remove("page-enter")},950);
       });
     }
     try{if(typeof window.scrollTo==="function")window.scrollTo({top:0,behavior:"smooth"})}catch(e){}
