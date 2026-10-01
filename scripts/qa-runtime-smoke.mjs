@@ -159,6 +159,7 @@ window.__EM_TEST = {
   listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practiceVocabularyPool, practiceModeLabel, startPracticeMode, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
   dateKey, setDailyGoal, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta,
   setView: (v) => { view = v; },
+  setQuizCorrectIndex: (v) => { quizCorrectIndex = v; },
   setFetch: (fn) => { fetch = fn; },
   setStats: (stats) => { db.stats = { ...db.stats, ...stats }; },
 };
@@ -676,11 +677,11 @@ const invalidQuizIndexBefore = T.snap().quizIndex;
 T.answerQuiz(999, T.snap().quizCorrectIndex);
 check("invalid quiz choice is ignored", T.snap().db.stats.answered === invalidQuizAnswerBefore && T.snap().quizIndex === invalidQuizIndexBefore);
 const savedQuizCorrectIndex = T.snap().quizCorrectIndex;
-T.snap().quizCorrectIndex = -1;
+T.setQuizCorrectIndex(-1);
 const quizAnsweredBeforeInvalidCorrect = T.snap().db.stats.answered;
 T.answerQuiz(0, 0);
 check("quiz rejects missing internal correct index", T.snap().db.stats.answered === quizAnsweredBeforeInvalidCorrect);
-T.snap().quizCorrectIndex = savedQuizCorrectIndex;
+T.setQuizCorrectIndex(savedQuizCorrectIndex);
 const quizPromptButton = (document.getElementById("view").innerHTML.match(/<button[^>]*>🔊 Đọc câu hỏi<\/button>/) || [])[0] || "";
 check("quiz question uses TTS for prompt instead of word audio", !!quizPromptButton && !quizPromptButton.includes("playAudio("));
 
