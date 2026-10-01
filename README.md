@@ -25,3 +25,12 @@ Repo này được dùng làm nguồn lưu trữ và cập nhật dữ liệu ch
 
 ## Final QA gate — V9.3.1
 - Full repository regression suite is required against the final V9.3.1 application commit.
+
+## V9.3.2
+- Memoized the large standalone-sentence and communication practice pools.
+- Added bounded audio caching/preload, Audio element reuse, voice caching, and long-text TTS chunking.
+- Improved speech recognition with one-shot timeout, up to three alternatives, clearer microphone errors, and order-aware transcript scoring.
+- Polished desktop/mobile navigation, active-route state, touch/keyboard focus, responsive spacing, and reduced-motion behavior.
+
+## Final QA gate — V9.3.2
+- Full repository regression suite is required against the final V9.3.2 application commit.

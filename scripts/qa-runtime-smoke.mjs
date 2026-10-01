@@ -157,7 +157,7 @@ window.__EM_TEST = {
   show, render, vocab, flashcards, quiz, listening, speaking, grammar, communication, trilingual,
   grammarPracticePool, review, stats, settings, exportProgress, importProgress, resetProgress, dataAudit, runContentAudit, toggleFavorite, rateFlash, answerQuiz, nextQuiz, jumpToItem, setLayoutMode, goPage, sentencePracticePool, communicationPracticePool, playAudio, startReview, buildReviewQueue,
   listenCheck, startReview, buildQuickStudyQueue, startQuickStudy, finishReviewSession, reviewSummary, startQuickStudy, playDialogue, audioUrl, audioButton, speak, speakSequence, startRecognition, save, load, updateOnline, toggleLayoutQuick, applyLayoutMode, applyUserSnapshot, usableCachedContent, similarityScore, normalizeArrayIndex, weakVocabularyPool, buildPracticeSession, practiceVocabularyPool, practiceModeLabel, startPracticeMode, practice, practiceAnswer, practiceNext, practicePickToken, practiceRemoveToken, practiceCheckOrder, restartPractice, learnNext, dailyGoal, dailyPercent, ensureDailyProgress, guessLang, esc, escapeJs, standalonePracticeTemplateIsNatural, isNaturalStandaloneSentence, communicationLineIsNatural, contentSnapshot, userSnapshot, recordActivity, recordStudyUnit, addXP, mergeBy, blandExample, remoteReplaceAllowed, getVoice, voiceAvailability, dailyGoalOptions, registerServiceWorker, checkAppVersion, stopSpeech, playAudio, blankWordInExample,
-  dateKey, setDailyGoal, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta,
+  dateKey, setDailyGoal, savedProgressLooksUsable, legacyContentLooksUsable, openContentDB, cacheContent, readCachedContent, recordVocabOutcome, stopRecognition, shell, audioGroup, validateIncomingContent, validateContent, isPhoneViewport, updateLayoutQuickButton, handleViewportChange, pageControls, jumpControl, renderFlashcards, shuffleFlash, renderListening, renderSpeaking, nextSpeak, prevSpeak, normalizeQuizIndex, chooseFour, finishPractice, openProgressImport, validateProgressImport, compareVersions, reviewIntervalDays, reviewMeta, splitSpeechText, tokenLevenshtein, audioCacheSize, preloadAudio, refreshVoiceCache, derivedPoolSignature,
   setView: (v) => { view = v; },
   setQuizCorrectIndex: (v) => { quizCorrectIndex = v; },
   setFetch: (fn) => { fetch = fn; },
@@ -1013,6 +1013,7 @@ check("cached content validator rejects incomplete cache", !T.usableCachedConten
 check("similarity score exact match is 100", T.similarityScore("Hello world!", "hello world.") === 100);
 check("similarity score empty input is 0", T.similarityScore("", "hello") === 0);
 check("speech similarity normalizes common contractions", T.similarityScore("I'm ready!", "I am ready.") >= 90);
+check("speech similarity penalizes word-order errors", T.similarityScore("world hello", "hello world") < 100);
 
 T.show("speaking");
 check("speaking UI and microphone fallback", document.getElementById("view").innerHTML.includes("Bắt đầu nói"));
@@ -1312,7 +1313,7 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.3.1" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", expectedAppVersion==="9.3.2" && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));

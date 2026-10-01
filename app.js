@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.1";
+const APP_VERSION="9.3.2";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -14,6 +14,7 @@ let view="home",flashIndex=0,flashFlipped=false,listenIndex=0,speakIndex=0,quizI
 let activeRecognition=null,recognitionToken=0,listenAdvanceTimer=0,listenAnswered=false;
 let vocabPage=1,sentencePage=1,trilingualPage=1,communicationPage=1,lastVocabQuery="",pendingUserState=null;
 let reviewQueue=[],reviewIndex=0,quickReviewActive=false,reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0},validatedContentSignature="",updateInProgress=false;
+let derivedPools={signature:"",sentences:null,communication:null};
 let practiceQueue=[],practiceIndex=0,practiceAnswered=false,practiceAnswerOrder=[],practiceCorrectCount=0,practiceMode="smart",practiceAnsweredCount=0,practiceSessionXp=0;
 const CONTENT_DB_NAME="englishMasterContent_v1";
 const CONTENT_STORE="snapshot";
@@ -89,7 +90,17 @@ function isNaturalStandaloneSentence(item){
   if(!standalonePracticeTemplateIsNatural(en))return false;
   return !BAD_STANDALONE_SENTENCE_PATTERNS.some(function(re){return re.test(en)});
 }
+function derivedPoolSignature(){
+  return [String(db.lastRemoteVersion||""),db.sentences.length,db.communication.length].join("|");
+}
+function invalidateDerivedPools(){
+  derivedPools.signature="";
+  derivedPools.sentences=null;
+  derivedPools.communication=null;
+}
 function sentencePracticePool(){
+  const sig=derivedPoolSignature();
+  if(derivedPools.signature===sig&&Array.isArray(derivedPools.sentences))return derivedPools.sentences;
   const seen=new Set(),out=[];
   for(const s of db.sentences){
     if(!isNaturalStandaloneSentence(s))continue;
@@ -97,6 +108,9 @@ function sentencePracticePool(){
     if(!k||seen.has(k))continue;
     seen.add(k);out.push(s);
   }
+  derivedPools.signature=sig;
+  derivedPools.sentences=out;
+  derivedPools.communication=null;
   return out;
 }
 function communicationLineIsNatural(line){
@@ -135,10 +149,15 @@ function communicationLineIsNatural(line){
   return true;
 }
 function communicationPracticePool(){
-  return db.communication.map(function(d){
+  const sig=derivedPoolSignature();
+  if(derivedPools.signature===sig&&Array.isArray(derivedPools.communication))return derivedPools.communication;
+  const out=db.communication.map(function(d){
     const lines=(d.lines||[]).filter(function(l){return Array.isArray(l)&&communicationLineIsNatural(l[1])});
     return {...d,lines};
   }).filter(function(d){return d&&d.lines.length>=2});
+  derivedPools.signature=sig;
+  derivedPools.communication=out;
+  return out;
 }
 function guessLang(text){
   const t=String(text??"");
@@ -413,6 +432,7 @@ function load(){
         stats:{...db.stats,...(parsed.stats||{})},
         profile:{...db.profile,...(parsed.profile||{})}
       };
+      invalidateDerivedPools();
     }catch(e){legacyStorageLoaded=false}
   }
   applyUserSnapshot(parsed);
@@ -429,6 +449,7 @@ async function hydrateContent(){
   const cached=await readCachedContent();
   if(cached&&usableCachedContent(cached)){
     db={...db,...contentSnapshot(cached)};
+    invalidateDerivedPools();
     applyUserSnapshot(liveUserState);
     if(pendingUserState)applyUserSnapshot({vocabState:pendingUserState});
     validateContent(true);
@@ -502,104 +523,148 @@ function shuffle(arr){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
   return a;
 }
-let speechToken=0,activeAudio=null;
+let speechToken=0,activeAudio=null,audioCache=new Map(),voiceCache=[],voiceCacheReady=false,recognitionTimer=0;
+const AUDIO_CACHE_LIMIT=12;
+function refreshVoiceCache(){
+  try{
+    const synth=window.speechSynthesis;
+    voiceCache=synth&&typeof synth.getVoices==="function"?(synth.getVoices()||[]):[];
+    voiceCacheReady=true;
+  }catch(e){voiceCache=[];voiceCacheReady=false}
+  return voiceCache;
+}
+function installVoiceCache(){
+  try{
+    const synth=window.speechSynthesis;if(!synth)return;
+    refreshVoiceCache();
+    const update=function(){refreshVoiceCache()};
+    if(typeof synth.addEventListener==="function")synth.addEventListener("voiceschanged",update);
+    else if("onvoiceschanged" in synth)synth.onvoiceschanged=update;
+  }catch(e){}
+}
 function getVoice(lang){
   try{
-    const vs=window.speechSynthesis?.getVoices?.()||[], p=String(lang||"en-US").toLowerCase();
+    const vs=voiceCacheReady?voiceCache:refreshVoiceCache(),p=String(lang||"en-US").toLowerCase();
     return vs.find(v=>String(v.lang||"").toLowerCase()===p)||vs.find(v=>String(v.lang||"").toLowerCase().startsWith(p.split("-")[0]))||null;
   }catch(e){return null}
 }
+function trimAudioCache(){
+  while(audioCache.size>AUDIO_CACHE_LIMIT){
+    const first=audioCache.keys().next().value,firstAudio=audioCache.get(first);
+    if(firstAudio===activeAudio){
+      const alternate=[...audioCache.keys()].find(function(k){return audioCache.get(k)!==activeAudio});
+      if(alternate===undefined)break;
+      audioCache.delete(alternate);
+    }else audioCache.delete(first);
+  }
+}
+function preloadAudio(url){
+  const u=String(url||"").trim();
+  if(!u||audioCache.has(u))return;
+  try{const a=new Audio(u);a.preload="auto";audioCache.set(u,a);trimAudioCache()}catch(e){}
+}
+function preloadItemAudio(item,lang){
+  const url=audioUrl(item,lang);if(url)preloadAudio(url);
+}
+function audioCacheSize(){return audioCache.size}
 function stopSpeech(){
   speechToken++;
   if("speechSynthesis" in window)window.speechSynthesis.cancel();
-  if(activeAudio){
-    try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}
-    activeAudio=null;
-  }
+  if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
+}
+function splitSpeechText(text,maxLength=180){
+  const t=String(text??"").trim();if(!t)return [];
+  if(t.length<=maxLength)return [t];
+  const chunks=[],words=t.split(/\s+/);let current="";
+  words.forEach(function(word){
+    if(!current){current=word;return}
+    if((current+" "+word).length<=maxLength){current+=" "+word;return}
+    chunks.push(current);current=word;
+  });
+  if(current)chunks.push(current);
+  return chunks.length?chunks:[t];
 }
 function speak(text,rate,lang,retry,skipContentAudio){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const t=String(text??"").trim();if(!t)return;
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
   const token=++speechToken;
-  const r=Number(rate)||Number(db.profile.speechRate)||1,l=lang||"en-US",attempt=Number(retry||0);
+  const r=Math.max(0.5,Math.min(1.5,Number(rate)||Number(db.profile.speechRate)||1)),l=lang||"en-US",attempt=Number(retry||0);
   if(!skipContentAudio){
-    let item=null;
-    const practice=sentencePracticePool();
+    let item=null;const practice=sentencePracticePool();
     if(view==="listening"&&practice.length)item=practice[normalizeArrayIndex(listenIndex,practice.length)];
     else if(view==="speaking"&&practice.length)item=practice[normalizeArrayIndex(speakIndex,practice.length)];
     const contentAudio=audioUrl(item,l);
-    if(contentAudio){playAudio(contentAudio,t,r,l);return;}
+    if(contentAudio){playAudio(contentAudio,t,r,l);return}
   }
-  const active=function(){return token===speechToken};
-  const run=function(){
-    if(!active())return;
+  const parts=splitSpeechText(t),active=function(){return token===speechToken};let partIndex=0;
+  const runPart=function(){
+    if(!active()||partIndex>=parts.length)return;
     window.speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=r;
+    const u=new SpeechSynthesisUtterance(parts[partIndex++]);
+    u.lang=l;u.rate=r;u.pitch=1;u.volume=1;
     const v=getVoice(l);if(v)u.voice=v;
+    u.onend=function(){if(active())setTimeout(runPart,20)};
     u.onerror=function(){
       if(!active())return;
-      if(attempt<1)setTimeout(function(){if(active())speak(t,r,l,1)},180);
+      if(attempt<1)setTimeout(function(){if(active())speak(t,r,l,1,skipContentAudio)},160);
       else toast("Âm thanh gặp lỗi. Bấm Nghe lại để thử tiếp.");
     };
-    try{
-      window.speechSynthesis.resume();
-      if(active())window.speechSynthesis.speak(u);
-    }catch(e){
-      if(attempt<1)setTimeout(function(){if(active())speak(t,r,l,1)},180);
+    try{window.speechSynthesis.resume();if(active())window.speechSynthesis.speak(u)}
+    catch(e){
+      if(attempt<1)setTimeout(function(){if(active())speak(t,r,l,1,skipContentAudio)},160);
       else toast("Không thể phát âm thanh.");
     }
   };
-  const voices=window.speechSynthesis.getVoices?window.speechSynthesis.getVoices():[];
-  if(!voices.length&&"onvoiceschanged" in window){
+  const voices=refreshVoiceCache();
+  if(!voices.length&&"onvoiceschanged" in window&&attempt<1){
     let done=false;
-    const once=function(){if(done||!active())return;done=true;window.speechSynthesis.onvoiceschanged=null;run()};
-    window.speechSynthesis.onvoiceschanged=once;
-    setTimeout(function(){if(!done){done=true;window.speechSynthesis.onvoiceschanged=null;run()}},180);
-  }else run();
+    const once=function(){if(done||!active())return;done=true;try{window.speechSynthesis.onvoiceschanged=null}catch(e){}refreshVoiceCache();runPart()};
+    try{window.speechSynthesis.onvoiceschanged=once}catch(e){}
+    setTimeout(function(){if(!done){done=true;try{window.speechSynthesis.onvoiceschanged=null}catch(e){}runPart()}},140);
+  }else runPart();
 }
 function speakSequence(lines,rate,lang){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
-  const seq=(lines||[]).map(String).map(function(x){return x.trim()}).filter(Boolean),r=Number(rate)||0.92,l=lang||"en-US",token=++speechToken;
+  const seq=(lines||[]).map(String).map(function(x){return x.trim()}).filter(Boolean),r=Math.max(0.5,Math.min(1.5,Number(rate)||0.92)),l=lang||"en-US",token=++speechToken;
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
   window.speechSynthesis.cancel();
   let i=0;
   function next(){
-    if(token!==speechToken)return;
-    if(i>=seq.length)return;
-    const u=new SpeechSynthesisUtterance(seq[i++]);u.lang=l;u.rate=r;const v=getVoice(l);if(v)u.voice=v;
-    u.onend=next;u.onerror=function(){setTimeout(next,120)};
+    if(token!==speechToken||i>=seq.length)return;
+    const u=new SpeechSynthesisUtterance(seq[i++]);u.lang=l;u.rate=r;u.pitch=1;u.volume=1;
+    const v=getVoice(l);if(v)u.voice=v;
+    u.onend=function(){if(token===speechToken)next()};
+    u.onerror=function(){if(token===speechToken)setTimeout(next,120)};
     window.speechSynthesis.resume();window.speechSynthesis.speak(u);
   }
   next();
 }
 function playAudio(url,fallbackText,rate,lang){
-  const u=String(url||"").trim(),t=String(fallbackText||"").trim(),r=Number(rate)||1,l=lang||guessLang(t);
-  if(!u){if(t)speak(t,r,l);return;}
-  speechToken++;
+  const u=String(url||"").trim(),t=String(fallbackText||"").trim(),r=Math.max(0.5,Math.min(2,Number(rate)||1)),l=lang||guessLang(t);
+  if(!u){if(t)speak(t,r,l);return}
+  const token=++speechToken;
   if("speechSynthesis" in window)window.speechSynthesis.cancel();
   try{
     if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
-    const a=new Audio(u);a.preload="auto";
-    a.playbackRate=Math.max(0.5,Math.min(2,r));
-    activeAudio=a;
+    let a=audioCache.get(u);
+    if(!a){a=new Audio(u);a.preload="auto";audioCache.set(u,a);trimAudioCache()}
+    try{a.currentTime=0}catch(e){}
+    a.playbackRate=r;activeAudio=a;
     let failed=false;
-    const audioToken=++speechToken;
     const fallback=function(){
-      if(failed)return;
-      failed=true;
+      if(failed)return;failed=true;
       if(activeAudio===a)activeAudio=null;
-      if(audioToken!==speechToken)return;
+      if(token!==speechToken)return;
       toast("Không phát được file âm thanh. Chuyển sang giọng đọc trình duyệt.");
       if(t)speak(t,r,l,0,true);
     };
     a.onended=function(){if(activeAudio===a)activeAudio=null};
     a.onerror=fallback;
-    a.play().catch(fallback);
+    const p=a.play();if(p&&typeof p.catch==="function")p.catch(fallback);
   }catch(e){
     if(activeAudio)activeAudio=null;
-    toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");
-    if(t)speak(t,r,l,0,true);
+    if(token===speechToken){toast("Không thể phát file âm thanh. Chuyển sang giọng đọc trình duyệt.");if(t)speak(t,r,l,0,true)}
   }
 }
 function audioUrl(item,lang){
@@ -737,6 +802,7 @@ async function updateOnline(force){
       contentCounts:Object.fromEntries(Object.keys(next).map(function(key){return [key,next[key].length]}))
     };
     db={...db,...remoteContent};
+    invalidateDerivedPools();
     validateContent(true);
     if(pendingUserState){applyUserSnapshot({vocabState:pendingUserState});pendingUserState=null;}
     const cached=await cacheContent(db);
@@ -859,6 +925,17 @@ function render(){
   document.body.classList.toggle("dark",db.profile.theme==="dark");
   applyLayoutMode();
   if($("streak"))$("streak").textContent=db.stats.streak||0;
+  const side=$("side");
+  if(side&&typeof side.querySelectorAll==="function"){
+    side.querySelectorAll("button").forEach(function(b){
+      const onclick=b.getAttribute?String(b.getAttribute("onclick")||""):"";
+      const m=onclick.match(/show\('([^']+)'\)/),route=m?m[1]:"";
+      const active=route===view||(view==="reviewSummary"&&route==="review");
+      b.classList.toggle("active",active);
+      if(active&&b.setAttribute)b.setAttribute("aria-current","page");
+      else if(b.removeAttribute)b.removeAttribute("aria-current");
+    });
+  }
   const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,reviewSummary:reviewSummary,stats:stats,settings:settings}[view]||home;
   fn();
 }
@@ -1075,6 +1152,7 @@ function renderListening(){
     '<div class="actions" style="margin:14px 0"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 0.75×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">▶ 1×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1.25,\'en-US\')">🐇 1.25×</button><button onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔁 Nghe lại</button><button onclick="window.__showListeningText=!window.__showListeningText;renderListening()">👁 '+(showText?"Ẩn câu":"Hiện câu")+'</button></div>'+
     (showText?'<div class="hint"><b>'+esc(s.en)+'</b><br><span class="muted">'+esc(s.vi||"")+'</span></div>':'')+
     '<h3>Nghe & chọn nghĩa</h3><div class="options">'+choices.map(function(o){return '<button class="option" onclick="listenCheck(this,\''+escapeJs(o)+'\',\''+escapeJs(s.vi)+'\')">'+esc(o)+'</button>'}).join("")+'</div><div id="listenResult" class="hint" style="margin-top:14px">Hãy nghe rồi chọn.</div></div>');
+  preloadItemAudio(s,"en-US");
 }
 function listenCheck(el,selected,correct){
   if(listenAnswered)return;
@@ -1109,41 +1187,61 @@ function renderSpeaking(){
     '<div class="actions" style="margin-top:14px"><button class="primary" onclick="speak(\''+escapeJs(s.en)+'\',1,\'en-US\')">🔊 Nghe mẫu</button><button onclick="speak(\''+escapeJs(s.en)+'\',0.75,\'en-US\')">🐢 Nghe chậm</button><button class="primary" onclick="startRecognition()">🎙️ Bắt đầu nói</button><button onclick="prevSpeak()">← Trước</button><button onclick="nextSpeak()">Tiếp →</button></div>'+
     '<div class="actions" style="margin-top:10px"><button onclick="autoNextSpeaking=!autoNextSpeaking;renderSpeaking()">⏭️ Tự chuyển: '+(autoNextSpeaking?"BẬT":"TẮT")+'</button><span class="muted small">Phím → cũng chuyển câu</span></div>'+
     '<div id="speechResult" class="hint" style="margin-top:14px">Nghe mẫu rồi nói lại.</div></div>');
+  preloadItemAudio(s,"en-US");
 }
 function nextSpeak(){const list=sentencePracticePool();if(!list.length)return;stopSpeech();stopRecognition();speakIndex=(speakIndex+1)%list.length;save();renderSpeaking()}
 function prevSpeak(){const list=sentencePracticePool();if(!list.length)return;stopSpeech();stopRecognition();speakIndex=(speakIndex-1+list.length)%list.length;save();renderSpeaking()}
+function clearRecognitionTimer(){
+  if(recognitionTimer){clearTimeout(recognitionTimer);recognitionTimer=0}
+}
 function startRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){toast("Chrome/Edge thường hỗ trợ nhận diện microphone tốt hơn.");return}
+  if(!SR){toast("Trình duyệt này chưa hỗ trợ nhận diện microphone. Chrome/Edge thường hoạt động tốt hơn.");return}
   stopRecognition();
   const list=sentencePracticePool();if(!list.length){toast("Chưa có câu luyện độc lập.");return}
   speakIndex=normalizeArrayIndex(speakIndex,list.length);
   const target=list[speakIndex].en,r=new SR(),token=++recognitionToken;let handledResult=false;
-  activeRecognition=r;r.lang="en-US";r.interimResults=false;r.maxAlternatives=1;
-  const out=$("speechResult");if(out)out.textContent="🎙️ Đang nghe...";
+  activeRecognition=r;r.lang="en-US";r.interimResults=false;r.continuous=false;r.maxAlternatives=3;
+  const out=$("speechResult");if(out)out.innerHTML='<span class="speech-live">🎙️ Đang nghe… Hãy nói trọn câu.</span>';
+  recognitionTimer=setTimeout(function(){
+    recognitionTimer=0;
+    if(token!==recognitionToken||activeRecognition!==r||handledResult)return;
+    try{r.stop()}catch(e){}
+    if(activeRecognition===r)activeRecognition=null;
+    toast("Chưa nghe được câu nói. Hãy nói rõ, gần microphone hơn và thử lại.");
+  },12000);
   r.onresult=function(e){
-    if(handledResult)return;if(token!==recognitionToken||activeRecognition!==r)return;
-    handledResult=true;
-    const heard=e.results?.[0]?.[0]?.transcript||"",score=similarityScore(heard,target);
-    if(out)out.innerHTML="<b>Bạn nói:</b> "+esc(heard)+"<br><b>Mức khớp:</b> "+score+"%<br><span class=\"muted\">Đây là độ tương đồng văn bản, không phải chấm phát âm chuyên môn.</span>";
+    if(handledResult||token!==recognitionToken||activeRecognition!==r)return;
+    const result=e.results?.[0];if(!result||!result.length)return;
+    handledResult=true;clearRecognitionTimer();
+    const candidates=Array.from(result).map(function(item,index){
+      const heard=String(item?.transcript||"").trim();
+      return {heard,confidence:Number(item?.confidence)||0,index,score:similarityScore(heard,target)};
+    }).filter(function(x){return x.heard});
+    candidates.sort(function(a,b){return b.score-a.score||b.confidence-a.confidence||a.index-b.index});
+    const best=candidates[0]||{heard:"",confidence:0,score:0};
+    const score=best.score,confidence=best.confidence;
+    if(out){
+      const confidenceText=confidence>0?" · Độ tin cậy nhận diện: "+Math.round(confidence*100)+"%":"";
+      out.innerHTML="<b>Bạn nói:</b> "+esc(best.heard)+"<br><b>Độ khớp câu:</b> "+score+"%"+confidenceText+'<div class="speech-meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+score+'"><span style="width:'+score+'%"></span></div><span class="muted small">Điểm dựa trên transcript và thứ tự từ; không phải phép đo âm học chuyên nghiệp.</span>';
+    }
     db.stats.sentenceAnswered=(Number(db.stats.sentenceAnswered)||0)+1;
     db.stats.speakingAttempts=(Number(db.stats.speakingAttempts)||0)+1;
     recordActivity();
-    if(score>=80){
-      db.stats.sentenceCorrect=(Number(db.stats.sentenceCorrect)||0)+1;
-      db.stats.speakingGood=(Number(db.stats.speakingGood)||0)+1;
-      addXP(10);
-    }
+    if(score>=80){db.stats.sentenceCorrect=(Number(db.stats.sentenceCorrect)||0)+1;db.stats.speakingGood=(Number(db.stats.speakingGood)||0)+1;addXP(10)}
     save();
     if(autoNextSpeaking)setTimeout(function(){if(view==="speaking"&&token===recognitionToken)nextSpeak()},1200);
   };
-  r.onerror=function(){
+  r.onerror=function(e){
     if(token!==recognitionToken)return;
-    if(activeRecognition===r)activeRecognition=null;
-    toast("Không nhận được giọng nói. Hãy kiểm tra quyền microphone.");
+    clearRecognitionTimer();if(activeRecognition===r)activeRecognition=null;
+    const code=String(e?.error||"");
+    if(code==="not-allowed"||code==="service-not-allowed")toast("Microphone đã bị chặn. Hãy cấp quyền microphone cho trang rồi thử lại.");
+    else if(code==="no-speech")toast("Không phát hiện giọng nói. Hãy nói rõ và thử lại.");
+    else toast("Không nhận được giọng nói. Hãy kiểm tra microphone và quyền truy cập.");
   };
-  r.onend=function(){if(activeRecognition===r)activeRecognition=null;};
-  try{r.start()}catch(e){if(activeRecognition===r)activeRecognition=null;toast("Microphone đang bận. Hãy thử lại.");}
+  r.onend=function(){if(activeRecognition===r)activeRecognition=null;clearRecognitionTimer()};
+  try{r.start()}catch(e){clearRecognitionTimer();if(activeRecognition===r)activeRecognition=null;toast("Microphone đang bận. Hãy thử lại.")}
 }
 function normalizeSpeechText(s){
   let t=norm(s).replace(/’/g,"'");
@@ -1172,13 +1270,35 @@ function normalizeSpeechText(s){
     .replace(/\b(they'd|theyd)\b/g,"they would");
   return t.replace(/[.!?,;:()[\]{}"]/g," ").replace(/\s+/g," ").trim();
 }
+function tokenLevenshtein(a,b){
+  const A=Array.isArray(a)?a:[],B=Array.isArray(b)?b:[],prev=new Array(B.length+1);
+  for(let j=0;j<=B.length;j++)prev[j]=j;
+  for(let i=1;i<=A.length;i++){
+    let prevDiag=prev[0];prev[0]=i;
+    for(let j=1;j<=B.length;j++){
+      const old=prev[j],cost=A[i-1]===B[j-1]?0:1;
+      prev[j]=Math.min(prev[j]+1,prev[j-1]+1,prevDiag+cost);prevDiag=old;
+    }
+  }
+  return prev[B.length]||0;
+}
+function tokenOverlapScore(A,B){
+  const used=new Set();let hit=0;
+  A.forEach(function(x){const i=B.findIndex(function(y,j){return !used.has(j)&&x===y});if(i>=0){hit++;used.add(i)}});
+  return hit/Math.max(1,Math.max(A.length,B.length));
+}
+function positionalWordScore(A,B){
+  const n=Math.min(A.length,B.length);if(!n)return 0;
+  let same=0;for(let i=0;i<n;i++)if(A[i]===B[i])same++;
+  return same/Math.max(A.length,B.length);
+}
 function similarityScore(a,b){
   const A=normalizeSpeechText(a).split(" ").filter(Boolean),B=normalizeSpeechText(b).split(" ").filter(Boolean);
-  if(!A.length||!B.length)return 0;let hit=0;const used=new Set();
-  A.forEach(function(x){const i=B.findIndex(function(y,j){return !used.has(j)&&x===y});if(i>=0){hit++;used.add(i)}});
-  return Math.round(hit/Math.max(A.length,B.length)*100);
+  if(!A.length||!B.length)return 0;
+  if(A.join(" ")===B.join(" "))return 100;
+  const maxLen=Math.max(A.length,B.length),edit=1-tokenLevenshtein(A,B)/maxLen,overlap=tokenOverlapScore(A,B),position=positionalWordScore(A,B);
+  return Math.max(0,Math.min(100,Math.round((edit*0.65+overlap*0.2+position*0.15)*100)));
 }
-
 
 function normalizeArrayIndex(value,total){
   if(!total)return 0;
@@ -1659,6 +1779,7 @@ function init(){
     if(view==="speaking"&&e.key==="ArrowRight"&&e.target.tagName!=="INPUT"&&e.target.tagName!=="TEXTAREA"){nextSpeak()}
     if(e.key==="Escape")stopSpeech();
   });
+  installVoiceCache();
   render();
   try{
     if(window.matchMedia){
