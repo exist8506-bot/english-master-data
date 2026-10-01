@@ -1178,7 +1178,7 @@ for(const mode of practiceModes){
 check("smart review queue stays unique and bounded", (() => {
   const q=T.buildReviewQueue("smart",20);
   return q.length<=20 && q.length===new Set(q).size && q.every(Boolean);
-})();
+}));
 check("review target queues stay within requested limit", ["due","weak","mistakes","favorites","new"].every((m)=>{
   const q=T.buildReviewQueue(m,20);
   return q.length<=20 && q.length===new Set(q).size;
