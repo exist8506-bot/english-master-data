@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.9";
+const APP_VERSION="9.3.10";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -1226,6 +1226,8 @@ function reviewSummary(){
     '<div class="card"><div class="big">+'+s.xp+'</div><div class="muted">XP từ phiên</div></div></div>'+
     '<div class="card"><h2>Tiếp tục học</h2><div class="actions"><button class="primary" onclick="startQuickStudy()">⚡ Học nhanh 10 từ</button><button onclick="show(\'review\')">🔄 Ôn tập</button><button onclick="show(\'home\')">🏠 Trang chủ</button></div></div>');
 }
+function nextFlash(){const total=reviewQueue.length||db.vocab.length;if(!total)return;stopSpeech();flashFlipped=false;if(reviewQueue.length)reviewIndex=(reviewIndex+1)%reviewQueue.length;else flashIndex=(flashIndex+1)%db.vocab.length;save();render();}
+function prevFlash(){const total=reviewQueue.length||db.vocab.length;if(!total)return;stopSpeech();flashFlipped=false;if(reviewQueue.length)reviewIndex=(reviewIndex-1+reviewQueue.length)%reviewQueue.length;else flashIndex=(flashIndex-1+db.vocab.length)%db.vocab.length;save();render();}
 function shuffleFlash(){
   if(reviewQueue.length){
     reviewIndex=Math.floor(Math.random()*reviewQueue.length);
@@ -1901,8 +1903,21 @@ function init(){
   document.addEventListener("keydown",function(e){
     const tag=String(e.target?.tagName||"").toUpperCase();
     const editing=tag==="INPUT"||tag==="TEXTAREA"||tag==="SELECT"||tag==="BUTTON"||!!e.target?.isContentEditable;
-    if(view==="speaking"&&e.key==="ArrowRight"&&!editing){e.preventDefault();nextSpeak()}
-    if(e.key==="Escape"&&!editing)stopSpeech();
+    if(editing)return;
+    if(view==="speaking"&&e.key==="ArrowRight"){e.preventDefault();nextSpeak();return}
+    if(view==="flashcards"){
+      if(e.key===" "){e.preventDefault();flashFlipped=!flashFlipped;renderFlashcards();return}
+      if(e.key==="ArrowRight"){e.preventDefault();nextFlash();return}
+      if(e.key==="ArrowLeft"){e.preventDefault();prevFlash();return}
+      if(e.key==="1"){e.preventDefault();rateFlash("Chưa nhớ");return}
+      if(e.key==="2"){e.preventDefault();rateFlash("Đã nhớ");return}
+      if(e.key==="3"){e.preventDefault();rateFlash("Rất dễ");return}
+    }
+    if((view==="quiz"||view==="listening"||view==="practice")&&/^[1-4]$/.test(e.key)){
+      const n=Number(e.key)-1,opts=document.querySelectorAll("#view .options .option");
+      if(opts[n]&&!opts[n].disabled){e.preventDefault();opts[n].click();return}
+    }
+    if(e.key==="Escape")stopSpeech();
   });
   installVoiceCache();
   render();

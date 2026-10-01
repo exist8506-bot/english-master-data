@@ -128,6 +128,11 @@ body.layout-phone #side button::before{left:10px;right:10px;top:auto;bottom:3px;
 @keyframes flashFrontIn{from{opacity:0;transform:rotateX(-4deg) translateY(8px) scale(.985)}to{opacity:1;transform:none}}@keyframes flashFlipIn{from{opacity:0;transform:rotateY(75deg) scale(.96)}to{opacity:1;transform:rotateY(0) scale(1)}}
 @keyframes answerPop{0%{transform:scale(.98)}60%{transform:scale(1.015)}100%{transform:scale(1)}}@keyframes answerShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 @keyframes riseIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}@keyframes toastProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.flash-hint{margin:8px 0 0;text-align:center}
+button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid color-mix(in srgb,var(--p) 58%,white);outline-offset:2px;box-shadow:0 0 0 5px var(--p-soft)!important}
+@media(pointer:coarse){button{min-height:44px}.actions button{min-width:44px}.jump-input{min-height:44px}}
+body.layout-phone main{padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+body.layout-phone #view{padding-bottom:calc(12px + env(safe-area-inset-bottom))}
 @media(prefers-reduced-motion:reduce){body{transition:none}button,.card,.item,input,select{transition:none!important}#toast.show::after{animation:none}#view.page-enter,#view.page-enter>.card,.flash,.rating,.notice,.bar,.brand>b::after{animation:none!important}}
 
 /* V9.3.5 interface feedback layer */
