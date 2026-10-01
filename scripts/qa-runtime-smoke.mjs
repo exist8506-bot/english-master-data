@@ -600,6 +600,14 @@ const malformedOrderBefore=T.snap().practiceAnswerOrder.length;
 T.practicePickToken(-1);
 T.practicePickToken(999999);
 check("practice rejects malformed sentence-order tokens", T.snap().practiceAnswerOrder.length===malformedOrderBefore);
+T.startPracticeMode("smart",8);
+let orderItem=T.snap().practiceQueue.find(x=>x.type==="order");
+if(orderItem){
+  while(T.snap().practiceQueue[T.snap().practiceIndex]?.type!=="order")T.practiceNext();
+  const orderSnap=T.snap(),beforeAnswered=orderSnap.practiceAnswered;
+  T.practiceCheckOrder();
+  check("practice rejects incomplete sentence-order submission", T.snap().practiceAnswered===beforeAnswered);
+}
 T.startPracticeMode("favorites",6);
 const favoriteModeCount=T.snap().practiceQueue.length;
 T.show("home");T.show("practice");

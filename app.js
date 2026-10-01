@@ -1509,6 +1509,7 @@ function practiceCheckOrder(){
     if(Number.isInteger(n)&&n>=0&&n<item.words.length&&!seen.has(n)){seen.add(n);cleaned.push(n);}
   });
   if(cleaned.length!==(Array.isArray(practiceAnswerOrder)?practiceAnswerOrder.length:0))practiceAnswerOrder=cleaned;
+  if(cleaned.length<item.words.length){toast("Hãy chọn đủ các từ trước khi kiểm tra.");render();return;}
   const actual=cleaned.map(function(i){return item.words[i]}).join(" ");
   const ok=norm(actual)===norm(item.target.replace(/[.!?]+$/,""));
   practiceAnswered=true;finishPractice(ok);
@@ -1794,8 +1795,10 @@ function init(){
   load();
   if($("theme"))$("theme").onclick=function(){db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()};
   document.addEventListener("keydown",function(e){
-    if(view==="speaking"&&e.key==="ArrowRight"&&e.target.tagName!=="INPUT"&&e.target.tagName!=="TEXTAREA"){nextSpeak()}
-    if(e.key==="Escape")stopSpeech();
+    const tag=String(e.target?.tagName||"").toUpperCase();
+    const editing=tag==="INPUT"||tag==="TEXTAREA"||tag==="SELECT"||tag==="BUTTON"||!!e.target?.isContentEditable;
+    if(view==="speaking"&&e.key==="ArrowRight"&&!editing){e.preventDefault();nextSpeak()}
+    if(e.key==="Escape"&&!editing)stopSpeech();
   });
   installVoiceCache();
   render();
