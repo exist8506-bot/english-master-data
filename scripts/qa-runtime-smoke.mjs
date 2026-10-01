@@ -674,13 +674,13 @@ check(
   originalOptions.every((x) => renderedOptions.includes(x)) &&
   snap.quizCorrectIndex >= 0 && snap.quizCorrectIndex < 4
 );
-const quizOrders = new Set();
-for (let i = 0; i < 12; i += 1) {
-  T.quiz();
-  const order = T.snap().quizOptions.join("\u0000");
-  quizOrders.add(order);
-}
-check("quiz order actually varies across renders", quizOrders.size > 1, "orders=" + quizOrders.size);
+const quizOrderBeforeRerender = T.snap().quizOptions.join("\u0000");
+T.quiz();
+const quizOrderAfterRerender = T.snap().quizOptions.join("\u0000");
+check("quiz order stays stable across harmless rerender", quizOrderBeforeRerender===quizOrderAfterRerender);
+T.nextQuiz();
+const nextQuizSnap = T.snap();
+check("quiz new question rebuilds four choices", nextQuizSnap.quizOptions.length===4 && nextQuizSnap.quizCorrectIndex>=0 && nextQuizSnap.quizCorrectIndex<4);
 T.quiz();
 snap = T.snap();
 const answeredBefore = snap.db.stats.answered;
