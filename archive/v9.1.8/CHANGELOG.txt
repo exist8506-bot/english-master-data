@@ -1,0 +1,11 @@
+English Master V9.1.8
+
+Deep QA/fix pass:
+- Preserve current word-level learning state during legacy backup merge.
+- Do not mark a data version synced when a non-critical GitHub data file fails.
+- Safe speech cancellation and recognition-session invalidation.
+- Prevent stale speaking auto-next after navigation.
+- Align bundled data version with GitHub data source 8.1.1.
+- Repair malformed vocabulary and sentence examples.
+- Synchronize sentence vocabWord/English/Vietnamese fields.
+- Mobile/desktop smoke tests pass; no page or console errors in tested views.
