@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.11";
+const APP_VERSION="9.3.12";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -495,7 +495,7 @@ function showXpBurst(amount){
   el.textContent="+"+n+" XP";
   el.setAttribute("aria-hidden","true");
   if(xpFxNodes>=3){
-    const old=root.querySelector(".xp-burst");
+    const old=root.querySelector?root.querySelector(".xp-burst"):null;
     if(old){old.remove();xpFxNodes=Math.max(0,xpFxNodes-1)}
   }
   root.appendChild(el);
