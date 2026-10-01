@@ -185,3 +185,17 @@ body.layout-phone .hero-progress{margin-top:14px}
 @media(prefers-reduced-motion:reduce){
   #view.feedback-good::after,#view.feedback-bad::after,#view.feedback-xp::after,.result-good,.result-bad,.correct,.wrong{animation:none!important}
 }
+
+/* V9.3.7 tactile navigation layer */
+button::after{left:var(--ripple-x,50%);top:var(--ripple-y,50%)}
+.xp-burst{position:fixed;top:78px;right:22px;z-index:120;pointer-events:none;padding:8px 12px;border:1px solid rgba(91,91,214,.20);border-radius:999px;background:color-mix(in srgb,var(--card) 92%,transparent);color:var(--p);font-weight:800;font-size:13px;box-shadow:0 12px 28px rgba(23,30,52,.14),0 0 0 5px var(--p-soft);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);animation:xpBurst .78s var(--ease) both}
+#streak{display:inline-block;transform-origin:center;will-change:transform}
+#streak.streak-pulse{animation:streakPulse .56s var(--ease) both}
+#backTop{position:fixed;right:22px;bottom:24px;z-index:95;width:44px;height:44px;min-height:44px;padding:0;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 12px 28px rgba(23,30,52,.13);opacity:0;pointer-events:none;transform:translateY(10px) scale(.9);transition:opacity .22s ease,transform .24s var(--ease),box-shadow .2s ease}
+#backTop.show{opacity:1;pointer-events:auto;transform:none}
+#backTop:hover{box-shadow:0 16px 32px var(--p-soft)}
+body.layout-phone #backTop{right:14px;bottom:calc(84px + env(safe-area-inset-bottom))}
+@keyframes xpBurst{0%{opacity:0;transform:translateY(9px) scale(.78)}25%{opacity:1;transform:translateY(0) scale(1.06)}100%{opacity:0;transform:translateY(-34px) scale(1)}}
+@keyframes streakPulse{0%{transform:scale(1)}45%{transform:scale(1.34)}100%{transform:scale(1)}}
+@media(max-width:600px){.xp-burst{top:66px;right:12px}#backTop{right:12px}}
+@media(prefers-reduced-motion:reduce){.xp-burst,#streak.streak-pulse{animation:none!important}#backTop{transition:none!important}}

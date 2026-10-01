@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.6";
+const APP_VERSION="9.3.7";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -248,6 +248,7 @@ function recordActivity(){
     db.stats.streak=diff===1?(Number(db.stats.streak)||0)+1:1;
   }else db.stats.streak=1;
   db.stats.lastActivityDate=today;
+  pulseStreak();
 }
 function contentSnapshot(source){
   const d=source||db;
@@ -467,7 +468,31 @@ function toast(msg){
   const el=$("toast"); if(!el)return;
   el.textContent=msg; el.className="show"; setTimeout(function(){el.className=""},2600);
 }
-function addXP(n){db.stats.xp=(db.stats.xp||0)+Number(n||0)}
+let xpFxNodes=0,streakFxTimer=0;
+function showXpBurst(amount){
+  const n=Math.max(0,Number(amount)||0),root=document.body;
+  if(!root||!n)return;
+  const el=document.createElement("div");
+  el.className="xp-burst";
+  el.textContent="+"+n+" XP";
+  el.setAttribute("aria-hidden","true");
+  root.appendChild(el);
+  xpFxNodes++;
+  setTimeout(function(){el.remove();xpFxNodes=Math.max(0,xpFxNodes-1)},850);
+}
+function pulseStreak(){
+  const el=$("streak");if(!el)return;
+  el.classList.remove("streak-pulse");
+  void el.offsetWidth;
+  el.classList.add("streak-pulse");
+  if(streakFxTimer)clearTimeout(streakFxTimer);
+  streakFxTimer=setTimeout(function(){el.classList.remove("streak-pulse")},600);
+}
+function addXP(n){
+  const amount=Number(n)||0;
+  db.stats.xp=(db.stats.xp||0)+amount;
+  if(amount>0)showXpBurst(amount);
+}
 let uiFeedbackTimer=0;
 function playUiFeedback(kind){
   const el=$("view");if(!el)return;
@@ -1827,8 +1852,27 @@ async function checkAppVersion(){
     }
   }catch(e){}
 }
+function installVisualInteractionHooks(){
+  try{
+    document.addEventListener("pointerdown",function(e){
+      const b=e.target?.closest?.("button");
+      if(!b||b.disabled)return;
+      const r=b.getBoundingClientRect();
+      if(r.width>0&&r.height>0){
+        b.style.setProperty("--ripple-x",Math.round(e.clientX-r.left)+"px");
+        b.style.setProperty("--ripple-y",Math.round(e.clientY-r.top)+"px");
+      }
+    },{passive:true});
+    const top=$("backTop");
+    const sync=function(){if(top)top.classList.toggle("show",window.scrollY>480)};
+    window.addEventListener("scroll",sync,{passive:true});
+    if(top)top.onclick=function(){try{window.scrollTo({top:0,behavior:"smooth"})}catch(e){window.scrollTo(0,0)}};
+    sync();
+  }catch(e){}
+}
 function init(){
   load();
+  installVisualInteractionHooks();
   if($("theme"))$("theme").onclick=function(){db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()};
   document.addEventListener("keydown",function(e){
     const tag=String(e.target?.tagName||"").toUpperCase();
