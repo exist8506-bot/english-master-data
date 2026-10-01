@@ -1,4 +1,4 @@
-const APP_VERSION="9.4.4";
+const APP_VERSION="9.4.5";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -567,6 +567,10 @@ function stopRecognition(){
   clearRecognitionTimer();
   if(activeRecognition){try{activeRecognition.onend=null;activeRecognition.abort()}catch(e){} activeRecognition=null;}
 }
+function toggleTheme(){
+  db.profile.theme=db.profile.theme==="dark"?"light":"dark";
+  save();render();
+}
 function show(v){
   v=VALID_VIEWS.has(String(v))?String(v):"home";
   stopSpeech();
@@ -707,7 +711,8 @@ function speak(text,rate,lang,retry,skipContentAudio){
       if(attempt<1)setTimeout(function(){if(active())speak(t,r,l,1,skipContentAudio)},160);
       else toast("Âm thanh gặp lỗi. Bấm Nghe lại để thử tiếp.");
     };
-    try{window.speechSynthesis.resume();if(active())window.speechSynthesis.speak(u)}
+    try{if(typeof window.speechSynthesis.resume==="function")window.speechSynthesis.resume()}catch(e){}
+    try{if(active())window.speechSynthesis.speak(u)}
     catch(e){
       if(attempt<1)setTimeout(function(){if(active())speak(t,r,l,1,skipContentAudio)},160);
       else toast("Không thể phát âm thanh.");
@@ -735,8 +740,8 @@ function speakSequence(lines,rate,lang){
     const v=getVoice(l);if(v)u.voice=v;
     u.onend=function(){if(token===speechToken)next()};
     u.onerror=function(){if(token===speechToken)setTimeout(next,120)};
+    try{if(typeof window.speechSynthesis.resume==="function")window.speechSynthesis.resume()}catch(e){}
     try{
-      if(typeof window.speechSynthesis.resume==="function")window.speechSynthesis.resume();
       if(token===speechToken)window.speechSynthesis.speak(u);
     }catch(e){
       if(token===speechToken)toast("Không thể phát chuỗi âm thanh. Bấm Nghe lại để thử.");
@@ -1879,7 +1884,7 @@ function settings(){
       '<option value="phone" '+(layout==="phone"?"selected":"")+'>Điện thoại</option>'+
       '<option value="desktop" '+(layout==="desktop"?"selected":"")+'>Máy tính</option>'+
     '</select></div>'+
-    '<div class="card"><h2>🌙 Giao diện</h2><button onclick="db.profile.theme=db.profile.theme==="dark"?"light":"dark";save();render()">Đổi Light / Dark</button></div>'+
+    '<div class="card"><h2>🌙 Giao diện</h2><button onclick="toggleTheme()">Đổi Light / Dark</button></div>'+
     '<div class="card"><h2>💾 Dữ liệu học tập</h2><p class="small muted">Xuất tiến độ để sao lưu hoặc nhập lại trên thiết bị khác. Đặt lại chỉ xóa tiến độ, không xóa dữ liệu bài học.</p><div class="actions"><button class="primary" onclick="exportProgress()">⬇️ Xuất tiến độ</button><button onclick="openProgressImport()">⬆️ Nhập tiến độ</button><button onclick="resetProgress()">♻️ Đặt lại tiến độ</button></div><input id="progressImport" type="file" accept="application/json,.json" style="display:none" onchange="importProgress(this)"></div>');
 }
 function persistLifecycle(){
@@ -1955,7 +1960,7 @@ function init(){
       const n=Number(e.key)-1,opts=document.querySelectorAll("#view .options .option");
       if(opts[n]&&!opts[n].disabled){e.preventDefault();opts[n].click();return}
     }
-    if(e.key==="Escape")stopSpeech();
+    if(e.key==="Escape"){stopSpeech();stopRecognition();}
   });
   installVoiceCache();
   render();
