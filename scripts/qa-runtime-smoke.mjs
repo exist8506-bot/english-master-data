@@ -1321,7 +1321,7 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.3.3" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", expectedAppVersion==="9.3.4" && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 check("index cache-busts latest app.js", index.includes('app.js?v=' + expectedAppVersion));
@@ -1342,6 +1342,10 @@ check("phone layout hardens long tables", styles.includes("body.layout-phone .ta
 check("phone layout keeps touch targets usable", styles.includes("body.layout-phone button,body.layout-phone input,body.layout-phone select{min-height:42px}"));
 check("V9 practice order controls have styling hooks", styles.includes(".practice-order") && styles.includes(".token"));
 check("quick layout button has stable touch size", styles.includes(".layout-quick{min-width:42px;min-height:42px") && styles.includes("body.layout-phone .layout-quick,body.layout-desktop .layout-quick"));
+check("V9.3.4 navigation animation hook exists", app.includes("renderMotion=true") && app.includes("page-enter"));
+check("V9.3.4 visual motion stylesheet is present", styles.includes("V9.3.4 visual motion + interaction system") && styles.includes("@keyframes cardEnter"));
+check("V9.3.4 toast has animated feedback", styles.includes("#toast.show") && styles.includes("toastProgress"));
+check("V9.3.4 flashcard motion is present", styles.includes(".flash.flipped") && styles.includes("flashFlipIn"));
 
 
 if (failures.length) {

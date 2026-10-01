@@ -1,8 +1,9 @@
-const APP_VERSION="9.3.3";
+const APP_VERSION="9.3.4";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
 
+let renderMotion=false,renderMotionSeq=0;
 let db={
   vocab:[],sentences:[],questions:[],grammar:[],communication:[],trilingual:[],
   stats:{xp:0,streak:0,learned:0,answered:0,correct:0,sentenceAnswered:0,sentenceCorrect:0,speakingAttempts:0,speakingGood:0,dailyDate:"",dailyUnits:0,dailyHistory:[],practiceCompleted:0},
@@ -508,7 +509,7 @@ function show(v){
   if(listenAdvanceTimer){clearTimeout(listenAdvanceTimer);listenAdvanceTimer=0;}
   if(v!=="flashcards"&&v!=="reviewSummary"){reviewQueue=[];reviewIndex=0;quickReviewActive=false;reviewSession={active:false,mode:"",total:0,answered:0,remembered:0,forgot:0,xp:0};}
   if(v!=="practice"){practiceQueue=[];practiceIndex=0;practiceAnswered=false;practiceAnswerOrder=[];practiceCorrectCount=0;practiceAnsweredCount=0;practiceSessionXp=0;}
-  view=v;render();
+  renderMotion=true;view=v;render();
 }
 function learnNext(){
   const due=db.vocab.some(v=>v.reviewDue&&new Date(v.reviewDue)<=new Date());
@@ -956,6 +957,22 @@ function render(){
   }
   const fn={home:home,vocab:vocab,sentences:sentences,flashcards:flashcards,practice:practice,quiz:quiz,listening:listening,speaking:speaking,grammar:grammar,communication:communication,trilingual:trilingual,review:review,reviewSummary:reviewSummary,stats:stats,settings:settings}[view]||home;
   fn();
+  const animate=renderMotion;
+  renderMotion=false;
+  if(animate){
+    const el=$("view"),seq=++renderMotionSeq;
+    if(el){
+      el.classList.remove("page-enter");
+      void el.offsetWidth;
+      const kick=typeof window.requestAnimationFrame==="function"?window.requestAnimationFrame:function(cb){setTimeout(cb,0)};
+      kick(function(){
+        if(seq!==renderMotionSeq)return;
+        el.classList.add("page-enter");
+        setTimeout(function(){if(seq===renderMotionSeq)el.classList.remove("page-enter")},700);
+      });
+    }
+    try{if(typeof window.scrollTo==="function")window.scrollTo({top:0,behavior:"smooth"})}catch(e){}
+  }
 }
 function home(){
   ensureDailyProgress();
