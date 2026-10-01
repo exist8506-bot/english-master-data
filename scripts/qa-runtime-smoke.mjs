@@ -610,11 +610,12 @@ if(orderItem){
     const idx=item.options.findIndex((x)=>normalizeTest(x)===normalizeTest(item.answer));
     if(idx<0)break;
     T.practiceAnswer(idx);
+    T.practiceNext();
     safety++;
   }
   const orderSnap=T.snap(),beforeAnswered=orderSnap.practiceAnswered;
   T.practiceCheckOrder();
-  check("practice rejects incomplete sentence-order submission", T.snap().practiceAnswered===beforeAnswered);
+  check("practice rejects incomplete sentence-order submission", safety>0 && safety<8 && orderSnap.practiceQueue[orderSnap.practiceIndex]?.type==="order" && T.snap().practiceAnswered===beforeAnswered);
 }
 T.startPracticeMode("favorites",6);
 const favoriteModeCount=T.snap().practiceQueue.length;
