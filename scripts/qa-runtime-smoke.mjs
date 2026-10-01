@@ -603,7 +603,7 @@ check("practice rejects malformed sentence-order tokens", T.snap().practiceAnswe
 T.startPracticeMode("smart",8);
 let orderItem=T.snap().practiceQueue.find(x=>x.type==="order");
 if(orderItem){
-  while(T.snap().practiceQueue[T.snap().practiceIndex]?.type!=="order")T.practiceNext();
+  let safety=0;\n  while(T.snap().practiceQueue[T.snap().practiceIndex]?.type!=="order" && safety<8){\n    const item=T.snap().practiceQueue[T.snap().practiceIndex];\n    if(!item||item.type==="order")break;\n    const idx=item.options.findIndex((x)=>normalizeTest(x)===normalizeTest(item.answer));\n    if(idx<0)break;\n    T.practiceAnswer(idx);\n    safety++;\n  }
   const orderSnap=T.snap(),beforeAnswered=orderSnap.practiceAnswered;
   T.practiceCheckOrder();
   check("practice rejects incomplete sentence-order submission", T.snap().practiceAnswered===beforeAnswered);
