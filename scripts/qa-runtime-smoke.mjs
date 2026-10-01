@@ -1174,7 +1174,7 @@ for(const mode of practiceModes){
         : Array.isArray(item.options) && item.options.length>=2 &&
           new Set(item.options.map((v)=>String(v).trim().toLowerCase())).size===item.options.length &&
           String(item.answer??"").trim())
-  );
+  ));
 }
 
 check("smart review queue stays unique and bounded", (() => {
