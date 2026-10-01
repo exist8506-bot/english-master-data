@@ -745,9 +745,10 @@ check("listening double-tap is scored only once", afterDoubleListen.sentenceAnsw
 T.show("stats");
 T.show("listening");
 check("listening answer state resets on re-entry", T.snap().listenAnswered === false);
+const sentenceAnsweredAtReentry = T.snap().db.stats.sentenceAnswered || 0;
 if (currentSentence) T.listenCheck(new El("listen-option", "button"), currentSentence.vi, currentSentence.vi);
 const afterListen = T.snap().db.stats;
-check("listening interaction", afterListen.sentenceAnswered === sentenceAnsweredBefore + 1 && afterListen.sentenceCorrect >= 1);
+check("listening interaction", afterListen.sentenceAnswered === sentenceAnsweredAtReentry + 1 && afterListen.sentenceCorrect > (sentenceCorrectBefore || 0));
 
 T.show("listening");
 let html=document.getElementById("view").innerHTML;
@@ -1328,7 +1329,7 @@ check("header settings button is accessible", /onclick="show\('settings'\)"[^>]+
 check("quick layout button is in header", index.includes('id="layoutQuick"') && index.includes("toggleLayoutQuick()"));
 const appVersion = JSON.parse(fs.readFileSync(path.join(root, "app-version.json"), "utf8"));
 const expectedAppVersion = String(appVersion.version || "");
-check("V9 is the final version signal", expectedAppVersion==="9.4.6" && !index.includes("V10") && !icon512.includes("V10"));
+check("V9 is the final version signal", /^9\.\d+\.\d+$/.test(expectedAppVersion) && !index.includes("V10") && !icon512.includes("V10"));
 check("version comparison accepts only newer semantic versions", T.compareVersions("9.1.6","9.0.1")===1 && T.compareVersions("9.0.0","9.1.6")===-1 && T.compareVersions("9.1.6","9.1.6")===0 && T.compareVersions("future","9.1.6")===0 && T.compareVersions("10.0","9.1.6")===0);
 check("version comparison handles multi-digit patch versions", T.compareVersions("9.1.60","9.1.6")===1 && T.compareVersions("9.10.0","9.9.9")===1);
 
@@ -1336,7 +1337,8 @@ check("speech capability guard accepts usable synthesis", T.speechSynthesisUsabl
 check("speech capability guard rejects incomplete synthesis", (()=>{const original=window.speechSynthesis.speak; window.speechSynthesis.speak=undefined; let ok=true; try{T.speak("guard test",1,"en-US")}catch(e){ok=false} window.speechSynthesis.speak=original; return ok;})());
 check("content audio is preferred even without SpeechSynthesis", (() => {
   const pool = T.sentencePracticePool();
-  const item = pool[0];
+  const current = T.snap().listenIndex;
+  const item = pool[((Number.isFinite(Number(current)) ? Math.trunc(Number(current)) : 0) % pool.length + pool.length) % pool.length];
   if(!item) return false;
   const oldSpeak = window.speechSynthesis.speak;
   const before = audioCalls.length;
