@@ -17,3 +17,11 @@ Repo này được dùng làm nguồn lưu trữ và cập nhật dữ liệu ch
 
 ## Final QA gate — V9.3.0
 - Full repository regression suite executed against the final V9.3.0 application commit.
+
+## V9.3.1
+- Fixed the Settings daily-goal selector to use the validated history-synchronizing setter.
+- Hardened sentence-order practice against invalid and duplicate token indexes.
+- Hardened progress imports against duplicate vocabulary states, out-of-range daily goals, and invalid review timestamps.
+
+## Final QA gate — V9.3.1
+- Full repository regression suite is required against the final V9.3.1 application commit.

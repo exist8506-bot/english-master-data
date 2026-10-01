@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.0";
+const APP_VERSION="9.3.1";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -1319,7 +1319,7 @@ function buildPracticeSession(count=8,mode="smart"){
 }
 function practice(){
   if(!practiceQueue.length)practiceQueue=buildPracticeSession(8,practiceMode);
-  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9.3","Chưa đủ dữ liệu để tạo bài.");return;}
+  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9.3.1","Chưa đủ dữ liệu để tạo bài.");return;}
   practiceIndex=normalizeArrayIndex(practiceIndex,practiceQueue.length);
   const item=practiceQueue[practiceIndex];
   let body='<div class="toolbar"><span class="badge">⚡ '+esc(practiceModeLabel(practiceMode))+'</span><span class="muted">'+(practiceIndex+1)+' / '+practiceQueue.length+' · Đúng '+practiceCorrectCount+' / '+practiceAnsweredCount+'</span></div>';
@@ -1330,7 +1330,7 @@ function practice(){
     body+='<h2>Sắp xếp câu</h2><p class="muted">'+esc(item.prompt)+'</p><div class="practice-order">'+practiceAnswerOrder.map(function(i){return '<button class="token chosen" onclick="practiceRemoveToken('+i+')">'+esc(item.words[i])+'</button>'}).join(" ")+'</div><div class="practice-order">'+item.words.map(function(w,i){const used=practiceAnswerOrder.includes(i);return '<button class="token" '+(used||practiceAnswered?"disabled":"")+' onclick="practicePickToken('+i+')">'+esc(w)+'</button>'}).join(" ")+'</div><button class="primary" style="margin-top:12px" onclick="practiceCheckOrder()">Kiểm tra</button>';
   }
   body+='<div id="practiceResult" class="hint" style="margin-top:14px">'+(practiceAnswered?"":"Hoàn thành bài rồi kiểm tra đáp án.")+'</div><div class="actions" style="margin-top:14px">'+(practiceAnswered?'<button class="primary" onclick="practiceNext()">Câu tiếp →</button>':"")+'<button onclick="restartPractice()">🔀 Bài khác</button></div><div class="card" style="margin-top:12px"><div class="muted small">Chế độ luyện</div><div class="actions"><button onclick="startPracticeMode(\'smart\',8)">🧠 Thông minh</button><button onclick="startPracticeMode(\'weak\',8)">🔥 Từ yếu</button><button onclick="startPracticeMode(\'favorites\',8)">⭐ Yêu thích</button><button onclick="startPracticeMode(\'new\',8)">🆕 Từ mới</button><button onclick="startPracticeMode(\'mixed\',8)">🎲 Tổng hợp</button></div><div class="muted small" style="margin-top:8px">Đang chọn: <b>'+esc(practiceModeLabel(practiceMode))+'</b> · XP phiên: '+practiceSessionXp+'</div></div>';
-  $("view").innerHTML=shell("Luyện tập V9.3","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
+  $("view").innerHTML=shell("Luyện tập V9.3.1","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
 }
 function finishPractice(ok){recordActivity();practiceAnsweredCount++;if(ok){addXP(10);practiceCorrectCount++;practiceSessionXp+=10;}}
 function practiceAnswer(index){
@@ -1346,12 +1346,32 @@ function practiceAnswer(index){
   const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án: <b>"+esc(item.answer)+"</b>";
   save();render();
 }
-function practicePickToken(i){if(practiceAnswered||practiceAnswerOrder.includes(i))return;practiceAnswerOrder.push(i);render();}
-function practiceRemoveToken(i){if(practiceAnswered)return;const p=practiceAnswerOrder.lastIndexOf(i);if(p>=0){practiceAnswerOrder.splice(p,1);render();}}
+function practicePickToken(i){
+  if(practiceAnswered)return;
+  const item=practiceQueue[practiceIndex],n=Number(i);
+  if(!item||item.type!=="order"||!Number.isInteger(n)||n<0||n>=item.words.length){
+    toast("Từ sắp xếp không hợp lệ.");return;
+  }
+  if(practiceAnswerOrder.includes(n))return;
+  practiceAnswerOrder.push(n);render();
+}
+function practiceRemoveToken(i){
+  if(practiceAnswered)return;
+  const item=practiceQueue[practiceIndex],n=Number(i);
+  if(!item||item.type!=="order"||!Number.isInteger(n)||n<0||n>=item.words.length)return;
+  const p=practiceAnswerOrder.lastIndexOf(n);
+  if(p>=0){practiceAnswerOrder.splice(p,1);render();}
+}
 function practiceCheckOrder(){
   if(practiceAnswered)return;
   const item=practiceQueue[practiceIndex];if(!item||item.type!=="order")return;
-  const actual=practiceAnswerOrder.map(function(i){return item.words[i]}).join(" ");
+  const cleaned=[],seen=new Set();
+  (Array.isArray(practiceAnswerOrder)?practiceAnswerOrder:[]).forEach(function(raw){
+    const n=Number(raw);
+    if(Number.isInteger(n)&&n>=0&&n<item.words.length&&!seen.has(n)){seen.add(n);cleaned.push(n);}
+  });
+  if(cleaned.length!==(Array.isArray(practiceAnswerOrder)?practiceAnswerOrder.length:0))practiceAnswerOrder=cleaned;
+  const actual=cleaned.map(function(i){return item.words[i]}).join(" ");
   const ok=norm(actual)===norm(item.target.replace(/[.!?]+$/,""));
   practiceAnswered=true;finishPractice(ok);
   const result=$("practiceResult");if(result)result.innerHTML=ok?"✓ Chính xác!":"✗ Chưa đúng. Câu đúng: <b>"+esc(item.target)+"</b>";
@@ -1448,7 +1468,7 @@ function stats(){
   const weak=weakVocabularyPool().filter(v=>v.status==="Chưa nhớ"||v.status==="Review"||Number(v.wrong_count||0)>Number(v.correct_count||0)).slice(0,6);
   const history=dailyHistorySeries(7),goalsMet=dailyGoalsMet(7);
   const historyHtml=history.map(function(x){return '<div class="item"><div class="toolbar"><span>'+x.label+'</span><b>'+x.units+'/'+x.goal+'</b></div><div class="progress" style="margin-top:6px"><div class="bar" style="width:'+x.pct+'%"></div></div></div>';}).join("");
-  $("view").innerHTML=shell("Tiến độ V9.3","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
+  $("view").innerHTML=shell("Tiến độ V9.3.1","Mục tiêu ngày, lịch sử 7 ngày, độ chính xác và từ cần củng cố.",
     '<div class="card"><div class="toolbar"><b>🎯 Mục tiêu hôm nay</b><b>'+done+' / '+target+'</b></div><div class="progress" style="margin-top:10px"><div class="bar" style="width:'+pct+'%"></div></div><p class="muted small">'+pct+'% hoàn thành · còn '+Math.max(0,target-done)+' hoạt động.</p></div>'+
     '<div class="card"><div class="toolbar"><b>📅 7 ngày gần đây</b><b>'+goalsMet+'/7 đạt mục tiêu</b></div><div class="list" style="margin-top:10px">'+historyHtml+'</div></div>'+
     '<div class="grid"><div class="card"><div class="big">'+db.stats.xp+'</div><div class="muted">XP</div></div><div class="card"><div class="big">'+db.stats.learned+'</div><div class="muted">Từ đã học</div></div><div class="card"><div class="big">'+(db.stats.practiceCompleted||0)+'</div><div class="muted">Bài luyện hoàn thành</div></div></div>'+
@@ -1518,15 +1538,21 @@ function validateProgressImport(parsed){
     if(!Array.isArray(parsed.stats.dailyHistory))throw new Error("Lịch sử mục tiêu ngày không hợp lệ.");
     const seen=new Set();
     parsed.stats.dailyHistory.forEach(function(row){
-      if(!row||typeof row!=="object"||!/^\d{4}-\d{2}-\d{2}$/.test(String(row.date||""))||seen.has(String(row.date))||!Number.isFinite(Number(row.units))||Number(row.units)<0||!Number.isFinite(Number(row.goal))||Number(row.goal)<1){
+      const date=String(row?.date||"");
+      const units=Number(row?.units),goal=Number(row?.goal);
+      if(!row||typeof row!=="object"||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(date)||seen.has(date)||
+        !Number.isFinite(units)||units<0||!Number.isFinite(goal)||goal<1||goal>100){
         throw new Error("Lịch sử mục tiêu ngày không hợp lệ.");
       }
-      seen.add(String(row.date));
+      seen.add(date);
     });
   }
   const allowedStatus=new Set(["New","Learning","Review","Mastered","Chưa nhớ","Đã nhớ","Rất dễ"]);
+  const stateKeys=new Set();
   const validStates=parsed.vocabState.every(function(s){
-    if(!s||!String(s.word||"").trim())return false;
+    const word=String(s?.word||"").trim(),key=norm(word);
+    if(!s||typeof s!=="object"||!word||stateKeys.has(key))return false;
+    stateKeys.add(key);
     if(s.status!==undefined&&!allowedStatus.has(String(s.status)))return false;
     if(s.favorite!==undefined&&typeof s.favorite!=="boolean")return false;
     if(s.reviewStreak!==undefined){
@@ -1538,6 +1564,9 @@ function validateProgressImport(parsed){
         const n=Number(s[k]);
         if(!Number.isFinite(n)||n<0)return false;
       }
+    }
+    for(const k of ["reviewDue","lastReviewed"]){
+      if(s[k]!==undefined&&s[k]!==null&&Number.isNaN(Date.parse(String(s[k]))))return false;
     }
     return true;
   });
@@ -1579,7 +1608,7 @@ function settings(){
   $("view").innerHTML=shell("Cài đặt","Cập nhật GitHub, âm thanh và giao diện.",
     '<div class="card"><h2>☁️ Cập nhật nội dung</h2><p class="muted">Nguồn: <code>'+esc(DATA_URL)+'</code></p><p>Phiên bản dữ liệu: <b>'+esc(db.lastRemoteVersion||"chưa đồng bộ")+'</b></p><div class="actions"><button class="primary" onclick="updateOnline(true)">🔄 Kiểm tra cập nhật</button><button onclick="runContentAudit()">🔎 Kiểm tra 1.500 câu luyện độc lập</button><button onclick="speak(\'This is an audio test.\',1,\'en-US\')">🔊 Kiểm tra âm thanh</button></div><div id="contentAuditResult" class="notice">Kiểm tra các câu luyện độc lập có English/Vietnamese/audio hợp lệ và không bị buộc vào vocabWord. Hiện có 1.500 câu luyện độc lập được tích hợp và kiểm tra chất lượng.</div></div>'+
     '<div class="card"><h2>📚 Nguồn dữ liệu</h2><p class="small muted">Câu ví dụ tiếng Anh: Tatoeba (tatoeba.org). Phát âm IPA: CMUdict. Từ Trung/Pinyin: dữ liệu HSK CSV. Một số câu có thể có chỉnh sửa ngữ cảnh thủ công để giữ tiếng Anh tự nhiên.</p></div>'+    '<div class="card"><h2>🔊 Âm thanh & ngôn ngữ</h2><p class="muted">Giọng trình duyệt: '+esc(voiceAvailability())+'</p><p class="small muted">Nếu không có file audio riêng, app sẽ dùng giọng đọc TTS phù hợp với ngôn ngữ.</p></div>'+
-    '<div class="card"><h2>🎯 Mục tiêu mỗi ngày</h2><select onchange="db.profile.dailyGoal=Number(this.value);save();render()">'+dailyGoalOptions()+'</select><p class="small muted">Mỗi câu trả lời hoặc lần đánh giá học tập được tính là 1 hoạt động.</p></div>'+
+    '<div class="card"><h2>🎯 Mục tiêu mỗi ngày</h2><select onchange="setDailyGoal(this.value)">'+dailyGoalOptions()+'</select><p class="small muted">Mỗi câu trả lời hoặc lần đánh giá học tập được tính là 1 hoạt động.</p></div>'+
     '<div class="card"><h2>🔊 Tốc độ mặc định</h2><select onchange="db.profile.speechRate=Number(this.value);save()">'+[0.5,0.75,1,1.25,1.5].map(function(x){return '<option value="'+x+'" '+(Number(db.profile.speechRate||1)===x?"selected":"")+'>'+x+'×</option>'}).join("")+'</select></div>'+
     '<div class="card"><h2>📱💻 Bố cục thiết bị</h2><p class="small muted">“Tự động” bám theo kích thước màn hình. Có thể khóa bố cục Điện thoại hoặc Máy tính để thao tác thuận tiện hơn.</p><select id="layoutMode" onchange="setLayoutMode(this.value)">'+
       '<option value="auto" '+(layout==="auto"?"selected":"")+'>Tự động theo màn hình</option>'+

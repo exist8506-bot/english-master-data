@@ -471,6 +471,9 @@ check("audio URL language routing is safe", T.audioUrl({audioEn:"en.mp3",audioZh
   T.audioUrl({audio:"generic.mp3"},"zh-CN")==="generic.mp3" &&
   T.audioUrl({audio:"generic.mp3",zh:"你好",vi:"xin chào"},"zh-CN")==="");
 check("daily goal options render a selected value", T.dailyGoalOptions().includes('value="10"') && T.dailyGoalOptions().includes("selected"));
+T.show("settings");
+const settingsUiHtml=document.getElementById("view")?.innerHTML||"";
+check("settings daily-goal selector uses validated setter", settingsUiHtml.includes('onchange="setDailyGoal(this.value)"'));
 const daily0=Number(T.snap().db.stats.dailyUnits)||0;
 T.recordStudyUnit();
 const daily1=Number(T.snap().db.stats.dailyUnits)||0;
@@ -572,6 +575,12 @@ const badHistoryTests=[
 check("progress import rejects malformed daily history", badHistoryTests.every(x=>{try{T.validateProgressImport(x);return false;}catch(e){return true;}}));
 const validDaily={stats:{dailyHistory:[{date:todayKey,units:3,goal:5}]},profile:{theme:"light"},vocabState:[]};
 check("progress import accepts valid daily history", (()=>{try{T.validateProgressImport(validDaily);return true;}catch(e){return false;}})());
+const invalidImportGuards=[
+  {stats:{dailyHistory:[{date:todayKey,units:1,goal:101}]},profile:{theme:"light"},vocabState:[]},
+  {stats:{dailyHistory:[{date:todayKey,units:1,goal:10}]},profile:{theme:"light"},vocabState:[{word:"Hello",status:"New"},{word:" hello ",status:"New"}]},
+  {stats:{dailyHistory:[{date:todayKey,units:1,goal:10}]},profile:{theme:"light"},vocabState:[{word:"Hello",status:"New",reviewDue:"not-a-date"}]}
+];
+check("progress import rejects unsafe goal/state/timestamp variants", invalidImportGuards.every(x=>{try{T.validateProgressImport(x);return false;}catch(e){return true;}}));
 T.setStats(dailyBackup);T.ensureDailyProgress();
 
 
@@ -587,6 +596,10 @@ for(const mode of modes){
 T.startPracticeMode("mixed",6);
 const modeSnap=T.snap();
 check("practice mode start resets session counters", modeSnap.practiceMode==="mixed" && modeSnap.practiceQueue.length===6 && modeSnap.practiceAnsweredCount===0 && modeSnap.practiceCorrectCount===0 && modeSnap.practiceSessionXp===0);
+const malformedOrderBefore=T.snap().practiceAnswerOrder.length;
+T.practicePickToken(-1);
+T.practicePickToken(999999);
+check("practice rejects malformed sentence-order tokens", T.snap().practiceAnswerOrder.length===malformedOrderBefore);
 T.startPracticeMode("favorites",6);
 const favoriteModeCount=T.snap().practiceQueue.length;
 T.show("home");T.show("practice");
