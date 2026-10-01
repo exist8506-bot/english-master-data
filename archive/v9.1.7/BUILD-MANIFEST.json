@@ -1,0 +1,21 @@
+{
+  "app": "English Master",
+  "version": "9.1.7",
+  "archivedAt": "2026-10-01",
+  "githubRepo": "exist8506-bot/english-master-data",
+  "branch": "archive/v9.1.7",
+  "localArtifacts": [
+    {
+      "file": "English_Master_Offline.html",
+      "sizeBytes": 2998078,
+      "sha256": "34df0e344eb1f1cc56a99216e3aadc106568031312b1c756d25d0bd7f293105a"
+    },
+    {
+      "file": "English_Master_V9.1.7.zip",
+      "sizeBytes": 480997,
+      "sha256": "948dae82507006d4c134ab15d37224a9f28d1df46ce044332f47cee9b9406df7"
+    }
+  ],
+  "baseGithubAppVersion": "9.1.6",
+  "note": "This branch records the V9.1.7 local build. GitHub main remains the existing 9.1.6 runtime until the V9.1.7 source is synced."
+}
