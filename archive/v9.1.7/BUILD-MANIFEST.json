@@ -40,5 +40,15 @@
     "contentAudit": "PASS (IPA complete, sentence links complete, valid quiz answer schema)"
   },
   "baseGithubAppVersion": "9.1.6",
-  "note": "Final V9.1.7 build was deeply QA-tested locally. GitHub main remains the existing 9.1.6 runtime; this branch stores the V9.1.7 build manifest and QA record. The GitHub connector used here does not expose a binary-file upload operation for the 3 MB HTML bundle."
+  "note": "Final V9.1.7 build and QA record are archived on branch archive/v9.1.7. GitHub main remains the existing 9.1.6 runtime.",
+  "githubArtifacts": [
+    {
+      "path": "archive/v9.1.7/English_Master_Offline.html",
+      "blobSha": "57a0b374e0bd24c22b443c51ca538041ae038fde"
+    },
+    {
+      "path": "archive/v9.1.7/CHANGELOG.txt",
+      "present": true
+    }
+  ]
 }
