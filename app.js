@@ -1496,8 +1496,15 @@ function quiz(){
   }
   const answerIndex=Number(q.answer);
   const paired=raw.map(function(text,index){return {text,correct:index===answerIndex}});
-  quizOptions=shuffle(paired);
-  quizCorrectIndex=quizOptions.findIndex(function(o){return o.correct});
+  const existingOptionsValid=quizOptions.length===4 &&
+    quizOptions.every(function(o){return o&&String(o.text??"").trim()&&raw.some(function(r){return norm(r)===norm(o.text)})}) &&
+    quizCorrectIndex>=0&&quizCorrectIndex<4 &&
+    !!quizOptions[quizCorrectIndex]?.correct;
+  if(!existingOptionsValid){
+    quizOptions=shuffle(paired);
+    quizCorrectIndex=quizOptions.findIndex(function(o){return o.correct});
+    quizSelectedIndex=-1;
+  }
   const opts=quizOptions.map(function(o){return o.text});
   $("view").innerHTML=shell("Trắc nghiệm","Nghe câu hỏi và từng đáp án trước khi chọn.",
     '<div class="card"><div class="toolbar"><span class="badge">'+esc(q.topic||"daily")+'</span><span class="muted">Câu '+(quizIndex%db.questions.length+1)+' / '+db.questions.length+'</span>'+jumpControl("quiz",quizIndex%db.questions.length,db.questions.length)+'</div>'+
