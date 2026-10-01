@@ -1,4 +1,4 @@
-const APP_VERSION="9.4.5";
+const APP_VERSION="9.4.6";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -1587,7 +1587,7 @@ function buildPracticeSession(count=8,mode="smart"){
 }
 function practice(){
   if(!practiceQueue.length)practiceQueue=buildPracticeSession(8,practiceMode);
-  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập V9.3.1","Chưa đủ dữ liệu để tạo bài.");return;}
+  if(!practiceQueue.length){$("view").innerHTML=shell("Luyện tập","Chưa đủ dữ liệu để tạo bài.");return;}
   practiceIndex=normalizeArrayIndex(practiceIndex,practiceQueue.length);
   const item=practiceQueue[practiceIndex];
   let body='<div class="toolbar"><span class="badge">⚡ '+esc(practiceModeLabel(practiceMode))+'</span><span class="muted">'+(practiceIndex+1)+' / '+practiceQueue.length+' · Đúng '+practiceCorrectCount+' / '+practiceAnsweredCount+'</span></div>';
@@ -1598,7 +1598,7 @@ function practice(){
     body+='<h2>Sắp xếp câu</h2><p class="muted">'+esc(item.prompt)+'</p><div class="practice-order">'+practiceAnswerOrder.map(function(i){return '<button class="token chosen" onclick="practiceRemoveToken('+i+')">'+esc(item.words[i])+'</button>'}).join(" ")+'</div><div class="practice-order">'+item.words.map(function(w,i){const used=practiceAnswerOrder.includes(i);return '<button class="token" '+(used||practiceAnswered?"disabled":"")+' onclick="practicePickToken('+i+')">'+esc(w)+'</button>'}).join(" ")+'</div><button class="primary" style="margin-top:12px" onclick="practiceCheckOrder()">Kiểm tra</button>';
   }
   body+='<div id="practiceResult" class="hint" style="margin-top:14px">'+(practiceAnswered?"":"Hoàn thành bài rồi kiểm tra đáp án.")+'</div><div class="actions" style="margin-top:14px">'+(practiceAnswered?'<button class="primary" onclick="practiceNext()">Câu tiếp →</button>':"")+'<button onclick="restartPractice()">🔀 Bài khác</button></div><div class="card" style="margin-top:12px"><div class="muted small">Chế độ luyện</div><div class="actions"><button onclick="startPracticeMode(\'smart\',8)">🧠 Thông minh</button><button onclick="startPracticeMode(\'weak\',8)">🔥 Từ yếu</button><button onclick="startPracticeMode(\'favorites\',8)">⭐ Yêu thích</button><button onclick="startPracticeMode(\'new\',8)">🆕 Từ mới</button><button onclick="startPracticeMode(\'mixed\',8)">🎲 Tổng hợp</button></div><div class="muted small" style="margin-top:8px">Đang chọn: <b>'+esc(practiceModeLabel(practiceMode))+'</b> · XP phiên: '+practiceSessionXp+'</div></div>';
-  $("view").innerHTML=shell("Luyện tập V9.3.1","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
+  $("view").innerHTML=shell("Luyện tập","Chế độ: "+practiceModeLabel(practiceMode)+" · chọn kiểu luyện phù hợp với mục tiêu.",body);
 }
 function finishPractice(ok){recordActivity();practiceAnsweredCount++;if(ok){addXP(10);practiceCorrectCount++;practiceSessionXp+=10;}}
 function practiceAnswer(index){
