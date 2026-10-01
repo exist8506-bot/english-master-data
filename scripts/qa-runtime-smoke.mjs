@@ -1146,6 +1146,45 @@ check(
     v2Comm.some((x) => Array.isArray(x.vocab) && x.vocab.includes(m.word)) &&
     v2Grammar.some((x) => Array.isArray(x.vocabWords) && x.vocabWords.includes(m.word)))
 );
+check(
+  "content audit counts both expansion packages",
+  (() => {
+    const audit=T.dataAudit();
+    const expectedV2=v2Words.filter((v)=>String(v.source??"")==="expansion500_v2").length;
+    return audit.expansion500===1000 &&
+      audit.expansion500V1===500 &&
+      audit.expansion500V2===expectedV2 &&
+      audit.audio===1000 &&
+      audit.standaloneQualityIssues===0 &&
+      audit.standaloneDuplicateEnglish===0;
+  })()
+);
+
+const practiceModes=["smart","weak","favorites","new","mixed"];
+for(const mode of practiceModes){
+  const queue=T.buildPracticeSession(8,mode);
+  check(
+    "practice session "+mode+" has safe exercise shapes",
+    queue.length>0 &&
+    queue.every((item)=>item && ["meaning","translate","fill","order"].includes(item.type) &&
+      (item.type==="order"
+        ? Array.isArray(item.words) && item.words.length>0 && item.words.every(Boolean)
+        : Array.isArray(item.options) && item.options.length>=2 &&
+          new Set(item.options.map((v)=>String(v).trim().toLowerCase())).size===item.options.length &&
+          String(item.answer??"").trim())
+  );
+}
+
+check("smart review queue stays unique and bounded", (() => {
+  const q=T.buildReviewQueue("smart",20);
+  return q.length<=20 && q.length===new Set(q).size && q.every(Boolean);
+})();
+check("review target queues stay within requested limit", ["due","weak","mistakes","favorites","new"].every((m)=>{
+  const q=T.buildReviewQueue(m,20);
+  return q.length<=20 && q.length===new Set(q).size;
+}));
+
+
 
 const tri = T.snap().db.trilingual.find((x) => x.en === "altogether");
 check("three-language audio paths", !!T.audioUrl(tri, "en-US") && !!T.audioUrl(tri, "zh-CN") && !!T.audioUrl(tri, "vi-VN"));
