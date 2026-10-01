@@ -1,4 +1,4 @@
-const APP_VERSION="9.4.1";
+const APP_VERSION="9.4.2";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -681,7 +681,7 @@ function speak(text,rate,lang,retry,skipContentAudio){
   const parts=splitSpeechText(t),active=function(){return token===speechToken};let partIndex=0;
   const runPart=function(){
     if(!active()||partIndex>=parts.length)return;
-    window.speechSynthesis.cancel();
+    try{window.speechSynthesis.cancel()}catch(e){}
     const u=new SpeechSynthesisUtterance(parts[partIndex++]);
     u.lang=l;u.rate=r;u.pitch=1;u.volume=1;
     const v=getVoice(l);if(v)u.voice=v;
@@ -709,7 +709,7 @@ function speakSequence(lines,rate,lang){
   if(!("speechSynthesis" in window)){toast("Trình duyệt không hỗ trợ phát giọng nói.");return}
   const seq=(lines||[]).map(String).map(function(x){return x.trim()}).filter(Boolean),r=Math.max(0.5,Math.min(1.5,Number(rate)||0.92)),l=lang||"en-US",token=++speechToken;
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch(e){}activeAudio=null}
-  window.speechSynthesis.cancel();
+  try{window.speechSynthesis.cancel()}catch(e){}
   let i=0;
   function next(){
     if(token!==speechToken||i>=seq.length)return;
