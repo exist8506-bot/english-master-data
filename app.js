@@ -1,4 +1,4 @@
-const APP_VERSION="9.3.10";
+const APP_VERSION="9.3.11";
 const STORAGE_KEY="englishMaster_v1";
 const DATA_URL="https://exist8506-bot.github.io/english-master-data/data/version.json";
 const APP_VERSION_URL="./app-version.json";
@@ -479,9 +479,12 @@ function showBootSkeleton(){
   el.classList.add("boot-loading");
   el.innerHTML='<section class="card hero skeleton-hero"><div class="skeleton-line wide"></div><div class="skeleton-line"></div><div class="skeleton-chips"><span></span><span></span><span></span></div><div class="skeleton-progress"></div></section><div class="grid"><div class="card skeleton-card"><span></span><span></span></div><div class="card skeleton-card"><span></span><span></span></div><div class="card skeleton-card"><span></span><span></span></div></div>';
 }
+let toastTimer=0;
 function toast(msg){
   const el=$("toast"); if(!el)return;
-  el.textContent=msg; el.className="show"; setTimeout(function(){el.className=""},2600);
+  el.textContent=msg; el.className="show";
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(function(){el.className=""},2600);
 }
 let xpFxNodes=0,streakFxTimer=0;
 function showXpBurst(amount){
@@ -491,6 +494,10 @@ function showXpBurst(amount){
   el.className="xp-burst";
   el.textContent="+"+n+" XP";
   el.setAttribute("aria-hidden","true");
+  if(xpFxNodes>=3){
+    const old=root.querySelector(".xp-burst");
+    if(old){old.remove();xpFxNodes=Math.max(0,xpFxNodes-1)}
+  }
   root.appendChild(el);
   xpFxNodes++;
   setTimeout(function(){el.remove();xpFxNodes=Math.max(0,xpFxNodes-1)},850);
