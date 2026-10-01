@@ -14,3 +14,6 @@ Repo này được dùng làm nguồn lưu trữ và cập nhật dữ liệu ch
 
 ## V9.3.0
 - Logic hardening for listening double-tap scoring, malformed practice/quiz input, and daily-goal history synchronization.
+
+## Final QA gate — V9.3.0
+- Full repository regression suite executed against the final V9.3.0 application commit.
