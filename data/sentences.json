@@ -13,7 +13,7 @@
     "en": "I called my parent after dinner.",
     "vi": "Tôi gọi cho bố/mẹ của mình sau bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "parent",
     "favorite": false
   },
@@ -22,7 +22,7 @@
     "en": "We talked about my mother at dinner.",
     "vi": "Chúng tôi nói về mẹ của tôi trong bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "mother",
     "favorite": false
   },
@@ -58,7 +58,7 @@
     "en": "I called my daughter after dinner.",
     "vi": "Tôi gọi cho con gái của mình sau bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "daughter",
     "favorite": false
   },
@@ -67,7 +67,7 @@
     "en": "We talked about my son at dinner.",
     "vi": "Chúng tôi nói về con trai của tôi trong bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "son",
     "favorite": false
   },
@@ -103,7 +103,7 @@
     "en": "I called my aunt after dinner.",
     "vi": "Tôi gọi cho cô của mình sau bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "aunt",
     "favorite": false
   },
@@ -112,7 +112,7 @@
     "en": "We talked about my cousin at dinner.",
     "vi": "Chúng tôi nói về anh/chị/em họ của tôi trong bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "cousin",
     "favorite": false
   },
@@ -148,7 +148,7 @@
     "en": "I called my children after dinner.",
     "vi": "Tôi gọi cho trẻ em của mình sau bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "children",
     "favorite": false
   },
@@ -157,7 +157,7 @@
     "en": "We talked about my baby at dinner.",
     "vi": "Chúng tôi nói về em bé của tôi trong bữa tối.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "baby",
     "favorite": false
   },
@@ -193,7 +193,7 @@
     "en": "I talked to the teacher after class.",
     "vi": "Tôi nói chuyện với giáo viên sau giờ học.",
     "topic": "school",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "teacher",
     "favorite": false
   },
@@ -208,17 +208,17 @@
   },
   {
     "id": "sent500_5weefs",
-    "en": "The teacher mentioned the classroom this morning.",
-    "vi": "Giáo viên nhắc đến phòng học vào sáng nay.",
+    "en": "The teacher mentioned the classroom change before the first lesson this morning.",
+    "vi": "Giáo viên thông báo việc đổi phòng học trước tiết đầu tiên sáng nay.",
     "topic": "school",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "classroom",
     "favorite": false
   },
   {
     "id": "sent500_7xc7sx",
-    "en": "I used the lesson during my study session.",
-    "vi": "Tôi dùng bài học trong lúc học.",
+    "en": "I reviewed the lesson during my study session at the library this afternoon.",
+    "vi": "Chiều nay, tôi ôn lại bài học trong buổi tự học tại thư viện.",
     "topic": "school",
     "grammar": "Simple Present",
     "vocabWord": "lesson",
@@ -226,10 +226,10 @@
   },
   {
     "id": "sent500_121l3kf",
-    "en": "Our subject was harder than I expected.",
-    "vi": "Môn học của chúng tôi khó hơn tôi nghĩ.",
+    "en": "The subject was more difficult than I expected during class yesterday.",
+    "vi": "Môn học khó hơn tôi nghĩ trong giờ học hôm qua.",
     "topic": "school",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "subject",
     "favorite": false
   },
@@ -253,10 +253,10 @@
   },
   {
     "id": "sent500_1cs5qlh",
-    "en": "The teacher mentioned the test this morning.",
-    "vi": "Giáo viên nhắc đến bài kiểm tra vào sáng nay.",
+    "en": "The teacher mentioned the test date during class this morning.",
+    "vi": "Giáo viên nhắc đến ngày kiểm tra trong giờ học sáng nay.",
     "topic": "school",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "test",
     "favorite": false
   },
@@ -298,19 +298,19 @@
   },
   {
     "id": "sent500_uvp3ao",
-    "en": "The teacher mentioned the pen this morning.",
-    "vi": "Giáo viên nhắc đến bút mực vào sáng nay.",
+    "en": "The teacher asked us to bring a blue pen to class this morning.",
+    "vi": "Sáng nay, giáo viên yêu cầu chúng tôi mang bút mực xanh đến lớp.",
     "topic": "school",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "pen",
     "favorite": false
   },
   {
     "id": "sent500_xehlok",
-    "en": "I used the pencil during my study session.",
-    "vi": "Tôi dùng bút chì trong lúc học.",
+    "en": "I used a pencil to take notes during my study session this afternoon.",
+    "vi": "Chiều nay, tôi dùng bút chì ghi chép trong buổi tự học.",
     "topic": "school",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "pencil",
     "favorite": false
   },
@@ -343,10 +343,10 @@
   },
   {
     "id": "sent500_84razt",
-    "en": "The teacher mentioned the university this morning.",
-    "vi": "Giáo viên nhắc đến trường đại học vào sáng nay.",
+    "en": "The teacher mentioned the university open day during class this morning.",
+    "vi": "Sáng nay, giáo viên nhắc đến ngày hội mở cửa của trường đại học trong giờ học.",
     "topic": "school",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "university",
     "favorite": false
   },
@@ -361,8 +361,8 @@
   },
   {
     "id": "sent500_1m9bm1k",
-    "en": "Our course was harder than I expected.",
-    "vi": "Khóa học của chúng tôi khó hơn tôi nghĩ.",
+    "en": "Our course covered three new topics during the lecture yesterday.",
+    "vi": "Khóa học của chúng tôi đề cập ba chủ đề mới trong buổi giảng hôm qua.",
     "topic": "school",
     "grammar": "Simple Present",
     "vocabWord": "course",
@@ -370,10 +370,10 @@
   },
   {
     "id": "sent500_1pjsbfg",
-    "en": "We discussed the job in our morning meeting.",
-    "vi": "Chúng tôi thảo luận về công việc trong cuộc họp sáng.",
+    "en": "We discussed the new job opening at our morning meeting yesterday.",
+    "vi": "Hôm qua, chúng tôi thảo luận về vị trí việc làm mới trong cuộc họp buổi sáng.",
     "topic": "work",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "job",
     "favorite": false
   },
@@ -415,10 +415,10 @@
   },
   {
     "id": "sent500_15kd5xz",
-    "en": "We discussed the worker in our morning meeting.",
-    "vi": "Chúng tôi thảo luận về người lao động trong cuộc họp sáng.",
+    "en": "We discussed the worker's safety at our morning meeting yesterday.",
+    "vi": "Hôm qua, chúng tôi thảo luận về sự an toàn của người lao động trong cuộc họp sáng.",
     "topic": "work",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "worker",
     "favorite": false
   },
@@ -460,10 +460,10 @@
   },
   {
     "id": "sent500_19pjtp5",
-    "en": "We discussed the customer in our morning meeting.",
-    "vi": "Chúng tôi thảo luận về khách hàng trong cuộc họp sáng.",
+    "en": "We discussed the customer's complaint at our morning meeting yesterday.",
+    "vi": "Hôm qua, chúng tôi thảo luận về khiếu nại của khách hàng trong cuộc họp sáng.",
     "topic": "work",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "customer",
     "favorite": false
   },
@@ -505,10 +505,10 @@
   },
   {
     "id": "sent500_lxqs9g",
-    "en": "We discussed the interview in our morning meeting.",
-    "vi": "Chúng tôi thảo luận về phỏng vấn trong cuộc họp sáng.",
+    "en": "We discussed the interview schedule during our morning meeting yesterday.",
+    "vi": "Hôm qua, chúng tôi thảo luận lịch phỏng vấn trong cuộc họp buổi sáng.",
     "topic": "work",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "interview",
     "favorite": false
   },
@@ -517,7 +517,7 @@
     "en": "I wrote the details beside the schedule.",
     "vi": "Tôi ghi chi tiết bên cạnh lịch trình.",
     "topic": "work",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "schedule",
     "favorite": false
   },
@@ -541,8 +541,8 @@
   },
   {
     "id": "sent500_12fq213",
-    "en": "I use my email to study at night.",
-    "vi": "Tôi dùng email để học vào ban đêm.",
+    "en": "I use email to send my homework to the teacher after studying at night.",
+    "vi": "Tôi dùng email gửi bài tập cho giáo viên sau khi học vào buổi tối.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "email",
@@ -550,28 +550,28 @@
   },
   {
     "id": "sent500_750t7v",
-    "en": "We discussed the report in our morning meeting.",
-    "vi": "Chúng tôi thảo luận về báo cáo trong cuộc họp sáng.",
+    "en": "We discussed the report's findings at our morning meeting yesterday.",
+    "vi": "Hôm qua, chúng tôi thảo luận các kết quả trong báo cáo tại cuộc họp sáng.",
     "topic": "work",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "report",
     "favorite": false
   },
   {
     "id": "sent500_v8ip62",
-    "en": "The trip was delayed this morning.",
-    "vi": "Chuyến đi bị trễ sáng nay.",
+    "en": "Our trip to the coast was delayed by heavy rain this morning.",
+    "vi": "Chuyến đi đến vùng biển của chúng tôi bị chậm do mưa lớn sáng nay.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "trip",
     "favorite": false
   },
   {
     "id": "sent500_1rx7im1",
-    "en": "We talked about the travel during the trip.",
-    "vi": "Chúng tôi nói về du lịch trong chuyến đi.",
+    "en": "We talked about our travel plans during the train trip yesterday.",
+    "vi": "Hôm qua, chúng tôi nói về kế hoạch du lịch trong chuyến đi tàu.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "travel",
     "favorite": false
   },
@@ -598,25 +598,25 @@
     "en": "I checked the train at the station.",
     "vi": "Tôi kiểm tra tàu hỏa ở nhà ga.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "train",
     "favorite": false
   },
   {
     "id": "sent500_ql981l",
-    "en": "The bus was delayed this morning.",
-    "vi": "Xe buýt bị trễ sáng nay.",
+    "en": "The bus was delayed by traffic near the station this morning.",
+    "vi": "Xe buýt bị chậm do ùn tắc gần nhà ga vào sáng nay.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "bus",
     "favorite": false
   },
   {
     "id": "sent500_3zj0dl",
-    "en": "We talked about the taxi during the trip.",
-    "vi": "Chúng tôi nói về taxi trong chuyến đi.",
+    "en": "We talked about the taxi fare during the trip into the city last night.",
+    "vi": "Tối qua, chúng tôi nói về tiền taxi trong chuyến đi vào thành phố.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "taxi",
     "favorite": false
   },
@@ -649,19 +649,19 @@
   },
   {
     "id": "sent500_1sqamrn",
-    "en": "The flight was delayed this morning.",
-    "vi": "Chuyến bay bị trễ sáng nay.",
+    "en": "Our flight was delayed for an hour at the airport this morning.",
+    "vi": "Chuyến bay của chúng tôi bị trễ một giờ tại sân bay sáng nay.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "flight",
     "favorite": false
   },
   {
     "id": "sent500_s1sa91",
-    "en": "We talked about the ticket during the trip.",
-    "vi": "Chúng tôi nói về vé trong chuyến đi.",
+    "en": "We talked about the train ticket during the trip to Hue yesterday.",
+    "vi": "Hôm qua, chúng tôi nói về vé tàu trong chuyến đi Huế.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "ticket",
     "favorite": false
   },
@@ -670,7 +670,7 @@
     "en": "I put the passport in my travel bag.",
     "vi": "Tôi cho hộ chiếu vào túi du lịch.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "passport",
     "favorite": false
   },
@@ -694,19 +694,19 @@
   },
   {
     "id": "sent500_a2rz23",
-    "en": "The luggage was delayed this morning.",
-    "vi": "Hành lý bị trễ sáng nay.",
+    "en": "Our luggage did not arrive with the flight, so we reported it at the airport desk.",
+    "vi": "Hành lý của chúng tôi không đến cùng chuyến bay nên chúng tôi đã báo tại quầy ở sân bay.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "luggage",
     "favorite": false
   },
   {
     "id": "sent500_1q1ubox",
-    "en": "We talked about the map during the trip.",
-    "vi": "Chúng tôi nói về bản đồ trong chuyến đi.",
+    "en": "We checked the map together while planning our route during the trip.",
+    "vi": "Chúng tôi cùng xem bản đồ khi lên kế hoạch lộ trình cho chuyến đi.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "map",
     "favorite": false
   },
@@ -715,7 +715,7 @@
     "en": "I put the beach in my travel bag.",
     "vi": "Tôi cho bãi biển vào túi du lịch.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "beach",
     "favorite": false
   },
@@ -739,8 +739,8 @@
   },
   {
     "id": "sent500_1t4jh8w",
-    "en": "The bridge was delayed this morning.",
-    "vi": "Cây cầu bị trễ sáng nay.",
+    "en": "Repair work delayed the opening of the bridge until this morning.",
+    "vi": "Công việc sửa chữa khiến việc mở cầu bị lùi đến sáng nay.",
     "topic": "travel",
     "grammar": "Simple Present",
     "vocabWord": "bridge",
@@ -748,10 +748,10 @@
   },
   {
     "id": "sent500_15z4g8m",
-    "en": "I usually have restaurant for breakfast.",
-    "vi": "Tôi thường dùng nhà hàng vào bữa sáng.",
+    "en": "We met at the restaurant for breakfast before class this morning.",
+    "vi": "Sáng nay, chúng tôi gặp nhau tại nhà hàng để ăn sáng trước giờ học.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "restaurant",
     "favorite": false
   },
@@ -760,7 +760,7 @@
     "en": "She shared the menu with everyone.",
     "vi": "Cô ấy chia thực đơn cho mọi người.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "menu",
     "favorite": false
   },
@@ -775,28 +775,28 @@
   },
   {
     "id": "sent500_18mv43e",
-    "en": "We ordered meal for dinner.",
-    "vi": "Chúng tôi gọi bữa ăn cho bữa tối.",
+    "en": "We ordered a meal for dinner at the restaurant near the station.",
+    "vi": "Chúng tôi gọi một bữa ăn tối tại nhà hàng gần nhà ga.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "meal",
     "favorite": false
   },
   {
     "id": "sent500_16s92ee",
-    "en": "The breakfast smells delicious.",
-    "vi": "Bữa sáng có mùi rất ngon.",
+    "en": "The breakfast at our hotel smelled delicious when we entered the dining room at seven.",
+    "vi": "Bữa sáng ở khách sạn có mùi thơm hấp dẫn khi chúng tôi vào phòng ăn lúc bảy giờ.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "breakfast",
     "favorite": false
   },
   {
     "id": "sent500_1lgvfvj",
-    "en": "I usually have lunch for breakfast.",
-    "vi": "Tôi thường dùng bữa trưa vào bữa sáng.",
+    "en": "I packed my lunch before leaving home for university this morning.",
+    "vi": "Sáng nay, tôi chuẩn bị bữa trưa trước khi rời nhà đến trường đại học.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "lunch",
     "favorite": false
   },
@@ -805,7 +805,7 @@
     "en": "She shared the dinner with everyone.",
     "vi": "Cô ấy chia bữa tối cho mọi người.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "dinner",
     "favorite": false
   },
@@ -820,28 +820,28 @@
   },
   {
     "id": "sent500_1h67xs",
-    "en": "We ordered rice for dinner.",
-    "vi": "Chúng tôi gọi cơm cho bữa tối.",
+    "en": "We ordered rice with grilled fish for dinner at the restaurant near campus.",
+    "vi": "Chúng tôi gọi cơm với cá nướng cho bữa tối tại nhà hàng gần trường.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "rice",
     "favorite": false
   },
   {
     "id": "sent500_1rr79ie",
-    "en": "The noodle smells delicious.",
-    "vi": "Mì có mùi rất ngon.",
+    "en": "The noodles smelled delicious when the waiter brought them to our table at lunch.",
+    "vi": "Món mì thơm ngon khi người phục vụ mang đến bàn chúng tôi vào bữa trưa.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "noodle",
     "favorite": false
   },
   {
     "id": "sent500_1wao1du",
-    "en": "I usually have soup for breakfast.",
-    "vi": "Tôi thường dùng súp vào bữa sáng.",
+    "en": "I had a bowl of soup for breakfast at the hotel this morning.",
+    "vi": "Sáng nay, tôi ăn một bát súp vào bữa sáng tại khách sạn.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "soup",
     "favorite": false
   },
@@ -850,7 +850,7 @@
     "en": "She shared the meat with everyone.",
     "vi": "Cô ấy chia thịt cho mọi người.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "meat",
     "favorite": false
   },
@@ -865,28 +865,28 @@
   },
   {
     "id": "sent500_1cdlvff",
-    "en": "We ordered beef for dinner.",
-    "vi": "Chúng tôi gọi thịt bò cho bữa tối.",
+    "en": "We ordered beef with vegetables for dinner at the restaurant last night.",
+    "vi": "Tối qua, chúng tôi gọi thịt bò với rau tại nhà hàng.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "beef",
     "favorite": false
   },
   {
     "id": "sent500_1cqspcz",
-    "en": "The fish smells delicious.",
-    "vi": "Cá có mùi rất ngon.",
+    "en": "The fish smelled fresh at the market when we arrived early this morning.",
+    "vi": "Cá có mùi tươi tại chợ khi chúng tôi đến sớm vào sáng nay.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "fish",
     "favorite": false
   },
   {
     "id": "sent500_otvjk6",
-    "en": "I usually have egg for breakfast.",
-    "vi": "Tôi thường dùng trứng vào bữa sáng.",
+    "en": "I had an egg for breakfast before leaving for work this morning.",
+    "vi": "Sáng nay, tôi ăn một quả trứng vào bữa sáng trước khi đi làm.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "egg",
     "favorite": false
   },
@@ -895,7 +895,7 @@
     "en": "She shared the vegetable with everyone.",
     "vi": "Cô ấy chia rau cho mọi người.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "vegetable",
     "favorite": false
   },
@@ -910,28 +910,28 @@
   },
   {
     "id": "sent500_4n5tbz",
-    "en": "We ordered apple for dinner.",
-    "vi": "Chúng tôi gọi táo cho bữa tối.",
+    "en": "We ordered an apple pie for dessert after dinner at the café.",
+    "vi": "Chúng tôi gọi bánh táo làm món tráng miệng sau bữa tối tại quán cà phê.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "apple",
     "favorite": false
   },
   {
     "id": "sent500_1ocvsr4",
-    "en": "The banana smells delicious.",
-    "vi": "Chuối có mùi rất ngon.",
+    "en": "The banana smelled sweet when I peeled it for breakfast at home.",
+    "vi": "Quả chuối có mùi thơm ngọt khi tôi bóc ăn sáng ở nhà.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "banana",
     "favorite": false
   },
   {
     "id": "sent500_jc9giz",
-    "en": "I usually have orange for breakfast.",
-    "vi": "Tôi thường dùng cam vào bữa sáng.",
+    "en": "I ate an orange for breakfast on the train this morning.",
+    "vi": "Sáng nay, tôi ăn một quả cam vào bữa sáng trên tàu.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "orange",
     "favorite": false
   },
@@ -940,7 +940,7 @@
     "en": "She shared the coffee with everyone.",
     "vi": "Cô ấy chia cà phê cho mọi người.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "coffee",
     "favorite": false
   },
@@ -955,28 +955,28 @@
   },
   {
     "id": "sent500_kgxbtc",
-    "en": "We ordered water for dinner.",
-    "vi": "Chúng tôi gọi nước cho bữa tối.",
+    "en": "We ordered water for dinner at the restaurant beside the river.",
+    "vi": "Chúng tôi gọi nước uống trong bữa tối tại nhà hàng bên bờ sông.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "water",
     "favorite": false
   },
   {
     "id": "sent500_11w0wwy",
-    "en": "The milk smells delicious.",
-    "vi": "Sữa có mùi rất ngon.",
+    "en": "The milk smelled sour when I opened the bottle in the kitchen this morning.",
+    "vi": "Sữa có mùi chua khi tôi mở chai trong bếp sáng nay.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "milk",
     "favorite": false
   },
   {
     "id": "sent500_vfc9dx",
-    "en": "I usually have sugar for breakfast.",
-    "vi": "Tôi thường dùng đường vào bữa sáng.",
+    "en": "I added sugar to my tea at breakfast in the hotel this morning.",
+    "vi": "Sáng nay, tôi cho đường vào trà trong bữa sáng tại khách sạn.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "sugar",
     "favorite": false
   },
@@ -985,7 +985,7 @@
     "en": "She shared the salt with everyone.",
     "vi": "Cô ấy chia muối cho mọi người.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "salt",
     "favorite": false
   },
@@ -994,16 +994,16 @@
     "en": "I checked the store hours before leaving.",
     "vi": "Tôi kiểm tra giờ mở cửa của cửa hàng trước khi đi.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "store",
     "favorite": false
   },
   {
     "id": "sent500_1aowqzt",
-    "en": "The shop was lower than I expected.",
-    "vi": "Cửa hàng thấp hơn tôi nghĩ.",
+    "en": "The shop offered a lower price than I expected during the sale yesterday.",
+    "vi": "Hôm qua, cửa hàng đưa ra mức giá thấp hơn tôi mong đợi trong đợt giảm giá.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "shop",
     "favorite": false
   },
@@ -1012,16 +1012,16 @@
     "en": "I put the market in my wallet.",
     "vi": "Tôi cất chợ vào ví.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "market",
     "favorite": false
   },
   {
     "id": "sent500_34jfhm",
-    "en": "The cashier gave me the price.",
-    "vi": "Thu ngân đưa cho tôi giá.",
+    "en": "The cashier told me the price before I paid at the shop.",
+    "vi": "Thu ngân cho tôi biết giá trước khi tôi thanh toán tại cửa hàng.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "price",
     "favorite": false
   },
@@ -1039,16 +1039,16 @@
     "en": "I paid in cash at the counter.",
     "vi": "Tôi trả bằng tiền mặt tại quầy.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "cash",
     "favorite": false
   },
   {
     "id": "sent500_11s01un",
-    "en": "The card was lower than I expected.",
-    "vi": "Thẻ thấp hơn tôi nghĩ.",
+    "en": "The card had a lower balance than I expected when I checked it this morning.",
+    "vi": "Tấm thẻ có số dư thấp hơn tôi nghĩ khi kiểm tra vào sáng nay.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "card",
     "favorite": false
   },
@@ -1057,16 +1057,16 @@
     "en": "I put the receipt in my wallet.",
     "vi": "Tôi cất hóa đơn vào ví.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "receipt",
     "favorite": false
   },
   {
     "id": "sent500_ro1dm9",
-    "en": "The cashier gave me the bag.",
-    "vi": "Thu ngân đưa cho tôi túi.",
+    "en": "The cashier put my bag on the counter after I paid for the groceries.",
+    "vi": "Thu ngân đặt túi của tôi lên quầy sau khi tôi thanh toán hàng tạp hóa.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "bag",
     "favorite": false
   },
@@ -1090,8 +1090,8 @@
   },
   {
     "id": "sent500_142jlds",
-    "en": "The room is affordable to rent this month.",
-    "vi": "Căn phòng có giá thuê phải chăng trong tháng này.",
+    "en": "This shirt is cheap but good quality.",
+    "vi": "Chiếc áo này rẻ nhưng chất lượng tốt.",
     "topic": "shopping",
     "grammar": "Adjective in context",
     "vocabWord": "cheap",
@@ -1108,10 +1108,10 @@
   },
   {
     "id": "sent500_1eisxum",
-    "en": "The cashier gave me the customer service.",
-    "vi": "Thu ngân đưa cho tôi dịch vụ khách hàng.",
+    "en": "The cashier called customer service to resolve my problem at the shop yesterday.",
+    "vi": "Hôm qua, thu ngân gọi bộ phận chăm sóc khách hàng để giải quyết vấn đề của tôi tại cửa hàng.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "customer service",
     "favorite": false
   },
@@ -1129,16 +1129,16 @@
     "en": "I checked the sale before paying.",
     "vi": "Tôi kiểm tra đợt giảm giá trước khi thanh toán.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "sale",
     "favorite": false
   },
   {
     "id": "sent500_vsu94t",
-    "en": "The change was lower than I expected.",
-    "vi": "Tiền thừa thấp hơn tôi nghĩ.",
+    "en": "The cashier gave me less change than I expected at the shop yesterday.",
+    "vi": "Hôm qua, thu ngân trả lại ít tiền thừa hơn tôi mong đợi tại cửa hàng.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "change",
     "favorite": false
   },
@@ -1156,7 +1156,7 @@
     "en": "He decided to sell before the meeting.",
     "vi": "Anh ấy quyết định bán trước cuộc họp.",
     "topic": "shopping",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "sell",
     "favorite": false
   },
@@ -1390,7 +1390,7 @@
     "en": "The pain kept me awake last night.",
     "vi": "Cơn đau khiến tôi mất ngủ đêm qua.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "pain",
     "favorite": false
   },
@@ -1399,7 +1399,7 @@
     "en": "He stayed home because of his headache.",
     "vi": "Anh ấy ở nhà vì đau đầu.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "headache",
     "favorite": false
   },
@@ -1408,7 +1408,7 @@
     "en": "The doctor asked about my fever.",
     "vi": "Bác sĩ hỏi về sốt của tôi.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "fever",
     "favorite": false
   },
@@ -1423,10 +1423,10 @@
   },
   {
     "id": "sent500_9vv5td",
-    "en": "She felt better after treating the cough.",
-    "vi": "Cô ấy thấy đỡ hơn sau khi điều trị ho.",
+    "en": "She felt better after taking medicine for her cough last night.",
+    "vi": "Cô ấy cảm thấy khỏe hơn sau khi uống thuốc trị ho tối qua.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "cough",
     "favorite": false
   },
@@ -1435,7 +1435,7 @@
     "en": "The medicine kept me awake last night.",
     "vi": "Thuốc khiến tôi mất ngủ đêm qua.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "medicine",
     "favorite": false
   },
@@ -1444,16 +1444,16 @@
     "en": "He stayed home because of his doctor.",
     "vi": "Anh ấy ở nhà vì bác sĩ.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "doctor",
     "favorite": false
   },
   {
     "id": "sent500_1wpfd7u",
-    "en": "The doctor asked about my nurse.",
-    "vi": "Bác sĩ hỏi về y tá của tôi.",
+    "en": "The doctor asked whether the nurse had checked my temperature at the clinic this morning.",
+    "vi": "Sáng nay, bác sĩ hỏi liệu y tá đã kiểm tra nhiệt độ của tôi tại phòng khám chưa.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "nurse",
     "favorite": false
   },
@@ -1468,10 +1468,10 @@
   },
   {
     "id": "sent500_mlo6o5",
-    "en": "She felt better after treating the clinic.",
-    "vi": "Cô ấy thấy đỡ hơn sau khi điều trị phòng khám.",
+    "en": "She felt better after visiting the clinic near her home yesterday.",
+    "vi": "Hôm qua, cô ấy thấy khỏe hơn sau khi đến phòng khám gần nhà.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "clinic",
     "favorite": false
   },
@@ -1480,7 +1480,7 @@
     "en": "The exercise kept me awake last night.",
     "vi": "Bài tập khiến tôi mất ngủ đêm qua.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "exercise",
     "favorite": false
   },
@@ -1489,7 +1489,7 @@
     "en": "He stayed home because of his rest.",
     "vi": "Anh ấy ở nhà vì nghỉ ngơi.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "rest",
     "favorite": false
   },
@@ -1498,7 +1498,7 @@
     "en": "The doctor asked about my sleep.",
     "vi": "Bác sĩ hỏi về ngủ của tôi.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "sleep",
     "favorite": false
   },
@@ -1513,10 +1513,10 @@
   },
   {
     "id": "sent500_blicgl",
-    "en": "She felt better after treating the energy.",
-    "vi": "Cô ấy thấy đỡ hơn sau khi điều trị năng lượng.",
+    "en": "She felt better after resting and regaining her energy at home.",
+    "vi": "Cô ấy cảm thấy khá hơn sau khi nghỉ ngơi và lấy lại năng lượng ở nhà.",
     "topic": "health",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "energy",
     "favorite": false
   },
@@ -1567,8 +1567,8 @@
   },
   {
     "id": "sent500_x2rmpb",
-    "en": "We need a better phone for this task.",
-    "vi": "Chúng tôi cần một điện thoại tốt hơn cho việc này.",
+    "en": "We need a reliable phone to contact the tour guide while travelling tomorrow.",
+    "vi": "Chúng tôi cần một chiếc điện thoại đáng tin cậy để liên lạc với hướng dẫn viên khi đi du lịch ngày mai.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "phone",
@@ -1588,7 +1588,7 @@
     "en": "I checked the screen before the meeting.",
     "vi": "Tôi kiểm tra màn hình trước cuộc họp.",
     "topic": "technology",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "screen",
     "favorite": false
   },
@@ -1612,8 +1612,8 @@
   },
   {
     "id": "sent500_192k8qk",
-    "en": "We need a better internet for this task.",
-    "vi": "Chúng tôi cần một internet tốt hơn cho việc này.",
+    "en": "We need a more reliable internet connection for the video meeting this afternoon.",
+    "vi": "Chúng tôi cần kết nối internet ổn định hơn cho cuộc họp video chiều nay.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "internet",
@@ -1633,7 +1633,7 @@
     "en": "I checked the app before the meeting.",
     "vi": "Tôi kiểm tra ứng dụng trước cuộc họp.",
     "topic": "technology",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "app",
     "favorite": false
   },
@@ -1657,8 +1657,8 @@
   },
   {
     "id": "sent500_1obvefx",
-    "en": "We need a better folder for this task.",
-    "vi": "Chúng tôi cần một thư mục tốt hơn cho việc này.",
+    "en": "We need a larger folder to organize the documents for tomorrow's meeting.",
+    "vi": "Chúng tôi cần một thư mục lớn hơn để sắp xếp tài liệu cho cuộc họp ngày mai.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "folder",
@@ -1678,7 +1678,7 @@
     "en": "I checked the account before the meeting.",
     "vi": "Tôi kiểm tra tài khoản trước cuộc họp.",
     "topic": "technology",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "account",
     "favorite": false
   },
@@ -1702,8 +1702,8 @@
   },
   {
     "id": "sent500_1lfe6i4",
-    "en": "We need a better video for this task.",
-    "vi": "Chúng tôi cần một video tốt hơn cho việc này.",
+    "en": "We need a clearer video recording for the presentation in class tomorrow.",
+    "vi": "Chúng tôi cần bản ghi video rõ nét hơn cho bài thuyết trình trên lớp ngày mai.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "video",
@@ -1723,7 +1723,7 @@
     "en": "I checked the camera before the meeting.",
     "vi": "Tôi kiểm tra máy ảnh trước cuộc họp.",
     "topic": "technology",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "camera",
     "favorite": false
   },
@@ -1747,8 +1747,8 @@
   },
   {
     "id": "sent500_ms15mt",
-    "en": "We need a better network for this task.",
-    "vi": "Chúng tôi cần một mạng tốt hơn cho việc này.",
+    "en": "We need a stronger network connection for the video call this afternoon.",
+    "vi": "Chúng tôi cần kết nối mạng mạnh hơn cho cuộc gọi video chiều nay.",
     "topic": "technology",
     "grammar": "Simple Present",
     "vocabWord": "network",
@@ -1831,7 +1831,7 @@
     "en": "I saw her yesterday.",
     "vi": "Hôm qua tôi đã gặp cô ấy.",
     "topic": "time",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "yesterday",
     "favorite": false
   },
@@ -1966,7 +1966,7 @@
     "en": "I was late for class.",
     "vi": "Tôi đã đến lớp muộn.",
     "topic": "time",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "late",
     "favorite": false
   },
@@ -2020,7 +2020,7 @@
     "en": "I left my keys beside the house.",
     "vi": "Tôi để chìa khóa cạnh ngôi nhà.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "house",
     "favorite": false
   },
@@ -2038,7 +2038,7 @@
     "en": "I cleaned the bedroom this morning.",
     "vi": "Tôi dọn phòng ngủ vào sáng nay.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "bedroom",
     "favorite": false
   },
@@ -2047,16 +2047,16 @@
     "en": "I left the bathroom door open by accident.",
     "vi": "Tôi vô tình để cửa phòng tắm mở.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "bathroom",
     "favorite": false
   },
   {
     "id": "sent500_eeeucv",
-    "en": "We replaced the old kitchen last week.",
-    "vi": "Chúng tôi thay nhà bếp cũ tuần trước.",
+    "en": "We replaced the old kitchen cabinets last week.",
+    "vi": "Tuần trước, chúng tôi thay các tủ bếp cũ.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "kitchen",
     "favorite": false
   },
@@ -2065,7 +2065,7 @@
     "en": "I left my keys beside the garden.",
     "vi": "Tôi để chìa khóa cạnh khu vườn.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "garden",
     "favorite": false
   },
@@ -2083,7 +2083,7 @@
     "en": "I cleaned the window this morning.",
     "vi": "Tôi dọn cửa sổ vào sáng nay.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "window",
     "favorite": false
   },
@@ -2098,10 +2098,10 @@
   },
   {
     "id": "sent500_kp9xpb",
-    "en": "We replaced the old table last week.",
-    "vi": "Chúng tôi thay bàn cũ tuần trước.",
+    "en": "We replaced the old table in the dining room last week.",
+    "vi": "Tuần trước, chúng tôi thay chiếc bàn cũ trong phòng ăn.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "table",
     "favorite": false
   },
@@ -2110,7 +2110,7 @@
     "en": "I left my keys beside the bed.",
     "vi": "Tôi để chìa khóa cạnh giường.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "bed",
     "favorite": false
   },
@@ -2128,7 +2128,7 @@
     "en": "I cleaned the floor this morning.",
     "vi": "Tôi dọn sàn vào sáng nay.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "floor",
     "favorite": false
   },
@@ -2155,7 +2155,7 @@
     "en": "I left my keys beside the key.",
     "vi": "Tôi để chìa khóa cạnh chìa khóa.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "key",
     "favorite": false
   },
@@ -2172,7 +2172,7 @@
     "en": "I cleaned the mirror this morning.",
     "vi": "Tôi dọn gương vào sáng nay.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "mirror",
     "favorite": false
   },
@@ -2181,7 +2181,7 @@
     "en": "The shower door was open when I got home.",
     "vi": "Cửa phòng tắm vòi sen mở khi tôi về nhà.",
     "topic": "home",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "shower",
     "favorite": false
   },
@@ -2208,16 +2208,16 @@
     "en": "We stayed inside because of the weather.",
     "vi": "Chúng tôi ở trong nhà vì thời tiết.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "weather",
     "favorite": false
   },
   {
     "id": "sent500_1q8iyjl",
-    "en": "I checked the sun before going out.",
-    "vi": "Tôi kiểm tra mặt trời trước khi ra ngoài.",
+    "en": "I checked whether the sun would come out before planning our picnic in the park.",
+    "vi": "Tôi kiểm tra xem mặt trời có ló ra không trước khi lên kế hoạch dã ngoại trong công viên.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "sun",
     "favorite": false
   },
@@ -2235,7 +2235,7 @@
     "en": "The rain made the road slippery.",
     "vi": "Mưa/gió/thời tiết khiến đường trơn.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "rain",
     "favorite": false
   },
@@ -2250,10 +2250,10 @@
   },
   {
     "id": "sent500_7fghvi",
-    "en": "I checked the cloud before going out.",
-    "vi": "Tôi kiểm tra mây trước khi ra ngoài.",
+    "en": "I checked the cloud cover before leaving home for the hike this morning.",
+    "vi": "Tôi kiểm tra độ che phủ của mây trước khi rời nhà đi bộ đường dài sáng nay.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "cloud",
     "favorite": false
   },
@@ -2271,7 +2271,7 @@
     "en": "The wind made the road slippery.",
     "vi": "Mưa/gió/thời tiết khiến đường trơn.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "wind",
     "favorite": false
   },
@@ -2286,10 +2286,10 @@
   },
   {
     "id": "sent500_1h8vvyu",
-    "en": "I checked the storm before going out.",
-    "vi": "Tôi kiểm tra bão trước khi ra ngoài.",
+    "en": "I checked the storm warning before leaving home for the airport.",
+    "vi": "Tôi kiểm tra cảnh báo bão trước khi rời nhà đến sân bay.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "storm",
     "favorite": false
   },
@@ -2298,7 +2298,7 @@
     "en": "The snow changed suddenly this afternoon.",
     "vi": "Tuyết thay đổi đột ngột vào chiều nay.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "snow",
     "favorite": false
   },
@@ -2322,10 +2322,10 @@
   },
   {
     "id": "sent500_p6qqa3",
-    "en": "I checked the cold weather before going out.",
-    "vi": "Tôi kiểm tra thời tiết lạnh trước khi ra ngoài.",
+    "en": "I checked the forecast for cold weather before packing for our trip to the mountains.",
+    "vi": "Tôi kiểm tra dự báo thời tiết lạnh trước khi đóng gói hành lý cho chuyến đi vùng núi.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "cold weather",
     "favorite": false
   },
@@ -2352,7 +2352,7 @@
     "en": "We stayed inside because of the temperature.",
     "vi": "Chúng tôi ở trong nhà vì nhiệt độ.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "temperature",
     "favorite": false
   },
@@ -2361,7 +2361,7 @@
     "en": "I checked the forecast before going out.",
     "vi": "Tôi kiểm tra dự báo trước khi ra ngoài.",
     "topic": "weather",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "forecast",
     "favorite": false
   },
@@ -2388,7 +2388,7 @@
     "en": "We sat near the tree and watched the birds.",
     "vi": "Chúng tôi ngồi gần cây và ngắm chim.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "tree",
     "favorite": false
   },
@@ -2406,7 +2406,7 @@
     "en": "I took a photo of the grass.",
     "vi": "Tôi chụp một bức ảnh về cỏ.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "grass",
     "favorite": false
   },
@@ -2415,7 +2415,7 @@
     "en": "Children played beside the forest.",
     "vi": "Trẻ em chơi bên cạnh rừng.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "forest",
     "favorite": false
   },
@@ -2433,7 +2433,7 @@
     "en": "We sat near the ocean and watched the birds.",
     "vi": "Chúng tôi ngồi gần đại dương và ngắm chim.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "ocean",
     "favorite": false
   },
@@ -2451,7 +2451,7 @@
     "en": "I took a photo of the island.",
     "vi": "Tôi chụp một bức ảnh về hòn đảo.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "island",
     "favorite": false
   },
@@ -2460,7 +2460,7 @@
     "en": "Children played beside the field.",
     "vi": "Trẻ em chơi bên cạnh cánh đồng.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "field",
     "favorite": false
   },
@@ -2478,7 +2478,7 @@
     "en": "We sat near the plant and watched the birds.",
     "vi": "Chúng tôi ngồi gần cây và ngắm chim.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "plant",
     "favorite": false
   },
@@ -2496,7 +2496,7 @@
     "en": "I took a photo of the bird.",
     "vi": "Tôi chụp một bức ảnh về chim.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "bird",
     "favorite": false
   },
@@ -2505,7 +2505,7 @@
     "en": "Children played beside the dog.",
     "vi": "Trẻ em chơi bên cạnh chó.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "dog",
     "favorite": false
   },
@@ -2523,7 +2523,7 @@
     "en": "We sat near the horse and watched the birds.",
     "vi": "Chúng tôi ngồi gần ngựa và ngắm chim.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "horse",
     "favorite": false
   },
@@ -2541,7 +2541,7 @@
     "en": "I took a photo of the insect.",
     "vi": "Tôi chụp một bức ảnh về côn trùng.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "insect",
     "favorite": false
   },
@@ -2550,7 +2550,7 @@
     "en": "Children played beside the sky.",
     "vi": "Trẻ em chơi bên cạnh bầu trời.",
     "topic": "nature",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "sky",
     "favorite": false
   },
@@ -2568,7 +2568,7 @@
     "en": "I met a new people at the event.",
     "vi": "Tôi gặp một mọi người mới ở sự kiện.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "people",
     "favorite": false
   },
@@ -2577,7 +2577,7 @@
     "en": "The friend smiled and said hello.",
     "vi": "Bạn mỉm cười và chào tôi.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "friend",
     "favorite": false
   },
@@ -2604,7 +2604,7 @@
     "en": "I met a new woman at the event.",
     "vi": "Tôi gặp một phụ nữ mới ở sự kiện.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "woman",
     "favorite": false
   },
@@ -2613,7 +2613,7 @@
     "en": "The boy smiled and said hello.",
     "vi": "Bé trai mỉm cười và chào tôi.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "boy",
     "favorite": false
   },
@@ -2640,7 +2640,7 @@
     "en": "I met a new leader at the event.",
     "vi": "Tôi gặp một người lãnh đạo mới ở sự kiện.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "leader",
     "favorite": false
   },
@@ -2649,7 +2649,7 @@
     "en": "The guide smiled and said hello.",
     "vi": "Người hướng dẫn mỉm cười và chào tôi.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "guide",
     "favorite": false
   },
@@ -2676,7 +2676,7 @@
     "en": "I met a new firefighter at the event.",
     "vi": "Tôi gặp một lính cứu hỏa mới ở sự kiện.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "firefighter",
     "favorite": false
   },
@@ -2685,7 +2685,7 @@
     "en": "The engineer smiled and said hello.",
     "vi": "Kỹ sư mỉm cười và chào tôi.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "engineer",
     "favorite": false
   },
@@ -2712,7 +2712,7 @@
     "en": "I met a new singer at the event.",
     "vi": "Tôi gặp một ca sĩ mới ở sự kiện.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "singer",
     "favorite": false
   },
@@ -2721,7 +2721,7 @@
     "en": "The actor smiled and said hello.",
     "vi": "Diễn viên mỉm cười và chào tôi.",
     "topic": "people",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "actor",
     "favorite": false
   },
@@ -2820,7 +2820,7 @@
     "en": "He decided to disagree before the meeting.",
     "vi": "Anh ấy quyết định không đồng ý trước cuộc họp.",
     "topic": "communication",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "disagree",
     "favorite": false
   },
@@ -2865,7 +2865,7 @@
     "en": "He decided to say a few words before the meeting.",
     "vi": "Anh ấy quyết định nói vài lời trước cuộc họp.",
     "topic": "communication",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "say",
     "favorite": false
   },
@@ -2910,7 +2910,7 @@
     "en": "He decided to read before the meeting.",
     "vi": "Anh ấy quyết định đọc trước cuộc họp.",
     "topic": "communication",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "read",
     "favorite": false
   },
@@ -2955,7 +2955,7 @@
     "en": "He decided to translate before the meeting.",
     "vi": "Anh ấy quyết định dịch trước cuộc họp.",
     "topic": "communication",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "translate",
     "favorite": false
   },
@@ -3000,7 +3000,7 @@
     "en": "He decided to close the office before the meeting.",
     "vi": "Anh ấy quyết định đóng văn phòng trước cuộc họp.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "close",
     "favorite": false
   },
@@ -3045,7 +3045,7 @@
     "en": "He decided to come before the meeting.",
     "vi": "Anh ấy quyết định đến trước cuộc họp.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "come",
     "favorite": false
   },
@@ -3090,7 +3090,7 @@
     "en": "He decided to wash before the meeting.",
     "vi": "Anh ấy quyết định rửa trước cuộc họp.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "wash",
     "favorite": false
   },
@@ -3135,7 +3135,7 @@
     "en": "He decided to get the documents before the meeting.",
     "vi": "Anh ấy quyết định lấy tài liệu trước cuộc họp.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "get",
     "favorite": false
   },
@@ -3180,7 +3180,7 @@
     "en": "He decided to put the papers on the desk before the meeting.",
     "vi": "Anh ấy quyết định đặt tài liệu lên bàn trước cuộc họp.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "put",
     "favorite": false
   },
@@ -3225,7 +3225,7 @@
     "en": "He decided to check what he would need before the meeting.",
     "vi": "Anh ấy quyết định kiểm tra xem mình sẽ cần gì trước cuộc họp.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "need",
     "favorite": false
   },
@@ -3270,7 +3270,7 @@
     "en": "He decided to learn what he needed to know before the meeting.",
     "vi": "Anh ấy quyết định tìm hiểu những điều mình cần biết trước cuộc họp.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "know",
     "favorite": false
   },
@@ -3315,7 +3315,7 @@
     "en": "He decided to study before the meeting.",
     "vi": "Anh ấy quyết định học tập trước cuộc họp.",
     "topic": "study",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "study",
     "favorite": false
   },
@@ -3360,7 +3360,7 @@
     "en": "He decided to turn before the meeting.",
     "vi": "Anh ấy quyết định rẽ trước cuộc họp.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "turn",
     "favorite": false
   },
@@ -3405,7 +3405,7 @@
     "en": "He decided to visit before the meeting.",
     "vi": "Anh ấy quyết định thăm trước cuộc họp.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "visit",
     "favorite": false
   },
@@ -3450,7 +3450,7 @@
     "en": "The cost changed this month.",
     "vi": "Có giá thay đổi trong tháng này.",
     "topic": "money",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "cost",
     "favorite": false
   },
@@ -3924,10 +3924,10 @@
   },
   {
     "id": "sent500_r962ds",
-    "en": "We ordered hot food for dinner.",
-    "vi": "Chúng tôi gọi đồ ăn nóng cho bữa tối.",
+    "en": "We ordered hot food for dinner after arriving at the station late last night.",
+    "vi": "Tối qua, chúng tôi gọi đồ ăn nóng cho bữa tối sau khi đến nhà ga muộn.",
     "topic": "food",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "hot food",
     "favorite": false
   },
@@ -3972,7 +3972,7 @@
     "en": "Please read the instructions carefully.",
     "vi": "Hãy đọc kỹ hướng dẫn.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "carefully",
     "favorite": false
   },
@@ -3990,7 +3990,7 @@
     "en": "He walked slowly to the station.",
     "vi": "Anh ấy đi bộ chậm đến nhà ga.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "slowly",
     "favorite": false
   },
@@ -4035,7 +4035,7 @@
     "en": "I have already finished my homework.",
     "vi": "Tôi đã làm xong bài tập về nhà.",
     "topic": "time",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "already",
     "favorite": false
   },
@@ -4233,7 +4233,7 @@
     "en": "I felt calm during the trip.",
     "vi": "Tôi cảm thấy bình tĩnh trong suốt chuyến đi.",
     "topic": "time",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "during",
     "favorite": false
   },
@@ -4251,7 +4251,7 @@
     "en": "We walked toward the station.",
     "vi": "Chúng tôi đi về phía nhà ga.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "toward",
     "favorite": false
   },
@@ -4260,7 +4260,7 @@
     "en": "We walked through the forest.",
     "vi": "Chúng tôi đi xuyên qua khu rừng.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "through",
     "favorite": false
   },
@@ -4269,7 +4269,7 @@
     "en": "We walked around the lake.",
     "vi": "Chúng tôi đi quanh hồ.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "around",
     "favorite": false
   },
@@ -4278,7 +4278,7 @@
     "en": "We walked across the street.",
     "vi": "Chúng tôi băng qua đường.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "across",
     "favorite": false
   },
@@ -4323,7 +4323,7 @@
     "en": "I went with my friend.",
     "vi": "Tôi đi cùng bạn của mình.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "with",
     "favorite": false
   },
@@ -4332,7 +4332,7 @@
     "en": "We talked about the new lesson.",
     "vi": "Chúng tôi nói về bài học mới.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "about",
     "favorite": false
   },
@@ -4359,7 +4359,7 @@
     "en": "I walked to the station.",
     "vi": "Tôi đi bộ đến nhà ga.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "to",
     "favorite": false
   },
@@ -4368,7 +4368,7 @@
     "en": "She walked into the room.",
     "vi": "Cô ấy bước vào phòng.",
     "topic": "travel",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "into",
     "favorite": false
   },
@@ -4386,7 +4386,7 @@
     "en": "I studied until midnight.",
     "vi": "Tôi học đến nửa đêm.",
     "topic": "time",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "until",
     "favorite": false
   },
@@ -4395,7 +4395,7 @@
     "en": "I stayed home because it was raining.",
     "vi": "Tôi ở nhà vì trời đang mưa.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "because",
     "favorite": false
   },
@@ -4404,7 +4404,7 @@
     "en": "Although it was late, I kept studying.",
     "vi": "Mặc dù đã muộn, tôi vẫn tiếp tục học.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "although",
     "favorite": false
   },
@@ -4431,7 +4431,7 @@
     "en": "I listened to music while I studied.",
     "vi": "Tôi nghe nhạc trong khi học.",
     "topic": "time",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "while",
     "favorite": false
   },
@@ -4467,7 +4467,7 @@
     "en": "It was raining; therefore, we stayed inside.",
     "vi": "Trời đang mưa; do đó, chúng tôi ở trong nhà.",
     "topic": "daily",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "therefore",
     "favorite": false
   },
@@ -4494,7 +4494,7 @@
     "en": "She finally finished the report.",
     "vi": "Cuối cùng cô ấy cũng hoàn thành báo cáo.",
     "topic": "time",
-    "grammar": "Simple Present",
+    "grammar": "Simple Past",
     "vocabWord": "finally",
     "favorite": false
   },
