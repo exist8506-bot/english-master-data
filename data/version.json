@@ -1,7 +1,7 @@
 {
-  "version": "8.1.1",
-  "updatedAt": "2026-09-28",
-  "releaseNotes": "V8.1.1: thêm 500 từ mới; câu tiếng Anh lấy từ Tatoeba, có IPA, nghĩa Việt, nghe, đọc, nói, quiz, ôn tập, tam ngữ, giao tiếp và ngữ pháp.",
+  "version": "8.1.2",
+  "updatedAt": "2026-10-28",
+  "releaseNotes": "V8.1.2: first contextual data-quality pass; corrected high-confidence vocabulary definitions/translations/examples, normalized legacy IPA delimiters, replaced placeholder parts of speech, and synchronized related sentence and quiz entries. Remaining IPA, inferred POS, grammar tags, duplicates, and full semantic review are documented in DATA_QUALITY_AUDIT_2026-10-28.md.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
