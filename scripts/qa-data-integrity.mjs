@@ -271,7 +271,7 @@ function exampleContainsTarget(en, word) {
   // Some English phrasal verbs are separable: "view the bridge as a symbol",
   // "put the problem right". Accept the first verb form followed by the remaining
   // phrase components in order, with a bounded gap for an intervening object.
-  const parts = dehyphenated.split(/\\s+/).filter(Boolean);
+  const parts = dehyphenated.split(/\s+/).filter(Boolean);
   if (parts.length > 1) {
     const first = parts[0];
     const firstForms = new Set([first]);
@@ -286,7 +286,7 @@ function exampleContainsTarget(en, word) {
     else firstForms.add(first + "ing");
     if (irregular[first]) firstForms.add(irregular[first]);
 
-    const tokens = text.trim().split(/\\s+/).filter(Boolean);
+    const tokens = text.trim().split(/\s+/).filter(Boolean);
     for (let i = 0; i < tokens.length; i++) {
       if (!firstForms.has(tokens[i])) continue;
       let cursor = i;
