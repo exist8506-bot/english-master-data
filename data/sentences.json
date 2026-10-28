@@ -37067,15 +37067,16 @@
   },
   {
     "id": "exp500v2_sent_001_36263b2e16",
-    "en": "Do you sell chopsticks?",
-    "vi": "Bạn có bán đũa không?",
-    "topic": "daily",
+    "en": "Do you sell chopsticks at this shop near the station?",
+    "vi": "Cửa hàng gần nhà ga này có bán đũa không?",
+    "topic": "food",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Do%20you%20sell%20chopsticks%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10095809"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_002_12c0f1fbad",
@@ -37092,160 +37093,173 @@
   },
   {
     "id": "exp500v2_sent_003_f52bc44a34",
-    "en": "I will invite you.",
-    "vi": "Tôi sẽ mời bạn.",
-    "topic": "daily",
+    "en": "I will invite my classmates to study with me at the library tomorrow afternoon.",
+    "vi": "Chiều mai, tôi sẽ mời các bạn cùng lớp đến học với tôi tại thư viện.",
+    "topic": "communication",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20will%20invite%20you.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10299538"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_004_2aed5404c8",
-    "en": "She has 2,000 books.",
-    "vi": "Cô ấy có 2000 cuốn sách.",
-    "topic": "daily",
+    "en": "The library added new books to its collection before the semester began.",
+    "vi": "Thư viện bổ sung sách mới vào bộ sưu tập trước khi học kỳ bắt đầu.",
+    "topic": "study",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20has%202%2C000%20books.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1046163"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_005_74e023ef23",
-    "en": "It seldom rains here.",
-    "vi": "Trời ở đây ít khi mưa.",
-    "topic": "daily",
+    "en": "It seldom rains in this valley during the dry season.",
+    "vi": "Thung lũng này hiếm khi có mưa trong mùa khô.",
+    "topic": "weather",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20seldom%20rains%20here.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10794347"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_006_814af3172d",
-    "en": "Tom denied the rumor.",
-    "vi": "Tom đã phủ nhận tin đồn đó.",
-    "topic": "daily",
+    "en": "Tom denied the rumor during the press conference at City Hall yesterday.",
+    "vi": "Hôm qua, Tom phủ nhận tin đồn trong buổi họp báo tại tòa thị chính.",
+    "topic": "communication",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Tom%20denied%20the%20rumor.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1094891"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_007_37d41699bd",
-    "en": "Will humans colonize space?",
-    "vi": "Con người sẽ thuộc địa hóa không gian chứ?",
-    "topic": "health",
+    "en": "The researchers discussed whether humans will one day live on Mars during the conference yesterday.",
+    "vi": "Hôm qua, các nhà nghiên cứu thảo luận về việc liệu một ngày nào đó con người sẽ sống trên Sao Hỏa trong hội nghị.",
+    "topic": "grammar",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Will%20humans%20colonize%20space%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11194876"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_008_9cc860a01c",
-    "en": "This store sells vegetables.",
-    "vi": "Cửa hàng đó bán rau.",
+    "en": "The market stall sells fresh vegetables every morning in the town square.",
+    "vi": "Quầy hàng ở quảng trường thị trấn bán rau tươi mỗi sáng.",
     "topic": "food",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=This%20store%20sells%20vegetables.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1123572"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_009_ab87d24bdc",
-    "en": "The monkey climbed higher.",
-    "vi": "Con khỉ trèo cao hơn.",
-    "topic": "daily",
+    "en": "At the zoo yesterday, a monkey climbed to the top of a tree before feeding time.",
+    "vi": "Hôm qua ở sở thú, một con khỉ trèo lên ngọn cây trước giờ cho ăn.",
+    "topic": "animals",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20monkey%20climbed%20higher.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11239788"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_010_466bc8cef3",
-    "en": "What's this black stuff?",
-    "vi": "Cái thứ màu đen này là gì vậy?",
-    "topic": "daily",
+    "en": "The shop assistant showed me a black coat at the store yesterday.",
+    "vi": "Hôm qua, nhân viên bán hàng cho tôi xem một chiếc áo khoác màu đen tại cửa hàng.",
+    "topic": "clothing",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=What's%20this%20black%20stuff%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11266821"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_011_a49a78f944",
-    "en": "Everyone sees things differently.",
-    "vi": "Mỗi người nhìn nhận mọi việc theo cách khác nhau.",
-    "topic": "daily",
+    "en": "Everyone in our class arrived at the library before nine this morning.",
+    "vi": "Sáng nay, mọi người trong lớp chúng tôi đến thư viện trước 9 giờ.",
+    "topic": "school",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Everyone%20sees%20things%20differently.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "editorial:context-fix",
-    "exampleVi": "Mỗi người nhìn nhận mọi việc theo cách khác nhau."
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "exampleVi": "Mỗi người nhìn nhận mọi việc theo cách khác nhau.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_012_432e9fa24a",
-    "en": "I like these trousers.",
-    "vi": "Tôi thích chiếc quần tây dài này.",
-    "topic": "daily",
+    "en": "I tried on these trousers in the shop yesterday, and they fit perfectly.",
+    "vi": "Hôm qua, tôi thử chiếc quần dài này ở cửa hàng và nó vừa vặn hoàn hảo.",
+    "topic": "clothing",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20like%20these%20trousers.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11276709"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_013_78988010b8",
-    "en": "She's wearing red socks.",
-    "vi": "Cô ấy đang đi tất màu đỏ.",
-    "topic": "daily",
+    "en": "She wore red socks to the school sports day last Friday.",
+    "vi": "Thứ Sáu tuần trước, cô ấy đi tất đỏ trong ngày hội thể thao của trường.",
+    "topic": "clothing",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She's%20wearing%20red%20socks.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11328594"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_014_9dba6a05bc",
-    "en": "I found the cave.",
-    "vi": "Tôi tìm thấy cái hang.",
-    "topic": "daily",
+    "en": "The guide showed us a cave near the village during our hike last Sunday.",
+    "vi": "Chủ nhật tuần trước, hướng dẫn viên chỉ cho chúng tôi một hang động gần ngôi làng trong chuyến đi bộ đường dài.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20found%20the%20cave.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#12235281"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_015_a85f18261c",
-    "en": "Did you hear fireworks?",
-    "vi": "Bạn có nghe thấy tiếng pháo hoa không?",
-    "topic": "work",
+    "en": "We watched fireworks over the river during the town festival last night.",
+    "vi": "Tối qua, chúng tôi xem pháo hoa trên sông trong lễ hội của thị trấn.",
+    "topic": "celebration",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Did%20you%20hear%20fireworks%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#12459831"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_016_52efcb6c3e",
@@ -37285,267 +37299,289 @@
   },
   {
     "id": "exp500v2_sent_019_c88f94de74",
-    "en": "Embrace challenges as opportunities.",
-    "vi": "Hãy xem thử thách là cơ hội.",
-    "topic": "daily",
+    "en": "During the workshop at university last week, our mentor encouraged us to embrace challenges as opportunities.",
+    "vi": "Trong buổi hội thảo ở trường đại học tuần trước, người hướng dẫn khuyến khích chúng tôi đón nhận thử thách như những cơ hội.",
+    "topic": "communication",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Embrace%20challenges%20as%20opportunities.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13019860"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_020_e8dea393aa",
-    "en": "I felt an earthquake.",
-    "vi": "Tôi vừa cảm thấy động đất.",
+    "en": "We felt an earthquake in our apartment just after midnight last night.",
+    "vi": "Tối qua, chúng tôi cảm nhận được một trận động đất trong căn hộ ngay sau nửa đêm.",
     "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20felt%20an%20earthquake.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13580005"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_021_818533aa87",
-    "en": "It broke by itself.",
-    "vi": "Nó tự vỡ.",
-    "topic": "daily",
+    "en": "The door at the back of the hall closed by itself during the storm last night.",
+    "vi": "Cánh cửa ở phía sau hội trường tự đóng lại trong cơn bão tối qua.",
+    "topic": "grammar",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20broke%20by%20itself.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13581899"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_022_528cef87d0",
-    "en": "He has white skin.",
-    "vi": "Anh ấy có làn da trắng.",
-    "topic": "daily",
+    "en": "He wore a white shirt to the job interview at the hotel yesterday.",
+    "vi": "Hôm qua, anh ấy mặc áo sơ mi trắng đến buổi phỏng vấn xin việc tại khách sạn.",
+    "topic": "clothing",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=He%20has%20white%20skin.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13601790"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_023_149cf4d0df",
-    "en": "Where is your hometown?",
-    "vi": "Quê bạn ở đâu?",
+    "en": "I told my new classmates about my hometown during orientation at university last Monday.",
+    "vi": "Thứ Hai tuần trước, tôi kể với các bạn cùng lớp mới về quê hương trong buổi định hướng tại trường đại học.",
     "topic": "home",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Where%20is%20your%20hometown%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13723939"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_024_f385454622",
-    "en": "Don't be so selfish!",
-    "vi": "Đừng ích kỉ như thế!",
-    "topic": "daily",
+    "en": "My friend apologized for being selfish during our conversation at the café yesterday.",
+    "vi": "Hôm qua, bạn tôi xin lỗi vì đã ích kỷ trong cuộc trò chuyện tại quán cà phê.",
+    "topic": "personality",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Don't%20be%20so%20selfish!&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13787041"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_025_3d18b2ea89",
-    "en": "Those statistics prove nothing.",
-    "vi": "Những thống kê này không chứng minh được gì cả.",
-    "topic": "daily",
+    "en": "The professor reviewed the latest statistics in the lecture hall yesterday.",
+    "vi": "Hôm qua, giáo sư xem lại số liệu thống kê mới nhất trong giảng đường.",
+    "topic": "study",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Those%20statistics%20prove%20nothing.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13868988"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_026_a34b2d93b4",
-    "en": "Apparently, everyone was satisfied.",
-    "vi": "Có vẻ như mọi người đều hài lòng.",
-    "topic": "daily",
+    "en": "The customers were satisfied with the service at the hotel after check-out yesterday.",
+    "vi": "Hôm qua, các khách hàng hài lòng với dịch vụ của khách sạn sau khi trả phòng.",
+    "topic": "shopping",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Apparently%2C%20everyone%20was%20satisfied.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13901048"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_027_9fe5e19750",
-    "en": "That is obviously photoshopped.",
-    "vi": "Cái đấy chắc chắn là đã bị photoshop.",
-    "topic": "daily",
+    "en": "The road was obviously closed when we arrived at the bridge this morning.",
+    "vi": "Sáng nay, rõ ràng con đường đã bị chặn khi chúng tôi đến cây cầu.",
+    "topic": "general",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=That%20is%20obviously%20photoshopped.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13908322"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_028_3e6a717447",
-    "en": "Everyone was a spy.",
-    "vi": "Ai cũng là điệp viên.",
-    "topic": "daily",
+    "en": "In the film we watched at home last night, everyone turned out to be a spy.",
+    "vi": "Trong bộ phim chúng tôi xem ở nhà tối qua, hóa ra mọi người đều là gián điệp.",
+    "topic": "security",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Everyone%20was%20a%20spy.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13944606"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_029_75470a3076",
-    "en": "Let's reverse the coin.",
-    "vi": "Hãy lật ngược đồng xu lại.",
-    "topic": "daily",
+    "en": "The driver reversed the car slowly out of the hotel driveway last night.",
+    "vi": "Tối qua, tài xế từ từ lùi xe ra khỏi lối vào khách sạn.",
+    "topic": "movement",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Let's%20reverse%20the%20coin.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#14022670"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_030_73b8427ebc",
-    "en": "Thanks for your explanation.",
-    "vi": "Cảm ơn lời giải thích của bạn.",
-    "topic": "daily",
+    "en": "The teacher gave a clear explanation of the grammar rule during class yesterday.",
+    "vi": "Hôm qua, giáo viên giải thích rõ quy tắc ngữ pháp trong giờ học.",
+    "topic": "study",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Thanks%20for%20your%20explanation.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1403"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_031_25f30d353d",
-    "en": "Never drink tap water.",
-    "vi": "Đừng bao giờ uống nước vòi.",
-    "topic": "daily",
+    "en": "Please turn off the tap in the kitchen before you leave for work.",
+    "vi": "Vui lòng khóa vòi nước trong bếp trước khi đi làm.",
+    "topic": "home",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Never%20drink%20tap%20water.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#14032102"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_032_d133fd5ce7",
-    "en": "Tom found a hoard.",
-    "vi": "Tom đã tìm thấy một con heo rừng.",
-    "topic": "daily",
+    "en": "The archaeologists discovered a hoard of coins under the floor of the old house last summer.",
+    "vi": "Mùa hè năm ngoái, các nhà khảo cổ phát hiện một kho tiền xu dưới sàn căn nhà cổ.",
+    "topic": "history",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Tom%20found%20a%20hoard.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1552265"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_033_7469961612",
-    "en": "She was not disappointed.",
-    "vi": "Cô ấy đã không thất vọng.",
-    "topic": "daily",
+    "en": "We were disappointed when the train was cancelled at the station last night.",
+    "vi": "Tối qua, chúng tôi thất vọng khi chuyến tàu bị hủy tại nhà ga.",
+    "topic": "emotion",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She%20was%20not%20disappointed.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1862562"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_034_7a92f3d263",
-    "en": "It's a dead end.",
-    "vi": "đó là kết thúc cụt",
-    "topic": "daily",
+    "en": "The road came to a dead end near the river, so we turned back before sunset.",
+    "vi": "Con đường cụt gần bờ sông nên chúng tôi quay lại trước khi mặt trời lặn.",
+    "topic": "travel",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It's%20a%20dead%20end.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2176"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_035_caa155adf8",
-    "en": "He broke the rules.",
-    "vi": "Anh ta đã phạm luật.",
-    "topic": "daily",
+    "en": "The coach reviewed the team rules in the gym before practice on Monday.",
+    "vi": "Huấn luyện viên xem lại nội quy của đội trong phòng tập trước buổi luyện tập hôm thứ Hai.",
+    "topic": "school",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=He%20broke%20the%20rules.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2210282"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_036_ad61e7ac28",
-    "en": "I'll tell you afterwards.",
-    "vi": "Tôi sẽ nói với bạn sau này",
-    "topic": "daily",
+    "en": "We visited the museum in the morning and had lunch at a café afterwards.",
+    "vi": "Chúng tôi thăm bảo tàng vào buổi sáng rồi ăn trưa tại quán cà phê sau đó.",
+    "topic": "time",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I'll%20tell%20you%20afterwards.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2267188"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_037_2f9c1dc5cd",
-    "en": "I didn't betray you.",
-    "vi": "Tôi không phản bội cậu.",
-    "topic": "daily",
+    "en": "He promised not to betray his friend during their conversation at school yesterday.",
+    "vi": "Hôm qua ở trường, anh ấy hứa sẽ không phản bội bạn mình trong cuộc trò chuyện của họ.",
+    "topic": "relationships",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20didn't%20betray%20you.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2271699"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_038_97d3d178c6",
-    "en": "There could be consequences.",
-    "vi": "Có thể sẽ có hậu quả.",
-    "topic": "daily",
+    "en": "The teacher explained the consequences of copying homework during class yesterday.",
+    "vi": "Hôm qua, giáo viên giải thích hậu quả của việc chép bài tập trong giờ học.",
+    "topic": "learning",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=There%20could%20be%20consequences.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2287012"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_039_f9c83941c5",
-    "en": "I found that fascinating.",
-    "vi": "Tôi thấy điều đó thật hấp dẫn.",
-    "topic": "daily",
+    "en": "The guide told us a fascinating story about the ancient temple during our visit yesterday.",
+    "vi": "Hôm qua, hướng dẫn viên kể cho chúng tôi nghe một câu chuyện hấp dẫn về ngôi đền cổ trong chuyến tham quan.",
+    "topic": "communication",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20found%20that%20fascinating.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2327223"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_040_3dbcdd8b3e",
-    "en": "I'm still in shock.",
-    "vi": "Tôi vẫn đang bị sốc.",
-    "topic": "daily",
+    "en": "The announcement came as a shock to the staff during the meeting at the office yesterday.",
+    "vi": "Thông báo đó khiến nhân viên sửng sốt trong cuộc họp tại văn phòng hôm qua.",
+    "topic": "emotion",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I'm%20still%20in%20shock.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2548674"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_041_aedf615647",
@@ -38713,15 +38749,16 @@
   },
   {
     "id": "exp500v2_sent_138_07596f183f",
-    "en": "What doesn't kill us makes us disabled.",
-    "vi": "Cái gì không làm ta chết sẽ làm ta phế.",
-    "topic": "daily",
+    "en": "The station has a ramp for disabled passengers near the main entrance.",
+    "vi": "Nhà ga có đường dốc dành cho hành khách khuyết tật gần lối vào chính.",
+    "topic": "people",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=What%20doesn't%20kill%20us%20makes%20us%20disabled.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13597927"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_139_a1ea5461c7",
@@ -38773,15 +38810,16 @@
   },
   {
     "id": "exp500v2_sent_143_6bab147e47",
-    "en": "Don't ever hook up with bad guys.",
-    "vi": "Đừng bao giờ dang díu vớ những gã xấu.",
+    "en": "I hung my coat on a hook beside the door at the office yesterday.",
+    "vi": "Hôm qua, tôi treo áo khoác lên chiếc móc cạnh cửa ở văn phòng.",
     "topic": "daily",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Don't%20ever%20hook%20up%20with%20bad%20guys.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1787433"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_144_852aa71ddf",
@@ -38809,27 +38847,29 @@
   },
   {
     "id": "exp500v2_sent_146_ecefe3a4d0",
-    "en": "What is the next of the riddle?",
-    "vi": "Phần tiếp theo của câu đố là gì?",
-    "topic": "daily",
+    "en": "The children solved a difficult riddle at school yesterday.",
+    "vi": "Hôm qua, các em giải một câu đố khó ở trường.",
+    "topic": "thinking",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=What%20is%20the%20next%20of%20the%20riddle%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2507776"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_147_2721c74f6d",
-    "en": "The weather was good for the harvest.",
-    "vi": "Thời tiết thuận lợi cho việc thu hoạch.",
-    "topic": "daily",
+    "en": "Farmers harvested rice in the fields after the rain stopped last week.",
+    "vi": "Tuần trước, nông dân thu hoạch lúa trên đồng sau khi mưa ngớt.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20weather%20was%20good%20for%20the%20harvest.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#265885"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_148_8e435573c7",
@@ -39025,15 +39065,16 @@
   },
   {
     "id": "exp500v2_sent_164_2c65275ae0",
-    "en": "I bought some protein shakes in the gym.",
-    "vi": "Tôi đã mua một ít sinh tố protein trong phòng gym.",
+    "en": "I bought a protein shake at the gym after my workout this morning.",
+    "vi": "Sáng nay, tôi mua một chai đồ uống bổ sung protein tại phòng tập sau khi tập luyện.",
     "topic": "daily",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20bought%20some%20protein%20shakes%20in%20the%20gym.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11268596"
+    "sourceRef": "tatoeba:eng#11268596",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_165_bbd39e73eb",
@@ -39157,15 +39198,16 @@
   },
   {
     "id": "exp500v2_sent_175_e6d307367a",
-    "en": "Will you shut your trap for a minute?",
-    "vi": "Mày có thể im mồm một chút có được không?",
+    "en": "The ranger found a trap beside the forest trail yesterday morning.",
+    "vi": "Sáng hôm qua, kiểm lâm phát hiện một cái bẫy bên đường mòn trong rừng.",
     "topic": "daily",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Will%20you%20shut%20your%20trap%20for%20a%20minute%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2653227"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_176_db4baacb8d",
@@ -39529,15 +39571,16 @@
   },
   {
     "id": "exp500v2_sent_206_19102968b4",
-    "en": "Diplomacy is not only about to speak with friendly countries.",
-    "vi": "Ngoại giao không chỉ là ăn nói với những quốc gia thân thiện.",
-    "topic": "daily",
+    "en": "Diplomacy helps countries resolve disputes through discussion rather than conflict.",
+    "vi": "Ngoại giao giúp các quốc gia giải quyết tranh chấp bằng đối thoại thay vì xung đột.",
+    "topic": "society",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Diplomacy%20is%20not%20only%20about%20to%20speak%20with%20friendly%20countries.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13916306"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_207_79d8802669",
@@ -39613,15 +39656,16 @@
   },
   {
     "id": "exp500v2_sent_213_233471efd5",
-    "en": "The teacher puts up an argument about pollution for the students.",
-    "vi": "Cô giáo đưa ra một cuộc tranh luận về sự ô nhiễm cho các học sinh.",
-    "topic": "daily",
+    "en": "Students discussed air pollution in science class at school yesterday.",
+    "vi": "Hôm qua, học sinh thảo luận về ô nhiễm không khí trong giờ khoa học ở trường.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20teacher%20puts%20up%20an%20argument%20about%20pollution%20for%20the%20students.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11271600"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_214_db25fc77e9",
@@ -39805,15 +39849,16 @@
   },
   {
     "id": "exp500v2_sent_229_3c29719b21",
-    "en": "An intellectual is a person who has discovered something more interesting than sex.",
-    "vi": "Một trí thức là người khám phá ra thứ gì đó thú vị hơn cả tình dục.",
-    "topic": "daily",
+    "en": "The professor invited an intellectual to speak at the university lecture yesterday.",
+    "vi": "Hôm qua, giáo sư mời một trí thức đến phát biểu tại buổi diễn thuyết của trường đại học.",
+    "topic": "people",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=An%20intellectual%20is%20a%20person%20who%20has%20discovered%20something%20more%20interesting%20than%20sex.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#690971"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_230_5adf741a2c",
@@ -40465,15 +40510,16 @@
   },
   {
     "id": "exp500v2_sent_284_1be7a30854",
-    "en": "You vow to implode.",
-    "vi": "Bạn thề sẽ nổ tung.",
-    "topic": "daily",
+    "en": "She made a vow to finish her degree at the university by next June.",
+    "vi": "Cô ấy thề sẽ hoàn thành bằng đại học vào tháng Sáu năm tới.",
+    "topic": "communication",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=You%20vow%20to%20implode.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10281551"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_285_d6efe0c49a",
@@ -40525,15 +40571,16 @@
   },
   {
     "id": "exp500v2_sent_289_fe134dc58e",
-    "en": "The diagnosis isn't serious.",
-    "vi": "Chẩn đoán không nghiêm trọng.",
-    "topic": "daily",
+    "en": "The doctor gave me a diagnosis at the clinic yesterday.",
+    "vi": "Hôm qua, bác sĩ đưa ra chẩn đoán cho tôi tại phòng khám.",
+    "topic": "health",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20diagnosis%20isn't%20serious.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10335201"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_290_536c1bd4a0",
@@ -40621,15 +40668,16 @@
   },
   {
     "id": "exp500v2_sent_297_e2ac482d12",
-    "en": "Tom drives a hybrid.",
-    "vi": "Tom lái một chiếc xe hybrid.",
-    "topic": "daily",
+    "en": "We rented a hybrid car at the airport before driving to the coast last weekend.",
+    "vi": "Cuối tuần trước, chúng tôi thuê một chiếc xe hybrid tại sân bay trước khi lái xe ra bờ biển.",
+    "topic": "transport",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Tom%20drives%20a%20hybrid.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10545317"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_298_f9430dadc9",
@@ -40705,15 +40753,16 @@
   },
   {
     "id": "exp500v2_sent_304_d0b5d17516",
-    "en": "Tom ruins people's lives.",
-    "vi": "Tom hủy hoại cuộc sống của mọi người.",
-    "topic": "daily",
+    "en": "The ruins of the temple stood near the village when we visited last Sunday.",
+    "vi": "Tàn tích của ngôi đền nằm gần ngôi làng khi chúng tôi đến thăm vào Chủ nhật tuần trước.",
+    "topic": "history",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Tom%20ruins%20people's%20lives.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10579481"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_305_f0c5ded911",
@@ -40741,15 +40790,16 @@
   },
   {
     "id": "exp500v2_sent_307_955d031f0e",
-    "en": "The enclosure is wonderful.",
-    "vi": "Vỏ bọc thật tuyệt vời.",
-    "topic": "daily",
+    "en": "The animal enclosure at the zoo was cleaned before visitors arrived this morning.",
+    "vi": "Khu chuồng quây kín dành cho động vật ở sở thú được dọn trước khi khách tham quan đến sáng nay.",
+    "topic": "places",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20enclosure%20is%20wonderful.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10607662"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_308_a77c1b28f3",
@@ -40993,15 +41043,16 @@
   },
   {
     "id": "exp500v2_sent_328_4ddc5d8409",
-    "en": "Ziri swallowed a pearl.",
-    "vi": "Ziri nuốt một viên ngọc trai.",
-    "topic": "daily",
+    "en": "The diver found a pearl inside an oyster near the shore last summer.",
+    "vi": "Mùa hè năm ngoái, thợ lặn tìm thấy một viên ngọc trai bên trong con hàu gần bờ biển.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Ziri%20swallowed%20a%20pearl.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10771796"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_329_e71e137b66",
@@ -41041,15 +41092,16 @@
   },
   {
     "id": "exp500v2_sent_332_1ab3d39121",
-    "en": "Faith is subjective idealism.",
-    "vi": "Đức tin là chủ nghĩa duy tâm chủ quan.",
-    "topic": "daily",
+    "en": "The judge's opinion seemed subjective during the hearing yesterday.",
+    "vi": "Hôm qua, ý kiến của thẩm phán có vẻ mang tính chủ quan trong phiên điều trần.",
+    "topic": "thinking",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Faith%20is%20subjective%20idealism.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10830344"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_333_c575f3e383",
@@ -41089,15 +41141,16 @@
   },
   {
     "id": "exp500v2_sent_336_e1588771eb",
-    "en": "Ziri's ivy got rot.",
-    "vi": "Cây thường xuân của Ziri bị thối rữa.",
-    "topic": "daily",
+    "en": "The fruit began to rot in the basket in the kitchen last week.",
+    "vi": "Tuần trước, trái cây bắt đầu thối rữa trong chiếc giỏ ở bếp.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Ziri's%20ivy%20got%20rot.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10859573"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_337_2fa688b40c",
@@ -41149,15 +41202,16 @@
   },
   {
     "id": "exp500v2_sent_341_a7d83e7c68",
-    "en": "His eyes radiate bloodthirst.",
-    "vi": "Đôi mắt anh ta toát lên vẻ khát máu.",
-    "topic": "daily",
+    "en": "The sun radiated heat over the field on a hot afternoon.",
+    "vi": "Mặt trời tỏa nhiệt xuống cánh đồng vào một buổi chiều nóng.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=His%20eyes%20radiate%20bloodthirst.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10891712"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_342_2cb53bf495",
@@ -41461,15 +41515,16 @@
   },
   {
     "id": "exp500v2_sent_367_eccc4d3ab4",
-    "en": "Excite the mind: words.",
-    "vi": "Kích thích tâm trí: từ ngữ.",
-    "topic": "daily",
+    "en": "The science show excited the children at the museum yesterday.",
+    "vi": "Hôm qua, buổi trình diễn khoa học khiến các em hào hứng tại bảo tàng.",
+    "topic": "emotion",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Excite%20the%20mind%3A%20words.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1126653"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_368_86fef116fc",
@@ -41545,15 +41600,16 @@
   },
   {
     "id": "exp500v2_sent_374_913c620bbe",
-    "en": "Dutch has one lateral.",
-    "vi": "Dutch có một bên.",
-    "topic": "daily",
+    "en": "The linguistics teacher explained the lateral sound in Dutch during class yesterday.",
+    "vi": "Hôm qua, giáo viên ngôn ngữ học giải thích âm bên trong tiếng Hà Lan trong giờ học.",
+    "topic": "learning",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Dutch%20has%20one%20lateral.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11554140"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_375_bc61eb926f",
@@ -42445,15 +42501,16 @@
   },
   {
     "id": "exp500v2_sent_449_e9691a0dce",
-    "en": "The way remains extensive.",
-    "vi": "Con đường vẫn còn rộng lớn.",
-    "topic": "daily",
+    "en": "The university library has an extensive collection of history books.",
+    "vi": "Thư viện trường đại học có một bộ sưu tập sách lịch sử phong phú.",
+    "topic": "learning",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20way%20remains%20extensive.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#12637602"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_450_7a4eb8dff3",
@@ -42685,15 +42742,16 @@
   },
   {
     "id": "exp500v2_sent_469_f232febd10",
-    "en": "Yidir's son is rogue.",
-    "vi": "Con trai của Yidir là kẻ lừa đảo.",
-    "topic": "daily",
+    "en": "The police questioned a suspected rogue at the station yesterday.",
+    "vi": "Hôm qua, cảnh sát thẩm vấn một kẻ bị tình nghi bất lương tại đồn.",
+    "topic": "personality",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Yidir's%20son%20is%20rogue.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13023640"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_470_a001cafb57",
@@ -42757,27 +42815,29 @@
   },
   {
     "id": "exp500v2_sent_475_c44e12466a",
-    "en": "My eyebrow piercing rejected.",
-    "vi": "Xỏ khuyên lông mày của tôi bị từ chối.",
-    "topic": "daily",
+    "en": "She raised an eyebrow when she saw the price at the shop yesterday.",
+    "vi": "Hôm qua, cô ấy nhướng mày khi nhìn thấy giá ở cửa hàng.",
+    "topic": "body",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=My%20eyebrow%20piercing%20rejected.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13138338"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_476_d7fcb373bf",
-    "en": "I embody the law!",
-    "vi": "Tôi là hiện thân của luật pháp!",
-    "topic": "health",
+    "en": "Her actions embodied the school's values during the ceremony last Friday.",
+    "vi": "Hành động của cô ấy thể hiện những giá trị của trường trong buổi lễ hôm thứ Sáu tuần trước.",
+    "topic": "communication",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20embody%20the%20law!&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13221958"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_477_9f1647ab8e",
@@ -42901,15 +42961,16 @@
   },
   {
     "id": "exp500v2_sent_487_649060c518",
-    "en": "It's a daydream attack.",
-    "vi": "Đó là một cuộc tấn công trong mơ.",
-    "topic": "daily",
+    "en": "I often daydream on the bus on my way home in the evening.",
+    "vi": "Tôi thường mơ mộng trên xe buýt khi trên đường về nhà vào buổi tối.",
+    "topic": "thinking",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It's%20a%20daydream%20attack.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1506548"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_488_c8179b5464",
@@ -42997,27 +43058,29 @@
   },
   {
     "id": "exp500v2_sent_495_6baf5da7a9",
-    "en": "Stop twisting my arm!",
-    "vi": "Đừng vặn tay tôi nữa!",
-    "topic": "daily",
+    "en": "He kept twisting my arm to make me join the club yesterday.",
+    "vi": "Hôm qua, anh ấy liên tục gây áp lực để tôi tham gia câu lạc bộ.",
+    "topic": "communication",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Stop%20twisting%20my%20arm!&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2235062"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_496_332e0142bc",
-    "en": "Tom is a lush.",
-    "vi": "Tom là một người tươi tốt.",
-    "topic": "daily",
+    "en": "The garden looked lush after three days of rain last week.",
+    "vi": "Khu vườn xanh tốt sau ba ngày mưa tuần trước.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Tom%20is%20a%20lush.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2272827"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_497_8dbe5bd9e5",
@@ -43057,14 +43120,15 @@
   },
   {
     "id": "exp500v2_sent_500_1ca0739975",
-    "en": "There's a defect here.",
-    "vi": "Có một khiếm khuyết ở đây.",
-    "topic": "daily",
+    "en": "The technician found a defect in the machine at the factory during Monday's inspection.",
+    "vi": "Trong đợt kiểm tra hôm thứ Hai, kỹ thuật viên phát hiện một lỗi ở chiếc máy trong nhà máy.",
+    "topic": "work",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=There's%20a%20defect%20here.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#2631770"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   }
 ]
