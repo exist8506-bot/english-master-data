@@ -34077,11 +34077,11 @@
   },
   {
     "id": "exp500_sent_235_9d10cc7e",
-    "en": "The truck carried a ton of sand to the construction site near the river yesterday.",
-    "vi": "Hôm qua, xe tải chở một tấn cát đến công trường gần sông.",
-    "topic": "daily",
-    "grammar": "Everyday English",
-    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20truck%20carried%20a%20ton%20of%20sand%20to%20the%20construction%20site%20near%20the%20river%20yesterday.&lang=en",
+    "en": "A driver used the truck to carry a ton of sand to the construction site near the river yesterday.",
+    "vi": "Hôm qua, một tài xế dùng xe tải chở một tấn cát đến công trường gần sông.",
+    "topic": "measurement",
+    "grammar": "Simple Past",
+    "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=A%20driver%20used%20the%20truck%20to%20carry%20a%20ton%20of%20sand%20to%20the%20construction%20site%20near%20the%20river%20yesterday.&lang=en",
     "favorite": false,
     "source": "expansion500",
     "sourceVersion": "8.0.0"
