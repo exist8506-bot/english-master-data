@@ -93806,11 +93806,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "đã cạn",
+      "kiệt sức; vô cùng mệt mỏi",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "exhausted = đã cạn.",
+    "explain": "exhausted = kiệt sức; vô cùng mệt mỏi.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "exhausted",
@@ -93822,7 +93822,7 @@
   {
     "id": "exp500v2_qc_046_4105cfdd95",
     "type": "multiple",
-    "prompt": "I am completely _____.",
+    "prompt": "By the time I reached the hostel in Hanoi after the overnight bus ride, I was completely _____.",
     "options": [
       "parent",
       "mother",
@@ -94364,13 +94364,13 @@
     "type": "multiple",
     "prompt": "\"violent\" nghĩa là gì?",
     "options": [
-      "mãnh liệt, mạnh mẽ",
+      "bạo lực; dữ dội; hung bạo",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "violent = mãnh liệt, mạnh mẽ.",
+    "explain": "violent = bạo lực; dữ dội; hung bạo.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "violent",
@@ -94382,7 +94382,7 @@
   {
     "id": "exp500v2_qc_060_3304fb6be0",
     "type": "multiple",
-    "prompt": "Janos died a _____ death.",
+    "prompt": "The police investigated a _____ incident near the station late last night.",
     "options": [
       "violent",
       "family",
@@ -94446,11 +94446,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để phóng to",
+      "phóng to; làm lớn hơn",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "enlarge = để phóng to.",
+    "explain": "enlarge = phóng to; làm lớn hơn.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "enlarge",
@@ -94462,7 +94462,7 @@
   {
     "id": "exp500v2_qc_062_15c0fd6d88",
     "type": "multiple",
-    "prompt": "Can you _____ the image?",
+    "prompt": "Could you _____ this map on the screen before we leave the visitor center?",
     "options": [
       "parent",
       "mother",
@@ -95644,13 +95644,13 @@
     "type": "multiple",
     "prompt": "\"drugs\" nghĩa là gì?",
     "options": [
-      "chất kích thích",
+      "thuốc; các loại thuốc; chất gây nghiện (tùy ngữ cảnh)",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "drugs = chất kích thích.",
+    "explain": "drugs = thuốc; các loại thuốc; chất gây nghiện (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "drugs",
@@ -95662,7 +95662,7 @@
   {
     "id": "exp500v2_qc_092_7b34cb1928",
     "type": "multiple",
-    "prompt": "Some _____ cause liver damage.",
+    "prompt": "The pharmacist explained how to store these _____ safely at the clinic yesterday.",
     "options": [
       "drugs",
       "family",
@@ -96487,10 +96487,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sinh đôi"
+      "sinh đôi; một trong cặp song sinh; phòng đôi (twin room)"
     ],
     "answer": 3,
-    "explain": "twin = sinh đôi.",
+    "explain": "twin = sinh đôi; một trong cặp song sinh; phòng đôi (twin room).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "twin",
@@ -96725,12 +96725,12 @@
     "prompt": "\"paradise\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Paradise",
+      "thiên đường; nơi lý tưởng",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "paradise = Paradise.",
+    "explain": "paradise = thiên đường; nơi lý tưởng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "paradise",
@@ -96742,7 +96742,7 @@
   {
     "id": "exp500v2_qc_119_ee87e62281",
     "type": "multiple",
-    "prompt": "The _____ was in my heart.",
+    "prompt": "The island felt like _____ when we arrived at the beach at sunrise last summer.",
     "options": [
       "family",
       "parent",
@@ -99246,11 +99246,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sự tóe ra",
+      "tiếng/đợt nước bắn tung tóe; làm bắn nước",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "splash = sự tóe ra.",
+    "explain": "splash = tiếng/đợt nước bắn tung tóe; làm bắn nước.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "splash",
@@ -99262,7 +99262,7 @@
   {
     "id": "exp500v2_qc_182_326d177fc0",
     "type": "multiple",
-    "prompt": "He fell into the water with a _____.",
+    "prompt": "The child made a big _____ in the hotel pool yesterday afternoon.",
     "options": [
       "parent",
       "mother",
@@ -100604,13 +100604,13 @@
     "type": "multiple",
     "prompt": "\"graduation\" nghĩa là gì?",
     "options": [
-      "Tốt nghiệp",
+      "lễ tốt nghiệp; việc tốt nghiệp",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "graduation = Tốt nghiệp.",
+    "explain": "graduation = lễ tốt nghiệp; việc tốt nghiệp.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "graduation",
@@ -102005,12 +102005,12 @@
     "prompt": "\"setback\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "sự thoái lui",
+      "trở ngại; bước lùi; thất bại tạm thời",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "setback = sự thoái lui.",
+    "explain": "setback = trở ngại; bước lùi; thất bại tạm thời.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "setback",
@@ -102022,7 +102022,7 @@
   {
     "id": "exp500v2_qc_251_a11c2299e5",
     "type": "multiple",
-    "prompt": "It was a _____.",
+    "prompt": "The project suffered a _____ when the main supplier delayed delivery last week.",
     "options": [
       "family",
       "parent",
@@ -103765,12 +103765,12 @@
     "prompt": "\"superfluous\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "thừa",
+      "thừa; dư thừa; không cần thiết",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "superfluous = thừa.",
+    "explain": "superfluous = thừa; dư thừa; không cần thiết.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "superfluous",
@@ -104007,10 +104007,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Giao phối cho ai, giao cho ai chịu trách nhiệm về việc\ngì"
+      "giao phó; ủy thác; tin cậy giao cho"
     ],
     "answer": 3,
-    "explain": "entrust = Giao phối cho ai, giao cho ai chịu trách nhiệm về việc\ngì.",
+    "explain": "entrust = giao phó; ủy thác; tin cậy giao cho.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "entrust",
@@ -104022,7 +104022,7 @@
   {
     "id": "exp500v2_qc_301_b59b66209c",
     "type": "multiple",
-    "prompt": "_____ him to me.",
+    "prompt": "The director may _____ the office keys to her assistant before the meeting tomorrow.",
     "options": [
       "mother",
       "entrust",
@@ -104167,10 +104167,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "dễ thương"
+      "thân thiện; dễ mến"
     ],
     "answer": 3,
-    "explain": "amiable = dễ thương.",
+    "explain": "amiable = thân thiện; dễ mến.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "amiable",
@@ -104182,7 +104182,7 @@
   {
     "id": "exp500v2_qc_305_f0c5ded911",
     "type": "multiple",
-    "prompt": "She's _____ to everybody.",
+    "prompt": "The _____ receptionist welcomed us at the hotel desk late last night.",
     "options": [
       "mother",
       "amiable",
@@ -104405,12 +104405,12 @@
     "prompt": "\"seal\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để đóng dấu",
+      "con dấu; niêm phong; hải cẩu (tùy ngữ cảnh)",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "seal = để đóng dấu.",
+    "explain": "seal = con dấu; niêm phong; hải cẩu (tùy ngữ cảnh).",
     "topic": "nature",
     "level": "Upper-Intermediate",
     "vocabWord": "seal",
@@ -104422,7 +104422,7 @@
   {
     "id": "exp500v2_qc_311_0f0ed7eb40",
     "type": "multiple",
-    "prompt": "The _____ is snorting.",
+    "prompt": "The _____ swam near the pier when we visited the aquarium yesterday.",
     "options": [
       "family",
       "parent",
@@ -104444,13 +104444,13 @@
     "type": "multiple",
     "prompt": "\"stagnation\" nghĩa là gì?",
     "options": [
-      "tiêu điều",
+      "sự trì trệ; tình trạng đình trệ",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "stagnation = tiêu điều.",
+    "explain": "stagnation = sự trì trệ; tình trạng đình trệ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "stagnation",
@@ -104462,7 +104462,7 @@
   {
     "id": "exp500v2_qc_312_2e458071e7",
     "type": "multiple",
-    "prompt": "_____ leads to decline.",
+    "prompt": "The company faced years of _____ after its factory closed in the northern town.",
     "options": [
       "stagnation",
       "family",
@@ -105365,12 +105365,12 @@
     "prompt": "\"transfer\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để chuyển",
+      "chuyển; chuyển giao; chuyển nhượng",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "transfer = để chuyển.",
+    "explain": "transfer = chuyển; chuyển giao; chuyển nhượng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "transfer",
@@ -105382,7 +105382,7 @@
   {
     "id": "exp500v2_qc_335_34420cf5d6",
     "type": "multiple",
-    "prompt": "_____ to another team.",
+    "prompt": "I need to _____ the files from my laptop to the office server before the meeting tomorrow.",
     "options": [
       "family",
       "parent",
@@ -105646,11 +105646,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "chiếu xạ",
+      "bức xạ; sự phát xạ",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "radiation = chiếu xạ.",
+    "explain": "radiation = bức xạ; sự phát xạ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "radiation",
@@ -105662,7 +105662,7 @@
   {
     "id": "exp500v2_qc_342_2cb53bf495",
     "type": "multiple",
-    "prompt": "What is cosmic _____?",
+    "prompt": "Workers wore protective clothing near the site where _____ levels were measured yesterday.",
     "options": [
       "parent",
       "mother",
@@ -105806,11 +105806,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để trú ẩn",
+      "nơi trú ẩn; che chở; trú ẩn",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "shelter = để trú ẩn.",
+    "explain": "shelter = nơi trú ẩn; che chở; trú ẩn.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "shelter",
@@ -105822,7 +105822,7 @@
   {
     "id": "exp500v2_qc_346_e93ca6d903",
     "type": "multiple",
-    "prompt": "We ran for _____.",
+    "prompt": "We took _____ in the station during the heavy rain last night.",
     "options": [
       "parent",
       "mother",
@@ -106204,13 +106204,13 @@
     "type": "multiple",
     "prompt": "\"gunpowder\" nghĩa là gì?",
     "options": [
-      "Thuốc nổ",
+      "thuốc súng",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "gunpowder = Thuốc nổ.",
+    "explain": "gunpowder = thuốc súng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "gunpowder",
@@ -106222,7 +106222,7 @@
   {
     "id": "exp500v2_qc_356_ae33743612",
     "type": "multiple",
-    "prompt": "He won't invent _____.",
+    "prompt": "The museum displayed a historic jar of _____ behind glass in its military exhibit last Saturday.",
     "options": [
       "gunpowder",
       "family",
@@ -106364,13 +106364,13 @@
     "type": "multiple",
     "prompt": "\"hog\" nghĩa là gì?",
     "options": [
-      "lợn thiến",
+      "lợn; con lợn trưởng thành",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "hog = lợn thiến.",
+    "explain": "hog = lợn; con lợn trưởng thành.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "hog",
@@ -106382,7 +106382,7 @@
   {
     "id": "exp500v2_qc_360_9bf0e809ef",
     "type": "multiple",
-    "prompt": "Ziri went _____ hunting.",
+    "prompt": "The farmer fed a _____ in the pen behind the barn this morning.",
     "options": [
       "hog",
       "family",
@@ -106485,12 +106485,12 @@
     "prompt": "\"cabin\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "cabin",
+      "căn nhà nhỏ; cabin; khoang (tùy ngữ cảnh)",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "cabin = cabin.",
+    "explain": "cabin = căn nhà nhỏ; cabin; khoang (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "cabin",
@@ -106502,7 +106502,7 @@
   {
     "id": "exp500v2_qc_363_3efe14159f",
     "type": "multiple",
-    "prompt": "Ziri found a _____.",
+    "prompt": "We rented a wooden _____ near the lake for our hiking trip last weekend.",
     "options": [
       "family",
       "parent",
@@ -107207,10 +107207,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "cung điện, lâu đài"
+      "cung điện"
     ],
     "answer": 3,
-    "explain": "palace = cung điện, lâu đài.",
+    "explain": "palace = cung điện.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "palace",
@@ -107222,7 +107222,7 @@
   {
     "id": "exp500v2_qc_381_2f20f24d07",
     "type": "multiple",
-    "prompt": "The _____ is green.",
+    "prompt": "Tourists visited the _____ in the old city during the guided tour yesterday.",
     "options": [
       "mother",
       "palace",
@@ -107367,10 +107367,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "bạn bè"
+      "đồng chí; đồng đội; bạn đồng hành"
     ],
     "answer": 3,
-    "explain": "comrade = bạn bè.",
+    "explain": "comrade = đồng chí; đồng đội; bạn đồng hành.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "comrade",
@@ -107382,7 +107382,7 @@
   {
     "id": "exp500v2_qc_385_1456363f65",
     "type": "multiple",
-    "prompt": "Karl shot his _____.",
+    "prompt": "The soldier thanked his _____ for helping him during training at the base yesterday.",
     "options": [
       "mother",
       "comrade",
@@ -107566,11 +107566,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "taluy",
+      "sườn dốc; độ dốc",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "slope = taluy.",
+    "explain": "slope = sườn dốc; độ dốc.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "slope",
@@ -107582,7 +107582,7 @@
   {
     "id": "exp500v2_qc_390_f64c7429d8",
     "type": "multiple",
-    "prompt": "The _____ is steep.",
+    "prompt": "We climbed the steep _____ behind the village before sunrise on Saturday.",
     "options": [
       "parent",
       "mother",
@@ -108046,11 +108046,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "miền",
+      "lĩnh vực; miền; tên miền (trên Internet)",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "domain = miền.",
+    "explain": "domain = lĩnh vực; miền; tên miền (trên Internet).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "domain",
@@ -108062,7 +108062,7 @@
   {
     "id": "exp500v2_qc_402_9120580e94",
     "type": "multiple",
-    "prompt": "It's my only _____.",
+    "prompt": "Cybersecurity is an important _____ for companies that store customer data online.",
     "options": [
       "parent",
       "mother",
@@ -108085,12 +108085,12 @@
     "prompt": "\"shun\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để tránh xa",
+      "xa lánh; tránh xa",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "shun = để tránh xa.",
+    "explain": "shun = xa lánh; tránh xa.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "shun",
@@ -108102,7 +108102,7 @@
   {
     "id": "exp500v2_qc_403_221a4f3ea0",
     "type": "multiple",
-    "prompt": "Good men _____ evil.",
+    "prompt": "The team decided to _____ the unsafe trail near the river after the storm yesterday.",
     "options": [
       "family",
       "parent",
@@ -108206,11 +108206,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Gây mê",
+      "gây mê; gây tê; thuốc gây mê",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "anesthesia = Gây mê.",
+    "explain": "anesthesia = gây mê; gây tê; thuốc gây mê.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "anesthesia",
@@ -108222,7 +108222,7 @@
   {
     "id": "exp500v2_qc_406_800c34a668",
     "type": "multiple",
-    "prompt": "I'll give you _____.",
+    "prompt": "The doctor explained the effects of _____ before the operation at the hospital yesterday.",
     "options": [
       "parent",
       "mother",
@@ -108487,10 +108487,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Bà vú"
+      "bảo mẫu; người trông trẻ"
     ],
     "answer": 3,
-    "explain": "nanny = Bà vú.",
+    "explain": "nanny = bảo mẫu; người trông trẻ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "nanny",
@@ -108502,7 +108502,7 @@
   {
     "id": "exp500v2_qc_413_c8623d9186",
     "type": "multiple",
-    "prompt": "Are you my _____?",
+    "prompt": "The family hired a _____ to look after their child at home while both parents worked.",
     "options": [
       "mother",
       "nanny",
@@ -108604,13 +108604,13 @@
     "type": "multiple",
     "prompt": "\"rebel\" nghĩa là gì?",
     "options": [
-      "nổi loạn",
+      "người nổi loạn; nổi dậy; chống đối",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "rebel = nổi loạn.",
+    "explain": "rebel = người nổi loạn; nổi dậy; chống đối.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "rebel",
@@ -108622,7 +108622,7 @@
   {
     "id": "exp500v2_qc_416_1d8875eaab",
     "type": "multiple",
-    "prompt": "I was a _____.",
+    "prompt": "The _____ escaped from the fortress during the storm last night.",
     "options": [
       "rebel",
       "family",
@@ -108807,10 +108807,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Đặt đồng hàng; sắp xếp; phối hợp"
+      "phối hợp; điều phối; tọa độ (tùy ngữ cảnh)"
     ],
     "answer": 3,
-    "explain": "coordinate = Đặt đồng hàng; sắp xếp; phối hợp.",
+    "explain": "coordinate = phối hợp; điều phối; tọa độ (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "coordinate",
@@ -108822,7 +108822,7 @@
   {
     "id": "exp500v2_qc_421_df43804bfd",
     "type": "multiple",
-    "prompt": "We can always _____.",
+    "prompt": "We need to _____ the delivery schedule with the warehouse near the port tomorrow morning.",
     "options": [
       "mother",
       "coordinate",
