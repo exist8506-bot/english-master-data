@@ -95702,7 +95702,7 @@
   {
     "id": "exp500v2_qc_093_d5360d9be8",
     "type": "multiple",
-    "prompt": "You'd better take the _____.",
+    "prompt": "We took the _____ to the fifth floor of the hotel after checking in yesterday evening.",
     "options": [
       "mother",
       "elevator",
@@ -97182,7 +97182,7 @@
   {
     "id": "exp500v2_qc_130_20c97c875a",
     "type": "multiple",
-    "prompt": "My father is a skilled _____.",
+    "prompt": "The _____ returned to the harbor with his catch before sunrise yesterday.",
     "options": [
       "parent",
       "mother",
@@ -97582,7 +97582,7 @@
   {
     "id": "exp500v2_qc_140_9009b730f2",
     "type": "multiple",
-    "prompt": "I won't _____ you any difficult tasks.",
+    "prompt": "The professor will _____ each group a project in class tomorrow morning.",
     "options": [
       "assign",
       "family",
@@ -104862,7 +104862,7 @@
   {
     "id": "exp500v2_qc_322_ca406905ac",
     "type": "multiple",
-    "prompt": "I admire your _____.",
+    "prompt": "Our manager values _____ when scheduling shifts at the office.",
     "options": [
       "parent",
       "mother",
@@ -105862,7 +105862,7 @@
   {
     "id": "exp500v2_qc_347_7d52e6d4b2",
     "type": "multiple",
-    "prompt": "There'll be _____ everywhere.",
+    "prompt": "Farmers in the region faced a severe _____ after months without rain last summer.",
     "options": [
       "family",
       "parent",
@@ -107605,12 +107605,12 @@
     "prompt": "\"intoxicated\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "say; bị ngộ độc",
+      "say rượu; bị ảnh hưởng bởi rượu hoặc chất gây say",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "intoxicated = say; bị ngộ độc.",
+    "explain": "intoxicated = say rượu; bị ảnh hưởng bởi rượu hoặc chất gây say.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "intoxicated",
@@ -107622,7 +107622,7 @@
   {
     "id": "exp500v2_qc_391_297b27ec2e",
     "type": "multiple",
-    "prompt": "Alberto got easily _____.",
+    "prompt": "The driver appeared _____ at the checkpoint outside town last night.",
     "options": [
       "family",
       "parent",
@@ -108582,7 +108582,7 @@
   {
     "id": "exp500v2_qc_415_7090985e32",
     "type": "multiple",
-    "prompt": "It's very _____ here.",
+    "prompt": "The small café near campus felt _____ on a rainy evening last week.",
     "options": [
       "family",
       "parent",
@@ -109902,7 +109902,7 @@
   {
     "id": "exp500v2_qc_448_67f0aef070",
     "type": "multiple",
-    "prompt": "The _____ is big.",
+    "prompt": "We reached the _____ in the national park shortly before sunset on Sunday.",
     "options": [
       "waterfall",
       "family",
@@ -110005,12 +110005,12 @@
     "prompt": "\"empathize\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để đồng cảm",
+      "đồng cảm; thấu cảm",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "empathize = để đồng cảm.",
+    "explain": "empathize = đồng cảm; thấu cảm.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "empathize",
@@ -110022,7 +110022,7 @@
   {
     "id": "exp500v2_qc_451_9d99ac15ad",
     "type": "multiple",
-    "prompt": "You _____ with her.",
+    "prompt": "The counselor tried to _____ with students during the meeting at school yesterday.",
     "options": [
       "family",
       "parent",
@@ -110062,7 +110062,7 @@
   {
     "id": "exp500v2_qc_452_52b3a0d28c",
     "type": "multiple",
-    "prompt": "This is my _____.",
+    "prompt": "Becoming a doctor has been her _____ since she started university three years ago.",
     "options": [
       "aspiration",
       "family",
@@ -110087,10 +110087,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "CẤP BẬC"
+      "hàng ngũ; các cấp bậc"
     ],
     "answer": 3,
-    "explain": "ranks = CẤP BẬC.",
+    "explain": "ranks = hàng ngũ; các cấp bậc.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "ranks",
@@ -110102,7 +110102,7 @@
   {
     "id": "exp500v2_qc_453_210477a750",
     "type": "multiple",
-    "prompt": "I joined their _____.",
+    "prompt": "She joined the _____ of the volunteers at the community center last spring.",
     "options": [
       "mother",
       "ranks",
@@ -110165,12 +110165,12 @@
     "prompt": "\"serene\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Thanh thản",
+      "thanh bình; yên ả",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "serene = Thanh thản.",
+    "explain": "serene = thanh bình; yên ả.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "serene",
@@ -110182,7 +110182,7 @@
   {
     "id": "exp500v2_qc_455_91319980df",
     "type": "multiple",
-    "prompt": "The weather is _____.",
+    "prompt": "The lake looked _____ at sunrise during our trip to the mountains last Sunday.",
     "options": [
       "family",
       "parent",
@@ -110222,7 +110222,7 @@
   {
     "id": "exp500v2_qc_456_63fade39e9",
     "type": "multiple",
-    "prompt": "Turn off the _____!",
+    "prompt": "Please turn off the _____ in the kitchen before leaving home this morning.",
     "options": [
       "faucet",
       "family",
@@ -110247,10 +110247,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sự thăm dò"
+      "sự khám phá; việc thăm dò"
     ],
     "answer": 3,
-    "explain": "exploration = sự thăm dò.",
+    "explain": "exploration = sự khám phá; việc thăm dò.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "exploration",
@@ -110262,7 +110262,7 @@
   {
     "id": "exp500v2_qc_457_0d5feb1964",
     "type": "multiple",
-    "prompt": "Knowledge expands through _____.",
+    "prompt": "Space _____ was the main topic of our science class at university yesterday.",
     "options": [
       "mother",
       "exploration",
@@ -110286,11 +110286,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "bản chất; tinh chất; cốt lõi",
+      "bản chất; cốt lõi; tinh chất",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "essence = bản chất; tinh chất; cốt lõi.",
+    "explain": "essence = bản chất; cốt lõi; tinh chất.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "essence",
@@ -110302,7 +110302,7 @@
   {
     "id": "exp500v2_qc_458_d32952c0cf",
     "type": "multiple",
-    "prompt": "Does existence precede _____?",
+    "prompt": "The teacher explained the _____ of the argument during class yesterday.",
     "options": [
       "parent",
       "mother",
@@ -110325,12 +110325,12 @@
     "prompt": "\"embroider\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để thêu",
+      "thêu",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "embroider = để thêu.",
+    "explain": "embroider = thêu.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "embroider",
@@ -110342,7 +110342,7 @@
   {
     "id": "exp500v2_qc_459_4e7d99b8e7",
     "type": "multiple",
-    "prompt": "I like to _____.",
+    "prompt": "My grandmother likes to _____ patterns on clothes at home in the evening.",
     "options": [
       "family",
       "parent",
@@ -110382,7 +110382,7 @@
   {
     "id": "exp500v2_qc_460_7ec3711b01",
     "type": "multiple",
-    "prompt": "Their ideas are _____.",
+    "prompt": "The date on the old receipt seemed _____ during the investigation at work yesterday.",
     "options": [
       "unimportant",
       "family",
@@ -110407,10 +110407,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Kính mắt"
+      "kính mắt"
     ],
     "answer": 3,
-    "explain": "spectacles = Kính mắt.",
+    "explain": "spectacles = kính mắt.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "spectacles",
@@ -110422,7 +110422,7 @@
   {
     "id": "exp500v2_qc_461_6b7d75a954",
     "type": "multiple",
-    "prompt": "Tom lost his _____.",
+    "prompt": "I left my _____ on the desk in the library before leaving campus yesterday.",
     "options": [
       "mother",
       "spectacles",
@@ -110462,7 +110462,7 @@
   {
     "id": "exp500v2_qc_462_baeba7e7b9",
     "type": "multiple",
-    "prompt": "She committed _____ fraud.",
+    "prompt": "The accountant checked the _____ at the office before paying the supplier this morning.",
     "options": [
       "parent",
       "mother",
@@ -110485,12 +110485,12 @@
     "prompt": "\"overpass\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Cầu vượt",
+      "cầu vượt",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "overpass = Cầu vượt.",
+    "explain": "overpass = cầu vượt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "overpass",
@@ -110502,7 +110502,7 @@
   {
     "id": "exp500v2_qc_463_bf6b72f602",
     "type": "multiple",
-    "prompt": "The _____ is ginormous.",
+    "prompt": "Traffic moved slowly on the _____ near the station during rush hour yesterday.",
     "options": [
       "family",
       "parent",
@@ -110542,7 +110542,7 @@
   {
     "id": "exp500v2_qc_464_bd343a4500",
     "type": "multiple",
-    "prompt": "I work in _____.",
+    "prompt": "She works in _____ at a shipping company near the port.",
     "options": [
       "logistics",
       "family",
@@ -110567,10 +110567,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Thật lộng lẫy"
+      "hùng vĩ; uy nghi; lộng lẫy"
     ],
     "answer": 3,
-    "explain": "majestic = Thật lộng lẫy.",
+    "explain": "majestic = hùng vĩ; uy nghi; lộng lẫy.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "majestic",
@@ -110582,7 +110582,7 @@
   {
     "id": "exp500v2_qc_465_1652d912ac",
     "type": "multiple",
-    "prompt": "Turkeys are _____ creatures.",
+    "prompt": "The castle looked _____ from the hill as we arrived at sunset yesterday.",
     "options": [
       "mother",
       "majestic",
@@ -110606,11 +110606,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "nhân từ.",
+      "nhân từ; có lòng tốt",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "benevolent = nhân từ..",
+    "explain": "benevolent = nhân từ; có lòng tốt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "benevolent",
@@ -110622,7 +110622,7 @@
   {
     "id": "exp500v2_qc_466_94fab58332",
     "type": "multiple",
-    "prompt": "Are there _____ djinn?",
+    "prompt": "The _____ doctor treated children for free at the rural clinic last winter.",
     "options": [
       "parent",
       "mother",
@@ -110645,12 +110645,12 @@
     "prompt": "\"proficient\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Thành thạo",
+      "thành thạo; có năng lực",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "proficient = Thành thạo.",
+    "explain": "proficient = thành thạo; có năng lực.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "proficient",
@@ -110662,7 +110662,7 @@
   {
     "id": "exp500v2_qc_467_b4903c4ac4",
     "type": "multiple",
-    "prompt": "He's _____ at swimming.",
+    "prompt": "After two years of practice, he became _____ at swimming at the local pool.",
     "options": [
       "family",
       "parent",
@@ -110684,13 +110684,13 @@
     "type": "multiple",
     "prompt": "\"posterity\" nghĩa là gì?",
     "options": [
-      "hậu thế",
+      "các thế hệ mai sau; hậu thế",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "posterity = hậu thế.",
+    "explain": "posterity = các thế hệ mai sau; hậu thế.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "posterity",
@@ -110702,7 +110702,7 @@
   {
     "id": "exp500v2_qc_468_dca54526e3",
     "type": "multiple",
-    "prompt": "He died without _____.",
+    "prompt": "The writer hoped her diaries would be preserved for _____ in the national library.",
     "options": [
       "posterity",
       "family",
@@ -110766,11 +110766,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sự nhận thức",
+      "nhận thức; cách nhìn nhận",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "perception = sự nhận thức.",
+    "explain": "perception = nhận thức; cách nhìn nhận.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "perception",
@@ -110782,7 +110782,7 @@
   {
     "id": "exp500v2_qc_470_a001cafb57",
     "type": "multiple",
-    "prompt": "What's my current self-_____?",
+    "prompt": "My _____ of the city changed after our walking tour yesterday.",
     "options": [
       "parent",
       "mother",
@@ -110805,12 +110805,12 @@
     "prompt": "\"memorandum\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "BẢN GHI NHỚ",
+      "bản ghi nhớ",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "memorandum = BẢN GHI NHỚ.",
+    "explain": "memorandum = bản ghi nhớ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "memorandum",
@@ -110822,7 +110822,7 @@
   {
     "id": "exp500v2_qc_471_1609c8b1ef",
     "type": "multiple",
-    "prompt": "This is a _____.",
+    "prompt": "The director sent a _____ to all staff before the office meeting yesterday.",
     "options": [
       "family",
       "parent",
@@ -110862,7 +110862,7 @@
   {
     "id": "exp500v2_qc_472_1a5a9cecab",
     "type": "multiple",
-    "prompt": "_____ collectors collect postcards.",
+    "prompt": "I sent a _____ to my family from Da Nang during my holiday last summer.",
     "options": [
       "postcard",
       "family",
@@ -110887,10 +110887,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Liệt"
+      "tình trạng liệt; sự tê liệt"
     ],
     "answer": 3,
-    "explain": "paralysis = Liệt.",
+    "explain": "paralysis = tình trạng liệt; sự tê liệt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "paralysis",
@@ -110902,7 +110902,7 @@
   {
     "id": "exp500v2_qc_473_67ef38a8a1",
     "type": "multiple",
-    "prompt": "They suffer from _____.",
+    "prompt": "The doctor explained how the injury could cause _____ during our appointment at the hospital last week.",
     "options": [
       "mother",
       "paralysis",
@@ -110926,11 +110926,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "hiểu lầm",
+      "hiểu lầm; hiểu sai",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "misunderstand = hiểu lầm.",
+    "explain": "misunderstand = hiểu lầm; hiểu sai.",
     "topic": "weather",
     "level": "Intermediate",
     "vocabWord": "misunderstand",
@@ -110942,7 +110942,7 @@
   {
     "id": "exp500v2_qc_474_b652726564",
     "type": "multiple",
-    "prompt": "Don't _____ my words.",
+    "prompt": "Please do not _____ my message; I sent it from the airport this morning.",
     "options": [
       "parent",
       "mother",
@@ -111062,7 +111062,7 @@
   {
     "id": "exp500v2_qc_477_9f1647ab8e",
     "type": "multiple",
-    "prompt": "He's a _____ expert.",
+    "prompt": "We studied _____ during the field trip to the mountains last Friday.",
     "options": [
       "mother",
       "geology",
@@ -111102,7 +111102,7 @@
   {
     "id": "exp500v2_qc_478_e7e5cb2f5e",
     "type": "multiple",
-    "prompt": "_____ it to us.",
+    "prompt": "Please _____ the lecture in your notebook before the class ends this afternoon.",
     "options": [
       "parent",
       "mother",
@@ -111142,7 +111142,7 @@
   {
     "id": "exp500v2_qc_479_acbe10e69a",
     "type": "multiple",
-    "prompt": "This _____ is juicy.",
+    "prompt": "I bought a ripe _____ at the market near home on Saturday morning.",
     "options": [
       "family",
       "parent",
@@ -111164,13 +111164,13 @@
     "type": "multiple",
     "prompt": "\"prohibit\" nghĩa là gì?",
     "options": [
-      "Cấm, cấm đoán",
+      "cấm; ngăn cấm",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "prohibit = Cấm, cấm đoán.",
+    "explain": "prohibit = cấm; ngăn cấm.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "prohibit",
@@ -111182,7 +111182,7 @@
   {
     "id": "exp500v2_qc_480_bf0abc00a3",
     "type": "multiple",
-    "prompt": "One should _____ it.",
+    "prompt": "The school rules _____ smoking anywhere on campus.",
     "options": [
       "prohibit",
       "family",
@@ -111207,10 +111207,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để ức chế"
+      "ức chế; cản trở; kìm hãm"
     ],
     "answer": 3,
-    "explain": "inhibit = để ức chế.",
+    "explain": "inhibit = ức chế; cản trở; kìm hãm.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "inhibit",
@@ -111222,7 +111222,7 @@
   {
     "id": "exp500v2_qc_481_123ee64d9b",
     "type": "multiple",
-    "prompt": "Fear can _____ success.",
+    "prompt": "Fear can _____ students from speaking during presentations in class.",
     "options": [
       "mother",
       "inhibit",
@@ -111246,11 +111246,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Rất vui.",
+      "vô cùng vui mừng",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "overjoyed = Rất vui..",
+    "explain": "overjoyed = vô cùng vui mừng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "overjoyed",
@@ -111262,7 +111262,7 @@
   {
     "id": "exp500v2_qc_482_b098aa3d68",
     "type": "multiple",
-    "prompt": "He was so _____.",
+    "prompt": "She was _____ when she received her scholarship at the university ceremony last Friday.",
     "options": [
       "parent",
       "mother",
@@ -111285,12 +111285,12 @@
     "prompt": "\"villa\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Biệt thự",
+      "biệt thự",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "villa = Biệt thự.",
+    "explain": "villa = biệt thự.",
     "topic": "health",
     "level": "Upper-Intermediate",
     "vocabWord": "villa",
@@ -111302,7 +111302,7 @@
   {
     "id": "exp500v2_qc_483_208d788ad4",
     "type": "multiple",
-    "prompt": "The _____ is large.",
+    "prompt": "We rented a _____ near the beach for our family holiday last August.",
     "options": [
       "family",
       "parent",
@@ -111324,13 +111324,13 @@
     "type": "multiple",
     "prompt": "\"merge\" nghĩa là gì?",
     "options": [
-      "hợp nhất; sáp nhập; nhập làn",
+      "hợp nhất; nhập làn; sáp nhập",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "merge = hợp nhất; sáp nhập; nhập làn.",
+    "explain": "merge = hợp nhất; nhập làn; sáp nhập.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "merge",
@@ -111342,7 +111342,7 @@
   {
     "id": "exp500v2_qc_484_14091a9f24",
     "type": "multiple",
-    "prompt": "Please let others _____!",
+    "prompt": "Drivers must slow down before they _____ onto the highway near the airport.",
     "options": [
       "merge",
       "family",
@@ -111367,10 +111367,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "tình yêu lãng mạn; sự lãng mạn; truyện tình cảm"
+      "sự lãng mạn; tình yêu lãng mạn; truyện tình cảm"
     ],
     "answer": 3,
-    "explain": "romance = tình yêu lãng mạn; sự lãng mạn; truyện tình cảm.",
+    "explain": "romance = sự lãng mạn; tình yêu lãng mạn; truyện tình cảm.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "romance",
@@ -111382,7 +111382,7 @@
   {
     "id": "exp500v2_qc_485_fbfa863db5",
     "type": "multiple",
-    "prompt": "I love _____ novels.",
+    "prompt": "She bought a _____ novel at the bookstore near campus yesterday.",
     "options": [
       "mother",
       "romance",
@@ -111406,11 +111406,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Rất tài tình",
+      "tài tình; khéo léo; sáng tạo",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "ingenious = Rất tài tình.",
+    "explain": "ingenious = tài tình; khéo léo; sáng tạo.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "ingenious",
@@ -111422,7 +111422,7 @@
   {
     "id": "exp500v2_qc_486_7314b44cc6",
     "type": "multiple",
-    "prompt": "Everything _____ is simple.",
+    "prompt": "The engineer presented an _____ solution to the traffic problem at the city meeting yesterday.",
     "options": [
       "parent",
       "mother",
@@ -111462,7 +111462,7 @@
   {
     "id": "exp500v2_qc_487_649060c518",
     "type": "multiple",
-    "prompt": "I often _____ on the bus on my way home in the evening.",
+    "prompt": "I sometimes _____ on the bus while travelling home after class in the evening.",
     "options": [
       "family",
       "parent",
@@ -111502,7 +111502,7 @@
   {
     "id": "exp500v2_qc_488_c8179b5464",
     "type": "multiple",
-    "prompt": "She is somewhat _____.",
+    "prompt": "The chef prepared a _____ menu for the gala dinner at the hotel last night.",
     "options": [
       "refined",
       "family",
@@ -111527,10 +111527,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sinh con"
+      "sự sinh con; quá trình sinh nở"
     ],
     "answer": 3,
-    "explain": "childbirth = sinh con.",
+    "explain": "childbirth = sự sinh con; quá trình sinh nở.",
     "topic": "home",
     "level": "Upper-Intermediate",
     "vocabWord": "childbirth",
@@ -111542,7 +111542,7 @@
   {
     "id": "exp500v2_qc_489_cf43107c47",
     "type": "multiple",
-    "prompt": "Mary died in _____.",
+    "prompt": "The nurse explained the stages of _____ during the class at the hospital yesterday.",
     "options": [
       "mother",
       "childbirth",
@@ -111566,11 +111566,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Thật vinh hạnh.",
+      "vinh dự; được tôn vinh",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "honored = Thật vinh hạnh..",
+    "explain": "honored = vinh dự; được tôn vinh.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "honored",
@@ -111582,7 +111582,7 @@
   {
     "id": "exp500v2_qc_490_af3ed8fd93",
     "type": "multiple",
-    "prompt": "It's a time-_____ tradition.",
+    "prompt": "I felt _____ to receive the award at the university ceremony last Friday.",
     "options": [
       "parent",
       "mother",
@@ -111605,12 +111605,12 @@
     "prompt": "\"overlap\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Chồng chéo, gối lên",
+      "chồng lấn; trùng nhau; chồng lên nhau",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "overlap = Chồng chéo, gối lên.",
+    "explain": "overlap = chồng lấn; trùng nhau; chồng lên nhau.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "overlap",
@@ -111622,7 +111622,7 @@
   {
     "id": "exp500v2_qc_491_5b0fe021bf",
     "type": "multiple",
-    "prompt": "Their two shadows _____.",
+    "prompt": "The two meetings _____ at the conference center on Monday afternoon.",
     "options": [
       "family",
       "parent",
@@ -111644,13 +111644,13 @@
     "type": "multiple",
     "prompt": "\"courtesy\" nghĩa là gì?",
     "options": [
-      "xã giao.",
+      "sự lịch sự; phép lịch sự; sự nhã nhặn",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "courtesy = xã giao..",
+    "explain": "courtesy = sự lịch sự; phép lịch sự; sự nhã nhặn.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "courtesy",
@@ -111662,7 +111662,7 @@
   {
     "id": "exp500v2_qc_492_d95df59356",
     "type": "multiple",
-    "prompt": "I appreciate the _____.",
+    "prompt": "As a _____, the hotel offered guests free transport to the station during the storm last night.",
     "options": [
       "courtesy",
       "family",
@@ -111687,10 +111687,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "chủ tịch"
+      "chủ tọa; người chủ trì"
     ],
     "answer": 3,
-    "explain": "chairperson = chủ tịch.",
+    "explain": "chairperson = chủ tọa; người chủ trì.",
     "topic": "home",
     "level": "Upper-Intermediate",
     "vocabWord": "chairperson",
@@ -111702,7 +111702,7 @@
   {
     "id": "exp500v2_qc_493_36d8a72496",
     "type": "multiple",
-    "prompt": "The _____ ordered silence.",
+    "prompt": "The _____ opened the meeting in the town hall at nine yesterday morning.",
     "options": [
       "mother",
       "chairperson",
@@ -111742,7 +111742,7 @@
   {
     "id": "exp500v2_qc_494_454a46df2e",
     "type": "multiple",
-    "prompt": "It's a single-cell _____.",
+    "prompt": "The students observed a single-cell _____ under a microscope in the science lab yesterday.",
     "options": [
       "parent",
       "mother",
@@ -111862,7 +111862,7 @@
   {
     "id": "exp500v2_qc_497_8dbe5bd9e5",
     "type": "multiple",
-    "prompt": "Tom is pretty _____.",
+    "prompt": "The _____ thief escaped through a narrow alley behind the market last night.",
     "options": [
       "mother",
       "crafty",
@@ -111886,11 +111886,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "khuất phục",
+      "khuất phục; chế ngự; dập tắt",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "subdue = khuất phục.",
+    "explain": "subdue = khuất phục; chế ngự; dập tắt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "subdue",
@@ -111902,7 +111902,7 @@
   {
     "id": "exp500v2_qc_498_5be03b0732",
     "type": "multiple",
-    "prompt": "We cannot _____ nature.",
+    "prompt": "It took firefighters several hours to _____ the flames at the factory last night.",
     "options": [
       "parent",
       "mother",
@@ -111942,7 +111942,7 @@
   {
     "id": "exp500v2_qc_499_1ad6211db6",
     "type": "multiple",
-    "prompt": "I will _____ it.",
+    "prompt": "The professor agreed to _____ her research proposal during the meeting at the university yesterday.",
     "options": [
       "family",
       "parent",
