@@ -37645,15 +37645,16 @@
   },
   {
     "id": "exp500v2_sent_046_4105cfdd95",
-    "en": "I am completely exhausted.",
-    "vi": "Tôi mệt rã rời.",
-    "topic": "daily",
+    "en": "By the time I reached the hostel in Hanoi after the overnight bus ride, I was completely exhausted.",
+    "vi": "Khi đến nhà trọ ở Hà Nội sau chuyến xe buýt đêm, tôi đã kiệt sức.",
+    "topic": "health",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20am%20completely%20exhausted.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#4174788"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_047_7dfdacd39c",
@@ -37813,15 +37814,16 @@
   },
   {
     "id": "exp500v2_sent_060_3304fb6be0",
-    "en": "Janos died a violent death.",
-    "vi": "Janos đã chết một cái chết đau đớn.",
-    "topic": "daily",
+    "en": "The police investigated a violent incident near the station late last night.",
+    "vi": "Cảnh sát điều tra một vụ việc bạo lực gần nhà ga vào đêm muộn hôm qua.",
+    "topic": "society",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Janos%20died%20a%20violent%20death.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#12033514"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_061_be2e2bb698",
@@ -37837,15 +37839,16 @@
   },
   {
     "id": "exp500v2_sent_062_15c0fd6d88",
-    "en": "Can you enlarge the image?",
-    "vi": "Bạn có thể phóng to ảnh không?",
-    "topic": "daily",
+    "en": "Could you enlarge this map on the screen before we leave the visitor center?",
+    "vi": "Bạn có thể phóng to bản đồ trên màn hình trước khi chúng ta rời trung tâm thông tin du khách không?",
+    "topic": "technology",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Can%20you%20enlarge%20the%20image%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#13628424"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_063_a63849d12e",
@@ -38197,15 +38200,16 @@
   },
   {
     "id": "exp500v2_sent_092_7b34cb1928",
-    "en": "Some drugs cause liver damage.",
-    "vi": "Có một số loại thuốc gây thương tổn cho gan.",
-    "topic": "daily",
+    "en": "The pharmacist explained how to store these drugs safely at the clinic yesterday.",
+    "vi": "Hôm qua, dược sĩ giải thích cách bảo quản an toàn các loại thuốc này tại phòng khám.",
+    "topic": "health",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Some%20drugs%20cause%20liver%20damage.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#9200846"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_093_d5360d9be8",
@@ -38522,15 +38526,16 @@
   },
   {
     "id": "exp500v2_sent_119_ee87e62281",
-    "en": "The paradise was in my heart.",
-    "vi": "Thiên đường đã ở trong tim tôi.",
-    "topic": "daily",
+    "en": "The island felt like paradise when we arrived at the beach at sunrise last summer.",
+    "vi": "Mùa hè năm ngoái, hòn đảo như thiên đường khi chúng tôi đến bãi biển lúc bình minh.",
+    "topic": "travel",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20paradise%20was%20in%20my%20heart.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#3381392"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_120_2953e6c97a",
@@ -39286,15 +39291,16 @@
   },
   {
     "id": "exp500v2_sent_182_326d177fc0",
-    "en": "He fell into the water with a splash.",
-    "vi": "Anh ấy ngã xuống nước, nước tung toé.",
-    "topic": "daily",
+    "en": "The child made a big splash in the hotel pool yesterday afternoon.",
+    "vi": "Chiều hôm qua, đứa trẻ làm nước bắn tung tóe trong hồ bơi khách sạn.",
+    "topic": "water",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=He%20fell%20into%20the%20water%20with%20a%20splash.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#8729962"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_183_424a55e0d2",
@@ -40117,15 +40123,16 @@
   },
   {
     "id": "exp500v2_sent_251_a11c2299e5",
-    "en": "It was a setback.",
-    "vi": "Đó là một bước lùi.",
-    "topic": "daily",
+    "en": "The project suffered a setback when the main supplier delayed delivery last week.",
+    "vi": "Dự án gặp trở ngại khi nhà cung cấp chính giao hàng chậm vào tuần trước.",
+    "topic": "work",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It%20was%20a%20setback.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10107028"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_252_2d839b542c",
@@ -40720,15 +40727,16 @@
   },
   {
     "id": "exp500v2_sent_301_b59b66209c",
-    "en": "Entrust him to me.",
-    "vi": "Giao phó anh ấy cho tôi.",
-    "topic": "daily",
+    "en": "The director may entrust the office keys to her assistant before the meeting tomorrow.",
+    "vi": "Giám đốc có thể giao chìa khóa văn phòng cho trợ lý trước cuộc họp ngày mai.",
+    "topic": "work",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Entrust%20him%20to%20me.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10564873"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_302_068f0a6845",
@@ -40769,15 +40777,16 @@
   },
   {
     "id": "exp500v2_sent_305_f0c5ded911",
-    "en": "She's amiable to everybody.",
-    "vi": "Cô ấy thân thiện với tất cả mọi người.",
-    "topic": "daily",
+    "en": "The amiable receptionist welcomed us at the hotel desk late last night.",
+    "vi": "Đêm muộn hôm qua, nhân viên lễ tân thân thiện chào đón chúng tôi tại quầy khách sạn.",
+    "topic": "personality",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=She's%20amiable%20to%20everybody.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10585980"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_306_3647690baf",
@@ -40842,27 +40851,29 @@
   },
   {
     "id": "exp500v2_sent_311_0f0ed7eb40",
-    "en": "The seal is snorting.",
-    "vi": "Con hải cẩu đang khịt mũi.",
-    "topic": "nature",
+    "en": "The seal swam near the pier when we visited the aquarium yesterday.",
+    "vi": "Hôm qua, con hải cẩu bơi gần cầu cảng khi chúng tôi đến thăm thủy cung.",
+    "topic": "animals",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20seal%20is%20snorting.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10636238"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_312_2e458071e7",
-    "en": "Stagnation leads to decline.",
-    "vi": "Sự trì trệ dẫn đến suy giảm.",
-    "topic": "daily",
+    "en": "The company faced years of stagnation after its factory closed in the northern town.",
+    "vi": "Công ty đối mặt với nhiều năm trì trệ sau khi nhà máy ở thị trấn phía bắc đóng cửa.",
+    "topic": "business",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Stagnation%20leads%20to%20decline.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10637251"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_313_22ef5ba4d4",
@@ -41133,15 +41144,16 @@
   },
   {
     "id": "exp500v2_sent_335_34420cf5d6",
-    "en": "Transfer to another team.",
-    "vi": "Chuyển sang nhóm khác.",
-    "topic": "daily",
+    "en": "I need to transfer the files from my laptop to the office server before the meeting tomorrow.",
+    "vi": "Tôi cần chuyển các tệp từ máy tính xách tay sang máy chủ văn phòng trước cuộc họp ngày mai.",
+    "topic": "technology",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Transfer%20to%20another%20team.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10854222"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_336_e1588771eb",
@@ -41219,15 +41231,16 @@
   },
   {
     "id": "exp500v2_sent_342_2cb53bf495",
-    "en": "What is cosmic radiation?",
-    "vi": "Bức xạ vũ trụ là gì?",
-    "topic": "daily",
+    "en": "Workers wore protective clothing near the site where radiation levels were measured yesterday.",
+    "vi": "Hôm qua, công nhân mặc đồ bảo hộ gần khu vực đo mức bức xạ.",
+    "topic": "science",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=What%20is%20cosmic%20radiation%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10893306"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_343_5f2321ee78",
@@ -41267,15 +41280,16 @@
   },
   {
     "id": "exp500v2_sent_346_e93ca6d903",
-    "en": "We ran for shelter.",
-    "vi": "Chúng tôi chạy tìm nơi trú ẩn.",
-    "topic": "daily",
+    "en": "We took shelter in the station during the heavy rain last night.",
+    "vi": "Tối qua, chúng tôi trú mưa trong nhà ga.",
+    "topic": "safety",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20ran%20for%20shelter.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#10967072"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_347_7d52e6d4b2",
@@ -41388,15 +41402,16 @@
   },
   {
     "id": "exp500v2_sent_356_ae33743612",
-    "en": "He won't invent gunpowder.",
-    "vi": "Anh ta sẽ không phát minh ra thuốc súng.",
-    "topic": "daily",
+    "en": "The museum displayed a historic jar of gunpowder behind glass in its military exhibit last Saturday.",
+    "vi": "Thứ Bảy tuần trước, bảo tàng trưng bày một lọ thuốc súng lịch sử trong tủ kính của khu triển lãm quân sự.",
+    "topic": "history",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=He%20won't%20invent%20gunpowder.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11087689"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_357_063dcf21f7",
@@ -41436,15 +41451,16 @@
   },
   {
     "id": "exp500v2_sent_360_9bf0e809ef",
-    "en": "Ziri went hog hunting.",
-    "vi": "Ziri đi săn heo.",
-    "topic": "daily",
+    "en": "The farmer fed a hog in the pen behind the barn this morning.",
+    "vi": "Sáng nay, người nông dân cho một con lợn ăn trong chuồng phía sau nhà kho.",
+    "topic": "animals",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Ziri%20went%20hog%20hunting.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11195795"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_361_7eb8645395",
@@ -41472,15 +41488,16 @@
   },
   {
     "id": "exp500v2_sent_363_3efe14159f",
-    "en": "Ziri found a cabin.",
-    "vi": "Ziri tìm thấy một căn nhà gỗ.",
-    "topic": "daily",
+    "en": "We rented a wooden cabin near the lake for our hiking trip last weekend.",
+    "vi": "Cuối tuần trước, chúng tôi thuê một căn nhà gỗ nhỏ gần hồ cho chuyến đi bộ đường dài.",
+    "topic": "travel",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Ziri%20found%20a%20cabin.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11221077"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_364_1beb185317",
@@ -41690,15 +41707,16 @@
   },
   {
     "id": "exp500v2_sent_381_2f20f24d07",
-    "en": "The palace is green.",
-    "vi": "Cung điện có màu xanh lá cây.",
-    "topic": "daily",
+    "en": "Tourists visited the palace in the old city during the guided tour yesterday.",
+    "vi": "Hôm qua, du khách tham quan cung điện trong khu phố cổ theo chuyến hướng dẫn.",
+    "topic": "places",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20palace%20is%20green.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11604518"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_382_9c7e05e586",
@@ -41738,15 +41756,16 @@
   },
   {
     "id": "exp500v2_sent_385_1456363f65",
-    "en": "Karl shot his comrade.",
-    "vi": "Karl bắn đồng đội của mình",
-    "topic": "daily",
+    "en": "The soldier thanked his comrade for helping him during training at the base yesterday.",
+    "vi": "Hôm qua, người lính cảm ơn đồng đội đã giúp mình trong buổi huấn luyện tại căn cứ.",
+    "topic": "society",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Karl%20shot%20his%20comrade.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11635626"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_386_3482dd3068",
@@ -41798,15 +41817,16 @@
   },
   {
     "id": "exp500v2_sent_390_f64c7429d8",
-    "en": "The slope is steep.",
-    "vi": "Độ dốc rất dốc.",
-    "topic": "daily",
+    "en": "We climbed the steep slope behind the village before sunrise on Saturday.",
+    "vi": "Trước bình minh hôm thứ Bảy, chúng tôi leo lên sườn dốc đứng phía sau ngôi làng.",
+    "topic": "nature",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=The%20slope%20is%20steep.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11669897"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_391_297b27ec2e",
@@ -41943,27 +41963,29 @@
   },
   {
     "id": "exp500v2_sent_402_9120580e94",
-    "en": "It's my only domain.",
-    "vi": "Đó là lĩnh vực duy nhất của tôi.",
-    "topic": "daily",
+    "en": "Cybersecurity is an important domain for companies that store customer data online.",
+    "vi": "An ninh mạng là một lĩnh vực quan trọng đối với các công ty lưu trữ dữ liệu khách hàng trực tuyến.",
+    "topic": "technology",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=It's%20my%20only%20domain.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11822275"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_403_221a4f3ea0",
-    "en": "Good men shun evil.",
-    "vi": "Người tốt tránh xa cái ác.",
-    "topic": "daily",
+    "en": "The team decided to shun the unsafe trail near the river after the storm yesterday.",
+    "vi": "Hôm qua, đội quyết định tránh con đường mòn không an toàn gần sông sau cơn bão.",
+    "topic": "social",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Good%20men%20shun%20evil.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11836350"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_404_d6426dd63a",
@@ -41991,15 +42013,16 @@
   },
   {
     "id": "exp500v2_sent_406_800c34a668",
-    "en": "I'll give you anesthesia.",
-    "vi": "Tôi sẽ gây mê cho cô.",
-    "topic": "daily",
+    "en": "The doctor explained the effects of anesthesia before the operation at the hospital yesterday.",
+    "vi": "Hôm qua, bác sĩ giải thích tác dụng của thuốc gây mê trước ca phẫu thuật tại bệnh viện.",
+    "topic": "health",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I'll%20give%20you%20anesthesia.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11856195"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_407_f5e861c696",
@@ -42075,15 +42098,16 @@
   },
   {
     "id": "exp500v2_sent_413_c8623d9186",
-    "en": "Are you my nanny?",
-    "vi": "Bạn có phải là bảo mẫu của tôi không?",
-    "topic": "daily",
+    "en": "The family hired a nanny to look after their child at home while both parents worked.",
+    "vi": "Gia đình thuê bảo mẫu trông con tại nhà trong lúc cả bố và mẹ đi làm.",
+    "topic": "family",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=Are%20you%20my%20nanny%3F&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11900737"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_414_5db3005d1c",
@@ -42112,15 +42136,16 @@
   },
   {
     "id": "exp500v2_sent_416_1d8875eaab",
-    "en": "I was a rebel.",
-    "vi": "Tôi là một kẻ nổi loạn.",
-    "topic": "daily",
+    "en": "The rebel escaped from the fortress during the storm last night.",
+    "vi": "Đêm qua, người nổi loạn trốn khỏi pháo đài trong cơn bão.",
+    "topic": "society",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=I%20was%20a%20rebel.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#11927132"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_417_fbbbffdd9d",
@@ -42172,15 +42197,16 @@
   },
   {
     "id": "exp500v2_sent_421_df43804bfd",
-    "en": "We can always coordinate.",
-    "vi": "Chúng ta luôn có thể phối hợp.",
-    "topic": "daily",
+    "en": "We need to coordinate the delivery schedule with the warehouse near the port tomorrow morning.",
+    "vi": "Sáng mai, chúng tôi cần phối hợp lịch giao hàng với kho gần cảng.",
+    "topic": "work",
     "grammar": "Everyday English",
     "audioEn": "https://dict.minhqnd.com/api/v1/tts?word=We%20can%20always%20coordinate.&lang=en",
     "favorite": false,
     "source": "expansion500_v2",
     "sourceVersion": "8.1.1",
-    "sourceRef": "tatoeba:eng#1199456"
+    "sourceRef": "editorial:contextual-review-2026-10-28",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "exp500v2_sent_422_186f52ede0",
