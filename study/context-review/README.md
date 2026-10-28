@@ -5,12 +5,12 @@
 - Phiên bản metadata nguồn: **8.1.1** (cập nhật ghi trong metadata: 2026-09-28).
 - Từ vựng đã xuất: **3500 mục**.
 - Câu mẫu đã xuất: **3750 câu**.
-- Ví dụ/câu được sửa: **48 mục từ** và **68 bản ghi câu**.
+- Ví dụ/câu được sửa: **80 mục từ** và **97 bản ghi câu**.
 - Thiếu IPA: **500 mục**.
 - Dùng nhãn loại từ chung `word`: **500 mục**.
 - Thiếu nhãn ngữ pháp: **249 câu**.
 - Nhóm câu trùng nguyên văn: **241 nhóm**; giữ nguyên để không mất ID/liên kết.
-- Còn gắn cờ cần rà soát ngữ nghĩa: **49 mục từ** và **62 câu**.
+- Còn gắn cờ cần rà soát ngữ nghĩa: **6 mục từ** và **22 câu**.
 
 ## Tệp dữ liệu
 
@@ -102,6 +102,43 @@
 | they tried to thank carefully. | They thanked their teacher after the lesson. | Họ cảm ơn giáo viên sau buổi học. |
 | they tried to appear carefully. | The actor appeared on stage at 7 p.m. before the show. | Diễn viên xuất hiện trên sân khấu lúc 7 giờ tối trước buổi diễn. |
 | they tried to gain carefully. | They gained valuable experience while working at the hotel. | Họ tích lũy kinh nghiệm quý báu khi làm việc tại khách sạn. |
+
+## Sửa đổi bổ sung ở vòng rà soát tiếp theo
+
+| Câu gốc | Câu đã rà soát | Bản dịch tiếng Việt |
+|---|---|---|
+| we checked authority before the meeting. | We confirmed the authority's approval before the meeting. | Chúng tôi xác nhận sự phê duyệt của cơ quan có thẩm quyền trước cuộc họp. |
+| we checked leadership before the meeting. | Our team reviewed the leadership plan before the meeting. | Nhóm chúng tôi xem lại kế hoạch lãnh đạo trước cuộc họp. |
+| we checked advisor before the meeting. | We consulted our advisor before the meeting. | Chúng tôi tham khảo ý kiến cố vấn trước cuộc họp. |
+| we checked allocation before the meeting. | The manager reviewed the budget allocation before the meeting. | Người quản lý rà soát việc phân bổ ngân sách trước cuộc họp. |
+| we checked collaboration before the meeting. | We reviewed the team's collaboration plan before the meeting. | Chúng tôi xem lại kế hoạch hợp tác của nhóm trước cuộc họp. |
+| we checked occupation before the meeting. | The form asks for your occupation before the interview. | Biểu mẫu yêu cầu ghi nghề nghiệp của bạn trước buổi phỏng vấn. |
+| we checked profession before the meeting. | She listed her profession on the application form before the interview. | Cô ấy ghi nghề nghiệp của mình vào đơn đăng ký trước buổi phỏng vấn. |
+| we checked requirement before the meeting. | We reviewed each requirement before the client meeting. | Chúng tôi xem lại từng yêu cầu trước cuộc họp với khách hàng. |
+| i checked sponsor before deciding. | I checked the sponsor's background before deciding whether to join the event. | Tôi kiểm tra thông tin về nhà tài trợ trước khi quyết định tham gia sự kiện. |
+| she decided to invent after lunch. | She decided to invent a simple tool for her science project after lunch. | Sau bữa trưa, cô ấy quyết định phát minh một dụng cụ đơn giản cho dự án khoa học. |
+| she decided to publish after lunch. | She decided to publish her research paper after the professor reviewed it. | Cô ấy quyết định công bố bài nghiên cứu sau khi giáo sư xem xét. |
+| she decided to advertise after lunch. | She decided to advertise the new café on campus after lunch. | Sau bữa trưa, cô ấy quyết định quảng bá quán cà phê mới trong khuôn viên trường. |
+| she decided to discover after lunch. | After lunch, she discovered how the machine worked during the lab session. | Sau bữa trưa, cô ấy phát hiện ra cách chiếc máy hoạt động trong buổi thực hành. |
+| she decided to detect after lunch. | The technician used a sensor to detect the leak during the inspection. | Kỹ thuật viên dùng cảm biến để phát hiện chỗ rò rỉ trong quá trình kiểm tra. |
+| she decided to elect after lunch. | The members voted to elect a new class representative after lunch. | Sau bữa trưa, các thành viên bỏ phiếu bầu lớp trưởng mới. |
+| she decided to examine after lunch. | The doctor decided to examine the patient after lunch. | Bác sĩ quyết định khám cho bệnh nhân sau bữa trưa. |
+| she decided to indicate after lunch. | She used an arrow to indicate the correct exit on the map. | Cô ấy dùng mũi tên để chỉ lối ra đúng trên bản đồ. |
+| she decided to launch after lunch. | The company planned to launch its new app after lunch. | Công ty dự định ra mắt ứng dụng mới sau bữa trưa. |
+| she decided to grab after lunch. | She grabbed her umbrella before leaving the café after lunch. | Cô ấy lấy chiếc ô trước khi rời quán cà phê sau bữa trưa. |
+| she decided to occur after lunch. | The meeting is scheduled to occur after lunch. | Cuộc họp được lên lịch diễn ra sau bữa trưa. |
+| she decided to react after lunch. | She reacted calmly when the manager announced the change after lunch. | Cô ấy phản ứng bình tĩnh khi quản lý thông báo thay đổi sau bữa trưa. |
+| she decided to represent after lunch. | She was chosen to represent her class at the meeting next week. | Cô ấy được chọn đại diện cho lớp trong cuộc họp tuần tới. |
+| she decided to reveal after lunch. | The researcher decided to reveal the results after the presentation. | Nhà nghiên cứu quyết định công bố kết quả sau buổi thuyết trình. |
+| she decided to sign after lunch. | She decided to sign the registration form at the front desk after lunch. | Cô ấy quyết định ký vào mẫu đăng ký tại quầy lễ tân sau bữa trưa. |
+| she decided to surprise after lunch. | She planned to surprise her sister with a birthday cake after lunch. | Sau bữa trưa, cô ấy dự định tạo bất ngờ cho chị/em gái bằng một chiếc bánh sinh nhật. |
+| she decided to adjust after lunch. | She adjusted the meeting schedule after lunch to avoid a time conflict. | Cô ấy điều chỉnh lịch họp sau bữa trưa để tránh trùng giờ. |
+| they tried to consider carefully. | They tried to consider all the options carefully before making a decision. | Họ cố gắng cân nhắc kỹ mọi lựa chọn trước khi đưa ra quyết định. |
+| they tried to freeze carefully. | They froze the berries carefully before storing them in the freezer. | Họ cẩn thận làm đông quả mọng trước khi cất vào ngăn đá. |
+| they tried to illustrate carefully. | They illustrated the process carefully in their science report. | Họ minh họa quy trình cẩn thận trong báo cáo khoa học. |
+| they tried to interrupt carefully. | He waited until the speaker paused before interrupting politely. | Anh ấy chờ người nói ngừng lại rồi mới lịch sự ngắt lời. |
+| they tried to memorize carefully. | They memorized the new English words before the quiz. | Họ học thuộc các từ tiếng Anh mới trước bài kiểm tra. |
+| they tried to release carefully. | The team released the new app after testing it carefully. | Nhóm phát hành ứng dụng mới sau khi kiểm thử kỹ. |
 
 ## Việc còn cần làm
 
