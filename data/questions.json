@@ -92022,7 +92022,7 @@
   {
     "id": "exp500v2_qc_001_36263b2e16",
     "type": "multiple",
-    "prompt": "Do you sell _____?",
+    "prompt": "Do you sell _____ at this shop near the station?",
     "options": [
       "mother",
       "chopsticks",
@@ -92102,7 +92102,7 @@
   {
     "id": "exp500v2_qc_003_f52bc44a34",
     "type": "multiple",
-    "prompt": "I will _____ you.",
+    "prompt": "I will _____ my classmates to study with me at the library tomorrow afternoon.",
     "options": [
       "family",
       "parent",
@@ -92142,7 +92142,7 @@
   {
     "id": "exp500v2_qc_004_2aed5404c8",
     "type": "multiple",
-    "prompt": "She has 2,000 _____.",
+    "prompt": "The library added new _____ to its collection before the semester began.",
     "options": [
       "books",
       "family",
@@ -92182,7 +92182,7 @@
   {
     "id": "exp500v2_qc_005_74e023ef23",
     "type": "multiple",
-    "prompt": "It _____ rains here.",
+    "prompt": "It _____ rains in this valley during the dry season.",
     "options": [
       "mother",
       "seldom",
@@ -92222,7 +92222,7 @@
   {
     "id": "exp500v2_qc_006_814af3172d",
     "type": "multiple",
-    "prompt": "Tom denied the _____.",
+    "prompt": "Tom denied the _____ during the press conference at City Hall yesterday.",
     "options": [
       "parent",
       "mother",
@@ -92262,7 +92262,7 @@
   {
     "id": "exp500v2_qc_007_37d41699bd",
     "type": "multiple",
-    "prompt": "_____ humans colonize space?",
+    "prompt": "The researchers discussed whether humans _____ one day live on Mars during the conference yesterday.",
     "options": [
       "family",
       "parent",
@@ -92302,7 +92302,7 @@
   {
     "id": "exp500v2_qc_008_9cc860a01c",
     "type": "multiple",
-    "prompt": "This store sells _____.",
+    "prompt": "The market stall sells fresh _____ every morning in the town square.",
     "options": [
       "vegetables",
       "family",
@@ -92342,7 +92342,7 @@
   {
     "id": "exp500v2_qc_009_ab87d24bdc",
     "type": "multiple",
-    "prompt": "The _____ climbed higher.",
+    "prompt": "At the zoo yesterday, a _____ climbed to the top of a tree before feeding time.",
     "options": [
       "mother",
       "monkey",
@@ -92382,7 +92382,7 @@
   {
     "id": "exp500v2_qc_010_466bc8cef3",
     "type": "multiple",
-    "prompt": "What's this _____ stuff?",
+    "prompt": "The shop assistant showed me a _____ coat at the store yesterday.",
     "options": [
       "parent",
       "mother",
@@ -92422,7 +92422,7 @@
   {
     "id": "exp500v2_qc_011_a49a78f944",
     "type": "multiple",
-    "prompt": "_____ sees things differently.",
+    "prompt": "_____ in our class arrived at the library before nine this morning.",
     "options": [
       "family",
       "parent",
@@ -92462,7 +92462,7 @@
   {
     "id": "exp500v2_qc_012_432e9fa24a",
     "type": "multiple",
-    "prompt": "I like these _____.",
+    "prompt": "I tried on these _____ in the shop yesterday, and they fit perfectly.",
     "options": [
       "trousers",
       "family",
@@ -92502,7 +92502,7 @@
   {
     "id": "exp500v2_qc_013_78988010b8",
     "type": "multiple",
-    "prompt": "She's wearing _____ socks.",
+    "prompt": "She wore _____ socks to the school sports day last Friday.",
     "options": [
       "mother",
       "red",
@@ -92542,7 +92542,7 @@
   {
     "id": "exp500v2_qc_014_9dba6a05bc",
     "type": "multiple",
-    "prompt": "I found the _____.",
+    "prompt": "The guide showed us a _____ near the village during our hike last Sunday.",
     "options": [
       "parent",
       "mother",
@@ -92582,7 +92582,7 @@
   {
     "id": "exp500v2_qc_015_a85f18261c",
     "type": "multiple",
-    "prompt": "Did you hear _____?",
+    "prompt": "We watched _____ over the river during the town festival last night.",
     "options": [
       "family",
       "parent",
@@ -92742,7 +92742,7 @@
   {
     "id": "exp500v2_qc_019_c88f94de74",
     "type": "multiple",
-    "prompt": "_____ challenges as opportunities.",
+    "prompt": "During the workshop at university last week, our mentor encouraged us to _____ challenges as opportunities.",
     "options": [
       "family",
       "parent",
@@ -92782,7 +92782,7 @@
   {
     "id": "exp500v2_qc_020_e8dea393aa",
     "type": "multiple",
-    "prompt": "I felt an _____.",
+    "prompt": "We felt an _____ in our apartment just after midnight last night.",
     "options": [
       "earthquake",
       "family",
@@ -92822,7 +92822,7 @@
   {
     "id": "exp500v2_qc_021_818533aa87",
     "type": "multiple",
-    "prompt": "It broke by _____.",
+    "prompt": "The door at the back of the hall closed by _____ during the storm last night.",
     "options": [
       "mother",
       "itself",
@@ -92862,7 +92862,7 @@
   {
     "id": "exp500v2_qc_022_528cef87d0",
     "type": "multiple",
-    "prompt": "He has _____ skin.",
+    "prompt": "He wore a _____ shirt to the job interview at the hotel yesterday.",
     "options": [
       "parent",
       "mother",
@@ -92902,7 +92902,7 @@
   {
     "id": "exp500v2_qc_023_149cf4d0df",
     "type": "multiple",
-    "prompt": "Where is your _____?",
+    "prompt": "I told my new classmates about my _____ during orientation at university last Monday.",
     "options": [
       "family",
       "parent",
@@ -92942,7 +92942,7 @@
   {
     "id": "exp500v2_qc_024_f385454622",
     "type": "multiple",
-    "prompt": "Don't be so _____!",
+    "prompt": "My friend apologized for being _____ during our conversation at the café yesterday.",
     "options": [
       "selfish",
       "family",
@@ -92982,7 +92982,7 @@
   {
     "id": "exp500v2_qc_025_3d18b2ea89",
     "type": "multiple",
-    "prompt": "Those _____ prove nothing.",
+    "prompt": "The professor reviewed the latest _____ in the lecture hall yesterday.",
     "options": [
       "mother",
       "statistics",
@@ -93022,7 +93022,7 @@
   {
     "id": "exp500v2_qc_026_a34b2d93b4",
     "type": "multiple",
-    "prompt": "Apparently, everyone was _____.",
+    "prompt": "The customers were _____ with the service at the hotel after check-out yesterday.",
     "options": [
       "parent",
       "mother",
@@ -93062,7 +93062,7 @@
   {
     "id": "exp500v2_qc_027_9fe5e19750",
     "type": "multiple",
-    "prompt": "That is _____ photoshopped.",
+    "prompt": "The road was _____ closed when we arrived at the bridge this morning.",
     "options": [
       "family",
       "parent",
@@ -93102,7 +93102,7 @@
   {
     "id": "exp500v2_qc_028_3e6a717447",
     "type": "multiple",
-    "prompt": "Everyone was a _____.",
+    "prompt": "In the film we watched at home last night, everyone turned out to be a _____.",
     "options": [
       "spy",
       "family",
@@ -93182,7 +93182,7 @@
   {
     "id": "exp500v2_qc_030_73b8427ebc",
     "type": "multiple",
-    "prompt": "Thanks for your _____.",
+    "prompt": "The teacher gave a clear _____ of the grammar rule during class yesterday.",
     "options": [
       "parent",
       "mother",
@@ -93222,7 +93222,7 @@
   {
     "id": "exp500v2_qc_031_25f30d353d",
     "type": "multiple",
-    "prompt": "Never drink _____ water.",
+    "prompt": "Please turn off the _____ in the kitchen before you leave for work.",
     "options": [
       "family",
       "parent",
@@ -93262,7 +93262,7 @@
   {
     "id": "exp500v2_qc_032_d133fd5ce7",
     "type": "multiple",
-    "prompt": "Tom found a _____.",
+    "prompt": "The archaeologists discovered a _____ of coins under the floor of the old house last summer.",
     "options": [
       "hoard",
       "family",
@@ -93302,7 +93302,7 @@
   {
     "id": "exp500v2_qc_033_7469961612",
     "type": "multiple",
-    "prompt": "She was not _____.",
+    "prompt": "We were _____ when the train was cancelled at the station last night.",
     "options": [
       "mother",
       "disappointed",
@@ -93342,7 +93342,7 @@
   {
     "id": "exp500v2_qc_034_7a92f3d263",
     "type": "multiple",
-    "prompt": "It's a dead _____.",
+    "prompt": "The road came to a dead _____ near the river, so we turned back before sunset.",
     "options": [
       "parent",
       "mother",
@@ -93382,7 +93382,7 @@
   {
     "id": "exp500v2_qc_035_caa155adf8",
     "type": "multiple",
-    "prompt": "He broke the _____.",
+    "prompt": "The coach reviewed the team _____ in the gym before practice on Monday.",
     "options": [
       "family",
       "parent",
@@ -93422,7 +93422,7 @@
   {
     "id": "exp500v2_qc_036_ad61e7ac28",
     "type": "multiple",
-    "prompt": "I'll tell you _____.",
+    "prompt": "We visited the museum in the morning and had lunch at a café _____.",
     "options": [
       "afterwards",
       "family",
@@ -93462,7 +93462,7 @@
   {
     "id": "exp500v2_qc_037_2f9c1dc5cd",
     "type": "multiple",
-    "prompt": "I didn't _____ you.",
+    "prompt": "He promised not to _____ his friend during their conversation at school yesterday.",
     "options": [
       "mother",
       "betray",
@@ -93502,7 +93502,7 @@
   {
     "id": "exp500v2_qc_038_97d3d178c6",
     "type": "multiple",
-    "prompt": "There could be _____.",
+    "prompt": "The teacher explained the _____ of copying homework during class yesterday.",
     "options": [
       "parent",
       "mother",
@@ -93542,7 +93542,7 @@
   {
     "id": "exp500v2_qc_039_f9c83941c5",
     "type": "multiple",
-    "prompt": "I found that _____.",
+    "prompt": "The guide told us a _____ story about the ancient temple during our visit yesterday.",
     "options": [
       "family",
       "parent",
@@ -93582,7 +93582,7 @@
   {
     "id": "exp500v2_qc_040_3dbcdd8b3e",
     "type": "multiple",
-    "prompt": "I'm still in _____.",
+    "prompt": "The announcement came as a _____ to the staff during the meeting at the office yesterday.",
     "options": [
       "shock",
       "family",
@@ -97502,7 +97502,7 @@
   {
     "id": "exp500v2_qc_138_07596f183f",
     "type": "multiple",
-    "prompt": "What doesn't kill us makes us _____.",
+    "prompt": "The station has a ramp for _____ passengers near the main entrance.",
     "options": [
       "parent",
       "mother",
@@ -97702,7 +97702,7 @@
   {
     "id": "exp500v2_qc_143_6bab147e47",
     "type": "multiple",
-    "prompt": "Don't ever _____ up with bad guys.",
+    "prompt": "I hung my coat on a _____ beside the door at the office yesterday.",
     "options": [
       "family",
       "parent",
@@ -97822,7 +97822,7 @@
   {
     "id": "exp500v2_qc_146_ecefe3a4d0",
     "type": "multiple",
-    "prompt": "What is the next of the _____?",
+    "prompt": "The children solved a difficult _____ at school yesterday.",
     "options": [
       "parent",
       "mother",
@@ -98542,7 +98542,7 @@
   {
     "id": "exp500v2_qc_164_2c65275ae0",
     "type": "multiple",
-    "prompt": "I bought some _____ shakes in the gym.",
+    "prompt": "I bought a _____ shake at the gym after my workout this morning.",
     "options": [
       "protein",
       "family",
@@ -98982,7 +98982,7 @@
   {
     "id": "exp500v2_qc_175_e6d307367a",
     "type": "multiple",
-    "prompt": "Will you shut your _____ for a minute?",
+    "prompt": "The ranger found a _____ beside the forest trail yesterday morning.",
     "options": [
       "family",
       "parent",
@@ -100222,7 +100222,7 @@
   {
     "id": "exp500v2_qc_206_19102968b4",
     "type": "multiple",
-    "prompt": "_____ is not only about to speak with friendly countries.",
+    "prompt": "_____ helps countries resolve disputes through discussion rather than conflict.",
     "options": [
       "parent",
       "mother",
@@ -100502,7 +100502,7 @@
   {
     "id": "exp500v2_qc_213_233471efd5",
     "type": "multiple",
-    "prompt": "The teacher puts up an argument about _____ for the students.",
+    "prompt": "Students discussed air _____ in science class at school yesterday.",
     "options": [
       "mother",
       "pollution",
@@ -101142,7 +101142,7 @@
   {
     "id": "exp500v2_qc_229_3c29719b21",
     "type": "multiple",
-    "prompt": "An _____ is a person who has discovered something more interesting than sex.",
+    "prompt": "The professor invited an _____ to speak at the university lecture yesterday.",
     "options": [
       "mother",
       "intellectual",
@@ -103342,7 +103342,7 @@
   {
     "id": "exp500v2_qc_284_1be7a30854",
     "type": "multiple",
-    "prompt": "You _____ to implode.",
+    "prompt": "She made a _____ to finish her degree at the university by next June.",
     "options": [
       "vow",
       "family",
@@ -103542,7 +103542,7 @@
   {
     "id": "exp500v2_qc_289_fe134dc58e",
     "type": "multiple",
-    "prompt": "The _____ isn't serious.",
+    "prompt": "The doctor gave me a _____ at the clinic yesterday.",
     "options": [
       "mother",
       "diagnosis",
@@ -103862,7 +103862,7 @@
   {
     "id": "exp500v2_qc_297_e2ac482d12",
     "type": "multiple",
-    "prompt": "Tom drives a _____.",
+    "prompt": "We rented a _____ car at the airport before driving to the coast last weekend.",
     "options": [
       "mother",
       "hybrid",
@@ -104142,7 +104142,7 @@
   {
     "id": "exp500v2_qc_304_d0b5d17516",
     "type": "multiple",
-    "prompt": "Tom _____ people's lives.",
+    "prompt": "The _____ of the temple stood near the village when we visited last Sunday.",
     "options": [
       "ruins",
       "family",
@@ -104262,7 +104262,7 @@
   {
     "id": "exp500v2_qc_307_955d031f0e",
     "type": "multiple",
-    "prompt": "The _____ is wonderful.",
+    "prompt": "The animal _____ at the zoo was cleaned before visitors arrived this morning.",
     "options": [
       "family",
       "parent",
@@ -105102,7 +105102,7 @@
   {
     "id": "exp500v2_qc_328_4ddc5d8409",
     "type": "multiple",
-    "prompt": "Ziri swallowed a _____.",
+    "prompt": "The diver found a _____ inside an oyster near the shore last summer.",
     "options": [
       "pearl",
       "family",
@@ -105262,7 +105262,7 @@
   {
     "id": "exp500v2_qc_332_1ab3d39121",
     "type": "multiple",
-    "prompt": "Faith is _____ idealism.",
+    "prompt": "The judge's opinion seemed _____ during the hearing yesterday.",
     "options": [
       "subjective",
       "family",
@@ -105422,7 +105422,7 @@
   {
     "id": "exp500v2_qc_336_e1588771eb",
     "type": "multiple",
-    "prompt": "Ziri's ivy got _____.",
+    "prompt": "The fruit began to _____ in the basket in the kitchen last week.",
     "options": [
       "rot",
       "family",
@@ -106942,7 +106942,7 @@
   {
     "id": "exp500v2_qc_374_913c620bbe",
     "type": "multiple",
-    "prompt": "Dutch has one _____.",
+    "prompt": "The linguistics teacher explained the _____ sound in Dutch during class yesterday.",
     "options": [
       "parent",
       "mother",
@@ -109942,7 +109942,7 @@
   {
     "id": "exp500v2_qc_449_e9691a0dce",
     "type": "multiple",
-    "prompt": "The way remains _____.",
+    "prompt": "The university library has an _____ collection of history books.",
     "options": [
       "mother",
       "extensive",
@@ -110742,7 +110742,7 @@
   {
     "id": "exp500v2_qc_469_f232febd10",
     "type": "multiple",
-    "prompt": "Yidir's son is _____.",
+    "prompt": "The police questioned a suspected _____ at the station yesterday.",
     "options": [
       "mother",
       "rogue",
@@ -110982,7 +110982,7 @@
   {
     "id": "exp500v2_qc_475_c44e12466a",
     "type": "multiple",
-    "prompt": "My _____ piercing rejected.",
+    "prompt": "She raised an _____ when she saw the price at the shop yesterday.",
     "options": [
       "family",
       "parent",
@@ -111462,7 +111462,7 @@
   {
     "id": "exp500v2_qc_487_649060c518",
     "type": "multiple",
-    "prompt": "It's a _____ attack.",
+    "prompt": "I often _____ on the bus on my way home in the evening.",
     "options": [
       "family",
       "parent",
@@ -111782,7 +111782,7 @@
   {
     "id": "exp500v2_qc_495_6baf5da7a9",
     "type": "multiple",
-    "prompt": "Stop _____ my arm!",
+    "prompt": "He kept _____ my arm to make me join the club yesterday.",
     "options": [
       "family",
       "parent",
@@ -111822,7 +111822,7 @@
   {
     "id": "exp500v2_qc_496_332e0142bc",
     "type": "multiple",
-    "prompt": "Tom is a _____.",
+    "prompt": "The garden looked _____ after three days of rain last week.",
     "options": [
       "lush",
       "family",
@@ -111982,7 +111982,7 @@
   {
     "id": "exp500v2_qc_500_1ca0739975",
     "type": "multiple",
-    "prompt": "There's a _____ here.",
+    "prompt": "The technician found a _____ in the machine at the factory during Monday's inspection.",
     "options": [
       "defect",
       "family",
