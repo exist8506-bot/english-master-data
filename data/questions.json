@@ -92046,11 +92046,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "trái",
+      "để lại; rời đi (quá khứ của leave); bên trái",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "left = trái.",
+    "explain": "left = để lại; rời đi (quá khứ của leave); bên trái.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "left",
@@ -92085,12 +92085,12 @@
     "prompt": "\"invite\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Chuyển đến lời mời",
+      "mời; mời tham dự",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "invite = Chuyển đến lời mời.",
+    "explain": "invite = mời; mời tham dự.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "invite",
@@ -92124,13 +92124,13 @@
     "type": "multiple",
     "prompt": "\"books\" nghĩa là gì?",
     "options": [
-      "Sách",
+      "sách; các cuốn sách",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "books = Sách.",
+    "explain": "books = sách; các cuốn sách.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "books",
@@ -92167,10 +92167,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "ít khi"
+      "hiếm khi; ít khi"
     ],
     "answer": 3,
-    "explain": "seldom = ít khi.",
+    "explain": "seldom = hiếm khi; ít khi.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "seldom",
@@ -92245,12 +92245,12 @@
     "prompt": "\"will\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "sẽ",
+      "sẽ; dùng để tạo thì tương lai hoặc diễn đạt ý chí",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "will = sẽ.",
+    "explain": "will = sẽ; dùng để tạo thì tương lai hoặc diễn đạt ý chí.",
     "topic": "health",
     "level": "Upper-Intermediate",
     "vocabWord": "will",
@@ -92284,13 +92284,13 @@
     "type": "multiple",
     "prompt": "\"vegetables\" nghĩa là gì?",
     "options": [
-      "rau xanh",
+      "rau; các loại rau",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "vegetables = rau xanh.",
+    "explain": "vegetables = rau; các loại rau.",
     "topic": "food",
     "level": "Upper-Intermediate",
     "vocabWord": "vegetables",
@@ -92366,11 +92366,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "màu đen",
+      "màu đen; đen",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "black = màu đen.",
+    "explain": "black = màu đen; đen.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "black",
@@ -92405,12 +92405,12 @@
     "prompt": "\"everyone\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "mọi người",
+      "mọi người; tất cả mọi người",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "everyone = mọi người.",
+    "explain": "everyone = mọi người; tất cả mọi người.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "everyone",
@@ -92444,13 +92444,13 @@
     "type": "multiple",
     "prompt": "\"trousers\" nghĩa là gì?",
     "options": [
-      "quần tây dài",
+      "quần dài; quần tây",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "trousers = quần tây dài.",
+    "explain": "trousers = quần dài; quần tây.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "trousers",
@@ -92487,10 +92487,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "màu đỏ"
+      "màu đỏ; đỏ"
     ],
     "answer": 3,
-    "explain": "red = màu đỏ.",
+    "explain": "red = màu đỏ; đỏ.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "red",
@@ -92526,11 +92526,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "lỗ (trong fomat)",
+      "hang; hang động",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "cave = lỗ (trong fomat).",
+    "explain": "cave = hang; hang động.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "cave",
@@ -92565,12 +92565,12 @@
     "prompt": "\"fireworks\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Pháo hoa",
+      "pháo hoa",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "fireworks = Pháo hoa.",
+    "explain": "fireworks = pháo hoa.",
     "topic": "work",
     "level": "Upper-Intermediate",
     "vocabWord": "fireworks",
@@ -92647,10 +92647,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "năm"
+      "năm; các năm (số nhiều của year)"
     ],
     "answer": 3,
-    "explain": "years = năm.",
+    "explain": "years = năm; các năm (số nhiều của year).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "years",
@@ -92686,11 +92686,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sung sướng, hạnh phúc",
+      "hạnh phúc; niềm hạnh phúc",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "happiness = sung sướng, hạnh phúc.",
+    "explain": "happiness = hạnh phúc; niềm hạnh phúc.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "happiness",
@@ -92725,12 +92725,12 @@
     "prompt": "\"embrace\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "ôm, ôm chặt, ghì chặt; nắm lấy (thời cơ...); đi theo\n(đường lối, đảng phái, sự nghiệp...); gồm, bao gồm; bao quát (nhìn, nắm); (từ Mỹ,nghĩa Mỹ) gây áp lực (đối với quan toà)",
+      "ôm; đón nhận; chấp nhận",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "embrace = ôm, ôm chặt, ghì chặt; nắm lấy (thời cơ...); đi theo\n(đường lối, đảng phái, sự nghiệp...); gồm, bao gồm; bao quát (nhìn, nắm); (từ Mỹ,nghĩa Mỹ) gây áp lực (đối với quan toà).",
+    "explain": "embrace = ôm; đón nhận; chấp nhận.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "embrace",
@@ -92807,10 +92807,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "chính cái đó"
+      "chính nó; tự nó"
     ],
     "answer": 3,
-    "explain": "itself = chính cái đó.",
+    "explain": "itself = chính nó; tự nó.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "itself",
@@ -92846,11 +92846,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "trắng",
+      "màu trắng; trắng",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "white = trắng.",
+    "explain": "white = màu trắng; trắng.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "white",
@@ -92885,12 +92885,12 @@
     "prompt": "\"hometown\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Quê hương",
+      "quê hương; quê nhà",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "hometown = Quê hương.",
+    "explain": "hometown = quê hương; quê nhà.",
     "topic": "home",
     "level": "Upper-Intermediate",
     "vocabWord": "hometown",
@@ -92924,13 +92924,13 @@
     "type": "multiple",
     "prompt": "\"selfish\" nghĩa là gì?",
     "options": [
-      "Ích kỷ.",
+      "ích kỷ",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "selfish = Ích kỷ..",
+    "explain": "selfish = ích kỷ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "selfish",
@@ -92967,10 +92967,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "thống kê"
+      "số liệu thống kê; thống kê học"
     ],
     "answer": 3,
-    "explain": "statistics = thống kê.",
+    "explain": "statistics = số liệu thống kê; thống kê học.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "statistics",
@@ -93006,11 +93006,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "hài lòng",
+      "hài lòng; thỏa mãn",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "satisfied = hài lòng.",
+    "explain": "satisfied = hài lòng; thỏa mãn.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "satisfied",
@@ -93045,12 +93045,12 @@
     "prompt": "\"obviously\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "một cách rõ ràng, cỏ thế thấy được",
+      "rõ ràng; hiển nhiên",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "obviously = một cách rõ ràng, cỏ thế thấy được.",
+    "explain": "obviously = rõ ràng; hiển nhiên.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "obviously",
@@ -93084,13 +93084,13 @@
     "type": "multiple",
     "prompt": "\"spy\" nghĩa là gì?",
     "options": [
-      "Trinh thám",
+      "gián điệp; điệp viên; do thám",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "spy = Trinh thám.",
+    "explain": "spy = gián điệp; điệp viên; do thám.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "spy",
@@ -93127,10 +93127,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để đảo ngược"
+      "đảo ngược; quay ngược; mặt trái"
     ],
     "answer": 3,
-    "explain": "reverse = để đảo ngược.",
+    "explain": "reverse = đảo ngược; quay ngược; mặt trái.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "reverse",
@@ -93166,11 +93166,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "giải nghĩa, giải thích",
+      "lời giải thích; sự giải thích",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "explanation = giải nghĩa, giải thích.",
+    "explain": "explanation = lời giải thích; sự giải thích.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "explanation",
@@ -93205,12 +93205,12 @@
     "prompt": "\"tap\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Nghe trộm",
+      "vòi nước; gõ hoặc chạm nhẹ",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "tap = Nghe trộm.",
+    "explain": "tap = vòi nước; gõ hoặc chạm nhẹ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "tap",
@@ -93244,13 +93244,13 @@
     "type": "multiple",
     "prompt": "\"hoard\" nghĩa là gì?",
     "options": [
-      "tích trữ",
+      "kho tích trữ; tích trữ",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "hoard = tích trữ.",
+    "explain": "hoard = kho tích trữ; tích trữ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "hoard",
@@ -93326,11 +93326,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "giới hạn; kết thúc, chấm dứt",
+      "sự kết thúc; phần cuối; kết thúc",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "end = giới hạn; kết thúc, chấm dứt.",
+    "explain": "end = sự kết thúc; phần cuối; kết thúc.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "end",
@@ -93365,12 +93365,12 @@
     "prompt": "\"rules\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "quy tắc.",
+      "các quy tắc; nội quy",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "rules = quy tắc..",
+    "explain": "rules = các quy tắc; nội quy.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "rules",
@@ -93404,13 +93404,13 @@
     "type": "multiple",
     "prompt": "\"afterwards\" nghĩa là gì?",
     "options": [
-      "sau này, về sau, rồi thì, sau đấy",
+      "sau đó; về sau",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "afterwards = sau này, về sau, rồi thì, sau đấy.",
+    "explain": "afterwards = sau đó; về sau.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "afterwards",
@@ -93447,10 +93447,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "phản bội"
+      "phản bội; làm lộ"
     ],
     "answer": 3,
-    "explain": "betray = phản bội.",
+    "explain": "betray = phản bội; làm lộ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "betray",
@@ -93486,11 +93486,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "hay hậu quả tiêu cực.",
+      "hậu quả; hệ quả",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "consequences = hay hậu quả tiêu cực..",
+    "explain": "consequences = hậu quả; hệ quả.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "consequences",
@@ -93525,12 +93525,12 @@
     "prompt": "\"fascinating\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "phẩm chất",
+      "hấp dẫn; cuốn hút",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "fascinating = phẩm chất.",
+    "explain": "fascinating = hấp dẫn; cuốn hút.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "fascinating",
@@ -93564,13 +93564,13 @@
     "type": "multiple",
     "prompt": "\"shock\" nghĩa là gì?",
     "options": [
-      "gây sốc",
+      "cú sốc; làm sửng sốt",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "shock = gây sốc.",
+    "explain": "shock = cú sốc; làm sửng sốt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "shock",
@@ -93646,11 +93646,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "tự động",
+      "mát-xa; xoa bóp",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "massage = tự động.",
+    "explain": "massage = mát-xa; xoa bóp.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "massage",
@@ -93845,12 +93845,12 @@
     "prompt": "\"coward\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Bọn nhu nhược",
+      "kẻ hèn nhát; người nhát gan",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "coward = Bọn nhu nhược.",
+    "explain": "coward = kẻ hèn nhát; người nhát gan.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "coward",
@@ -93966,11 +93966,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để nghị, để xuất",
+      "đề xuất; đề nghị; lời cầu hôn (tùy ngữ cảnh)",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "proposal = để nghị, để xuất.",
+    "explain": "proposal = đề xuất; đề nghị; lời cầu hôn (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "proposal",
@@ -94087,10 +94087,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "thành vẹt"
+      "con vẹt"
     ],
     "answer": 3,
-    "explain": "parrot = thành vẹt.",
+    "explain": "parrot = con vẹt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "parrot",
@@ -94325,12 +94325,12 @@
     "prompt": "\"copper\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Đồng",
+      "đồng (kim loại); màu đồng",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "copper = Đồng.",
+    "explain": "copper = đồng (kim loại); màu đồng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "copper",
@@ -94407,10 +94407,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "phút"
+      "phút; biên bản cuộc họp (minutes)"
     ],
     "answer": 3,
-    "explain": "minutes = phút.",
+    "explain": "minutes = phút; biên bản cuộc họp (minutes).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "minutes",
@@ -94606,11 +94606,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "dễ bị thương, dễ bị xúc phạm",
+      "nhạy cảm; dễ bị tổn thương",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "sensitive = dễ bị thương, dễ bị xúc phạm.",
+    "explain": "sensitive = nhạy cảm; dễ bị tổn thương.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "sensitive",
@@ -94645,12 +94645,12 @@
     "prompt": "\"begin\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Để bắt đầu",
+      "bắt đầu",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "begin = Để bắt đầu.",
+    "explain": "begin = bắt đầu.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "begin",
@@ -94766,11 +94766,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "May mắn là,",
+      "may mắn thay",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "fortunately = May mắn là,.",
+    "explain": "fortunately = may mắn thay.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "fortunately",
@@ -94926,11 +94926,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "tăng vọt",
+      "tên lửa; tăng vọt (động từ)",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "rocket = tăng vọt.",
+    "explain": "rocket = tên lửa; tăng vọt (động từ).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "rocket",
@@ -95004,13 +95004,13 @@
     "type": "multiple",
     "prompt": "\"practiced\" nghĩa là gì?",
     "options": [
-      "được thực hành.",
+      "đã luyện tập; có kỹ năng (tùy ngữ cảnh)",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "practiced = được thực hành..",
+    "explain": "practiced = đã luyện tập; có kỹ năng (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "practiced",
@@ -95207,10 +95207,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "như một bức tượng"
+      "bức tượng; tượng"
     ],
     "answer": 3,
-    "explain": "statue = như một bức tượng.",
+    "explain": "statue = bức tượng; tượng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "statue",
@@ -95687,10 +95687,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "cánh nâng"
+      "thang máy"
     ],
     "answer": 3,
-    "explain": "elevator = cánh nâng.",
+    "explain": "elevator = thang máy.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "elevator",
@@ -95726,11 +95726,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "lúa mìcolor",
+      "lúa mì",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "wheat = lúa mìcolor.",
+    "explain": "wheat = lúa mì.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "wheat",
@@ -95765,12 +95765,12 @@
     "prompt": "\"qualifications\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "năng lực",
+      "trình độ; bằng cấp; điều kiện chuyên môn",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "qualifications = năng lực.",
+    "explain": "qualifications = trình độ; bằng cấp; điều kiện chuyên môn.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "qualifications",
@@ -95886,11 +95886,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "phòng thủ",
+      "sự phòng thủ; sự bảo vệ",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "defense = phòng thủ.",
+    "explain": "defense = sự phòng thủ; sự bảo vệ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "defense",
@@ -96046,11 +96046,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "đa phương tiện",
+      "truyền thông; các phương tiện truyền thông",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "media = đa phương tiện.",
+    "explain": "media = truyền thông; các phương tiện truyền thông.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "media",
@@ -96085,12 +96085,12 @@
     "prompt": "\"regularly\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "đểu đặn, thường xuyên",
+      "đều đặn; thường xuyên",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "regularly = đểu đặn, thường xuyên.",
+    "explain": "regularly = đều đặn; thường xuyên.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "regularly",
@@ -96167,10 +96167,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Chuẩn bị"
+      "sự chuẩn bị; các khâu chuẩn bị"
     ],
     "answer": 3,
-    "explain": "preparations = Chuẩn bị.",
+    "explain": "preparations = sự chuẩn bị; các khâu chuẩn bị.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "preparations",
@@ -96366,11 +96366,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "đến dốc",
+      "dốc; dựng đứng",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "steep = đến dốc.",
+    "explain": "steep = dốc; dựng đứng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "steep",
@@ -96604,13 +96604,13 @@
     "type": "multiple",
     "prompt": "\"inclined\" nghĩa là gì?",
     "options": [
-      "Nghiêng",
+      "nghiêng; có xu hướng",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "inclined = Nghiêng.",
+    "explain": "inclined = nghiêng; có xu hướng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "inclined",
@@ -96764,13 +96764,13 @@
     "type": "multiple",
     "prompt": "\"endure\" nghĩa là gì?",
     "options": [
-      "để chịu đựng",
+      "chịu đựng; kéo dài",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "endure = để chịu đựng.",
+    "explain": "endure = chịu đựng; kéo dài.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "endure",
@@ -96807,10 +96807,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Giết người"
+      "kẻ giết người"
     ],
     "answer": 3,
-    "explain": "murderer = Giết người.",
+    "explain": "murderer = kẻ giết người.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "murderer",
@@ -96924,13 +96924,13 @@
     "type": "multiple",
     "prompt": "\"pond\" nghĩa là gì?",
     "options": [
-      "bể chứa",
+      "ao; hồ nhỏ",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "pond = bể chứa.",
+    "explain": "pond = ao; hồ nhỏ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "pond",
@@ -97166,11 +97166,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "công nhân cứu kẹt",
+      "ngư dân; người đánh cá",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "fisherman = công nhân cứu kẹt.",
+    "explain": "fisherman = ngư dân; người đánh cá.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "fisherman",
@@ -97287,10 +97287,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "xếp vào thùng"
+      "cái khay"
     ],
     "answer": 3,
-    "explain": "tray = xếp vào thùng.",
+    "explain": "tray = cái khay.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "tray",
@@ -97365,12 +97365,12 @@
     "prompt": "\"quote\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Trích dẫn",
+      "trích dẫn; câu trích dẫn",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "quote = Trích dẫn.",
+    "explain": "quote = trích dẫn; câu trích dẫn.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "quote",
@@ -97447,10 +97447,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "khôn ngoan"
+      "sự khôn ngoan; trí tuệ"
     ],
     "answer": 3,
-    "explain": "wisdom = khôn ngoan.",
+    "explain": "wisdom = sự khôn ngoan; trí tuệ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "wisdom",
@@ -97486,11 +97486,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "vô hiệu hóa",
+      "khuyết tật; bị vô hiệu hóa (tùy ngữ cảnh)",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "disabled = vô hiệu hóa.",
+    "explain": "disabled = khuyết tật; bị vô hiệu hóa (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "disabled",
@@ -97525,12 +97525,12 @@
     "prompt": "\"destruction\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "phá hoại, phá hủy",
+      "sự phá hủy; sự tàn phá",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "destruction = phá hoại, phá hủy.",
+    "explain": "destruction = sự phá hủy; sự tàn phá.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "destruction",
@@ -97564,13 +97564,13 @@
     "type": "multiple",
     "prompt": "\"assign\" nghĩa là gì?",
     "options": [
-      "Số Ngày Trước Ngày Bắt Đầu Thực Hiển",
+      "giao; phân công; chỉ định",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "assign = Số Ngày Trước Ngày Bắt Đầu Thực Hiển.",
+    "explain": "assign = giao; phân công; chỉ định.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "assign",
@@ -97607,10 +97607,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "phim hoạt hình"
+      "phim hoạt hình; tranh biếm họa"
     ],
     "answer": 3,
-    "explain": "cartoon = phim hoạt hình.",
+    "explain": "cartoon = phim hoạt hình; tranh biếm họa.",
     "topic": "city",
     "level": "Upper-Intermediate",
     "vocabWord": "cartoon",
@@ -97646,11 +97646,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Soft",
+      "kén chọn; khó tính",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "picky = Soft.",
+    "explain": "picky = kén chọn; khó tính.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "picky",
@@ -97685,12 +97685,12 @@
     "prompt": "\"hook\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "cái móc; bản lể; lưỡi câu",
+      "cái móc; móc; câu (cá)",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "hook = cái móc; bản lể; lưỡi câu.",
+    "explain": "hook = cái móc; móc; câu (cá).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "hook",
@@ -97724,13 +97724,13 @@
     "type": "multiple",
     "prompt": "\"countless\" nghĩa là gì?",
     "options": [
-      "Vô số.",
+      "vô số; không đếm xuể",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "countless = Vô số..",
+    "explain": "countless = vô số; không đếm xuể.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "countless",
@@ -97767,10 +97767,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để mang lại"
+      "mang lại; tạo ra; nhường đường"
     ],
     "answer": 3,
-    "explain": "yield = để mang lại.",
+    "explain": "yield = mang lại; tạo ra; nhường đường.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "yield",
@@ -97806,11 +97806,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sàng",
+      "câu đố",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "riddle = sàng.",
+    "explain": "riddle = câu đố.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "riddle",
@@ -97845,12 +97845,12 @@
     "prompt": "\"harvest\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "KÉO ĐỂ THU HOẠCH",
+      "vụ thu hoạch; thu hoạch",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "harvest = KÉO ĐỂ THU HOẠCH.",
+    "explain": "harvest = vụ thu hoạch; thu hoạch.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "harvest",
@@ -97966,11 +97966,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để che chắn",
+      "cái khiên; che chắn; bảo vệ",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "shield = để che chắn.",
+    "explain": "shield = cái khiên; che chắn; bảo vệ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "shield",
@@ -98087,10 +98087,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Đã làm mới"
+      "sảng khoái; tỉnh táo; được làm mới (tùy ngữ cảnh)"
     ],
     "answer": 3,
-    "explain": "refreshed = Đã làm mới.",
+    "explain": "refreshed = sảng khoái; tỉnh táo; được làm mới (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "refreshed",
@@ -98126,11 +98126,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Đã đến lúc tỏa sáng",
+      "chiếu sáng; tỏa sáng; đánh bóng",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "shine = Đã đến lúc tỏa sáng.",
+    "explain": "shine = chiếu sáng; tỏa sáng; đánh bóng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "shine",
@@ -98407,10 +98407,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Để hoàn thiện món ăn"
+      "lắp ráp; tập hợp"
     ],
     "answer": 3,
-    "explain": "assemble = Để hoàn thiện món ăn.",
+    "explain": "assemble = lắp ráp; tập hợp.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "assemble",
@@ -98887,10 +98887,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Nick"
+      "vết khía; (in the nick of time) đúng lúc"
     ],
     "answer": 3,
-    "explain": "nick = Nick.",
+    "explain": "nick = vết khía; (in the nick of time) đúng lúc.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "nick",
@@ -98926,11 +98926,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Quá đã.",
+      "ngoạn mục; ấn tượng",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "spectacular = Quá đã..",
+    "explain": "spectacular = ngoạn mục; ấn tượng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "spectacular",
@@ -98965,12 +98965,12 @@
     "prompt": "\"trap\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "bẩy",
+      "cái bẫy; bẫy; gài bẫy",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "trap = bẩy.",
+    "explain": "trap = cái bẫy; bẫy; gài bẫy.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "trap",
@@ -99125,12 +99125,12 @@
     "prompt": "\"scar\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Seo?",
+      "sẹo; để lại sẹo",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "scar = Seo?.",
+    "explain": "scar = sẹo; để lại sẹo.",
     "topic": "city",
     "level": "Upper-Intermediate",
     "vocabWord": "scar",
@@ -99324,13 +99324,13 @@
     "type": "multiple",
     "prompt": "\"duplicate\" nghĩa là gì?",
     "options": [
-      "Sao lại, sao lục, làm thành hai bản",
+      "bản sao; sao chép; trùng lặp",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "duplicate = Sao lại, sao lục, làm thành hai bản.",
+    "explain": "duplicate = bản sao; sao chép; trùng lặp.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "duplicate",
@@ -99445,12 +99445,12 @@
     "prompt": "\"tracks\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "bài hát",
+      "theo dõi; dấu vết; đường ray; bài nhạc (tùy ngữ cảnh)",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "tracks = bài hát.",
+    "explain": "tracks = theo dõi; dấu vết; đường ray; bài nhạc (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "tracks",
@@ -99566,11 +99566,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Đặc biệt",
+      "đặc biệt; dành riêng cho một mục đích",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "specially = Đặc biệt.",
+    "explain": "specially = đặc biệt; dành riêng cho một mục đích.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "specially",
@@ -99605,12 +99605,12 @@
     "prompt": "\"grieved\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "buồn",
+      "đau buồn; làm đau buồn",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "grieved = buồn.",
+    "explain": "grieved = đau buồn; làm đau buồn.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "grieved",
@@ -99925,12 +99925,12 @@
     "prompt": "\"sum\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "tồng, toàn bộ",
+      "tổng; số tiền; tính tổng",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "sum = tồng, toàn bộ.",
+    "explain": "sum = tổng; số tiền; tính tổng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "sum",
@@ -100007,10 +100007,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "tràn đầy"
+      "phước lành; điều may mắn"
     ],
     "answer": 3,
-    "explain": "blessings = tràn đầy.",
+    "explain": "blessings = phước lành; điều may mắn.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "blessings",
@@ -100206,11 +100206,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Ngoại giao",
+      "ngoại giao; nghệ thuật đàm phán",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "diplomacy = Ngoại giao.",
+    "explain": "diplomacy = ngoại giao; nghệ thuật đàm phán.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "diplomacy",
@@ -100366,11 +100366,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để hiểu",
+      "hiểu; lĩnh hội",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "comprehend = để hiểu.",
+    "explain": "comprehend = hiểu; lĩnh hội.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "comprehend",
@@ -100444,13 +100444,13 @@
     "type": "multiple",
     "prompt": "\"paperwork\" nghĩa là gì?",
     "options": [
-      "văn phòng",
+      "giấy tờ; công việc giấy tờ",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "paperwork = văn phòng.",
+    "explain": "paperwork = giấy tờ; công việc giấy tờ.",
     "topic": "work",
     "level": "Upper-Intermediate",
     "vocabWord": "paperwork",
@@ -100487,10 +100487,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "ô nhiễm"
+      "sự ô nhiễm; ô nhiễm"
     ],
     "answer": 3,
-    "explain": "pollution = ô nhiễm.",
+    "explain": "pollution = sự ô nhiễm; ô nhiễm.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "pollution",
@@ -100647,10 +100647,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "xông hơi và tắm hơi"
+      "cơ sở vật chất; tiện nghi; trang thiết bị"
     ],
     "answer": 3,
-    "explain": "facilities = xông hơi và tắm hơi.",
+    "explain": "facilities = cơ sở vật chất; tiện nghi; trang thiết bị.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "facilities",
@@ -100686,11 +100686,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Kindergarten",
+      "trường mẫu giáo",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "kindergarten = Kindergarten.",
+    "explain": "kindergarten = trường mẫu giáo.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "kindergarten",
@@ -100807,10 +100807,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để đốt cháy"
+      "đốt cháy; khơi dậy; làm bùng lên"
     ],
     "answer": 3,
-    "explain": "ignite = để đốt cháy.",
+    "explain": "ignite = đốt cháy; khơi dậy; làm bùng lên.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "ignite",
@@ -100846,11 +100846,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "KÉO ĐỂ XÓA",
+      "xóa; tẩy",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "erase = KÉO ĐỂ XÓA.",
+    "explain": "erase = xóa; tẩy.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "erase",
@@ -101045,12 +101045,12 @@
     "prompt": "\"eliminate\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để loại bỏ",
+      "loại bỏ; loại trừ; tiêu diệt",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "eliminate = để loại bỏ.",
+    "explain": "eliminate = loại bỏ; loại trừ; tiêu diệt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "eliminate",
@@ -101127,10 +101127,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Trí thức"
+      "trí thức; thuộc về trí tuệ"
     ],
     "answer": 3,
-    "explain": "intellectual = Trí thức.",
+    "explain": "intellectual = trí thức; thuộc về trí tuệ.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "intellectual",
@@ -101166,11 +101166,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "thức ăn",
+      "dinh dưỡng",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "nutrition = thức ăn.",
+    "explain": "nutrition = dinh dưỡng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "nutrition",
@@ -101244,13 +101244,13 @@
     "type": "multiple",
     "prompt": "\"pedestrian\" nghĩa là gì?",
     "options": [
-      "Máy quét kiểm tra khách bộ hành",
+      "người đi bộ; dành cho người đi bộ",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "pedestrian = Máy quét kiểm tra khách bộ hành.",
+    "explain": "pedestrian = người đi bộ; dành cho người đi bộ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "pedestrian",
@@ -101564,13 +101564,13 @@
     "type": "multiple",
     "prompt": "\"landlord\" nghĩa là gì?",
     "options": [
-      "địa chỉ",
+      "chủ nhà; người cho thuê nhà",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "landlord = địa chỉ.",
+    "explain": "landlord = chủ nhà; người cho thuê nhà.",
     "topic": "nature",
     "level": "Upper-Intermediate",
     "vocabWord": "landlord",
@@ -101607,10 +101607,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "rõ ràng"
+      "ý định; mục đích"
     ],
     "answer": 3,
-    "explain": "intent = rõ ràng.",
+    "explain": "intent = ý định; mục đích.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "intent",
@@ -101685,12 +101685,12 @@
     "prompt": "\"stiff\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "cứng rắn, kiên quyết",
+      "cứng; cứng đờ; cứng nhắc",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "stiff = cứng rắn, kiên quyết.",
+    "explain": "stiff = cứng; cứng đờ; cứng nhắc.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "stiff",
@@ -101806,11 +101806,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "- **Đậu Phụ**",
+      "đậu phụ",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "tofu = - **Đậu Phụ**.",
+    "explain": "tofu = đậu phụ.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "tofu",
@@ -102044,13 +102044,13 @@
     "type": "multiple",
     "prompt": "\"rinse\" nghĩa là gì?",
     "options": [
-      "để rửa",
+      "tráng; súc; rửa qua",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "rinse = để rửa.",
+    "explain": "rinse = tráng; súc; rửa qua.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "rinse",
@@ -102126,11 +102126,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để thu gọn",
+      "sụp đổ; đổ sập; gục xuống",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "collapse = để thu gọn.",
+    "explain": "collapse = sụp đổ; đổ sập; gục xuống.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "collapse",
@@ -102165,12 +102165,12 @@
     "prompt": "\"undertaking\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "việc lo lễ tang",
+      "công việc; nhiệm vụ; dự án",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "undertaking = việc lo lễ tang.",
+    "explain": "undertaking = công việc; nhiệm vụ; dự án.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "undertaking",
@@ -102286,11 +102286,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "đổ ra",
+      "nhà kho nhỏ; rụng; làm rơi hoặc trút bỏ",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "shed = đổ ra.",
+    "explain": "shed = nhà kho nhỏ; rụng; làm rơi hoặc trút bỏ.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "shed",
@@ -102407,10 +102407,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "lượt hiển thị"
+      "ấn tượng; nhận xét"
     ],
     "answer": 3,
-    "explain": "impressions = lượt hiển thị.",
+    "explain": "impressions = ấn tượng; nhận xét.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "impressions",
@@ -102485,12 +102485,12 @@
     "prompt": "\"deliberately\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "thận trọng, cân nhắc",
+      "cố ý; có chủ đích",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "deliberately = thận trọng, cân nhắc.",
+    "explain": "deliberately = cố ý; có chủ đích.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "deliberately",
@@ -102645,12 +102645,12 @@
     "prompt": "\"tailor\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "thực hiện",
+      "thợ may; điều chỉnh cho phù hợp",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "tailor = thực hiện.",
+    "explain": "tailor = thợ may; điều chỉnh cho phù hợp.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "tailor",
@@ -102805,12 +102805,12 @@
     "prompt": "\"heel\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "châm cứu",
+      "gót chân; gót giày",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "heel = châm cứu.",
+    "explain": "heel = gót chân; gót giày.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "heel",
@@ -102965,12 +102965,12 @@
     "prompt": "\"knead\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Xoa bóp nhẹ",
+      "nhào bột; xoa bóp",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "knead = Xoa bóp nhẹ.",
+    "explain": "knead = nhào bột; xoa bóp.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "knead",
@@ -103207,10 +103207,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "sự trừu tượng hoá, sự trừu tượng"
+      "vô lý; phi lý; lố bịch"
     ],
     "answer": 3,
-    "explain": "absurd = sự trừu tượng hoá, sự trừu tượng.",
+    "explain": "absurd = vô lý; phi lý; lố bịch.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "absurd",
@@ -103324,13 +103324,13 @@
     "type": "multiple",
     "prompt": "\"vow\" nghĩa là gì?",
     "options": [
-      "thề",
+      "lời thề; thề nguyện",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "vow = thề.",
+    "explain": "vow = lời thề; thề nguyện.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "vow",
@@ -103367,10 +103367,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Cẩn thân"
+      "thận trọng; cẩn trọng"
     ],
     "answer": 3,
-    "explain": "cautious = Cẩn thân.",
+    "explain": "cautious = thận trọng; cẩn trọng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "cautious",
@@ -103527,10 +103527,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Trợ lý y tế"
+      "chẩn đoán; kết quả chẩn đoán"
     ],
     "answer": 3,
-    "explain": "diagnosis = Trợ lý y tế.",
+    "explain": "diagnosis = chẩn đoán; kết quả chẩn đoán.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "diagnosis",
@@ -103804,13 +103804,13 @@
     "type": "multiple",
     "prompt": "\"lifelong\" nghĩa là gì?",
     "options": [
-      "Lifelong",
+      "suốt đời; cả đời",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "lifelong = Lifelong.",
+    "explain": "lifelong = suốt đời; cả đời.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "lifelong",
@@ -103847,10 +103847,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "một con lai"
+      "lai; kết hợp hai loại; xe lai (hybrid)"
     ],
     "answer": 3,
-    "explain": "hybrid = một con lai.",
+    "explain": "hybrid = lai; kết hợp hai loại; xe lai (hybrid).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "hybrid",
@@ -104124,13 +104124,13 @@
     "type": "multiple",
     "prompt": "\"ruins\" nghĩa là gì?",
     "options": [
-      "Tàn Tích",
+      "tàn tích; đống đổ nát",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "ruins = Tàn Tích.",
+    "explain": "ruins = tàn tích; đống đổ nát.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "ruins",
@@ -104245,12 +104245,12 @@
     "prompt": "\"enclosure\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "sự rào lại (đất đai)",
+      "khu vực quây kín; sự bao quanh",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "enclosure = sự rào lại (đất đai).",
+    "explain": "enclosure = khu vực quây kín; sự bao quanh.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "enclosure",
@@ -104284,13 +104284,13 @@
     "type": "multiple",
     "prompt": "\"eccentric\" nghĩa là gì?",
     "options": [
-      "bánh lệch tâm",
+      "lập dị; người lập dị",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "eccentric = bánh lệch tâm.",
+    "explain": "eccentric = lập dị; người lập dị.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "eccentric",
@@ -104846,11 +104846,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "flexibility",
+      "tính linh hoạt; sự mềm dẻo",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "flexibility = flexibility.",
+    "explain": "flexibility = tính linh hoạt; sự mềm dẻo.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "flexibility",
@@ -104924,13 +104924,13 @@
     "type": "multiple",
     "prompt": "\"knotty\" nghĩa là gì?",
     "options": [
-      "thắt nút",
+      "phức tạp; hóc búa",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "knotty = thắt nút.",
+    "explain": "knotty = phức tạp; hóc búa.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "knotty",
@@ -105006,11 +105006,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Trung Trực",
+      "thẳng thắn; đơn giản; dễ hiểu",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "straightforward = Trung Trực.",
+    "explain": "straightforward = thẳng thắn; đơn giản; dễ hiểu.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "straightforward",
@@ -105084,13 +105084,13 @@
     "type": "multiple",
     "prompt": "\"pearl\" nghĩa là gì?",
     "options": [
-      "tấm đại mạch",
+      "ngọc trai",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "pearl = tấm đại mạch.",
+    "explain": "pearl = ngọc trai.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "pearl",
@@ -105244,13 +105244,13 @@
     "type": "multiple",
     "prompt": "\"subjective\" nghĩa là gì?",
     "options": [
-      "tự luận",
+      "chủ quan",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "subjective = tự luận.",
+    "explain": "subjective = chủ quan.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "subjective",
@@ -105404,13 +105404,13 @@
     "type": "multiple",
     "prompt": "\"rot\" nghĩa là gì?",
     "options": [
-      "thối rữa",
+      "thối rữa; sự mục nát",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "rot = thối rữa.",
+    "explain": "rot = thối rữa; sự mục nát.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "rot",
@@ -105564,13 +105564,13 @@
     "type": "multiple",
     "prompt": "\"celebration\" nghĩa là gì?",
     "options": [
-      "lễ kỷ niệm; tán dương, ca tụng",
+      "lễ kỷ niệm; sự ăn mừng",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "celebration = lễ kỷ niệm; tán dương, ca tụng.",
+    "explain": "celebration = lễ kỷ niệm; sự ăn mừng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "celebration",
@@ -105607,10 +105607,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "tỏa ra"
+      "tỏa ra; phát ra"
     ],
     "answer": 3,
-    "explain": "radiate = tỏa ra.",
+    "explain": "radiate = tỏa ra; phát ra.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "radiate",
@@ -105724,13 +105724,13 @@
     "type": "multiple",
     "prompt": "\"clumsy\" nghĩa là gì?",
     "options": [
-      "Gõ rất chậm.",
+      "vụng về; hậu đậu",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "clumsy = Gõ rất chậm..",
+    "explain": "clumsy = vụng về; hậu đậu.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "clumsy",
@@ -105845,12 +105845,12 @@
     "prompt": "\"drought\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "drought",
+      "hạn hán",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "drought = drought.",
+    "explain": "drought = hạn hán.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "drought",
@@ -105884,13 +105884,13 @@
     "type": "multiple",
     "prompt": "\"legend\" nghĩa là gì?",
     "options": [
-      "Chú thích",
+      "truyền thuyết; huyền thoại; chú giải trên bản đồ (tùy ngữ cảnh)",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "legend = Chú thích.",
+    "explain": "legend = truyền thuyết; huyền thoại; chú giải trên bản đồ (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "legend",
@@ -106005,12 +106005,12 @@
     "prompt": "\"salted\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "mặn",
+      "đã ướp muối; thêm muối",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "salted = mặn.",
+    "explain": "salted = đã ướp muối; thêm muối.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "salted",
@@ -106247,10 +106247,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "ưu việt hơn, chất lượng, cao cấp"
+      "cấp trên; vượt trội; cao cấp"
     ],
     "answer": 3,
-    "explain": "superior = ưu việt hơn, chất lượng, cao cấp.",
+    "explain": "superior = cấp trên; vượt trội; cao cấp.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "superior",
@@ -106645,12 +106645,12 @@
     "prompt": "\"excite\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để kích thích",
+      "khiến hào hứng; kích thích",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "excite = để kích thích.",
+    "explain": "excite = khiến hào hứng; kích thích.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "excite",
@@ -106844,13 +106844,13 @@
     "type": "multiple",
     "prompt": "\"quilt\" nghĩa là gì?",
     "options": [
-      "Quilt",
+      "chăn bông; mền chần bông",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "quilt = Quilt.",
+    "explain": "quilt = chăn bông; mền chần bông.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "quilt",
@@ -106926,11 +106926,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "cược hàng ngang",
+      "bên; thuộc phương ngang; âm bên trong ngữ âm học",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "lateral = cược hàng ngang.",
+    "explain": "lateral = bên; thuộc phương ngang; âm bên trong ngữ âm học.",
     "topic": "daily",
     "level": "Beginner",
     "vocabWord": "lateral",
@@ -107246,11 +107246,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "để nhắc",
+      "nhanh chóng; kịp thời; lời nhắc (tùy ngữ cảnh)",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "prompt = để nhắc.",
+    "explain": "prompt = nhanh chóng; kịp thời; lời nhắc (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "prompt",
@@ -107605,12 +107605,12 @@
     "prompt": "\"intoxicated\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "□ Say",
+      "say; bị ngộ độc",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "intoxicated = □ Say.",
+    "explain": "intoxicated = say; bị ngộ độc.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "intoxicated",
@@ -107765,12 +107765,12 @@
     "prompt": "\"firecrackers\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Pháo à?",
+      "pháo nổ; pháo tép",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "firecrackers = Pháo à?.",
+    "explain": "firecrackers = pháo nổ; pháo tép.",
     "topic": "nature",
     "level": "Upper-Intermediate",
     "vocabWord": "firecrackers",
@@ -107804,13 +107804,13 @@
     "type": "multiple",
     "prompt": "\"flourishing\" nghĩa là gì?",
     "options": [
-      "uốn lượn như cánh",
+      "phát triển mạnh; thịnh vượng",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "flourishing = uốn lượn như cánh.",
+    "explain": "flourishing = phát triển mạnh; thịnh vượng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "flourishing",
@@ -107847,10 +107847,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Tuyệt hả?"
+      "găng-xtơ; tên tội phạm"
     ],
     "answer": 3,
-    "explain": "gangster = Tuyệt hả?.",
+    "explain": "gangster = găng-xtơ; tên tội phạm.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "gangster",
@@ -108284,13 +108284,13 @@
     "type": "multiple",
     "prompt": "\"specialty\" nghĩa là gì?",
     "options": [
-      "các sản phẩm đặc biệt",
+      "chuyên môn; món đặc sản",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "specialty = các sản phẩm đặc biệt.",
+    "explain": "specialty = chuyên môn; món đặc sản.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "specialty",
@@ -108565,12 +108565,12 @@
     "prompt": "\"cozy\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "Cozy.",
+      "ấm cúng; dễ chịu",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "cozy = Cozy..",
+    "explain": "cozy = ấm cúng; dễ chịu.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "cozy",
@@ -108967,10 +108967,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "cách thỏa đáng"
+      "thỏa đáng; đạt yêu cầu"
     ],
     "answer": 3,
-    "explain": "satisfactory = cách thỏa đáng.",
+    "explain": "satisfactory = thỏa đáng; đạt yêu cầu.",
     "topic": "work",
     "level": "Upper-Intermediate",
     "vocabWord": "satisfactory",
@@ -109084,13 +109084,13 @@
     "type": "multiple",
     "prompt": "\"photocopy\" nghĩa là gì?",
     "options": [
-      "để photocopy",
+      "sao chụp; bản sao",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "photocopy = để photocopy.",
+    "explain": "photocopy = sao chụp; bản sao.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "photocopy",
@@ -109166,11 +109166,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "xé toạc",
+      "nước mắt; xé hoặc làm rách (tùy cách phát âm/ngữ cảnh)",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "tear = xé toạc.",
+    "explain": "tear = nước mắt; xé hoặc làm rách (tùy cách phát âm/ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "tear",
@@ -109486,11 +109486,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Vẽ biếm hoạ",
+      "tranh biếm họa; sự mô tả cường điệu",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "caricature = Vẽ biếm hoạ.",
+    "explain": "caricature = tranh biếm họa; sự mô tả cường điệu.",
     "topic": "city",
     "level": "Upper-Intermediate",
     "vocabWord": "caricature",
@@ -109525,12 +109525,12 @@
     "prompt": "\"subordinate\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "thuộc viên",
+      "cấp dưới; phụ thuộc",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "subordinate = thuộc viên.",
+    "explain": "subordinate = cấp dưới; phụ thuộc.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "subordinate",
@@ -109724,13 +109724,13 @@
     "type": "multiple",
     "prompt": "\"repulsive\" nghĩa là gì?",
     "options": [
-      "đẩy lùi",
+      "ghê tởm; gây phản cảm",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "repulsive = đẩy lùi.",
+    "explain": "repulsive = ghê tởm; gây phản cảm.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "repulsive",
@@ -109884,13 +109884,13 @@
     "type": "multiple",
     "prompt": "\"waterfall\" nghĩa là gì?",
     "options": [
-      "Hiệu ứng Quét Trang trình diễn",
+      "thác nước",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "waterfall = Hiệu ứng Quét Trang trình diễn.",
+    "explain": "waterfall = thác nước.",
     "topic": "nature",
     "level": "Upper-Intermediate",
     "vocabWord": "waterfall",
@@ -109927,10 +109927,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "rộng rãi, bao quát"
+      "rộng lớn; bao quát; trên diện rộng"
     ],
     "answer": 3,
-    "explain": "extensive = rộng rãi, bao quát.",
+    "explain": "extensive = rộng lớn; bao quát; trên diện rộng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "extensive",
@@ -110044,13 +110044,13 @@
     "type": "multiple",
     "prompt": "\"aspiration\" nghĩa là gì?",
     "options": [
-      "sự thổi khí",
+      "khát vọng; nguyện vọng",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "aspiration = sự thổi khí.",
+    "explain": "aspiration = khát vọng; nguyện vọng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "aspiration",
@@ -110204,13 +110204,13 @@
     "type": "multiple",
     "prompt": "\"faucet\" nghĩa là gì?",
     "options": [
-      "vòi (ở thùng rượu....)",
+      "vòi nước",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "faucet = vòi (ở thùng rượu....).",
+    "explain": "faucet = vòi nước.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "faucet",
@@ -110286,11 +110286,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "hạt nhân",
+      "bản chất; tinh chất; cốt lõi",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "essence = hạt nhân.",
+    "explain": "essence = bản chất; tinh chất; cốt lõi.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "essence",
@@ -110524,13 +110524,13 @@
     "type": "multiple",
     "prompt": "\"logistics\" nghĩa là gì?",
     "options": [
-      "ngàn hậu cần",
+      "hậu cần; ngành logistics",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "logistics = ngàn hậu cần.",
+    "explain": "logistics = hậu cần; ngành logistics.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "logistics",
@@ -110727,10 +110727,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "RogueGenericName"
+      "kẻ bất lương; người bất trị"
     ],
     "answer": 3,
-    "explain": "rogue = RogueGenericName.",
+    "explain": "rogue = kẻ bất lương; người bất trị.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "rogue",
@@ -110965,12 +110965,12 @@
     "prompt": "\"eyebrow\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "ô văng cửa tò vò",
+      "lông mày",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "eyebrow = ô văng cửa tò vò.",
+    "explain": "eyebrow = lông mày.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "eyebrow",
@@ -111004,13 +111004,13 @@
     "type": "multiple",
     "prompt": "\"embody\" nghĩa là gì?",
     "options": [
-      "để thể hiện",
+      "thể hiện; hiện thân; bao hàm",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "embody = để thể hiện.",
+    "explain": "embody = thể hiện; hiện thân; bao hàm.",
     "topic": "health",
     "level": "Upper-Intermediate",
     "vocabWord": "embody",
@@ -111086,11 +111086,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Để Tóm tắt",
+      "tóm tắt",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "summarize = Để Tóm tắt.",
+    "explain": "summarize = tóm tắt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "summarize",
@@ -111125,12 +111125,12 @@
     "prompt": "\"peach\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "đào tào",
+      "quả đào",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "peach = đào tào.",
+    "explain": "peach = quả đào.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "peach",
@@ -111324,13 +111324,13 @@
     "type": "multiple",
     "prompt": "\"merge\" nghĩa là gì?",
     "options": [
-      "KÉO ĐỂ GỘP",
+      "hợp nhất; sáp nhập; nhập làn",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "merge = KÉO ĐỂ GỘP.",
+    "explain": "merge = hợp nhất; sáp nhập; nhập làn.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "merge",
@@ -111367,10 +111367,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "l&#227;ng m&#7841;n"
+      "tình yêu lãng mạn; sự lãng mạn; truyện tình cảm"
     ],
     "answer": 3,
-    "explain": "romance = l&#227;ng m&#7841;n.",
+    "explain": "romance = tình yêu lãng mạn; sự lãng mạn; truyện tình cảm.",
     "topic": "daily",
     "level": "Intermediate",
     "vocabWord": "romance",
@@ -111445,12 +111445,12 @@
     "prompt": "\"daydream\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "mơ mộng hão huyền",
+      "mơ mộng; sự mơ mộng",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "daydream = mơ mộng hão huyền.",
+    "explain": "daydream = mơ mộng; sự mơ mộng.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "daydream",
@@ -111484,13 +111484,13 @@
     "type": "multiple",
     "prompt": "\"refined\" nghĩa là gì?",
     "options": [
-      "tinh chế",
+      "tinh tế; lịch thiệp; đã tinh chế (tùy ngữ cảnh)",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "refined = tinh chế.",
+    "explain": "refined = tinh tế; lịch thiệp; đã tinh chế (tùy ngữ cảnh).",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "refined",
@@ -111726,11 +111726,11 @@
     "options": [
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "vi sinh vậy",
+      "sinh vật; cơ thể sống",
       "gia đình"
     ],
     "answer": 2,
-    "explain": "organism = vi sinh vậy.",
+    "explain": "organism = sinh vật; cơ thể sống.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "organism",
@@ -111765,12 +111765,12 @@
     "prompt": "\"twisting\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "thủ đoạn khuấy đảo",
+      "xoắn; vặn; gây áp lực trong thành ngữ 'twist someone's arm'",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "twisting = thủ đoạn khuấy đảo.",
+    "explain": "twisting = xoắn; vặn; gây áp lực trong thành ngữ 'twist someone's arm'.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "twisting",
@@ -111804,13 +111804,13 @@
     "type": "multiple",
     "prompt": "\"lush\" nghĩa là gì?",
     "options": [
-      "LUSH",
+      "xanh tốt; sum suê; (tiếng lóng) người nghiện rượu",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "lush = LUSH.",
+    "explain": "lush = xanh tốt; sum suê; (tiếng lóng) người nghiện rượu.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "lush",
@@ -111847,10 +111847,10 @@
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ",
-      "Ranh ma thiệt!"
+      "ranh mãnh; xảo quyệt"
     ],
     "answer": 3,
-    "explain": "crafty = Ranh ma thiệt!.",
+    "explain": "crafty = ranh mãnh; xảo quyệt.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "crafty",
@@ -111925,12 +111925,12 @@
     "prompt": "\"endorse\" nghĩa là gì?",
     "options": [
       "mẹ",
-      "để xác nhận",
+      "ủng hộ; tán thành; xác nhận; chứng thực",
       "gia đình",
       "bố/mẹ; phụ huynh"
     ],
     "answer": 1,
-    "explain": "endorse = để xác nhận.",
+    "explain": "endorse = ủng hộ; tán thành; xác nhận; chứng thực.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "endorse",
@@ -111964,13 +111964,13 @@
     "type": "multiple",
     "prompt": "\"defect\" nghĩa là gì?",
     "options": [
-      "khuyết xạ",
+      "lỗi; khiếm khuyết; khuyết tật",
       "gia đình",
       "bố/mẹ; phụ huynh",
       "mẹ"
     ],
     "answer": 0,
-    "explain": "defect = khuyết xạ.",
+    "explain": "defect = lỗi; khiếm khuyết; khuyết tật.",
     "topic": "daily",
     "level": "Upper-Intermediate",
     "vocabWord": "defect",
