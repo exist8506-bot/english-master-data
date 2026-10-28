@@ -1,7 +1,7 @@
 {
-  "version": "8.1.1",
-  "updatedAt": "2026-09-28",
-  "releaseNotes": "V8.1.1: thêm 500 từ mới; câu tiếng Anh lấy từ Tatoeba, có IPA, nghĩa Việt, nghe, đọc, nói, quiz, ôn tập, tam ngữ, giao tiếp và ngữ pháp.",
+  "version": "8.2.0",
+  "updatedAt": "2026-10-28",
+  "releaseNotes": "V8.2.0: rà soát ngữ cảnh và dịch nghĩa; cập nhật 964 mục ví dụ từ vựng và 1.147 cặp câu tiếng Anh–tiếng Việt; bổ sung trường chủ đề còn thiếu cho câu mẫu. Đã kiểm tra số lượng, ID trùng lặp và trường dữ liệu bắt buộc. Nội dung được biên tập có hỗ trợ AI, chưa phải chứng nhận người bản ngữ kiểm thủ công từng mục.",
   "files": {
     "vocabulary": "vocabulary.json",
     "sentences": "sentences.json",
