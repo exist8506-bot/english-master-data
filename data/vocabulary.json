@@ -585,8 +585,8 @@
     "ipa": "/kwˈɛst‍ʃən/",
     "meaning": "câu hỏi",
     "pos": "noun",
-    "example": "I used the question during my study session.",
-    "exampleVi": "Tôi dùng câu hỏi trong lúc học.",
+    "example": "I asked the question during my study session in the library yesterday.",
+    "exampleVi": "Hôm qua, tôi đặt câu hỏi trong buổi tự học ở thư viện.",
     "synonyms": "",
     "antonyms": "",
     "topic": "school",
@@ -597,7 +597,8 @@
     "createdAt": "2026-09-21T00:00:00.000Z",
     "audio": "tts",
     "source": "base",
-    "sourceVersion": "base"
+    "sourceVersion": "base",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "remote_10ricbj",
@@ -1545,8 +1546,8 @@
     "ipa": "/lˈʌɡɪd‍ʒ/",
     "meaning": "hành lý",
     "pos": "noun",
-    "example": "Our luggage did not arrive with the flight, so we reported it at the airport desk.",
-    "exampleVi": "Hành lý của chúng tôi không đến cùng chuyến bay nên chúng tôi đã báo tại quầy ở sân bay.",
+    "example": "My luggage was delayed at the airport this morning.",
+    "exampleVi": "Sáng nay, hành lý của tôi bị chậm chuyển tại sân bay.",
     "synonyms": "",
     "antonyms": "",
     "topic": "travel",
@@ -1557,7 +1558,8 @@
     "createdAt": "2026-09-21T00:00:00.000Z",
     "audio": "tts",
     "source": "base",
-    "sourceVersion": "base"
+    "sourceVersion": "base",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "remote_1q1ubox",
@@ -4085,8 +4087,8 @@
     "ipa": "/wˈiːk/",
     "meaning": "tuần",
     "pos": "noun",
-    "example": "I usually study in the week.",
-    "exampleVi": "Tôi thường học vào tuần.",
+    "example": "I usually study during the week and relax on weekends.",
+    "exampleVi": "Tôi thường học vào các ngày trong tuần và nghỉ ngơi vào cuối tuần.",
     "synonyms": "",
     "antonyms": "",
     "topic": "time",
@@ -4097,7 +4099,8 @@
     "createdAt": "2026-09-21T00:00:00.000Z",
     "audio": "tts",
     "source": "base",
-    "sourceVersion": "base"
+    "sourceVersion": "base",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "remote_1nicidh",
@@ -8045,8 +8048,8 @@
     "ipa": "/sˈɪmɪlɚ/",
     "meaning": "tương tự",
     "pos": "adjective",
-    "example": "The two bags look similar.",
-    "exampleVi": "Hai chiếc túi trông giống nhau.",
+    "example": "Similar words sometimes confuse me during English class.",
+    "exampleVi": "Những từ tương tự đôi khi khiến tôi bối rối trong giờ tiếng Anh.",
     "synonyms": "",
     "antonyms": "",
     "topic": "daily",
@@ -8057,7 +8060,8 @@
     "createdAt": "2026-09-21T00:00:00.000Z",
     "audio": "tts",
     "source": "base",
-    "sourceVersion": "base"
+    "sourceVersion": "base",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "remote_1oa2yi8",
@@ -11079,8 +11083,8 @@
     "topic": "city",
     "id": "v5_wulzcu",
     "meaning": "đường phố",
-    "example": "We talked about the street after dinner.",
-    "exampleVi": "Chúng tôi nói về đường phố sau bữa tối.",
+    "example": "We talked about the street near our house after dinner.",
+    "exampleVi": "Chúng tôi nói về con đường gần nhà sau bữa tối.",
     "ipa": "/strˈit/",
     "level": "Beginner",
     "favorite": false,
@@ -11089,7 +11093,8 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "word": "road",
@@ -13601,8 +13606,8 @@
     "topic": "entertainment",
     "id": "v5_11u01m5",
     "meaning": "sân khấu",
-    "example": "We talked about the stage after dinner.",
-    "exampleVi": "Chúng tôi nói về sân khấu sau bữa tối.",
+    "example": "The band tested the stage lights at the concert hall before the show last night.",
+    "exampleVi": "Tối qua, ban nhạc thử đèn sân khấu tại nhà hát trước buổi biểu diễn.",
     "ipa": "/stˈeɪdʒ/",
     "level": "Beginner",
     "favorite": false,
@@ -13611,7 +13616,8 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "word": "audience",
@@ -14000,8 +14006,8 @@
     "topic": "nature",
     "id": "v5_e7dxjr",
     "meaning": "không khí",
-    "example": "We saw the air during our walk.",
-    "exampleVi": "Chúng tôi thấy không khí khi đi bộ.",
+    "example": "The air near the lake felt fresh during our walk early this morning.",
+    "exampleVi": "Không khí gần hồ rất trong lành khi chúng tôi đi dạo vào sáng sớm nay.",
     "ipa": "/ˈɛr/",
     "level": "Beginner",
     "favorite": false,
@@ -14010,7 +14016,8 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "word": "earth",
@@ -14693,8 +14700,8 @@
     "topic": "personality",
     "id": "v5_1oc52r3",
     "meaning": "năng động",
-    "example": "She stays active by walking every morning.",
-    "exampleVi": "Cô ấy duy trì sự năng động bằng cách đi bộ mỗi sáng.",
+    "example": "He stays active by walking around the park every morning.",
+    "exampleVi": "Anh ấy duy trì sự năng động bằng cách đi bộ quanh công viên mỗi sáng.",
     "ipa": "/ˈæktɪv/",
     "level": "Beginner",
     "favorite": false,
@@ -14703,7 +14710,8 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "word": "funny",
@@ -15121,8 +15129,8 @@
     "topic": "verb3",
     "id": "v5_1jvnkag",
     "meaning": "làm vỡ; phá",
-    "example": "She decided to break today.",
-    "exampleVi": "Cô ấy quyết định làm vỡ; phá hôm nay.",
+    "example": "She will break the seal on the package when she arrives at the office tomorrow.",
+    "exampleVi": "Ngày mai, cô ấy sẽ bóc niêm phong gói hàng khi đến văn phòng.",
     "ipa": "/brˈeɪk/",
     "level": "Beginner",
     "favorite": false,
@@ -15131,7 +15139,8 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "word": "fix",
@@ -15656,8 +15665,8 @@
     "topic": "adjective2",
     "id": "v5_a9y1z9",
     "meaning": "sáng",
-    "example": "The room is bright in the morning.",
-    "exampleVi": "Căn phòng sáng vào buổi sáng.",
+    "example": "The stars looked bright over the village last night.",
+    "exampleVi": "Tối qua, những vì sao sáng rực trên ngôi làng.",
     "ipa": "/brˈaɪt/",
     "level": "Beginner",
     "favorite": false,
@@ -15666,7 +15675,8 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "word": "dry",
@@ -18346,8 +18356,8 @@
     "topic": "healthextra",
     "id": "v5_hi3uuc",
     "meaning": "nha sĩ",
-    "example": "I want to learn more about dentist.",
-    "exampleVi": "Tôi muốn tìm hiểu thêm về nha sĩ.",
+    "example": "I visited the dentist at the clinic near campus yesterday afternoon.",
+    "exampleVi": "Chiều hôm qua, tôi đến gặp nha sĩ tại phòng khám gần trường.",
     "ipa": "/dˈɛntəst/",
     "level": "Beginner",
     "favorite": false,
@@ -18356,7 +18366,8 @@
     "createdAt": "2026-09-22T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "word": "symptom",
@@ -26227,8 +26238,8 @@
     "pos": "noun",
     "topic": "thinking",
     "level": "Beginner",
-    "example": "I learned more about the solution this week.",
-    "exampleVi": "Tôi biết thêm về giải pháp trong tuần này.",
+    "example": "The engineer presented a solution to the traffic problem at the city meeting yesterday.",
+    "exampleVi": "Hôm qua, kỹ sư trình bày một giải pháp cho vấn đề giao thông tại cuộc họp thành phố.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
@@ -26237,7 +26248,8 @@
     "source": "remote",
     "sourceVersion": "6",
     "legacyExample": "I learned more about solution this week.",
-    "legacyExampleVi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này."
+    "legacyExampleVi": "Tôi biết thêm về giải pháp; dung dịch trong tuần này.",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v6_7ps15k",
@@ -26273,15 +26285,16 @@
     "pos": "adjective",
     "topic": "study",
     "level": "Beginner",
-    "example": "The new method is specific for beginners.",
-    "exampleVi": "Phương pháp mới cụ thể với người mới.",
+    "example": "The instructor gave specific instructions to beginners during class yesterday.",
+    "exampleVi": "Hôm qua, giảng viên đưa ra hướng dẫn cụ thể cho người mới trong giờ học.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v6_q0wumv",
@@ -26317,15 +26330,16 @@
     "pos": "noun",
     "topic": "work",
     "level": "Beginner",
-    "example": "I prepared the standard before lunch.",
-    "exampleVi": "Tôi chuẩn bị tiêu chuẩn trước bữa trưa.",
+    "example": "The lab technician checked the sample against the safety standard before the test yesterday.",
+    "exampleVi": "Hôm qua, kỹ thuật viên phòng thí nghiệm đối chiếu mẫu với tiêu chuẩn an toàn trước khi thử nghiệm.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v6_1qa8jw0",
@@ -26473,15 +26487,16 @@
     "pos": "noun",
     "topic": "technology",
     "level": "Beginner",
-    "example": "I learned how system works.",
-    "exampleVi": "Tôi học cách hệ thống hoạt động.",
+    "example": "I learned how the system works during my computer class yesterday.",
+    "exampleVi": "Hôm qua, tôi học cách hệ thống hoạt động trong giờ tin học.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "6"
+    "sourceVersion": "6",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v6_ngat2n",
@@ -31679,15 +31694,16 @@
     "pos": "noun",
     "topic": "daily",
     "level": "Intermediate",
-    "example": "We talked about telephone yesterday.",
-    "exampleVi": "Chúng tôi nói về điện thoại hôm qua.",
+    "example": "We spoke on the telephone with our supplier from the office yesterday morning.",
+    "exampleVi": "Sáng hôm qua, chúng tôi nói chuyện qua điện thoại với nhà cung cấp từ văn phòng.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0002_d4s4q5",
@@ -31699,15 +31715,16 @@
     "pos": "noun",
     "topic": "sports",
     "level": "Intermediate",
-    "example": "We watched sport on television.",
-    "exampleVi": "Chúng tôi xem thể thao trên tivi.",
+    "example": "The children played a sport at school during the break yesterday.",
+    "exampleVi": "Hôm qua, bọn trẻ chơi một môn thể thao ở trường trong giờ giải lao.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0003_pi6kls",
@@ -31779,15 +31796,16 @@
     "pos": "noun",
     "topic": "nature",
     "level": "Intermediate",
-    "example": "The area is known for valley.",
-    "exampleVi": "Khu vực này nổi tiếng với thung lũng.",
+    "example": "The village lies in a valley between two mountains near the river.",
+    "exampleVi": "Ngôi làng nằm trong một thung lũng giữa hai ngọn núi gần con sông.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0007_1ccv3wf",
@@ -31879,15 +31897,16 @@
     "pos": "adverb",
     "topic": "movement",
     "level": "Intermediate",
-    "example": "I forward practice in the evening.",
-    "exampleVi": "Tôi về phía trước luyện tập vào buổi tối.",
+    "example": "Please move forward to the front of the classroom when your group is called.",
+    "exampleVi": "Khi nhóm bạn được gọi tên, vui lòng tiến lên phía trước lớp học.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0012_auyojk",
@@ -31899,15 +31918,16 @@
     "pos": "adjective",
     "topic": "general",
     "level": "Intermediate",
-    "example": "The new option looks significant.",
-    "exampleVi": "Lựa chọn mới trông đáng kể; quan trọng.",
+    "example": "The new policy had a significant effect on travel costs after it took effect last month.",
+    "exampleVi": "Chính sách mới đã ảnh hưởng đáng kể đến chi phí đi lại sau khi có hiệu lực vào tháng trước.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0013_12ht57m",
@@ -31959,15 +31979,16 @@
     "pos": "noun",
     "topic": "shopping",
     "level": "Intermediate",
-    "example": "The seller explained catalog.",
-    "exampleVi": "Người bán giải thích về danh mục; ca-ta-lô.",
+    "example": "The seller showed me the product catalog at the shop yesterday.",
+    "exampleVi": "Hôm qua, người bán cho tôi xem danh mục sản phẩm tại cửa hàng.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0016_zaoeva",
@@ -31979,15 +32000,16 @@
     "pos": "noun",
     "topic": "work",
     "level": "Intermediate",
-    "example": "We checked authority before the meeting.",
-    "exampleVi": "Chúng tôi kiểm tra thẩm quyền; nhà chức trách trước cuộc họp.",
+    "example": "We checked with the local authority at the city office before the meeting yesterday.",
+    "exampleVi": "Hôm qua, chúng tôi xác minh với cơ quan chức năng địa phương tại văn phòng thành phố trước cuộc họp.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0017_1xbmwzf",
@@ -32059,15 +32081,16 @@
     "pos": "adjective",
     "topic": "general",
     "level": "Intermediate",
-    "example": "That answer is grand.",
-    "exampleVi": "Câu trả lời đó lớn lao; tuyệt vời.",
+    "example": "The hotel lobby looked grand when we entered yesterday evening.",
+    "exampleVi": "Sảnh khách sạn trông rất lộng lẫy khi chúng tôi bước vào tối hôm qua.",
     "favorite": false,
     "status": "New",
     "reviewDue": null,
     "createdAt": "2026-09-23T00:00:00.000Z",
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "sourceRef": "editorial:contextual-review-2026-10-28"
   },
   {
     "id": "v7_0021_1gkjs9f",
