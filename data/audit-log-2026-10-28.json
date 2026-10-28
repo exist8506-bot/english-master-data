@@ -1,0 +1,20 @@
+{
+  "version": "8.2.0",
+  "updatedAt": "2026-10-28",
+  "source": "English Master data snapshot and context-review pass",
+  "counts": {
+    "vocabulary": 2000,
+    "sentences": 2000,
+    "vocabularyExamplesUpdated": 964,
+    "sentenceEnglishVietnamesePairsUpdated": 1147,
+    "sentenceTopicsFilled": 250
+  },
+  "checks": {
+    "duplicateVocabularyIds": 0,
+    "duplicateSentenceIds": 0,
+    "requiredFields": "passed",
+    "knownBrokenExamplePatterns": 0
+  },
+  "method": "AI-assisted contextual editing plus structural validation. English/Vietnamese examples were revised for word usage and, where appropriate, concrete time/place context; IDs and required production fields were retained.",
+  "limitation": "Not a human/native-speaker line-by-line certification. Keep reviewing nuanced collocations, grammar labels, and translations."
+}
