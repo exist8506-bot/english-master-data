@@ -163,12 +163,13 @@
   },
   {
     "id": "sent500_v1z8dl",
-    "en": "My family member always gives me good advice.",
-    "vi": "Thành viên gia đình của tôi luôn cho tôi lời khuyên hay.",
+    "en": "One family member helped me move into my new apartment last Saturday.",
+    "vi": "Thứ Bảy tuần trước, một thành viên trong gia đình giúp tôi chuyển vào căn hộ mới.",
     "topic": "family",
-    "grammar": "Simple Present",
+    "grammar": "Everyday English",
     "vocabWord": "family member",
-    "favorite": false
+    "favorite": false,
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent500_1y292xp",
@@ -802,12 +803,13 @@
   },
   {
     "id": "sent500_obysfx",
-    "en": "She shared the dinner with everyone.",
-    "vi": "Cô ấy chia bữa tối cho mọi người.",
+    "en": "We shared dinner with our neighbors at their house last Sunday.",
+    "vi": "Chủ nhật tuần trước, chúng tôi ăn tối cùng hàng xóm tại nhà họ.",
     "topic": "food",
-    "grammar": "Simple Past",
+    "grammar": "Everyday English",
     "vocabWord": "dinner",
-    "favorite": false
+    "favorite": false,
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent500_1jlnylh",
@@ -892,12 +894,13 @@
   },
   {
     "id": "sent500_1pb5ljc",
-    "en": "She shared the vegetable with everyone.",
-    "vi": "Cô ấy chia rau cho mọi người.",
+    "en": "I bought fresh vegetables at the market near home yesterday morning.",
+    "vi": "Sáng hôm qua, tôi mua rau tươi ở khu chợ gần nhà.",
     "topic": "food",
-    "grammar": "Simple Past",
+    "grammar": "Everyday English",
     "vocabWord": "vegetable",
-    "favorite": false
+    "favorite": false,
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent500_1nrqe8h",
@@ -937,12 +940,13 @@
   },
   {
     "id": "sent500_13g4tk1",
-    "en": "She shared the coffee with everyone.",
-    "vi": "Cô ấy chia cà phê cho mọi người.",
+    "en": "We shared a pot of coffee at the office after the morning meeting.",
+    "vi": "Chúng tôi cùng uống một bình cà phê tại văn phòng sau cuộc họp buổi sáng.",
     "topic": "food",
-    "grammar": "Simple Past",
+    "grammar": "Everyday English",
     "vocabWord": "coffee",
-    "favorite": false
+    "favorite": false,
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent500_1dy1kx5",
@@ -1441,12 +1445,13 @@
   },
   {
     "id": "sent500_18xjy8i",
-    "en": "He stayed home because of his doctor.",
-    "vi": "Anh ấy ở nhà vì bác sĩ.",
+    "en": "I saw the doctor at the clinic yesterday because my cough would not go away.",
+    "vi": "Hôm qua, tôi đến phòng khám gặp bác sĩ vì cơn ho mãi không khỏi.",
     "topic": "health",
-    "grammar": "Simple Past",
+    "grammar": "Everyday English",
     "vocabWord": "doctor",
-    "favorite": false
+    "favorite": false,
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent500_1wpfd7u",
@@ -4548,15 +4553,16 @@
   },
   {
     "id": "sent5_t3q7e8",
-    "en": "The dress is easy to wear.",
-    "vi": "Dress này dễ mặc.",
+    "en": "I tried on the dress in the fitting room at the mall before the wedding yesterday.",
+    "vi": "Hôm qua, tôi thử chiếc váy trong phòng thử đồ ở trung tâm thương mại trước đám cưới.",
     "topic": "clothing",
     "grammar": "Everyday English",
     "vocabWord": "dress",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1grpc8o",
@@ -4632,15 +4638,16 @@
   },
   {
     "id": "sent5_12eqo5s",
-    "en": "This belt fits me well.",
-    "vi": "Belt này vừa với tôi.",
+    "en": "I chose a leather belt at the shop near campus yesterday afternoon.",
+    "vi": "Chiều hôm qua, tôi chọn một chiếc thắt lưng da ở cửa hàng gần trường.",
     "topic": "clothing",
     "grammar": "Everyday English",
     "vocabWord": "belt",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_zcagn2",
@@ -4692,15 +4699,16 @@
   },
   {
     "id": "sent5_1c1me63",
-    "en": "This zipper fits me well.",
-    "vi": "Zipper này vừa với tôi.",
+    "en": "The zipper on my jacket broke while I was walking to the bus stop this morning.",
+    "vi": "Khóa kéo trên áo khoác của tôi bị hỏng khi tôi đang đi bộ đến trạm xe buýt sáng nay.",
     "topic": "clothing",
     "grammar": "Everyday English",
     "vocabWord": "zipper",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1pnnm1f",
@@ -4752,15 +4760,16 @@
   },
   {
     "id": "sent5_1wmriaz",
-    "en": "This ring fits me well.",
-    "vi": "Ring này vừa với tôi.",
+    "en": "She tried on the silver ring at the jewelry store before closing time yesterday.",
+    "vi": "Hôm qua, cô ấy thử chiếc nhẫn bạc ở cửa hàng trang sức trước giờ đóng cửa.",
     "topic": "clothing",
     "grammar": "Everyday English",
     "vocabWord": "ring",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_13i7zll",
@@ -4800,15 +4809,16 @@
   },
   {
     "id": "sent5_4u01y4",
-    "en": "My face feels tired after a long day.",
-    "vi": "Face của tôi mỏi sau một ngày dài.",
+    "en": "My face felt itchy after I washed it with the new soap in the bathroom this morning.",
+    "vi": "Sáng nay, mặt tôi bị ngứa sau khi rửa bằng loại xà phòng mới trong phòng tắm.",
     "topic": "body",
     "grammar": "Everyday English",
     "vocabWord": "face",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_12r0ufu",
@@ -4860,15 +4870,16 @@
   },
   {
     "id": "sent5_2sa6yd",
-    "en": "My tooth feels tired after a long day.",
-    "vi": "Tooth của tôi mỏi sau một ngày dài.",
+    "en": "My tooth hurt while I was eating breakfast at home yesterday, so I booked a dentist appointment.",
+    "vi": "Hôm qua, răng tôi đau khi ăn sáng ở nhà nên tôi đã đặt lịch khám nha sĩ.",
     "topic": "body",
     "grammar": "Everyday English",
     "vocabWord": "tooth",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_l2vspe",
@@ -4920,15 +4931,16 @@
   },
   {
     "id": "sent5_1il1xy8",
-    "en": "My hand feels tired after a long day.",
-    "vi": "Hand của tôi mỏi sau một ngày dài.",
+    "en": "My hand was sore after I carried boxes into the apartment last night.",
+    "vi": "Tay tôi đau nhức sau khi mang các thùng đồ vào căn hộ tối qua.",
     "topic": "body",
     "grammar": "Everyday English",
     "vocabWord": "hand",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_180ou58",
@@ -4980,15 +4992,16 @@
   },
   {
     "id": "sent5_2x63o6",
-    "en": "My stomach feels tired after a long day.",
-    "vi": "Stomach của tôi mỏi sau một ngày dài.",
+    "en": "My stomach started hurting during lunch at the campus cafeteria today.",
+    "vi": "Hôm nay, bụng tôi bắt đầu đau trong lúc ăn trưa tại căng tin trường.",
     "topic": "body",
     "grammar": "Everyday English",
     "vocabWord": "stomach",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_hlgldj",
@@ -5040,15 +5053,16 @@
   },
   {
     "id": "sent5_e9m5dk",
-    "en": "My skin feels tired after a long day.",
-    "vi": "Skin của tôi mỏi sau một ngày dài.",
+    "en": "My skin became dry after I spent the afternoon at the beach yesterday.",
+    "vi": "Da tôi trở nên khô sau khi dành cả buổi chiều hôm qua ở bãi biển.",
     "topic": "body",
     "grammar": "Everyday English",
     "vocabWord": "skin",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1n0q7y1",
@@ -5328,15 +5342,16 @@
   },
   {
     "id": "sent5_19lp9l8",
-    "en": "The motorcycle made the journey easier.",
-    "vi": "Motorcycle giúp hành trình dễ hơn.",
+    "en": "We rented a motorcycle near the station and rode along the coast yesterday morning.",
+    "vi": "Sáng hôm qua, chúng tôi thuê một chiếc xe máy gần nhà ga rồi chạy dọc bờ biển.",
     "topic": "transport",
     "grammar": "Everyday English",
     "vocabWord": "motorcycle",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1xcgblw",
@@ -5388,15 +5403,16 @@
   },
   {
     "id": "sent5_1p8o457",
-    "en": "The boat made the journey easier.",
-    "vi": "Boat giúp hành trình dễ hơn.",
+    "en": "We boarded a boat at the harbor at 8 a.m. to visit the island.",
+    "vi": "Chúng tôi lên thuyền ở cảng lúc 8 giờ sáng để ra thăm hòn đảo.",
     "topic": "transport",
     "grammar": "Everyday English",
     "vocabWord": "boat",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1ktmbf9",
@@ -5448,15 +5464,16 @@
   },
   {
     "id": "sent5_dwh9ni",
-    "en": "The route made the journey easier.",
-    "vi": "Route giúp hành trình dễ hơn.",
+    "en": "The route to the airport was crowded during Monday's morning rush.",
+    "vi": "Tuyến đường đến sân bay đông đúc vào giờ cao điểm sáng thứ Hai.",
     "topic": "transport",
     "grammar": "Everyday English",
     "vocabWord": "route",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1hif8a4",
@@ -5544,15 +5561,16 @@
   },
   {
     "id": "sent5_1pycw4m",
-    "en": "The sofa is near the window in the living room.",
-    "vi": "Ghế sofa ở gần cửa sổ trong phòng khách.",
+    "en": "We moved the sofa beside the window in the living room last Saturday.",
+    "vi": "Thứ Bảy tuần trước, chúng tôi chuyển ghế sofa đến cạnh cửa sổ trong phòng khách.",
     "topic": "home",
     "grammar": "Everyday English",
     "vocabWord": "sofa",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_gr19xc",
@@ -6024,27 +6042,29 @@
   },
   {
     "id": "sent5_1clk5qn",
-    "en": "She plays the guitar after dinner.",
-    "vi": "Cô ấy chơi guitar sau bữa tối.",
+    "en": "My brother practiced the guitar in his bedroom for an hour last night.",
+    "vi": "Tối qua, anh/em trai tôi luyện đàn guitar trong phòng ngủ suốt một giờ.",
     "topic": "hobbies",
     "grammar": "Everyday English",
     "vocabWord": "guitar",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_je9fby",
-    "en": "My sister plays the piano every evening.",
-    "vi": "Em gái tôi chơi đàn piano mỗi tối.",
+    "en": "My sister played the piano at the school concert in the auditorium last Friday.",
+    "vi": "Thứ Sáu tuần trước, chị/em gái tôi chơi đàn piano trong buổi hòa nhạc của trường tại hội trường.",
     "topic": "hobbies",
     "grammar": "Everyday English",
     "vocabWord": "piano",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_4tgefo",
@@ -6312,15 +6332,16 @@
   },
   {
     "id": "sent5_1u5bu7t",
-    "en": "We talked about golf after dinner.",
-    "vi": "Chúng tôi nói về golf sau bữa tối.",
+    "en": "We played golf at the course near the hotel early on Sunday morning.",
+    "vi": "Sáng sớm Chủ nhật, chúng tôi chơi gôn tại sân gần khách sạn.",
     "topic": "sports",
     "grammar": "Everyday English",
     "vocabWord": "golf",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_nlvl9q",
@@ -6720,15 +6741,16 @@
   },
   {
     "id": "sent5_aprlb7",
-    "en": "I listened to a podcast on the bus.",
-    "vi": "Tôi nghe một podcast trên xe buýt.",
+    "en": "I listened to a podcast on the bus while travelling to campus this morning.",
+    "vi": "Sáng nay, tôi nghe một chương trình podcast trên xe buýt khi đến trường.",
     "topic": "entertainment",
     "grammar": "Everyday English",
     "vocabWord": "podcast",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_11ky65f",
@@ -6792,15 +6814,16 @@
   },
   {
     "id": "sent5_aj3tuf",
-    "en": "The earth looked beautiful after the rain.",
-    "vi": "Earth trông đẹp sau cơn mưa.",
+    "en": "The Earth looked bright from the hill just after the rain yesterday.",
+    "vi": "Hôm qua, Trái Đất trông thật rực rỡ khi nhìn từ ngọn đồi ngay sau cơn mưa.",
     "topic": "nature",
     "grammar": "Everyday English",
     "vocabWord": "earth",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_2w15oi",
@@ -6852,15 +6875,16 @@
   },
   {
     "id": "sent5_ametzp",
-    "en": "The leaf looked beautiful after the rain.",
-    "vi": "Leaf trông đẹp sau cơn mưa.",
+    "en": "A yellow leaf landed on my notebook while I studied in the park yesterday afternoon.",
+    "vi": "Chiều hôm qua, một chiếc lá vàng rơi xuống vở khi tôi học bài trong công viên.",
     "topic": "nature",
     "grammar": "Everyday English",
     "vocabWord": "leaf",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1en81mt",
@@ -6912,15 +6936,16 @@
   },
   {
     "id": "sent5_12azqc",
-    "en": "The butterfly looked beautiful after the rain.",
-    "vi": "Butterfly trông đẹp sau cơn mưa.",
+    "en": "A butterfly landed on a flower outside our classroom during the break yesterday.",
+    "vi": "Hôm qua, một con bướm đậu lên bông hoa bên ngoài lớp học của chúng tôi trong giờ giải lao.",
     "topic": "nature",
     "grammar": "Everyday English",
     "vocabWord": "butterfly",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1lgiaa5",
@@ -7788,15 +7813,16 @@
   },
   {
     "id": "sent5_17sc22b",
-    "en": "The ruler helped me study better.",
-    "vi": "Ruler giúp tôi học tốt hơn.",
+    "en": "I used a ruler to draw a straight line in math class this morning.",
+    "vi": "Sáng nay, tôi dùng thước kẻ một đường thẳng trong giờ toán.",
     "topic": "school",
     "grammar": "Everyday English",
     "vocabWord": "ruler",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_ytj6bv",
@@ -7848,15 +7874,16 @@
   },
   {
     "id": "sent5_16ejpm1",
-    "en": "The degree helped me study better.",
-    "vi": "Degree giúp tôi học tốt hơn.",
+    "en": "She received her degree at the university graduation ceremony last June.",
+    "vi": "Tháng Sáu năm ngoái, cô ấy nhận bằng trong lễ tốt nghiệp của trường đại học.",
     "topic": "school",
     "grammar": "Everyday English",
     "vocabWord": "degree",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_14k00w0",
@@ -8124,15 +8151,16 @@
   },
   {
     "id": "sent5_1dqb5a1",
-    "en": "The teamwork is important this week.",
-    "vi": "Teamwork quan trọng trong tuần này.",
+    "en": "Our teamwork helped us finish the group project in the library before the deadline yesterday.",
+    "vi": "Hôm qua, tinh thần làm việc nhóm giúp chúng tôi hoàn thành dự án trong thư viện trước hạn chót.",
     "topic": "work",
     "grammar": "Everyday English",
     "vocabWord": "teamwork",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_3ysw2y",
@@ -8232,15 +8260,16 @@
   },
   {
     "id": "sent5_g0n05k",
-    "en": "The budget changed this month.",
-    "vi": "Budget thay đổi trong tháng này.",
+    "en": "We reviewed the travel budget at the office before booking the hotel last Friday.",
+    "vi": "Thứ Sáu tuần trước, chúng tôi xem lại ngân sách chuyến đi tại văn phòng trước khi đặt khách sạn.",
     "topic": "money",
     "grammar": "Everyday English",
     "vocabWord": "budget",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1sqwyh0",
@@ -8328,15 +8357,16 @@
   },
   {
     "id": "sent5_1c3cot",
-    "en": "The total is within my budget.",
-    "vi": "Total nằm trong ngân sách của tôi.",
+    "en": "The total on the restaurant bill was 450,000 dong after dinner last night.",
+    "vi": "Tổng số tiền trên hóa đơn nhà hàng là 450.000 đồng sau bữa tối hôm qua.",
     "topic": "money",
     "grammar": "Everyday English",
     "vocabWord": "total",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1wofnt5",
@@ -8412,15 +8442,16 @@
   },
   {
     "id": "sent5_1xpt6k0",
-    "en": "The savings changed this month.",
-    "vi": "Savings thay đổi trong tháng này.",
+    "en": "I transferred part of my savings into my bank account on payday this month.",
+    "vi": "Tháng này, tôi chuyển một phần tiền tiết kiệm vào tài khoản ngân hàng vào ngày nhận lương.",
     "topic": "money",
     "grammar": "Everyday English",
     "vocabWord": "savings",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_150s1cs",
@@ -8448,15 +8479,16 @@
   },
   {
     "id": "sent5_16myg0r",
-    "en": "The carriage made the journey easier.",
-    "vi": "Carriage giúp hành trình dễ hơn.",
+    "en": "We placed our luggage in the train carriage at the station before the 7 a.m. departure.",
+    "vi": "Chúng tôi để hành lý trong toa tàu tại nhà ga trước chuyến khởi hành lúc 7 giờ sáng.",
     "topic": "transportextra",
     "grammar": "Everyday English",
     "vocabWord": "carriage",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1g0j30j",
@@ -8664,15 +8696,16 @@
   },
   {
     "id": "sent5_dqisgq",
-    "en": "The broom was open when I came home.",
-    "vi": "Broom mở khi tôi về nhà.",
+    "en": "I used a broom to sweep the kitchen floor after breakfast this morning.",
+    "vi": "Sáng nay, tôi dùng chổi quét sàn bếp sau bữa sáng.",
     "topic": "homeextra",
     "grammar": "Everyday English",
     "vocabWord": "broom",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1mpssdb",
@@ -8724,15 +8757,16 @@
   },
   {
     "id": "sent5_3hvwjr",
-    "en": "The bedside was open when I came home.",
-    "vi": "Bedside mở khi tôi về nhà.",
+    "en": "I left my phone on the bedside table before going to sleep at home last night.",
+    "vi": "Tối qua, tôi để điện thoại trên chiếc bàn cạnh giường trước khi đi ngủ ở nhà.",
     "topic": "homeextra",
     "grammar": "Everyday English",
     "vocabWord": "bedside",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1grygft",
@@ -8964,15 +8998,16 @@
   },
   {
     "id": "sent5_evrao3",
-    "en": "This tomato tastes really good.",
-    "vi": "Tomato này có vị rất ngon.",
+    "en": "I bought ripe tomatoes at the market near my apartment on Saturday morning.",
+    "vi": "Sáng thứ Bảy, tôi mua cà chua chín ở khu chợ gần căn hộ của mình.",
     "topic": "foodextra",
     "grammar": "Everyday English",
     "vocabWord": "tomato",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_ahvoeq",
@@ -9024,15 +9059,16 @@
   },
   {
     "id": "sent5_1a5cfvr",
-    "en": "This bean tastes really good.",
-    "vi": "Bean này có vị rất ngon.",
+    "en": "She added a bean to the soup while cooking dinner in the kitchen last night.",
+    "vi": "Tối qua, cô ấy cho thêm một hạt đậu vào món súp khi nấu bữa tối trong bếp.",
     "topic": "foodextra",
     "grammar": "Everyday English",
     "vocabWord": "bean",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1mxaes3",
@@ -9084,15 +9120,16 @@
   },
   {
     "id": "sent5_1g1hjdv",
-    "en": "This prawn tastes really good.",
-    "vi": "Prawn này có vị rất ngon.",
+    "en": "I ordered a prawn dish at the seaside restaurant on Sunday afternoon.",
+    "vi": "Chiều Chủ nhật, tôi gọi một món tôm tại nhà hàng ven biển.",
     "topic": "foodextra",
     "grammar": "Everyday English",
     "vocabWord": "prawn",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_w377sa",
@@ -9144,15 +9181,16 @@
   },
   {
     "id": "sent5_136ca2o",
-    "en": "This sauce tastes really good.",
-    "vi": "Sauce này có vị rất ngon.",
+    "en": "The chef poured tomato sauce over the pasta in the restaurant kitchen before serving lunch.",
+    "vi": "Đầu bếp rưới sốt cà chua lên mì trong bếp nhà hàng trước khi phục vụ bữa trưa.",
     "topic": "foodextra",
     "grammar": "Everyday English",
     "vocabWord": "sauce",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_dplpic",
@@ -9204,15 +9242,16 @@
   },
   {
     "id": "sent5_1stjtsc",
-    "en": "This sausage tastes really good.",
-    "vi": "Sausage này có vị rất ngon.",
+    "en": "I bought a sausage from the market stall before our picnic on Saturday morning.",
+    "vi": "Sáng thứ Bảy, tôi mua một chiếc xúc xích ở quầy hàng trước buổi dã ngoại của chúng tôi.",
     "topic": "foodextra",
     "grammar": "Everyday English",
     "vocabWord": "sausage",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1rnphz4",
@@ -9396,15 +9435,16 @@
   },
   {
     "id": "sent5_1slyurl",
-    "en": "Good sleep can affect your vitamin.",
-    "vi": "Ngủ đủ có thể ảnh hưởng đến vitamin của bạn.",
+    "en": "The doctor recommended vitamin D after my blood test at the clinic last week.",
+    "vi": "Tuần trước, bác sĩ khuyên tôi bổ sung vitamin D sau khi xét nghiệm máu tại phòng khám.",
     "topic": "healthextra",
     "grammar": "Everyday English",
     "vocabWord": "vitamin",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_taij51",
@@ -9468,15 +9508,16 @@
   },
   {
     "id": "sent5_9mcd38",
-    "en": "The meaning helped me study better.",
-    "vi": "Meaning giúp tôi học tốt hơn.",
+    "en": "The meaning of the sign became clear when our guide explained it at the museum yesterday.",
+    "vi": "Hôm qua, ý nghĩa của tấm biển trở nên rõ ràng khi hướng dẫn viên giải thích tại bảo tàng.",
     "topic": "studyextra",
     "grammar": "Everyday English",
     "vocabWord": "meaning",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_oxqpo4",
@@ -9528,15 +9569,16 @@
   },
   {
     "id": "sent5_5euua9",
-    "en": "The listener helped me study better.",
-    "vi": "Listener giúp tôi học tốt hơn.",
+    "en": "The listener asked a question during the live radio interview in the studio yesterday afternoon.",
+    "vi": "Chiều hôm qua, người nghe đặt câu hỏi trong buổi phỏng vấn phát thanh trực tiếp tại phòng thu.",
     "topic": "studyextra",
     "grammar": "Everyday English",
     "vocabWord": "listener",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1kc18p2",
@@ -9588,15 +9630,16 @@
   },
   {
     "id": "sent5_5l179v",
-    "en": "The focus helped me study better.",
-    "vi": "Focus giúp tôi học tốt hơn.",
+    "en": "I lost focus while studying in the noisy library last night.",
+    "vi": "Tối qua, tôi mất tập trung khi học trong thư viện ồn ào.",
     "topic": "studyextra",
     "grammar": "Everyday English",
     "vocabWord": "focus",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1rbe5kp",
@@ -9624,15 +9667,16 @@
   },
   {
     "id": "sent5_1ufbw14",
-    "en": "The buyer is important this week.",
-    "vi": "Buyer quan trọng trong tuần này.",
+    "en": "The buyer inspected the apartment with the agent before signing the contract on Friday.",
+    "vi": "Hôm thứ Sáu, người mua xem xét căn hộ cùng nhân viên môi giới trước khi ký hợp đồng.",
     "topic": "workextra2",
     "grammar": "Everyday English",
     "vocabWord": "buyer",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_spa3vo",
@@ -9684,15 +9728,16 @@
   },
   {
     "id": "sent5_18ndah0",
-    "en": "The bonus is important this week.",
-    "vi": "Bonus quan trọng trong tuần này.",
+    "en": "The company paid my annual bonus after the performance review at the office last December.",
+    "vi": "Tháng Mười Hai năm ngoái, công ty trả tiền thưởng hằng năm cho tôi sau buổi đánh giá hiệu suất tại văn phòng.",
     "topic": "workextra2",
     "grammar": "Everyday English",
     "vocabWord": "bonus",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_qcow83",
@@ -9744,15 +9789,16 @@
   },
   {
     "id": "sent5_dz7ako",
-    "en": "The target is important this week.",
-    "vi": "Target quan trọng trong tuần này.",
+    "en": "Our sales team reached its monthly target during the final week of September.",
+    "vi": "Đội ngũ bán hàng của chúng tôi đạt mục tiêu tháng trong tuần cuối cùng của tháng Chín.",
     "topic": "workextra2",
     "grammar": "Everyday English",
     "vocabWord": "target",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1dqqujr",
@@ -9804,15 +9850,16 @@
   },
   {
     "id": "sent5_1t6jk05",
-    "en": "The intern is important this week.",
-    "vi": "Intern quan trọng trong tuần này.",
+    "en": "The intern prepared the meeting notes in the office before the manager arrived this morning.",
+    "vi": "Sáng nay, thực tập sinh chuẩn bị biên bản cuộc họp tại văn phòng trước khi quản lý đến.",
     "topic": "workextra2",
     "grammar": "Everyday English",
     "vocabWord": "intern",
     "favorite": false,
     "audio": "tts",
     "source": "remote",
-    "sourceVersion": "5"
+    "sourceVersion": "5",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent5_1n7nqbw",
@@ -14755,15 +14802,16 @@
   },
   {
     "id": "sent7_0147",
-    "en": "The box is two inches wide.",
-    "vi": "Chiếc hộp rộng hai inch.",
+    "en": "The carpenter measured the shelf at the workshop and found it was 24 inches wide.",
+    "vi": "Người thợ mộc đo chiếc kệ tại xưởng và thấy nó rộng 24 inch.",
     "topic": "measurement",
     "grammar": "Everyday English",
     "vocabWord": "inch",
     "audio": "tts",
     "favorite": false,
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent7_0148",
@@ -14995,15 +15043,16 @@
   },
   {
     "id": "sent7_0167",
-    "en": "The laser pointer helped me during the presentation.",
-    "vi": "Bút laser giúp tôi trong lúc thuyết trình.",
+    "en": "The presenter used a laser pointer in the lecture hall during this morning's seminar.",
+    "vi": "Sáng nay, diễn giả dùng bút chỉ laser trong hội trường trong buổi hội thảo.",
     "topic": "technology",
     "grammar": "Everyday English",
     "vocabWord": "laser",
     "audio": "tts",
     "favorite": false,
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent7_0168",
@@ -15283,15 +15332,16 @@
   },
   {
     "id": "sent7_0191",
-    "en": "The framework makes the software easier to maintain.",
-    "vi": "Framework giúp phần mềm dễ bảo trì hơn.",
+    "en": "Our developer updated the software framework in the lab before the app launch last week.",
+    "vi": "Tuần trước, lập trình viên của chúng tôi cập nhật khung phần mềm tại phòng kỹ thuật trước khi ứng dụng ra mắt.",
     "topic": "technology",
     "grammar": "Everyday English",
     "vocabWord": "framework",
     "audio": "tts",
     "favorite": false,
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent7_0192",
@@ -16903,15 +16953,16 @@
   },
   {
     "id": "sent7_0326",
-    "en": "We talked about logic yesterday.",
-    "vi": "Chúng tôi nói về logic; lập luận hôm qua.",
+    "en": "The professor explained the logic behind the proof during class in the lecture room yesterday.",
+    "vi": "Hôm qua, giáo sư giải thích lập luận đằng sau chứng minh trong giờ học tại giảng đường.",
     "topic": "thinking",
     "grammar": "Everyday English",
     "vocabWord": "logic",
     "audio": "tts",
     "favorite": false,
     "source": "remote",
-    "sourceVersion": "7"
+    "sourceVersion": "7",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent7_0327",
@@ -19241,8 +19292,8 @@
   },
   {
     "id": "sent6_2duuzu",
-    "en": "The advantage is important in this situation.",
-    "vi": "Advantage quan trọng trong tình huống này.",
+    "en": "One advantage of taking the early train is reaching the airport before rush hour.",
+    "vi": "Một lợi thế của việc đi chuyến tàu sớm là đến sân bay trước giờ cao điểm.",
     "topic": "general",
     "grammar": "Everyday English",
     "vocabWord": "advantage",
@@ -19251,7 +19302,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about advantage after dinner.",
-    "legacyVi": "Chúng tôi nói về lợi thế sau bữa tối."
+    "legacyVi": "Chúng tôi nói về lợi thế sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_1ioebij",
@@ -19311,8 +19363,8 @@
   },
   {
     "id": "sent6_m65q5i",
-    "en": "The agent is important this week.",
-    "vi": "Agent quan trọng trong tuần này.",
+    "en": "The travel agent booked our hotel near the station for next weekend.",
+    "vi": "Nhân viên đại lý du lịch đã đặt khách sạn gần nhà ga cho chúng tôi vào cuối tuần tới.",
     "topic": "work",
     "grammar": "Everyday English",
     "vocabWord": "agent",
@@ -19321,7 +19373,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about agent after dinner.",
-    "legacyVi": "Chúng tôi nói về đại lý; tác nhân sau bữa tối."
+    "legacyVi": "Chúng tôi nói về đại lý; tác nhân sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_164rgrm",
@@ -19381,8 +19434,8 @@
   },
   {
     "id": "sent6_1ojr0ut",
-    "en": "The allowance changed this month.",
-    "vi": "Allowance thay đổi trong tháng này.",
+    "en": "My parents increased my monthly allowance before I moved into the dormitory this semester.",
+    "vi": "Bố mẹ tăng tiền trợ cấp hằng tháng cho tôi trước khi tôi chuyển vào ký túc xá trong học kỳ này.",
     "topic": "money",
     "grammar": "Everyday English",
     "vocabWord": "allowance",
@@ -19391,7 +19444,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about allowance after dinner.",
-    "legacyVi": "Chúng tôi nói về tiền trợ cấp; mức cho phép sau bữa tối."
+    "legacyVi": "Chúng tôi nói về tiền trợ cấp; mức cho phép sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_1llq4ib",
@@ -19661,8 +19715,8 @@
   },
   {
     "id": "sent6_1eu2g17",
-    "en": "The arrangement is important in this situation.",
-    "vi": "Arrangement quan trọng trong tình huống này.",
+    "en": "We finalized the seating arrangement in the conference room before the guests arrived this morning.",
+    "vi": "Sáng nay, chúng tôi chốt cách sắp xếp chỗ ngồi trong phòng hội nghị trước khi khách đến.",
     "topic": "daily",
     "grammar": "Everyday English",
     "vocabWord": "arrangement",
@@ -19671,7 +19725,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about arrangement after dinner.",
-    "legacyVi": "Chúng tôi nói về sự sắp xếp sau bữa tối."
+    "legacyVi": "Chúng tôi nói về sự sắp xếp sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_1nxhmtx",
@@ -19941,8 +19996,8 @@
   },
   {
     "id": "sent6_919oe",
-    "en": "The challenge is important in this situation.",
-    "vi": "Challenge quan trọng trong tình huống này.",
+    "en": "The steep trail was a challenge for our group during yesterday's hike in the national park.",
+    "vi": "Con đường dốc là một thử thách đối với nhóm chúng tôi trong chuyến đi bộ ở vườn quốc gia hôm qua.",
     "topic": "goal",
     "grammar": "Everyday English",
     "vocabWord": "challenge",
@@ -19951,7 +20006,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about challenge after dinner.",
-    "legacyVi": "Chúng tôi nói về thách thức sau bữa tối."
+    "legacyVi": "Chúng tôi nói về thách thức sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_gmbonw",
@@ -20011,8 +20067,8 @@
   },
   {
     "id": "sent6_1kf2ysr",
-    "en": "The citizen is important in this situation.",
-    "vi": "Citizen quan trọng trong tình huống này.",
+    "en": "Every citizen must show identification at the city office when applying for a resident card.",
+    "vi": "Mỗi công dân phải xuất trình giấy tờ tùy thân tại cơ quan thành phố khi đăng ký thẻ cư trú.",
     "topic": "society",
     "grammar": "Everyday English",
     "vocabWord": "citizen",
@@ -20021,7 +20077,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about citizen after dinner.",
-    "legacyVi": "Chúng tôi nói về công dân sau bữa tối."
+    "legacyVi": "Chúng tôi nói về công dân sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_1ghamb3",
@@ -20571,8 +20628,8 @@
   },
   {
     "id": "sent6_uwpqsj",
-    "en": "The decision is important in this situation.",
-    "vi": "Decision quan trọng trong tình huống này.",
+    "en": "We made the final decision during the meeting at the office yesterday afternoon.",
+    "vi": "Chiều hôm qua, chúng tôi đưa ra quyết định cuối cùng trong cuộc họp tại văn phòng.",
     "topic": "thinking",
     "grammar": "Everyday English",
     "vocabWord": "decision",
@@ -20581,7 +20638,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about decision after dinner.",
-    "legacyVi": "Chúng tôi nói về quyết định sau bữa tối."
+    "legacyVi": "Chúng tôi nói về quyết định sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_1mcitnd",
@@ -20641,8 +20699,8 @@
   },
   {
     "id": "sent6_1502bb2",
-    "en": "The demand changed this month.",
-    "vi": "Demand thay đổi trong tháng này.",
+    "en": "Demand for umbrellas rose at the market during last week's heavy rain.",
+    "vi": "Nhu cầu mua ô tăng tại chợ trong đợt mưa lớn tuần trước.",
     "topic": "business",
     "grammar": "Everyday English",
     "vocabWord": "demand",
@@ -20651,7 +20709,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about demand after dinner.",
-    "legacyVi": "Chúng tôi nói về nhu cầu; yêu cầu sau bữa tối."
+    "legacyVi": "Chúng tôi nói về nhu cầu; yêu cầu sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_kzdtqr",
@@ -21551,8 +21610,8 @@
   },
   {
     "id": "sent6_1xg119j",
-    "en": "The insurance changed this month.",
-    "vi": "Insurance thay đổi trong tháng này.",
+    "en": "I updated my car insurance online at home before the policy expired last night.",
+    "vi": "Tối qua, tôi cập nhật bảo hiểm ô tô trực tuyến tại nhà trước khi hợp đồng hết hạn.",
     "topic": "money",
     "grammar": "Everyday English",
     "vocabWord": "insurance",
@@ -21561,7 +21620,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about insurance after dinner.",
-    "legacyVi": "Chúng tôi nói về bảo hiểm sau bữa tối."
+    "legacyVi": "Chúng tôi nói về bảo hiểm sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_127rxnm",
@@ -21621,8 +21681,8 @@
   },
   {
     "id": "sent6_wopkzw",
-    "en": "The investment changed this month.",
-    "vi": "Investment thay đổi trong tháng này.",
+    "en": "The family discussed its investment with a financial adviser at the bank last Friday.",
+    "vi": "Thứ Sáu tuần trước, gia đình trao đổi về khoản đầu tư với cố vấn tài chính tại ngân hàng.",
     "topic": "money",
     "grammar": "Everyday English",
     "vocabWord": "investment",
@@ -21631,7 +21691,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about investment after dinner.",
-    "legacyVi": "Chúng tôi nói về sự đầu tư sau bữa tối."
+    "legacyVi": "Chúng tôi nói về sự đầu tư sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_68bc1i",
@@ -22041,8 +22102,8 @@
   },
   {
     "id": "sent6_c61pfm",
-    "en": "The permission is important in this situation.",
-    "vi": "Permission quan trọng trong tình huống này.",
+    "en": "I asked the teacher for permission to leave the classroom early this morning.",
+    "vi": "Sáng nay, tôi xin giáo viên cho phép rời lớp sớm.",
     "topic": "daily",
     "grammar": "Everyday English",
     "vocabWord": "permission",
@@ -22051,7 +22112,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about permission after dinner.",
-    "legacyVi": "Chúng tôi nói về sự cho phép sau bữa tối."
+    "legacyVi": "Chúng tôi nói về sự cho phép sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_1ym94b9",
@@ -22461,8 +22523,8 @@
   },
   {
     "id": "sent6_1vgyk8a",
-    "en": "The risk is important in this situation.",
-    "vi": "Risk quan trọng trong tình huống này.",
+    "en": "The guide explained the risk of hiking near the river during the storm yesterday.",
+    "vi": "Hôm qua, hướng dẫn viên giải thích nguy cơ đi bộ đường dài gần sông khi có bão.",
     "topic": "general",
     "grammar": "Everyday English",
     "vocabWord": "risk",
@@ -22471,7 +22533,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about risk after dinner.",
-    "legacyVi": "Chúng tôi nói về rủi ro; mạo hiểm sau bữa tối."
+    "legacyVi": "Chúng tôi nói về rủi ro; mạo hiểm sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_4fsdg9",
@@ -25331,8 +25394,8 @@
   },
   {
     "id": "sent6_w2nboa",
-    "en": "The reward is important in this situation.",
-    "vi": "Reward quan trọng trong tình huống này.",
+    "en": "The coach gave the team a reward at the gym after the match on Saturday.",
+    "vi": "Thứ Bảy, huấn luyện viên trao phần thưởng cho đội tại phòng tập sau trận đấu.",
     "topic": "achievement",
     "grammar": "Everyday English",
     "vocabWord": "reward",
@@ -25341,7 +25404,8 @@
     "sourceVersion": "6",
     "favorite": false,
     "legacyEn": "We talked about reward after dinner.",
-    "legacyVi": "Chúng tôi nói về phần thưởng; thưởng sau bữa tối."
+    "legacyVi": "Chúng tôi nói về phần thưởng; thưởng sau bữa tối.",
+    "reviewedAt": "2026-10-28"
   },
   {
     "id": "sent6_cgvyr",
