@@ -266,8 +266,49 @@ function exampleContainsTarget(en, word) {
     speak:"spoke", think:"thought", buy:"bought", bring:"brought", teach:"taught"
   };
   if (irregular[w]) variants.add(irregular[w]);
-  return [...variants].some(v => text.includes(" " + v + " "));
+  if ([...variants].some(v => text.includes(" " + v + " "))) return true;
+
+  // Some English phrasal verbs are separable: "view the bridge as a symbol",
+  // "put the problem right". Accept the first verb form followed by the remaining
+  // phrase components in order, with a bounded gap for an intervening object.
+  const parts = dehyphenated.split(/\\s+/).filter(Boolean);
+  if (parts.length > 1) {
+    const first = parts[0];
+    const firstForms = new Set([first]);
+    if (/[^aeiou]y$/.test(first)) firstForms.add(first.slice(0, -1) + "ies");
+    else if (/(s|x|z|ch|sh)$/.test(first)) firstForms.add(first + "es");
+    else firstForms.add(first + "s");
+    if (/e$/.test(first)) firstForms.add(first.slice(0, -1) + "ed");
+    else if (/[^aeiou]y$/.test(first)) firstForms.add(first.slice(0, -1) + "ied");
+    else firstForms.add(first + "ed");
+    if (first.endsWith("ie")) firstForms.add(first.slice(0, -2) + "ying");
+    else if (first.endsWith("e")) firstForms.add(first.slice(0, -1) + "ing");
+    else firstForms.add(first + "ing");
+    if (irregular[first]) firstForms.add(irregular[first]);
+
+    const tokens = text.trim().split(/\\s+/).filter(Boolean);
+    for (let i = 0; i < tokens.length; i++) {
+      if (!firstForms.has(tokens[i])) continue;
+      let cursor = i;
+      let matched = true;
+      for (const part of parts.slice(1)) {
+        let next = -1;
+        for (let j = cursor + 1; j < Math.min(tokens.length, cursor + 6); j++) {
+          if (tokens[j] === part) { next = j; break; }
+        }
+        if (next < 0) { matched = false; break; }
+        cursor = next;
+      }
+      if (matched) return true;
+    }
+  }
+  return false;
 }
+
+must(
+  exampleContainsTarget("Many visitors view the old bridge as a symbol of the city.", "view as"),
+  "Target-word check must recognize separable phrasal verbs such as 'view as'"
+);
 for (const v of vocab) {
   const en = String(v?.example ?? "").trim();
   const word = norm(v?.word);
